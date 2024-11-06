@@ -7,7 +7,7 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import Link from "next/link";
-import "./storeproduct.css"
+import "./Storeproduct.css"
 import p1 from "../../../public/Images/productimages/p1.png";
 import p2 from "../../../public/Images/productimages/p2.png";
 import p3 from "../../../public/Images/productimages/p3.png";
