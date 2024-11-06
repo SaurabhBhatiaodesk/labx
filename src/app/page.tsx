@@ -11,7 +11,7 @@ import MainBanner from "@/components/MainBanner/MainBanner";
 import RecentNews from "@/components/RecentNews/RecentNews";
 
 import ServicesComponents from "@/components/ServicesComponents/ServicesComponents";
-import Store_product from "@/components/Store_product/Store_product";
+import Storeproduct from "@/components/Storeproduct/Storeproduct";
 import React from "react";
 
 const page = () => {
@@ -20,7 +20,7 @@ const page = () => {
       <MainBanner />
       <OurClient />
       <DeliveryTous/>
-      <Store_product/>
+      <Storeproduct/>
       <DataRecovery/>
       <WhyChooseLabX />
       <FixLabx />
