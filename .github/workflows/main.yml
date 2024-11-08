@@ -27,7 +27,10 @@ jobs:
             echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
           fi
           
+          # SSH कुंजी को सही अनुमतियाँ दें
           chmod 600 ~/.ssh/id_rsa
+
+          # सर्वर को ज्ञात होस्ट्स में जोड़ें
           ssh-keyscan -H -t rsa $SERVER_IP >> ~/.ssh/known_hosts || { echo "ssh-keyscan failed"; exit 1; }
           chmod 644 ~/.ssh/known_hosts
 
@@ -39,7 +42,7 @@ jobs:
           ssh -v -o BatchMode=yes -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_IP << 'EOF'
           set -e
           echo "Navigating to the project directory..."
-          cd ~/labx/labx || { echo "Directory not found"; exit 1; }  # सही फ़ोल्डर में जाएँ
+          cd ~/labx/labx || { echo "Directory not found"; exit 1; }
 
           echo "Pulling latest changes from Git repository..."
           git pull || { echo "Git pull failed"; exit 1; }
