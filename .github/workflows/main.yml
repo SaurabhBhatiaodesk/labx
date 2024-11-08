@@ -38,8 +38,16 @@ jobs:
           echo "Configuring Git to trust the project directory..."
           git config --global --add safe.directory /home/ec2-user/labx/labx || { echo "Failed to set safe directory"; exit 1; }
 
+          # Stash local changes if any
+          echo "Stashing any local changes..."
+          git stash --include-untracked || { echo "Failed to stash changes"; exit 1; }
+
           echo "Pulling latest changes from Git repository..."
           git pull || { echo "Git pull failed"; exit 1; }
+
+          # Apply stashed changes back if needed
+          echo "Applying stashed changes..."
+          git stash pop || echo "No stashed changes to apply"
 
           echo "Installing project dependencies..."
           npm install || { echo "npm install failed"; exit 1; }
