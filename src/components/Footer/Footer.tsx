@@ -8,9 +8,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 import { IoCallOutline } from "react-icons/io5";
-
 import { IoLocationOutline } from "react-icons/io5";
-
 import { CiMail } from "react-icons/ci";
 import MobileFooterMenue from "./MobileFooterMenue";
 import sendicon from "../../../public/Images/icons/send.svg";
@@ -44,10 +42,13 @@ const Footer = () => {
                       className="hover:scale-110 transition-transform duration-200"
                       fontSize={30}
                     />
-                    <FaYoutube
-                      className="hover:scale-110 transition-transform duration-200"
-                      fontSize={30}
-                    />
+                 <Link href="https://www.youtube.com/@PRCRepair" target="_blank" rel="noopener noreferrer">
+  <FaYoutube
+    className="hover:scale-110 transition-transform duration-200"
+    fontSize={30}
+  />
+</Link>
+
                   </div>
                 </div>
               </div>
@@ -280,10 +281,13 @@ const Footer = () => {
                   className="hover:scale-110 transition-transform duration-200"
                   fontSize={30}
                 />
-                <FaYoutube
-                  className="hover:scale-110 transition-transform duration-200"
-                  fontSize={30}
-                />
+              <Link href="https://www.youtube.com/@PRCRepair" target="_blank" rel="noopener noreferrer">
+  <FaYoutube
+    className="hover:scale-110 transition-transform duration-200"
+    fontSize={30}
+  />
+</Link>
+
               </div>
 
               <MobileFooterMenue />

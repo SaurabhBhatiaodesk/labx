@@ -7,8 +7,11 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
-
-import jname from "../../../public/Images/icons/j.svg";
+import jname from "../../../public/Images/icons/E.png";
+import Iname from "../../../public/Images/icons/I.png"
+import Nname from "../../../public/Images/icons/N.png"
+import Sname from "../../../public/Images/icons/S.png"
+import Aname from "../../../public/Images/icons/A.png"
 import Googletest from "../../../public/Images/icons/Googletest.svg";
 import star from "../../../public/Images/icons/star.svg";
 
@@ -19,7 +22,7 @@ const reviews = [
   {
     name: "Sophie Turner",
     date: "September 12, 2023",
-    profileImage: jname,
+    profileImage: Sname,
     logoImage: Googletest,
     rating: 5,
     param:"LabX Repair exceeded my expectations! They quickly repaired my iPhone screen and provided updates throughout the process. Excellent service and knowledgeable staff. Highly recommend to anyone needing phone repairs!",
@@ -35,7 +38,7 @@ const reviews = [
   {
     name: "Ava Smith",
     date: "November 1, 2023",
-    profileImage: jname,
+    profileImage: Aname,
     logoImage: Googletest,
     rating: 5,
     param:"LabX Repair made my mobile phone repair so easy! From the moment I contacted them, their customer service was fantastic. They fixed my charging port swiftly. Definitely my go-to repair shop!",
@@ -43,7 +46,7 @@ const reviews = [
   {
     name: "Noah Davis",
     date: "November 1, 2023",
-    profileImage: jname,
+    profileImage: Nname,
     logoImage: Googletest,
     rating: 5,
     param:"I needed a motherboard repair, and LabX Repair came through when others couldn't. Their expertise is unmatched, and they provided thorough updates. Very satisfied with their work and highly recommend them!",
@@ -51,7 +54,7 @@ const reviews = [
   {
     name: "Isabella Johnson",
     date: "November 1, 2023",
-    profileImage: jname,
+    profileImage: Iname,
     logoImage: Googletest,
     rating: 5,
     param:"Fantastic experience with LabX Repair! They not only fixed my phone quickly but also offered invaluable advice on maintenance. Their team is friendly and efficient. I’ll be back for sure!",
@@ -88,10 +91,10 @@ export default function Productswiper({}) {
               speed={600}
               breakpoints={{
                 320: {
-                  slidesPerView: 2,
+                  slidesPerView: 1,
                 },
                 450: {
-                  slidesPerView: 3,
+                  slidesPerView: 1,
                 },
                 768: {
                   slidesPerView: 3,
@@ -122,7 +125,17 @@ export default function Productswiper({}) {
                         <Image key={starIndex} src={star} alt="star" width={20} height={20} />
                       ))}
                     </div>
-                    <p className="font-extralight font-poppins text-[16px] leading-[24px]">{review.param}</p>
+                    <p
+  className="font-extralight font-poppins text-[16px] leading-[24px]"
+  style={{
+    display: '-webkit-box',
+    WebkitLineClamp: 5, 
+    WebkitBoxOrient: 'vertical',
+    overflow: 'hidden',
+  }}
+>
+  {review.param}
+</p>
                   </div>
                 </SwiperSlide>
               ))}

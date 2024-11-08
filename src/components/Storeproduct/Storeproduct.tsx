@@ -30,44 +30,45 @@ export default function Productswiper() {
       src: p1,
       alt: "Toyota Fortuner",
       Product:
-        "  iQuick 100W 2* USB-A 2* USB-C 4- port charger power strip-white",
+        "iPhone 16 Pro Max Screen  Original Service Pack",
+        price:"600+GST",
     },
     {
       src: p2,
       alt: "Honda Civic",
       Product:
-        "  iQuick 100W 2* USB-A 2* USB-C 4- port charger power strip-white",
+        "iPhone 16 Pro Screen Original Service Pack",
+        price:" 530+GST",
     },
     {
       src: p1,
       alt: "BMW X5",
       Product:
-        "  iQuick 100W 2* USB-A 2* USB-C 4- port charger power strip-white",
+        "iPhone 16 Plus Screen Original Service Pack",
+        price:" 530+GST",
     },
     {
       src: p2,
       alt: "Mercedes Benz",
       Product:
-        "  iQuick 100W 2* USB-A 2* USB-C 4- port charger power strip-white",
+        "iPhone 16 Screen Original Service Pack",
+        price:" 465+GST",
     },
     {
       src: p1,
-      alt: "Audi A4",
+      alt: "Toyota Fortuner",
       Product:
-        "  iQuick 100W 2* USB-A 2* USB-C 4- port charger power strip-white",
+        "iPhone 16 Pro Max Screen  Original Service Pack",
+        price:"600+GST",
     },
     {
       src: p2,
-      alt: "BMW X5",
+      alt: "Honda Civic",
       Product:
-        "  iQuick 100W 2* USB-A 2* USB-C 4- port charger power strip-white",
+        "iPhone 16 Pro Screen Original Service Pack",
+        price:" 530+GST",
     },
-    {
-      src: p1,
-      alt: "Mercedes Benz",
-      Product:
-        "  iQuick 100W 2* USB-A 2* USB-C 4- port charger power strip-white",
-    },
+
   ];
 
   return (
@@ -115,7 +116,7 @@ export default function Productswiper() {
                           $99.00
                         </span>
                         <span className="lg:text-[20px] text-[16px]">
-                          $89.00
+                         {slide.price}
                         </span>
                       </div>
                       <div>

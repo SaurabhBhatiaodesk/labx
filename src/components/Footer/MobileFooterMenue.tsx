@@ -1,8 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import Lottie from "lottie-react";
-import lottieflowemail from "../../../public/Images/jsonfile/lottieflowemail.json";
 import sendicon from "../../../public/Images/icons/send.svg";
 
 const MobileFooterMenue = () => {

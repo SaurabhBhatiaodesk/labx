@@ -18,7 +18,7 @@
 
 # misc
 .DS_Store
-*.pem
+*.pem  # This line ignores .pem files. If you need to keep .pem files, remove or comment out this line.
 
 # debug
 npm-debug.log*
@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# GitHub Actions workflows should not be ignored
+!.github/
+!.github/workflows/

@@ -52,11 +52,6 @@ xl (1280px)	max-width: 1280px;
   font-style: normal;
 }
 
-
-
-
-
-
 @font-face {
   font-family: "Gordita";
   src: url("../app/fonts/Gordita-Medium.woff2") format("woff2"),

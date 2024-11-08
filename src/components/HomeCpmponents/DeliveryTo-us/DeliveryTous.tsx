@@ -6,6 +6,7 @@ import MainHeading from "@/components/ManinHeading/MainHeading";
 import MainTitle from "@/components/MainTitle/MainTitle";
 import "./DeliveryTo.css";
 import pointet from "../../../../public/Images/icons/pointingright.svg";
+import DeliveryTousMobile from "./DeliveryTousMobile";
 
 interface Tab {
   id: number;
@@ -129,66 +130,71 @@ const VerticalTabs: React.FC = () => {
       <div className="container bgchange">
         <MainHeading Heading="Get a Quick Look at What We Offer" />
         <MainTitle Title="Take a quick look at our range of mobile phone repair services tailored to meet all your needs, from expert repairs and training programs to quality parts and data recovery — everything under one roof!" />
-
-        <div className="grid xl:grid-cols-[1fr_3fr_1fr] lg:grid-cols-[3fr_6fr] gap-4">
-          <div className="flex flex-col w-full gap-4">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                className={`p-3 text-white rounded-[50px] border-[1.5px] text-base tracking-[1.2px] ${
-                  activeTab === tab.id
-                    ? "active-tab"
-                    : "bg-opacity-50 hover:bg-opacity-75"
-                }`}
-                onClick={() => setActiveTab(tab.id)}
-                data-selected={tab.id.toString()}
-                role="tab"
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-          <div
-             className={`flex-1 xl:p-4 radial-gradient-background-${activeTab}`}
->
-            <h3>{tabs[activeTab].content}</h3>
-            {[
-              tabs[activeTab].contentf2,
-              tabs[activeTab].contentf3,
-              tabs[activeTab].contentf4,
-              tabs[activeTab].contentf5,
-              tabs[activeTab].contentf6,
-            ]
-              .filter(Boolean)
-              .map((content, index) => (
-                <div className="flex items-start gap-4" key={index}>
-                  <Image
-                    className="w-[30px] h-[30px]"
-                    src={pointet}
-                    alt="Pointing Right Icon"
-                    width={50}
-                    height={50}
-                  />
-                  <div>
-                    <p>{content}</p>
-                  </div>
-                </div>
+        <div className="lg:block hidden">
+          <div className="grid xl:grid-cols-[1fr_3fr_1fr] lg:grid-cols-[3fr_6fr] gap-4 ">
+            <div className="flex flex-col w-full gap-4">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  className={`p-3 text-white rounded-[50px] border-[1.5px] text-base tracking-[1.2px] ${
+                    activeTab === tab.id
+                      ? "active-tab"
+                      : "bg-opacity-50 hover:bg-opacity-75"
+                  }`}
+                  onClick={() => setActiveTab(tab.id)}
+                  data-selected={tab.id.toString()}
+                  role="tab"
+                >
+                  {tab.label}
+                </button>
               ))}
-
-            <button
-              className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
-              style={{
-                background: getGradientColor(activeTab),
-                borderColor: getGradientColor(activeTab),
-              }}
+            </div>
+            <div
+              className={`flex-1 xl:p-4 radial-gradient-background-${activeTab}`}
             >
-              {tabs[activeTab].button}
-            </button>
-          </div>
-          <div className="p-4 hidden xl:block">
-            <Image src={hammer} alt="Hammer Icon" />
+              <h3>{tabs[activeTab].content}</h3>
+              {[
+                tabs[activeTab].contentf2,
+                tabs[activeTab].contentf3,
+                tabs[activeTab].contentf4,
+                tabs[activeTab].contentf5,
+                tabs[activeTab].contentf6,
+              ]
+                .filter(Boolean)
+                .map((content, index) => (
+                  <div className="flex items-start gap-4" key={index}>
+                    <Image
+                      className="w-[30px] h-[30px]"
+                      src={pointet}
+                      alt="Pointing Right Icon"
+                      width={50}
+                      height={50}
+                    />
+                    <div>
+                      <p>{content}</p>
+                    </div>
+                  </div>
+                ))}
+
+              <button
+                className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
+                style={{
+                  background: getGradientColor(activeTab),
+                  borderColor: getGradientColor(activeTab),
+                }}
+              >
+                {tabs[activeTab].button}
+              </button>
+            </div>
+            <div className="p-4 hidden xl:block">
+              <Image src={hammer} alt="Hammer Icon" />
+            </div>
           </div>
         </div>
+
+        <section className="lg:hidden block">
+          <DeliveryTousMobile></DeliveryTousMobile>
+        </section>
       </div>
     </section>
   );
