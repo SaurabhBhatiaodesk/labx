@@ -29,3 +29,4 @@ jobs:
           # Restart your application, depends on your process manager, here's an example using PM2
           pm2 restart all
           EOF
+          
