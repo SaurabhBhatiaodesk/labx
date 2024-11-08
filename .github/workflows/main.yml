@@ -15,26 +15,28 @@ jobs:
       - name: Set up SSH key and server fingerprints
         env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
-          SERVER_USER: ${{ secrets.SERVER_USER }}
         run: |
-          set -e  # Exit on any error
+          # Display the current user and list home directory contents
           echo "Current user: $(whoami)"
-          
-          # Create the .ssh directory and set permissions
-          mkdir -p ~/.ssh
-          
-          # Store the private SSH key from GitHub Secrets
-          echo "${{ secrets.SERVER_SSH_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa  # Ensure no carriage returns
-          chmod 600 ~/.ssh/id_rsa
-          
-          # Scan and add the server's SSH fingerprint to known_hosts
-          echo "Running ssh-keyscan..."
-          ssh-keyscan -H -t rsa $SERVER_IP >> ~/.ssh/known_hosts || { echo "ssh-keyscan failed"; exit 1; }
-          chmod 644 ~/.ssh/known_hosts
+          ls -la ~/
 
-          # Test the SSH connection to ensure it works
-          echo "Testing SSH connection..."
-          ssh -v -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_IP "echo 'SSH connection successful'" || { echo "SSH connection failed"; exit 1; }
+          # Create .ssh directory if it doesn't exist
+          mkdir -p ~/.ssh
+          ls -la ~/.ssh  # Verify the directory was created or already exists
+
+          # Decode SSH key from base64 or direct input
+          if [ -n "${{ secrets.SERVER_SSH_KEY_BASE64 }}" ]; then
+            echo "${{ secrets.SERVER_SSH_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_rsa
+          else
+            echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
+          fi
+
+          # Set the correct permissions for the private key
+          chmod 600 ~/.ssh/id_rsa
+
+          # Add server to known hosts
+          ssh-keyscan -H -t rsa $SERVER_IP >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
 
       - name: Execute deployment commands
         env:
@@ -46,17 +48,10 @@ jobs:
           set -e  # Exit on any error
 
           echo "Navigating to the project directory..."
-          cd /home/ec2-user/labx/labx || { echo "Directory not found"; exit 1; }
-
-          # Handle local changes by stashing them
-          echo "Stashing any local changes..."
-          git stash --include-untracked || { echo "Failed to stash changes"; exit 1; }
+          cd /path/to/your/project || { echo "Directory not found"; exit 1; }
 
           echo "Pulling latest changes from Git repository..."
           git pull || { echo "Git pull failed"; exit 1; }
-
-          echo "Reapplying stashed changes..."
-          git stash pop || echo "No stashed changes to apply"
 
           echo "Installing project dependencies..."
           npm install || { echo "npm install failed"; exit 1; }
@@ -64,7 +59,7 @@ jobs:
           echo "Building the project..."
           npm run build || { echo "Build failed"; exit 1; }
 
-          # Ensure PM2 is installed globally
+          # Check if PM2 is installed and install if not
           if ! command -v pm2 &> /dev/null; then
             echo "PM2 not found, installing globally..."
             sudo npm install -g pm2 || { echo "Failed to install PM2"; exit 1; }
