@@ -2,50 +2,35 @@ name: Deploy Application
 
 on:
   push:
-    branches: [ main ]  # Triggers the workflow on push to 'main'
+    branches: [ main ]
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # Uses the latest Ubuntu runner
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2  # Checks out the repository content
+        uses: actions/checkout@v2
 
-      - name: Set up SSH key and server fingerprints
-        env:
-          SERVER_IP: ${{ secrets.SERVER_IP }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Configure npm and Install PM2
         run: |
-          mkdir -p ~/.ssh
-          if [ -n "${{ secrets.SERVER_SSH_KEY_BASE64 }}" ]; then
-            echo "${{ secrets.SERVER_SSH_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_rsa
-          else
-            echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
-          fi
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa $SERVER_IP >> ~/.ssh/known_hosts
-          chmod 644 ~/.ssh/known_hosts
+          mkdir "${HOME}/.npm-global"
+          npm config set prefix "${HOME}/.npm-global"
+          export PATH="${HOME}/.npm-global/bin:${PATH}"
+          npm install -g pm2
+          npm install
+          npm audit fix --force
+          npm audit
 
-      - name: Execute deployment commands
-        env:
-          SERVER_IP: ${{ secrets.SERVER_IP }}
-          SERVER_USER: ${{ secrets.SERVER_USER }}
+      - name: Build Project
         run: |
-          ssh -o BatchMode=yes -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_IP << 'EOF'
-          echo "Navigating to the project directory..."
-          cd /path/to/your/project || exit 1
-          
-          echo "Pulling latest changes from Git repository..."
-          git pull || exit 1
+          npm run build
 
-          echo "Installing project dependencies..."
-          npm install || exit 1
-
-          echo "Building the project..."
-          npm run build || exit 1
-
-          echo "Restarting the application with PM2..."
-          pm2 restart all || exit 1
-
-          echo "Deployment successful"
-          EOF
+      - name: Restart Application with PM2
+        run: |
+          pm2 restart all || { echo "Failed to restart application"; exit 1; }
