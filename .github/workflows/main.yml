@@ -2,15 +2,16 @@ name: Deploy Next.js Application
 
 on:
   push:
-    branches: [ main ]  # This triggers the workflow on push to 'main'
+    branches:
+      - main  # Change this as per your deployment branch
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # Specifies the runner environment
+    runs-on: ubuntu-latest  # Specifies the type of virtual host environment
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2  # Checks out your repository code
+        uses: actions/checkout@v2  # Checks out the code in your repository
 
       - name: Set up SSH key and server fingerprints
         run: |
@@ -22,11 +23,23 @@ jobs:
       - name: Execute deployment commands
         run: |
           ssh -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
-          cd /home/ec2-user/labx
-          git pull
-          npm install
-          npm run build
-          # Restart your application, depends on your process manager, here's an example using PM2
-          pm2 restart all
-          EOF
+          echo "Navigating to the project directory..."
+          cd /home/ec2-user/labx/labx || { echo "Failed to navigate to project directory"; exit 1; }
           
+          echo "Pulling latest changes from Git repository..."
+          git pull || { echo "Failed to pull changes"; exit 1; }
+
+          echo "Installing project dependencies..."
+          npm install || { echo "Failed to install dependencies"; exit 1; }
+
+          echo "Building the project..."
+          npm run build || { echo "Build failed"; exit 1; }
+
+          echo "Restarting the application with PM2..."
+          if ! type pm2 >/dev/null; then
+            npm install pm2@latest -g
+          fi
+          pm2 restart all || { echo "Failed to restart application"; exit 1; }
+
+          echo "Deployment successful"
+          EOF
