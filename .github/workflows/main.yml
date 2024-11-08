@@ -50,7 +50,7 @@ jobs:
           echo "Navigating to the project directory..."
           cd /path/to/your/project || { echo "Directory not found"; exit 1; }
 
-          # Stash or discard changes to ensure a clean pull
+          # Check for local changes and stash them if found
           echo "Checking for local changes..."
           if [ -n "$(git status --porcelain)" ]; then
             echo "Stashing local changes..."
