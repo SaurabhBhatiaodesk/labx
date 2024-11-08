@@ -1,59 +1,51 @@
-name: Deploy Next.js Application
+name: Deploy Application
 
 on:
   push:
-    branches: [ main ]  # This triggers the workflow on push to 'main'
+    branches: [ main ]  # Triggers the workflow on push to 'main'
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # Specifies the type of virtual host environment
+    runs-on: ubuntu-latest  # Uses the latest Ubuntu runner
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2  # Checks out the code in your repository
+      - name: Checkout repository
+        uses: actions/checkout@v2  # Checks out the repository content
 
       - name: Set up SSH key and server fingerprints
         env:
-          SERVER_SSH_KEY_BASE64: ${{ secrets.SERVER_SSH_KEY_BASE64 }}
           SERVER_IP: ${{ secrets.SERVER_IP }}
         run: |
-          # Decode the Base64-encoded SSH key and save it as id_rsa
           mkdir -p ~/.ssh
-          echo "$SERVER_SSH_KEY_BASE64" | base64 --decode > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          
-          # Add the server's fingerprint to known_hosts
-          ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
-          if [ $? -ne 0 ]; then
-            echo "Failed to add SSH host key to known_hosts."
-            exit 1
+          if [ -n "${{ secrets.SERVER_SSH_KEY_BASE64 }}" ]; then
+            echo "${{ secrets.SERVER_SSH_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_rsa
+          else
+            echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
           fi
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa $SERVER_IP >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
-          echo "SSH setup complete."
 
       - name: Execute deployment commands
         env:
-          SERVER_USER: ${{ secrets.SERVER_USER }}
           SERVER_IP: ${{ secrets.SERVER_IP }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
         run: |
-          ssh -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_IP << 'EOF'
+          ssh -o BatchMode=yes -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_IP << 'EOF'
           echo "Navigating to the project directory..."
-          cd /home/ec2-user/labx/labx || { echo "Failed to navigate to project directory"; exit 1; }
+          cd /path/to/your/project || exit 1
           
           echo "Pulling latest changes from Git repository..."
-          git pull || { echo "Failed to pull changes"; exit 1; }
+          git pull || exit 1
 
           echo "Installing project dependencies..."
-          npm install || { echo "Failed to install dependencies"; exit 1; }
+          npm install || exit 1
 
           echo "Building the project..."
-          npm run build || { echo "Build failed"; exit 1; }
+          npm run build || exit 1
 
           echo "Restarting the application with PM2..."
-          if ! type pm2 >/dev/null; then
-            npm install pm2@latest -g
-          fi
-          pm2 restart all || { echo "Failed to restart application"; exit 1; }
+          pm2 restart all || exit 1
 
           echo "Deployment successful"
           EOF
