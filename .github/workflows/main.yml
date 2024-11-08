@@ -50,8 +50,8 @@ jobs:
     echo "Navigating to the project directory..."
     cd /path/to/your/project || { echo "Directory not found"; exit 1; }
 
-    echo "Resetting local changes..."
-    git reset --hard HEAD || { echo "Failed to reset changes"; exit 1; }
+    echo "Stashing any local changes..."
+    git stash --include-untracked || { echo "Failed to stash changes"; exit 1; }
 
     echo "Pulling latest changes from Git repository..."
     git pull || { echo "Git pull failed"; exit 1; }
@@ -74,9 +74,3 @@ jobs:
     echo "Deployment successful"
     EOF
 
-    
-              echo "Restarting the application with PM2..."
-              pm2 restart all || { echo "Failed to restart the application"; exit 1; }
-    
-              echo "Deployment successful"
-              EOF
