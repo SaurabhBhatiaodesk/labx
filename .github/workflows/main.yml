@@ -16,15 +16,14 @@ jobs:
         env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
         run: |
-          # Show the current user and list home directory contents
-          whoami
+          # Display the current user and list home directory contents
+          echo "Current user: $(whoami)"
           ls -la ~/
           
           # Create .ssh directory if it doesn't exist
           mkdir -p ~/.ssh
-          ls -la ~/.ssh  # Verify the directory was created or already exists
           
-          # Decode SSH key from base64 or direct input
+          # Decode SSH key from base64 or save the plain key
           if [ -n "${{ secrets.SERVER_SSH_KEY_BASE64 }}" ]; then
             echo "${{ secrets.SERVER_SSH_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_rsa
           else
@@ -34,10 +33,9 @@ jobs:
           # Set the correct permissions for the private key
           chmod 600 ~/.ssh/id_rsa
           
-          # Add server to known hosts
-          ssh-keyscan -t rsa $SERVER_IP >> ~/.ssh/known_hosts
+          # Add the server's SSH key to known hosts
+          ssh-keyscan -H -t rsa $SERVER_IP >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
-          cat ~/.ssh/known_hosts  # Optionally display known hosts for debugging
 
       - name: Execute deployment commands
         env:
@@ -46,20 +44,22 @@ jobs:
         run: |
           # Establish an SSH connection and execute commands
           ssh -o BatchMode=yes -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_IP << 'EOF'
+          set -e  # Exit on any error
+
           echo "Navigating to the project directory..."
-          cd /path/to/your/project || exit 1
-          
+          cd /path/to/your/project || { echo "Directory not found"; exit 1; }
+
           echo "Pulling latest changes from Git repository..."
-          git pull || exit 1
+          git pull || { echo "Git pull failed"; exit 1; }
 
           echo "Installing project dependencies..."
-          npm install || exit 1
+          npm install || { echo "npm install failed"; exit 1; }
 
           echo "Building the project..."
-          npm run build || exit 1
+          npm run build || { echo "Build failed"; exit 1; }
 
           echo "Restarting the application with PM2..."
-          pm2 restart all || exit 1
+          pm2 restart all || { echo "PM2 restart failed"; exit 1; }
 
           echo "Deployment successful"
           EOF
