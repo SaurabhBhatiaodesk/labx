@@ -2,40 +2,33 @@ name: Deploy Application
 
 on:
   push:
-    branches: [main]  # Triggers the workflow on push to 'main'
+    branches: [main]  # 'main' ब्रांच पर पुश होने पर वर्कफ़्लो शुरू होगा
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # Uses the latest Ubuntu runner
+    runs-on: ubuntu-latest  # नवीनतम Ubuntu रनर का उपयोग करें
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2  # Checks out the repository content
+        uses: actions/checkout@v2  # रिपॉजिटरी की सामग्री चेक आउट करें
 
       - name: Set up SSH key and server fingerprints
         env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
         run: |
-          # Display the current user and list home directory contents
           echo "Current user: $(whoami)"
-          ls -la ~/
-
-          # Create .ssh directory if it doesn't exist
           mkdir -p ~/.ssh
-          ls -la ~/.ssh  # Verify the directory was created or already exists
+          chmod 700 ~/.ssh  # .ssh डायरेक्टरी के लिए अनुमतियाँ
 
-          # Decode SSH key from base64 or direct input
+          # SSH कुंजी को सेट करें
           if [ -n "${{ secrets.SERVER_SSH_KEY_BASE64 }}" ]; then
             echo "${{ secrets.SERVER_SSH_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_rsa
           else
             echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
           fi
-
-          # Set the correct permissions for the private key
+          
           chmod 600 ~/.ssh/id_rsa
-
-          # Add server to known hosts
-          ssh-keyscan -H -t rsa $SERVER_IP >> ~/.ssh/known_hosts
+          ssh-keyscan -H -t rsa $SERVER_IP >> ~/.ssh/known_hosts || { echo "ssh-keyscan failed"; exit 1; }
           chmod 644 ~/.ssh/known_hosts
 
       - name: Execute deployment commands
@@ -43,12 +36,10 @@ jobs:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
         run: |
-          # Establish an SSH connection and execute commands
-          ssh -o BatchMode=yes -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_IP << 'EOF'
-          set -e  # Exit on any error
-
+          ssh -v -o BatchMode=yes -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_IP << 'EOF'
+          set -e
           echo "Navigating to the project directory..."
-          cd /path/to/your/project || { echo "Directory not found"; exit 1; }
+          cd ~/labx/labx || { echo "Directory not found"; exit 1; }  # सही फ़ोल्डर में जाएँ
 
           echo "Pulling latest changes from Git repository..."
           git pull || { echo "Git pull failed"; exit 1; }
@@ -59,14 +50,8 @@ jobs:
           echo "Building the project..."
           npm run build || { echo "Build failed"; exit 1; }
 
-          # Check if PM2 is installed and install if not
-          if ! command -v pm2 &> /dev/null; then
-            echo "PM2 not found, installing globally..."
-            sudo npm install -g pm2 || { echo "Failed to install PM2"; exit 1; }
-          fi
-
           echo "Restarting the application with PM2..."
-          pm2 restart all || { echo "Failed to restart the application"; exit 1; }
+          pm2 restart my-nextjs-app || { echo "Failed to restart the application"; exit 1; }
 
           echo "Deployment successful"
           EOF
