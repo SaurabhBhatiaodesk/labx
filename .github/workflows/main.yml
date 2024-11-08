@@ -1,0 +1,64 @@
+name: Deploy Application
+
+on:
+  push:
+    branches: [main]  # Triggers the workflow on push to 'main'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Uses the latest Ubuntu runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2  # Checks out the repository content
+
+      - name: Set up SSH key and server fingerprints
+        env:
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+        run: |
+          echo "Current user: $(whoami)"
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H -t rsa $SERVER_IP >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+      - name: Execute deployment commands
+        env:
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+        run: |
+          # Establish an SSH connection and execute commands
+          ssh -o BatchMode=yes -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_IP << 'EOF'
+          set -e  # Exit on any error
+
+          echo "Navigating to the project directory..."
+          cd /home/ec2-user/labx/labx || { echo "Directory not found"; exit 1; }
+
+          # Handling local changes: stashing as default operation
+          echo "Stashing any local changes..."
+          git stash --include-untracked || { echo "Failed to stash changes"; exit 1; }
+
+          echo "Pulling latest changes from Git repository..."
+          git pull || { echo "Git pull failed"; exit 1; }
+
+          echo "Reapplying stashed changes..."
+          git stash pop || echo "No stashed changes to apply"
+
+          echo "Installing project dependencies..."
+          npm install || { echo "npm install failed"; exit 1; }
+
+          echo "Building the project..."
+          npm run build || { echo "Build failed"; exit 1; }
+
+          # Ensure PM2 is installed
+          if ! command -v pm2 &> /dev/null; then
+            echo "PM2 not found, installing globally..."
+            sudo npm install -g pm2 || { echo "Failed to install PM2"; exit 1; }
+          fi
+
+          echo "Restarting the application with PM2..."
+          pm2 restart all || { echo "Failed to restart the application"; exit 1; }
+
+          echo "Deployment successful"
+          EOF
