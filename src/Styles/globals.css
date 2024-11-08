@@ -130,6 +130,7 @@ body {
   font-family: "Gordita", sans-serif;
   font-size: 20px;
   color: var( --white);
+  scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 .error-message {
@@ -175,9 +176,9 @@ label {
 
 .btn {
   background: var( --F1-btn-color);
-  padding: 15px 20px;
+  padding: 15px 10px;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
   color: var(--black);
   position: relative;

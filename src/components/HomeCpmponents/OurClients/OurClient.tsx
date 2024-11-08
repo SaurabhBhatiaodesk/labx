@@ -11,10 +11,10 @@ import "./OurClient.css";
 // import { TiStarFullOutline } from "react-icons/ti";
 // import { MdArrowOutward } from "react-icons/md";
 import Link from "next/link";
-import car11 from "../../../../public/Images/Home/first-logo.svg";
-import logo1 from "../../../../public/Images/Home/logo3slider.svg";
-import logo4 from "../../../../public/Images/Home/logo4slider.svg";
-import logo5 from "../../../../public/Images/Home/logo5slider.svg";
+import logo1 from "../../../../public/Images/Home/gadag.svg";
+import logo2 from "../../../../public/Images/Home/logo4slider.svg";
+import logo3 from "../../../../public/Images/Home/logo3slider.svg";
+import logo4 from "../../../../public/Images/Home/empire.svg";
 
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper as SwiperType } from "swiper";
@@ -61,7 +61,7 @@ export default function Productswiper({}) {
                   slidesPerView: 3,
                 },
                 1024: {
-                  slidesPerView: 2,
+                  slidesPerView: 5,
                 },
                 1440: {
                   slidesPerView: 6,
@@ -73,7 +73,7 @@ export default function Productswiper({}) {
                   <div className="relative  client-slider ">
                     <Image
                       className="w-full"
-                      src={car11}
+                      src={logo1}
                       alt="Toyota Fortuner"
                     />
                   </div>
@@ -82,48 +82,48 @@ export default function Productswiper({}) {
               <SwiperSlide>
                 <Link href="">
                   <div className="relative  client-slider">
-                    <Image className="w-full" src={logo1} alt="Honda Civic" />
+                    <Image className="w-full" src={logo2} alt="Honda Civic" />
                   </div>
                 </Link>
               </SwiperSlide>
               <SwiperSlide>
                 <Link href="">
                   <div className="relative  client-slider">
-                    <Image className="w-full" src={logo4} alt="BMW X5" />
+                    <Image className="w-full" src={logo3} alt="BMW X5" />
                   </div>
                 </Link>
               </SwiperSlide>
               <SwiperSlide>
                 <Link href="">
                   <div className="relative  client-slider">
-                    <Image className="w-full" src={car11} alt="Mercedes Benz" />
+                    <Image className="w-full" src={logo4} alt="Mercedes Benz" />
                   </div>
                 </Link>
               </SwiperSlide>
               <SwiperSlide>
                 <Link href="">
                   <div className="relative  client-slider">
-                    <Image className="w-full" src={logo5} alt="Mercedes Benz" />
+                    <Image className="w-full" src={logo1} alt="Mercedes Benz" />
                   </div>
                 </Link>
               </SwiperSlide>
               <SwiperSlide>
                 <Link href="">
                   <div className="relative  client-slider">
-                    <Image className="w-full" src={logo4} alt="BMW X5" />
+                    <Image className="w-full" src={logo2} alt="BMW X5" />
                   </div>
                 </Link>
               </SwiperSlide>
               <SwiperSlide>
                 <Link href="">
                   <div className="relative client-slider">
-                    <Image className="w-full" src={logo5} alt="Mercedes Benz" />
+                    <Image className="w-full" src={logo3} alt="Mercedes Benz" />
                   </div>
                 </Link>
               </SwiperSlide>
             </Swiper>
           </div>
-{/*           <div className="custom-navigation">
+          {/* <div className="custom-navigation">
           <button onClick={handlePrev} className="prev-button bg-gray-300 p-4 rounded-full">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M15 18L9 12L15 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

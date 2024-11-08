@@ -14,25 +14,35 @@
 
 // export default MainHeading;
 
+"use client"
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-import React from 'react'
 interface TitleProps {
-    Title: string;
-    color?:string;
+  Title: string;
+  color?: string;
+  animation?: string; // New prop for AOS animation
 }
 
-const MainTitle: React.FC<TitleProps> = ({ Title , color }) => {
+const MainTitle: React.FC<TitleProps> = ({ Title, color, animation }) => {
+  useEffect(() => {
+   
+    AOS.init({ duration: 1500 }); // Initialize AOS with a duration of 1000ms
+  }, []);
+
   return (
-   <>
-    <div className="title-text text-center 3xl:w-[70%] lg:w-[70%] 2xl:w-[60%] md:w-[90%] m-auto py-3">
-      <p style={{ color: color || 'inherit' }}>
-        {Title}</p>
-     </div>
-   </>
-  )
-}
+    <div
+      data-aos={animation || 'fade-up'} 
+      className="title-text text-center 3xl:w-[70%] lg:w-[70%] 2xl:w-[60%] md:w-[90%] m-auto py-3"
+    >
+      <p style={{ color: color || 'inherit' }}>{Title}</p>
+    </div>
+  );
+};
 
-export default MainTitle
+export default MainTitle;
+
 // sm: '100%',
 // md: '100%',
 // lg: '1024px',

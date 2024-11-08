@@ -10,7 +10,7 @@ import YouTubeHome from "@/components/HomeCpmponents/YouTubeHome/YouTubeHome";
 import MainBanner from "@/components/MainBanner/MainBanner";
 import RecentNews from "@/components/RecentNews/RecentNews";
 
-import ServicesComponents from "@/components/ServicesComponents/ServicesComponents";
+// import ServicesComponents from "@/components/ServicesComponents/ServicesComponents";
 import Storeproduct from "@/components/Storeproduct/Storeproduct";
 import React from "react";
 
@@ -28,7 +28,7 @@ const page = () => {
       <RecentNews/>
       <YouTubeHome/>
       <AskusQuestion />
-      <ServicesComponents />
+      {/* <ServicesComponents /> */}
      
     
      

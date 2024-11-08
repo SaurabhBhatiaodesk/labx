@@ -15,45 +15,41 @@ export default function Accordion() {
   // Sample data for the accordion content
   const accordionData = [
     {
-      title: "Will I be updated throughout the repair process?",
+      title: "Can I learn phone repair through a course?",
       content:
-        "Content for Accordion 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Yes, our phone repair coaching Australia focuses on key repair techniques, diagnostics, and device management to help aspiring technicians enhance their skills and knowledge.",
     },
     {
-      title: "How long will i be without my device?",
+      title: "Can Water damage repair fully restore my phone?",
       content:
-        "Content for Accordion 2: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "In many cases, yes. Our technicians use advanced techniques to clean, dry, and repair water-damaged components, aiming for full restoration if possible.",
     },
     {
-      title: "I have a busy schedule, can you accommodate?",
+      title: "Are OEM parts used in your phone repairs?",
       content:
-        "Content for Accordion 3: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
+        "Yes, we use genuine OEM parts replacement for mobile phones whenever possible to ensure optimal compatibility, performance, and longevity for your mobile device.",
     },
     {
-      title: "Is your repair work guaranteed?",
+      title: "How soon should I bring in a water-damaged phone?",
       content:
-        "Content for Accordion 4: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+        "Bring it in as soon as possible! Delays can lead to corrosion and further damage. Immediate action improves the chances of recovery.",
     },
     {
-      title: "Can I only book online?",
+      title: "Do you offer warranties on replaced phone parts?",
       content:
-        "Content for Accordion 5: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
+        "Yes, we offer warranties on most replaced parts, covering defects and issues that arise after repair, giving you peace of mind.",
     },
     {
-        title: "Will you wipe my device?",
+        title: "Do you offer repair services for all phone brands?",
         content:
-          "Content for Accordion 5: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
+          "Yes, we provide repair services for a wide range of phone brands, including Apple, Samsung, Xiaomi, and more. Our technicians are experienced in handling various devices and models.",
       },
       {
-        title: "Is my data Safe?",
+        title: "How long does a typical phone repair take?",
         content:
-          "Content for Accordion 5: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
+          "Most phone repairs are completed within a few hours, depending on the complexity of the issue. We strive to return your device in working condition as quickly as possible.",
       },
-      {
-        title: "How long will i be without my device?",
-        content:
-          "Content for Accordion 5: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
-      },
+      
   ];
 
   const handleToggle = (index: number) => {
@@ -69,14 +65,11 @@ export default function Accordion() {
       <div>
         <section className=" py-5 xl:py-10 bg-[url('/Images/Home/faq.svg')]  bg-no-repeat bg-cover">
           <div className="container">
-            <MainHeading
-              Heading="Most People Ask us These Questions . . ."
-              color="black"
-            />
-            <MainTitle
+          <MainHeading Heading="FAQs" color="black"  />
+            {/* <MainTitle
               Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing."
               color="black"
-            />
+            /> */}
             <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_2fr] grid-cols-1 gap-4 lg:py-5 py-3">
               <div>
                 <div className="flex flex-col xl:space-y-2">
