@@ -36,11 +36,11 @@ jobs:
           cd /home/ec2-user/labx/labx || { echo "Directory not found"; exit 1; }
 
           # OPTION A: Stash Local Changes (Temporary Solution)
-          echo "Stashing any local changes..."
-          git stash --include-untracked || { echo "Failed to stash changes"; exit 1; }
+          # echo "Stashing any local changes..."
+          # git stash --include-untracked || { echo "Failed to stash changes"; exit 1; }
 
-          echo "Pulling latest changes from Git repository..."
-          git pull || { echo "Git pull failed"; exit 1; }
+          # echo "Pulling latest changes from Git repository..."
+          # git pull || { echo "Git pull failed"; exit 1; }
 
           # Optionally reapply stashed changes
           echo "Reapplying stashed changes..."
