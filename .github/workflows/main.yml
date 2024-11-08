@@ -15,13 +15,26 @@ jobs:
       - name: Set up SSH key and server fingerprints
         env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
         run: |
+          set -e  # Exit on any error
           echo "Current user: $(whoami)"
+          
+          # Create the .ssh directory and set permissions
           mkdir -p ~/.ssh
-          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
+          
+          # Store the private SSH key from GitHub Secrets
+          echo "${{ secrets.SERVER_SSH_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa  # Ensure no carriage returns
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H -t rsa $SERVER_IP >> ~/.ssh/known_hosts
+          
+          # Scan and add the server's SSH fingerprint to known_hosts
+          echo "Running ssh-keyscan..."
+          ssh-keyscan -H -t rsa $SERVER_IP >> ~/.ssh/known_hosts || { echo "ssh-keyscan failed"; exit 1; }
           chmod 644 ~/.ssh/known_hosts
+
+          # Test the SSH connection to ensure it works
+          echo "Testing SSH connection..."
+          ssh -v -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_IP "echo 'SSH connection successful'" || { echo "SSH connection failed"; exit 1; }
 
       - name: Execute deployment commands
         env:
@@ -35,7 +48,7 @@ jobs:
           echo "Navigating to the project directory..."
           cd /home/ec2-user/labx/labx || { echo "Directory not found"; exit 1; }
 
-          # Handling local changes: stashing as default operation
+          # Handle local changes by stashing them
           echo "Stashing any local changes..."
           git stash --include-untracked || { echo "Failed to stash changes"; exit 1; }
 
@@ -51,7 +64,7 @@ jobs:
           echo "Building the project..."
           npm run build || { echo "Build failed"; exit 1; }
 
-          # Ensure PM2 is installed
+          # Ensure PM2 is installed globally
           if ! command -v pm2 &> /dev/null; then
             echo "PM2 not found, installing globally..."
             sudo npm install -g pm2 || { echo "Failed to install PM2"; exit 1; }
