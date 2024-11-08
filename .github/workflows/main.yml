@@ -35,19 +35,17 @@ jobs:
           echo "Navigating to the project directory..."
           cd /home/ec2-user/labx/labx || { echo "Directory not found"; exit 1; }
 
+          # Configure Git to trust this directory within the session
           echo "Configuring Git to trust the project directory..."
           git config --global --add safe.directory /home/ec2-user/labx/labx || { echo "Failed to set safe directory"; exit 1; }
-
-          # Stash local changes if any
-          echo "Stashing any local changes..."
-          git stash --include-untracked || { echo "Failed to stash changes"; exit 1; }
 
           echo "Pulling latest changes from Git repository..."
           git pull || { echo "Git pull failed"; exit 1; }
 
-          # Apply stashed changes back if needed
-          echo "Applying stashed changes..."
-          git stash pop || echo "No stashed changes to apply"
+          # Debug step: Print ownership and permissions
+          echo "Checking ownership and permissions..."
+          ls -ld /home/ec2-user/labx/labx
+          ls -l /home/ec2-user/labx/labx/.git
 
           echo "Installing project dependencies..."
           npm install || { echo "npm install failed"; exit 1; }
