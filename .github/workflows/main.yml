@@ -33,11 +33,11 @@ jobs:
           set -e  # Exit on any error
 
           echo "Navigating to the project directory..."
-          cd /path/to/your/project || { echo "Directory not found"; exit 1; }
+          cd /home/ec2-user/labx/labx || { echo "Directory not found"; exit 1; }
 
           # Configure Git to trust this directory
           echo "Adding the project directory to Git's safe directory list..."
-          git config --global --add safe.directory /path/to/your/project || { echo "Failed to set safe directory"; exit 1; }
+          git config --global --add safe.directory /home/ec2-user/labx/labx || { echo "Failed to set safe directory"; exit 1; }
 
           echo "Pulling latest changes from Git repository..."
           git pull || { echo "Git pull failed"; exit 1; }
