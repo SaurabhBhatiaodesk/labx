@@ -28,8 +28,8 @@ const Footer = () => {
                     <Image className="mb-4" src={labx} alt=" lab-x" />
                   </Link>
                   <p className="font-[300]">
-                    LABX’s Mobile Tech is a professional and skilful Cell Phone
-                    repairing services provider in Melbourne West.{" "}
+                    LabX is a professional and skilful phone repair service
+                    provider in Australia
                   </p>
                   <div className="flex gap-3 mt-5">
                     <SlSocialFacebook
@@ -58,66 +58,66 @@ const Footer = () => {
                     <ul className="text-[18px]">
                       <div>
                         <Link href="/">
-                        <li className="relative inline-block xl:p-1 group">
-                          Mail-In-Repair
-                          <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                        </li>
-                        </Link>
-                      </div>
-                      <div>
-                      <Link href="/">
-                        <li className="relative inline-block xl:p-1 group">
-                          Training
-                          <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                        </li>
+                          <li className="relative inline-block xl:p-1 group">
+                            Mail-In-Repair
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
                         </Link>
                       </div>
                       <div>
                         <Link href="/">
-                        <li className="relative inline-block xl:p-1 group">
-                          B2B Repair
-                          <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                        </li>
+                          <li className="relative inline-block xl:p-1 group">
+                            Training
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
                         </Link>
                       </div>
                       <div>
-                      <Link href="/">
-                        <li className="relative inline-block xl:p-1 group">
-                          Screen Refurbishment
-                          <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                        </li>
+                        <Link href="/">
+                          <li className="relative inline-block xl:p-1 group">
+                            B2B Repair
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
                         </Link>
                       </div>
                       <div>
-                      <Link href="/">
-                        <li className="relative inline-block xl:p-1 group">
-                          Data Recovery
-                          <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                        </li>
+                        <Link href="/">
+                          <li className="relative inline-block xl:p-1 group">
+                            Screen Refurbishment
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
                         </Link>
                       </div>
                       <div>
-                      <Link href="/">
-                        <li className="relative inline-block xl:p-1 group">
-                          Parts Store
-                          <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                        </li>
+                        <Link href="/">
+                          <li className="relative inline-block xl:p-1 group">
+                            Data Recovery
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
                         </Link>
                       </div>
                       <div>
-                      <Link href="/">
-                        <li className="relative inline-block xl:p-1 group">
-                          Repair Forum
-                          <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                        </li>
+                        <Link href="/">
+                          <li className="relative inline-block xl:p-1 group">
+                            Parts Store
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
                         </Link>
                       </div>
                       <div>
-                      <Link href="/">
-                        <li className="relative inline-block xl:p-1 group">
-                          Repair Solutions
-                          <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                        </li>
+                        <Link href="/">
+                          <li className="relative inline-block xl:p-1 group">
+                            Repair Forum
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
+                        </Link>
+                      </div>
+                      <div>
+                        <Link href="/">
+                          <li className="relative inline-block xl:p-1 group">
+                            Repair Solutions
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
                         </Link>
                       </div>
                     </ul>
@@ -130,61 +130,59 @@ const Footer = () => {
                   <div>
                     <ul className="text-[18px]">
                       <div>
-                      <Link href="/">
-                        <li className="relative inline-block xl:p-1 group">
-                          Contact Us
-                          <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                        </li>
+                        <Link href="/">
+                          <li className="relative inline-block xl:p-1 group">
+                            Contact Us
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
                         </Link>
                       </div>
                       <div>
-                      <Link href="/">
-                        <li className="relative inline-block xl:p-1 group">
-                          Blogs
-                          <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                        </li>
+                        <Link href="/">
+                          <li className="relative inline-block xl:p-1 group">
+                            Blogs
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
                         </Link>
                       </div>
                       <div>
-                      <Link href="/">
-                        <li className="relative inline-block xl:p-1 group">
-                          Trademark Disclaimer
-                          <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                        </li>
+                        <Link href="/">
+                          <li className="relative inline-block xl:p-1 group">
+                            Trademark Disclaimer
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
                         </Link>
                       </div>
                       <div>
-                      <Link href="/">
-                        <li className="relative inline-block xl:p-1 group">
-                          Warranty and Terms
-                          <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                        </li>
+                        <Link href="/">
+                          <li className="relative inline-block xl:p-1 group">
+                            Warranty and Terms
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
                         </Link>
                       </div>
                       <div>
-                      <Link href="/">
-                        <li className="relative inline-block xl:p-1 group">
-                          Shipping Policy
-                          <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                        </li>
+                        <Link href="/">
+                          <li className="relative inline-block xl:p-1 group">
+                            Shipping Policy
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
                         </Link>
                       </div>
                       <div>
-                      <Link href="/">
-                        <li className="relative inline-block xl:p-1 group">
-                          FAQ’s
-                          <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                        </li>
+                        <Link href="/">
+                          <li className="relative inline-block xl:p-1 group">
+                            FAQ’s
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
                         </Link>
-                        
-
                       </div>
                       <div>
-                      <Link href="/">
-                        <li className="relative inline-block xl:p-1 group">
-                          Terms and conditions
-                          <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                        </li>
+                        <Link href="/">
+                          <li className="relative inline-block xl:p-1 group">
+                            Terms and conditions
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
                         </Link>
                       </div>
                     </ul>
@@ -201,11 +199,11 @@ const Footer = () => {
                         className="hover:scale-110 transition-transform duration-200"
                         fontSize={25}
                       />
-                    <Link href="mailto:info@labxrepair.com.au" legacyBehavior>
-  <a className="text-[18px] transition-transform duration-300 hover:scale-105">
-    info@labxrepair.com.au
-  </a>
-</Link>
+                      <Link href="mailto:info@labxrepair.com.au" legacyBehavior>
+                        <a className="text-[18px] transition-transform duration-300 hover:scale-105">
+                          info@labxrepair.com.au
+                        </a>
+                      </Link>
                     </div>
                     <div className="flex gap-4 items-center xl:py-4 border-b-[0.5px] border-[#a7a7a7b3]">
                       <IoCallOutline
@@ -213,7 +211,9 @@ const Footer = () => {
                         fontSize={25}
                       />
                       <Link href="" legacyBehavior>
-                        <a className="text-[18px] transition-transform duration-300 hover:scale-105">0433 222 203</a>
+                        <a className="text-[18px] transition-transform duration-300 hover:scale-105">
+                          0433 222 203
+                        </a>
                       </Link>
                     </div>
                     <div className="flex gap-4 items-center xl:py-4 border-b-[0.5px] border-[#a7a7a7b3]">
@@ -233,11 +233,11 @@ const Footer = () => {
                       </h2>
                     </div>
                     <div className="relative max-w-full">
-                    <input
-  type="email"
-  placeholder="Enter your email address"
-  className="text-black w-full p-[11px] rounded-[50px] cursor-pointer border-[1px] border-gray-300 focus:outline-none my-3 placeholder:text-black placeholder:font-normal placeholder:text-[16px]"
-/>
+                      <input
+                        type="email"
+                        placeholder="Enter your email address"
+                        className="text-black w-full p-[11px] rounded-[50px] cursor-pointer border-[1px] border-gray-300 focus:outline-none my-3 placeholder:text-black placeholder:font-normal placeholder:text-[16px]"
+                      />
                       <button
                         type="submit"
                         className="text-white rounded-[50px] flex items-center justify-center game absolute bg-black p-[11px] right-[2px] top-1/2 transform -translate-y-1/2"
@@ -264,8 +264,8 @@ const Footer = () => {
                 </Link>
               </div>
               <p className="text-center">
-                LABX’s Mobile Tech is a professional and skilful Cell Phone
-                repairing services provider in Melbourne West.{" "}
+                LabX is a professional and skilful phone repair service provider
+                in Australia
               </p>
               <div className="flex gap-3 mt-5 justify-center">
                 <SlSocialFacebook
@@ -301,7 +301,8 @@ const Footer = () => {
             <div className="flex-col flex justify-between xl:flex-row">
               <div className="">
                 <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center ">
-                  Copyright © LabX Repair 2024 - All rights reserved
+                  Copyright © LabX Repair {new Date().getFullYear()} - All
+                  rights reserved
                 </p>
               </div>
               <div className="sm:text-center">
@@ -319,4 +320,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

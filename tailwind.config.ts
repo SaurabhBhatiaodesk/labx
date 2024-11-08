@@ -42,6 +42,7 @@ const config: Config = {
       fontFamily: {
         gordita: ['Gordita', 'sans-serif'], // Uses the Gordita font defined in @font-face
         spaceGrotesk: ['var(--Font-SpaceGrotesk)', 'sans-serif'],
+        poppins: ['var(--Font-Poppins)', 'sans-serif'],
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1rem' }], // 12px

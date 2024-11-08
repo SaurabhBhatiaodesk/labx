@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lottiefiles/lottie-player": "^2.0.12",
     "@nextui-org/react": "^2.4.6",
     "aos": "^2.3.4",
     "lottie-react": "^2.4.0",

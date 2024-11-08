@@ -50,9 +50,10 @@ const YouTubeHome = () => {
               <SwiperSlide>
                 <div className="youtube-1">
                   <iframe
+                  className="rounded-[30px]"
                     width="100%"
-                    height="315"
-                    src="https://www.youtube.com/embed/tm8eWTNzS4A?si=s7nPQQHMfjw-_IxC"
+                  height="400"
+                    src="https://www.youtube.com/embed/I5t-cizP1hg?si=LBePw21BaCh97Vri"
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -64,9 +65,10 @@ const YouTubeHome = () => {
               <SwiperSlide>
                 <div className="youtube-1">
                   <iframe
+                     className="rounded-[30px]"
                     width="100%"
-                    height="315"
-                    src="https://www.youtube.com/embed/KnJg3slAMhs?si=Fyr2g-ykCDwzf6UY"
+                    height="400"
+                    src="https://www.youtube.com/embed/g51-l5-h8Cc?si=WcJFhtCcr1HY_I4i"
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -78,9 +80,10 @@ const YouTubeHome = () => {
               <SwiperSlide>
                 <div className="youtube-1">
                   <iframe
+                     className="rounded-[30px]"
                     width="100%"
-                    height="315"
-                    src="https://www.youtube.com/embed/g368Lj-QmL4?si=qmRge2_X9OHsZddN"
+                    height="400"
+                    src="https://www.youtube.com/embed/Fq8geFUeZkM?si=JV7sQG16cVSXeYiP"
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -154,5 +157,9 @@ const YouTubeHome = () => {
 };
 
 export default YouTubeHome;
+
+
+
+
 
 

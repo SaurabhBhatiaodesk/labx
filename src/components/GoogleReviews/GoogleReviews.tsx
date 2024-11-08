@@ -8,33 +8,72 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
-import Link from "next/link";
-import car11 from "../../../public/Images/Home/first-logo.svg";
-import logo1 from "../../../public/Images/Home/logo3slider.svg";
-import logo4 from "../../../public/Images/Home/logo4slider.svg";
-import logo5 from "../../../public/Images/Home/logo5slider.svg";
+import jname from "../../../public/Images/icons/j.svg";
+import Googletest from "../../../public/Images/icons/Googletest.svg";
+import star from "../../../public/Images/icons/star.svg";
 
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper as SwiperType } from "swiper";
 
+const reviews = [
+  {
+    name: "Sophie Turner",
+    date: "September 12, 2023",
+    profileImage: jname,
+    logoImage: Googletest,
+    rating: 5,
+    param:"LabX Repair exceeded my expectations! They quickly repaired my iPhone screen and provided updates throughout the process. Excellent service and knowledgeable staff. Highly recommend to anyone needing phone repairs!",
+  },
+  {
+    name: "Liam Brown",
+    date: "October 5, 2023",
+    profileImage: jname,
+    logoImage: Googletest,
+    rating: 5,
+    param:"I had a great experience with LabX Repair. Their team handled my data recovery effortlessly. They were professional and kept me informed every step of the way. Truly impressive service!",
+  },
+  {
+    name: "Ava Smith",
+    date: "November 1, 2023",
+    profileImage: jname,
+    logoImage: Googletest,
+    rating: 5,
+    param:"LabX Repair made my mobile phone repair so easy! From the moment I contacted them, their customer service was fantastic. They fixed my charging port swiftly. Definitely my go-to repair shop!",
+  },
+  {
+    name: "Noah Davis",
+    date: "November 1, 2023",
+    profileImage: jname,
+    logoImage: Googletest,
+    rating: 5,
+    param:"I needed a motherboard repair, and LabX Repair came through when others couldn't. Their expertise is unmatched, and they provided thorough updates. Very satisfied with their work and highly recommend them!",
+  },
+  {
+    name: "Isabella Johnson",
+    date: "November 1, 2023",
+    profileImage: jname,
+    logoImage: Googletest,
+    rating: 5,
+    param:"Fantastic experience with LabX Repair! They not only fixed my phone quickly but also offered invaluable advice on maintenance. Their team is friendly and efficient. I’ll be back for sure!",
+  },
+  {
+    name: "Ethan Wilson",
+    date: "November 1, 2023",
+    profileImage: jname,
+    logoImage: Googletest,
+    rating: 5,
+    param:"LabX Repair's B2B services are top-notch! They handle our bulk repairs with efficiency and transparency. Communication is excellent, and we’ve never had an issue. Highly recommended for business needs!",
+  },
+  // Add more review objects as needed
+];
+
 export default function Productswiper({}) {
   const swiperRef = useRef<SwiperType | null>(null);
-  //   const handlePrev = () => {
-  //     if (swiperRef.current) {
-  //       swiperRef.current.slidePrev();
-  //     }
-  //   };
-
-  //   const handleNext = () => {
-  //     if (swiperRef.current) {
-  //       swiperRef.current.slideNext();
-  //     }
-  //   };
 
   return (
     <div className="bg-[#0b0b0b]">
-      <div className="container ">
-        <div className=" py-5 xl:p-10 ">
+      <div className="container">
+        <div className="py-5 xl:p-10">
           <MainHeading Heading="Our Google Reviews" />
           <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." />
 
@@ -49,7 +88,6 @@ export default function Productswiper({}) {
               speed={600}
               breakpoints={{
                 320: {
-                  // for very small mobile screens
                   slidesPerView: 2,
                 },
                 450: {
@@ -62,90 +100,36 @@ export default function Productswiper({}) {
                   slidesPerView: 2,
                 },
                 1440: {
-                  slidesPerView: 6,
+                  slidesPerView: 4,
                 },
               }}
             >
-              <SwiperSlide>
-                <Link href="">
-                  <div className="relative  client-slider">
-                    <Image className="w-full" src={logo1} alt="Honda Civic" />
+              {reviews.map((review, index) => (
+                <SwiperSlide key={index}>
+                  <div className="p-4 bg-[#010101] rounded-[20px] border-[1px] border-[] shadow-md">
+                    <div className="flex justify-between items-center mb-2">
+                      <div className="flex gap-3 items-start">
+                        <Image src={review.profileImage} alt={`${review.name}'s profile`} />
+                        <div>
+                          <h5 className="font-semibold">{review.name}</h5>
+                          <p className="text-gray-500 text-sm mb-2 ">{review.date}</p>
+                        </div>
+                      </div>
+                      <Image src={review.logoImage} alt="Google logo" />
+                    </div>
+                    <div className="flex gap-1 mb-2">
+                      {Array.from({ length: review.rating }).map((_, starIndex) => (
+                        <Image key={starIndex} src={star} alt="star" width={20} height={20} />
+                      ))}
+                    </div>
+                    <p className="font-extralight font-poppins text-[16px] leading-[24px]">{review.param}</p>
                   </div>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide>
-                <Link href="">
-                  <div className="relative  client-slider">
-                    <Image className="w-full" src={logo1} alt="Honda Civic" />
-                  </div>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide>
-                <Link href="">
-                  <div className="relative  client-slider">
-                    <Image className="w-full" src={logo4} alt="BMW X5" />
-                  </div>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide>
-                <Link href="">
-                  <div className="relative  client-slider">
-                    <Image className="w-full" src={car11} alt="Mercedes Benz" />
-                  </div>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide>
-                <Link href="">
-                  <div className="relative  client-slider">
-                    <Image className="w-full" src={logo5} alt="Mercedes Benz" />
-                  </div>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide>
-                <Link href="">
-                  <div className="relative  client-slider">
-                    <Image className="w-full" src={logo4} alt="BMW X5" />
-                  </div>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide>
-                <Link href="">
-                  <div className="relative client-slider">
-                    <Image className="w-full" src={logo5} alt="Mercedes Benz" />
-                  </div>
-                </Link>
-              </SwiperSlide>
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
-          {/* <div className="custom-navigation">
-          <button onClick={handlePrev} className="prev-button bg-gray-300 p-4 rounded-full">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M15 18L9 12L15 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-          <button onClick={handleNext} className="next-button bg-gray-300 p-4 rounded-full ml-2">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-        </div> */}
         </div>
       </div>
     </div>
   );
-}
-
-{
-  /* <div className="custom-navigation">
-          <button onClick={handlePrev} className="prev-button bg-gray-300 p-4 rounded-full">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M15 18L9 12L15 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-          <button onClick={handleNext} className="next-button bg-gray-300 p-4 rounded-full ml-2">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-        </div> */
 }
