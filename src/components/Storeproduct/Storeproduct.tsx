@@ -31,7 +31,8 @@ export default function Productswiper() {
       alt: "Toyota Fortuner",
       Product:
         "iPhone 16 Pro Max Screen  Original Service Pack",
-        price:"600+GST",
+        price:"$600+GST",
+        cross:"$800"
     },
     {
       src: p2,
@@ -39,6 +40,7 @@ export default function Productswiper() {
       Product:
         "iPhone 16 Pro Screen Original Service Pack",
         price:" 530+GST",
+          cross:"$730"
     },
     {
       src: p1,
@@ -46,13 +48,15 @@ export default function Productswiper() {
       Product:
         "iPhone 16 Plus Screen Original Service Pack",
         price:" 530+GST",
+           cross:"$730"
     },
     {
       src: p2,
       alt: "Mercedes Benz",
       Product:
         "iPhone 16 Screen Original Service Pack",
-        price:" 465+GST",
+        price:" $465+GST",
+           cross:"$665"
     },
     {
       src: p1,
@@ -60,6 +64,7 @@ export default function Productswiper() {
       Product:
         "iPhone 16 Pro Max Screen  Original Service Pack",
         price:"600+GST",
+           cross:"$800"
     },
     {
       src: p2,
@@ -67,6 +72,7 @@ export default function Productswiper() {
       Product:
         "iPhone 16 Pro Screen Original Service Pack",
         price:" 530+GST",
+             cross:"$730"
     },
 
   ];
@@ -113,7 +119,7 @@ export default function Productswiper() {
                     <div className="price-offer-discount flex justify-between py-[5px]">
                       <div className="flex gap-3 items-center">
                         <span className="line-through text-[#6d6d6dd2] lg:text-[20px] text-[16px]">
-                          $99.00
+                         {slide.cross}
                         </span>
                         <span className="lg:text-[20px] text-[16px]">
                          {slide.price}

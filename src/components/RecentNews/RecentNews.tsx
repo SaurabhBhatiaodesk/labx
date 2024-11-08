@@ -29,7 +29,7 @@ const RecentNews: React.FC = () => {
       heading: "Diagnosing and Fixing Logic Board",
       param:
         "The logic board, or motherboard, is the heart of any smartphone, handling essential functions such as processing data, memory storage, and connecting",
-      date: "2 Oct, 2024",
+      date: "26 Oct, 2024",
     },
     {
       id: 0,
@@ -37,7 +37,7 @@ const RecentNews: React.FC = () => {
       heading: "Replacing and Recalibrating Smartphone",
       param:
         "Modern smartphones are equipped with a variety of sensors that enhance user experience, from simple actions like auto-rotating the screen to advanced",
-      date: "2 Oct, 2024",
+      date: "20 Oct, 2024",
       
     },
     {
@@ -46,7 +46,7 @@ const RecentNews: React.FC = () => {
       heading: "Data Recovery from Severely Damaged",
       param:
         "In today’s digital world, smartphones have become essential for storing valuable data, from personal photos and messages to important documents and contacts",
-      date: "2 Oct, 2024",
+      date: "2 Nov, 2024",
       
     }
 
