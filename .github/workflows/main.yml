@@ -16,7 +16,7 @@ jobs:
         run: |
           echo "Setting up SSH environment..."
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_rsa
+          echo "${{ secrets.SERVER_SSH_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
