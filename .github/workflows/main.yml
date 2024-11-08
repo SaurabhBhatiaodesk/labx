@@ -35,17 +35,30 @@ jobs:
           echo "Navigating to the project directory..."
           cd /home/ec2-user/labx/labx || { echo "Directory not found"; exit 1; }
 
-          # Configure Git to trust this directory within the session
-          echo "Configuring Git to trust the project directory..."
-          git config --global --add safe.directory /home/ec2-user/labx/labx || { echo "Failed to set safe directory"; exit 1; }
+          # OPTION A: Stash Local Changes (Temporary Solution)
+          echo "Stashing any local changes..."
+          git stash --include-untracked || { echo "Failed to stash changes"; exit 1; }
 
           echo "Pulling latest changes from Git repository..."
           git pull || { echo "Git pull failed"; exit 1; }
 
-          # Debug step: Print ownership and permissions
-          echo "Checking ownership and permissions..."
-          ls -ld /home/ec2-user/labx/labx
-          ls -l /home/ec2-user/labx/labx/.git
+          # Optionally reapply stashed changes
+          echo "Reapplying stashed changes..."
+          git stash pop || echo "No stashed changes to apply"
+
+          # OPTION B: Commit Local Changes (Permanent Solution)
+          # Uncomment the following lines to use this option
+          # echo "Committing local changes..."
+          # git add .github/workflows/main.yml || { echo "Failed to add changes"; exit 1; }
+          # git commit -m "Committing local changes before pull" || { echo "Commit failed"; exit 1; }
+          # git pull || { echo "Git pull failed"; exit 1; }
+
+          # OPTION C: Discard Local Changes (Clean Slate)
+          # Uncomment the following lines to use this option
+          # echo "Discarding local changes..."
+          # git reset --hard HEAD || { echo "Failed to reset changes"; exit 1; }
+          # git clean -fd || { echo "Failed to clean untracked files"; exit 1; }
+          # git pull || { echo "Git pull failed"; exit 1; }
 
           echo "Installing project dependencies..."
           npm install || { echo "npm install failed"; exit 1; }
