@@ -50,13 +50,13 @@ jobs:
           echo "Navigating to the project directory..."
           cd /path/to/your/project || { echo "Directory not found"; exit 1; }
 
-          # Check for and handle local changes
+          # Handle local changes to allow git pull
           echo "Checking for local changes..."
           if [ -n "$(git status --porcelain)" ]; then
-            echo "Stashing local changes..."
+            echo "Local changes detected. Stashing changes..."
             git stash --include-untracked || { echo "Failed to stash changes"; exit 1; }
           else
-            echo "No local changes found."
+            echo "No local changes detected."
           fi
 
           echo "Pulling latest changes from Git repository..."
