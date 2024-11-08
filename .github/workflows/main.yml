@@ -1,56 +1,51 @@
-name: Deploy Application via SSH
+name: Deploy Application
 
 on:
   push:
-    branches:
-      - main  # Runs this workflow on push events to the main branch
+    branches: [ main ]  # Triggers the workflow on push to 'main'
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # Specifies the runner environment
+    runs-on: ubuntu-latest  # Uses the latest Ubuntu runner
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2  # Checks out the repository content to the runner
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'  # Specifies the Node.js version
-
-      - name: Install dependencies
-        run: npm install  # Installs npm dependencies
-
-      - name: Build the project
-        run: npm run build  # Runs the build script defined in package.json
+        uses: actions/checkout@v2  # Checks out the repository content
 
       - name: Set up SSH key and server fingerprints
+        env:
+          SERVER_IP: ${{ secrets.SERVER_IP }}
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
+          if [ -n "${{ secrets.SERVER_SSH_KEY_BASE64 }}" ]; then
+            echo "${{ secrets.SERVER_SSH_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_rsa
+          else
+            echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
+          fi
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+          ssh-keyscan -t rsa $SERVER_IP >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
 
-      - name: Deploy to Server with Retry Logic
-        uses: nick-invision/retry@v2
-        with:
-          timeout_minutes: 10
-          max_attempts: 3
-          delay_seconds: 10  # Waits for 10 seconds between retries
-          command: ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=3 -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
-            echo "Navigating to project directory..."
-            cd /path/to/project
+      - name: Execute deployment commands
+        env:
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+        run: |
+          ssh -o BatchMode=yes -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_IP << 'EOF'
+          echo "Navigating to the project directory..."
+          cd /path/to/your/project || exit 1
+          
+          echo "Pulling latest changes from Git repository..."
+          git pull || exit 1
 
-            echo "Pulling latest changes from Git repository..."
-            git pull
+          echo "Installing project dependencies..."
+          npm install || exit 1
 
-            echo "Restarting the application..."
-            pm2 restart all || echo "Failed to restart PM2 processes"
+          echo "Building the project..."
+          npm run build || exit 1
 
-            echo "Deployment completed successfully."
-            EOF
+          echo "Restarting the application with PM2..."
+          pm2 restart all || exit 1
 
-      - name: Cleanup SSH Key
-        if: always()  # This step runs whether the previous step succeeded or failed
-        run: rm -f ~/.ssh/id_rsa  # Removes the SSH key from the runner for security
+          echo "Deployment successful"
+          EOF
