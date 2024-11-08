@@ -2,21 +2,20 @@ name: Deploy Application
 
 on:
   push:
-    branches: [main]  # This workflow triggers on a push to the 'main' branch
+    branches: [main]
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # Uses the latest Ubuntu Linux runner
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2  # This step checks out the repository content for use in the workflow
+        uses: actions/checkout@v2
 
       - name: Set up SSH key
         run: |
-          echo "Setting up SSH environment..."
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_rsa
+          echo "${{ secrets.SERVER_SSH_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
@@ -26,20 +25,14 @@ jobs:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
         run: |
-          ssh -vvv -T -o BatchMode=yes -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
-          echo 'Deploying application...'
-          # Replace the following placeholder with your actual deployment commands
+          ssh -o BatchMode=yes -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} '
+          echo "Deploying application..."
+          # Add your deployment commands here. Example:
           cd /path/to/project || exit 1
           git stash --include-untracked
           git pull
           npm install
           npm run build
           pm2 restart all
-          echo 'Deployment completed successfully.'
-          "
-
-      - name: Debug SSH connection
-        if: failure()  # This step will run only if the previous steps fail
-        run: |
-          echo "Debugging SSH connection..."
-          ssh -vvv -T -o BatchMode=yes -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} exit
+          echo "Deployment completed successfully."
+          '
