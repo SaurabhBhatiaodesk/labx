@@ -39,7 +39,7 @@ jobs:
             ls -la  # List files and their permissions
 
             echo "Verifying if it's a Git repository..."
-            git status || (echo "Directory is not a git repository; cloning..." && git clone <REPOSITORY-URL> .)
+            git status || (echo "Directory is not a git repository; cloning..." && git clone https://github.com/SaurabhBhatiaodesk/labx.git .)
             
             echo "Pulling latest changes from the repository..."
             git pull || exit 1
