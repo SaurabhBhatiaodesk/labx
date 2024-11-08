@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,9 +23,6 @@ jobs:
 
       - name: Build the application
         run: npm run build
-
-      - name: Test the application
-        run: npm run start
 
       - name: Deploy to Server
         uses: appleboy/ssh-action@master
