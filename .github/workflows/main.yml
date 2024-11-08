@@ -16,7 +16,7 @@ jobs:
         env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
         run: |
-          echo "Current user: $(ec2-user)"
+          echo "Current user: $(whoami)"
           mkdir -p ~/.ssh
           echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
