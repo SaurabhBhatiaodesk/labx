@@ -2,18 +2,19 @@ name: Deploy Application
 
 on:
   push:
-    branches: [main]
+    branches: [main]  # This workflow triggers on a push to the 'main' branch
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Uses the latest Ubuntu Linux runner
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2  # This step checks out the repository content for use in the workflow
 
       - name: Set up SSH key
         run: |
+          echo "Setting up SSH environment..."
           mkdir -p ~/.ssh
           echo "${{ secrets.SERVER_SSH_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
@@ -25,14 +26,20 @@ jobs:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
         run: |
-          ssh -o BatchMode=yes -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} '
-          echo "Deploying application..."
+          ssh -T -o BatchMode=yes -o StrictHostKeyChecking=no -vvv -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "\
+          echo 'Deploying application...'; \
           # Add your deployment commands here. Example:
-          cd /path/to/project || exit 1
-          git stash --include-untracked
-          git pull
-          npm install
-          npm run build
-          pm2 restart all
-          echo "Deployment completed successfully."
-          '
+          cd /path/to/project || exit 1; \
+          git stash --include-untracked; \
+          git pull; \
+          npm install; \
+          npm run build; \
+          pm2 restart all; \
+          echo 'Deployment completed successfully.'; \
+          "
+
+      - name: Debug SSH connection
+        if: failure()  # This step will run only if the previous steps fail
+        run: |
+          echo "Debugging SSH connection..."
+          ssh -vvv -T -o BatchMode=yes -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} exit
