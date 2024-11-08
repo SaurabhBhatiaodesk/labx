@@ -39,37 +39,43 @@ jobs:
           chmod 644 ~/.ssh/known_hosts
 
       - name: Execute deployment commands
-        env:
-          SERVER_IP: ${{ secrets.SERVER_IP }}
-          SERVER_USER: ${{ secrets.SERVER_USER }}
-        run: |
-          # Establish an SSH connection and execute commands
-          ssh -o BatchMode=yes -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_IP << 'EOF'
-          set -e  # Exit on any error
-
-          echo "Navigating to the project directory..."
-          cd /path/to/your/project || { echo "Directory not found"; exit 1; }
-
-          echo "Stashing any local changes..."
-          git stash --include-untracked || { echo "Failed to stash changes"; exit 1; }
-
-          echo "Pulling latest changes from Git repository..."
-          git pull || { echo "Git pull failed"; exit 1; }
-
-          echo "Installing project dependencies..."
-          npm install || { echo "npm install failed"; exit 1; }
-
-          echo "Building the project..."
-          npm run build || { echo "Build failed"; exit 1; }
-
-          # Check if PM2 is installed and install if not
-          if ! command -v pm2 &> /dev/null; then
-            echo "PM2 not found, installing globally..."
-            sudo npm install -g pm2 || { echo "Failed to install PM2"; exit 1; }
-          fi
-
-          echo "Restarting the application with PM2..."
-          pm2 restart all || { echo "Failed to restart the application"; exit 1; }
-
-          echo "Deployment successful"
-          EOF
+      env:
+        SERVER_IP: ${{ secrets.SERVER_IP }}
+        SERVER_USER: ${{ secrets.SERVER_USER }}
+      run: |
+        # Establish an SSH connection and execute commands
+        ssh -o BatchMode=yes -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_IP << 'EOF'
+        set -e  # Exit on any error
+    
+        echo "Navigating to the project directory..."
+        cd /path/to/your/project || { echo "Directory not found"; exit 1; }
+    
+        echo "Stashing any local changes..."
+        git stash --include-untracked || { echo "Failed to stash changes"; exit 1; }
+    
+        echo "Pulling latest changes from Git repository..."
+        git pull || { echo "Git pull failed"; exit 1; }
+    
+        echo "Installing project dependencies..."
+        npm install || { echo "npm install failed"; exit 1; }
+    
+        echo "Building the project..."
+        npm run build || { echo "Build failed"; exit 1; }
+    
+        # Check if PM2 is installed and install if not
+        if ! command -v pm2 &> /dev/null; then
+          echo "PM2 not found, installing globally..."
+          sudo npm install -g pm2 || { echo "Failed to install PM2"; exit 1; }
+        fi
+    
+        echo "Restarting the application with PM2..."
+        pm2 restart all || { echo "Failed to restart the application"; exit 1; }
+    
+        echo "Deployment successful"
+        EOF
+    
+              echo "Restarting the application with PM2..."
+              pm2 restart all || { echo "Failed to restart the application"; exit 1; }
+    
+              echo "Deployment successful"
+              EOF
