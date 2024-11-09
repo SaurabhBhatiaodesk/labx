@@ -30,7 +30,8 @@ jobs:
             exit 1
           fi
           chmod 644 ~/.ssh/known_hosts
-           - name: Execute deployment commands
+
+      - name: Execute deployment commands
         env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
