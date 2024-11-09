@@ -38,7 +38,7 @@ jobs:
         run: |
           ssh -T -o BatchMode=yes -o StrictHostKeyChecking=no -vvv -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "\
           echo 'Deploying application...'; \
-          # Add your deployment commands here. Example:
+          sudo su -; \
           cd /home/ec2-user/labx || exit 1; \
           git stash --include-untracked; \
           git pull; \
@@ -47,6 +47,7 @@ jobs:
           pm2 restart all; \
           echo 'Deployment completed successfully.'; \
           "
+
       - name: Debug SSH connection
         if: failure()  # This step will run only if the previous steps fail
         run: |
