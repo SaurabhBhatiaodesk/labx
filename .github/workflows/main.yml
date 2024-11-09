@@ -17,18 +17,9 @@ jobs:
           echo "Setting up SSH environment..."
           mkdir -p ~/.ssh
           echo "${{ secrets.SERVER_SSH_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_rsa
-          if [ $? -ne 0 ]; then
-            echo "Failed to decode SSH key."
-            exit 1
-          fi
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SERVER_IP }} > ~/.ssh/known_hosts_temp
-          if [ $? -eq 0 ]; then
-            mv ~/.ssh/known_hosts_temp ~/.ssh/known_hosts
-          else
-            echo "Failed to fetch host key."
-            exit 1
-          fi
+          mv ~/.ssh/known_hosts_temp ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
 
       - name: Execute deployment commands
