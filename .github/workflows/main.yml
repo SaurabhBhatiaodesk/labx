@@ -38,13 +38,12 @@ jobs:
         run: |
           ssh -T -o BatchMode=yes -o StrictHostKeyChecking=no -vvv -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "\
           echo 'Deploying application...'; \
-          sudo su -; \
           cd /home/ec2-user/labx || exit 1; \
-          git stash --include-untracked; \
-          git pull; \
-          npm install; \
-          npm run build; \
-          pm2 restart all; \
+          sudo git stash --include-untracked; \
+          sudo git pull; \
+          sudo npm install; \
+          sudo npm run build; \
+          sudo pm2 restart all; \
           echo 'Deployment completed successfully.'; \
           "
 
