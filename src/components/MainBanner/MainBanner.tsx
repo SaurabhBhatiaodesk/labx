@@ -73,7 +73,7 @@ const MainBanner = () => {
           <div className="w-full">
             <Image
               className="w-full object-contain"
-              src={bannerImage} // Ensure correct variable name
+              src={bannerimage} // Ensure correct variable name
               alt="Banner"
             />
           </div>
