@@ -27,11 +27,10 @@ jobs:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
         run: |
-          ssh -T -o BatchMode=yes -o StrictHostKeyChecking=no -vvv -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "\
+          ssh -T -o BatchMode=yes -o StrictHostKeyChecking=no -vvv -i ~/.ssh/id_rsa user@host "\
           echo 'Deploying application...'; \
           export NVM_DIR=\"/root/.nvm\"; \
-          [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\" || { echo 'Failed to load NVM'; exit 1; }; \
-          export PATH=\$PATH:/usr/local/bin; \
+          [ -s \"/root/.nvm/nvm.sh\" ] && . \"/root/.nvm/nvm.sh\" || { echo 'Failed to load NVM'; exit 1; }; \
           nvm use 18 || { echo 'Failed to switch Node version'; exit 1; }; \
           cd /home/ec2-user/labx || { echo 'Directory not found'; exit 1; }; \
           git stash --include-untracked; \
