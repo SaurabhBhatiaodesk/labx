@@ -17,29 +17,40 @@ jobs:
           echo "Setting up SSH environment..."
           mkdir -p ~/.ssh
           echo "${{ secrets.SERVER_SSH_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_rsa
+          if [ $? -ne 0 ]; then
+            echo "Failed to decode SSH key."
+            exit 1
+          fi
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SERVER_IP }} > ~/.ssh/known_hosts
+          ssh-keyscan -H ${{ secrets.SERVER_IP }} > ~/.ssh/known_hosts_temp
+          if [ $? -eq 0 ]; then
+            mv ~/.ssh/known_hosts_temp ~/.ssh/known_hosts
+          else
+            echo "Failed to fetch host key."
+            exit 1
+          fi
           chmod 644 ~/.ssh/known_hosts
-
       - name: Execute deployment commands
         env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
         run: |
-          ssh -T -o BatchMode=yes -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "\
+          ssh -T -o BatchMode=yes -o StrictHostKeyChecking=no -vvv -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "\
           echo 'Deploying application...'; \
-          cd /home/ec2-user/labx || { echo 'Directory not found'; exit 1; }; \
+          export NVM_DIR=\"/root/.nvm\"; \
+          [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"; \
+          nvm use 18; \
+          cd /home/ec2-user/labx || exit 1; \
           git stash --include-untracked; \
-          git pull || { echo 'Git pull failed'; exit 1; }; \
-          npm install || { echo 'NPM install failed'; exit 1; }; \
-          npm run build || { echo 'NPM build failed'; exit 1; }; \
-          pm2 restart my-nextjs-app --update-env || { echo 'PM2 restart failed'; exit 1; }; \
-          pm2 save || { echo 'PM2 save failed'; exit 1; }; \
+          git pull; \
+          npm install; \
+          npm run build; \
+          pm2 restart my-nextjs-app --update-env; \
+          pm2 save; \
           echo 'Deployment completed successfully.'; \
           "
-
       - name: Debug SSH connection
         if: failure()  # This step will run only if the previous steps fail
         run: |
           echo "Debugging SSH connection..."
-          ssh -T -o BatchMode=yes -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} exit
+          ssh -vvv -T -o BatchMode=yes -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} exit
