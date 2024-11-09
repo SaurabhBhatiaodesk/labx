@@ -18,8 +18,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SERVER_SSH_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SERVER_IP }} > ~/.ssh/known_hosts_temp
-          mv ~/.ssh/known_hosts_temp ~/.ssh/known_hosts
+          ssh-keyscan -H ${{ secrets.SERVER_IP }} > ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
 
       - name: Execute deployment commands
@@ -27,10 +26,14 @@ jobs:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
         run: |
-          ssh -T -o BatchMode=yes -o StrictHostKeyChecking=no -vvv -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "\
+          ssh -T -o BatchMode=yes -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "\
           echo 'Deploying application...'; \
           export NVM_DIR=\"/root/.nvm\"; \
-          [ -s \"/root/.nvm/nvm.sh\" ] && . \"/root/.nvm/nvm.sh\" || { echo 'Failed to load NVM'; exit 1; }; \
+          if [ -s \"/root/.nvm/nvm.sh\" ]; then \
+            . \"/root/.nvm/nvm.sh\"; \
+          else \
+            echo 'Failed to load NVM'; exit 1; \
+          fi; \
           nvm use 18 || { echo 'Failed to switch Node version'; exit 1; }; \
           cd /home/ec2-user/labx || { echo 'Directory not found'; exit 1; }; \
           git stash --include-untracked; \
@@ -46,4 +49,4 @@ jobs:
         if: failure()  # This step will run only if the previous steps fail
         run: |
           echo "Debugging SSH connection..."
-          ssh -vvv -T -o BatchMode=yes -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} exit
+          ssh -T -o BatchMode=yes -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} exit
