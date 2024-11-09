@@ -38,7 +38,8 @@ jobs:
         run: |
           ssh -T -o BatchMode=yes -o StrictHostKeyChecking=no -vvv -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "\
           echo 'Deploying application...'; \
-          . /root/.nvm/nvm.sh; \
+          export NVM_DIR=\"/root/.nvm\"; \
+          [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"; \
           nvm use 18; \
           cd /home/ec2-user/labx || exit 1; \
           git stash --include-untracked; \
@@ -48,7 +49,6 @@ jobs:
           pm2 restart all; \
           echo 'Deployment completed successfully.'; \
           "
-
 
       - name: Debug SSH connection
         if: failure()  # This step will run only if the previous steps fail
