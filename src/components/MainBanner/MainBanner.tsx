@@ -67,7 +67,7 @@ const MainBanner = () => {
               through our training programs, LabX Repair has it all.
             </p>
             <div className="my-4 xl:my-10">
-              <MainButton mainButton="Request a Quote" link="#" /> {/* Correct the prop name here */}
+              <MainButton MainButton="Request a Quote" link="#" /> {/* Correct the prop name here */}
             </div>
           </div>
           <div className="w-full">
