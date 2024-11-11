@@ -32,9 +32,10 @@ const WhyChooseLabX: React.FC = () => {
                 <h3 className="text-[#EDE574] lg:w-[70%] m-auto">
                   Expertise in Complex Repairs
                 </h3>
+              
                 <p>
-                  We excel in fixing challenging issues that others can&apos;t handle, including intricate microsoldering and motherboard repair services. When others can&apos;t succeed, we find a solution.
-                </p>
+  We excel in fixing challenging issues that others can&apos;t handle, including intricate microsoldering and motherboard repair services. When others can&apos;t succeed, we find a solution.
+</p>
               </div>
 
               <div className="p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] hover:shadow-[0_0_20px_10px_#ede57456] transition-shadow duration-300">
@@ -45,8 +46,8 @@ const WhyChooseLabX: React.FC = () => {
                   Complete Transparency in Our Process
                 </h3>
                 <p>
-                  Our grading and repair process is 100% transparent. You&apos;ll receive photos and detailed reports for any repair decisions so you always know what&apos;s happening.
-                </p>
+  Our grading and repair process is 100% transparent. You&apos;ll receive photos and detailed reports for any repair decisions so you always know what&apos;s happening.
+</p>
               </div>
 
               <div className="p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] hover:shadow-[0_0_20px_10px_#ede57456] transition-shadow duration-300">
