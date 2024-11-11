@@ -63,7 +63,7 @@ export default function Productswiper() {
       alt: "Toyota Fortuner",
       Product:
         "iPhone 16 Pro Max Screen  Original Service Pack",
-        price:"600+GST",
+        price:"$600+GST",
            cross:"$800"
     },
     {
@@ -71,7 +71,7 @@ export default function Productswiper() {
       alt: "Honda Civic",
       Product:
         "iPhone 16 Pro Screen Original Service Pack",
-        price:" 530+GST",
+        price:"$530+GST",
              cross:"$730"
     },
 

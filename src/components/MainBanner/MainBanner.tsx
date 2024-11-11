@@ -19,10 +19,18 @@ const MainBanner = () => {
       highlight: " – All at LabX Repair!",
     },
     {
-      text:"Fix Your Device, Learn to Repair ",
-      highlight:"– LabX Repair!"
+      text: "Fix Your Device, Learn to Repair ",
+      highlight: "– LabX Repair!"
     },
   ];
+  const labXRepairDescription: string = `
+    LabX Repair is more than just a mobile phone repair service.
+    We’re a full-service platform dedicated to quality mobile phone
+    repairing, professional training, and community support.
+    Whether you're looking to get your iPhone or smartphone
+    repaired, purchase repair parts, or enhance your repair skills
+    through our training programs, LabX Repair has it all.
+`;
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -36,52 +44,49 @@ const MainBanner = () => {
 
   const { text, highlight } = textArray[currentIndex];
 
- return (
-  <>
-    <section className="background-banner">
-      <div className="main-Home-banner container">
-        <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-center xl:py-5">
-          <div>
-            <div className="mb-4 lg:mt-0 mt-20">
-              <button
-                className="px-20 py-6 border-2 rounded-full bg-[rgba(157,156,152,0.83)] shadow-5px_4px_28px_1px_#9d9c98 
-                animate-pulse transition-all duration-300 hover:shadow-0_0_25px_10px_rgba(255,223,101,0.8) text-18 tracking-wide"
-                style={{ transform: "rotate(-5deg)" }}
-              >
-                Need Training?
-              </button>
-            </div>
 
-            {/* Content Rotator */}
-            <h1 className="text-2.6rem font-bold text-white tracking-wide leading-tight bg-gradient-to-r from-transparent to-black py-5 transition-opacity duration-1000">
-              {text}
-              <span className="text-[#EDE574]">{highlight}</span>
-            </h1>
+  return (
+    <>
+      <section className="background-banner">
+        <div className="main-Home-banner container">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-center xl:py-5">
+            <div>
+              <div className="mb-4 lg:mt-[0] mt-[20px]">
+                <button
+                  className="px-[20px] py-[6px] border-[2px] rounded-full bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] 
+                  animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px]"
+                  style={{ transform: "rotate(-5deg)" }}
+                >
+                  Need Training?
+                </button>
+              </div>
 
-            <p>
-              LabX Repairrrrrr is more than just a mobile phone repair service.
-              We&apos;re a full-service platform dedicated to quality mobile phone
-              repairing, professional training, and community support.
-              Whether you&apos;re looking to get your iPhone or smartphone
-              repaired, purchase repair parts, or enhance your repair skills
-              through our training programs, LabX Repair has it all.
-            </p>
-            <div className="my-4 xl:my-10">
-              <MainButton MainButton="Request a Quote" link="#" /> {/* Correct the prop name here */}
+              {/* Content Rotator */}
+              <h1 className="text-[2.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
+                {text}
+                <span className="text-[#EDE574]">{highlight}</span>
+              </h1>
+
+              <p>
+                {labXRepairDescription}
+
+              </p>
+              <div className="my-4 xl:my-10">
+                <MainButton MainButton="Request a Quote" link="#" />
+              </div>
             </div>
-          </div>
-          <div className="w-full">
-            <Image
-              className="w-full object-contain"
-              src={bannerimage} // Ensure correct variable name
-              alt="Banner"
-            />
+            <div className="w-full">
+              <Image
+                className="w-full object-contain"
+                src={bannerimage}
+                alt="Banner"
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </>
-);
+      </section>
+    </>
+  );
 };
 
 export default MainBanner;

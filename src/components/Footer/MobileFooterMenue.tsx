@@ -61,7 +61,7 @@ const MobileFooterMenue = () => {
             activeIndex === 1 ? "max-h-screen" : "max-h-0"
           }`}
         >
-                 <ul className="p-[12px]   rounded-b-lg text-[16px]">
+          <ul className="p-[12px]   rounded-b-lg text-[16px]">
             <li className="mb-2">Contact Us</li>
             <li className="mb-2">Blogs</li>
             <li className="mb-2">Trademark Disclaimer</li>
@@ -91,10 +91,21 @@ const MobileFooterMenue = () => {
             activeIndex === 2 ? "max-h-screen" : "max-h-0"
           }`}
         >
-               <ul className="p-[12px]   rounded-b-lg text-[16px]">
-            <li className="mb-2">info@labxrepair.com.au</li>
-            <li className="mb-2">0433 222 203</li>
-            <li className="mb-2">132, Tic St, Kingston, New York 12401</li>
+          <ul className="p-[12px]   rounded-b-lg text-[16px]">
+            <li className="mb-2">
+              <a
+                href="mailto:info@labxrepair.com.au"
+                className="hover:underline"
+              >
+                info@labxrepair.com.au
+              </a>
+            </li>
+            <li className="mb-2">
+              <a href="tel:+61455777077" className="hover:underline">
+              +61455777077
+              </a>
+            </li>
+            <li className="mb-2">6QMF+GQ St Marys, New South Wales, Australia</li>
             <li className="mb-2">Sign-Up The LABX</li>
           </ul>
         </div>

@@ -212,9 +212,9 @@ const Footer = () => {
                         fontSize={25}
                       />
                       <Link href="" legacyBehavior>
-                        <a className="text-[18px] transition-transform duration-300 hover:scale-105">
-                          0433 222 203
-                        </a>
+                      <a href="tel:+61455777077" className="text-[18px] transition-transform duration-300 hover:scale-105">
+  +61455777077
+</a>
                       </Link>
                     </div>
                     <div className="flex gap-4 items-center xl:py-4 border-b-[0.5px] border-[#a7a7a7b3]">
@@ -224,7 +224,7 @@ const Footer = () => {
                       />
                       <Link href="" legacyBehavior>
                         <a className="text-[18px] transition-transform duration-300 hover:scale-105">
-                          132, Tic St, Kingston, New York 12401
+                        6QMF+GQ St Marys, New South Wales, Australia
                         </a>
                       </Link>
                     </div>
