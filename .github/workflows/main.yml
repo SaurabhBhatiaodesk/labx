@@ -30,6 +30,7 @@ jobs:
             exit 1
           fi
           chmod 644 ~/.ssh/known_hosts
+
       - name: Execute deployment commands
         env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
@@ -44,11 +45,12 @@ jobs:
           git stash --include-untracked; \
           git pull; \
           npm install; \
-          npm run build; \
-          pm2 restart my-nextjs-app --update-env; \
-          pm2 save; \
+          npm run build; \  # Ensure build step runs
+          pm2 restart my-nextjs-app --update-env; \  # Restart application with pm2
+          pm2 save; \  # Save pm2 process list
           echo 'Deployment completed successfully.'; \
           "
+
       - name: Debug SSH connection
         if: failure()  # This step will run only if the previous steps fail
         run: |
