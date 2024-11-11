@@ -24,13 +24,12 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SERVER_IP }} > ~/.ssh/known_hosts_temp
           if [ $? -eq 0 ]; then
-            mv ~/.ssh/known_hosts_temp ~/.ssh/known_hosts
+            mv /.ssh/known_hosts_temp /.ssh/known_hosts
           else
             echo "Failed to fetch host key."
             exit 1
           fi
           chmod 644 ~/.ssh/known_hosts
-
       - name: Execute deployment commands
         env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
@@ -45,12 +44,11 @@ jobs:
           git stash --include-untracked; \
           git pull; \
           npm install; \
-          npm run build; \  # Ensure build step runs
-          pm2 restart my-nextjs-app --update-env; \  # Restart application with pm2
-          pm2 save; \  # Save pm2 process list
+          npm run build; \
+          pm2 restart my-nextjs-app --update-env; \
+          pm2 save; \
           echo 'Deployment completed successfully.'; \
           "
-
       - name: Debug SSH connection
         if: failure()  # This step will run only if the previous steps fail
         run: |
