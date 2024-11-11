@@ -30,27 +30,45 @@ jobs:
             exit 1
           fi
           chmod 644 ~/.ssh/known_hosts
+
       - name: Execute deployment commands
         env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
         run: |
+          echo "Starting deployment to server..."
           ssh -T -o BatchMode=yes -o StrictHostKeyChecking=no -vvv -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "\
           echo 'Deploying application...'; \
-          export NVM_DIR=\"/root/.nvm\"; \
-          [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"; \
+          export NVM_DIR='/root/.nvm'; \
+          [ -s '$NVM_DIR/nvm.sh' ] && . '$NVM_DIR/nvm.sh'; \
           nvm use 18; \
           cd /home/ec2-user/labx || exit 1; \
-          git stash --include-untracked; \
-          git pull; \
+          git config --global --add safe.directory /home/ec2-user/labx; \
+          sudo chown -R ec2-user:ec2-user /home/ec2-user/labx; \
+          sudo chmod -R 755 /home/ec2-user/labx; \
+          sudo chmod -R 755 /home/ec2-user/labx/.next; \
+          sudo chmod -R 755 /home/ec2-user/labx/node_modules; \
           npm install; \
           npm run build; \
+          sudo npm install -g pm2; \
           pm2 restart my-nextjs-app --update-env; \
           pm2 save; \
           echo 'Deployment completed successfully.'; \
           "
+
       - name: Debug SSH connection
         if: failure()  # This step will run only if the previous steps fail
         run: |
           echo "Debugging SSH connection..."
           ssh -vvv -T -o BatchMode=yes -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} exit
+
+      - name: Post-deployment success confirmation
+        if: success()  # This step runs only if the deployment succeeds
+        run: |
+          echo "Deployment successful! All steps completed without errors."
+
+      - name: Check server status
+        if: success()  # Check if the application is running after deployment
+        run: |
+          echo "Checking server status..."
+          ssh -T -o BatchMode=yes -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "pm2 status"
