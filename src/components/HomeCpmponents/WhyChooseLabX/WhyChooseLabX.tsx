@@ -21,28 +21,28 @@ const WhyChooseLabX: React.FC = () => {
       alt: "Repairs",
       title: "Expertise in Complex Repairs",
       description:
-        "We excel in fixing challenging issues that others can&apos;t handle, including intricate microsoldering and motherboard repair services. When others can&apos;t succeed, we find a solution.",
+        `We excel in fixing challenging issues that others can't handle, including intricate microsoldering and motherboard repair services. When others can&apost succeed, we find a solution.`,
     },
     {
       image: Transparency,
       alt: "Transparency",
       title: "Complete Transparency in Our Process",
       description:
-        "Our grading and repair process is 100% transparent. You&apos;ll receive photos and detailed reports for any repair decisions so you always know what&apos;s happening.",
+        `Our grading and repair process is 100% transparent. You'll receive photos and detailed reports for any repair decisions so you always know what's happening.`,
     },
     {
       image: Recovery,
       alt: "Recovery",
       title: "Specialized Data Recovery",
       description:
-        "Even if your device is non-functional, we employ advanced techniques to recover your important data, providing a valuable opportunity to retrieve lost files.",
+        `Even if your device is non-functional, we employ advanced techniques to recover your important data, providing a valuable opportunity to retrieve lost files.`,
     },
     {
       image: B2BServices,
       alt: "B2B Services",
       title: "Customized B2B Services",
       description:
-        "LabX Repair offers tailored solutions for businesses, including bulk refurbishments and wholesale repairs, ensuring your operations run smoothly and efficiently.",
+        `LabX Repair offers tailored solutions for businesses, including bulk refurbishments and wholesale repairs, ensuring your operations run smoothly and efficiently.`,
     },
   ];
 
