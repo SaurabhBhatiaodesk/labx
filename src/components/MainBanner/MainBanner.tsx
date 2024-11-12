@@ -24,7 +24,7 @@ const MainBanner = () => {
     },
   ];
   const labXRepairDescription: string = `
-    LabX Repairrrr is more than just a mobile phone repair service.
+    LabX Repair is more than just a mobile phone repair service.
     We’re a full-service platform dedicated to quality mobile phone
     repairing, professional training, and community support.
     Whether you're looking to get your iPhone or smartphone
