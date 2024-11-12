@@ -155,27 +155,27 @@ const StaperForm: React.FC = () => {
                   </div>
                   <div>
                     <div className="p-4">
-                      <div className="flex flex-col gap-4  bg-black text-white">
+                      <div className="flex flex-col gap-4 bg-black text-white">
                         <div className="grid grid-cols-2 gap-4 form-label">
                           <Input
                             type="text"
-                            label="Business Name "
+                            label="Business Name"
                             variant="bordered"
-                            className="w-full"
+                            className="w-full bg-black text-white border-white"
                             required
                           />
                           <Input
                             type="text"
                             label="Full Name"
                             variant="bordered"
-                            className="w-full"
+                            className="w-full bg-black text-white border-white"
                             required
                           />
                           <Input
                             type="text"
                             label="Contact Number"
                             variant="bordered"
-                            className="w-full"
+                            className="w-full bg-black text-white border-white"
                             required
                           />
                           <Input
@@ -187,7 +187,7 @@ const StaperForm: React.FC = () => {
                             errorMessage={
                               isInvalid ? "Please enter a valid email" : ""
                             }
-                            className={`w-full ${
+                            className={`w-full bg-black text-white border-white ${
                               isInvalid ? "border-red-500" : ""
                             }`}
                             onChange={handleValidation}
@@ -195,42 +195,87 @@ const StaperForm: React.FC = () => {
                           />
                         </div>
                         <div className="flex w-full flex-wrap md:flex-nowrap gap-4 bg-black">
-                        <Select 
-      label="Select an animal" 
-      className=" bg-black text-white" // Add text color for better contrast
-    >
-      {animals.map((animal) => (
-        <SelectItem className="bg-black text-white" key={animal.key}>
-          {animal.label}
-        </SelectItem>
-      ))}
-    </Select>
-                          {/* <Select
-        label="Favorite Animal"
-        placeholder="Select an animal"
-        className="max-w-xs"
-      >
-        {animals.map((animal) => (
-          <SelectItem key={animal.key}>
-            {animal.label}
-          </SelectItem>
-        ))}
-      </Select> */}
+                          <Select
+                            label="Select an animal"
+                            className="bg-black text-white " // Add `!` to override Tailwind's default background
+                          >
+                            {animals.map((animal) => (
+                              <SelectItem
+                                key={animal.key}
+                                className="bg-black text-white  hover:bg-gray-800"
+                              >
+                                {animal.label}
+                              </SelectItem>
+                            ))}
+                          </Select>
                         </div>
-                        <Textarea
+
+                        <div>
+                          <h4>Device Details</h4>
+                          <div className="grid grid-cols-2 gap-4 form-label">
+                            <Select
+                              label="Select an animal"
+                              className="bg-black text-white " // Add `!` to override Tailwind's default background
+                            >
+                              {animals.map((animal) => (
+                                <SelectItem
+                                  key={animal.key}
+                                  className="bg-black text-white  hover:bg-gray-800"
+                                >
+                                  {animal.label}
+                                </SelectItem>
+                              ))}
+                            </Select>
+                            <Select
+                              label="Select an animal"
+                              className="bg-black text-white " // Add `!` to override Tailwind's default background
+                            >
+                              {animals.map((animal) => (
+                                <SelectItem
+                                  key={animal.key}
+                                  className="bg-black text-white  hover:bg-gray-800"
+                                >
+                                  {animal.label}
+                                </SelectItem>
+                              ))}
+                            </Select>
+                            <Input
+                              type="text"
+                              label="Contact Number"
+                              variant="bordered"
+                              className="w-full bg-black text-white border-white"
+                              required
+                            />
+                            <Input
+                              type="email"
+                              label="Your Email"
+                              variant="bordered"
+                              value={email}
+                              isInvalid={isInvalid}
+                              errorMessage={
+                                isInvalid ? "Please enter a valid email" : ""
+                              }
+                              className={`w-full bg-black text-white border-white ${
+                                isInvalid ? "border-red-500" : ""
+                              }`}
+                              onChange={handleValidation}
+                              required
+                            />
+                          </div>
+                        </div>
+
+                        {/* <Textarea
                           label="Your Message"
                           placeholder="Enter your message here"
                           variant="bordered"
-                          className="w-full mt-4 custom-textarea" // Add a custom class if needed
+                          className="w-full mt-4 bg-black text-white border-white"
                           style={{
-                            borderColor: "#333",
+                            borderColor: "#ffffff",
                             borderRadius: "0.375rem",
                             padding: "0.5rem",
-                            backgroundColor: "black",
-                            color: "white",
                           }}
                           required
-                        />
+                        /> */}
                       </div>
                       <div className="py-4">
                         <input
@@ -245,8 +290,147 @@ const StaperForm: React.FC = () => {
             )}
             {activeStep === 1 && (
               <>
-                <h2 className="text-lg font-bold mb-2">Repair Details</h2>
-                <p className="text-gray-600">This is the second step</p>
+                <div className="grid grid-cols-2">
+                  <div>
+                    <Image className="" src={StaperForm1} alt="" />
+                  </div>
+                  <div>
+                    <div className="p-4">
+                      <div className="flex flex-col gap-4 bg-black text-white">
+                      <Select
+                            label="Select an animal"
+                            className="bg-black text-white " // Add `!` to override Tailwind's default background
+                          >
+                            {animals.map((animal) => (
+                              <SelectItem
+                                key={animal.key}
+                                className="bg-black text-white  hover:bg-gray-800"
+                              >
+                                {animal.label}
+                              </SelectItem>
+                            ))}
+                          </Select>
+                          <Textarea
+                          label="Your Message"
+                          placeholder="Enter your message here"
+                          variant="bordered"
+                          className="w-full mt-4 bg-black text-white border-white"
+                          style={{
+                            borderColor: "#ffffff",
+                            borderRadius: "0.375rem",
+                            padding: "0.5rem",
+                          }}
+                          required
+                        />
+                        <div className="grid grid-cols-2 gap-4 form-label">
+                   
+                        
+                    
+                        </div>
+                    
+                          <Select
+                            label="Select an animal"
+                            className="bg-black text-white " // Add `!` to override Tailwind's default background
+                          >
+                            {animals.map((animal) => (
+                              <SelectItem
+                                key={animal.key}
+                                className="bg-black text-white  hover:bg-gray-800"
+                              >
+                                {animal.label}
+                              </SelectItem>
+                            ))}
+                          </Select>
+                     
+                        {/* <Textarea
+                          label="Your Message"
+                          placeholder="Enter your message here"
+                          variant="bordered"
+                          className="w-full mt-4 bg-black text-white border-white"
+                          style={{
+                            borderColor: "#ffffff",
+                            borderRadius: "0.375rem",
+                            padding: "0.5rem",
+                          }}
+                          required
+                        /> */}
+
+                        <div>
+                          <h4>Device Details</h4>
+                          <div className="grid grid-cols-2 gap-4 form-label">
+                            <Select
+                              label="Select an animal"
+                              className="bg-black text-white " // Add `!` to override Tailwind's default background
+                            >
+                              {animals.map((animal) => (
+                                <SelectItem
+                                  key={animal.key}
+                                  className="bg-black text-white  hover:bg-gray-800"
+                                >
+                                  {animal.label}
+                                </SelectItem>
+                              ))}
+                            </Select>
+                            <Select
+                              label="Select an animal"
+                              className="bg-black text-white " // Add `!` to override Tailwind's default background
+                            >
+                              {animals.map((animal) => (
+                                <SelectItem
+                                  key={animal.key}
+                                  className="bg-black text-white  hover:bg-gray-800"
+                                >
+                                  {animal.label}
+                                </SelectItem>
+                              ))}
+                            </Select>
+                            <Input
+                              type="text"
+                              label="Contact Number"
+                              variant="bordered"
+                              className="w-full bg-black text-white border-white"
+                              required
+                            />
+                            <Input
+                              type="email"
+                              label="Your Email"
+                              variant="bordered"
+                              value={email}
+                              isInvalid={isInvalid}
+                              errorMessage={
+                                isInvalid ? "Please enter a valid email" : ""
+                              }
+                              className={`w-full bg-black text-white border-white ${
+                                isInvalid ? "border-red-500" : ""
+                              }`}
+                              onChange={handleValidation}
+                              required
+                            />
+                          </div>
+                        </div>
+
+                        {/* <Textarea
+                          label="Your Message"
+                          placeholder="Enter your message here"
+                          variant="bordered"
+                          className="w-full mt-4 bg-black text-white border-white"
+                          style={{
+                            borderColor: "#ffffff",
+                            borderRadius: "0.375rem",
+                            padding: "0.5rem",
+                          }}
+                          required
+                        /> */}
+                      </div>
+                      <div className="py-4">
+                        <input
+                          className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
+                          type="submit"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </>
             )}
             {activeStep === 2 && (
