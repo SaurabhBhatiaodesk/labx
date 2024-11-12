@@ -18,7 +18,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SERVER_SSH_KEY_BASE64 }}" | base64 --decode > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SERVER_IP }} > ~/.ssh/known_hosts
+          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
 
       - name: Install NVM and Node.js
@@ -26,34 +26,38 @@ jobs:
           echo "Installing NVM..."
           curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
           export NVM_DIR="$HOME/.nvm"
-          [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+          [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
           nvm install 18
           nvm use 18
 
-      - name: Execute deployment commands
+      - name: Prepare deployment script
+        run: |
+          echo 'Deploying application...' > deploy_script.sh
+          echo 'export NVM_DIR="/root/.nvm"' >> deploy_script.sh
+          echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"' >> deploy_script.sh
+          echo 'nvm use 18' >> deploy_script.sh
+          echo 'cd /home/ec2-user/labx || exit 1' >> deploy_script.sh
+          echo 'git config --global --add safe.directory /home/ec2-user/labx' >> deploy_script.sh
+          echo 'sudo chown -R ec2-user:ec2-user /home/ec2-user/labx' >> deploy_script.sh
+          echo 'sudo chmod -R 755 /home/ec2-user/labx' >> deploy_script.sh
+          echo 'sudo chmod -R 755 /home/ec2-user/labx/.next' >> deploy_script.sh
+          echo 'sudo chmod -R 755 /home/ec2-user/labx/node_modules' >> deploy_script.sh
+          echo 'npm install' >> deploy_script.sh
+          echo 'npm run build' >> deploy_script.sh
+          echo 'sudo npm install -g pm2' >> deploy_script.sh
+          echo 'pm2 restart my-nextjs-app --update-env' >> deploy_script.sh
+          echo 'pm2 save' >> deploy_script.sh
+          echo 'echo "Deployment completed successfully."' >> deploy_script.sh
+          chmod +x deploy_script.sh
+
+      - name: Transfer and execute deployment script
         env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
         run: |
-          echo "Starting deployment to server..."
-          ssh -T -o BatchMode=yes -o StrictHostKeyChecking=no -vvv -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "\
-          echo 'Deploying application...'; \
-          export NVM_DIR='/root/.nvm'; \
-          [ -s '$NVM_DIR/nvm.sh' ] && . '$NVM_DIR/nvm.sh'; \
-          nvm use 18; \
-          cd /home/ec2-user/labx || exit 1; \
-          git config --global --add safe.directory /home/ec2-user/labx; \
-          sudo chown -R ec2-user:ec2-user /home/ec2-user/labx; \
-          sudo chmod -R 755 /home/ec2-user/labx; \
-          sudo chmod -R 755 /home/ec2-user/labx/.next; \
-          sudo chmod -R 755 /home/ec2-user/labx/node_modules; \
-          npm install; \
-          npm run build; \
-          sudo npm install -g pm2; \
-          pm2 restart my-nextjs-app --update-env; \
-          pm2 save; \
-          echo 'Deployment completed successfully.'; \
-          "
+          echo "Transferring and executing deployment script..."
+          scp deploy_script.sh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/tmp/
+          ssh -T -o BatchMode=yes -o StrictHostKeyChecking=no -vvv -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "/tmp/deploy_script.sh"
 
       - name: Debug SSH connection
         if: failure()
