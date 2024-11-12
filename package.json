@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "@lottiefiles/lottie-player": "^2.0.12",
+    "@mui/icons-material": "^6.1.6",
+    "@mui/material": "^6.1.6",
     "@nextui-org/react": "^2.4.6",
     "aos": "^2.3.4",
     "lottie-react": "^2.4.0",
