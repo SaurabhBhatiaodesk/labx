@@ -21,14 +21,13 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
-    "Home",
-    "Services",
-    "Parts Store",
-    "Training",
-    "B2b Repair",
-    "Contact Us",
-    "Price List",
-  
+    { label: "Home", path: "/" },
+    { label: "Services", path: "/services" },
+    { label: "Parts Store", path: "/parts-store" },
+    { label: "Training", path: "/training" }, // Link to the training page
+    { label: "B2b Repair", path: "/b2b-repair" },
+    { label: "Contact Us", path: "/contact-us" },
+    { label: "Price List", path: "/price-list" },
   ];
 
   return (
@@ -50,23 +49,21 @@ export default function App() {
         <NavbarContent className="flex justify-center items-center">
           <NavbarBrand>
             <Link href="/">
-
-            <Image src={rktaxilog} alt="Brand Logo" />
+              <Image src={rktaxilog} alt="Brand Logo" />
             </Link>
-
           </NavbarBrand>
         </NavbarContent>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex flex-grow justify-center">
           <div className="flex gap-[20px] xl:gap-[40px]">
-            {menuItems.map((item, index) => (
-              <NavbarItem key={item}>
+            {menuItems.map((item) => (
+              <NavbarItem key={item.label}>
                 <Link
                   className="relative tracking-[1.5px] font-medium group"
-                  href="/"
+                  href={item.path}
                 >
-                  {item}
+                  {item.label}
                   <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               </NavbarItem>
@@ -83,12 +80,9 @@ export default function App() {
         {/* Mobile Menu */}
         <NavbarMenu className="bg-black text-white lg:hidden">
           {menuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                className="w-full"
-                href="#"
-              >
-                {item}
+            <NavbarMenuItem key={`${item.label}-${index}`}>
+              <Link className="w-full" href={item.path}>
+                {item.label}
               </Link>
             </NavbarMenuItem>
           ))}

@@ -62,7 +62,7 @@ const MainBanner = () => {
               </div>
 
               {/* Content Rotator */}
-              <h1 className="text-[2.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
+              <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
                 {text}
                 <span className="text-[#EDE574]">{highlight}</span>
               </h1>

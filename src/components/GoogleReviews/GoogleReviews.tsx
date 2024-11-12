@@ -79,7 +79,6 @@ export default function Productswiper({}) {
         <div className="py-5 xl:p-10">
           <MainHeading Heading="Our Google Reviews" />
           <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." />
-
           <div className="service-slide-box flex gap-5 lg:flex-row items-center flex-col">
             <Swiper
               onSwiper={(swiper) => (swiperRef.current = swiper)}

@@ -19,23 +19,23 @@ const WhyChooseLabX: React.FC = () => {
     {
       image: Repairs,
       alt: "Repairs",
-      title: "Expertise in Complex Repairs",
+      title: `Expertise in Complex Repairs`,
       description:
-        `We excel in fixing challenging issues that others can't handle, including intricate microsoldering and motherboard repair services. When others can&apost succeed, we find a solution.`,
+        `We excel in fixing challenging issues that others can't handle, including intricate microsoldering and motherboard repair services. When others can't succeed, we find a solution.`,
     },
     {
       image: Transparency,
       alt: "Transparency",
       title: "Complete Transparency in Our Process",
       description:
-        `Our grading and repair process is 100% transparent. You'll receive photos and detailed reports for any repair decisions so you always know what's happening.`,
+        ` Our grading and repair process is 100% transparent. You'll receive photos and detailed reports for any repair decisions so you always know what's happening.`,
     },
     {
       image: Recovery,
       alt: "Recovery",
-      title: "Specialized Data Recovery",
+      title: " Specialized Data Recovery",
       description:
-        `Even if your device is non-functional, we employ advanced techniques to recover your important data, providing a valuable opportunity to retrieve lost files.`,
+        ` Even if your device is non-functional, we employ advanced techniques to recover your important data, providing a valuable opportunity to retrieve lost files.`,
     },
     {
       image: B2BServices,
