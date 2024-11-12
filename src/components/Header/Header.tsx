@@ -25,7 +25,7 @@ export default function App() {
     { label: "Services", path: "/services" },
     { label: "Parts Store", path: "/parts-store" },
     { label: "Training", path: "/training" }, // Link to the training page
-    { label: "B2b Repair", path: "/b2b-repair" },
+    { label: "B2B Repair", path: "/b2b-repair" },
     { label: "Contact Us", path: "/contact-us" },
     { label: "Price List", path: "/price-list" },
   ];

@@ -1,5 +1,5 @@
-label[data-slot="label"] {
-    color: #ffffff; /* Replace this with your desired color */
+label[data-slot="label ,trigger"] {
+    color: #ffffff; 
   }
   textarea::placeholder {
     color: #ffffff; /* Replace with your desired color */
