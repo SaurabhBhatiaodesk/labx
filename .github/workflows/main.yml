@@ -38,6 +38,7 @@ jobs:
           echo 'nvm use 18' >> deploy_script.sh
           echo 'cd /home/ec2-user/labx || exit 1' >> deploy_script.sh
           echo 'git config --global --add safe.directory /home/ec2-user/labx' >> deploy_script.sh
+          echo 'git pull origin main' >> deploy_script.sh
           echo 'sudo chown -R ec2-user:ec2-user /home/ec2-user/labx' >> deploy_script.sh
           echo 'sudo chmod -R 755 /home/ec2-user/labx' >> deploy_script.sh
           echo 'sudo chmod -R 755 /home/ec2-user/labx/.next' >> deploy_script.sh
