@@ -11,46 +11,28 @@ const CourseHighlights = () => {
         <div className="container">
           <div className="">
             <MainHeading Heading="Beginner Phone Repair Course" />
-            <div className="my-7">
-              {/* <div
-                className="max-w-5xl m-auto bg-[#FFFFFF] text-center text-black p-4 rounded-[20px]"
-                style={{ boxShadow: "10px 15px 0px 3px #EDE574" }}
-              >
-                <h2 className="text-black text-[18px] leading-7">
-                  This course does not include micro soldering or
-                  motherboard-level repairs.
-                </h2>
-                <span className="text-[16px]">
-                  You’ll have the opportunity to watch live demonstrations of
-                  each repair, followed by hands-on practice under our
-                  supervision. By the end of the course, you’ll have the skills
-                  and confidence to perform a wide range of repairs on most
-                  modern devices.
-                </span>
-              </div> */}
-            </div>
           </div>
           <div>
             {/* course 1 */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4  lg:py-6 py-3  items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
               <div className="relative w-full h-[300px] md:h-[550px]">
                 <Image
                   className="object-cover rounded-[30px]"
                   src={course2}
                   alt="Course Image"
-                  fill // Ensures the image fills its parent container responsively
+                  fill
                 />
               </div>
-              <div className="p-3 lg:p-6 bg-black text-white rounded-md ">
+              <div className="p-3 lg:p-6 bg-black text-white rounded-md">
                 <h2 className="text-3xl font-bold mb-4">
                   Advanced Motherboard Repair – Micro Soldering (Level 1)
                 </h2>
-                <div className="flex gap-4 text-yellow-400 ">
+                <div className="flex gap-4 text-yellow-400">
                   <p className="font-semibold">Duration: 1 Week</p>
                   <p className="font-semibold">|</p>
                   <p className="font-semibold">Price: $2200</p>
                 </div>
-                <p className="text-base  ">
+                <p className="text-base">
                   Our Level 1 course offers hands-on training in essential micro
                   soldering techniques for mobile device motherboard repairs.
                   Ideal for technicians ready to expand their skills, this
@@ -83,8 +65,8 @@ const CourseHighlights = () => {
                   <MainButton MainButton="Learn More" />
                 </div>
                 <div className="my-4">
-                  <div className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98]  animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px]">
-                    By the end of this course, you'll have the confidence to
+                  <div className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px]">
+                    By the end of this course, you&apos;ll have the confidence to
                     handle a variety of motherboard-level repairs with
                     precision.
                   </div>
@@ -93,11 +75,11 @@ const CourseHighlights = () => {
             </div>
             {/* course 2 */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
-              <div className="order-2 lg:order-1 p-3 lg:p-6 bg-black text-white rounded-md ">
+              <div className="order-2 lg:order-1 p-3 lg:p-6 bg-black text-white rounded-md">
                 <h2 className="text-3xl font-bold mb-4">
                   Expert Motherboard Repair – Micro Soldering (Level 2)
                 </h2>
-                <div className="flex gap-4 text-yellow-400 ">
+                <div className="flex gap-4 text-yellow-400">
                   <p className="font-semibold">Duration: 1 Week</p>
                   <p className="font-semibold">|</p>
                   <p className="font-semibold">Price: $2800</p>
@@ -126,8 +108,8 @@ const CourseHighlights = () => {
                     <strong className="text-yellow-400">
                       Baseband and Chip Repairs:
                     </strong>{" "}
-                    Fix "no service" issues and work with large ICs and baseband
-                    chips.
+                    Fix &quot;no service&quot; issues and work with large ICs
+                    and baseband chips.
                   </li>
                 </ul>
                 <div>
@@ -146,30 +128,30 @@ const CourseHighlights = () => {
                   className="object-cover rounded-[30px]"
                   src={course2}
                   alt="Course Image"
-                  fill // Ensures the image fills its parent container responsively
+                  fill
                 />
               </div>
             </div>
             {/* course 3 */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4  lg:py-6 py-3  items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
               <div className="relative w-full h-[300px] md:h-[550px]">
                 <Image
                   className="object-cover rounded-[30px]"
                   src={course2}
                   alt="Course Image"
-                  fill // Ensures the image fills its parent container responsively
+                  fill
                 />
               </div>
-              <div className="p-3 lg:p-6 bg-black text-white rounded-md ">
+              <div className="p-3 lg:p-6 bg-black text-white rounded-md">
                 <h2 className="text-3xl font-bold mb-4">
                   Master Motherboard Repair – Micro Soldering (Level 3)
                 </h2>
-                <div className="flex gap-4 text-yellow-400 ">
+                <div className="flex gap-4 text-yellow-400">
                   <p className="font-semibold">Duration: 1 Week</p>
                   <p className="font-semibold">|</p>
                   <p className="font-semibold">Price: $5500</p>
                 </div>
-                <p className="text-base  ">
+                <p className="text-base">
                   Our Level 3 Master Course is designed for experienced
                   technicians seeking to master the most advanced techniques in
                   mobile motherboard repair. This intensive program covers
@@ -190,11 +172,11 @@ const CourseHighlights = () => {
                   <MainButton MainButton="Learn More" />
                 </div>
                 <div className="my-4">
-                  <div className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98]  animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px] font-poppins text-base">
+                  <div className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px] font-poppins text-base">
                     This Level 3 course is designed to take your repair
                     expertise to the highest level, enabling you to handle the
                     most advanced repairs and data recovery tasks. By the end of
-                    this course, you’ll be prepared to tackle any challenge,
+                    this course, you&apos;ll be prepared to tackle any challenge,
                     from CPU reballing to restoring devices with critical board
                     damage.
                   </div>
@@ -204,48 +186,41 @@ const CourseHighlights = () => {
 
             {/* course 0 */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
-              <div className="order-2 lg:order-1 p-3 lg:p-6 bg-black text-white rounded-md ">
+              <div className="order-2 lg:order-1 p-3 lg:p-6 bg-black text-white rounded-md">
                 <h2 className="text-3xl font-bold mb-4">
-                This course does not include micro soldering or motherboard-level repairs.
+                  This course does not include micro soldering or
+                  motherboard-level repairs.
                 </h2>
-                <div className="flex gap-4 text-yellow-400 ">
+                <div className="flex gap-4 text-yellow-400">
                   <p className="font-semibold">Duration: 5 Days</p>
                   <p className="font-semibold">|</p>
                   <p className="font-semibold">Price: $1249</p>
                 </div>
                 <p className="text-base">
-                Learn the fundamentals of mobile phone repair in our comprehensive beginner course, designed to give you hands-on experience with a wide range of repairs. Our expert trainers will guide you through each step, ensuring you gain practical knowledge and confidence in repairing various devices.
-
+                  Learn the fundamentals of mobile phone repair in our
+                  comprehensive beginner course, designed to give you hands-on
+                  experience with a wide range of repairs. Our expert trainers
+                  will guide you through each step, ensuring you gain practical
+                  knowledge and confidence in repairing various devices.
                 </p>
                 <ul className="space-y-2 pb-5">
-                  <li>
-                  Introduction to essential tools and parts
-
-                  </li>
-                  <li>
-                  Screen replacement techniques for phones and iPads
-
-                  </li>
-                  <li>
-                  Battery replacement for smartphones and tablets Charging port repairs
-                  </li>
-                  <li>
-                  Fault diagnostics and troubleshooting
-                  </li>
-                  <li>
-                  Back glass and housing replacements
-                  </li>
-                  <li>
-                  Camera and flashlight replacements
-                  </li>
+                  <li>Introduction to essential tools and parts</li>
+                  <li>Screen replacement techniques for phones and iPads</li>
+                  <li>Battery replacement for smartphones and tablets Charging port repairs</li>
+                  <li>Fault diagnostics and troubleshooting</li>
+                  <li>Back glass and housing replacements</li>
+                  <li>Camera and flashlight replacements</li>
                 </ul>
                 <div>
                   <MainButton MainButton="Learn More" />
                 </div>
                 <div className="my-4">
                   <div className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px] text-base font-poppins">
-                  You’ll have the opportunity to watch live demonstrations of each repair, followed by hands-on practice under our supervision. By the end of the course, you’ll have the skills and confidence to perform a wide range of repairs on most modern devices.
-
+                    You&apos;ll have the opportunity to watch live
+                    demonstrations of each repair, followed by hands-on practice
+                    under our supervision. By the end of the course, you&apos;ll
+                    have the skills and confidence to perform a wide range of
+                    repairs on most modern devices.
                   </div>
                 </div>
               </div>
@@ -254,7 +229,7 @@ const CourseHighlights = () => {
                   className="object-cover rounded-[30px]"
                   src={course2}
                   alt="Course Image"
-                  fill // Ensures the image fills its parent container responsively
+                  fill
                 />
               </div>
             </div>
