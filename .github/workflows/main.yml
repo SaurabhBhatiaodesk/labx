@@ -45,7 +45,7 @@ jobs:
           echo 'npm install' >> deploy_script.sh
           echo 'npm run build' >> deploy_script.sh
           echo 'sudo npm install -g pm2' >> deploy_script.sh
-          echo 'pm2 restart my-nextjs-app --update-env' >> deploy_script.sh
+          echo 'pm2 startOrReload ecosystem.config.js --env production' >> deploy_script.sh  # Updated command here
           echo 'pm2 save' >> deploy_script.sh
           echo 'echo "Deployment completed successfully."' >> deploy_script.sh
           chmod +x deploy_script.sh
@@ -57,7 +57,7 @@ jobs:
         run: |
           echo "Transferring and executing deployment script..."
           scp deploy_script.sh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/tmp/
-          ssh -T -o BatchMode=yes -o StrictHostKeyChecking=no -vvv -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "/tmp/deploy_script.sh"
+          ssh -T -o BatchMode=yes -o StrictHostKeyChecking=no -vvv -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "bash /tmp/deploy_script.sh"
 
       - name: Debug SSH connection
         if: failure()
