@@ -33,20 +33,17 @@ jobs:
       - name: Prepare deployment script
         run: |
           echo 'Deploying application...' > deploy_script.sh
-          echo 'export NVM_DIR="/root/.nvm"' >> deploy_script.sh
+          echo 'export NVM_DIR="$HOME/.nvm"' >> deploy_script.sh
           echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"' >> deploy_script.sh
           echo 'nvm use 18' >> deploy_script.sh
           echo 'cd /home/ec2-user/labx || exit 1' >> deploy_script.sh
           echo 'git config --global --add safe.directory /home/ec2-user/labx' >> deploy_script.sh
-          echo 'git pull ' >> deploy_script.sh
-          echo 'sudo chown -R ec2-user:ec2-user /home/ec2-user/labx' >> deploy_script.sh
-          echo 'sudo chmod -R 755 /home/ec2-user/labx' >> deploy_script.sh
-          echo 'sudo chmod -R 755 /home/ec2-user/labx/.next' >> deploy_script.sh
-          echo 'sudo chmod -R 755 /home/ec2-user/labx/node_modules' >> deploy_script.sh
+          echo 'git stash push --include-untracked' >> deploy_script.sh
+          echo 'git pull origin main' >> deploy_script.sh
           echo 'npm install' >> deploy_script.sh
           echo 'npm run build' >> deploy_script.sh
           echo 'sudo npm install -g pm2' >> deploy_script.sh
-          echo 'pm2 startOrReload ecosystem.config.js --env production' >> deploy_script.sh  # Updated command here
+          echo 'pm2 startOrReload ecosystem.config.js --env production' >> deploy_script.sh
           echo 'pm2 save' >> deploy_script.sh
           echo 'echo "Deployment completed successfully."' >> deploy_script.sh
           chmod +x deploy_script.sh
