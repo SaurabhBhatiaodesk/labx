@@ -38,7 +38,6 @@ const RecentNews: React.FC = () => {
       param:
         "Modern smartphones are equipped with a variety of sensors that enhance user experience, from simple actions like auto-rotating the screen to advanced",
       date: "20 Oct, 2024",
-      
     },
     {
       id: 0,
@@ -47,10 +46,7 @@ const RecentNews: React.FC = () => {
       param:
         "In today’s digital world, smartphones have become essential for storing valuable data, from personal photos and messages to important documents and contacts",
       date: "2 Nov, 2024",
-      
-    }
-
-
+    },
   ];
 
   return (
@@ -64,27 +60,29 @@ const RecentNews: React.FC = () => {
             data-aos="fade-up"
           />
           <div className="grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:py-5 py-3">
-            {data.map((item) => (
-              <div className="blogs" key={item.id} data-aos="zoom-in">
-                <div >
-                  <Image src={item.image} alt="Blog Image" />
-                </div>
-                <div className="mt-[10px] lg:mt-[20px]">
-                  <h4 className="font-[600]" >
-                    {item.heading.split(" ").slice(0, 5).join(" ")}...
-                  </h4>
-                  <p data-aos="fade-left">{item.param}</p>
-                  <div className="flex justify-between" >
-                    <button className="capitalize text-[16px] tracking-[1px]">
-                      read more
-                    </button>
-                    <span className="capitalize text-[16px] tracking-[1px]">
-                      {item.date}
-                    </span>
+            {data &&
+              data?.length > 0 &&
+              data?.map((item, index) => (
+                <div className="blogs" key={index} data-aos="zoom-in">
+                  <div>
+                    <Image src={item.image} alt="Blog Image" />
+                  </div>
+                  <div className="mt-[10px] lg:mt-[20px]">
+                    <h4 className="font-[600]">
+                      {item.heading.split(" ").slice(0, 5).join(" ")}...
+                    </h4>
+                    <p data-aos="fade-left">{item.param}</p>
+                    <div className="flex justify-between">
+                      <button className="capitalize text-[16px] tracking-[1px]">
+                        read more
+                      </button>
+                      <span className="capitalize text-[16px] tracking-[1px]">
+                        {item.date}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </div>

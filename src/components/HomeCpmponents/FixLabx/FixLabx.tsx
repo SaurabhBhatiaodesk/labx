@@ -3,7 +3,7 @@ import Image from "next/image";
 import owoner from "../../../../public/Images/Home/lab-x-owner.svg";
 import MainButton from "@/components/MainButton/MainButton";
 import "./FixLabx.css";
-import bharatmobile from "../../../../public/Images/Home/bharat 1.svg"
+import bharatmobile from "../../../../public/Images/Home/bharat 1.svg";
 
 const FixLabx = () => {
   return (
@@ -18,21 +18,23 @@ const FixLabx = () => {
               src={owoner}
               alt=""
             />
-               <Image
+            <Image
               className="h-[19rem] lg:h-[100%] xl:h-[26rem] 2xl:h-[30rem] 3xl:h-[32rem] w-full lg:hidden block"
               src={bharatmobile}
               alt=""
             />
-
           </div>
           <div className="text-center lg:p-0 p-4">
             <span className="text-[#696969]">Mobile Repair</span>
             <h2 className="text-[#040404] text-[32px]  lg:text-[42px] 2xl:text-[42px] font-[800] pb-3">
-            LabX Repair Mobile Repair 
+              LabX Repair Mobile Repair
             </h2>
             <p className="text-black pb-5">
-            I'm Bharat Dhingra, the founder of LabX, dedicated to providing exceptional, complex mobile phone repair services. With years of experience in the tech industry, I combine innovation and expertise to offer reliable solutions, ensuring quality and customer satisfaction for everyone who trusts LabX.
-
+              {`I'm Bharat Dhingra, the founder of LabX, dedicated to providing
+              exceptional, complex mobile phone repair services. With years of
+              experience in the tech industry, I combine innovation and
+              expertise to offer reliable solutions, ensuring quality and
+              customer satisfaction for everyone who trusts LabX.`}
             </p>
             <MainButton MainButton="LEARN MORE" link="/coming-soon" />
           </div>
