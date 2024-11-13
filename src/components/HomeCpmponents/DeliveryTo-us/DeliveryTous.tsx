@@ -7,8 +7,7 @@ import MainTitle from "@/components/MainTitle/MainTitle";
 import "./DeliveryTo.css";
 import pointet from "../../../../public/Images/icons/pointingright.svg";
 import DeliveryTousMobile from "./DeliveryTousMobile";
-import Link from 'next/link';
-
+import Link from "next/link";
 
 interface Tab {
   id: number;
@@ -20,9 +19,7 @@ interface Tab {
   contentf5?: string;
   contentf6?: string;
   button?: string;
-  link?: string; 
-
-
+  link?: string;
 }
 
 const VerticalTabs: React.FC = () => {
@@ -186,7 +183,7 @@ const VerticalTabs: React.FC = () => {
                   </div>
                 ))}
 
-{/* {tabs[activeTab].button && tabs[activeTab].link && (
+              {/* {tabs[activeTab].button && tabs[activeTab].link && (
   <Link href={tabs[activeTab].link} passHref>
     <a
       className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
@@ -199,22 +196,19 @@ const VerticalTabs: React.FC = () => {
     </a>
   </Link>
 )} */}
-{tabs[activeTab].button && tabs[activeTab].link && (
-  <Link
-    href={tabs[activeTab].link}
-    passHref
-    className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
-    style={{
-      background: getGradientColor(activeTab),
-      borderColor: getGradientColor(activeTab),
-    }}
-  >
-    {tabs[activeTab].button}
-  </Link>
-)}
-
-
-
+              {tabs[activeTab].button && tabs[activeTab].link && (
+                <Link
+                  href={tabs[activeTab].link}
+                  passHref
+                  className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
+                  style={{
+                    background: getGradientColor(activeTab),
+                    borderColor: getGradientColor(activeTab),
+                  }}
+                >
+                  {tabs[activeTab].button}
+                </Link>
+              )}
             </div>
             <div className="p-4 hidden xl:block">
               <Image src={hammer} alt="Hammer Icon" />

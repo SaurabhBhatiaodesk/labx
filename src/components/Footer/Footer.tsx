@@ -196,7 +196,6 @@ const Footer = () => {
               <div>
                 <div>
                   <h3 className="xl:mb-5">Contact Info</h3>
-
                   <div className="flex flex-col gap-2">
                     <div className="flex gap-4 items-center xl:py-[8px] py-[5px] border-b-[0.5px] border-[#a7a7a7b3]">
                       <CiMail

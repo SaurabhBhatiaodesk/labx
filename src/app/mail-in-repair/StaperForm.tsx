@@ -8,6 +8,7 @@ import StaperForm1 from "../../../public/Images/StaperForm1.png";
 import Image from "next/image";
 import { Select, SelectItem } from "@nextui-org/react";
 import "./mail-in-repair.css";
+import Link from "next/link";
 
 const StaperForm: React.FC = () => {
   const animals = [
@@ -298,37 +299,39 @@ const StaperForm: React.FC = () => {
                   <div>
                     <div className="p-4">
                       <div className="flex flex-col gap-4 bg-black text-white">
-                      <Select
-                            label="Select an animal"
-                            className="bg-black text-white " // Add `!` to override Tailwind's default background
-                          >
-                            {animals.map((animal) => (
-                              <SelectItem
-                                key={animal.key}
-                                className="bg-black text-white  hover:bg-gray-800"
-                              >
-                                {animal.label}
-                              </SelectItem>
-                            ))}
-                          </Select>
+                        <Select
+                          label="Select an animal"
+                          className="bg-black text-white " // Add `!` to override Tailwind's default background
+                        >
+                          {animals.map((animal) => (
+                            <SelectItem
+                              key={animal.key}
+                              className="bg-black text-white  hover:bg-gray-800"
+                            >
+                              {animal.label}
+                            </SelectItem>
+                          ))}
+                        </Select>
+
+                        <div>
+                          <h4>Description of Issue </h4>
+
                           <Textarea
-                          label="Your Message"
-                          placeholder="Enter your message here"
-                          variant="bordered"
-                          className="w-full mt-4 bg-black text-white border-white"
-                          style={{
-                            borderColor: "#ffffff",
-                            borderRadius: "0.375rem",
-                            padding: "0.5rem",
-                          }}
-                          required
-                        />
-                        <div className="grid grid-cols-2 gap-4 form-label">
-
+                            label="Your Message"
+                            placeholder="Enter your message here"
+                            variant="bordered"
+                            className="w-full mt-4 bg-black text-white border-white"
+                            style={{
+                              borderColor: "#ffffff",
+                              borderRadius: "0.375rem",
+                              padding: "0.5rem",
+                            }}
+                            required
+                          />
                         </div>
-                    <div className="space-y-2">
-                      <h4>Any Previous Repair Attempts? </h4>
-                   
+                        <div className="grid grid-cols-2 gap-4 form-label"></div>
+                        <div>
+                          <h4>Any Previous Repair Attempts? </h4>
                           <Select
                             label="Select an animal"
                             className="bg-black text-white " // Add `!` to override Tailwind's default background
@@ -342,10 +345,12 @@ const StaperForm: React.FC = () => {
                               </SelectItem>
                             ))}
                           </Select>
-                          </div>
-                          <div className="space-y-2">
-                      <h4>Want to Jump the Queue for Faster Service at an Additional Cost? </h4>
-                   
+                        </div>
+                        <div>
+                          <h4>
+                            Want to Jump the Queue for Faster Service at an
+                            Additional Cost?{" "}
+                          </h4>
                           <Select
                             label="Select an animal"
                             className="bg-black text-white " // Add `!` to override Tailwind's default background
@@ -359,90 +364,24 @@ const StaperForm: React.FC = () => {
                               </SelectItem>
                             ))}
                           </Select>
-                          </div>
-                     <div>
-                      <h4>Additional Comments</h4>
-                        <Textarea
-                          label="Your Message"
-                          placeholder="Enter your message here"
-                          variant="bordered"
-                          className="w-full mt-4 bg-black text-white border-white"
-                          style={{
-                            borderColor: "#ffffff",
-                            borderRadius: "0.375rem",
-                            padding: "0.5rem",
-                          }}
-                          required
-                        />
-                     </div>
-                      
+                        </div>
 
-                        {/* <div>
-                          <h4>Device Details</h4>
-                          <div className="grid grid-cols-2 gap-4 form-label">
-                            <Select
-                              label="Select an animal"
-                              className="bg-black text-white " // Add `!` to override Tailwind's default background
-                            >
-                              {animals.map((animal) => (
-                                <SelectItem
-                                  key={animal.key}
-                                  className="bg-black text-white  hover:bg-gray-800"
-                                >
-                                  {animal.label}
-                                </SelectItem>
-                              ))}
-                            </Select>
-                            <Select
-                              label="Select an animal"
-                              className="bg-black text-white " // Add `!` to override Tailwind's default background
-                            >
-                              {animals.map((animal) => (
-                                <SelectItem
-                                  key={animal.key}
-                                  className="bg-black text-white  hover:bg-gray-800"
-                                >
-                                  {animal.label}
-                                </SelectItem>
-                              ))}
-                            </Select>
-                            <Input
-                              type="text"
-                              label="Contact Number"
-                              variant="bordered"
-                              className="w-full bg-black text-white border-white"
-                              required
-                            />
-                            <Input
-                              type="email"
-                              label="Your Email"
-                              variant="bordered"
-                              value={email}
-                              isInvalid={isInvalid}
-                              errorMessage={
-                                isInvalid ? "Please enter a valid email" : ""
-                              }
-                              className={`w-full bg-black text-white border-white ${
-                                isInvalid ? "border-red-500" : ""
-                              }`}
-                              onChange={handleValidation}
-                              required
-                            />
-                          </div>
-                        </div> */}
+                        <div>
+                          <h4>Description of Issue </h4>
 
-                        {/* <Textarea
-                          label="Your Message"
-                          placeholder="Enter your message here"
-                          variant="bordered"
-                          className="w-full mt-4 bg-black text-white border-white"
-                          style={{
-                            borderColor: "#ffffff",
-                            borderRadius: "0.375rem",
-                            padding: "0.5rem",
-                          }}
-                          required
-                        /> */}
+                          <Textarea
+                            label="Your Message"
+                            placeholder="Enter your message here"
+                            variant="bordered"
+                            className="w-full mt-4 bg-black text-white border-white"
+                            style={{
+                              borderColor: "#ffffff",
+                              borderRadius: "0.375rem",
+                              padding: "0.5rem",
+                            }}
+                            required
+                          />
+                        </div>
                       </div>
                       <div className="py-4">
                         <input
@@ -457,90 +396,93 @@ const StaperForm: React.FC = () => {
             )}
             {activeStep === 2 && (
               <>
-               
-
-               <div className="grid grid-cols-2">
-               <div>
+                <div className="grid grid-cols-2">
+                  <div>
                     <Image className="" src={StaperForm1} alt="" />
                   </div>
-                <div className="space-y-3">
-                <div className="space-y-2">
-                      <h4>Want to Jump the Queue for Faster Service at an Additional Cost? </h4>
-                   
-                          <Select
-                            label="Select an animal"
-                            className="bg-black text-white " // Add `!` to override Tailwind's default background
+                  <div className="flex flex-col gap-3">
+                    <div>
+                      <h4>
+                        Want to Jump the Queue for Faster Service at an
+                        Additional Cost?{" "}
+                      </h4>
+                      <Select
+                        label="Select an animal"
+                        className="bg-black text-white " // Add `!` to override Tailwind's default background
+                      >
+                        {animals.map((animal) => (
+                          <SelectItem
+                            key={animal.key}
+                            className="bg-black text-white  hover:bg-gray-800"
                           >
-                            {animals.map((animal) => (
-                              <SelectItem
-                                key={animal.key}
-                                className="bg-black text-white  hover:bg-gray-800"
-                              >
-                                {animal.label}
-                              </SelectItem>
-                            ))}
-                          </Select>
-                          </div>
-
-                          <div className="space-y-2">
-                      <h4>Want to Jump the Queue for Faster Service at an Additional Cost? </h4>
-                   
-                          <Select
-                            label="Select an animal"
-                            className="bg-black text-white " // Add `!` to override Tailwind's default background
+                            {animal.label}
+                          </SelectItem>
+                        ))}
+                      </Select>
+                    </div>
+                    <div>
+                      <h4>
+                        Want to Jump the Queue for Faster Service at an
+                        Additional Cost?{" "}
+                      </h4>
+                      <Select
+                        label="Select an animal"
+                        className="bg-black text-white " // Add `!` to override Tailwind's default background
+                      >
+                        {animals.map((animal) => (
+                          <SelectItem
+                            key={animal.key}
+                            className="bg-black text-white  hover:bg-gray-800"
                           >
-                            {animals.map((animal) => (
-                              <SelectItem
-                                key={animal.key}
-                                className="bg-black text-white  hover:bg-gray-800"
-                              >
-                                {animal.label}
-                              </SelectItem>
-                            ))}
-                          </Select>
-                          </div>
+                            {animal.label}
+                          </SelectItem>
+                        ))}
+                      </Select>
+                    </div>
+                    <div className="space-y-2">
+                      <h4>Do you require a pickup label from LabX?</h4>
+                      <Input
+                        type="text"
+                        label="Business Name"
+                        variant="bordered"
+                        className="w-full bg-black text-white border-white"
+                        required
+                      />
+                    </div>
+                    <div className="border-b-[1px] border-[#6161617b] xl:py-3">
+                    <h4 className="xl:mb-2 mb-[4px] text-[#EDE574]">Terms and Conditions Acknowledgment
+                    </h4>
+                    <div>
+                      <Checkbox defaultSelected></Checkbox>
+                      <span className="text-base">By checking this box, I confirm that I have read and agree to the LabX 
+                        <Link className="text-[#EDE574] border-[#EDE574] border-b-1" href="/terms-and-conditions"> Terms and Conditions </Link>
+                      Privacy Policy, and Warranty Terms. </span>
+                    </div>
+                  </div>
 
-
-
-
-
-                          <div className="py-4">
-                            <h4 className="">Terms and Conditions Acknowledgment
-                            </h4>
-                            <div className="mt-3">
-                            <Checkbox defaultSelected></Checkbox>
-                            <span className="text-base">By checking this box, I confirm that I have read and agree to the LabX  Terms and Conditions
-                            Privacy Policy, and Warranty Terms. </span>
-                            </div>
-                          </div>
-
-
-                         <div>
-                          <div className="flex justify-between"> 
-                            <span className="p-3 bg-[#EDE574]  text-black rounded-t-[5px]">Draw Your Signature</span>
-                            <button >Clear</button>
-
-
-                          </div>
-                          <div>
-                              <Textarea
-                          label="Your Message"
-                          placeholder="Enter your message here"
-                          variant="bordered"
-                          className="w-full mt-4 bg-black text-white border-white"
-                          style={{
-                            borderColor: "#ffffff",
-                            borderRadius: "0.375rem",
-                            padding: "0.5rem",
-                          }}
-                          required
-                        />
-                          </div>
-                         </div>
-                
-
+                  <div className="my-5">
+                    <div className="flex justify-between">
+                      <span className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-t-[5px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]">Draw Your Signature</span>
+                      <button className="text-md italic">clear</button>
+                      
+                    </div>
+                    <Textarea
+                            label="Your Message"
+                            placeholder="Enter your message here"
+                            variant="bordered"
+                            className="w-full  bg-black text-white rounded-[0px] border-white"
+                            style={{
+                              borderColor: "#ffffff",
+                              borderRadius: "0.375rem",
+                              padding: "0.5rem",
+                            }}
+                            required
+                          />
+                    <div></div>
+                  </div>
+                  </div>
+                 
                 </div>
-              </div>
               </>
             )}
             {activeStep === 3 && (
