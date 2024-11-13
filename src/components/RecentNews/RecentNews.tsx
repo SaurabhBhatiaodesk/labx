@@ -59,7 +59,8 @@ const RecentNews: React.FC = () => {
         <div className="py-5 xl:py-10" data-aos="fade-up">
           <MainHeading Heading="Recent News" />
           <MainTitle
-            Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing."
+            Title="Explore our latest blogs for insights, news, and expert tips on mobile phone repair and technology. Stay updated with LabX’s tech knowledge!
+"
             data-aos="fade-up"
           />
           <div className="grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:py-5 py-3">
