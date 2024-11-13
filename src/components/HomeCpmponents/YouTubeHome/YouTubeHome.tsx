@@ -35,8 +35,8 @@ const YouTubeHome = () => {
             className="arrow-top-right w-[100%] py-4 my-5"
             modules={[Autoplay, Navigation]}
             spaceBetween={20}
-            loop={true}
-            autoplay={{ delay: 3000 }}
+            loop={false}
+            autoplay={true}
             speed={600}
             breakpoints={{
               320: { slidesPerView: 1 },

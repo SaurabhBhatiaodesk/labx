@@ -75,7 +75,9 @@ export default function App() {
         {/* Right Side Content */}
         <NavbarContent justify="end">
           <Image src={searchicon} alt="Search Icon" />
-          <button className="btn hidden lg:block">GET STARTED</button>
+          <Link href="/coming-soon">
+    <button className="btn hidden lg:block">GET STARTED</button>
+  </Link>
         </NavbarContent>
 
         {/* Mobile Menu */}

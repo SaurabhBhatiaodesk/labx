@@ -1,7 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import hammer from "../../../../public/Images/Home/hammer.svg";
+import screenreplace from "../../../../public/Images/Home/hammer.svg";
+
+import traningimg from "../../../../public/Images/Home/Training.svg"
+import MailinRepair from "../../../../public/Images/Home/Mail in Repair.svg"
+import RepairSolution from "../../../../public/Images/Home/Repair Solution.svg"
+import B2BRepair from "../../../../public/Images/Home/B2B Repair.svg"
+
+import datarecovery from "../../../../public/Images/Home/datarecovery.png"
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import MainTitle from "@/components/MainTitle/MainTitle";
 import "./DeliveryTo.css";
@@ -20,6 +27,8 @@ interface Tab {
   contentf6?: string;
   button?: string;
   link?: string;
+  image?:any;
+
 }
 
 const VerticalTabs: React.FC = () => {
@@ -40,6 +49,7 @@ const VerticalTabs: React.FC = () => {
         "Fast Turnaround Phone Repair: We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "LEARN MORE",
       link: "/coming-soon",
+      image: screenreplace,
     },
     {
       id: 1,
@@ -55,6 +65,7 @@ const VerticalTabs: React.FC = () => {
         "Screen Refurbishing Training: Learn how to restore damaged screens to their original quality. Master the techniques needed to refurbish screens for a variety of devices.",
       button: "LEARN MORE",
       link: "/coming-soon",
+      image: RepairSolution,
     },
     {
       id: 2,
@@ -72,6 +83,7 @@ const VerticalTabs: React.FC = () => {
         "Device Intake and Repair: Upon receipt, we’ll confirm via email and place your device in the repair queue, notifying you of any updates during the process.",
       button: "LEARN MORE",
       link: "/coming-soon",
+      image: MailinRepair,
     },
     {
       id: 3,
@@ -90,6 +102,7 @@ const VerticalTabs: React.FC = () => {
         "Easy B2B Account Setup:Setting up a B2B account is straightforward. Complete the Apply for Business Account form on our website, and your account will be activated within moments, providing you with fast turnaround time for exclusive B2B phone repair services.",
       button: "LEARN MORE",
       link: "/coming-soon",
+      image: B2BRepair,
     },
     {
       id: 4,
@@ -105,6 +118,7 @@ const VerticalTabs: React.FC = () => {
         "Failed or Broken Logic Boards: Our team of mobile technicians specializes in recovering data from devices with broken or failed logic boards, using advanced techniques.",
       button: "LEARN MORE",
       link: "/coming-soon",
+      image: datarecovery,
     },
   ];
 
@@ -183,19 +197,6 @@ const VerticalTabs: React.FC = () => {
                   </div>
                 ))}
 
-              {/* {tabs[activeTab].button && tabs[activeTab].link && (
-  <Link href={tabs[activeTab].link} passHref>
-    <a
-      className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
-      style={{
-        background: getGradientColor(activeTab),
-        borderColor: getGradientColor(activeTab),
-      }}
-    >
-      {tabs[activeTab].button}
-    </a>
-  </Link>
-)} */}
               {tabs[activeTab].button && tabs[activeTab].link && (
                 <Link
                   href={tabs[activeTab].link}
@@ -210,9 +211,14 @@ const VerticalTabs: React.FC = () => {
                 </Link>
               )}
             </div>
-            <div className="p-4 hidden xl:block">
-              <Image src={hammer} alt="Hammer Icon" />
-            </div>
+          <div className="p-4 hidden xl:block">
+  <Image
+    src={tabs[activeTab].image}
+    alt={tabs[activeTab].label}
+    width={500} // Adjust width as needed
+    height={500} // Adjust height as needed
+  />
+</div>
           </div>
         </div>
 

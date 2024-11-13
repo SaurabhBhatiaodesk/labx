@@ -31,12 +31,10 @@ const FixLabx = () => {
             LabX Repair Mobile Repair 
             </h2>
             <p className="text-black pb-5">
-              LABX’s Mobile Tech is a professional and skilful Cell Phone
-              repairing services provider in Melbourne West. You can visit our
-              outlet in Fraser Rise. We’ve certified and endured cell phone
-              technicians available in our stores.{" "}
+            I'm Bharat Dhingra, the founder of LabX, dedicated to providing exceptional, complex mobile phone repair services. With years of experience in the tech industry, I combine innovation and expertise to offer reliable solutions, ensuring quality and customer satisfaction for everyone who trusts LabX.
+
             </p>
-            <MainButton MainButton="LEARN MORE" />
+            <MainButton MainButton="LEARN MORE" link="/coming-soon" />
           </div>
         </div>
       </div>

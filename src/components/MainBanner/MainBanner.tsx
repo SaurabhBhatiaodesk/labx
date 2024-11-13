@@ -64,7 +64,7 @@ const MainBanner = () => {
               {/* Content Rotator */}
               <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
                 {text}
-                <span className="text-[#EDE574]">{highlight}</span>
+                <span className="text-[#fff563]">{highlight}</span>
               </h1>
 
               <p>
@@ -72,7 +72,7 @@ const MainBanner = () => {
 
               </p>
               <div className="my-4 xl:my-10">
-                <MainButton MainButton="Request a Quote" link="#" />
+                <MainButton MainButton="Request a Quote" link="/training" />
               </div>
             </div>
             <div className="w-full">

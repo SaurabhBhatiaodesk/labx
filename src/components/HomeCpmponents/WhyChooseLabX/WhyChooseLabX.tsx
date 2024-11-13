@@ -19,7 +19,8 @@ const WhyChooseLabX: React.FC = () => {
     {
       image: Repairs,
       alt: "Repairs",
-      title: `Expertise in Complex Repairs`,
+      title: `Expertise in Complex Repairs
+`,
       description:
         `We excel in fixing challenging issues that others can't handle, including intricate microsoldering and motherboard repair services. When others can't succeed, we find a solution.`,
     },
@@ -50,10 +51,12 @@ const WhyChooseLabX: React.FC = () => {
     <>
       <div>
         <div className="container" data-aos="fade-up">
-          <MainHeading Heading="Why Choose LabX Repair?" />
-          <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." />
+          <MainHeading Heading="We Do , What Others Don't
+" />
+          <MainTitle Title="At LabX, we tackle complex mobile phone repair challenges that others can’t, delivering reliable solutions and unmatched expertise.
+" />
 
-          <div className="lg:py-8 py-4">
+          <div className="lg:pb-8 py-4">
             <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 justify-center text-center gap-4">
               {sectionData.map((section, index) => (
                 <div
