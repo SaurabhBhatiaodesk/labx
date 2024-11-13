@@ -7,6 +7,8 @@ import StaperForm1 from "../../../public/Images/StaperForm1.png";
 import Image from "next/image";
 import { Select, SelectItem } from "@nextui-org/react";
 import "./mail-in-repair.css";
+import { useDispatch } from "react-redux";
+import { addUser } from "@/app/redux/slice";
 
 const StaperForm: React.FC = () => {
   const animals = [
@@ -28,6 +30,7 @@ const StaperForm: React.FC = () => {
   const [isInvalid, setIsInvalid] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
 
+  const dispatch = useDispatch();
   const handleValidation = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setEmail(value);
@@ -36,6 +39,7 @@ const StaperForm: React.FC = () => {
   };
 
   const handleNextStep = () => {
+
     if (activeStep < 3) {
       setActiveStep((prev) => prev + 1);
     }
@@ -323,11 +327,8 @@ const StaperForm: React.FC = () => {
                           required
                         />
                         <div className="grid grid-cols-2 gap-4 form-label">
-                   
-                        
-                    
                         </div>
-                    
+
                           <Select
                             label="Select an animal"
                             className="bg-black text-white " // Add `!` to override Tailwind's default background
@@ -341,7 +342,7 @@ const StaperForm: React.FC = () => {
                               </SelectItem>
                             ))}
                           </Select>
-                     
+
                         {/* <Textarea
                           label="Your Message"
                           placeholder="Enter your message here"

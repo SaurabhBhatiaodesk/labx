@@ -50,6 +50,7 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { Space_Grotesk, Poppins } from "next/font/google";
 import ConditionalWrapper from "@/components/ConditionalWrapper"; // New client-side wrapper component
+import { Providers } from "./redux/providers";
 
 const space_Grotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -74,9 +75,11 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className={`${space_Grotesk.variable} ${poppins.variable} font-gordita`}>
+      <Providers>
         <ConditionalWrapper>
           {children}
         </ConditionalWrapper>
+        </Providers>
       </body>
     </html>
   );
