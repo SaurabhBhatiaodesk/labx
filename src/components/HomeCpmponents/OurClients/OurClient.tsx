@@ -13,7 +13,7 @@ import "./OurClient.css";
 import Link from "next/link";
 import logo1 from "../../../../public/Images/Home/gadag.svg";
 import logo2 from "../../../../public/Images/Home/logo4slider.svg";
-import logo3 from "../../../../public/Images/Home/logo3slider.svg";
+import logo3 from "../../../../public/Images/Home/teckcity.svg";
 import logo4 from "../../../../public/Images/Home/empire.svg";
 
 import { Autoplay, Navigation } from "swiper/modules";

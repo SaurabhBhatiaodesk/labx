@@ -7,6 +7,8 @@ import MainTitle from "@/components/MainTitle/MainTitle";
 import "./DeliveryTo.css";
 import pointet from "../../../../public/Images/icons/pointingright.svg";
 import DeliveryTousMobile from "./DeliveryTousMobile";
+import Link from 'next/link';
+
 
 interface Tab {
   id: number;
@@ -18,6 +20,9 @@ interface Tab {
   contentf5?: string;
   contentf6?: string;
   button?: string;
+  link?: string; 
+
+
 }
 
 const VerticalTabs: React.FC = () => {
@@ -27,7 +32,7 @@ const VerticalTabs: React.FC = () => {
     {
       id: 0,
       label: "Screen Refurbishment",
-      content: "LabX Professional Screen Refurbishment Services:",
+      content: "LabX Professional  Screen Refurbishment:",
       contentf2:
         "Expert B2B Screen Refurbishing: At LabX Repair, we specialize in screen refurbishment services for businesses, offering high-quality, cost-effective solutions to repair shops, retailers, and wholesalers.",
       contentf3:
@@ -37,11 +42,12 @@ const VerticalTabs: React.FC = () => {
       contentf5:
         "Fast Turnaround Phone Repair: We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "LEARN MORE",
+      link: "/coming-soon",
     },
     {
       id: 1,
       label: "Phone Repair Courses",
-      content: "LabX Professional Screen Refurbishment Services:",
+      content: "LabX Professional Phone Repair Courses:",
       contentf2:
         "Beginner Training: Our beginner phone repairing course covers essential phone repairs, including screen replacement services and charging port repairs. Gain hands-on experience and confidence in your repair skills.",
       contentf3:
@@ -51,11 +57,12 @@ const VerticalTabs: React.FC = () => {
       contentf5:
         "Screen Refurbishing Training: Learn how to restore damaged screens to their original quality. Master the techniques needed to refurbish screens for a variety of devices.",
       button: "LEARN MORE",
+      link: "/coming-soon",
     },
     {
       id: 2,
       label: "Mail In Repair",
-      content: "LabX Professional Screen Refurbishment Services:",
+      content: "LabX Professional Mail In Repair:",
       contentf2:
         "Review Our Pricing: Check our Price List for no-fix, no-fee pricing on common logic board issues. A $66 service fee applies for devices with previous repair attempts.",
       contentf3:
@@ -67,11 +74,12 @@ const VerticalTabs: React.FC = () => {
       contentf6:
         "Device Intake and Repair: Upon receipt, we’ll confirm via email and place your device in the repair queue, notifying you of any updates during the process.",
       button: "LEARN MORE",
+      link: "/coming-soon",
     },
     {
       id: 3,
       label: "B2B Phone Repair",
-      content: "LabX Professional Screen Refurbishment Services:",
+      content: "LabX Professional B2B Phone Repair:",
       contentf2:
         "Competitive Pricing:Our pricing is competitive with one standard rate for both end users and shops. We focus on providing high-quality repair services and offer support to businesses when they need reliable, cost-effective solutions for their repair needs.",
       contentf3:
@@ -84,11 +92,12 @@ const VerticalTabs: React.FC = () => {
       contentf6:
         "Easy B2B Account Setup:Setting up a B2B account is straightforward. Complete the Apply for Business Account form on our website, and your account will be activated within moments, providing you with fast turnaround time for exclusive B2B phone repair services.",
       button: "LEARN MORE",
+      link: "/coming-soon",
     },
     {
       id: 4,
       label: "Data Recovery",
-      content: "LabX Professional Screen Refurbishment Services:",
+      content: "LabX Professional Data Recovery:",
       contentf2:
         "Data from Dead: We can do data recovery from damaged phones that won’t turn on due to hardware damage, shock, or water exposure",
       contentf3:
@@ -98,6 +107,7 @@ const VerticalTabs: React.FC = () => {
       contentf5:
         "Failed or Broken Logic Boards: Our team of mobile technicians specializes in recovering data from devices with broken or failed logic boards, using advanced techniques.",
       button: "LEARN MORE",
+      link: "/coming-soon",
     },
   ];
 
@@ -150,7 +160,7 @@ const VerticalTabs: React.FC = () => {
               ))}
             </div>
             <div
-              className={`flex-1 xl:p-4 radial-gradient-background-${activeTab}`}
+              className={`flex-1 xl:pl-4 radial-gradient-background-${activeTab}`}
             >
               <h3>{tabs[activeTab].content}</h3>
               {[
@@ -176,15 +186,35 @@ const VerticalTabs: React.FC = () => {
                   </div>
                 ))}
 
-              <button
-                className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
-                style={{
-                  background: getGradientColor(activeTab),
-                  borderColor: getGradientColor(activeTab),
-                }}
-              >
-                {tabs[activeTab].button}
-              </button>
+{/* {tabs[activeTab].button && tabs[activeTab].link && (
+  <Link href={tabs[activeTab].link} passHref>
+    <a
+      className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
+      style={{
+        background: getGradientColor(activeTab),
+        borderColor: getGradientColor(activeTab),
+      }}
+    >
+      {tabs[activeTab].button}
+    </a>
+  </Link>
+)} */}
+{tabs[activeTab].button && tabs[activeTab].link && (
+  <Link
+    href={tabs[activeTab].link}
+    passHref
+    className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
+    style={{
+      background: getGradientColor(activeTab),
+      borderColor: getGradientColor(activeTab),
+    }}
+  >
+    {tabs[activeTab].button}
+  </Link>
+)}
+
+
+
             </div>
             <div className="p-4 hidden xl:block">
               <Image src={hammer} alt="Hammer Icon" />

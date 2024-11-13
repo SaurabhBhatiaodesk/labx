@@ -1,5 +1,6 @@
 "use client";
 import { Input, Textarea } from "@nextui-org/react";
+import {Checkbox} from "@nextui-org/react";
 import React, { useState } from "react";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
 import MainHeading from "@/components/ManinHeading/MainHeading";
@@ -323,11 +324,11 @@ const StaperForm: React.FC = () => {
                           required
                         />
                         <div className="grid grid-cols-2 gap-4 form-label">
-                   
-                        
-                    
+
                         </div>
-                    
+                    <div className="space-y-2">
+                      <h4>Any Previous Repair Attempts? </h4>
+                   
                           <Select
                             label="Select an animal"
                             className="bg-black text-white " // Add `!` to override Tailwind's default background
@@ -341,8 +342,27 @@ const StaperForm: React.FC = () => {
                               </SelectItem>
                             ))}
                           </Select>
-                     
-                        {/* <Textarea
+                          </div>
+                          <div className="space-y-2">
+                      <h4>Want to Jump the Queue for Faster Service at an Additional Cost? </h4>
+                   
+                          <Select
+                            label="Select an animal"
+                            className="bg-black text-white " // Add `!` to override Tailwind's default background
+                          >
+                            {animals.map((animal) => (
+                              <SelectItem
+                                key={animal.key}
+                                className="bg-black text-white  hover:bg-gray-800"
+                              >
+                                {animal.label}
+                              </SelectItem>
+                            ))}
+                          </Select>
+                          </div>
+                     <div>
+                      <h4>Additional Comments</h4>
+                        <Textarea
                           label="Your Message"
                           placeholder="Enter your message here"
                           variant="bordered"
@@ -353,9 +373,11 @@ const StaperForm: React.FC = () => {
                             padding: "0.5rem",
                           }}
                           required
-                        /> */}
+                        />
+                     </div>
+                      
 
-                        <div>
+                        {/* <div>
                           <h4>Device Details</h4>
                           <div className="grid grid-cols-2 gap-4 form-label">
                             <Select
@@ -407,7 +429,7 @@ const StaperForm: React.FC = () => {
                               required
                             />
                           </div>
-                        </div>
+                        </div> */}
 
                         {/* <Textarea
                           label="Your Message"
@@ -435,10 +457,90 @@ const StaperForm: React.FC = () => {
             )}
             {activeStep === 2 && (
               <>
-                <h2 className="text-lg font-bold mb-2">Shipping Details</h2>
-                <p className="text-gray-600">This is the third step</p>
+               
 
-                <div></div>
+               <div className="grid grid-cols-2">
+               <div>
+                    <Image className="" src={StaperForm1} alt="" />
+                  </div>
+                <div className="space-y-3">
+                <div className="space-y-2">
+                      <h4>Want to Jump the Queue for Faster Service at an Additional Cost? </h4>
+                   
+                          <Select
+                            label="Select an animal"
+                            className="bg-black text-white " // Add `!` to override Tailwind's default background
+                          >
+                            {animals.map((animal) => (
+                              <SelectItem
+                                key={animal.key}
+                                className="bg-black text-white  hover:bg-gray-800"
+                              >
+                                {animal.label}
+                              </SelectItem>
+                            ))}
+                          </Select>
+                          </div>
+
+                          <div className="space-y-2">
+                      <h4>Want to Jump the Queue for Faster Service at an Additional Cost? </h4>
+                   
+                          <Select
+                            label="Select an animal"
+                            className="bg-black text-white " // Add `!` to override Tailwind's default background
+                          >
+                            {animals.map((animal) => (
+                              <SelectItem
+                                key={animal.key}
+                                className="bg-black text-white  hover:bg-gray-800"
+                              >
+                                {animal.label}
+                              </SelectItem>
+                            ))}
+                          </Select>
+                          </div>
+
+
+
+
+
+                          <div className="py-4">
+                            <h4 className="">Terms and Conditions Acknowledgment
+                            </h4>
+                            <div className="mt-3">
+                            <Checkbox defaultSelected></Checkbox>
+                            <span className="text-base">By checking this box, I confirm that I have read and agree to the LabX  Terms and Conditions
+                            Privacy Policy, and Warranty Terms. </span>
+                            </div>
+                          </div>
+
+
+                         <div>
+                          <div className="flex justify-between"> 
+                            <span className="p-3 bg-[#EDE574]  text-black rounded-t-[5px]">Draw Your Signature</span>
+                            <button >Clear</button>
+
+
+                          </div>
+                          <div>
+                              <Textarea
+                          label="Your Message"
+                          placeholder="Enter your message here"
+                          variant="bordered"
+                          className="w-full mt-4 bg-black text-white border-white"
+                          style={{
+                            borderColor: "#ffffff",
+                            borderRadius: "0.375rem",
+                            padding: "0.5rem",
+                          }}
+                          required
+                        />
+                          </div>
+                         </div>
+                
+
+                </div>
+              </div>
               </>
             )}
             {activeStep === 3 && (
