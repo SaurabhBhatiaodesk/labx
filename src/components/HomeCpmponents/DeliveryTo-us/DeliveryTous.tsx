@@ -150,7 +150,7 @@ const VerticalTabs: React.FC = () => {
               ))}
             </div>
             <div
-              className={`flex-1 xl:p-4 radial-gradient-background-${activeTab}`}
+              className={`flex-1 xl:pl-4 radial-gradient-background-${activeTab}`}
             >
               <h3>{tabs[activeTab].content}</h3>
               {[
