@@ -58,12 +58,12 @@ const WhyChooseLabX: React.FC = () => {
               {sectionData.map((section, index) => (
                 <div
                   key={index}
-                  className="p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] hover:shadow-[0_0_20px_10px_#ede57456] transition-shadow duration-300"
+                  className="p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] hover:shadow-[0_0_20px_10px_#ede57456] transition-shadow duration-300 flex flex-col justify-between"
                 >
                   <div className="flex justify-center">
                     <Image className="pb-2" src={section.image} alt={section.alt} />
                   </div>
-                  <h3 className="text-[#EDE574] lg:w-[70%] m-auto">{section.title}</h3>
+                  <h3 className="text-[#EDE574] xl:text-xl lg:w-[70%] m-auto">{section.title}</h3>
                   <p>{section.description}</p>
                 </div>
               ))}

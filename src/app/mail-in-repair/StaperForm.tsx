@@ -1,5 +1,6 @@
 "use client";
 import { Input, Textarea } from "@nextui-org/react";
+import {Checkbox} from "@nextui-org/react";
 import React, { useState } from "react";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
 import MainHeading from "@/components/ManinHeading/MainHeading";
@@ -7,7 +8,6 @@ import StaperForm1 from "../../../public/Images/StaperForm1.png";
 import Image from "next/image";
 import { Select, SelectItem } from "@nextui-org/react";
 import "./mail-in-repair.css";
-import {Checkbox} from "@nextui-org/react";
 import Link from "next/link";
 
 const StaperForm: React.FC = () => {

@@ -25,7 +25,7 @@ const Footer = () => {
                   <Link href="/">
                     <Image className="mb-4" src={labx} alt=" lab-x" />
                   </Link>
-                  <p className="font-[300]">
+                  <p className="font-[300] font-poppins">
                     LabX is a professional and skilful phone repair service
                     provider in Australia
                   </p>
@@ -42,13 +42,16 @@ const Footer = () => {
                       className="hover:scale-110 transition-transform duration-200"
                       fontSize={30}
                     />
-                 <Link href="https://www.youtube.com/@PRCRepair" target="_blank" rel="noopener noreferrer">
-  <FaYoutube
-    className="hover:scale-110 transition-transform duration-200"
-    fontSize={30}
-  />
-</Link>
-
+                    <Link
+                      href="https://www.youtube.com/@PRCRepair"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaYoutube
+                        className="hover:scale-110 transition-transform duration-200"
+                        fontSize={30}
+                      />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -58,64 +61,64 @@ const Footer = () => {
                   <div>
                     <ul className="text-[18px]">
                       <div>
-                        <Link href="/">
-                          <li className="relative inline-block xl:p-1 group">
+                        <Link href="/mail-in-repair">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] ">
                             Mail-In-Repair
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
                       <div>
-                        <Link href="/">
-                          <li className="relative inline-block xl:p-1 group">
+                        <Link href="/coming-soon">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Training
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
                       <div>
-                        <Link href="/">
-                          <li className="relative inline-block xl:p-1 group">
+                        <Link href="/coming-soon">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             B2B Repair
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
                       <div>
-                        <Link href="/">
-                          <li className="relative inline-block xl:p-1 group">
+                        <Link href="/coming-soon">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Screen Refurbishment
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
                       <div>
-                        <Link href="/">
-                          <li className="relative inline-block xl:p-1 group">
+                        <Link href="/coming-soon">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Data Recovery
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
                       <div>
-                        <Link href="/">
-                          <li className="relative inline-block xl:p-1 group">
+                        <Link href="/coming-soon">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Parts Store
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
                       <div>
-                        <Link href="/">
-                          <li className="relative inline-block xl:p-1 group">
+                        <Link href="/coming-soon">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Repair Forum
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
                       <div>
-                        <Link href="/">
-                          <li className="relative inline-block xl:p-1 group">
+                        <Link href="/coming-soon">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Repair Solutions
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -131,8 +134,8 @@ const Footer = () => {
                   <div>
                     <ul className="text-[18px]">
                       <div>
-                        <Link href="/">
-                          <li className="relative inline-block xl:p-1 group">
+                        <Link href="/coming-soon">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Contact Us
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -140,47 +143,47 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/">
-                          <li className="relative inline-block xl:p-1 group">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Blogs
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
                       <div>
-                        <Link href="/">
-                          <li className="relative inline-block xl:p-1 group">
+                        <Link href="/coming-soon">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Trademark Disclaimer
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
                       <div>
-                        <Link href="/">
-                          <li className="relative inline-block xl:p-1 group">
+                        <Link href="/coming-soon">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Warranty and Terms
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
                       <div>
-                        <Link href="/">
-                          <li className="relative inline-block xl:p-1 group">
+                        <Link href="/coming-soon">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Shipping Policy
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
                       <div>
-                        <Link href="/">
-                          <li className="relative inline-block xl:p-1 group">
+                        <Link href="/coming-soon">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             FAQ’s
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
                       <div>
-                        <Link href="/">
-                          <li className="relative inline-block xl:p-1 group">
+                        <Link href="/coming-soon">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Terms and conditions
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -194,41 +197,54 @@ const Footer = () => {
                 <div>
                   <h3 className="xl:mb-5">Contact Info</h3>
                   <div className="flex flex-col gap-2">
-                    <div className="flex gap-4 items-center xl:pb-4 border-b-[0.5px] border-[#a7a7a7b3]">
+                    <div className="flex gap-4 items-center xl:py-[8px] py-[5px] border-b-[0.5px] border-[#a7a7a7b3]">
                       <CiMail
                         className="hover:scale-110 transition-transform duration-200"
                         fontSize={25}
                       />
-                      <Link href="mailto:info@labxrepair.com.au" legacyBehavior>
-                        <a className="text-[18px] transition-transform duration-300 hover:scale-105">
-                          info@labxrepair.com.au
+                      <Link
+                        href="mailto:bharat@labxrepair.com.au"
+                        legacyBehavior
+                      >
+                        <a className="text-[18px] transition-transform duration-300 hover:scale-105 font-poppins font-[300]">
+                          bharat@labxrepair.com.au
                         </a>
                       </Link>
                     </div>
-                    <div className="flex gap-4 items-center xl:py-4 border-b-[0.5px] border-[#a7a7a7b3]">
+                    <div className="flex gap-4 items-center xl:py-[8px] py-[5px] border-b-[0.5px] border-[#a7a7a7b3]">
                       <IoCallOutline
                         className="hover:scale-110 transition-transform duration-200"
                         fontSize={25}
                       />
                       <Link href="" legacyBehavior>
-                      <a href="tel:+61455777077" className="text-[18px] transition-transform duration-300 hover:scale-105">
-  +61455777077
-</a>
+                        <a
+                          href="tel:+61455777077"
+                          className="text-[18px] transition-transform duration-300 hover:scale-105 font-poppins font-[300]"
+                        >
+                          +61455777077
+                        </a>
                       </Link>
                     </div>
-                    <div className="flex gap-4 items-center xl:py-4 border-b-[0.5px] border-[#a7a7a7b3]">
+                    <div className="flex gap-4 items-center xl:py-[8px] py-[5px] border-b-[0.5px] border-[#a7a7a7b3]">
                       <IoLocationOutline
                         className="hover:scale-110 transition-transform duration-200"
                         fontSize={25}
                       />
-                      <Link href="" legacyBehavior>
-                        <a className="text-[18px] transition-transform duration-300 hover:scale-105">
-                        6QMF+GQ St Marys, New South Wales, Australia
+                      <Link
+                        href="https://www.google.com/maps/place/LabXRepair/@-33.766127,150.7743917,15z/data=!4m6!3m5!1s0x6b129b2ceccf72d7:0x2bd3b51996f0eed4!8m2!3d-33.766127!4d150.7743917!16s%2Fg%2F11lv7kb0ct?hl=en-GB&entry=ttu&g_ep=EgoyMDI0MTExMC4wIKXMDSoASAFQAw%3D%3D"
+                        legacyBehavior
+                      >
+                        <a
+                          className="text-[18px] transition-transform duration-300 hover:scale-105 font-poppins font-[300]"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          122 Queen St, St Marys NSW 2760, Australia
                         </a>
                       </Link>
                     </div>
                     <div>
-                      <h2 className="xl:text-[30px]  lg:text-26px text-30px">
+                      <h2 className="xl:text-[30px]  lg:text-26px text-30px font-poppins">
                         Sign-Up The LABX
                       </h2>
                     </div>
@@ -236,7 +252,7 @@ const Footer = () => {
                       <input
                         type="email"
                         placeholder="Enter your email address"
-                        className="text-black w-full p-[11px] rounded-[50px] cursor-pointer border-[1px] border-gray-300 focus:outline-none my-3 placeholder:text-black placeholder:font-normal placeholder:text-[16px]"
+                        className="text-black w-full p-[11px] rounded-[50px] cursor-pointer border-[1px] border-gray-300 focus:outline-none my-2 placeholder:text-[#3737379c] placeholder:font-normal placeholder:text-[16px]"
                       />
                       <button
                         type="submit"
@@ -280,13 +296,16 @@ const Footer = () => {
                   className="hover:scale-110 transition-transform duration-200"
                   fontSize={30}
                 />
-              <Link href="https://www.youtube.com/@PRCRepair" target="_blank" rel="noopener noreferrer">
-  <FaYoutube
-    className="hover:scale-110 transition-transform duration-200"
-    fontSize={30}
-  />
-</Link>
-
+                <Link
+                  href="https://www.youtube.com/@PRCRepair"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaYoutube
+                    className="hover:scale-110 transition-transform duration-200"
+                    fontSize={30}
+                  />
+                </Link>
               </div>
 
               <MobileFooterMenue />

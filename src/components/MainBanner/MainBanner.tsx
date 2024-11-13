@@ -77,7 +77,7 @@ const MainBanner = () => {
             </div>
             <div className="w-full">
               <Image
-                className="w-full object-contain"
+                className="w-full xl:h-[550px] object-contain"
                 src={bannerimage}
                 alt="Banner"
               />

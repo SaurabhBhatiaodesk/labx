@@ -14,7 +14,7 @@ import p2 from "../../../public/Images/productimages/apple2.svg";
 
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper as SwiperType } from "swiper";
-import { GoArrowRight } from "react-icons/go";
+// import { GoArrowRight } from "react-icons/go";
 import lottiearrow from "../../../public/Images/jsonfile/lottieflowbtn.json";
 
 export default function Productswiper() {
@@ -119,7 +119,7 @@ export default function Productswiper() {
                     <div className="price-offer-discount flex justify-between py-[5px]">
                       <div className="flex gap-3 items-center">
                         <span className="line-through text-[#6d6d6dd2] lg:text-[20px] text-[16px]">
-                         {slide.cross}
+                         {/* {slide.cross} */}
                         </span>
                         <span className="lg:text-[20px] text-[16px]">
                          {slide.price}
@@ -127,7 +127,7 @@ export default function Productswiper() {
                       </div>
                       <div>
                         <span className="text-[#00BA0C] font-semibold lg:text-[20px] text-[16px]">
-                          10% off
+                          {/* 10% off */}
                         </span>
                       </div>
                     </div>
@@ -140,7 +140,7 @@ export default function Productswiper() {
       </div>
       <div className="flex justify-center xl:py-[20px]">
         {/* <button className="btn  flex items-center ">VISIT STORE <GoArrowRight fontSize={25}/></button> */}
-        <Link href="/">
+        <Link href="/coming-soon">
         <button className="btn  flex items-center ">
           VISIT STORE{" "}
           <Lottie

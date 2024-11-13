@@ -21,11 +21,12 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
-    { label: "Home", path: "/" },
+    // { label: "Home", path: "/" },
+    { label: "B2B Repair", path: "/b2b-repair" },
     { label: "Services", path: "/services" },
     { label: "Parts Store", path: "/parts-store" },
-    { label: "Training", path: "/training" }, // Link to the training page
-    { label: "B2B Repair", path: "/b2b-repair" },
+    { label: "Training", path: "/training" }, 
+  
     { label: "Contact Us", path: "/contact-us" },
     { label: "Price List", path: "/price-list" },
   ];
@@ -60,7 +61,7 @@ export default function App() {
             {menuItems.map((item) => (
               <NavbarItem key={item.label}>
                 <Link
-                  className="relative tracking-[1.5px] font-medium group"
+                  className="relative tracking-[1.5px] font-medium group  "
                   href={item.path}
                 >
                   {item.label}
