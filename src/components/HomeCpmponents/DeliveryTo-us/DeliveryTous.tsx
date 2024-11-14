@@ -2,12 +2,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import screenreplace from "../../../../public/Images/Home/hammer.svg";
-
 import traningimg from "../../../../public/Images/Home/Training.svg";
 import MailinRepair from "../../../../public/Images/Home/Mail in Repair.svg";
 import RepairSolution from "../../../../public/Images/Home/Repair Solution.svg";
 import B2BRepair from "../../../../public/Images/Home/B2B Repair.svg";
-
 import datarecovery from "../../../../public/Images/Home/datarecovery.png";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import MainTitle from "@/components/MainTitle/MainTitle";
