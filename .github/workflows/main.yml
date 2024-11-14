@@ -44,6 +44,7 @@ jobs:
           echo 'npm run build' >> deploy_script.sh
           echo 'sudo npm install -g pm2' >> deploy_script.sh
           echo 'pm2 startOrReload ecosystem.config.js --env production' >> deploy_script.sh
+          echo 'pm2 logs my-nextjs-app' >> deploy_script.sh
           echo 'pm2 save' >> deploy_script.sh
           echo 'echo "Deployment completed successfully."' >> deploy_script.sh
           chmod +x deploy_script.sh
