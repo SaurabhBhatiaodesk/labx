@@ -36,7 +36,7 @@ const YouTubeHome = () => {
             modules={[Autoplay, Navigation]}
             spaceBetween={20}
             loop={false}
-            autoplay={true}
+            autoplay={false}
             speed={600}
             breakpoints={{
               320: { slidesPerView: 1 },
