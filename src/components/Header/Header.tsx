@@ -13,7 +13,7 @@ import rktaxilog from "../../../public/Images/Brand logos/Frame.svg";
 import "./Header.css";
 import Link from "next/link";
 import Image from "next/image";
-import headercallicon from "../../../public/Images/icons/headercallicon.svg";
+// import headercallicon from "../../../public/Images/icons/headercallicon.svg";
 import searchicon from "../../../public/Images/icons/search-interface-symbol.svg";
 import { RiArrowDropUpLine } from "react-icons/ri";
 
@@ -24,7 +24,8 @@ export default function App() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const menuItems = [
-    { label: "B2B Repair", path: "/coming-soon" },
+
+    // { label: "B2B Repair", path: "/coming-soon" },
     {
       label: "Services",
       path: "/coming-soon",
@@ -33,7 +34,7 @@ export default function App() {
         { label: "Mail-In-Repair", path: "/mail-in-repair" },
         { label: "Training", path: "/training" },
         { label: "B2B Repair", path: "/coming-soon" },
-        { label: "Screen Refurbishment", path: "/coming-soon" },
+        // { label: "Screen Refurbishment", path: "/coming-soon" },
         { label: "Data Recovery", path: "/coming-soon" },
         { label: "Parts Store", path: "/coming-soon" },
         { label: "Repair Forum", path: "/coming-soon" },
@@ -42,6 +43,7 @@ export default function App() {
     },
     { label: "Parts Store", path: "/coming-soon" },
     { label: "Training", path: "/training" },
+    { label: "Screen Refurbishment", path: "/coming-soon" },
     { label: "Contact Us", path: "/coming-soon" },
     { label: "Price List", path: "/coming-soon" },
   ];
@@ -106,7 +108,7 @@ export default function App() {
                       {item.label}
                       <span
                         className={`ml-2 transform transition-transform ${
-                          isServicesDropdownOpen ? "rotate-180" : "rotate-0"
+                          isServicesDropdownOpen ? "rotate-0" : "rotate-180"
                         }`}
                       >
                         <RiArrowDropUpLine />

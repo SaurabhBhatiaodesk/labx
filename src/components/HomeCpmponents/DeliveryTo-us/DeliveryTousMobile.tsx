@@ -142,7 +142,7 @@ const DeliveryTousMobile: React.FC = () => {
             <div className="p-[12px] rounded-b-lg text-[16px]">
               <div className="flex items-start gap-2 mb-2">
                 <Image src={pointet} alt="Pointing icon" width={20} height={20} />
-                <p>{tab.content}</p>
+                <p className="xl:pb-2 pb-1">{tab.content}</p>
               </div>
               {tab.contentf2 && (
                 <div className="flex items-start gap-2 mb-2">
