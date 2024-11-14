@@ -59,7 +59,7 @@ export default function App() {
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsServicesDropdownOpen(false);
+        setIsServicesDropdownOpen(false); 
         setIsMobileServicesDropdownOpen(false);
       }
     };
