@@ -36,7 +36,7 @@ const MainHeading: React.FC<MainHeadingProps> = ({ Heading, color, animation }) 
 
   return (
     <div data-aos={animation || 'fade-up'}>
-      <h2 className="text-center" style={{ color: color || 'inherit' }}>
+      <h2 className="text-center pb-[5px] border-b-[1px] w-fit m-auto border-[#fff563]" style={{ color: color || 'inherit' }}>
         {Heading}
       </h2>
     </div>

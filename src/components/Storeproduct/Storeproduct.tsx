@@ -113,15 +113,15 @@ export default function Productswiper() {
                     alt={slide.alt}
                   />
                   <div className="product">
-                    <p className="product-title text-[13px] lg:text-[15px] leading-6 line my-3 ">
+                    <p className="product-title text-[13px] lg:text-[15px] leading-6 line my-3 font-poppins ">
                       {slide.Product}
                     </p>
                     <div className="price-offer-discount flex justify-between py-[5px]">
-                      <div className="flex gap-3 items-center">
+                      <div className="">
                         <span className="line-through text-[#6d6d6dd2] lg:text-[20px] text-[16px]">
                          {/* {slide.cross} */}
                         </span>
-                        <span className="lg:text-[20px] text-[16px]">
+                        <span className="lg:text-[20px] text-[16px] font-poppins">
                          {slide.price}
                         </span>
                       </div>
