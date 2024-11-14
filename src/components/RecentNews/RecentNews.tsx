@@ -73,7 +73,7 @@ const RecentNews: React.FC = () => {
                     </h4>
                     <p data-aos="fade-left">{item.param}</p>
                     <div className="flex justify-between">
-                      <button className="capitalize text-[16px] tracking-[1px]">
+                      <button className="capitalize text-[16px] tracking-[1px] p-2 F1-btn-color">
                         read more
                       </button>
                       <span className="capitalize text-[16px] tracking-[1px]">

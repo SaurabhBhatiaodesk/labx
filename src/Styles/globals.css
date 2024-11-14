@@ -143,6 +143,25 @@ body {
   padding: 60px 0px;
   overflow: hidden;
 }
+.F1-btn-color {
+  background-image: var(--F1-btn-color);
+  color: var(--secondary-color, #000000);
+  font-weight: 500;
+ 
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 8px 8px; /* Add padding for a more substantial button */
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Initial shadow */
+  border: 2px solid transparent;
+}
+
+.F1-btn-color:hover {
+  transform: scale(1.05); 
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); 
+  border-color: rgba(237, 229, 116, 0.8); 
+  background-position: right center; 
+}
 
 .main-bg {
   background-color: var(--secondary-color);
