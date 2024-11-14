@@ -2,11 +2,11 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import screenreplace from "../../../../public/Images/Home/hammer.svg";
-import traningimg from "../../../../public/Images/Home/Training.svg";
+import traning from "../../../../public/Images/Home/Training.svg";
 import MailinRepair from "../../../../public/Images/Home/Mail in Repair.svg";
-import RepairSolution from "../../../../public/Images/Home/Repair Solution.svg";
+import repairsoloutaion from "../../../../public/Images/Home/repairsoloutaion.svg";
 import B2BRepair from "../../../../public/Images/Home/B2B Repair.svg";
-import datarecovery from "../../../../public/Images/Home/datarecovery.png";
+import datarecovery from "../../../../public/Images/Home/datarecovery.svg";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import MainTitle from "@/components/MainTitle/MainTitle";
 import "./DeliveryTo.css";
@@ -75,7 +75,7 @@ const VerticalTabs: React.FC = () => {
         " Learn how to restore damaged screens to their original quality. Master the techniques needed to refurbish screens for a variety of devices.",
       button: "LEARN MORE",
       link: "/coming-soon",
-      image: RepairSolution,
+      image: traning,
     },
     {
       id: 2,
@@ -121,7 +121,7 @@ const VerticalTabs: React.FC = () => {
         "Setting up a B2B account is straightforward. Complete the Apply for Business Account form on our website, and your account will be activated within moments, providing you with fast turnaround time for exclusive B2B phone repair services.",
       button: "LEARN MORE",
       link: "/coming-soon",
-      image: B2BRepair,
+      image: repairsoloutaion,
     },
     {
       id: 4,
