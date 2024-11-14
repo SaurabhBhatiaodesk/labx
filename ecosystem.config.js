@@ -2,7 +2,7 @@ module.exports = {
   apps: [{
     name: "my-nextjs-app",
     script: "npm",
-    args: "start -p 3001", // specify a port other than 3000
+    args: "start",
     watch: true,
     env: {
       NODE_ENV: "development",

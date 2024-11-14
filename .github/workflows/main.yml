@@ -43,7 +43,6 @@ jobs:
           echo 'npm install' >> deploy_script.sh
           echo 'npm run build' >> deploy_script.sh
           echo 'sudo npm install -g pm2' >> deploy_script.sh
-          echo 'pm2 delete labx-backend' >> deploy_script.sh
           echo 'pm2 startOrReload ecosystem.config.js --env production' >> deploy_script.sh
           echo 'pm2 save' >> deploy_script.sh
           echo 'echo "Deployment completed successfully."' >> deploy_script.sh

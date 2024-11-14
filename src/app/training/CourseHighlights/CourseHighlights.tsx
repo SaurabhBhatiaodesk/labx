@@ -23,7 +23,7 @@ const CourseHighlights = () => {
                   fill
                 />
               </div>
-              <div className="p-2 lg:p-2 bg-black text-white rounded-md">
+              <div className="p-3 lg:p-6 bg-black text-white rounded-md">
                 <h2 className="text-3xl font-bold mb-4">
                   Advanced Motherboard Repair – Micro Soldering (Level 1)
                 </h2>
@@ -75,7 +75,7 @@ const CourseHighlights = () => {
             </div>
             {/* course 2 */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
-              <div className="order-2 lg:order-1 p-2 lg:p-2 bg-black text-white rounded-md">
+              <div className="order-2 lg:order-1 p-3 lg:p-6 bg-black text-white rounded-md">
                 <h2 className="text-3xl font-bold mb-4">
                   Expert Motherboard Repair – Micro Soldering (Level 2)
                 </h2>
@@ -142,7 +142,7 @@ const CourseHighlights = () => {
                   fill
                 />
               </div>
-              <div className="p-2 lg:p-2 bg-black text-white rounded-md">
+              <div className="p-3 lg:p-6 bg-black text-white rounded-md">
                 <h2 className="text-3xl font-bold mb-4">
                   Master Motherboard Repair – Micro Soldering (Level 3)
                 </h2>
@@ -186,7 +186,7 @@ const CourseHighlights = () => {
 
             {/* course 0 */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
-              <div className="order-2 lg:order-1 p-2 lg:p-2 bg-black text-white rounded-md">
+              <div className="order-2 lg:order-1 p-3 lg:p-6 bg-black text-white rounded-md">
                 <h2 className="text-3xl font-bold mb-4">
                   This course does not include micro soldering or
                   motherboard-level repairs.

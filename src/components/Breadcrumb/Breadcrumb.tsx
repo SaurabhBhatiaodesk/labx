@@ -8,7 +8,6 @@ interface BreadcrumbProps {
   pageDescription: string;
   backgroundImage: string;
   AdminImage: string;
-  link: any; // Add this prop to dynamically change the link
 }
 
 function Breadcrumb({
@@ -16,19 +15,18 @@ function Breadcrumb({
   pageDescription,
   backgroundImage,
   AdminImage,
-  link, // Destructure the link prop
 }: BreadcrumbProps) {
   return (
     <>
       <section
-        className="bg-no-repeat bg-cover p-0"
+        className=" bg-no-repeat bg-cover p-0"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <div className="container">
-          <div className="grid lg:grid-cols-[5fr_3fr] items-center pt-3">
+        <div className="container ">
+          <div className=" grid lg:grid-cols-[5fr_3fr]  items-center pt-3">
             <div className="w-full px-4">
-              <div className="text-center lg:text-left">
-                <ul className="flex items-center lg:justify-start justify-center gap-[10px]">
+              <div className=" text-center lg:text-left">
+                <ul className="flex items-center lg:justify-start justify-center  gap-[10px]">
                   <li>
                     <Link
                       href="/"
@@ -39,7 +37,9 @@ function Breadcrumb({
                   </li>
                   <li>
                     <p className="text-body-color flex items-center gap-[10px] text-base font-medium mb-0">
-                      <span className="text-body-color dark:text-dark-6">/</span>
+                      <span className="text-body-color dark:text-dark-6">
+                        /
+                      </span>
                       {pageName}
                     </p>
                   </li>
@@ -52,13 +52,10 @@ function Breadcrumb({
                 </p>
               </div>
               <div className="flex lg:justify-start justify-center">
-                {/* Button is now dynamic */}
-                <Link href={link}>
-                  <button className="btn">Request a Quote</button>
-                </Link>
+                <MainButton MainButton="Request a Quote" />
               </div>
             </div>
-            <div className="admin-image relative 2xl:h-[500px] lg:h-[350px] h-[350px]">
+            <div className="admin-image relative  2xl:h-[500px] lg:h-[350px] h-[350px] ">
               <Image
                 src={AdminImage}
                 alt="Admin Visual"

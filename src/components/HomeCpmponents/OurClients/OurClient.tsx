@@ -69,7 +69,7 @@ export default function Productswiper({}) {
               }}
             >
               <SwiperSlide>
-             
+                <Link href="">
                   <div className="relative  client-slider ">
                     <Image
                       className="w-full"
@@ -77,49 +77,49 @@ export default function Productswiper({}) {
                       alt="Toyota Fortuner"
                     />
                   </div>
-             
+                </Link>
               </SwiperSlide>
               <SwiperSlide>
-               
+                <Link href="">
                   <div className="relative  client-slider">
                     <Image className="w-full" src={logo2} alt="Honda Civic" />
                   </div>
-             
+                </Link>
               </SwiperSlide>
               <SwiperSlide>
-             
+                <Link href="">
                   <div className="relative  client-slider">
                     <Image className="w-full" src={logo3} alt="BMW X5" />
                   </div>
-              
+                </Link>
               </SwiperSlide>
               <SwiperSlide>
-               
+                <Link href="">
                   <div className="relative  client-slider">
                     <Image className="w-full" src={logo4} alt="Mercedes Benz" />
                   </div>
-              
+                </Link>
               </SwiperSlide>
               <SwiperSlide>
-               
+                <Link href="">
                   <div className="relative  client-slider">
                     <Image className="w-full" src={logo1} alt="Mercedes Benz" />
                   </div>
-            
+                </Link>
               </SwiperSlide>
               <SwiperSlide>
-               
+                <Link href="">
                   <div className="relative  client-slider">
                     <Image className="w-full" src={logo2} alt="BMW X5" />
                   </div>
-              
+                </Link>
               </SwiperSlide>
               <SwiperSlide>
-                
+                <Link href="">
                   <div className="relative client-slider">
                     <Image className="w-full" src={logo3} alt="Mercedes Benz" />
                   </div>
-              
+                </Link>
               </SwiperSlide>
             </Swiper>
           </div>
