@@ -95,6 +95,9 @@ import "./MainBanner.css";
 import Image from "next/image";
 import MainButton from "../MainButton/MainButton";
 import bannerimage from "../../../public/Images/Home/bannerimage-top.png";
+import mainb1 from "../../../public/Images/Home/mainb1.png";
+import mainb2 from "../../../public/Images/Home/mainb2.png";
+import mainb3 from "../../../public/Images/Home/mainb3.png";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -127,7 +130,7 @@ export default function MainBanner() {
               delay: 3000,
               disableOnInteraction: false,
             }}
-            speed={600}
+            speed={1000}
             breakpoints={{
               1024: { slidesPerView: 1 },
               1440: { slidesPerView: 1 },
@@ -157,12 +160,12 @@ export default function MainBanner() {
                   </p>
 
                   <div className="my-4 xl:my-10">
-                    <MainButton MainButton="Request a Quote" link="/training" />
+                    <MainButton MainButton="Request a Quote" link="/coming-soon" />
                   </div>
                 </div>
                 <div className="w-full">
                   <Image
-                    className="w-full xl:h-[550px] object-contain"
+                    className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
                     src={bannerimage}
                     alt="Banner"
                   />
@@ -183,20 +186,18 @@ export default function MainBanner() {
                   </h1>
 
                   <p>
-                    Need a quick repair? At LabX Repair, we specialize in fast
-                    and efficient repairs for all mobile devices. With expert
-                    technicians, we guarantee the best quality service and
-                    support.
+                  {`LabX Repair goes beyond standard mobile repair! We're your complete platform for top-quality repairs, professional training, and community support. From iPhone and smartphone repairs to purchasing parts and skill-building courses, LabX Repair is here to meet all your mobile needs.
+`}
                   </p>
 
                   <div className="my-4 xl:my-10">
-                    <MainButton MainButton="Get Started" link="/repair" />
+                    <MainButton MainButton="Get Started" link="/coming-soon" />
                   </div>
                 </div>
                 <div className="w-full">
                   <Image
-                    className="w-full xl:h-[550px] object-contain"
-                    src={bannerimage}
+                    className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
+                    src={mainb1}
                     alt="Quick Repairs"
                   />
                 </div>
@@ -216,20 +217,18 @@ export default function MainBanner() {
                   </h1>
 
                   <p>
-                    Our expert technicians offer top-notch repair services,
-                    while our training programs help you gain valuable skills to
-                    repair mobile devices like a pro. Join LabX Repair and learn
-                    from the best!
+                   {`Discover LabX Repair—more than a mobile repair service. We offer quality repairs, trusted training programs, and essential parts for all your repair needs. Whether fixing your smartphone or learning new repair skills, LabX Repair provides everything to keep you and your devices connected.
+`}
                   </p>
 
                   <div className="my-4 xl:my-10">
-                    <MainButton MainButton="Start Training" link="/training" />
+                    <MainButton MainButton="Start Training" link="/coming-soon" />
                   </div>
                 </div>
                 <div className="w-full">
                   <Image
-                    className="w-full xl:h-[550px] object-contain"
-                    src={bannerimage}
+                    className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
+                    src={mainb2}
                     alt="Training and Repairs"
                   />
                 </div>
@@ -246,20 +245,18 @@ export default function MainBanner() {
                   </h1>
 
                   <p>
-                    At LabX Repair, you don’t just get your devices repaired,
-                    you also learn the skills to fix them yourself. We offer
-                    comprehensive training and hands-on experience to get you
-                    started in the mobile repair industry.
+                  {`At LabX Repair, we do more than fix phones! We're a full-service platform with expert repair solutions, quality repair parts, and professional training programs. Choose LabX Repair to upgrade your device or advance your skills—your go-to destination for all things mobile repair.
+`}
                   </p>
 
                   <div className="my-4 xl:my-10">
-                    <MainButton MainButton="Join Us Now" link="/training" />
+                    <MainButton MainButton="Join Us Now" link="/coming-soon" />
                   </div>
                 </div>
                 <div className="w-full">
                   <Image
-                    className="w-full xl:h-[550px] object-contain"
-                    src={bannerimage}
+                    className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
+                    src={mainb3}
                     alt="Device Repair"
                   />
                 </div>
@@ -267,37 +264,7 @@ export default function MainBanner() {
             </SwiperSlide>
 
             {/* Slide 5 */}
-            <SwiperSlide>
-              <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-start xl:py-5">
-                <div>
-                  <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
-                    Looking for Mobile Repair Parts?
-                    <span className="text-[#fff563]">
-                      {" "}
-                      – LabX Repair Has You Covered!
-                    </span>
-                  </h1>
-
-                  <p>
-                    LabX Repair is your go-to source for high-quality mobile
-                    repair parts. Whether you need screens, batteries, or tools,
-                    we have everything you need to make your repair business a
-                    success.
-                  </p>
-
-                  <div className="my-4 xl:my-10">
-                    <MainButton MainButton="Shop Parts" link="/shop" />
-                  </div>
-                </div>
-                <div className="w-full">
-                  <Image
-                    className="w-full xl:h-[550px] object-contain"
-                    src={bannerimage}
-                    alt="Repair Parts"
-                  />
-                </div>
-              </div>
-            </SwiperSlide>
+   
           </Swiper>
         </div>
       </section>
