@@ -40,58 +40,39 @@ const B2BRepairTable: React.FC = () => {
   const fetchData = async (page: number, limit: number, searchValue = "") => {
     setIsLoading(true);
     setErrorMessage("");
-
     try {
       let response;
-      const config = {
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'mode':'no-cors'
-        },
-        params: {
-          page: page + 1, // Backend pages are 1-indexed
-          limit,
-        },
-      };
-
       if (searchValue.trim() === "") {
-        // Normal GET request with CORS configuration
-        response = await axios.get(`http://18.117.249.163:7000/api/repair`, config);
+        // Normal GET request
+        response = await axios.get(`http://18.117.249.163:7000/api/repair`, {
+          params: {
+            page: page + 1, // Backend pages are 1-indexed
+            limit,
+          },
+        });
       } else {
-        // Search POST request with CORS configuration
+        // Search POST request
         response = await axios.post(
           `http://18.117.249.163:7000/api/repair/search`,
           { searchValue },
-          config
+          {
+            params: {
+              page: page + 1,
+              limit,
+            },
+          }
         );
       }
 
-      // Check if the response is successful and has the expected data
-      if (response.status === 200 && response.data) {
-        setData(response.data.data);
-        setTotalRecords(response.data.pagination.totalRecords);
-      } else {
-        setErrorMessage("Unexpected response format received.");
-      }
+      setData(response.data.data);
+      setTotalRecords(response.data.pagination.totalRecords);
       setIsLoading(false);
     } catch (error: unknown) {
-      console.error("Fetch data error:", error); // Log the full error for debugging
-
       if (axios.isAxiosError(error)) {
-        if (error.response) {
-          console.error("Response error details:", error.response); // Log error details
-          if (error.response.status === 404) {
-            setErrorMessage("No records found matching the search criteria.");
-          } else {
-            setErrorMessage(`Server responded with status code ${error.response.status}`);
-          }
-        } else if (error.request) {
-          console.error("Request made but no response received:", error.request);
-          setErrorMessage("No response received from the server. Check your network connection.");
+        if (error.response && error.response.status === 404) {
+          setErrorMessage("No records found matching the search criteria.");
         } else {
-          console.error("Error in setting up the request:", error.message);
-          setErrorMessage("An error occurred while setting up the request.");
+          setErrorMessage("An error occurred while fetching data.");
         }
       } else if (error instanceof Error) {
         setErrorMessage(error.message);

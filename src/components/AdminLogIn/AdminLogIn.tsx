@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FormEvent } from "react";
+import React, { FormEvent, useState } from "react";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
@@ -9,25 +9,40 @@ import Box from "@mui/system/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useRouter } from "next/navigation";
-
+import axios from "axios";
 interface FormValues {
   email: string;
   password: string;
 }
 
 export default function AdminLogIn(): JSX.Element {
-  const router = useRouter()
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const router = useRouter();
+  const [error, setError] = useState<string | null>(null);
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    const email = data.get("email");
+    const password = data.get("password");
 
-    // Navigate to /admindashboard
-    router.push("/adminDeshboard");
+    try {
+      // Send POST request to the login API
+      const response = await axios.post(
+        "http://18.117.249.163:7000/api/admin/login",
+        {
+          username: email,
+          password: password,
+        }
+      );
+
+      if (response.status === 200) {
+        console.log(response.data);
+        // Navigate to /admindashboard if login is successful
+        router.push("/adminDeshboard");
+      }
+    } catch (err) {
+      console.error("Login error:", err);
+      setError("Invalid username or password");
+    }
   };
 
   return (
@@ -109,7 +124,5 @@ export default function AdminLogIn(): JSX.Element {
         </Box>
       </Card>
     </>
-
-    
   );
 }
