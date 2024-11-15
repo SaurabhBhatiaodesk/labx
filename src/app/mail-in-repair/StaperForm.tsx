@@ -171,23 +171,27 @@ const StaperForm: React.FC = () => {
               ].map((step, index) => (
                 <div key={index} className="flex items-center flex-col">
                   <div
-                    className={`w-20 h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px] ${
+                    className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px]  ${
                       activeStep === index
                         ? "bg-yellow-500"
                         : activeStep > index
-                        ? "bg-green-300"
+                        ? ""
                         : ""
                     }`}
                   >
                     {activeStep > index ? (
-                      <IoCheckmarkDoneOutline />
+                      <Lottie
+                      animationData={lottiearrow}
+                      style={{ width: 50, height: 50 }}
+                      className="lottie-icon"
+                    />
                     ) : (
                       index + 1
                     )}
                   </div>
                   <p
-                    className={`mt-2 ${
-                      activeStep === index ? "font-bold" : ""
+                    className={`font-medium lg:text-lg text-sm text-center m-0  ${
+                      activeStep === index ? "font-medium lg:text-lg text-sm text-center m-0 " : ""
                     }`}
                   >
                     {step}
@@ -216,10 +220,10 @@ const StaperForm: React.FC = () => {
                         <h4 className="lg:text-lg text-sm">Personal Details</h4>
                         <div className="grid grid-cols-2 gap-4 form-label">
                           <Input
-                                isReadOnly
+                             
                             type="text"
                             label="Business Name"
-                            variant="bordered"
+                           variant="faded"
                             className="w-full bg-black text-white border-white"
                             value={personalDetails.businessName}
                             onChange={(e) =>
@@ -262,7 +266,7 @@ const StaperForm: React.FC = () => {
                           <Input
                             type="email"
                             label="Your Email"
-                            variant="bordered"
+                            variant="faded"
                             value={personalDetails.emailAddress}
                             isInvalid={isInvalid}
                             errorMessage={
@@ -284,6 +288,7 @@ const StaperForm: React.FC = () => {
                         <div className="flex w-full flex-wrap md:flex-nowrap gap-4 bg-black">
                           <Input
                             label="Return Shipping Address"
+                            variant="faded"
                             className="bg-black text-white border-white"
                             value={personalDetails.returnShippingAddress}
                             onChange={(
@@ -304,7 +309,8 @@ const StaperForm: React.FC = () => {
                           <div className="grid grid-cols-2 gap-4 form-label">
                             <Select
                               label="Device Type"
-                              className="bg-black text-white"
+                              
+                              className="bg-black text-white gauav"
                               value={deviceDetails.deviceType}
                               onChange={(
                                 e: React.ChangeEvent<HTMLSelectElement>
@@ -324,7 +330,7 @@ const StaperForm: React.FC = () => {
                                 <SelectItem
                                   key={device.key}
                                   value={device.label}
-                                  className="bg-black text-white hover:bg-gray-800"
+                                 className=" text-black  hover:text-black"
                                 >
                                   {device.label}
                                 </SelectItem>
@@ -333,7 +339,7 @@ const StaperForm: React.FC = () => {
 
                             <Select
                               label="Brand and Model"
-                              className="bg-black text-white"
+                              className="bg-black text-white gauav"
                               value={
                                 deviceDetails.brand && deviceDetails.model
                                   ? `${deviceDetails.brand} - ${deviceDetails.model}`
@@ -370,7 +376,7 @@ const StaperForm: React.FC = () => {
                             <Input
                               type="text"
                               label="IMEI/Serial No."
-                              variant="bordered"
+                            variant="faded"
                               className="w-full bg-black text-white border-white"
                               value={deviceDetails.imeiOrSerialNo}
                               onChange={(e) =>
@@ -384,7 +390,7 @@ const StaperForm: React.FC = () => {
                             <Input
                               type="text"
                               label="Device Password"
-                              variant="bordered"
+                              variant="faded"
                               className="w-full bg-black text-white border-white"
                               value={deviceDetails.devicePassword}
                               onChange={(e) =>
@@ -399,12 +405,29 @@ const StaperForm: React.FC = () => {
                         </div>
                       </div>
                       <div className="py-4">
-                        <button
-                          onClick={handleNextStep}
-                          className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
-                        >
-                          Next
-                        </button>
+                      <div className="flex justify-end mt-4">
+                          {activeStep > 0 && (
+                            <button
+                              onClick={handlePrevStep}
+                              className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
+                            >
+                              Previous
+                            </button>
+                          )}
+                          {activeStep < 3 ? (
+                            <button
+                              onClick={handleNextStep}
+                              className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
+                            >
+                              Next
+                            </button>
+                          ) : (
+                            <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
+                              <IoCheckmarkDoneOutline className="mr-2" />
+                              Complete
+                            </button>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -426,7 +449,10 @@ const StaperForm: React.FC = () => {
                   <div>
                     <div className="p-4">
                       <div className="flex flex-col gap-4 bg-black text-white">
-                        <select
+                      <Select
+                        label="Brand and Model"
+                              className="bg-black text-white gauav"
+
                           value={repairDetails.deviceType}
                           onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                             setRepairDetails({
@@ -436,11 +462,11 @@ const StaperForm: React.FC = () => {
                           }
                         >
                           {animals.map((animal) => (
-                            <option key={animal.key} value={animal.label}>
+                             <SelectItem key={animal.key} value={animal.label}>
                               {animal.label}
-                            </option>
+                              </SelectItem>
                           ))}
-                        </select>
+                         </Select>
 
                         <div>
                           <h4>Description of Issue</h4>
@@ -465,13 +491,13 @@ const StaperForm: React.FC = () => {
                           />
                         </div>
 
-                        <div className="grid grid-cols-2 gap-4 form-label"></div>
+                        {/* <div className="grid grid-cols-2 gap-4 form-label"></div> */}
 
                         <div>
                           <h4>Any Previous Repair Attempts?</h4>
                           <Select
                             label="Previous Repair Attempts"
-                            className="bg-black text-white"
+                            className="bg-black text-white gauav"
                             value={
                               repairDetails.previousRepairAttempts
                                 ? "Yes"
@@ -490,11 +516,12 @@ const StaperForm: React.FC = () => {
                             <SelectItem
                               key="yes"
                               value="Yes"
-                              className="bg-black text-white hover:bg-gray-800"
+                              className="bg-black text-white  gauav"
                             >
                               Yes
                             </SelectItem>
                             <SelectItem
+                            
                               key="no"
                               value="No"
                               className="bg-black text-white hover:bg-gray-800"
@@ -511,7 +538,7 @@ const StaperForm: React.FC = () => {
                           </h4>
                           <Select
                             label="Jump the Queue"
-                            className="bg-black text-white"
+                            className="bg-black text-white gauav"
                             value={
                               repairDetails.jumpQueueForFasterService
                                 ? "Yes"
@@ -530,7 +557,7 @@ const StaperForm: React.FC = () => {
                             <SelectItem
                               key="yes"
                               value="Yes"
-                              className="bg-black text-white hover:bg-gray-800"
+                              className="bg-black text-white hover:bg-gray-800 "
                             >
                               Yes
                             </SelectItem>
@@ -549,7 +576,7 @@ const StaperForm: React.FC = () => {
                           <Textarea
                             label="Additional Comments"
                             placeholder="Enter any additional comments here"
-                            variant="bordered"
+                             variant="faded"
                             className="w-full mt-4 bg-black text-white border-white"
                             style={{
                               borderColor: "#ffffff",
@@ -567,12 +594,29 @@ const StaperForm: React.FC = () => {
                         </div>
                       </div>
                       <div className="py-4">
-                        <button
-                          onClick={handleNextStep}
-                          className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
-                        >
-                          Next
-                        </button>
+                      <div className="flex justify-between mt-4">
+                          {activeStep > 0 && (
+                            <button
+                              onClick={handlePrevStep}
+                              className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
+                            >
+                              Previous
+                            </button>
+                          )}
+                          {activeStep < 3 ? (
+                            <button
+                              onClick={handleNextStep}
+                              className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
+                            >
+                              Next
+                            </button>
+                          ) : (
+                            <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
+                              <IoCheckmarkDoneOutline className="mr-2" />
+                              Complete
+                            </button>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -598,7 +642,7 @@ const StaperForm: React.FC = () => {
                         <h4>Do you require a return label?</h4>
                         <Select
                           label="Require Return Label"
-                          className="bg-black text-white"
+                          className="bg-black text-white gauav"
                           value={
                             shippingDetails.requireReturnLabel ? "Yes" : "No"
                           }
@@ -612,7 +656,7 @@ const StaperForm: React.FC = () => {
                           <SelectItem
                             key="yes"
                             value="Yes"
-                            className="bg-black text-white hover:bg-gray-800"
+                            className="bg-black text-white hover:bg-gray-800 "
                           >
                             Yes
                           </SelectItem>
@@ -630,7 +674,7 @@ const StaperForm: React.FC = () => {
                         <h4>Do you require a pickup label from LabX?</h4>
                         <Select
                           label="Require Pickup Label"
-                          className="bg-black text-white"
+                          className="bg-black text-white gauav"
                           value={
                             shippingDetails.requirePickupLabel ? "Yes" : "No"
                           }
@@ -674,17 +718,18 @@ const StaperForm: React.FC = () => {
                               })
                             }
                           >
-                            <span className="text-base">
-                              By checking this box, I confirm that I have read
-                              and agree to the LabX{" "}
-                              <Link
-                                className="text-[#EDE574] border-[#EDE574] border-b-1"
-                                href="/terms-and-conditions"
-                              >
-                                Terms and Conditions
-                              </Link>
-                              , Privacy Policy, and Warranty Terms.
-                            </span>
+                                      <span className="lg:text-base text-sm text-white">
+                          By checking this box, I confirm that I have read and
+                          agree to the LabX
+                          <Link
+                            className="text-[#EDE574] border-[#EDE574] border-b-1"
+                            href="/coming-soon"
+                          >
+                            {" "}
+                            Terms and Conditions{" "}
+                          </Link>
+                          Privacy Policy, and Warranty Terms.{" "}
+                        </span>
                           </Checkbox>
                         </div>
                       </div>
@@ -709,12 +754,29 @@ const StaperForm: React.FC = () => {
       </div>
                     </div>
                     <div className="py-4">
-                      <button
-                        onClick={handleNextStep}
-                        className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
-                      >
-                        Next
-                      </button>
+                    <div className="flex justify-between mt-4">
+                          {activeStep > 0 && (
+                            <button
+                              onClick={handlePrevStep}
+                              className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
+                            >
+                              Previous
+                            </button>
+                          )}
+                          {activeStep < 3 ? (
+                            <button
+                              onClick={handleNextStep}
+                              className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
+                            >
+                              Next
+                            </button>
+                          ) : (
+                            <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
+                              <IoCheckmarkDoneOutline className="mr-2" />
+                              Complete
+                            </button>
+                          )}
+                        </div>
                     </div>
                   </div>
                 </div>
@@ -723,25 +785,42 @@ const StaperForm: React.FC = () => {
 
             {activeStep === 3 && (
               <>
-                {/* Render Step 4 components */}
-                <h2 className="text-lg font-bold mb-2">
-                  Terms & Pricing Agreement
-                </h2>
-                <p className="text-gray-600">This is the final step</p>
-                <div className="flex justify-between mt-4">
-                  <button
-                    onClick={handlePrevStep}
-                    className="bg-gray-200 py-2 px-4 rounded-md"
-                  >
-                    Previous
-                  </button>
-                  <button
-                    onClick={handleSubmit}
-                    className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md"
-                  >
-                    <IoCheckmarkDoneOutline className="mr-2" />
-                    Complete
-                  </button>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center border-y-[1px] border-[#81818175]">
+                  <div className="relative w-full h-[300px] md:h-[550px]">
+                    <Image
+                      className="object-cover rounded-[30px]"
+                      src={StaperForm4}
+                      alt="Course Image"
+                      fill
+                    />
+                  </div>
+                  <div className="p-2 lg:p-2 bg-black text-white rounded-md">
+                    <h2 className="text-3xl font-bold mb-4">
+                      Pricing Agreement
+                    </h2>
+                    <div className="flex gap-4 text-yellow-400">
+                      <span>
+                        {" "}
+                        <Checkbox className="p-0" defaultSelected></Checkbox>
+                      </span>
+
+                      <p className="">
+                        By submitting this form, I agree to proceed with repairs
+                        or data recovery based on the prices displayed on the
+                        LabX website. LabX will not provide a separate quote if
+                        the repair can be completed within the listed prices. If
+                        costs exceed the displayed prices, LabX will contact me
+                        before proceeding. I am pre-approving repairs or
+                        services at the prices shown on the website. If a price
+                        is not listed on the website, LabX will provide a
+                        separate quotation before proceeding.
+                      </p>
+                    </div>
+
+                    <div>
+                      <button className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]">Submit</button>
+                    </div>
+                  </div>
                 </div>
               </>
             )}
