@@ -1,7 +1,20 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Box, Button, MenuItem, Select, TextField } from '@mui/material';
 
-const B2BRepairFilter: React.FC = () => {
+
+interface B2BRepairFilterProps {
+  onSearchChange: (searchValue: string) => void;
+}
+
+const B2BRepairFilter: React.FC<B2BRepairFilterProps> = ({ onSearchChange }) => {
+  const [searchValue, setSearchValue] = useState('');
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    console.log('valueee',value)
+    setSearchValue(value);
+    onSearchChange(value);
+  };
   return (
     <Box display="flex" alignItems="center" gap={2}>
       {/* Search Product Input */}
@@ -9,6 +22,8 @@ const B2BRepairFilter: React.FC = () => {
         variant="outlined"
         placeholder="Search Product"
         sx={{ backgroundColor: '#f5f5f5' }}
+        value={searchValue}
+        onChange={handleSearchChange}
       />
 
       {/* Category Dropdown */}
