@@ -115,7 +115,7 @@ const StaperForm: React.FC = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:7000/api/repair_info",
+        "http://18.117.249.163:7000/api/repair_info",
         payload,
         {
           headers: {
