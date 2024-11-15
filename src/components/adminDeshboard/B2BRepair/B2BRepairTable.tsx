@@ -44,7 +44,7 @@ const B2BRepairTable: React.FC = () => {
       let response;
       if (searchValue.trim() === "") {
         // Normal GET request
-        response = await axios.get(`http://18.117.249.163:7000/api/repair`, {
+        response = await axios.get(`https://18.117.249.163:7000/api/repair`, {
           params: {
             page: page + 1, // Backend pages are 1-indexed
             limit,
@@ -53,7 +53,7 @@ const B2BRepairTable: React.FC = () => {
       } else {
         // Search POST request
         response = await axios.post(
-          `http://18.117.249.163:7000/api/repair/search`,
+          `https://18.117.249.163:7000/api/repair/search`,
           { searchValue },
           {
             params: {

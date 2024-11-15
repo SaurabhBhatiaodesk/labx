@@ -122,7 +122,7 @@ const StaperForm: React.FC = () => {
 
     try {
       const response = await axios.post(
-        "http://18.117.249.163:7000/api/repair_info",
+        "https://18.117.249.163:7000/api/repair_info",
         payload,
         {
           headers: {
@@ -221,7 +221,7 @@ const StaperForm: React.FC = () => {
                         <h4 className="lg:text-lg text-sm">Personal Details</h4>
                         <div className="grid grid-cols-2 gap-4 form-label">
                           <Input
-                             
+
                             type="text"
                             label="Business Name"
                            variant="faded"
@@ -234,7 +234,7 @@ const StaperForm: React.FC = () => {
                               })
                             }
                             required
-                           
+
                           />
                           <Input
                             type="text"
@@ -310,7 +310,7 @@ const StaperForm: React.FC = () => {
                           <div className="grid grid-cols-2 gap-4 form-label">
                             <Select
                               label="Device Type"
-                              
+
                               className="bg-black text-white gauav"
                               value={deviceDetails.deviceType}
                               onChange={(
@@ -522,7 +522,7 @@ const StaperForm: React.FC = () => {
                               Yes
                             </SelectItem>
                             <SelectItem
-                            
+
                               key="no"
                               value="No"
                               className="bg-black text-white hover:bg-gray-800"
