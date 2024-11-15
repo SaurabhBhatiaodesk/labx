@@ -3,6 +3,7 @@ import React from "react";
 import FeeSolutions from "./FeeSolutions";
 import HowWorks from "./HowWorks";
 import StaperForm from "./StaperForm";
+import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
 
 const MailRepair = () => {
   return (
@@ -21,6 +22,9 @@ const MailRepair = () => {
         <FeeSolutions />
         <HowWorks />
         <StaperForm />
+        <GoogleReviews />
+
+        
       </div>
     </>
   );

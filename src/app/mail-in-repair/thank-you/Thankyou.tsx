@@ -1,8 +1,13 @@
 "use client";
 import React from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+<<<<<<< HEAD
 import MainHeading from "../../../components/ManinHeading/MainHeading";
 import MainTitle from "../../../components/MainTitle/MainTitle";
+=======
+import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainTitle from "@/components/MainTitle/MainTitle";
+>>>>>>> gaurav-dev
 
 const Thankyou = () => {
     const steps = [

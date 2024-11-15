@@ -34,7 +34,7 @@ export default function App() {
         { label: "Mail-In-Repair", path: "/mail-in-repair" },
         { label: "Training", path: "/training" },
         { label: "B2B Repair", path: "/coming-soon" },
-        // { label: "Screen Refurbishment", path: "/coming-soon" },
+        { label: "Screen Refurbishment", path: "/coming-soon" },
         { label: "Data Recovery", path: "/coming-soon" },
         { label: "Parts Store", path: "/coming-soon" },
         { label: "Repair Forum", path: "/coming-soon" },
