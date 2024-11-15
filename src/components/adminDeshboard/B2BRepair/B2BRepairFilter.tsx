@@ -11,7 +11,6 @@ const B2BRepairFilter: React.FC<B2BRepairFilterProps> = ({ onSearchChange }) => 
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
-    console.log('valueee',value)
     setSearchValue(value);
     onSearchChange(value);
   };
