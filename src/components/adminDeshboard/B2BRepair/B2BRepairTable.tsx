@@ -29,8 +29,8 @@ const B2BRepairTable: React.FC = () => {
 
   const fetchData = async (page: number, limit: number) => {
     setIsLoading(true);
-    try {
-      const response = await axios.get(`http://localhost:7000/api/repair`, {
+    try { 
+      const response = await axios.get(`http://18.117.249.163:7000/api/repair`, {
         params: {
           page: page + 1, // Backend pages are 1-indexed
           limit,

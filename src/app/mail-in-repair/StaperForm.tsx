@@ -2,8 +2,8 @@
 import Lottie from "lottie-react";
 import lottiearrow from "../../../public/Images/jsonfile/lottieflow-fill.json";
 import { Input, Textarea } from "@nextui-org/react";
-import { Checkbox } from "@nextui-org/react";
-import React, { useState , useRef } from "react";
+import React, { useState, useRef  } from "react";
+import SignatureCanvas from "react-signature-canvas";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import StaperForm1 from "../../../public/Images/StaperForm1.png";
@@ -14,6 +14,7 @@ import StaperForm4 from "../../../public/Images/StaperForm4.png";
 import Image from "next/image";
 import { Select, SelectItem } from "@nextui-org/react";
 import "./mail-in-repair.css";
+import { Checkbox } from "@nextui-org/react";
 import Link from "next/link";
 import axios from "axios";
 const StaperForm: React.FC = () => {
@@ -160,7 +161,6 @@ const StaperForm: React.FC = () => {
             <MainHeading Heading="LabX Mail-In Repair Submission Form" />
           </div>
 
-<<<<<<< HEAD
           <div className="max-w-5xl mx-auto p-4">
             <div className="grid grid-cols-4 mb-8">
               {[
@@ -194,110 +194,6 @@ const StaperForm: React.FC = () => {
                   </p>
                 </div>
               ))}
-=======
-          {/* Multi-stepper */}
-          <div className="max-w-5xl mx-auto p-1 md:p-4">
-            <div className="grid grid-cols-4 xl:mb-8 mb-4">
-              {/* Step 1 */}
-              <div className="flex items-center flex-col">
-                <div
-                  className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-500 border-[1px] ${activeStep === 0
-                    ? "bg-yellow-500"
-                    : activeStep > 0
-                      ? ""
-                      : ""
-                    }`}
-                >
-                  {activeStep > 0 ? (
-                    <Lottie
-                      animationData={lottiearrow}
-                      style={{ width: 50, height: 50 }}
-                      className="lottie-icon"
-                    />
-                  ) : (
-                    1
-                  )}
-                </div>
-                <p className={`font-medium lg:text-lg text-sm text-center m-0 ${activeStep === 0 ? "font-medium lg:text-lg text-sm text-center m-0" : ""}`}>
-                  Personal Details
-                </p>
-              </div>
-
-              {/* Step 2 */}
-              <div className="flex items-center flex-col">
-                <div
-                  className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px] ${activeStep === 1
-                    ? "bg-yellow-500"
-                    : activeStep > 1
-                      ? ""
-                      : ""
-                    }`}
-                >
-                  {activeStep > 1 ? (
-                    <Lottie
-                      animationData={lottiearrow}
-                      style={{ width: 50, height: 50 }}
-                      className="lottie-icon"
-                    />
-                  ) : (
-                    2
-                  )}
-                </div>
-                <p className={`font-medium lg:text-lg text-sm text-center m-0 ${activeStep === 1 ? "font-medium lg:text-lg text-sm text-center m-0" : ""}`}>
-                  Repair Details
-                </p>
-              </div>
-
-              {/* Step 3 */}
-              <div className="flex items-center flex-col">
-                <div
-                  className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px] ${activeStep === 2
-                    ? "bg-yellow-500"
-                    : activeStep > 2
-                      ? ""
-                      : ""
-                    }`}
-                >
-                  {activeStep > 2 ? (
-                    <Lottie
-                      animationData={lottiearrow}
-                      style={{ width: 50, height: 50 }}
-                      className="lottie-icon"
-                    />
-                  ) : (
-                    3
-                  )}
-                </div>
-                <p className={`font-medium lg:text-lg text-sm text-center m-0 ${activeStep === 2 ? "font-medium lg:text-lg text-sm text-center m-0" : ""}`}>
-                  Shipping Details
-                </p>
-              </div>
-
-              {/* Step 4 */}
-              <div className="flex items-center flex-col">
-                <div
-                  className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px] ${activeStep === 3
-                    ? "bg-yellow-500"
-                    : activeStep > 3
-                      ? ""
-                      : ""
-                    }`}
-                >
-                  {activeStep === 3 ? (
-                    <Lottie
-                      animationData={lottiearrow}
-                      style={{ width: 50, height: 50 }}
-                      className="lottie-icon"
-                    />
-                  ) : (
-                    4
-                  )}
-                </div>
-                <p className={`font-medium lg:text-lg text-sm text-center m-0 ${activeStep === 3 ? "font-medium lg:text-lg text-sm text-center m-0" : ""}`}>
-                  Terms & Pricing Agreement
-                </p>
-              </div>
->>>>>>> gaurav-dev
             </div>
           </div>
 
@@ -323,7 +219,6 @@ const StaperForm: React.FC = () => {
                                 isReadOnly
                             type="text"
                             label="Business Name"
-<<<<<<< HEAD
                             variant="bordered"
                             className="w-full bg-black text-white border-white"
                             value={personalDetails.businessName}
@@ -333,10 +228,6 @@ const StaperForm: React.FC = () => {
                                 businessName: e.target.value,
                               })
                             }
-=======
-                            variant="faded"
-                            className="w-full bg-black text-white border-white "
->>>>>>> gaurav-dev
                             required
                            
                           />
@@ -371,18 +262,12 @@ const StaperForm: React.FC = () => {
                           <Input
                             type="email"
                             label="Your Email"
-<<<<<<< HEAD
                             variant="bordered"
                             value={personalDetails.emailAddress}
-=======
-                            variant="faded"
-                            value={email}
->>>>>>> gaurav-dev
                             isInvalid={isInvalid}
                             errorMessage={
                               isInvalid ? "Please enter a valid email" : ""
                             }
-<<<<<<< HEAD
                             className={`w-full bg-black text-white border-white ${
                               isInvalid ? "border-red-500" : ""
                             }`}
@@ -393,17 +278,11 @@ const StaperForm: React.FC = () => {
                               });
                               handleValidation(e);
                             }}
-=======
-                            className={`w-full bg-black text-white border-white ${isInvalid ? "border-red-500" : ""
-                              }`}
-                            onChange={handleValidation}
->>>>>>> gaurav-dev
                             required
                           />
                         </div>
                         <div className="flex w-full flex-wrap md:flex-nowrap gap-4 bg-black">
                           <Input
-<<<<<<< HEAD
                             label="Return Shipping Address"
                             className="bg-black text-white border-white"
                             value={personalDetails.returnShippingAddress}
@@ -418,24 +297,12 @@ const StaperForm: React.FC = () => {
                             placeholder="Enter your return shipping address"
                             required
                           />
-=======
-                            type="text"
-                            label="Return Shipping Address"
-                            variant="faded"
-                            className="w-full bg-black text-white border-white"
-                            required
-                          />
-                        </div>
-                        <div>
-                          <h4 className="lg:text-lg text-base text-[#EDE574]">Personal Detailsc</h4>
->>>>>>> gaurav-dev
                         </div>
 
                         <div>
                           <h4 className="lg:text-lg text-sm pb-[4px]">Device Details</h4>
                           <div className="grid grid-cols-2 gap-4 form-label">
                             <Select
-<<<<<<< HEAD
                               label="Device Type"
                               className="bg-black text-white"
                               value={deviceDetails.deviceType}
@@ -447,10 +314,6 @@ const StaperForm: React.FC = () => {
                                   deviceType: e.target.value,
                                 })
                               }
-=======
-                              label="Device Type "
-                              className="!bg-black !text-white gauav"
->>>>>>> gaurav-dev
                             >
                               {/* Replace 'animals' with actual device types */}
                               {[
@@ -459,14 +322,9 @@ const StaperForm: React.FC = () => {
                                 { key: "laptop", label: "Laptop" },
                               ].map((device) => (
                                 <SelectItem
-<<<<<<< HEAD
                                   key={device.key}
                                   value={device.label}
                                   className="bg-black text-white hover:bg-gray-800"
-=======
-                                  key={animal.key}
-                                  className="bg-black text-white hover:!bg-gray-800"
->>>>>>> gaurav-dev
                                 >
                                   {device.label}
                                 </SelectItem>
@@ -475,7 +333,6 @@ const StaperForm: React.FC = () => {
 
                             <Select
                               label="Brand and Model"
-<<<<<<< HEAD
                               className="bg-black text-white"
                               value={
                                 deviceDetails.brand && deviceDetails.model
@@ -493,9 +350,6 @@ const StaperForm: React.FC = () => {
                                   model: selectedModel,
                                 });
                               }}
-=======
-                              className="bg-black text-white gauav " // Add `!` to override Tailwind's default background
->>>>>>> gaurav-dev
                             >
                               {[
                                 { brand: "Apple", model: "iPhone 13 Pro" },
@@ -515,13 +369,8 @@ const StaperForm: React.FC = () => {
 
                             <Input
                               type="text"
-<<<<<<< HEAD
                               label="IMEI/Serial No."
                               variant="bordered"
-=======
-                              label="IMEI or Serial Number "
-                              variant="faded"
->>>>>>> gaurav-dev
                               className="w-full bg-black text-white border-white"
                               value={deviceDetails.imeiOrSerialNo}
                               onChange={(e) =>
@@ -534,7 +383,6 @@ const StaperForm: React.FC = () => {
                             />
                             <Input
                               type="text"
-<<<<<<< HEAD
                               label="Device Password"
                               variant="bordered"
                               className="w-full bg-black text-white border-white"
@@ -545,49 +393,18 @@ const StaperForm: React.FC = () => {
                                   devicePassword: e.target.value,
                                 })
                               }
-=======
-                              label="Device Password  "
-                           variant="faded"
-                              className="w-full bg-black text-white border-white"
->>>>>>> gaurav-dev
                               required
                             />
                           </div>
                         </div>
                       </div>
                       <div className="py-4">
-<<<<<<< HEAD
                         <button
                           onClick={handleNextStep}
                           className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
                         >
                           Next
                         </button>
-=======
-                        <div className="flex justify-between mt-4">
-                          {activeStep > 0 && (
-                            <button
-                              onClick={handlePrevStep}
-                              className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
-                            >
-                              Previous
-                            </button>
-                          )}
-                          {activeStep < 3 ? (
-                            <button
-                              onClick={handleNextStep}
-                              className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
-                            >
-                              Next
-                            </button>
-                          ) : (
-                            <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
-                              <IoCheckmarkDoneOutline className="mr-2" />
-                              Complete
-                            </button>
-                          )}
-                        </div>
->>>>>>> gaurav-dev
                       </div>
                     </div>
                   </div>
@@ -609,7 +426,6 @@ const StaperForm: React.FC = () => {
                   <div>
                     <div className="p-4">
                       <div className="flex flex-col gap-4 bg-black text-white">
-<<<<<<< HEAD
                         <select
                           value={repairDetails.deviceType}
                           onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
@@ -618,11 +434,6 @@ const StaperForm: React.FC = () => {
                               deviceType: e.target.value,
                             })
                           }
-=======
-                        <Select
-                          label="Select an animal"
-                          className="bg-black text-white gauav " // Add `!` to override Tailwind's default background
->>>>>>> gaurav-dev
                         >
                           {animals.map((animal) => (
                             <option key={animal.key} value={animal.label}>
@@ -632,12 +443,7 @@ const StaperForm: React.FC = () => {
                         </select>
 
                         <div>
-<<<<<<< HEAD
                           <h4>Description of Issue</h4>
-=======
-                          <h4 className="lg:text-lg text-sm">Description of Issue </h4>
-
->>>>>>> gaurav-dev
                           <Textarea
                             label="Your Message"
                             placeholder="Enter your message here"
@@ -662,7 +468,6 @@ const StaperForm: React.FC = () => {
                         <div className="grid grid-cols-2 gap-4 form-label"></div>
 
                         <div>
-<<<<<<< HEAD
                           <h4>Any Previous Repair Attempts?</h4>
                           <Select
                             label="Previous Repair Attempts"
@@ -681,12 +486,6 @@ const StaperForm: React.FC = () => {
                                   e.target.value === "Yes",
                               })
                             }
-=======
-                          <h4 className="lg:text-lg text-sm lg:pb-3 pb-[5px]">Any Previous Repair Attempts? </h4>
-                          <Select
-                            label="Select an animal"
-                            className="bg-black text-white gauav " // Add `!` to override Tailwind's default background
->>>>>>> gaurav-dev
                           >
                             <SelectItem
                               key="yes"
@@ -711,7 +510,6 @@ const StaperForm: React.FC = () => {
                             Additional Cost?
                           </h4>
                           <Select
-<<<<<<< HEAD
                             label="Jump the Queue"
                             className="bg-black text-white"
                             value={
@@ -728,10 +526,6 @@ const StaperForm: React.FC = () => {
                                   e.target.value === "Yes",
                               })
                             }
-=======
-                            label="Select an animal"
-                            className="bg-black text-white gauav" // Add `!` to override Tailwind's default background
->>>>>>> gaurav-dev
                           >
                             <SelectItem
                               key="yes"
@@ -751,22 +545,12 @@ const StaperForm: React.FC = () => {
                         </div>
 
                         <div>
-<<<<<<< HEAD
                           <h4>Additional Comments</h4>
                           <Textarea
                             label="Additional Comments"
                             placeholder="Enter any additional comments here"
                             variant="bordered"
                             className="w-full mt-4 bg-black text-white border-white"
-=======
-                          <h4 className="lg:text-lg text-sm lg:pb-3 pb-[5px]">Description of Issue </h4>
-
-                          <Textarea
-                            label="Your Message"
-                            placeholder="Enter your message here"
-                             variant="faded"
-                            className="w-full lx:mt-3 mt-[5px] bg-black text-white border-white"
->>>>>>> gaurav-dev
                             style={{
                               borderColor: "#ffffff",
                               borderRadius: "0.375rem",
@@ -783,38 +567,12 @@ const StaperForm: React.FC = () => {
                         </div>
                       </div>
                       <div className="py-4">
-<<<<<<< HEAD
                         <button
                           onClick={handleNextStep}
                           className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
                         >
                           Next
                         </button>
-=======
-                        <div className="flex justify-between mt-4">
-                          {activeStep > 0 && (
-                            <button
-                              onClick={handlePrevStep}
-                              className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
-                            >
-                              Previous
-                            </button>
-                          )}
-                          {activeStep < 3 ? (
-                            <button
-                              onClick={handleNextStep}
-                              className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
-                            >
-                              Next
-                            </button>
-                          ) : (
-                            <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
-                              <IoCheckmarkDoneOutline className="mr-2" />
-                              Complete
-                            </button>
-                          )}
-                        </div>
->>>>>>> gaurav-dev
                       </div>
                     </div>
                   </div>
@@ -834,7 +592,6 @@ const StaperForm: React.FC = () => {
                     />
                     </div>
                   </div>
-<<<<<<< HEAD
                   <div className="p-4">
                     <div className="flex flex-col gap-4 bg-black text-white">
                       <div>
@@ -852,19 +609,6 @@ const StaperForm: React.FC = () => {
                             })
                           }
                         >
-=======
-                  <div className="flex flex-col gap-3 p-4">
-                    <div>
-                      <h4 className="lg:text-lg text-sm lg:pb-3 pb-[5px]">
-                        Want to Jump the Queue for Faster Service at an
-                        Additional Cost?{" "}
-                      </h4>
-                      <Select
-                        label="Select an animal"
-                        className="bg-black text-white gauav " // Add `!` to override Tailwind's default background
-                      >
-                        {animals.map((animal) => (
->>>>>>> gaurav-dev
                           <SelectItem
                             key="yes"
                             value="Yes"
@@ -872,22 +616,6 @@ const StaperForm: React.FC = () => {
                           >
                             Yes
                           </SelectItem>
-<<<<<<< HEAD
-=======
-                        ))}
-                      </Select>
-                    </div>
-                    <div>
-                      <h4 className="lg:text-lg text-sm lg:pb-3 pb-[5px]">
-                        Want to Jump the Queue for Faster Service at an
-                        Additional Cost?{" "}
-                      </h4>
-                      <Select
-                        label="Select an animal"
-                        className="bg-black text-white  gauav" // Add `!` to override Tailwind's default background
-                      >
-                        {animals.map((animal) => (
->>>>>>> gaurav-dev
                           <SelectItem
                             key="no"
                             value="No"
@@ -895,7 +623,6 @@ const StaperForm: React.FC = () => {
                           >
                             No
                           </SelectItem>
-<<<<<<< HEAD
                         </Select>
                       </div>
 
@@ -988,88 +715,6 @@ const StaperForm: React.FC = () => {
                       >
                         Next
                       </button>
-=======
-                        ))}
-                      </Select>
-                    </div>
-                    <div className="space-y-2">
-                      <h4 className="lg:text-lg text-sm lg:pb-3 pb-[5px]">Do you require a pickup label from LabX?</h4>
-                      <Input
-                        type="text"
-                        label="Business Name"
-                       variant="faded"
-                        className="w-full bg-black text-white border-white"
-                        required
-                      />
-                    </div>
-                    <div className="border-b-[1px] border-[#6161617b] xl:py-3">
-                      <h4 className="lg:text-lg text-base text-[#EDE574]">
-                        Terms and Conditions Acknowledgment
-                      </h4>
-                      <div>
-                        <Checkbox defaultSelected></Checkbox>
-                        <span className="lg:text-base text-sm">
-                          By checking this box, I confirm that I have read and
-                          agree to the LabX
-                          <Link
-                            className="text-[#EDE574] border-[#EDE574] border-b-1"
-                            href="/coming-soon"
-                          >
-                            {" "}
-                            Terms and Conditions{" "}
-                          </Link>
-                          Privacy Policy, and Warranty Terms.{" "}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="my-5">
-                      <div className="flex justify-between">
-                        <span className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-t-[5px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]">
-                          Draw Your Signature
-                        </span>
-                        <button className="text-md italic">clear</button>
-                      </div>
-                      <Textarea
-                        label="Your Message"
-                        placeholder="Enter your message here"
-                        variant="bordered"
-                        className="w-full  bg-black text-white rounded-[0px] border-white"
-                        style={{
-                          borderColor: "#ffffff",
-                          borderRadius: "",
-                          padding: "0.5rem",
-                        }}
-                        required
-                      />
-
-                      <div>
-                        <div className="flex justify-between mt-4">
-                          {activeStep > 0 && (
-                            <button
-                              onClick={handlePrevStep}
-                              className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
-                            >
-                              Previous
-                            </button>
-                          )}
-                          {activeStep < 3 ? (
-                            <button
-                              onClick={handleNextStep}
-                              className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
-                            >
-                              Next
-                            </button>
-                          ) : (
-                            <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
-                              <IoCheckmarkDoneOutline className="mr-2" />
-                              Complete
-                            </button>
-                          )}
-                        </div>
-                      </div>
-                      <div></div>
->>>>>>> gaurav-dev
                     </div>
                   </div>
                 </div>
@@ -1078,7 +723,6 @@ const StaperForm: React.FC = () => {
 
             {activeStep === 3 && (
               <>
-<<<<<<< HEAD
                 {/* Render Step 4 components */}
                 <h2 className="text-lg font-bold mb-2">
                   Terms & Pricing Agreement
@@ -1098,44 +742,6 @@ const StaperForm: React.FC = () => {
                     <IoCheckmarkDoneOutline className="mr-2" />
                     Complete
                   </button>
-=======
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center border-y-[1px] border-[#81818175]">
-                  <div className="relative w-full h-[300px] md:h-[550px]">
-                    <Image
-                      className="object-cover rounded-[30px]"
-                      src={StaperForm4}
-                      alt="Course Image"
-                      fill
-                    />
-                  </div>
-                  <div className="p-2 lg:p-2 bg-black text-white rounded-md">
-                    <h2 className="text-3xl font-bold mb-4">
-                      Pricing Agreement
-                    </h2>
-                    <div className="flex gap-4 text-yellow-400">
-                      <span>
-                        {" "}
-                        <Checkbox className="p-0" defaultSelected></Checkbox>
-                      </span>
-
-                      <p className="">
-                        By submitting this form, I agree to proceed with repairs
-                        or data recovery based on the prices displayed on the
-                        LabX website. LabX will not provide a separate quote if
-                        the repair can be completed within the listed prices. If
-                        costs exceed the displayed prices, LabX will contact me
-                        before proceeding. I am pre-approving repairs or
-                        services at the prices shown on the website. If a price
-                        is not listed on the website, LabX will provide a
-                        separate quotation before proceeding.
-                      </p>
-                    </div>
-
-                    <div>
-                      <button className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]">Submit</button>
-                    </div>
-                  </div>
->>>>>>> gaurav-dev
                 </div>
               </>
             )}
