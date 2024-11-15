@@ -13,6 +13,12 @@ import {
   Typography,
   IconButton,
   TablePagination,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Button,
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -26,6 +32,10 @@ const B2BRepairTable: React.FC = () => {
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [totalRecords, setTotalRecords] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchValue, setSearchValue] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+  const [deleteId, setDeleteId] = useState<string | null>(null);
 
   const fetchData = async (page: number, limit: number, searchValue = "") => {
     setIsLoading(true);
@@ -93,9 +103,11 @@ const B2BRepairTable: React.FC = () => {
     }
   };
 
+
+
   useEffect(() => {
-    fetchData(page, rowsPerPage);
-  }, [page, rowsPerPage]);
+    fetchData(page, rowsPerPage, searchValue);
+  }, [page, rowsPerPage, searchValue]);
 
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
@@ -112,14 +124,49 @@ const B2BRepairTable: React.FC = () => {
     router.push(`/adminDeshboard/b2brepair/b2brepairdata?id=${id}`);
   };
 
+  const handleSearchChange = (value: string) => {
+    setSearchValue(value);
+    setPage(0); // Reset to the first page when searching
+  };
+
+  const handleDeleteClick = (id: string) => {
+    setDeleteId(id);
+    setDeleteDialogOpen(true);
+  };
+
+  const confirmDelete = async () => {
+    if (deleteId) {
+      try {
+        await axios.delete(`http://18.117.249.163:7000/api/repair/delete/${deleteId}`);
+        setDeleteDialogOpen(false);
+        setDeleteId(null);
+        fetchData(page, rowsPerPage, searchValue); // Refresh data after deletion
+      } catch (error) {
+        console.error("Error deleting record:", error);
+        setErrorMessage("An error occurred while deleting the record.");
+      }
+    }
+  };
+
+  const handleDeleteDialogClose = () => {
+    setDeleteDialogOpen(false);
+    setDeleteId(null);
+  };
+
   return (
     <TableContainer component={Paper}>
       <Typography variant="h6" sx={{ margin: 2 }}>
         B2B Repair List
       </Typography>
-      <B2BRepairFilter />
+      <B2BRepairFilter onSearchChange={handleSearchChange} />
       {isLoading ? (
         <Typography sx={{ textAlign: "center", margin: 2 }}>Loading...</Typography>
+      ) : errorMessage ? (
+        <Typography sx={{ textAlign: "center", margin: 2, color: "red" }}>
+          {errorMessage}
+        </Typography>
+      ) : data.length === 0 ? (
+        <Typography sx={{ textAlign: "center", margin: 2 }}>No records found.</Typography>
       ) : (
         <Table>
           <TableHead>
@@ -131,7 +178,7 @@ const B2BRepairTable: React.FC = () => {
               <TableCell>Device Type</TableCell>
               <TableCell>Brand</TableCell>
               <TableCell>Model</TableCell>
-              <TableCell>Status</TableCell>
+
               <TableCell>Actions</TableCell>
             </TableRow>
           </TableHead>
@@ -154,7 +201,7 @@ const B2BRepairTable: React.FC = () => {
                   <IconButton onClick={() => handleViewClick(record._id)}>
                     <VisibilityIcon />
                   </IconButton>
-                  <IconButton>
+                  <IconButton onClick={() => handleDeleteClick(record._id)}>
                     <DeleteIcon />
                   </IconButton>
                 </TableCell>
@@ -180,6 +227,24 @@ const B2BRepairTable: React.FC = () => {
           },
         }}
       />
+
+      {/* Delete confirmation dialog */}
+      <Dialog open={deleteDialogOpen} onClose={handleDeleteDialogClose}>
+        <DialogTitle>Confirm Deletion</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Are you sure you want to delete this record? This action cannot be undone.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleDeleteDialogClose} color="primary">
+            Cancel
+          </Button>
+          <Button onClick={confirmDelete} color="secondary">
+            Delete
+          </Button>
+        </DialogActions>
+      </Dialog>
     </TableContainer>
   );
 };
