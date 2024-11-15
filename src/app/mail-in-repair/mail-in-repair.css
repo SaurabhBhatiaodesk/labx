@@ -24,3 +24,27 @@ label[data-slot="label ,trigger"] {
     transform: scale(1.05);
     background-color: #E1F5C4; 
   }
+  .gauav button {
+    background: #ff000000;
+    border: 1px solid;
+
+}
+
+.gauav button:hover {
+  background-color: transparent;
+}
+
+.group[data-has-value="true"] .group-data-\[has-value\=true\]\:text-default-foreground {
+  --tw-text-opacity: 1;
+  color: white !important;
+}
+
+.gaurav-bg-trans .transition-background {
+
+
+  background: transparent;
+}
+.subpixel-antialiased {
+  color: white !important;
+  background: black;
+}

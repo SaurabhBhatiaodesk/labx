@@ -236,6 +236,9 @@ label {
   transform: scale(1.05);
   background: #43c6ac;
 }
+.Removeborder-Heading h2{
+  border-bottom: unset;
+}
 
 .background-banner {
   background-image: url('../../public//Images//Home/back-banner.svg');
