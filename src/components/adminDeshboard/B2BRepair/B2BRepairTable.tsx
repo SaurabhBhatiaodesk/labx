@@ -173,15 +173,15 @@ const B2BRepairTable: React.FC = () => {
                 <TableCell>{record.deviceDetails.deviceType}</TableCell>
                 <TableCell>{record.deviceDetails.brand}</TableCell>
                 <TableCell>{record.deviceDetails.model}</TableCell>
-                <TableCell>
+                {/* <TableCell>
                   <Typography sx={{ color: "green", fontWeight: "bold" }}>
                     Active
                   </Typography>
-                </TableCell>
+                </TableCell> */}
                 <TableCell>
-                  <IconButton onClick={() => handleViewClick(record._id)}>
+                  {/* <IconButton onClick={() => handleViewClick(record._id)}>
                     <VisibilityIcon />
-                  </IconButton>
+                  </IconButton> */}
                   <IconButton onClick={() => handleDeleteClick(record._id)}>
                     <DeleteIcon />
                   </IconButton>
