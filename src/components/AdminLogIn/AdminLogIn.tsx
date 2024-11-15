@@ -24,10 +24,11 @@ export default function AdminLogIn(): JSX.Element {
     const email = data.get("email");
     const password = data.get("password");
 
+
     try {
       // Send POST request to the login API
       const response = await axios.post(
-        "http://18.117.249.163:7000/api/admin/login",
+        "https://18.117.249.163:7000/api/admin/login",
         {
           username: email,
           password: password,

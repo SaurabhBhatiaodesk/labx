@@ -118,7 +118,7 @@ const B2BRepairTable: React.FC = () => {
   const confirmDelete = async () => {
     if (deleteId) {
       try {
-        await axios.delete(`http://18.117.249.163:7000/api/repair/delete/${deleteId}`);
+        await axios.delete(`https://18.117.249.163:7000/api/repair/delete/${deleteId}`);
         setDeleteDialogOpen(false);
         setDeleteId(null);
         fetchData(page, rowsPerPage, searchValue); // Refresh data after deletion
