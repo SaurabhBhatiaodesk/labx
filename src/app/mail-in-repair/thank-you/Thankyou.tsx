@@ -77,18 +77,14 @@ const Thankyou = () => {
           </div>
         ))}
       </div>
-
-
 <div className="flex lg:py-8 py-3 lg:my-3 xl-my-4 my-2">
-    <div>dfdfd</div>
-    <div>dffefefe</div>
 </div>
 
 
     </div>
 
 
-   
+
       </div>
     </>
   );

@@ -28,7 +28,7 @@ export default function AdminLogIn(): JSX.Element {
     try {
       // Send POST request to the login API
       const response = await axios.post(
-        "https://18.117.249.163:7000/api/admin/login",
+        "https://labxbackend.labxrepair.com.au/api/admin/login",
         {
           username: email,
           password: password,
@@ -36,7 +36,7 @@ export default function AdminLogIn(): JSX.Element {
       );
 
       if (response.status === 200) {
-        console.log(response.data);
+
         // Navigate to /admindashboard if login is successful
         router.push("/adminDeshboard");
       }
