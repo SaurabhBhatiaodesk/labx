@@ -1,4 +1,4 @@
-/* 	
+/*
 tailwint css
 Breakpoint
 Properties
@@ -13,28 +13,28 @@ xl (1280px)	max-width: 1280px;
 
 /* @font-face {
   font-family: 'DCC Ash';
-  src: url('/Fonts/DCC-Ash.woff') format('woff'); 
+  src: url('/Fonts/DCC-Ash.woff') format('woff');
   font-weight: 900;
   font-style: normal;
 
 }
 @font-face {
   font-family: 'DCC Ash';
-  src: url('/Fonts/DCC-Ash.woff') format('woff'); 
+  src: url('/Fonts/DCC-Ash.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 
 }
 @font-face {
   font-family: 'DCC Ash';
-  src: url('/Fonts/DCC-Ash.woff') format('woff'); 
+  src: url('/Fonts/DCC-Ash.woff') format('woff');
   font-weight: 800;
   font-style: normal;
 
 }
 @font-face {
   font-family: 'DCC Ash';
-  src: url('/Fonts/DCC-Ash.woff') format('woff'); 
+  src: url('/Fonts/DCC-Ash.woff') format('woff');
   font-weight: 900;
   font-style: normal;
 
@@ -51,6 +51,11 @@ xl (1280px)	max-width: 1280px;
   font-weight:500;
   font-style: normal;
 }
+
+.custom-quill-editor .ql-editor {
+  color: black;
+}
+
 
 @font-face {
   font-family: "Gordita";
@@ -112,7 +117,7 @@ xl (1280px)	max-width: 1280px;
   --secondary-color: #000000;
   --Space_Grotesk: "Space Grotesk", sans-serif; /* Corrected variable definition */
   --multi-color: #035597;
-  --F1-btn-color: linear-gradient(45deg, #E1F5C4, #EDE574); 
+  --F1-btn-color: linear-gradient(45deg, #E1F5C4, #EDE574);
   --transition: all 0.3s ease-in-out;
 }
 
@@ -147,7 +152,7 @@ body {
   background-image: var(--F1-btn-color);
   color: var(--secondary-color, #000000);
   font-weight: 500;
- 
+
   border-radius: 8px;
   font-size: 16px;
   padding: 5px 10px; /* Add padding for a more substantial button */
@@ -157,10 +162,10 @@ body {
 }
 
 .F1-btn-color:hover {
-  transform: scale(1.05); 
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); 
-  border-color: rgba(237, 229, 116, 0.8); 
-  background-position: right center; 
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  border-color: rgba(237, 229, 116, 0.8);
+  background-position: right center;
 }
 
 .main-bg {
@@ -207,7 +212,7 @@ label {
   z-index: 1;
   border-radius: 150px;
   letter-spacing: 2px;
-  font-family: var( --Space_Grotesk); 
+  font-family: var( --Space_Grotesk);
 }
 /* [aria-selected="0"] {
   background: linear-gradient(74deg, #56c1c1, #000000);

@@ -28,6 +28,10 @@ const navigationItems = [
     icon: <BuildIcon />,
     children: [
       { title: "B2B Repair", path: "/adminDeshboard/b2brepair", icon: <DescriptionIcon /> },
+      { title: "Blogs", path: "/adminDeshboard/blogs", icon: <DescriptionIcon /> },
+      { title: "BlogsListing", path: "/adminDeshboard/bloglisting", icon: <DescriptionIcon /> },
+      { title: "Privacy Policy", path: "/adminDeshboard/privacypolicy", icon: <DescriptionIcon /> },
+      { title: "Privacy Policy Listing", path: "/adminDeshboard/privacypolicyListing", icon: <DescriptionIcon /> },
     ],
   },
 ];
