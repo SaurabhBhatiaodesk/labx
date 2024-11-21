@@ -11,13 +11,15 @@ const ConditionalWrapper: React.FC<{ children: React.ReactNode }> = ({
   const pathname = usePathname();
   const isAdminRoute =
     pathname === "/admin" ||
+    pathname.startsWith("/adminDeshboard") ||
     pathname === "/adminDeshboard" ||
     pathname === "/adminDeshboard/b2brepair" ||
     pathname === "/adminDeshboard/b2brepair/b2brepairdata" ||
     pathname === "/adminDeshboard/blogs" ||
     pathname === "/adminDeshboard/privacypolicy" ||
     pathname ===  "/adminDeshboard/bloglisting" ||
-    pathname ===  "/adminDeshboard/privacypolicyListing";
+    pathname ===  "/adminDeshboard/privacypolicyListing" ||
+    pathname ===  "/adminDeshboard/createpage" ;
 
   return (
     <>

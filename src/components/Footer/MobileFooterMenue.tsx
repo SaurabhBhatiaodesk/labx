@@ -3,14 +3,22 @@ import Image from "next/image";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import sendicon from "../../../public/Images/icons/send.svg";
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
 
 const MobileFooterMenue = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const router = useRouter();
 
   const handleToggle = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  const handleNavigate = () => {
+
+    console.log("ggggggg")
+    // Navigate to the desired route
+    router.push('/adminDeshboard/trademark');
+  };
   return (
     <div className="max-w-lg mx-auto p-[12px] mt-4 ">
       {/* Our Services Section */}
@@ -65,7 +73,12 @@ const MobileFooterMenue = () => {
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
             <li className="mb-2">Contact Us</li>
             <li className="mb-2">Blogs</li>
-            <li className="mb-2">Trademark Disclaimer</li>
+            <button
+  onClick={handleNavigate}
+  className="bg-blue-500 text-white px-4 py-2 rounded"
+>
+  Trademark Disclaimer
+</button>
             <li className="mb-2">Warranty and Terms</li>
             <li className="mb-2">Shipping Policy</li>
             <li className="mb-2">FAQ’s</li>
@@ -120,7 +133,7 @@ const MobileFooterMenue = () => {
       122 Queen St, St Marys NSW 2760, Australia
     </a>
   </Link>
-           
+
 
             <li className="mb-2">Sign-Up The LABX</li>
           </ul>
