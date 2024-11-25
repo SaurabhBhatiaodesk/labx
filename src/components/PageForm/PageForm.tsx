@@ -1,31 +1,50 @@
 'use client';
 
-import { useState } from 'react';
-import { TextField, Button, Box, Checkbox, FormControlLabel } from '@mui/material';
-import { useRouter } from 'next/navigation';
-import { Editor } from '@tinymce/tinymce-react';
+import { useState, useEffect } from 'react';
+import { TextField, Button, Box, Checkbox, FormControlLabel, IconButton } from '@mui/material';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { FiX } from "react-icons/fi";
 
-interface FormProps {
-  initialValues?: {
-    pageName: string;
-    pageEditor: string;
-    seoPageTitle: string;
-    pageKeywords: string;
-    pageDescription: string;
-    status: boolean;
-  };
-}
-
-export default function Form({ initialValues }: FormProps) {
+export default function CreatePage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const pageId = searchParams.get("id"); // Get page ID from query params to determine edit mode
+
+
+  console.log('pageIddd',pageId)
   const [formData, setFormData] = useState({
-    pageName: initialValues?.pageName || '',
-    pageEditor: initialValues?.pageEditor || '',
-    seoPageTitle: initialValues?.seoPageTitle || '',
-    pageKeywords: initialValues?.pageKeywords || '',
-    pageDescription: initialValues?.pageDescription || '',
-    status: initialValues?.status || false,
+    pageName: "",
+    pageEditor: "",
+    seoPageTitle: "",
+    pageKeywords: "",
+    pageDescription: "",
+    status: true, // Default checked for creation
+    images: [] as string[],
   });
+
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  useEffect(() => {
+    if (pageId) {
+      fetchPageDetails();
+    }
+  }, [pageId]);
+
+  const fetchPageDetails = async () => {
+    try {
+      const response = await fetch(`https://labxbackend.labxrepair.com.au/api/admin/getPageById/${pageId}`);
+      if (!response.ok) throw new Error("Failed to fetch page details");
+      const data = await response.json();
+      setFormData({
+        ...data.data,
+        images: data.data.images || [], // Ensure images field is handled
+      });
+    } catch (error) {
+      console.error("Error fetching page details:", error);
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -33,61 +52,86 @@ export default function Form({ initialValues }: FormProps) {
   };
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, checked } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: checked }));
+    const { checked } = e.target;
+    setFormData((prev) => ({ ...prev, status: checked }));
   };
 
   const handleEditorChange = (content: string) => {
     setFormData((prev) => ({ ...prev, pageEditor: content }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("formdataaaaaa", formData);
-    try {
-      const response = await fetch("http://localhost:7000/api/admin/createpage", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const files = Array.from(e.target.files);
+      const base64Images: string[] = [];
 
-      if (response.ok) {
-        console.log("Page created successfully");
-        // Navigate back to the home page after successful creation
-        router.push("/");
-      } else {
-        const errorResponse = await response.json();
-        console.error("Failed to create data:", errorResponse.message);
-      }
-    } catch (error) {
-      console.error("Error creating data:", error);
+      files.forEach((file) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+          base64Images.push(reader.result as string);
+          setFormData((prev) => ({
+            ...prev,
+            images: [...prev.images, ...base64Images],
+          }));
+        };
+      });
     }
   };
 
+  const handleRemoveImage = (index: number) => {
+    setFormData((prev) => ({
+      ...prev,
+      images: prev.images.filter((_, i) => i !== index),
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const url = pageId
+      ? `https://labxbackend.labxrepair.com.au/api/admin/updatePage/${pageId}` // Update URL
+      : "https://labxbackend.labxrepair.com.au/api/admin/createpage"; // Create URL
+    const method = pageId ? "PUT" : "POST";
+
+    const dataToSend = {
+      ...formData,
+      pageName: formData.pageName.replace(/\s+/g, '_'), // Replace spaces with underscores
+    };
+
+    try {
+      const response = await fetch(url, {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dataToSend),
+      });
+
+      if (response.ok) {
+        alert(pageId ? "Page updated successfully!" : "Page created successfully!");
+        router.push("/adminDeshboard/crmlist");
+      } else {
+        const errorData = await response.json();
+        alert(`Error: ${errorData.message}`);
+      }
+    } catch (error) {
+      console.error("Request failed:", error);
+      alert("Failed to save the page");
+    }
+  };
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 , color:'green'}}>
+    <Box component="form" onSubmit={handleSubmit} sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
       <TextField
         required
         label="Page Name"
         name="pageName"
         value={formData.pageName}
         onChange={handleChange}
+        helperText={errors.pageName}
+        error={!!errors.pageName}
       />
-      <label>Page Editor</label>
-      <Editor
-        apiKey="ae920f5hbpe9wq3gkz4x804iph6knqh5nk20dz6gi5l570vz" // Replace with your TinyMCE API key
-        initialValue={formData.pageEditor}
-        init={{
-          height: 300,
-          menubar: false,
-          plugins: 'link image code',
-          toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright | code',
-        }}
-        onEditorChange={handleEditorChange}
-      />
+      <label>Description</label>
+      <ReactQuill value={formData.pageEditor} onChange={handleEditorChange} theme="snow" />
       <TextField
         required
         label="SEO Page Title"
@@ -109,19 +153,25 @@ export default function Form({ initialValues }: FormProps) {
         value={formData.pageDescription}
         onChange={handleChange}
       />
-     <FormControlLabel
-  control={
-    <Checkbox
-      name="status"
-      checked={formData.status}
-      onChange={handleCheckboxChange}
-    />
-  }
-  label="Status"
-/>
-
-      <Button type="submit" variant="contained" color="primary">
-        Submit
+      <FormControlLabel
+        control={<Checkbox checked={formData.status} onChange={handleCheckboxChange} />}
+        label="Status"
+      />
+      <input type="file" multiple accept="image/*" onChange={handleImageChange} />
+      {formData.images.length > 0 && (
+        <div>
+          {formData.images.map((image, index) => (
+            <div key={index} style={{ position: "relative", display: "inline-block" }}>
+              <img src={image} alt={`Selected ${index}`} style={{ width: 100, height: 100 }} />
+              <IconButton onClick={() => handleRemoveImage(index)}>
+                <FiX color="red" />
+              </IconButton>
+            </div>
+          ))}
+        </div>
+      )}
+      <Button type="submit" variant="contained">
+        {pageId ? "Update Page" : "Create Page"}
       </Button>
     </Box>
   );

@@ -45,10 +45,10 @@ xl (1280px)	max-width: 1280px;
 /* @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap'); */
 
 
-.space-grotesk{
+.space-grotesk {
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
-  font-weight:500;
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -115,7 +115,8 @@ xl (1280px)	max-width: 1280px;
   --black: #000;
   --primary-color: #ffffff;
   --secondary-color: #000000;
-  --Space_Grotesk: "Space Grotesk", sans-serif; /* Corrected variable definition */
+  --Space_Grotesk: "Space Grotesk", sans-serif;
+  /* Corrected variable definition */
   --multi-color: #035597;
   --F1-btn-color: linear-gradient(45deg, #E1F5C4, #EDE574);
   --transition: all 0.3s ease-in-out;
@@ -135,8 +136,9 @@ body {
   overflow-x: hidden;
   font-family: "Gordita", sans-serif;
   font-size: 20px;
-  color: var( --white);
-  scroll-behavior: smooth; /* Smooth scrolling */
+  color: var(--white);
+  scroll-behavior: smooth;
+  /* Smooth scrolling */
 }
 
 .error-message {
@@ -144,10 +146,12 @@ body {
   color: red;
   font-size: 12px;
 }
+
 .padd-top-bottom {
   padding: 60px 0px;
   overflow: hidden;
 }
+
 .F1-btn-color {
   background-image: var(--F1-btn-color);
   color: var(--secondary-color, #000000);
@@ -155,9 +159,11 @@ body {
 
   border-radius: 8px;
   font-size: 16px;
-  padding: 5px 10px; /* Add padding for a more substantial button */
+  padding: 5px 10px;
+  /* Add padding for a more substantial button */
   transition: all 0.3s ease-in-out;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Initial shadow */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  /* Initial shadow */
   border: 2px solid transparent;
 }
 
@@ -180,6 +186,7 @@ h2 {
   color: var(--primary-color);
   letter-spacing: 1.5px;
 }
+
 h3 {
   font-size: 24px;
   line-height: 34px;
@@ -195,12 +202,13 @@ p {
   color: var(--primary-color);
   margin-bottom: 15px;
 }
+
 label {
   font: 300;
 }
 
 .btn {
-  background: var( --F1-btn-color);
+  background: var(--F1-btn-color);
   padding: 10px 10px !important;
   font-weight: 600;
   font-size: 14px;
@@ -212,8 +220,9 @@ label {
   z-index: 1;
   border-radius: 150px;
   letter-spacing: 2px;
-  font-family: var( --Space_Grotesk);
+  font-family: var(--Space_Grotesk);
 }
+
 /* [aria-selected="0"] {
   background: linear-gradient(74deg, #56c1c1, #000000);
 }
@@ -241,7 +250,8 @@ label {
   transform: scale(1.05);
   background: #43c6ac;
 }
-.Removeborder-Heading h2{
+
+.Removeborder-Heading h2 {
   border-bottom: unset;
 }
 
@@ -250,6 +260,18 @@ label {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.page-list.table-os h2 {
+  color: #000;
+}
+
+.page-list.table-os {
+  color: #000;
+}
+
+.privacy-policy-os p {
+  color: #000;
 }
 
 @media only screen and (max-width: 640px) {
@@ -279,9 +301,6 @@ label {
   }
 }
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1280px) {}
 
-}
-
-@media only screen and (max-width: 1536px) {
-}
+@media only screen and (max-width: 1536px) {}
