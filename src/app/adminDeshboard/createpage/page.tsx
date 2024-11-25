@@ -14,6 +14,7 @@ export default function AddPage() {
     router.push('/adminDeshboardList');
   };
 
+
   return (
     <div style={{ padding: '20px', backgroundColor: '#c4ced7' }}>
       <h2>Add Page</h2>
