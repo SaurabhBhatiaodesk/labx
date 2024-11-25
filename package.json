@@ -17,7 +17,6 @@
     "@mui/material": "^6.1.6",
     "@nextui-org/react": "^2.4.8",
     "@reduxjs/toolkit": "^2.3.0",
-    "@tinymce/tinymce-react": "^5.1.1",
     "aos": "^2.3.4",
     "axios": "^1.7.7",
     "https": "^1.0.0",
@@ -34,8 +33,7 @@
     "react-signature-canvas": "^1.0.6",
     "react-slick": "^0.30.2",
     "sharp": "^0.33.5",
-    "swiper": "^11.1.12",
-    "swr": "^2.2.5"
+    "swiper": "^11.1.12"
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
