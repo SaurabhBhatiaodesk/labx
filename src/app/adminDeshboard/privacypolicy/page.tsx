@@ -1,11 +1,14 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { TextField, Button, Box, Checkbox, FormControlLabel, IconButton } from '@mui/material';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
 import { FiX } from 'react-icons/fi';
 import { useRouter, useSearchParams } from 'next/navigation';
+
+// Dynamically import ReactQuill to avoid SSR issues
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+import 'react-quill/dist/quill.snow.css';
 
 type PrivacyPolicyData = {
   heading: string;
@@ -39,6 +42,7 @@ const PrivacyPolicyPage: React.FC = () => {
       const fetchPolicy = async () => {
         try {
           const response = await fetch(`https://labxbackend.labxrepair.com.au/api/admin/privacypolicybyId/${policyId}`);
+          if (!response.ok) throw new Error(`Error fetching policy: ${response.statusText}`);
           const data = await response.json();
           setPolicyData({
             heading: data.heading,
@@ -177,13 +181,15 @@ const PrivacyPolicyPage: React.FC = () => {
           helperText={errors.heading}
         />
         <label> Description*</label>
-        <ReactQuill
-          value={policyData.content}
-          onChange={handleEditorChange}
-          modules={modules}
-          theme="snow"
-          style={{ height: '300px', marginBottom: '20px' }}
-        />
+        {typeof window !== 'undefined' && (
+          <ReactQuill
+            value={policyData.content}
+            onChange={handleEditorChange}
+            modules={modules}
+            theme="snow"
+            style={{ height: '300px', marginBottom: '20px' }}
+          />
+        )}
         {errors.content && <p style={{ color: 'red' }}>{errors.content}</p>}
         <TextField
           required

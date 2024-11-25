@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+
 
 type PrivacyPolicy = {
   _id: string;
@@ -25,14 +27,33 @@ const PrivacyPolicyList: React.FC = () => {
     const fetchPolicies = async () => {
       try {
         const response = await fetch("https://labxbackend.labxrepair.com.au/api/admin/privacypolicy");
+
+        if (!response.ok) {
+          throw new Error(`Error: ${response.statusText}`);
+        }
+
         const data = await response.json();
-        setPolicies(Array.isArray(data) ? data : [data]); // Ensure data is an array
+
+        // Validate that the response is an array
+        if (!Array.isArray(data)) {
+          throw new Error("Invalid response format");
+        }
+
+        setPolicies(data);
       } catch (error) {
-        console.error("Error fetching privacy policies:", error);
+        if (error instanceof Error) {
+          console.error("Error fetching privacy policies:", error.message);
+        } else {
+          console.error("Unknown error occurred while fetching policies:", error);
+        }
+
+        // Fallback to an empty list
+        setPolicies([]);
       } finally {
         setLoading(false);
       }
     };
+
     fetchPolicies();
   }, []);
 
@@ -43,6 +64,8 @@ const PrivacyPolicyList: React.FC = () => {
 
   const handleDelete = async () => {
     if (!deleteId) return;
+
+    setShowModal(false);
 
     try {
       const response = await fetch(`https://labxbackend.labxrepair.com.au/api/admin/privacypolicy/${deleteId}`, {
@@ -56,12 +79,19 @@ const PrivacyPolicyList: React.FC = () => {
         alert("Failed to delete privacy policy.");
       }
     } catch (error) {
-      console.error("Error deleting privacy policy:", error);
+      if (error instanceof Error) {
+        console.error("Error deleting privacy policy:", error.message);
+        alert(`An error occurred: ${error.message}`);
+      } else {
+        console.error("Unknown error occurred:", error);
+        alert("An unknown error occurred while deleting the policy.");
+      }
     } finally {
-      setShowModal(false);
       setDeleteId(null);
     }
   };
+
+
 
   const handleEdit = (id: string) => {
     router.push(`/adminDeshboard/privacypolicy?id=${id}`);
@@ -110,12 +140,14 @@ const PrivacyPolicyList: React.FC = () => {
                 <div className="flex flex-wrap gap-2">
                   {policy.images && policy.images.length > 0 ? (
                     policy.images.map((image, index) => (
-                      <img
-                        key={index}
-                        src={image}
-                        alt={`Policy Image ${index + 1}`}
-                        className="h-16 w-16 object-cover rounded"
-                      />
+                      <Image
+                      key={index}
+                      src={image}
+                      alt={`Policy Image ${index + 1}`}
+                      width={64}
+                      height={64}
+                      className="rounded"
+                    />
                     ))
                   ) : (
                     <p className="text-gray-500">No Images</p>
