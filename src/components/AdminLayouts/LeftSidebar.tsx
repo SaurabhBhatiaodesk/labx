@@ -4,21 +4,29 @@ import React, { useState } from "react";
 import {
   Drawer,
   List,
-  ListItem,
+  MenuItem,
   ListItemIcon,
   ListItemText,
   Typography,
   Collapse,
 } from "@mui/material";
-import BuildIcon from "@mui/icons-material/Build"; // Icon for Service
-import DescriptionIcon from "@mui/icons-material/Description"; // Icon for individual items
+import BuildIcon from "@mui/icons-material/Build";
+import DescriptionIcon from "@mui/icons-material/Description";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import Link from "next/link";
 
 const drawerWidth = 240;
 
-const navigationItems = [
+// Define the navigation structure
+interface NavigationItem {
+  title: string;
+  icon: React.ReactNode;
+  path?: string;
+  children?: NavigationItem[];
+}
+
+const navigationItems: NavigationItem[] = [
   {
     title: "Blogs",
     icon: <DescriptionIcon />,
@@ -59,7 +67,7 @@ const navigationItems = [
 const LeftSidebar: React.FC = () => {
   const [openItems, setOpenItems] = useState<{ [key: string]: boolean }>({});
 
-  const handleToggle = (index: number) => {
+  const handleToggle = (index: string) => {
     setOpenItems((prevOpenItems) => ({
       ...prevOpenItems,
       [index]: !prevOpenItems[index],
@@ -86,22 +94,22 @@ const LeftSidebar: React.FC = () => {
           <div key={index}>
             {item.children ? (
               <>
-                <ListItem button onClick={() => handleToggle(index)}>
+                <MenuItem onClick={() => handleToggle(index.toString())}>
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText primary={item.title} />
                   {openItems[index] ? <ExpandLess /> : <ExpandMore />}
-                </ListItem>
+                </MenuItem>
                 <Collapse in={openItems[index]} timeout="auto" unmountOnExit>
                   <List component="div" disablePadding>
                     {item.children.map((child, childIndex) => (
-                      <Link key={childIndex} href={child.path} passHref>
-                        <ListItem
+                      <Link key={childIndex} href={child.path || "#"} passHref>
+                        <MenuItem
                           component="a"
                           sx={{ pl: 4 }}
                         >
                           <ListItemIcon>{child.icon}</ListItemIcon>
                           <ListItemText primary={child.title} />
-                        </ListItem>
+                        </MenuItem>
                       </Link>
                     ))}
                   </List>
