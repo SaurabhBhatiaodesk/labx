@@ -7,7 +7,12 @@ import 'react-quill/dist/quill.snow.css';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { FiX } from "react-icons/fi";
 
-export default function CreatePage() {
+interface PageFormProps {
+  onSubmit: (formData: { title: string; keywords: string; description: string; content: string }) => void;
+}
+
+
+export default function CreatePage({ onSubmit }: PageFormProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pageId = searchParams.get("id"); // Get page ID from query params to determine edit mode
