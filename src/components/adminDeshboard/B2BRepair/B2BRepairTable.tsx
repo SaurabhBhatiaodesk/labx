@@ -84,8 +84,6 @@ const B2BRepairTable: React.FC = () => {
     }
   };
 
-
-
   useEffect(() => {
     fetchData(page, rowsPerPage, searchValue);
   }, [page, rowsPerPage, searchValue]);
@@ -102,7 +100,11 @@ const B2BRepairTable: React.FC = () => {
   };
 
   const handleViewClick = (id: string) => {
-    router.push(`/adminDeshboard/b2brepair/b2brepairdata?id=${id}`);
+    // Store the id in local storage
+    localStorage.setItem("selectedId", id);
+
+    // Navigate to the details page
+    router.push(`/adminDeshboard/view`);
   };
 
   const handleSearchChange = (value: string) => {
@@ -159,7 +161,6 @@ const B2BRepairTable: React.FC = () => {
               <TableCell>Device Type</TableCell>
               <TableCell>Brand</TableCell>
               <TableCell>Model</TableCell>
-
               <TableCell>Actions</TableCell>
             </TableRow>
           </TableHead>
@@ -173,15 +174,10 @@ const B2BRepairTable: React.FC = () => {
                 <TableCell>{record.deviceDetails.deviceType}</TableCell>
                 <TableCell>{record.deviceDetails.brand}</TableCell>
                 <TableCell>{record.deviceDetails.model}</TableCell>
-                {/* <TableCell>
-                  <Typography sx={{ color: "green", fontWeight: "bold" }}>
-                    Active
-                  </Typography>
-                </TableCell> */}
                 <TableCell>
-                  {/* <IconButton onClick={() => handleViewClick(record._id)}>
+                  <IconButton onClick={() => handleViewClick(record._id)}>
                     <VisibilityIcon />
-                  </IconButton> */}
+                  </IconButton>
                   <IconButton onClick={() => handleDeleteClick(record._id)}>
                     <DeleteIcon />
                   </IconButton>

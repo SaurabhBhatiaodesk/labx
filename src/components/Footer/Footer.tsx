@@ -12,8 +12,20 @@ import { IoLocationOutline } from "react-icons/io5";
 import { CiMail } from "react-icons/ci";
 import MobileFooterMenue from "./MobileFooterMenue";
 import sendicon from "../../../public/Images/icons/send.svg";
+import { useRouter } from 'next/navigation'; // Import useRouter
+
 
 const Footer = () => {
+
+
+  const router = useRouter(); // Initialize use
+
+
+  const handleNavigate =()=>{
+    console.log("trademarkkkkk console")
+    router.push('/adminDeshboard/trademarkpage');
+  }
+
   return (
     <>
       <div className="container">
@@ -152,7 +164,9 @@ const Footer = () => {
                       <div>
                         <Link href="/coming-soon">
                           <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
-                            Trademark Disclaimer
+                          <button onClick={handleNavigate}>
+      Trademark Disclaimer
+    </button>
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
