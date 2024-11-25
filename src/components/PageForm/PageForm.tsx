@@ -6,6 +6,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { FiX } from "react-icons/fi";
+import Image from 'next/image';
 
 interface PageFormProps {
   onSubmit: (formData: { title: string; keywords: string; description: string; content: string }) => void;
@@ -167,7 +168,7 @@ export default function CreatePage({ onSubmit }: PageFormProps) {
         <div>
           {formData.images.map((image, index) => (
             <div key={index} style={{ position: "relative", display: "inline-block" }}>
-              <img src={image} alt={`Selected ${index}`} style={{ width: 100, height: 100 }} />
+              <Image src={image} alt={`Selected ${index}`} style={{ width: 100, height: 100 }} />
               <IconButton onClick={() => handleRemoveImage(index)}>
                 <FiX color="red" />
               </IconButton>

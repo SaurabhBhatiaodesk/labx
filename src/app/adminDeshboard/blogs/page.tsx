@@ -7,6 +7,7 @@ import 'react-quill/dist/quill.snow.css';
 import { FiX } from 'react-icons/fi';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Head from 'next/head';
+import Image from 'next/image';
 
 type BlogData = {
   heading: string;
@@ -245,14 +246,13 @@ const BlogPage: React.FC = () => {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
             {blogData.featuredImages.map((image, index) => (
               <div key={index} style={{ position: 'relative', display: 'inline-block' }}>
-                <img
-                  src={image}
-                  alt={`Selected Image ${index + 1}`}
-                  style={{
-                    maxWidth: '150px',
-                    maxHeight: '150px',
-                    borderRadius: '8px',
-                  }}
+                <Image
+  src={image}
+  alt={`Selected Image ${index + 1}`}
+  width={150}
+  height={150}
+  style={{ borderRadius: '8px' }}
+  objectFit="cover"
                 />
                 <IconButton
                   onClick={() => handleRemoveImage(index)}
