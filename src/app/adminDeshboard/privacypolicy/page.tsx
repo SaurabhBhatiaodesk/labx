@@ -41,7 +41,7 @@ const PrivacyPolicyPage: React.FC = () => {
       setIsEditMode(true);
       const fetchPolicy = async () => {
         try {
-          const response = await fetch(`https://labxbackend.labxrepair.com.au/api/admin/privacypolicybyId/${policyId}`);
+          const response = await fetch(`http://localhost:7000/api/admin/privacypolicybyId/${policyId}`);
           if (!response.ok) throw new Error(`Error fetching policy: ${response.statusText}`);
           const data = await response.json();
           setPolicyData({
@@ -128,8 +128,8 @@ const PrivacyPolicyPage: React.FC = () => {
 
     try {
       const url = isEditMode
-        ? `https://labxbackend.labxrepair.com.au/api/admin/privacypolicy/${policyId}`
-        : 'https://labxbackend.labxrepair.com.au/api/admin/privacypolicy';
+        ? `http://localhost:7000/api/admin/privacypolicy/${policyId}`
+        : 'http://localhost:7000/api/admin/privacypolicy';
       const method = isEditMode ? 'PUT' : 'POST';
 
       const response = await fetch(url, {

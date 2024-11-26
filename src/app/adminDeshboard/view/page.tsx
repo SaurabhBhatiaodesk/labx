@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Typography, Paper, Box, CircularProgress } from "@mui/material";
 
-const API_URL = "https://labxbackend.labxrepair.com.au/api/repair/id/";
+const API_URL = "http://localhost:7000/api/repair/id/";
 
 interface RepairData {
   personalDetails: {
