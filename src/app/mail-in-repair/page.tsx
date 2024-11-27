@@ -2,7 +2,7 @@ import React from "react";
 import MailRepair from "./MailRepair";
 
 export const metadata = {
-  title: "0sabX Repair Mobile Phone Services - Expert Repair & Training",
+  title: "sabX Repair Mobile Phone Services - Expert Repair & Training",
   description:
     "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
   // keywords: ["LabX", "tech solutions", "data recovery", "client reviews", "tech services"],

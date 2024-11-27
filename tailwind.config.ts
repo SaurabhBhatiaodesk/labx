@@ -12,6 +12,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "var(--primary-color)", // Maps to --primary-color
+        secondary: "var(--secondary-color)", // Maps to --secondary-color
+        tertiary: "var(--tertiary-color)", // Maps to --tertiary-color
+        quaternary: "var(--multi-color)", // Maps to --multi-color
+        black: "var(--black)", // Maps to --black
+        white: "var(--white)", // Maps to --white
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
@@ -38,6 +46,7 @@ const config: Config = {
           '3xl': '1600px',
           // '4xl': '1920px',
         },
+        
       },
       fontFamily: {
         gordita: ['Gordita', 'sans-serif'], // Uses the Gordita font defined in @font-face

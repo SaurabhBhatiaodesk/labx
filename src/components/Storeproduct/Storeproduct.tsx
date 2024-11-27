@@ -39,7 +39,7 @@ export default function Productswiper() {
       alt: "Honda Civic",
       Product:
         "iPhone 16 Pro Screen Original Service Pack",
-        price:" 530+GST",
+        price:" $530+GST",
           cross:"$730"
     },
     {
@@ -47,7 +47,7 @@ export default function Productswiper() {
       alt: "BMW X5",
       Product:
         "iPhone 16 Plus Screen Original Service Pack",
-        price:" 530+GST",
+        price:" $530+GST",
            cross:"$730"
     },
     {
@@ -78,9 +78,9 @@ export default function Productswiper() {
   ];
 
   return (
-    <div className="lg:py-8 py-3 bg-[#0b0b0b]">
+    <div className="lg:py-4 py-3 bg-[#0b0b0b]">
       <div className="container  ">
-        <div className="lg:py-5 py-4 ">
+        <div className="lg:py-2 py-2 ">
           <MainHeading Heading="Parts Store Service" />
           <MainTitle Title="Our Parts Store for mobile repair offers a wide selection of high-quality phone screens, iphone mobile parts, and accessories. With full e-commerce functionality, businesses can easily purchase the parts they need for efficient mobile phone repairs and services." />
         </div>
@@ -113,15 +113,15 @@ export default function Productswiper() {
                     alt={slide.alt}
                   />
                   <div className="product">
-                    <p className="product-title text-[13px] lg:text-[15px] leading-6 line my-3 font-poppins ">
+                    <p className="product-title text-[13px] lg:text-[15px]   mb-[0] font-poppins ">
                       {slide.Product}
                     </p>
-                    <div className="price-offer-discount flex justify-between py-[5px]">
+                    <div className="price-offer-discount flex justify-between">
                       <div className="">
                         <span className="line-through text-[#6d6d6dd2] lg:text-[20px] text-[16px]">
                          {/* {slide.cross} */}
                         </span>
-                        <span className="lg:text-[20px] text-[16px] font-poppins">
+                        <span className="lg:text-[20px] text-[16px] font-poppins text-tertiary">
                          {slide.price}
                         </span>
                       </div>

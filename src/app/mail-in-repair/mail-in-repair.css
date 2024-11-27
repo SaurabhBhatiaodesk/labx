@@ -5,7 +5,7 @@
   background-color: #EDE574 !important;
   color: black !important;
 }
-label[data-slot="label ,trigger"] {
+label[data-slot="label\ ,trigger"] {
     color: #ffffff; 
   }
 
@@ -53,5 +53,38 @@ label[data-slot="label ,trigger"] {
 }
 .subpixel-antialiased {
   color: white !important;
+ 
   background: black;
+}
+
+.gaurav::after {
+  position: absolute;
+  content: "";
+  width: 80%;
+  height: 4px;
+  background: #EDE574;
+  top: 38%;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+
+
+/* @media only screen (max-width:767px) */
+
+@media only screen and (max-width: 600px) {
+
+.gaurav::after {
+  position: absolute;
+top: 25px;
+}
+}
+
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: white; /* Autofill text color */
+  -webkit-box-shadow: 0 0 0px 1000px black inset; /* Maintains black background */
+  transition: background-color 5000s ease-in-out 0s; /* Prevent autofill background flash */
 }
