@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import React from "react";
 import BlogSidebar from "../../../components/BlogSidebar/BlogSidebar"; // Import the new Client Component
 import Image from "next/image";
+import "./BlogDetails.css";
 
 interface BlogData {
   _id: string;
@@ -66,46 +67,48 @@ export default async function BlogDetails({
     const blog = await fetchBlogData(params.id);
 
     return (
-      <div className="container mx-auto my-10 p-6 bg-white shadow-lg rounded-lg flex">
-        {/* Main Blog Content */}
-        <div className="w-3/4 pr-6">
-        {blog?.featuredImage.length > 0 ? (
-                  <div className="flex flex-wrap gap-2">
-                    {blog?.featuredImage.map((image, index) => (
-                      <div
-                        key={index}
-                        style={{
-                          position: "relative",
-                          display: "inline-block",
-                        }}
-                      >
-                        <Image
-                          src={image} // Base64 image string or image URL
-                          alt={`Image ${index + 1}`}
-                          width={400}
-                          height={300}
-                          className="rounded-md"
-                        />
-                      </div>
-                    ))}
+      <div className="blog-details-os">
+        <div className="container mx-auto my-10 p-6 bg-white shadow-lg rounded-lg flex">
+          {/* Main Blog Content */}
+          <div className="w-3/4 pr-6">
+            {blog?.featuredImage.length > 0 ? (
+              <div className="flex flex-wrap gap-2">
+                {blog?.featuredImage.map((image, index) => (
+                  <div
+                    key={index}
+                    style={{
+                      position: "relative",
+                      display: "inline-block",
+                    }}
+                  >
+                    <Image
+                      src={image} // Base64 image string or image URL
+                      alt={`Image ${index + 1}`}
+                      width={400}
+                      height={300}
+                      className="rounded-md"
+                    />
                   </div>
-                ) : (
-                  "No Image"
-                )}
+                ))}
+              </div>
+            ) : (
+              "No Image"
+            )}
 
-          <h2 className="text-3xl font-bold mb-6">{blog.heading}</h2>
+            <h2 className="text-3xl font-bold mb-6">{blog.heading}</h2>
 
-          <div className="mb-4">
-            <div
-              className="mt-2 text-gray-800"
-              dangerouslySetInnerHTML={{ __html: blog.content }}
-            ></div>
+            <div className="mb-4">
+              <div
+                className="mt-2 text-gray-800"
+                dangerouslySetInnerHTML={{ __html: blog.content }}
+              ></div>
+            </div>
           </div>
-        </div>
 
-        {/* Sidebar with Paginated Blogs */}
-        <div className="w-1/4 bg-gray-100 p-4 rounded-lg shadow-md">
-          <BlogSidebar />
+          {/* Sidebar with Paginated Blogs */}
+          <div className="w-1/4 bg-gray-100 p-4 rounded-lg shadow-md">
+            <BlogSidebar />
+          </div>
         </div>
       </div>
     );
