@@ -22,7 +22,7 @@ const DataRecovery = () => {
                 <Image src={pointer} alt="pointer" />
 
                 <div className="">
-                  <span className="text-xl border-b pb-[2px] border-[#EDE574]">
+                  <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
                     Real-Time Data Recovery Updates
                   </span>
                   <p>
@@ -37,7 +37,7 @@ const DataRecovery = () => {
               <div className="flex items-start gap-3">
                 <Image src={pointer} alt="pointer" />
                 <div className="">
-                  <span className="text-xl border-b pb-[2px] border-[#EDE574]">
+                <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
                     Feedback Requests for Data Recovery Services
                   </span>
                   <p>
@@ -52,7 +52,7 @@ const DataRecovery = () => {
               <div className="flex items-start gap-3">
                 <Image src={pointer} alt="pointer" />
                 <div className="">
-                  <span className="text-xl border-b pb-[2px] border-[#EDE574]">
+                <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
                     Streamlined Communication for Efficient Service
                   </span>
                   <p>
@@ -67,7 +67,7 @@ const DataRecovery = () => {
               <div className="flex items-start gap-3">
                 <Image src={pointer} alt="pointer" />
                 <div className="">
-                  <span className="text-xl border-b pb-[2px] border-[#EDE574]">
+                <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
                     Comprehensive Data Protection Measures
                   </span>
                   <p>
@@ -82,7 +82,7 @@ const DataRecovery = () => {
               <div className="flex items-start gap-3">
                 <Image src={pointer} alt="pointer" />
                 <div className="">
-                  <span className="text-xl border-b pb-[2px] border-[#EDE574]">
+                <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
                     Commitment to Quality and Precision
                   </span>
                   <p>
@@ -95,7 +95,7 @@ const DataRecovery = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <MainButton MainButton="LEARN MORE" link="/coming-soon" />
+                <MainButton MainButton="READ MORE" link="/coming-soon" />
               </div>
             </div>
           </div>

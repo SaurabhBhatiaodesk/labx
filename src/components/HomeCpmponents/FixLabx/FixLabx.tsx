@@ -11,7 +11,7 @@ const FixLabx = () => {
 
     <>
       <div className="bg-[url('/Images/Home/LabXMobileTech.svg')]  gk bg-no-repeat bg-cover bg-fixed bg-center	">
-        <div className="grid grid-cols-1 lg:grid-cols-[3fr_4fr] xl:grid-cols-[2fr_4fr_2fr] items-center pxs-0 md:px-[30px]  ">
+        <div className="grid grid-cols-1 lg:grid-cols-[3fr_4fr] xl:grid-cols-[2fr_4fr_2fr] items-center  md:px-[30px]  ">
           <div className="owener-image">
             <Image
               className="h-[22rem] lg:h-[100%] xl:h-[100%] 2xl:h-[100%] 3xl:h-[100%] w-full lg:block hidden"
@@ -19,22 +19,22 @@ const FixLabx = () => {
               alt=""
             />
             <Image
-              className="h-[19rem] lg:h-[100%] xl:h-[26rem] 2xl:h-[30rem] 3xl:h-[32rem] w-full lg:hidden block"
+              className="h-[19rem] lg:h-[26rem] xl:h-[26rem] 2xl:h-[26rem] 3xl:h-[32rem] w-full lg:hidden block"
               src={bharatmobile}
               alt=""
             />
           </div>
           <div className="text-center lg:p-0 p-4">
             <span className="text-[#696969]">Mobile Repair</span>
-            <h2 className="text-[#040404] text-[32px]  lg:text-[42px] 2xl:text-[42px] font-[800] pb-3">
-              LabX Repair Mobile Repair
+            <h2 className="text-[#040404] text-[32px]  lg:text-[38px] 2xl:text-[42px] font-[800] pb-3">
+              LabX Mobile Repair
             </h2>
-            <p className="text-black pb-5">
+            <p className="text-black ">
            
             {" I'm Bharat Dhingra, the founder of LabX, dedicated to providing exceptional, complex mobile phone repair services. With years of experience in the tech industry, I combine innovation and expertise to offer reliable solutions, ensuring quality and customer satisfaction for everyone who trusts LabX."}
 
             </p>
-            <MainButton MainButton="LEARN MORE" link="/coming-soon" />
+            <MainButton MainButton="READ MORE" link="/about-us" />
           </div>
         </div>
       </div>

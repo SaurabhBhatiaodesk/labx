@@ -187,7 +187,6 @@ const StaperForm: React.FC = () => {
       if (!deviceDetails.model.trim()) newErrors.model = "Model is required";
     }
 
-
     if (activeStep === 1) {
       if (!repairDetails.deviceType.trim())
         newErrors.deviceType = "Device type is required";
@@ -261,13 +260,12 @@ const StaperForm: React.FC = () => {
       );
       console.log("response.json()", response.status);
       if (response.status === 200 || response.status == 201) {
-        if (typeof window !== 'undefined') {
+        if (typeof window !== "undefined") {
           router.push("/mail-in-repair/thank-you");
         }
       } else {
         alert("Failed to submit the form. Please try again.");
       }
-
     } catch (error) {
       console.error("Error submitting the form:", error);
       alert("An error occurred while submitting the form.");
@@ -294,17 +292,17 @@ const StaperForm: React.FC = () => {
             <MainHeading Heading="LabX Mail-In Repair Submission Form" />
           </div>
 
-          <div className="max-w-5xl mx-auto p-4">
-            <div className="grid grid-cols-4 mb-8">
+          <div className="max-w-5xl mx-auto p-4 ">
+            <div className="grid grid-cols-4 mb-8  relative gaurav">
               {[
                 "Personal Details",
                 "Repair Details",
                 "Shipping Details",
                 "Terms & Pricing Agreement",
               ].map((step, index) => (
-                <div key={index} className="flex items-center flex-col">
+                <div key={index} className="flex items-center flex-col relative z-10">
                   <div
-                    className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px]  ${
+                    className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[3px] bg-black  ${
                       activeStep === index
                         ? "bg-yellow-500"
                         : activeStep > index
@@ -371,7 +369,7 @@ const StaperForm: React.FC = () => {
                               required
                             />
                             {errors.businessName && (
-                              <p className="text-[red] text-sm mb-0">
+                              <p className="error-message text-sm mb-0">
                                 {errors.businessName}
                               </p>
                             )}
@@ -392,7 +390,7 @@ const StaperForm: React.FC = () => {
                               required
                             />
                             {errors.fullName && (
-                              <p className="text-[red] text-sm mb-0">
+                              <p className="error-message text-sm mb-0">
                                 {errors.fullName}
                               </p>
                             )}
@@ -413,7 +411,7 @@ const StaperForm: React.FC = () => {
                               required
                             />
                             {errors.contactNo && (
-                              <p className="text-[red] text-sm mb-0">
+                              <p className="error-message text-sm mb-0">
                                 {errors.contactNo}
                               </p>
                             )}
@@ -442,13 +440,13 @@ const StaperForm: React.FC = () => {
                               required
                             />
                             {errors.emailAddress && (
-                              <p className="text-[red] text-sm mb-0">
+                              <p className="error-message text-sm mb-0">
                                 {errors.emailAddress}
                               </p>
                             )}
                           </div>
                         </div>
-                        <div className="flex w-full flex-wrap md:flex-nowrap gap-4 bg-black">
+                        <div className=" w-full  md:flex-nowrap gap-4 bg-black">
                           <Input
                             label="Return Shipping Address*"
                             variant="faded"
@@ -465,8 +463,9 @@ const StaperForm: React.FC = () => {
                             // placeholder="Enter your return shipping address"
                             required
                           />
+
                           {errors.returnShippingAddress && (
-                            <p className="text-[red] text-sm mb-0">
+                            <p className="error-message text-sm mb-0">
                               {errors.returnShippingAddress}
                             </p>
                           )}
@@ -507,7 +506,7 @@ const StaperForm: React.FC = () => {
                                 ))}
                               </Select>
                               {errors.deviceType && (
-                                <p className="text-[red] text-sm mb-0">
+                                <p className="error-message text-sm mb-0">
                                   {errors.deviceType}
                                 </p>
                               )}
@@ -549,7 +548,7 @@ const StaperForm: React.FC = () => {
                                 ))}
                               </Select>
                               {errors.deviceType && (
-                                <p className="text-[red] text-sm mb-0">
+                                <p className="error-message text-sm mb-0">
                                   {errors.deviceType}
                                 </p>
                               )}
@@ -570,7 +569,7 @@ const StaperForm: React.FC = () => {
                                 required
                               />
                               {errors.imeiOrSerialNo && (
-                                <p className="text-[red] text-sm mb-0">
+                                <p className="error-message text-sm mb-0">
                                   {errors.imeiOrSerialNo}
                                 </p>
                               )}
@@ -657,7 +656,7 @@ const StaperForm: React.FC = () => {
                           ))}
                         </Select>
                         {errors.deviceType && (
-                          <p className="text-[red] text-sm mb-0">
+                          <p className="error-message text-sm mb-0">
                             {errors.deviceType}
                           </p>
                         )}
@@ -683,7 +682,7 @@ const StaperForm: React.FC = () => {
                             required
                           />
                           {errors.issueDescription && (
-                            <p className="text-[red] text-sm mb-0">
+                            <p className="error-message text-sm mb-0">
                               {errors.issueDescription}
                             </p>
                           )}
@@ -727,7 +726,7 @@ const StaperForm: React.FC = () => {
                             </SelectItem>
                           </Select>
                           {errors.previousRepairAttempts && (
-                            <p className="text-[red] text-sm mb-0">
+                            <p className="error-message text-sm mb-0">
                               {errors.previousRepairAttempts}
                             </p>
                           )}
@@ -772,7 +771,7 @@ const StaperForm: React.FC = () => {
                             </SelectItem>
                           </Select>
                           {errors.jumpQueueForFasterService && (
-                            <p className="text-[red] text-sm mb-0">
+                            <p className="error-message text-sm mb-0">
                               {errors.jumpQueueForFasterService}
                             </p>
                           )}
@@ -939,7 +938,7 @@ const StaperForm: React.FC = () => {
                             </span>
                           </Checkbox>
                           {errors.termsAndConditions && (
-                            <p className="text-[red] text-sm mb-0">
+                            <p className="error-message text-sm mb-0">
                               {errors.termsAndConditions}
                             </p>
                           )}
@@ -968,7 +967,7 @@ const StaperForm: React.FC = () => {
                           onEnd={saveSignature} // Save signature on end
                         />
                         {errors.signature && (
-                          <p className="text-[red] text-sm mb-0">
+                          <p className="error-message text-sm mb-0">
                             {errors.signature}
                           </p>
                         )}
@@ -1047,7 +1046,7 @@ const StaperForm: React.FC = () => {
                       </p>
                     </div>
                     {errors.pricingAgreement && (
-                      <p className="text-[red] text-sm mb-0">
+                      <p className="error-message text-sm mb-0">
                         {errors.pricingAgreement}
                       </p>
                     )}

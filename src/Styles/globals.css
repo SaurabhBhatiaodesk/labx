@@ -110,11 +110,14 @@ xl (1280px)	max-width: 1280px;
   --black: #000;
   --primary-color: #ffffff;
   --secondary-color: #000000;
-  --Space_Grotesk: "Space Grotesk", sans-serif; /* Corrected variable definition */
+  --tertiary-color: #EDE574; /* Tertiary color (e.g., Yellow) */
+  --Space_Grotesk: "Space Grotesk", sans-serif; 
   --multi-color: #035597;
   --F1-btn-color: linear-gradient(45deg, #E1F5C4, #EDE574); 
   --transition: all 0.3s ease-in-out;
 }
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -136,7 +139,7 @@ body {
 
 .error-message {
   padding: 0;
-  color: red;
+  color: #EDE574;
   font-size: 12px;
 }
 .padd-top-bottom {
@@ -209,9 +212,22 @@ label {
   letter-spacing: 2px;
   font-family: var( --Space_Grotesk); 
 }
-/* [aria-selected="0"] {
-  background: linear-gradient(74deg, #56c1c1, #000000);
+.btn1 {
+  background: var( --F1-btn-color);
+  padding: 10px 10px !important;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--black);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 1;
+  border-radius: 150px;
+  letter-spacing: 2px;
+  font-family: var( --Space_Grotesk); 
 }
+
 
 [aria-selected="1"] {
   background: rgb(80, 47, 187);

@@ -44,7 +44,7 @@ const FeeSolutions = () => {
                   </li>
                 </ul>
                 <div>
-                  <MainButton MainButton="Learn More" />
+                  <MainButton MainButton="READ MORE" />
                 </div>
               </div>
             </div>
