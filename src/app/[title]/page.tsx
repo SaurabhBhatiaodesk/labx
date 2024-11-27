@@ -63,18 +63,7 @@ export default async function PageDetail({ params }: { params: { title: string }
           {formatPageName(page.pageName)}
         </Typography>
 
-        {/* Images Section */}
-        {/* <Typography
-          variant="h4"
-          sx={{
-            marginTop: 4,
-            textAlign: 'center',
-            fontWeight: 'bold',
-            color: '#333',
-          }}
-        >
-          Featured Images
-        </Typography> */}
+      
         <Grid container spacing={2} sx={{ marginTop: 2 }}>
           {page.images.map((image: string, index: number) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
@@ -92,30 +81,13 @@ export default async function PageDetail({ params }: { params: { title: string }
                   sx={{ height: 200 }}
                 />
                 <CardContent>
-                  {/* <Typography variant="subtitle1" sx={{ textAlign: 'center', color: '#555' }}>
-                    Image {index + 1}
-                  </Typography> */}
+                 
                 </CardContent>
               </Card>
             </Grid>
           ))}
         </Grid>
 
-        {/* Description Section */}
-        {/* <Typography
-          variant="h5"
-          gutterBottom
-          sx={{
-            textAlign: 'center',
-            color: 'black',
-            fontStyle: 'italic',
-            marginTop: 4,
-          }}
-        >
-          {page.pageDescription}
-        </Typography> */}
-
-        {/* Page Editor Section */}
         <Box
           sx={{
             backgroundColor: '#f4f4f4',

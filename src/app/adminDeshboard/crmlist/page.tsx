@@ -85,9 +85,6 @@ const CreatePageList: React.FC = () => {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
-  const stripHtmlTags = (text: string) => {
-    return text.replace(/<[^>]*>/g, "");
-  };
 
   return (
     <div className="page-list table-os" style={{ backgroundColor: "white" }}>
