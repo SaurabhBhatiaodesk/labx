@@ -1,7 +1,8 @@
-'use client';
+"use client";
 import React, { useEffect, useState } from "react";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface BlogData {
   _id: string;
@@ -119,7 +120,7 @@ const BlogsListing: React.FC = () => {
                 {blog.featuredImage.length > 0 ? (
                   <div className="flex flex-wrap gap-2">
                     {blog.featuredImage.map((image, index) => (
-                      <img
+                      <Image
                         key={index}
                         src={image}
                         alt={`Featured ${index + 1}`}

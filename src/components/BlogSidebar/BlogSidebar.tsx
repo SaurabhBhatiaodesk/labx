@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 interface BlogData {
@@ -8,7 +9,10 @@ interface BlogData {
   createdAt: string;
 }
 
-async function fetchPaginatedBlogs(page: number, limit: number): Promise<{
+async function fetchPaginatedBlogs(
+  page: number,
+  limit: number
+): Promise<{
   blogs: BlogData[];
   totalPages: number;
 }> {
@@ -61,14 +65,16 @@ export default function BlogSidebar() {
             className="flex items-center mb-4 bg-white shadow-sm rounded-lg p-2 hover:shadow-md"
           >
             {blog.featuredImage.length > 0 && (
-              <img
+              <Image
                 src={blog.featuredImage[0]}
                 alt={blog.heading}
                 className="h-12 w-12 rounded-md object-cover mr-4"
               />
             )}
             <div>
-              <h4 className="text-sm font-medium text-gray-800">{blog.heading}</h4>
+              <h4 className="text-sm font-medium text-gray-800">
+                {blog.heading}
+              </h4>
               <p className="text-xs text-gray-500">
                 {new Date(blog.createdAt).toLocaleDateString()}
               </p>
