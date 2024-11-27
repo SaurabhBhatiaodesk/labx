@@ -39,7 +39,7 @@ const BlogsListing: React.FC = () => {
     const fetchBlogs = async () => {
       try {
         const response = await fetch(
-          `https://labxbackend.labxrepair.com.au/api/admin/blogs?page=${page}&limit=${limit}`
+          `http://localhost:7000/api/admin/blogs?page=${page}&limit=${limit}`
         );
         const data = await response.json();
         setBlogs(data.blogs);
@@ -69,7 +69,7 @@ const BlogsListing: React.FC = () => {
 
     try {
       const response = await fetch(
-        `https://labxbackend.labxrepair.com.au/api/admin/blog/${deleteId}`,
+        `http://localhost:7000/api/admin/blog/${deleteId}`,
         {
           method: "DELETE",
         }

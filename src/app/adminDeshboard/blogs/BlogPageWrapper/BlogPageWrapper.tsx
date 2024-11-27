@@ -51,7 +51,7 @@ const BlogPageWrapper: React.FC = () => {
       const fetchBlog = async () => {
         try {
           const response = await fetch(
-            `https://labxbackend.labxrepair.com.au/api/admin/blog/${blogId}`
+            `http://localhost:7000/api/admin/blog/${blogId}`
           );
           const data = await response.json();
           setBlogData({
@@ -144,8 +144,8 @@ const BlogPageWrapper: React.FC = () => {
 
     try {
       const url = isEditMode
-        ? `https://labxbackend.labxrepair.com.au/api/admin/blog/${blogId}`
-        : "https://labxbackend.labxrepair.com.au/api/admin/blog";
+        ? `http://localhost:7000/api/admin/blog/${blogId}`
+        : "http://localhost:7000/api/admin/blog";
       const method = isEditMode ? "PUT" : "POST";
 
       const response = await fetch(url, {
