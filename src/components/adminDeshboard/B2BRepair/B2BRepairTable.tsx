@@ -44,7 +44,7 @@ const B2BRepairTable: React.FC = () => {
       let response;
       if (searchValue.trim() === "") {
         // Normal GET request
-        response = await axios.get(`https://labxbackend.labxrepair.com.au/api/repair`, {
+        response = await axios.get(`http://localhost:7000/api/repair`, {
           params: {
             page: page + 1, // Backend pages are 1-indexed
             limit,
@@ -53,7 +53,7 @@ const B2BRepairTable: React.FC = () => {
       } else {
         // Search POST request
         response = await axios.post(
-          `https://labxbackend.labxrepair.com.au/api/repair/search`,
+          `http://localhost:7000/api/repair/search`,
           { searchValue },
           {
             params: {
@@ -118,7 +118,7 @@ const B2BRepairTable: React.FC = () => {
   const confirmDelete = async () => {
     if (deleteId) {
       try {
-        await axios.delete(`https://labxbackend.labxrepair.com.au/api/repair/delete/${deleteId}`);
+        await axios.delete(`http://localhost:7000/api/repair/delete/${deleteId}`);
         setDeleteDialogOpen(false);
         setDeleteId(null);
         fetchData(page, rowsPerPage, searchValue); // Refresh data after deletion
