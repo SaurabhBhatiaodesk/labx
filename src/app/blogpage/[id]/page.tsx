@@ -69,20 +69,29 @@ export default async function BlogDetails({
       <div className="container mx-auto my-10 p-6 bg-white shadow-lg rounded-lg flex">
         {/* Main Blog Content */}
         <div className="w-3/4 pr-6">
-          {blog.featuredImage.length > 0 && (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
-              {blog.featuredImage.map((image, index) => (
-                <div key={index} className="relative">
-                  <Image
-                    src={image} // Display each featured image
-                    alt={`Featured Image ${index + 1}`}
-                    className="rounded-lg shadow-md"
-                    style={{ maxWidth: "100%", height: "auto" }}
-                  />
-                </div>
-              ))}
-            </div>
-          )}
+        {blog?.featuredImage.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {blog?.featuredImage.map((image, index) => (
+                      <div
+                        key={index}
+                        style={{
+                          position: "relative",
+                          display: "inline-block",
+                        }}
+                      >
+                        <Image
+                          src={image} // Base64 image string or image URL
+                          alt={`Image ${index + 1}`}
+                          width={400}
+                          height={300}
+                          className="rounded-md"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  "No Image"
+                )}
 
           <h2 className="text-3xl font-bold mb-6">{blog.heading}</h2>
 

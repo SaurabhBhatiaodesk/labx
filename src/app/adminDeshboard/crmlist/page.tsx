@@ -90,7 +90,7 @@ const CreatePageList: React.FC = () => {
   };
 
   return (
-    <div className="page-list table-os" style={{ backgroundColor: "white" }}>
+    <div className="page-list table-os">
       <h2>Pages List</h2>
       <table className="table-auto w-full border-collapse">
         <thead>
