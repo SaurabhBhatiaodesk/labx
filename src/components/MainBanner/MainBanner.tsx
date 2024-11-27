@@ -90,9 +90,6 @@
 
 // export default MainBanner;
 
-
-
-
 // "use client";
 // import "./MainBanner.css";
 // import Image from "next/image";
@@ -117,7 +114,7 @@
 //           <div className="mb-4 lg:mt-[0] mt-[0px] relative">
 //             <Link href="/coming-soon">
 //               <button
-//                 className="px-[20px] py-[6px] border-[2px] rounded-full bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] 
+//                 className="px-[20px] py-[6px] border-[2px] rounded-full bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98]
 //                   animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px] relative  top-6"
 //                 style={{ transform: "rotate(-5deg)" }}
 //               >
@@ -283,16 +280,6 @@
 //   );
 // }
 
-
-
-
-
-
-
-
-
-
-
 "use client";
 import "./MainBanner.css";
 import Image from "next/image";
@@ -378,19 +365,25 @@ export default function MainBanner() {
                 <div>
                   <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
                     Get Your Device Fixed or Learn Mobile Phone Repairs
-                    <span className="text-[#EDE574]"> — LabX Repair Does It All!</span>
+                    <span className="text-[#EDE574]">
+                      {" "}
+                      — LabX Repair Does It All!
+                    </span>
                   </h1>
                   <p>
-                    LabX Repair is more than just a mobile phone repair service.
+                    {`LabX Repair is more than just a mobile phone repair service.
                     We’re a full-service platform dedicated to quality mobile
                     phone repairing, professional training, and community
                     support. Whether you're looking to get your iPhone or
                     smartphone repaired, purchase repair parts, or enhance your
                     repair skills through our training programs, LabX Repair has
-                    it all.
+                    it all.`}
                   </p>
                   <div className="my-4 xl:my-10">
-                    <MainButton MainButton="Request a Quote" link="/coming-soon" />
+                    <MainButton
+                      MainButton="Request a Quote"
+                      link="/coming-soon"
+                    />
 
                     {/* <button className="btn1"> hello</button> */}
                   </div>
@@ -411,10 +404,17 @@ export default function MainBanner() {
                 <div>
                   <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
                     Quick Repairs, Quality Service
-                    <span className="text-[#FF9966]"> – Only at LabX Repair!</span>
+                    <span className="text-[#FF9966]">
+                      {" "}
+                      – Only at LabX Repair!
+                    </span>
                   </h1>
                   <p>
-                    LabX Repair goes beyond standard mobile repair! We're your complete platform for top-quality repairs, professional training, and community support. From iPhone and smartphone repairs to purchasing parts and skill-building courses, LabX Repair is here to meet all your mobile needs.
+                    {`LabX Repair goes beyond standard mobile repair! We're your
+                    complete platform for top-quality repairs, professional
+                    training, and community support. From iPhone and smartphone
+                    repairs to purchasing parts and skill-building courses, LabX
+                    Repair is here to meet all your mobile needs.`}
                   </p>
                   <div className="my-4 xl:my-10">
                     <MainButton MainButton="Get Started" link="/coming-soon" />
@@ -436,10 +436,17 @@ export default function MainBanner() {
                 <div>
                   <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
                     Expert Repairs and Training
-                    <span className="text-[#6DD5ED]"> – All at LabX Repair!</span>
+                    <span className="text-[#6DD5ED]">
+                      {" "}
+                      – All at LabX Repair!
+                    </span>
                   </h1>
                   <p>
-                    Discover LabX Repair—more than a mobile repair service. We offer quality repairs, trusted training programs, and essential parts for all your repair needs. Whether fixing your smartphone or learning new repair skills, LabX Repair provides everything to keep you and your devices connected.
+                    Discover LabX Repair—more than a mobile repair service. We
+                    offer quality repairs, trusted training programs, and
+                    essential parts for all your repair needs. Whether fixing
+                    your smartphone or learning new repair skills, LabX Repair
+                    provides everything to keep you and your devices connected.
                   </p>
                   <div className="my-4 xl:my-10">
                     <MainButton
@@ -467,7 +474,11 @@ export default function MainBanner() {
                     <span className="text-[#fff563]"> – LabX Repair!</span>
                   </h1>
                   <p>
-                    At LabX Repair, we do more than fix phones! We're a full-service platform with expert repair solutions, quality repair parts, and professional training programs. Choose LabX Repair to upgrade your device or advance your skills—your go-to destination for all things mobile repair.
+                    {`At LabX Repair, we do more than fix phones! We're a
+                    full-service platform with expert repair solutions, quality
+                    repair parts, and professional training programs. Choose
+                    LabX Repair to upgrade your device or advance your
+                    skills—your go-to destination for all things mobile repair.`}
                   </p>
                   <div className="my-4 xl:my-10">
                     <MainButton MainButton="Join Us Now" link="/coming-soon" />
