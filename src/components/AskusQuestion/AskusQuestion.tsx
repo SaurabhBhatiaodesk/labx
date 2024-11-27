@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { LuPlus } from "react-icons/lu";
 import { GrSubtract } from "react-icons/gr";
 import Image from "next/image";
-import mobilerepair from "../../../public/Images/Home/iphone221.svg"
+import mobilerepair from "../../../public/Images/Home/mobileRepair.svg"
 
 
 export default function Accordion() {
@@ -15,29 +15,29 @@ export default function Accordion() {
   // Sample data for the accordion content
   const accordionData = [
     {
-      title: "What types of devices do you repair?",
+      title: "Can I learn phone repair through a course?",
       content:
-        "We repair a wide range of mobile devices, including iPhones, Android phones, tablets, and MacBooks. We specialize in logic board repairs, microsoldering, and screen refurbishments.",
+        "Yes, our phone repair coaching Australia focuses on key repair techniques, diagnostics, and device management to help aspiring technicians enhance their skills and knowledge.",
     },
     {
-      title: "What types of repairs do you specialize in?",
+      title: "Can Water damage repair fully restore my phone?",
       content:
-        "Our expertise includes screen replacement, motherboard repairs, data recovery, and micro soldering. We also handle complex repairs like Face ID issues, and water damage recovery.",
+        "In many cases, yes. Our technicians use advanced techniques to clean, dry, and repair water-damaged components, aiming for full restoration if possible.",
     },
     {
-      title: "Do you offer any warranties on your repairs?",
+      title: "Are OEM parts used in your phone repairs?",
       content:
-        "Yes, all repairs come with a  1 Year warranty on parts and workmanship. This ensures that if the same issue reoccurs, we will repair it free of charge, provided no further damage has occurred to the device.",
+        "Yes, we use genuine OEM parts replacement for mobile phones whenever possible to ensure optimal compatibility, performance, and longevity for your mobile device.",
     },
     {
-      title: "What is the warranty on liquid-damaged devices?",
+      title: "How soon should I bring in a water-damaged phone?",
       content:
-        "We do not recommend repairing liquid-damaged devices and suggest only data recovery services. If the customer insists on repair, we do not provide any warranty, including for the replaced parts.",
+        "Bring it in as soon as possible! Delays can lead to corrosion and further damage. Immediate action improves the chances of recovery.",
     },
     {
-      title: "Will all functions work on my dead device after repair?",
+      title: "Do you offer warranties on replaced phone parts?",
       content:
-        "No guarantees can be made. The initial quote covers the visible issue, e.g., turning on a dead device. Since devices have numerous functions, issues like a non-working camera or mic will require a separate quote unless the fault is minor, in which case we’ll address it during the repair. Major issues will need re-quoting.",
+        "Yes, we offer warranties on most replaced parts, covering defects and issues that arise after repair, giving you peace of mind.",
     },
     {
         title: "Do you offer repair services for all phone brands?",
@@ -65,7 +65,7 @@ export default function Accordion() {
       <div>
         <section className=" py-5 xl:py-10 bg-[url('/Images/Home/faq.svg')]  bg-no-repeat bg-cover">
           <div className="container">
-          <MainHeading Heading="General FAQs" color="black"  />
+          <MainHeading Heading="FAQs" color="black"  />
             {/* <MainTitle
               Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing."
               color="black"

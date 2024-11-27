@@ -44,7 +44,6 @@ export default function App() {
     { label: "Parts Store", path: "/coming-soon" },
     { label: "Training", path: "/training" },
     { label: "Screen Refurbishment", path: "/coming-soon" },
-    { label: "About us", path: "/about-us" },
     { label: "Contact Us", path: "/coming-soon" },
     { label: "Price List", path: "/coming-soon" },
   ];
@@ -97,7 +96,7 @@ export default function App() {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex flex-grow justify-center">
-          <div className="flex gap-[20px] xl:gap-[30px]">
+          <div className="flex gap-[20px] xl:gap-[40px]">
             {menuItems.map((item) => (
               <NavbarItem key={item.label}>
                 {item.dropdown ? (
