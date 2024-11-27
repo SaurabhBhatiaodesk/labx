@@ -26,7 +26,7 @@ const PrivacyPolicyList: React.FC = () => {
   useEffect(() => {
     const fetchPolicies = async () => {
       try {
-        const response = await fetch("http://localhost:7000/api/admin/privacypolicy");
+        const response = await fetch("https://labxbackend.labxrepair.com.au/api/admin/privacypolicy");
 
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
@@ -68,7 +68,7 @@ const PrivacyPolicyList: React.FC = () => {
     setShowModal(false);
 
     try {
-      const response = await fetch(`http://localhost:7000/api/admin/privacypolicy/${deleteId}`, {
+      const response = await fetch(`https://labxbackend.labxrepair.com.au/api/admin/privacypolicy/${deleteId}`, {
         method: "DELETE",
       });
 
@@ -138,20 +138,29 @@ const PrivacyPolicyList: React.FC = () => {
               {/* Images */}
               <td className="py-2 px-4 border">
                 <div className="flex flex-wrap gap-2">
-                  {policy.images && policy.images.length > 0 ? (
-                    policy.images.map((image, index) => (
-                      <Image
-                      key={index}
-                      src={image}
-                      alt={`Policy Image ${index + 1}`}
-                      width={64}
-                      height={64}
-                      className="rounded"
-                    />
-                    ))
-                  ) : (
-                    <p className="text-gray-500">No Images</p>
-                  )}
+                {policy?.images?.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {policy?.images.map((image, index) => (
+                      <div
+                        key={index}
+                        style={{
+                          position: "relative",
+                          display: "inline-block",
+                        }}
+                      >
+                        <Image
+                          src={image} // Base64 image string or image URL
+                          alt={`Image ${index + 1}`}
+                          width={400}
+                          height={300}
+                          className="rounded-md"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  "No Image"
+                )}
                 </div>
               </td>
 

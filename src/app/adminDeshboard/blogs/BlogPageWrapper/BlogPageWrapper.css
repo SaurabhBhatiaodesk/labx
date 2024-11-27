@@ -1,0 +1,27 @@
+.BlogPageWrapper-os .ql-container.ql-snow {
+    border: none;
+}
+
+.BlogPageWrapper-os .quill.border.rounded-lg {
+    border: 1px solid #00000099;
+    border-radius: 4px;
+    overflow-y: hidden;
+}
+
+.BlogPageWrapper-os .ql-toolbar.ql-snow {
+    border: none;
+    border-bottom: 1px solid #00000099;
+}
+
+.BlogPageWrapper-os {
+    color: #000;
+}
+
+.label-text-os {
+    display: flex;
+    font-size: 16px;
+    line-height: 20px;
+}
+.BlogPageWrapper-os h2, .BlogPageWrapper-os p {
+    color: #000;
+}

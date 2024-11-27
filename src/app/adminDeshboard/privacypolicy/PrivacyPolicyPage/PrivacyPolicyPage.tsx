@@ -50,7 +50,7 @@ const PrivacyPolicyPage: React.FC = () => {
       const fetchPolicy = async () => {
         try {
           const response = await fetch(
-            `http://localhost:7000/api/admin/privacypolicybyId/${policyId}`
+            `https://labxbackend.labxrepair.com.au/api/admin/privacypolicybyId/${policyId}`
           );
           if (!response.ok)
             throw new Error(`Error fetching policy: ${response.statusText}`);
@@ -143,8 +143,8 @@ const PrivacyPolicyPage: React.FC = () => {
 
     try {
       const url = isEditMode
-        ? `http://localhost:7000/api/admin/privacypolicy/${policyId}`
-        : "http://localhost:7000/api/admin/privacypolicy";
+        ? `https://labxbackend.labxrepair.com.au/api/admin/privacypolicy/${policyId}`
+        : "https://labxbackend.labxrepair.com.au/api/admin/privacypolicy";
       const method = isEditMode ? "PUT" : "POST";
 
       const response = await fetch(url, {
@@ -260,33 +260,28 @@ const PrivacyPolicyPage: React.FC = () => {
           accept="image/*"
           onChange={handleImageChange}
         />
-        {policyData.images.length > 0 && (
-          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2, mt: 2 }}>
-            {policyData.images.map((image, index) => (
-              <Box key={index} sx={{ position: "relative" }}>
+        {policyData?.images?.length > 0 ? (
+          <div className="flex flex-wrap gap-2">
+            {policyData?.images.map((image, index) => (
+              <div
+                key={index}
+                style={{
+                  position: "relative",
+                  display: "inline-block",
+                }}
+              >
                 <Image
-                  src={image}
+                  src={image} // Base64 image string or image URL
                   alt={`Image ${index + 1}`}
-                  style={{
-                    maxWidth: "150px",
-                    maxHeight: "150px",
-                    borderRadius: "8px",
-                  }}
+                  width={400}
+                  height={300}
+                  className="rounded-md"
                 />
-                <IconButton
-                  onClick={() => handleRemoveImage(index)}
-                  sx={{
-                    position: "absolute",
-                    top: 0,
-                    right: 0,
-                    backgroundColor: "#fff",
-                  }}
-                >
-                  <FiX color="red" />
-                </IconButton>
-              </Box>
+              </div>
             ))}
-          </Box>
+          </div>
+        ) : (
+          "No Image"
         )}
         <Button type="submit" variant="contained" color="primary" fullWidth>
           {isEditMode ? "Update Privacy Policy" : "Create Privacy Policy"}

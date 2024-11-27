@@ -9,6 +9,7 @@ import {
   FormControlLabel,
   IconButton,
 } from "@mui/material";
+import "./BlogPageWrapper.css";
 import "react-quill/dist/quill.snow.css";
 import { FiX } from "react-icons/fi";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -43,7 +44,7 @@ const BlogPageWrapper: React.FC = () => {
   const [isEditMode, setIsEditMode] = useState(false);
   const router = useRouter();
   const searchParams = useSearchParams();
-  const blogId = searchParams.get('id');
+  const blogId = searchParams.get("id");
 
   useEffect(() => {
     if (blogId) {
@@ -51,7 +52,7 @@ const BlogPageWrapper: React.FC = () => {
       const fetchBlog = async () => {
         try {
           const response = await fetch(
-            `http://localhost:7000/api/admin/blog/${blogId}`
+            `https://labxbackend.labxrepair.com.au/api/admin/blog/${blogId}`
           );
           const data = await response.json();
           setBlogData({
@@ -144,8 +145,8 @@ const BlogPageWrapper: React.FC = () => {
 
     try {
       const url = isEditMode
-        ? `http://localhost:7000/api/admin/blog/${blogId}`
-        : "http://localhost:7000/api/admin/blog";
+        ? `https://labxbackend.labxrepair.com.au/api/admin/blog/${blogId}`
+        : "https://labxbackend.labxrepair.com.au/api/admin/blog";
       const method = isEditMode ? "PUT" : "POST";
 
       const response = await fetch(url, {
@@ -187,7 +188,7 @@ const BlogPageWrapper: React.FC = () => {
 
   return (
     <div
-      className="container mx-auto my-10 p-6 bg-white shadow-lg rounded-lg"
+      className="BlogPageWrapper-os container mx-auto my-10 p-6 bg-white shadow-lg rounded-lg"
       style={{ backgroundColor: "skyBlue" }}
     >
       <Head>
@@ -211,7 +212,7 @@ const BlogPageWrapper: React.FC = () => {
           error={!!errors.heading}
           helperText={errors.heading}
         />
-        <label> Description*</label>
+        <label className="label-text-os"> Description*</label>
         <ReactQuill
           value={blogData.content}
           onChange={handleEditorChange}

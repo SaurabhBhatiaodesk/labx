@@ -1,8 +1,9 @@
-'use client';
+"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "./RecentNews.css";
 import { useRouter } from "next/navigation";
 
 interface BlogData {
@@ -42,10 +43,12 @@ const RecentNews: React.FC = () => {
     const fetchBlogs = async () => {
       try {
         const response = await fetch(
-          `http://localhost:7000/api/admin/blogs?page=${page}&limit=3`
+          `https://labxbackend.labxrepair.com.au/api/admin/blogs?page=${page}&limit=3`
         ); // Fetch blogs with current page and limit (3 blogs per page)
         const data = await response.json();
-        const filteredBlogs = data.blogs.filter((blog: BlogData) => blog.status); // Filter blogs where status is true
+        const filteredBlogs = data.blogs.filter(
+          (blog: BlogData) => blog.status
+        ); // Filter blogs where status is true
         setBlogs(filteredBlogs); // Set filtered blogs
         setPagination(data.pagination); // Set pagination metadata
       } catch (error) {
@@ -62,79 +65,84 @@ const RecentNews: React.FC = () => {
   };
 
   return (
-    <div className="container">
-      <div className="py-5 xl:py-10" data-aos="fade-up">
-        <h2 className="text-3xl font-bold text-center">Recent News</h2>
-        <p className="text-center text-lg mt-2 mb-6">
-          Explore our latest blogs for insights, news, and expert tips on mobile
-          phone repair and technology. Stay updated with LabX’s tech knowledge!
-        </p>
-        <div className="grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:py-5 py-3">
-          {blogs.length > 0 ? (
-            blogs.map((blog) => (
-              <div className="blogs" key={blog._id} data-aos="zoom-in">
-                <div>
-                  {/* Render the first featured image */}
-                  {blog.featuredImage.length > 0 && (
-                    <Image
-                      src={blog.featuredImage[0]} // Base64 image string
-                      alt={blog.heading}
-                      width={400}
-                      height={300}
-                      className="rounded-md"
-                    />
-                  )}
+    <div className="RecentNews-os">
+      <div className="container">
+        <div className="py-5 xl:py-10" data-aos="fade-up">
+          <h2 className="text-3xl font-bold text-center">Recent News</h2>
+          <p className="text-center text-lg mt-2 mb-6">
+            Explore our latest blogs for insights, news, and expert tips on
+            mobile phone repair and technology. Stay updated with LabX’s tech
+            knowledge!
+          </p>
+          <div className="grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:py-5 py-3">
+            {blogs.length > 0 ? (
+              blogs.map((blog) => (
+                <div className="blogs" key={blog._id} data-aos="zoom-in">
+                  <div>
+                    {/* Render the first featured image */}
+                    {blog.featuredImage.length > 0 && (
+                      <Image
+                        src={blog.featuredImage[0]} // Base64 image string
+                        alt={blog.heading}
+                        width={100}
+                        height={100}
+                        className="rounded-md"
+                      />
+                    )}
+                  </div>
+                  <div className="mt-4">
+                    <h4 className="font-bold text-lg text-gray-800">
+                      {blog.heading.split(" ").length > 8
+                        ? `${blog.heading.split(" ").slice(0, 8).join(" ")}...`
+                        : blog.heading}
+                    </h4>
+                    <p className="text-gray-700 text-base mt-2">
+                      {stripHtmlTags(blog.content).split(" ").length > 40
+                        ? `${stripHtmlTags(blog.content)
+                            .split(" ")
+                            .slice(0, 40)
+                            .join(" ")}...`
+                        : stripHtmlTags(blog.content)}
+                    </p>
+                    <div className="flex justify-between items-center mt-4">
+                      <button
+                        onClick={() => sendId(blog._id)} // Pass the blog ID to the function
+                        className="capitalize text-[16px] tracking-[1px] p-2 bg-blue-500 text-white rounded-md"
+                      >
+                        Read More
+                      </button>
+                      <span className="capitalize text-[16px] tracking-[1px] text-gray-500">
+                        {/* Placeholder date, can add createdAt/updatedAt if available */}
+                        20 Oct, 2024
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <div className="mt-4">
-  <h4 className="font-bold text-lg text-gray-800">
-    {blog.heading.split(" ").length > 8
-      ? `${blog.heading.split(" ").slice(0, 8).join(" ")}...`
-      : blog.heading}
-  </h4>
-  <p className="text-gray-700 text-base mt-2">
-    {stripHtmlTags(blog.content).split(" ").length > 40
-      ? `${stripHtmlTags(blog.content).split(" ").slice(0, 40).join(" ")}...`
-      : stripHtmlTags(blog.content)}
-  </p>
-  <div className="flex justify-between items-center mt-4">
-    <button
-      onClick={() => sendId(blog._id)} // Pass the blog ID to the function
-      className="capitalize text-[16px] tracking-[1px] p-2 bg-blue-500 text-white rounded-md"
-    >
-      Read More
-    </button>
-    <span className="capitalize text-[16px] tracking-[1px] text-gray-500">
-      {/* Placeholder date, can add createdAt/updatedAt if available */}
-      20 Oct, 2024
-    </span>
-  </div>
-</div>
-
-              </div>
-            ))
-          ) : (
-            <p className="text-center text-gray-500">No blogs available.</p>
+              ))
+            ) : (
+              <p className="text-center text-gray-500">No blogs available.</p>
+            )}
+          </div>
+          {/* Pagination Controls */}
+          {pagination && (
+            <div className="flex justify-center mt-6 space-x-4">
+              {/* Render pagination numbers */}
+              {[...Array(pagination.totalPages)].map((_, index) => (
+                <button
+                  key={index}
+                  className={`px-4 py-2 rounded-md ${
+                    pagination.currentPage === index + 1
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-300 text-gray-700 hover:bg-gray-400"
+                  }`}
+                  onClick={() => setPage(index + 1)}
+                >
+                  {index + 1}
+                </button>
+              ))}
+            </div>
           )}
         </div>
-        {/* Pagination Controls */}
-        {pagination && (
-          <div className="flex justify-center mt-6 space-x-4">
-            {/* Render pagination numbers */}
-            {[...Array(pagination.totalPages)].map((_, index) => (
-              <button
-                key={index}
-                className={`px-4 py-2 rounded-md ${
-                  pagination.currentPage === index + 1
-                    ? "bg-blue-500 text-white"
-                    : "bg-gray-300 text-gray-700 hover:bg-gray-400"
-                }`}
-                onClick={() => setPage(index + 1)}
-              >
-                {index + 1}
-              </button>
-            ))}
-          </div>
-        )}
       </div>
     </div>
   );

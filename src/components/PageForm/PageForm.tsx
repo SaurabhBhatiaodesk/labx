@@ -44,7 +44,7 @@
 
 //   const fetchPageDetails = async () => {
 //     try {
-//       const response = await fetch(`http://localhost:7000/api/admin/getPageById/${pageId}`);
+//       const response = await fetch(`https://labxbackend.labxrepair.com.au/api/admin/getPageById/${pageId}`);
 //       if (!response.ok) throw new Error("Failed to fetch page details");
 //       const data = await response.json();
 //       setFormData({
@@ -100,8 +100,8 @@
 //     e.preventDefault();
 
 //     const url = pageId
-//       ? `http://localhost:7000/api/admin/updatePage/${pageId}` // Update URL
-//       : "http://localhost:7000/api/admin/createpage"; // Create URL
+//       ? `https://labxbackend.labxrepair.com.au/api/admin/updatePage/${pageId}` // Update URL
+//       : "https://labxbackend.labxrepair.com.au/api/admin/createpage"; // Create URL
 //     const method = pageId ? "PUT" : "POST";
 
 //     const dataToSend = {
@@ -209,8 +209,8 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { FiX } from "react-icons/fi";
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+import "react-quill/dist/quill.snow.css";
 
 interface PageFormProps {
   onSubmit: (formData: { title: string; keywords: string; description: string; content: string }) => void;
@@ -242,7 +242,7 @@ export default function CreatePage({ onSubmit }: PageFormProps) {
     if (!pageId) return; // Only fetch if there's a pageId
 
     try {
-      const response = await fetch(`http://localhost:7000/api/admin/getPageById/${pageId}`);
+      const response = await fetch(`https://labxbackend.labxrepair.com.au/api/admin/getPageById/${pageId}`);
       if (!response.ok) throw new Error("Failed to fetch page details");
       const data = await response.json();
       setFormData({
@@ -302,8 +302,8 @@ export default function CreatePage({ onSubmit }: PageFormProps) {
     e.preventDefault();
 
     const url = pageId
-      ? `http://localhost:7000/api/admin/updatePage/${pageId}` // Update URL
-      : "http://localhost:7000/api/admin/createpage"; // Create URL
+      ? `https://labxbackend.labxrepair.com.au/api/admin/updatePage/${pageId}` // Update URL
+      : "https://labxbackend.labxrepair.com.au/api/admin/createpage"; // Create URL
     const method = pageId ? "PUT" : "POST";
 
     const dataToSend = {
@@ -372,14 +372,29 @@ export default function CreatePage({ onSubmit }: PageFormProps) {
       <input type="file" multiple accept="image/*" onChange={handleImageChange} />
       {formData.images.length > 0 && (
         <div>
-          {formData.images.map((image, index) => (
-            <div key={index} style={{ position: "relative", display: "inline-block" }}>
-              <Image src={image} alt={`Selected ${index}`} style={{ width: 100, height: 100 }} />
-              <IconButton onClick={() => handleRemoveImage(index)}>
-                <FiX color="red" />
-              </IconButton>
-            </div>
-          ))}
+          {formData?.images?.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {formData?.images.map((image, index) => (
+                      <div
+                        key={index}
+                        style={{
+                          position: "relative",
+                          display: "inline-block",
+                        }}
+                      >
+                        <Image
+                          src={image} // Base64 image string or image URL
+                          alt={`Image ${index + 1}`}
+                          width={400}
+                          height={300}
+                          className="rounded-md"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  "No Image"
+                )}
         </div>
       )}
       <Button type="submit" variant="contained">

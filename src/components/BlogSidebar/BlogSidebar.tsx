@@ -17,7 +17,7 @@ async function fetchPaginatedBlogs(
   totalPages: number;
 }> {
   const res = await fetch(
-    `http://localhost:7000/api/admin/blogs?page=${page}&limit=${limit}`,
+    `https://labxbackend.labxrepair.com.au/api/admin/blogs?page=${page}&limit=${limit}`,
     {
       cache: "no-store",
     }
