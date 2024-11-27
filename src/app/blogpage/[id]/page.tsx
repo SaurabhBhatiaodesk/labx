@@ -2,6 +2,7 @@
 import { Metadata } from "next";
 import React from "react";
 import BlogSidebar from "../../../components/BlogSidebar/BlogSidebar"; // Import the new Client Component
+import Image from "next/image";
 
 interface BlogData {
   _id: string;
@@ -18,9 +19,12 @@ interface BlogData {
 
 // Fetch Blog Data by ID
 async function fetchBlogData(blogId: string): Promise<BlogData> {
-  const res = await fetch(`https://labxbackend.labxrepair.com.au/api/admin/blog/${blogId}`, {
-    cache: "no-store", // Ensures no stale data
-  });
+  const res = await fetch(
+    `https://labxbackend.labxrepair.com.au/api/admin/blog/${blogId}`,
+    {
+      cache: "no-store", // Ensures no stale data
+    }
+  );
 
   if (!res.ok) {
     throw new Error("Failed to fetch blog data");
@@ -53,7 +57,11 @@ export async function generateMetadata({
 }
 
 // Blog Details Component (Server Component)
-export default async function BlogDetails({ params }: { params: { id: string } }) {
+export default async function BlogDetails({
+  params,
+}: {
+  params: { id: string };
+}) {
   try {
     const blog = await fetchBlogData(params.id);
 
@@ -65,7 +73,7 @@ export default async function BlogDetails({ params }: { params: { id: string } }
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
               {blog.featuredImage.map((image, index) => (
                 <div key={index} className="relative">
-                  <img
+                  <Image
                     src={image} // Display each featured image
                     alt={`Featured Image ${index + 1}`}
                     className="rounded-lg shadow-md"
