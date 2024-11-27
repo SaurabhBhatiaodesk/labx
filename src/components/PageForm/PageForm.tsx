@@ -40,7 +40,7 @@ export default function CreatePage({ onSubmit }: PageFormProps) {
 
   const fetchPageDetails = async () => {
     try {
-      const response = await fetch(`http://localhost:7000/api/admin/getPageById/${pageId}`);
+      const response = await fetch(`https://labxbackend.labxrepair.com.au/api/admin/getPageById/${pageId}`);
       if (!response.ok) throw new Error("Failed to fetch page details");
       const data = await response.json();
       setFormData({
@@ -96,8 +96,8 @@ export default function CreatePage({ onSubmit }: PageFormProps) {
     e.preventDefault();
 
     const url = pageId
-      ? `http://localhost:7000/api/admin/updatePage/${pageId}` // Update URL
-      : "http://localhost:7000/api/admin/createpage"; // Create URL
+      ? `https://labxbackend.labxrepair.com.au/api/admin/updatePage/${pageId}` // Update URL
+      : "https://labxbackend.labxrepair.com.au/api/admin/createpage"; // Create URL
     const method = pageId ? "PUT" : "POST";
 
     const dataToSend = {

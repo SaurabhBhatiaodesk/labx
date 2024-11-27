@@ -42,7 +42,7 @@ const RecentNews: React.FC = () => {
     const fetchBlogs = async () => {
       try {
         const response = await fetch(
-          `http://localhost:7000/api/admin/blogs?page=${page}&limit=3`
+          `https://labxbackend.labxrepair.com.au/api/admin/blogs?page=${page}&limit=3`
         ); // Fetch blogs with current page and limit (3 blogs per page)
         const data = await response.json();
         const filteredBlogs = data.blogs.filter((blog: BlogData) => blog.status); // Filter blogs where status is true

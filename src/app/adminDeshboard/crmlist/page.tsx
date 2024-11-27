@@ -28,7 +28,7 @@ const CreatePageList: React.FC = () => {
 
   const fetchPages = async () => {
     try {
-      const response = await fetch("http://localhost:7000/api/admin/createpage");
+      const response = await fetch("https://labxbackend.labxrepair.com.au/api/admin/createpage");
 
       if (!response.ok) {
         throw new Error("Failed to fetch pages");
@@ -54,7 +54,7 @@ const CreatePageList: React.FC = () => {
   const handleDelete = async (id: string) => {
     if (window.confirm("Are you sure you want to delete this page?")) {
       try {
-        const response = await fetch(`http://localhost:7000/api/admin/deletepage/${id}`, {
+        const response = await fetch(`https://labxbackend.labxrepair.com.au/api/admin/deletepage/${id}`, {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
         });
@@ -76,7 +76,7 @@ const CreatePageList: React.FC = () => {
 
 
   const handleCopyClick = (pageName: string) => {
-    const pageUrl = `https://labxrepair.com.au/${pageName.replace(/\s+/g, '_')}`;
+    const pageUrl = `https://labxbackend.labxrepair.com.au/${pageName.replace(/\s+/g, '_')}`;
     navigator.clipboard.writeText(pageUrl).then(() => {
       alert("URL copied to clipboard!");
     });

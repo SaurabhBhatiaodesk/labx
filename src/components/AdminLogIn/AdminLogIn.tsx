@@ -28,7 +28,7 @@ export default function AdminLogIn(): JSX.Element {
     try {
       // Send POST request to the login API
       const response = await axios.post(
-        "http://localhost:7000/api/admin/login",
+        "https://labxbackend.labxrepair.com.au/api/admin/login",
         {
           username: email,
           password: password,
