@@ -2,12 +2,15 @@
 
 import React, { useEffect, useState } from 'react';
 import { TextField, Button, Box, Checkbox, FormControlLabel, IconButton } from '@mui/material';
-import ReactQuill from 'react-quill';
+// import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { FiX } from 'react-icons/fi';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import Head from 'next/head';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
 type BlogData = {
   heading: string;
@@ -32,8 +35,9 @@ const BlogPage: React.FC = () => {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [isEditMode, setIsEditMode] = useState(false);
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const blogId = searchParams.get('id'); // Get blog ID from the URL if editing
+  // const searchParams = useSearchParams();
+  // const blogId = searchParams.get('id'); // Get blog ID from the URL if editing
+  const blogId = '555555'; // Get blog ID from the URL if editing
 
   useEffect(() => {
     if (blogId) {
