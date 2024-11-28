@@ -36,7 +36,7 @@ export default function Productswiper({}) {
   return (
     <div>
       <div className="container ">
-        <div className=" py-5 xl:p-6 ">
+        <div className=" py-5 xl:p-10 ">
           <MainHeading Heading="Our Clients" />
           <MainTitle Title="Our clients trust us for expert mobile device repair and advanced motherboard soldering solutions. We are committed to delivering fast, reliable, and high-quality service tailored to their needs." />
 

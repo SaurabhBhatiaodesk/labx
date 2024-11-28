@@ -120,12 +120,21 @@ const BlogsListing: React.FC = () => {
                 {blog.featuredImage.length > 0 ? (
                   <div className="flex flex-wrap gap-2">
                     {blog.featuredImage.map((image, index) => (
-                      <Image
+                      <div
                         key={index}
-                        src={image}
-                        alt={`Featured ${index + 1}`}
-                        className="h-16 w-16 object-cover rounded"
-                      />
+                        style={{
+                          position: "relative",
+                          display: "inline-block",
+                        }}
+                      >
+                        <Image
+                          src={image} // Base64 image string or image URL
+                          alt={`Image ${index + 1}`}
+                          width={400}
+                          height={300}
+                          className="rounded-md"
+                        />
+                      </div>
                     ))}
                   </div>
                 ) : (
@@ -176,7 +185,7 @@ const BlogsListing: React.FC = () => {
 
       {/* Delete Confirmation Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+        <div className="confirmation-modal-os fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-6 rounded-lg shadow-lg w-1/3">
             <h3 className="text-lg font-semibold mb-4">
               Are you sure you want to delete this blog?
