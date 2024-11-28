@@ -199,7 +199,7 @@ console.log("pricingAgreement",pricingAgreement)
             "Please indicate if there were previous attempts";
 
             if (
-              repairDetails.previousRepairAttempts == "yes" &&
+              repairDetails.previousRepairAttempts == "Yes" &&
               !repairDetails.previousRepairAttemptsComments.trim()
             ) {
               newErrors.previousRepairAttemptsComments =
@@ -215,8 +215,10 @@ console.log("pricingAgreement",pricingAgreement)
       }
 
       if (activeStep === 2) {
+
+        console.log("shippingDetails.requireReturnLabellll",shippingDetails.requireReturnLabel)
         // Shipping Details Validation
-        if (shippingDetails.requireReturnLabel && !shippingDetails.returnLabelDetails)
+        if (shippingDetails.requireReturnLabel == 'Yes' && !shippingDetails.returnLabelDetails)
           newErrors.requireReturnLabel = "Return label details are required";
 
        // if (shippingDetails.requirePickupLabel && !shippingDetails.pickupLabelDetails)
@@ -652,14 +654,14 @@ console.log("pricingAgreement",pricingAgreement)
       }
     >
       <SelectItem
-        key="no"
+        key="No"
         value="No"
         className="bg-black text-white hover:bg-gray-800"
       >
         No
       </SelectItem>
       <SelectItem
-        key="yes"
+        key="Yes"
         value="Yes"
         className="bg-black text-white hover:bg-gray-800"
       >
@@ -667,7 +669,7 @@ console.log("pricingAgreement",pricingAgreement)
       </SelectItem>
     </Select>
 
-                {repairDetails?.previousRepairAttempts == 'yes'  &&
+                {repairDetails?.previousRepairAttempts == 'Yes'  &&
 
                 (
                   <div className="mt-2">
@@ -714,14 +716,14 @@ console.log("pricingAgreement",pricingAgreement)
     }
   >
     <SelectItem
-      key="no"
+      key="No"
       value="No"
       className="bg-black text-white hover:bg-gray-800"
     >
       No
     </SelectItem>
     <SelectItem
-      key="yes"
+      key="Yes"
       value="Yes"
       className="bg-black text-white hover:bg-gray-800"
     >
@@ -729,7 +731,7 @@ console.log("pricingAgreement",pricingAgreement)
     </SelectItem>
   </Select>
 
-                {repairDetails.jumpQueueForFasterService == 'yes' && (
+                {repairDetails.jumpQueueForFasterService == 'Yes' && (
                   <p className="text-yellow-500 text-sm mt-2">
                     $20 extra for this service.
                   </p>

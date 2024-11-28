@@ -158,21 +158,23 @@ const B2BRepairTable: React.FC = () => {
               <TableCell>Email</TableCell>
               <TableCell>Device Type</TableCell>
               <TableCell>Brand</TableCell>
-              <TableCell>Model</TableCell>
+              <TableCell>OrderReferenceId</TableCell>
 
               <TableCell>Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {data.map((record: any) => (
+            {data.map((record: any) =>{
+              return (
+
               <TableRow key={record._id}>
-                <TableCell>{record.personalDetails.businessName}</TableCell>
-                <TableCell>{record.personalDetails.fullName}</TableCell>
-                <TableCell>{record.personalDetails.contactNo}</TableCell>
-                <TableCell>{record.personalDetails.emailAddress}</TableCell>
-                <TableCell>{record.deviceDetails.deviceType}</TableCell>
-                <TableCell>{record.deviceDetails.brand}</TableCell>
-                <TableCell>{record.deviceDetails.model}</TableCell>
+                <TableCell>{record?.personalDetails?.businessName || 'NA'}</TableCell>
+                <TableCell>{record?.personalDetails?.fullName || 'NA'}</TableCell>
+                <TableCell>{record?.personalDetails?.contactNo || 'NA'}</TableCell>
+                <TableCell>{record?.personalDetails?.emailAddress || 'NA'}</TableCell>
+                <TableCell>{record?.deviceDetails?.deviceType || 'NA'}</TableCell>
+                <TableCell>{record?.deviceDetails?.brand || 'NA'}</TableCell>
+                <TableCell>{record?.orderReferenceId || 'NA'}</TableCell>
                 {/* <TableCell>
                   <Typography sx={{ color: "green", fontWeight: "bold" }}>
                     Active
@@ -187,7 +189,7 @@ const B2BRepairTable: React.FC = () => {
                   </IconButton>
                 </TableCell>
               </TableRow>
-            ))}
+            )})}
           </TableBody>
         </Table>
       )}
