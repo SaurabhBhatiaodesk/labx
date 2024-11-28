@@ -1,0 +1,14 @@
+.RecentNews-os img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.RecentNews-os h4,
+.RecentNews-os p {
+    color: #fff;
+}
+
+.RecentNews-os .blogs span {
+    color: #fff;
+}

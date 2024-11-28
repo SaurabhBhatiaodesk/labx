@@ -7,47 +7,25 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
-import rname from "../../../public/Images/icons/rname.png"
-import jname from "../../../public/Images/icons/E.png"
+import jname from "../../../public/Images/icons/E.png";
 import Iname from "../../../public/Images/icons/I.png"
 import Nname from "../../../public/Images/icons/N.png"
 import Sname from "../../../public/Images/icons/S.png"
 import Aname from "../../../public/Images/icons/A.png"
-import hname from "../../../public/Images/icons/h.png"
 import Googletest from "../../../public/Images/icons/Googletest.svg";
 import star from "../../../public/Images/icons/star.svg";
 
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper as SwiperType } from "swiper";
 
-
 const reviews = [
-
   {
-    name: "Hamza Javaid",
-    date: "September 12, 2023",
-    profileImage: hname,
-    logoImage: Googletest,
-    rating: 5,
-    param:"I recently took a course at Lab X , and it was outstanding expeience. The instructor Bharat was knowledgeable , patient and genuinely passionate about sharing their expertise.",
-
-  },
-  {
-    name: "Rakesh Vaghela",
-    date: "September 12, 2023",
-    profileImage: rname,
-    logoImage: Googletest,
-    rating: 5,
-    param:"I had an outstanding experience at the LabX Repair Training Centre! Bharat is highly knowledgeable and patient, offering clear, step-by-step guidance throughout the course..",
-
-  },
-  {
-    name: "Sahil Sardana",
+    name: "Sophie Turner",
     date: "September 12, 2023",
     profileImage: Sname,
     logoImage: Googletest,
     rating: 5,
-    param:"I recently had my Samsung Galaxy S23 Ultra screen repaired, and the experience was absolutely wonderful! From start to finish, everything was handled with.",
+    param:"LabX Repair exceeded my expectations! They quickly repaired my iPhone screen and provided updates throughout the process. Excellent service and knowledgeable staff. Highly recommend to anyone needing phone repairs!",
   },
   {
     name: "Liam Brown",
@@ -58,29 +36,29 @@ const reviews = [
     param:"I had a great experience with LabX Repair. Their team handled my data recovery effortlessly. They were professional and kept me informed every step of the way. Truly impressive service!",
   },
   {
-    name: "Ashley Jay",
+    name: "Ava Smith",
     date: "November 1, 2023",
     profileImage: Aname,
     logoImage: Googletest,
     rating: 5,
-    param:"Top quality service from Bharat in repairing my mum's Samsung S24. He was very understanding and helpful in understanding the costs both potential and up front",
+    param:"LabX Repair made my mobile phone repair so easy! From the moment I contacted them, their customer service was fantastic. They fixed my charging port swiftly. Definitely my go-to repair shop!",
   },
   {
-    name: "Navdeep Narang",
+    name: "Noah Davis",
     date: "November 1, 2023",
     profileImage: Nname,
     logoImage: Googletest,
     rating: 5,
-    param:"I had an incredible experience with Business Lab X. Bharat is a fantastic instructor who truly knows his craft and is dedicated to teaching others the skills of repair...",
+    param:"I needed a motherboard repair, and LabX Repair came through when others couldn't. Their expertise is unmatched, and they provided thorough updates. Very satisfied with their work and highly recommend them!",
   },
-  // {
-  //   name: "Isabella Johnson",
-  //   date: "November 1, 2023",
-  //   profileImage: Iname,
-  //   logoImage: Googletest,
-  //   rating: 5,
-  //   param:"Fantastic experience with LabX Repair! They not only fixed my phone quickly but also offered invaluable advice on maintenance. Their team is friendly and efficient. I’ll be back for sure!",
-  // },
+  {
+    name: "Isabella Johnson",
+    date: "November 1, 2023",
+    profileImage: Iname,
+    logoImage: Googletest,
+    rating: 5,
+    param:"Fantastic experience with LabX Repair! They not only fixed my phone quickly but also offered invaluable advice on maintenance. Their team is friendly and efficient. I’ll be back for sure!",
+  },
   {
     name: "Ethan Wilson",
     date: "November 1, 2023",
@@ -98,7 +76,7 @@ export default function Productswiper({}) {
   return (
     <div className="bg-[#0b0b0b]">
       <div className="container">
-        <div className="py-5 xl:p-6">
+        <div className="py-5 xl:p-10">
           <MainHeading Heading="Our Google Reviews" />
           <MainTitle Title="Read our genuine customer reviews to see why so many trust LabX. Real feedback from satisfied customers speaks for itself!" />
           <div className="service-slide-box flex gap-5 lg:flex-row items-center flex-col">
