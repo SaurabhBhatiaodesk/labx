@@ -44,18 +44,16 @@ xl (1280px)	max-width: 1280px;
 
 /* @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap'); */
 
-
-.space-grotesk{
+.space-grotesk {
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
-  font-weight:500;
+  font-weight: 500;
   font-style: normal;
 }
 
 .custom-quill-editor .ql-editor {
   color: black;
 }
-
 
 @font-face {
   font-family: "Gordita";
@@ -117,7 +115,7 @@ xl (1280px)	max-width: 1280px;
   --secondary-color: #000000;
   --Space_Grotesk: "Space Grotesk", sans-serif; /* Corrected variable definition */
   --multi-color: #035597;
-  --F1-btn-color: linear-gradient(45deg, #E1F5C4, #EDE574);
+  --F1-btn-color: linear-gradient(45deg, #e1f5c4, #ede574);
   --transition: all 0.3s ease-in-out;
 }
 
@@ -135,7 +133,7 @@ body {
   overflow-x: hidden;
   font-family: "Gordita", sans-serif;
   font-size: 20px;
-  color: var( --white);
+  color: var(--white);
   scroll-behavior: smooth; /* Smooth scrolling */
 }
 
@@ -200,7 +198,7 @@ label {
 }
 
 .btn {
-  background: var( --F1-btn-color);
+  background: var(--F1-btn-color);
   padding: 10px 10px !important;
   font-weight: 600;
   font-size: 14px;
@@ -212,7 +210,7 @@ label {
   z-index: 1;
   border-radius: 150px;
   letter-spacing: 2px;
-  font-family: var( --Space_Grotesk);
+  font-family: var(--Space_Grotesk);
 }
 /* [aria-selected="0"] {
   background: linear-gradient(74deg, #56c1c1, #000000);
@@ -241,16 +239,19 @@ label {
   transform: scale(1.05);
   background: #43c6ac;
 }
-.Removeborder-Heading h2{
+.Removeborder-Heading h2 {
   border-bottom: unset;
 }
 
 .background-banner {
-  background-image: url('../../public//Images//Home/back-banner.svg');
+  background-image: url("../../public//Images//Home/back-banner.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* style os starts */
+/* style os ends */
 
 @media only screen and (max-width: 640px) {
   p {
@@ -280,7 +281,6 @@ label {
 }
 
 @media only screen and (max-width: 1280px) {
-
 }
 
 @media only screen and (max-width: 1536px) {
