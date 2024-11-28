@@ -199,7 +199,7 @@ const StaperForm: React.FC = () => {
           "Please indicate if there were previous attempts";
 
       if (
-        repairDetails.previousRepairAttempts == "yes" &&
+        repairDetails.previousRepairAttempts == "Yes" &&
         !repairDetails.previousRepairAttemptsComments.trim()
       ) {
         newErrors.previousRepairAttemptsComments =
@@ -216,7 +216,7 @@ const StaperForm: React.FC = () => {
     if (activeStep === 2) {
       // Shipping Details Validation
       if (
-        shippingDetails.requireReturnLabel &&
+        !shippingDetails.requireReturnLabel &&
         !shippingDetails.returnLabelDetails
       )
         newErrors.requireReturnLabel = "Return label details are required";
@@ -246,12 +246,6 @@ const StaperForm: React.FC = () => {
       setActiveStep((prev) => prev + 1);
     }
   };
-
-  // const handleNextStep = () => {
-  //   if (activeStep < 3) {
-  //     setActiveStep((prev) => prev + 1);
-  //   }
-  // };
 
   const handlePrevStep = () => {
     if (activeStep > 0) {
@@ -380,21 +374,7 @@ const StaperForm: React.FC = () => {
                         <div className="grid grid-cols-2 gap-4 form-label">
                           {/* Business Name (Optional) */}
                           <div>
-                            {/* <Input
-                              type="text"
-                              label="Business Name"
-                              variant="faded"
-                              className="w-full bg-black text-white border-white"
-                              value={personalDetails.businessName}
-                              onChange={(e) =>
-                                setPersonalDetails({
-                                  ...personalDetails,
-                                  businessName: e.target.value,
-                                })
-                              }
-                            /> */}
                             <TextField
-                              required
                               label="Business Name"
                               name="business_name"
                               fullWidth
@@ -410,20 +390,6 @@ const StaperForm: React.FC = () => {
 
                           {/* Full Name (Required) */}
                           <div>
-                            {/* <Input
-                              type="text"
-                              label="Full Name*"
-                              variant="faded"
-                              className="w-full bg-black text-white border-white"
-                              value={personalDetails.fullName}
-                              onChange={(e) =>
-                                setPersonalDetails({
-                                  ...personalDetails,
-                                  fullName: e.target.value,
-                                })
-                              }
-                              required
-                            /> */}
                             <TextField
                               required
                               label="Full Name"
@@ -446,20 +412,6 @@ const StaperForm: React.FC = () => {
 
                           {/* Contact Number (Required) */}
                           <div>
-                            {/* <Input
-                              type="text"
-                              label="Contact Number*"
-                              variant="faded"
-                              className="w-full bg-black text-white border-white"
-                              value={personalDetails.contactNo}
-                              onChange={(e) =>
-                                setPersonalDetails({
-                                  ...personalDetails,
-                                  contactNo: e.target.value,
-                                })
-                              }
-                              required
-                            /> */}
                             <TextField
                               required
                               label="Contact Number"
@@ -482,24 +434,6 @@ const StaperForm: React.FC = () => {
 
                           {/* Email Address (Required) */}
                           <div>
-                            {/* <Input
-                              type="email"
-                              label="Your Email*"
-                              variant="faded"
-                              value={personalDetails.emailAddress}
-                              isInvalid={isInvalid}
-                              className={`w-full bg-black text-white border-white ${
-                                isInvalid ? "border-red-500" : ""
-                              }`}
-                              onChange={(e) => {
-                                setPersonalDetails({
-                                  ...personalDetails,
-                                  emailAddress: e.target.value,
-                                });
-                                handleValidation(e);
-                              }}
-                              required
-                            /> */}
                             <TextField
                               required
                               label="Your Email"
@@ -527,22 +461,6 @@ const StaperForm: React.FC = () => {
 
                         {/* Shipping Address (Required) */}
                         <div className="w-full">
-                          {/* <Input
-                            label="Return Shipping Address*"
-                            variant="faded"
-                            className="bg-black text-white border-white"
-                            value={personalDetails.returnShippingAddress}
-                            onChange={(
-                              e: React.ChangeEvent<HTMLInputElement>
-                            ) =>
-                              setPersonalDetails({
-                                ...personalDetails,
-                                returnShippingAddress: e.target.value,
-                              })
-                            }
-                            required
-                          /> */}
-
                           <TextField
                             required
                             label="Return Shipping Address"
@@ -573,24 +491,7 @@ const StaperForm: React.FC = () => {
                           <div className="grid grid-cols-2 gap-4 form-label">
                             {/* Device Type (Optional) */}
                             <div className="w-full">
-                              {/* <input
-                                type="text"
-                                id="deviceType"
-                                name="deviceType"
-                                className="bg-black text-white border border-gray-400 rounded-lg w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                                placeholder="Enter Device Type"
-                                value={deviceDetails.deviceType}
-                                onChange={(
-                                  e: React.ChangeEvent<HTMLInputElement>
-                                ) =>
-                                  setDeviceDetails({
-                                    ...deviceDetails,
-                                    deviceType: e.target.value,
-                                  })
-                                }
-                              /> */}
                               <TextField
-                                required
                                 type="text"
                                 label="Enter Device Type"
                                 name="deviceType"
@@ -610,24 +511,7 @@ const StaperForm: React.FC = () => {
 
                             {/* Brand/Model (Optional) */}
                             <div className="w-full">
-                              {/* <input
-                                type="text"
-                                id="brandModel"
-                                name="brandModel"
-                                className="bg-black text-white border border-gray-400 rounded-lg w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                                placeholder="Enter Brand/Model (e.g., Apple - iPhone 13 Pro)"
-                                value={deviceDetails.brand}
-                                onChange={(
-                                  e: React.ChangeEvent<HTMLInputElement>
-                                ) =>
-                                  setDeviceDetails({
-                                    ...deviceDetails,
-                                    brand: e.target.value,
-                                  })
-                                }
-                              /> */}
                               <TextField
-                                required
                                 id="brandModel"
                                 type="text"
                                 label="Enter Brand/Model (e.g., Apple - iPhone 13 Pro)"
@@ -647,21 +531,7 @@ const StaperForm: React.FC = () => {
 
                             {/* IMEI/Serial No. (Optional) */}
                             <div>
-                              {/* <Input
-                                type="text"
-                                label="IMEI/Serial No."
-                                variant="faded"
-                                className="w-full bg-black text-white border-white"
-                                value={deviceDetails.imeiOrSerialNo}
-                                onChange={(e) =>
-                                  setDeviceDetails({
-                                    ...deviceDetails,
-                                    imeiOrSerialNo: e.target.value,
-                                  })
-                                }
-                              /> */}
                               <TextField
-                                required
                                 type="text"
                                 label="IMEI/Serial No."
                                 name="imei_serial_no"
@@ -678,22 +548,7 @@ const StaperForm: React.FC = () => {
 
                             {/* Device Password (Optional) */}
                             <div>
-                              {/* <Input
-                                type="text"
-                                label="Device Password"
-                                variant="faded"
-                                className="w-full bg-black text-white border-white"
-                                value={deviceDetails.devicePassword}
-                                onChange={(e) =>
-                                  setDeviceDetails({
-                                    ...deviceDetails,
-                                    devicePassword: e.target.value,
-                                  })
-                                }
-                              /> */}
-
                               <TextField
-                                required
                                 type="text"
                                 label="Device Password"
                                 name="device_password"
@@ -758,26 +613,6 @@ const StaperForm: React.FC = () => {
                       <div className="flex flex-col gap-4 bg-black text-white">
                         {/* Description of Issue */}
                         <div className="steper-textarea-os">
-                          <h4>Description of Issue*</h4>
-                          {/* <Textarea
-                            placeholder="Enter your message here"
-                            variant="faded"
-                            className="w-full mt-2 bg-black text-white border-white"
-                            style={{
-                              borderColor: "#ffffff",
-                              borderRadius: "0.375rem",
-                              padding: "0.5rem",
-                            }}
-                            value={repairDetails.issueDescription}
-                            onChange={(e) =>
-                              setRepairDetails({
-                                ...repairDetails,
-                                issueDescription: e.target.value,
-                              })
-                            }
-                            required
-                          /> */}
-
                           <Textarea
                             placeholder="Enter your message here"
                             minRows={5}
@@ -822,7 +657,7 @@ const StaperForm: React.FC = () => {
                               No
                             </SelectItem>
                             <SelectItem
-                              key="yes"
+                              key="Yes"
                               value="Yes"
                               className="bg-black text-white hover:bg-gray-800"
                             >
@@ -830,28 +665,8 @@ const StaperForm: React.FC = () => {
                             </SelectItem>
                           </Select>
 
-                          {repairDetails?.previousRepairAttempts == "yes" && (
+                          {repairDetails?.previousRepairAttempts == "Yes" && (
                             <div className="steper-textarea-os mt-2">
-                              {/* <Textarea
-                                placeholder="Little explanation about previous attempts"
-                                className="w-full bg-black text-white border-white"
-                                style={{
-                                  borderColor: "#ffffff",
-                                  borderRadius: "0.375rem",
-                                  fontSize: "0.875rem",
-                                  padding: "0.5rem",
-                                }}
-                                value={
-                                  repairDetails.previousRepairAttemptsComments
-                                }
-                                onChange={(e) =>
-                                  setRepairDetails({
-                                    ...repairDetails,
-                                    previousRepairAttemptsComments:
-                                      e.target.value,
-                                  })
-                                }
-                              /> */}
                               <Textarea
                                 placeholder="Little explanation about previous attempts"
                                 minRows={5}
@@ -904,7 +719,7 @@ const StaperForm: React.FC = () => {
                               No
                             </SelectItem>
                             <SelectItem
-                              key="yes"
+                              key="Yes"
                               value="Yes"
                               className="bg-black text-white hover:bg-gray-800"
                             >
@@ -912,7 +727,7 @@ const StaperForm: React.FC = () => {
                             </SelectItem>
                           </Select>
 
-                          {repairDetails.jumpQueueForFasterService == "yes" && (
+                          {repairDetails.jumpQueueForFasterService == "Yes" && (
                             <p className="text-yellow-500 text-sm mt-2">
                               $20 extra for this service.
                             </p>
@@ -922,23 +737,6 @@ const StaperForm: React.FC = () => {
                         {/* Additional Comments (Optional) */}
                         <div className="steper-textarea-os">
                           <h4>Additional Comments </h4>
-                          {/* <Textarea
-                            placeholder="Any other comments or notes"
-                            variant="faded"
-                            className="w-full mt-2 bg-black text-white border-white"
-                            style={{
-                              borderColor: "#ffffff",
-                              borderRadius: "0.375rem",
-                              padding: "0.5rem",
-                            }}
-                            value={repairDetails.additionalComments || ""}
-                            onChange={(e) =>
-                              setRepairDetails({
-                                ...repairDetails,
-                                additionalComments: e.target.value,
-                              })
-                            }
-                          /> */}
                           <Textarea
                             placeholder="Any other comments or notes"
                             minRows={5}
@@ -949,7 +747,6 @@ const StaperForm: React.FC = () => {
                                 additionalComments: e.target.value,
                               })
                             }
-                            required
                           />
                         </div>
                       </div>
@@ -1002,7 +799,7 @@ const StaperForm: React.FC = () => {
                       <div className="steper-textarea-os">
                         <h4>Do you require a return label?</h4>
                         <Select
-                        className="bg-black text-white gauav"
+                          className="bg-black text-white gauav"
                           value={shippingDetails.requireReturnLabel}
                           onChange={(e) =>
                             setShippingDetails({
@@ -1020,17 +817,6 @@ const StaperForm: React.FC = () => {
                         </Select>
                         {shippingDetails.requireReturnLabel === "Yes" && (
                           <>
-                            {/* <Textarea
-                              placeholder="Please provide details for the return label"
-                              className="w-full bg-black text-white border-white mt-2"
-                              value={shippingDetails.returnLabelDetails}
-                              onChange={(e) =>
-                                setShippingDetails({
-                                  ...shippingDetails,
-                                  returnLabelDetails: e.target.value,
-                                })
-                              }
-                            /> */}
                             <Textarea
                               placeholder="Please provide details for the return label"
                               minRows={5}
@@ -1076,17 +862,6 @@ const StaperForm: React.FC = () => {
                         </Select>
                         {shippingDetails.requirePickupLabel === "Yes" && (
                           <>
-                            {/* <Textarea
-                              placeholder="Please provide details for the pickup label"
-                              className="w-full bg-black text-white border-white mt-2"
-                              value={shippingDetails.pickupLabelDetails || ""}
-                              onChange={(e) =>
-                                setShippingDetails({
-                                  ...shippingDetails,
-                                  pickupLabelDetails: e.target.value,
-                                })
-                              }
-                            /> */}
                             <Textarea
                               minRows={5}
                               placeholder="Please provide details for the pickup label"
