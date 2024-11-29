@@ -129,3 +129,15 @@ input[type="submit"]:hover {
   input:-webkit-autofill:focus::-webkit-input-placeholder {
   color: white !important;
 } */
+.gaurav-line:after {
+  position: absolute;
+  content: "";
+  width: 79%;
+  height: 2px;
+  background: var(--tertiary-color);
+  top: 37%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}

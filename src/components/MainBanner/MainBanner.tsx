@@ -2,10 +2,12 @@
 import "./MainBanner.css";
 import Image from "next/image";
 import MainButton from "../MainButton/MainButton";
+
 import bannerimage from "../../../public/Images/Home/bannerimage-top.png";
 import mainb1 from "../../../public/Images/Home/mainb1.png";
 import mainb2 from "../../../public/Images/Home/mainb2.png";
 import mainb3 from "../../../public/Images/Home/mainb3.png";
+import mainb4 from "../../../public/Images/Home/mainb4.png";
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -18,6 +20,10 @@ import { Autoplay, Navigation } from "swiper/modules";
 import mainf1 from "../../../public/Images/BannerImages/mainf1.png";
 import mainf2 from "../../../public/Images/BannerImages/mainf2.png";
 import mainf3 from "../../../public/Images/BannerImages/mainf3.png";
+import mainf4 from "../../../public/Images/BannerImages/mainf4.png";
+
+
+
 
 export default function MainBanner() {
   const [backgroundImage, setBackgroundImage] = useState(mainf1); // State to track background image
@@ -26,8 +32,8 @@ export default function MainBanner() {
     AOS.init({ duration: 1000 }); // Initialize AOS
     AOS.refresh(); // Refresh AOS for updated DOM
   }, []);
-
-  const backgroundImages = [mainf1, mainf2, mainf3, mainf2];
+  const Paginationback = ["#FF0000", "#FF9966", "#6DD5ED", "#A044FF"]; 
+  const backgroundImages = [mainf1, mainf2, mainf3, mainf4];
 
   const handleSlideChange = (swiper: any) => {
     const index = swiper.realIndex; // Get the real index of the slide
@@ -64,7 +70,7 @@ export default function MainBanner() {
             modules={[Pagination, Autoplay, Navigation]}
             className="mySwipergk"
             spaceBetween={20}
-            loop={true}
+            loop={false}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
@@ -109,7 +115,7 @@ export default function MainBanner() {
                 <div className="w-full">
                   <Image
                     className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
-                    src={bannerimage}
+                    src={mainb1}
                     alt="Banner"
                   />
                 </div>
@@ -135,14 +141,15 @@ export default function MainBanner() {
                     Repair is here to meet all your mobile needs.`}
                   </p>
                   <div className="my-4 xl:my-10">
-                    <MainButton MainButton="Get Started" link="/coming-soon" />
+                    <MainButton MainButton="Get Started" link="/coming-soon"  color="bg-[#FF9966]" />
                   </div>
                 </div>
                 <div className="w-full">
                   <Image
                     className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
-                    src={mainb1}
+                    src={mainb2}
                     alt="Quick Repairs"
+                    
                   />
                 </div>
               </div>
@@ -170,13 +177,14 @@ export default function MainBanner() {
                     <MainButton
                       MainButton="Start Training"
                       link="/coming-soon"
+                      color="bg-[#6DD5ED]"
                     />
                   </div>
                 </div>
                 <div className="w-full">
                   <Image
                     className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
-                    src={mainb2}
+                    src={mainb3}
                     alt="Training and Repairs"
                   />
                 </div>
@@ -189,7 +197,7 @@ export default function MainBanner() {
                 <div>
                   <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
                     Fix Your Device, Learn to Repair
-                    <span className="text-[#fff563]"> – LabX Repair!</span>
+                    <span className="text-[#A044FF]"> – LabX Repair!</span>
                   </h1>
                   <p>
                     {`At LabX Repair, we do more than fix phones! We're a
@@ -199,13 +207,15 @@ export default function MainBanner() {
                     skills—your go-to destination for all things mobile repair.`}
                   </p>
                   <div className="my-4 xl:my-10">
-                    <MainButton MainButton="Join Us Now" link="/coming-soon" />
+                 
+                    <MainButton MainButton="Join Us Now" link="/coming-soon" color="bg-[#A044FF]" />
+                  
                   </div>
                 </div>
                 <div className="w-full">
                   <Image
                     className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
-                    src={mainb3}
+                    src={mainb4}
                     alt="Device Repair"
                   />
                 </div>
@@ -214,6 +224,7 @@ export default function MainBanner() {
           </Swiper>
         </div>
       </section>
+      
     </>
   );
 }

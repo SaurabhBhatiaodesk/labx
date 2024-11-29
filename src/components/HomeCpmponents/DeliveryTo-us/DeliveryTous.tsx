@@ -171,7 +171,7 @@ const VerticalTabs: React.FC = () => {
       case 3:
         return "linear-gradient(74deg, #A044FF, #000000)";
       case 4:
-        return "linear-gradient(74deg, #6DD5ED, #000000)";
+        return "linear-gradient(74deg, #2052e8a5, #000000)";
       default:
         return "linear-gradient(74deg, #56c1c1, #000000)";
     }
