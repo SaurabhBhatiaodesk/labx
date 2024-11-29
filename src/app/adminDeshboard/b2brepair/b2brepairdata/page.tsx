@@ -4,7 +4,6 @@
 // import { useSearchParams } from "next/navigation";
 // import { Typography, Paper, Box } from "@mui/material";
 
-
 // interface Product {
 //   id: number;
 //   productName: string;
@@ -163,4 +162,3 @@ const B2BRepairDetailPage: React.FC = () => {
 };
 
 export default B2BRepairDetailPage;
-
