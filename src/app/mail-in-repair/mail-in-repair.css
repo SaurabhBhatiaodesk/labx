@@ -56,9 +56,7 @@ input[type="submit"]:hover {
 }
 
 /* style os starts */
-.steper-form-section-os
-  .MuiFormControl-root
-  fieldset.MuiOutlinedInput-notchedOutline.css-1ll44ll-MuiOutlinedInput-notchedOutline {
+.steper-form-section-os .MuiFormControl-root fieldset {
   border: 1px solid #fff;
   /* background-color: #000; */
 }
@@ -71,7 +69,7 @@ input[type="submit"]:hover {
 .steper-form-section-os
   .css-1blp12k-MuiInputBase-root-MuiOutlinedInput-root:hover
   .MuiOutlinedInput-notchedOutline {
-  border-color: rgba(0, 0, 0, 0.87);
+  border-color: #fff;
 }
 
 .steper-form-section-os
@@ -92,7 +90,10 @@ input[type="submit"]:hover {
 .steper-textarea-os .MuiTextarea-root textarea::placeholder {
   opacity: 1;
 }
-.steper-textarea-os .MuiTextarea-root.css-1cquhrj-JoyTextarea-root:not([data-inverted-colors="false"]) {
+.steper-textarea-os
+  .MuiTextarea-root.css-1cquhrj-JoyTextarea-root:not(
+    [data-inverted-colors="false"]
+  ) {
   --Textarea-focusedHighlight: #fff;
 }
 /* style os ends */
