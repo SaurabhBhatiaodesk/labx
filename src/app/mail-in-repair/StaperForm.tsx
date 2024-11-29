@@ -1,4 +1,5 @@
 "use client";
+import "./mail-in-repair.css";
 import Lottie from "lottie-react";
 import lottiearrow from "../../../public/Images/jsonfile/lottieflow-fill.json";
 // import { Input, Textarea } from "@nextui-org/react";
