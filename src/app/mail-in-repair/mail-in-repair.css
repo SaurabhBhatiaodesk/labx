@@ -63,19 +63,16 @@ input[type="submit"]:hover {
 .steper-form-section-os .MuiFormControl-root fieldset.css-xhkvgb:hover .MuiOutlinedInput-notchedOutline {
   border-color:#fff;
 }
-.steper-form-section-os .MuiFormControl-root .css-xhkvgb:hover .MuiOutlinedInput-notchedOutline {
-  border-color:#fff;
-}
 .steper-form-section-os
   .MuiFormControl-root
   fieldset.MuiOutlinedInput-notchedOutline:hover
   .MuiOutlinedInput-notchedOutline {
-  border: 1px solid #fff !important;
+  border: 1px solid #fff;
 }
 .steper-form-section-os
   .css-1blp12k-MuiInputBase-root-MuiOutlinedInput-root:hover
   .MuiOutlinedInput-notchedOutline {
-  border-color: #fff !important;
+  border-color: #fff;
 }
 
 .steper-form-section-os
