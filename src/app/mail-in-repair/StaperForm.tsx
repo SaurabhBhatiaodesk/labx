@@ -84,22 +84,10 @@ type HandleSubmitParams = {
 
 const StaperForm: React.FC = () => {
   const router = useRouter();
-
   const sigPad = useRef<SignatureCanvas>(null);
-  const animals = [
-    { key: "cat", label: "Cat" },
-    { key: "dog", label: "Dog" },
-    { key: "elephant", label: "Elephant" },
-    { key: "lion", label: "Lion" },
-    { key: "tiger", label: "Tiger" },
-    { key: "giraffe", label: "Giraffe" },
-    { key: "dolphin", label: "Dolphin" },
-    { key: "penguin", label: "Penguin" },
-    { key: "zebra", label: "Zebra" },
-    { key: "shark", label: "Shark" },
-    { key: "whale", label: "Whale" },
-    { key: "otter", label: "Otter" },
-    { key: "crocodile", label: "Crocodile" },
+  const selectOptions = [
+    { key: "Yes", label: "Yes" },
+    { key: "No", label: "No" },
   ];
   const [email, setEmail] = useState("");
   const [isInvalid, setIsInvalid] = useState(false);
@@ -634,39 +622,38 @@ const StaperForm: React.FC = () => {
 
                         {/* Previous Repair Attempts */}
                         <div>
-                          <h4>Any Previous Repair Attempts?*</h4>
+                          <p className="text-base leading-5 mb-2">
+                            Any Previous Repair Attempts?*
+                          </p>
                           <Select
+                            defaultSelectedKeys={["No"]}
                             className="bg-black text-white gauav"
-                            value={
-                              repairDetails?.previousRepairAttempts || "No"
-                            } // Default value "No"
+                            value={repairDetails?.previousRepairAttempts}
                             onChange={(
                               e: React.ChangeEvent<HTMLSelectElement>
                             ) =>
                               setRepairDetails({
                                 ...repairDetails,
-                                previousRepairAttempts: e.target.value, // Store as "Yes" or "No"
+                                previousRepairAttempts: e.target.value,
                               })
                             }
                           >
-                            <SelectItem
-                              key="no"
-                              value="No"
-                              className="bg-black text-white hover:bg-gray-800"
-                            >
-                              No
-                            </SelectItem>
-                            <SelectItem
-                              key="Yes"
-                              value="Yes"
-                              className="bg-black text-white hover:bg-gray-800"
-                            >
-                              Yes
-                            </SelectItem>
+                            {selectOptions.map((animal) => {
+                              return (
+                                <SelectItem key={animal.key}>
+                                  {animal.label}
+                                </SelectItem>
+                              );
+                            })}
                           </Select>
 
                           {repairDetails?.previousRepairAttempts == "Yes" && (
                             <div className="steper-textarea-os mt-2">
+                              <p className="text-yellow-500 text-sm mt-2 italic">
+                                A $66 service fee will be required to release
+                                the device, regardless of whether it is fixed or
+                                not.
+                              </p>
                               <Textarea
                                 placeholder="Little explanation about previous attempts"
                                 minRows={5}
@@ -693,12 +680,12 @@ const StaperForm: React.FC = () => {
 
                         {/* Jump the Queue */}
                         <div>
-                          <h4 className="lg:text-lg text-sm lg:pb-3 pb-[5px]">
-                            Want to Jump the Queue for Faster Service at an
-                            Additional Cost?*
-                          </h4>
+                          <p className=" text-base leading-5 mb-2">
+                            Jump the QA?*
+                          </p>
                           <Select
                             className="bg-black text-white gauav"
+                            defaultSelectedKeys={["No"]}
                             value={
                               repairDetails.jumpQueueForFasterService || "No"
                             }
@@ -707,28 +694,21 @@ const StaperForm: React.FC = () => {
                             ) =>
                               setRepairDetails({
                                 ...repairDetails,
-                                jumpQueueForFasterService: e.target.value, // Store as "Yes" or "No"
+                                jumpQueueForFasterService: e.target.value,
                               })
                             }
                           >
-                            <SelectItem
-                              key="no"
-                              value="No"
-                              className="bg-black text-white hover:bg-gray-800"
-                            >
-                              No
-                            </SelectItem>
-                            <SelectItem
-                              key="Yes"
-                              value="Yes"
-                              className="bg-black text-white hover:bg-gray-800"
-                            >
-                              Yes
-                            </SelectItem>
+                            {selectOptions.map((animal) => {
+                              return (
+                                <SelectItem key={animal.key}>
+                                  {animal.label}
+                                </SelectItem>
+                              );
+                            })}
                           </Select>
 
                           {repairDetails.jumpQueueForFasterService == "Yes" && (
-                            <p className="text-yellow-500 text-sm mt-2">
+                            <p className="text-yellow-500 text-sm mt-2 italic">
                               $20 extra for this service.
                             </p>
                           )}
@@ -736,7 +716,9 @@ const StaperForm: React.FC = () => {
 
                         {/* Additional Comments (Optional) */}
                         <div className="steper-textarea-os">
-                          <h4>Additional Comments </h4>
+                          <p className=" text-base leading-5 mb-2">
+                            Additional Comments
+                          </p>
                           <Textarea
                             placeholder="Any other comments or notes"
                             minRows={5}
@@ -797,8 +779,11 @@ const StaperForm: React.FC = () => {
                     <div className="flex flex-col gap-4 bg-black text-white">
                       {/* Require Return Label */}
                       <div className="steper-textarea-os">
-                        <h4>Do you require a return label?</h4>
+                        <p className="text-base leading-5 mb-2">
+                          Do you require a return label?
+                        </p>
                         <Select
+                          defaultSelectedKeys={["No"]}
                           className="bg-black text-white gauav"
                           value={shippingDetails.requireReturnLabel}
                           onChange={(e) =>
@@ -808,12 +793,13 @@ const StaperForm: React.FC = () => {
                             })
                           }
                         >
-                          <SelectItem key="Yes" value="Yes">
-                            Yes
-                          </SelectItem>
-                          <SelectItem key="No" value="No">
-                            No
-                          </SelectItem>
+                          {selectOptions.map((animal) => {
+                            return (
+                              <SelectItem key={animal.key}>
+                                {animal.label}
+                              </SelectItem>
+                            );
+                          })}
                         </Select>
                         {shippingDetails.requireReturnLabel === "Yes" && (
                           <>
@@ -841,9 +827,11 @@ const StaperForm: React.FC = () => {
 
                       {/* Require Pickup Label */}
                       <div className="steper-textarea-os">
-                        <h4>Do you require a pickup label from LabX?</h4>
+                        <p className="text-base leading-5 mb-2">
+                          Do you require a pickup label from LabX?
+                        </p>
                         <Select
-                          label="Require Pickup Label*"
+                          defaultSelectedKeys={["No"]}
                           className="bg-black text-white gauav"
                           value={shippingDetails.requirePickupLabel}
                           onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
@@ -853,12 +841,13 @@ const StaperForm: React.FC = () => {
                             })
                           }
                         >
-                          <SelectItem key="Yes" value="Yes">
-                            Yes
-                          </SelectItem>
-                          <SelectItem key="No" value="No">
-                            No
-                          </SelectItem>
+                          {selectOptions.map((animal) => {
+                            return (
+                              <SelectItem key={animal.key}>
+                                {animal.label}
+                              </SelectItem>
+                            );
+                          })}
                         </Select>
                         {shippingDetails.requirePickupLabel === "Yes" && (
                           <>
@@ -954,12 +943,27 @@ const StaperForm: React.FC = () => {
                     <div className="py-4">
                       <div className="flex justify-between mt-4">
                         {activeStep > 0 && (
-                          <button onClick={handlePrevStep}>Previous</button>
+                          <button
+                            className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
+                            onClick={handlePrevStep}
+                          >
+                            Previous
+                          </button>
                         )}
                         {activeStep < 3 ? (
-                          <button onClick={handleNextStep}>Next</button>
+                          <button
+                            className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
+                            onClick={handleNextStep}
+                          >
+                            Next
+                          </button>
                         ) : (
-                          <button onClick={handleSubmit}>Submit</button>
+                          <button
+                            className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
+                            onClick={handleSubmit}
+                          >
+                            Submit
+                          </button>
                         )}
                       </div>
                     </div>
@@ -1016,7 +1020,13 @@ const StaperForm: React.FC = () => {
                       </p>
                     )}
 
-                    <div>
+                    <div className="flex justify-between mt-4">
+                      <button
+                        className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
+                        onClick={handlePrevStep}
+                      >
+                        Previous
+                      </button>
                       <button
                         onClick={handleSubmit}
                         disabled={!pricingAgreement}
