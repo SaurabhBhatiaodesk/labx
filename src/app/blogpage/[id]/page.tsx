@@ -68,9 +68,9 @@ export default async function BlogDetails({
 
     return (
       <div className="blog-details-os">
-        <div className="container mx-auto my-10 p-6 bg-white shadow-lg rounded-lg flex">
+     <div className="container mx-auto my-10 p-6 bg-white shadow-lg rounded-lg flex flex-col lg:flex-row">
           {/* Main Blog Content */}
-          <div className="w-3/4 pr-6">
+          <div className="w-full lg:w-3/4 pr-6 mb-6 lg:mb-0">
             {blog?.featuredImage.length > 0 ? (
               <div className="flex flex-wrap gap-2">
                 {blog?.featuredImage.map((image, index) => (
@@ -81,13 +81,23 @@ export default async function BlogDetails({
                       display: "inline-block",
                     }}
                   >
-                    <Image
+                    {/* <Image
                       src={image} // Base64 image string or image URL
                       alt={`Image ${index + 1}`}
-                      width={400}
+                      width={700}
                       height={300}
                       className="rounded-md"
-                    />
+                    /> */}
+  <Image
+  src={image} // Base64 image string or image URL
+  alt={`Image ${index + 1}`}
+  layout="responsive"
+  width={700} // Aspect ratio width
+  height={300} // Aspect ratio height
+  className="w-full rounded-md"
+/>
+
+
                   </div>
                 ))}
               </div>
@@ -95,7 +105,7 @@ export default async function BlogDetails({
               "No Image"
             )}
 
-            <h2 className="text-3xl font-bold mb-6">{blog.heading}</h2>
+            <h2 className="text-3xl font-bold mb-6 text-white">{blog.heading}</h2>
 
             <div className="mb-4">
               <div
@@ -106,7 +116,7 @@ export default async function BlogDetails({
           </div>
 
           {/* Sidebar with Paginated Blogs */}
-          <div className="w-1/4 bg-gray-100 p-4 rounded-lg shadow-md">
+          <div className="lg:w-1/4 w-full bg-gray-100 p-4 rounded-lg shadow-md">
             <BlogSidebar />
           </div>
         </div>

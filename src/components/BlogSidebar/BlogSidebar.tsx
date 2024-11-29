@@ -69,6 +69,8 @@ export default function BlogSidebar() {
                 src={blog.featuredImage[0]}
                 alt={blog.heading}
                 className="h-12 w-12 rounded-md object-cover mr-4"
+                width={400}
+                height={300}
               />
             )}
             <div>
