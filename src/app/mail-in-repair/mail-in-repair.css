@@ -64,12 +64,12 @@ input[type="submit"]:hover {
   .MuiFormControl-root
   fieldset.MuiOutlinedInput-notchedOutline:hover
   .MuiOutlinedInput-notchedOutline {
-  border: 1px solid #fff;
+  border: 1px solid #fff !important;
 }
 .steper-form-section-os
   .css-1blp12k-MuiInputBase-root-MuiOutlinedInput-root:hover
   .MuiOutlinedInput-notchedOutline {
-  border-color: #fff;
+  border-color: #fff !important;
 }
 
 .steper-form-section-os
