@@ -101,6 +101,7 @@ input[type="submit"]:hover {
     [data-inverted-colors="false"]
   ) {
   --Textarea-focusedHighlight: #fff;
+  border: 1px solid #fff !important;
 }
 /* style os ends */
 
