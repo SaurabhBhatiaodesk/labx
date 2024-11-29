@@ -1,0 +1,25 @@
+label[data-slot="label"] {
+    color: #ffffff; /* Replace this with your desired color */
+  }
+  textarea::placeholder {
+    color: #ffffff; /* Replace with your desired color */
+    opacity: 1; /* Ensures the color is fully opaque */
+  } 
+  .subpixel-antialiased{
+    color: white !important;
+  }
+
+  input[type="submit"] {
+    background-color: #EDE574; /* Button background */
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    transform: scale(1.05);
+    background-color: #E1F5C4; /* Hover background */
+  }
