@@ -1,5 +1,5 @@
-"use client"; // Ensures this component is client-side only
 
+"use client"
 import React, { useEffect, useState } from "react";
 import {
   TextField,
@@ -27,7 +27,7 @@ type BlogData = {
   pageKeywords: string;
   metaDescription: string;
   status: boolean;
-  featuredImages: string[];
+  featuredImages: File[]; // Now we're using File[] to store the selected files
 };
 
 const BlogPageWrapper: React.FC = () => {
@@ -62,7 +62,7 @@ const BlogPageWrapper: React.FC = () => {
             pageKeywords: data.pageKeywords,
             metaDescription: data.metaDescription,
             status: data.status,
-            featuredImages: data.featuredImage || [],
+            featuredImages: data.featuredImage, // Assuming featured images will be handled separately
           });
         } catch (error) {
           console.error("Error fetching blog:", error);
@@ -103,19 +103,10 @@ const BlogPageWrapper: React.FC = () => {
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const files = Array.from(e.target.files);
-      const base64Images: string[] = [];
-
-      files.forEach((file) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onloadend = () => {
-          base64Images.push(reader.result as string);
-          setBlogData((prev) => ({
-            ...prev,
-            featuredImages: [...prev.featuredImages, ...base64Images],
-          }));
-        };
-      });
+      setBlogData((prev) => ({
+        ...prev,
+        featuredImages: [...prev.featuredImages, ...files],
+      }));
     }
   };
 
@@ -144,6 +135,22 @@ const BlogPageWrapper: React.FC = () => {
     if (!validate()) return;
 
     try {
+      const formData = new FormData();
+      formData.append("heading", blogData.heading);
+      formData.append("content", blogData.content);
+      formData.append("pageTitle", blogData.pageTitle);
+      formData.append("pageKeywords", blogData.pageKeywords);
+      formData.append("metaDescription", blogData.metaDescription);
+      formData.append("status", String(blogData.status));
+
+      // Append all the image files to the formData
+      blogData.featuredImages.forEach((file) => {
+        console.log('filefileee',file)
+        formData.append("image", file); // Each file will be sent with the key "image"
+      });
+
+
+
       const url = isEditMode
         ? `https://labxbackend.labxrepair.com.au/api/admin/blog/${blogId}`
         : "https://labxbackend.labxrepair.com.au/api/admin/blog";
@@ -151,13 +158,7 @@ const BlogPageWrapper: React.FC = () => {
 
       const response = await fetch(url, {
         method,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...blogData,
-          featuredImages: blogData.featuredImages,
-        }),
+        body: formData,
       });
 
       if (response.ok) {
@@ -185,7 +186,7 @@ const BlogPageWrapper: React.FC = () => {
       alert("Request failed");
     }
   };
-
+console.log('blogDataaaa',blogData)
   return (
     <div
       className="BlogPageWrapper-os container mx-auto my-10 p-6 bg-white shadow-lg rounded-lg"
@@ -268,37 +269,41 @@ const BlogPageWrapper: React.FC = () => {
           accept="image/*"
           onChange={handleImageChange}
         />
-        {blogData?.featuredImages?.length > 0 && (
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
-            {blogData?.featuredImages?.map((image, index) => (
-              <div
-                key={index}
-                style={{ position: "relative", display: "inline-block" }}
-              >
-                <Image
-                  src={image}
-                  alt={`Selected Image ${index + 1}`}
-                  width={150}
-                  height={150}
-                  style={{ borderRadius: "8px" }}
-                  objectFit="cover"
-                />
-                <IconButton
-                  onClick={() => handleRemoveImage(index)}
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    right: 0,
-                    backgroundColor: "white",
-                    borderRadius: "50%",
-                  }}
-                >
-                  <FiX color="red" />
-                </IconButton>
-              </div>
-            ))}
-          </div>
-        )}
+      {blogData?.featuredImages?.length > 0 && (
+  <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+  {blogData?.featuredImages?.map((image, index) => {
+  console.log("Image at index", index, image); // This will log the image object (either a string URL or File)
+  return (
+    <div key={index} style={{ position: "relative", display: "inline-block" }}>
+      {/* Handle existing image URLs */}
+      <Image
+        src={typeof image === "string" ? image : URL.createObjectURL(image)} // This handles both URLs and Files
+        alt={`Featured Image ${index + 1}`}
+        width={150}
+        height={150}
+        style={{ borderRadius: "8px" }}
+        objectFit="cover"
+      />
+      <IconButton
+        onClick={() => handleRemoveImage(index)}
+        style={{
+          position: "absolute",
+          top: 0,
+          right: 0,
+          backgroundColor: "white",
+          borderRadius: "50%",
+        }}
+      >
+        <FiX color="red" />
+      </IconButton>
+    </div>
+  );
+})}
+
+  </div>
+)}
+
+
         <Button type="submit" variant="contained" color="primary" fullWidth>
           {isEditMode ? "Update Blog" : "Create Blog"}
         </Button>

@@ -9,6 +9,8 @@ interface BlogData {
   heading: string;
   content: string;
   pageTitle: string;
+  metaDescription: string;
+  pageKeywords: string;
   featuredImage: string[];
   status: boolean;
   createdAt: string;
@@ -22,8 +24,6 @@ interface PaginationData {
   hasNextPage: boolean;
   hasPrevPage: boolean;
 }
-
-// Utility function to remove HTML tags
 
 const BlogsListing: React.FC = () => {
   const [blogs, setBlogs] = useState<BlogData[]>([]);
@@ -42,6 +42,7 @@ const BlogsListing: React.FC = () => {
           `https://labxbackend.labxrepair.com.au/api/admin/blogs?page=${page}&limit=${limit}`
         );
         const data = await response.json();
+        console.log("datadata", data);
         setBlogs(data.blogs);
         setPagination(data.pagination);
       } catch (error) {
@@ -98,7 +99,6 @@ const BlogsListing: React.FC = () => {
         <thead>
           <tr className="bg-indigo-600 text-white">
             <th className="py-2 px-4 border w-1/5">Heading</th>
-            {/* <th className="py-2 px-4 border w-2/5">Description</th> */}
             <th className="py-2 px-4 border w-1/5">Page Title</th>
             <th className="py-2 px-4 border w-1/10">Status</th>
             <th className="py-2 px-4 border w-1/5">Images</th>
@@ -109,17 +109,14 @@ const BlogsListing: React.FC = () => {
           {blogs.map((blog) => (
             <tr key={blog._id} className="hover:bg-gray-100">
               <td className="py-2 px-4 border">{blog.heading}</td>
-              {/* <td className="py-2 px-4 border">
-                {stripHtmlTags(blog.content)}
-              </td> */}
               <td className="py-2 px-4 border">{blog.pageTitle}</td>
               <td className="py-2 px-4 border">
                 {blog.status ? "Active" : "Inactive"}
               </td>
               <td className="py-2 px-4 border">
-                {blog.featuredImage.length > 0 ? (
+                {blog?.featuredImage?.length > 0 ? (
                   <div className="flex flex-wrap gap-2">
-                    {blog.featuredImage.map((image, index) => (
+                    {blog?.featuredImage.map((image, index) => (
                       <div
                         key={index}
                         style={{
@@ -128,11 +125,12 @@ const BlogsListing: React.FC = () => {
                         }}
                       >
                         <Image
-                          src={image} // Base64 image string or image URL
+                          src={image} // Image URL from the S3 bucket
                           alt={`Image ${index + 1}`}
                           width={400}
                           height={300}
                           className="rounded-md"
+                          priority={index === 0} // Preload the first image
                         />
                       </div>
                     ))}
