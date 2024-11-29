@@ -62,7 +62,7 @@ export default function BlogSidebar() {
         {blogs.map((blog) => (
           <li
             key={blog._id}
-            className="flex items-center mb-4 bg-white shadow-sm rounded-lg p-2 hover:shadow-md"
+            className="flex items-center mb-4  shadow-sm rounded-lg p-2 hover:shadow-md"
           >
             {blog.featuredImage.length > 0 && (
               <Image
@@ -74,10 +74,10 @@ export default function BlogSidebar() {
               />
             )}
             <div>
-              <h4 className="text-sm font-medium text-gray-800">
+              <h4 className="text-sm font-medium text-white">
                 {blog.heading}
               </h4>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-white">
                 {new Date(blog.createdAt).toLocaleDateString()}
               </p>
             </div>
@@ -87,17 +87,15 @@ export default function BlogSidebar() {
       {/* Pagination Buttons */}
       <div className="flex justify-center mt-4">
         {[...Array(totalPages)].map((_, index) => (
-          <button
-            key={index}
-            onClick={() => handlePageChange(index + 1)}
-            className={`px-4 py-2 mx-1 rounded ${
-              currentPage === index + 1
-                ? "bg-blue-500 text-white"
-                : "bg-gray-200 text-gray-700"
-            }`}
-          >
-            {index + 1}
-          </button>
+         <button
+         key={index}
+         onClick={() => handlePageChange(index + 1)}
+         className={`px-4 py-2 mx-1 rounded ${currentPage === index + 1 ? 'active' : 'bg-gray-200 text-gray-700'}`}
+         style={currentPage === index + 1 ? { background: 'linear-gradient(45deg, #E1F5C4, #EDE574)', color: 'white' } : {}}
+       >
+         {index + 1}
+       </button>
+       
         ))}
       </div>
     </div>

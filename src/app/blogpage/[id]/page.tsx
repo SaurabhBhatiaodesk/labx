@@ -1,7 +1,7 @@
 "use-client";
 import { Metadata } from "next";
 import React from "react";
-import BlogSidebar from "../../../components/BlogSidebar/BlogSidebar"; // Import the new Client Component
+import BlogSidebar from "../../../components/BlogSidebar/BlogSidebar";
 import Image from "next/image";
 import "./BlogDetails.css";
 
@@ -23,7 +23,7 @@ async function fetchBlogData(blogId: string): Promise<BlogData> {
   const res = await fetch(
     `https://labxbackend.labxrepair.com.au/api/admin/blog/${blogId}`,
     {
-      cache: "no-store", // Ensures no stale data
+      cache: "no-store",
     }
   );
 
@@ -68,7 +68,7 @@ export default async function BlogDetails({
 
     return (
       <div className="blog-details-os">
-     <div className="container mx-auto my-10 p-6 bg-white shadow-lg rounded-lg flex flex-col lg:flex-row">
+        <div className="container mx-auto my-10 p-6 bg-black shadow-lg rounded-lg flex flex-col lg:flex-row">
           {/* Main Blog Content */}
           <div className="w-full lg:w-3/4 pr-6 mb-6 lg:mb-0">
             {blog?.featuredImage.length > 0 ? (
@@ -81,23 +81,14 @@ export default async function BlogDetails({
                       display: "inline-block",
                     }}
                   >
-                    {/* <Image
-                      src={image} // Base64 image string or image URL
+                    <Image
+                      src={image}
                       alt={`Image ${index + 1}`}
+                      layout="responsive"
                       width={700}
                       height={300}
-                      className="rounded-md"
-                    /> */}
-  <Image
-  src={image} // Base64 image string or image URL
-  alt={`Image ${index + 1}`}
-  layout="responsive"
-  width={700} // Aspect ratio width
-  height={300} // Aspect ratio height
-  className="w-full rounded-md"
-/>
-
-
+                      className="w-full rounded-md"
+                    />
                   </div>
                 ))}
               </div>
@@ -105,18 +96,18 @@ export default async function BlogDetails({
               "No Image"
             )}
 
-            <h2 className="text-3xl font-bold mb-6 text-white">{blog.heading}</h2>
+            <h2 className="text-3xl font-bold mb-[5px]">{blog.heading}</h2>
 
             <div className="mb-4">
               <div
-                className="mt-2 text-gray-800"
+                className="mt-2 text-white"
                 dangerouslySetInnerHTML={{ __html: blog.content }}
               ></div>
             </div>
           </div>
 
           {/* Sidebar with Paginated Blogs */}
-          <div className="lg:w-1/4 w-full bg-gray-100 p-4 rounded-lg shadow-md">
+          <div className="lg:w-1/4 w-full bg-black p-4 rounded-lg shadow-md">
             <BlogSidebar />
           </div>
         </div>
@@ -124,7 +115,7 @@ export default async function BlogDetails({
     );
   } catch (error) {
     return (
-      <div className="container mx-auto my-10 p-6 bg-white shadow-lg rounded-lg">
+      <div className="container mx-auto my-10 p-6 bg-black shadow-lg rounded-lg">
         <h2 className="text-3xl font-bold text-red-500 mb-6">Blog not found</h2>
       </div>
     );
