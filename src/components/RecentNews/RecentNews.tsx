@@ -385,7 +385,8 @@ const RecentNews: React.FC = () => {
             knowledge!
           </p>
 
-          {/* <div className="blogs-row-os grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:py-5 py-3">
+          <div className="blogs-row-os grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:py-5 py-3">
+            {/* Show Loading message while data is being fetched */}
             {loading ? (
               ""
             ) : blogs.length > 0 ? (
@@ -408,19 +409,19 @@ const RecentNews: React.FC = () => {
                   </div>
                   <div className="mt-4">
                     <h4 className="font-bold text-lg text-gray-800">
-                      {blog.heading.split(" ").length > 8
+                      {/* {blog.heading.split(" ").length > 8
                         ? `${blog.heading.split(" ").slice(0, 5).join(" ")}...`
-                        : blog.heading}
+                        : blog.heading} */}
                       {blog.heading}
                     </h4>
-                    <p className="text-gray-700 text-base mt-2">
+                    {/* <p className="text-gray-700 text-base mt-2">
                       {stripHtmlTags(blog.content).split(" ").length > 30
                         ? `${stripHtmlTags(blog.content)
                             .split(" ")
                             .slice(0, 30)
                             .join(" ")}...`
                         : stripHtmlTags(blog.content)}
-                    </p>
+                    </p> */}
                     <p className="text-gray-700 text-base mt-2">
                       {stripHtmlTags(blog.content).length > 160
                         ? `${stripHtmlTags(blog.content).slice(0, 160)}...`
@@ -441,76 +442,18 @@ const RecentNews: React.FC = () => {
                 </div>
               ))
             ) : (
-              <p className="text-center text-gray-500 italic">No blogs available.</p>
-            )}
-          </div> */}
-
-          <div>
-            {/* Show Loading message while data is being fetched */}
-            {loading ? (
-              ""
-            ) : blogs.length > 0 ? (
-              <div className="blogs-row-os grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:py-5 py-3">
-                {blogs.map((blog) => (
-                  <div
-                    className="blogs-row-col-os"
-                    key={blog._id}
-                    data-aos="zoom-in"
-                  >
-                    <div>
-                      {blog.featuredImage.length > 0 && (
-                        <Image
-                          src={blog.featuredImage[0]}
-                          alt={blog.heading}
-                          width={100}
-                          height={100}
-                          className="rounded-md"
-                        />
-                      )}
-                    </div>
-                    <div className="mt-4">
-                      <h4 className="font-bold text-lg text-gray-800">
-                        {blog.heading}
-                      </h4>
-                      <p className="text-gray-700 text-base mt-2">
-                        {stripHtmlTags(blog.content).length > 160
-                          ? `${stripHtmlTags(blog.content).slice(0, 160)}...`
-                          : stripHtmlTags(blog.content)}
-                      </p>
-                      <div className="flex justify-between items-center mt-4">
-                        <button
-                          onClick={() => sendId(blog._id)}
-                          className="capitalize text-[16px] text-[#9D9C98]"
-                        >
-                          Read More
-                        </button>
-                        <span className="capitalize text-[16px] tracking-[1px] text-white">
-                          20 Oct, 2024
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p className="text-center text-gray-500 italic">
-                No blogs available.
-              </p>
+              <p className="text-center text-gray-500">No blogs available.</p>
             )}
           </div>
 
-          {blogs && blogs.length > 0 ? (
-            <div className="flex justify-center text-center">
-              <Link
-                href="/"
-                className="capitalize text-[16px] tracking-[1px] px-4 py-2 bg-blue-500 text-white rounded-md"
-              >
-                View All
-              </Link>
-            </div>
-          ) : (
-            ""
-          )}
+          <div className="flex justify-center text-center">
+            <Link
+              href="/"
+              className="capitalize text-[16px] tracking-[1px] px-4 py-2 bg-blue-500 text-white rounded-md"
+            >
+              View All
+            </Link>
+          </div>
         </div>
       </div>
     </div>

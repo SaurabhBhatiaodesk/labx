@@ -1,4 +1,50 @@
-/* .space-grotesk {
+/*
+tailwint css
+Breakpoint
+Properties
+container	None	width: 100%;
+sm (640px)	max-width: 640px;
+md (768px)	max-width: 768px;
+lg (1024px)	max-width: 1024px;
+xl (1280px)	max-width: 1280px;
+2xl (1536px)max-width: 1536px; */
+/* globals.css */
+/* globals.css */
+
+/* @font-face {
+  font-family: 'DCC Ash';
+  src: url('/Fonts/DCC-Ash.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'DCC Ash';
+  src: url('/Fonts/DCC-Ash.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'DCC Ash';
+  src: url('/Fonts/DCC-Ash.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'DCC Ash';
+  src: url('/Fonts/DCC-Ash.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+
+} */
+
+/*  */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap'); */
+
+.space-grotesk {
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
@@ -7,220 +53,6 @@
 
 .custom-quill-editor .ql-editor {
   color: black;
-}
-
-@font-face {
-  font-family: "Gordita";
-  src: url("../app/fonts/Gordita-Medium.woff2") format("woff2"),
-    url("../app/fonts/Gordita-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gordita";
-  src: url("../app/fonts/Gordita-Light.woff2") format("woff2"),
-    url("../app/fonts/Gordita-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gordita";
-  src: url("../app/fonts/Gordita-Bold.woff2") format("woff2"),
-    url("../app/fonts/Gordita-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gordita";
-  src: url("../app/fonts/Gordita-Regular.woff2") format("woff2"),
-    url("../app/fonts/Gordita-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gordita";
-  src: url("../app/fonts/Gordita-Black.woff2") format("woff2"),
-    url("../app/fonts/Gordita-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --theme-bg: #ffffff;
-  --text-color: #010101;
-  --theme-bg: #ffffff;
-  --white: #ffffff;
-  --black: #000;
-  --primary-color: #ffffff;
-  --secondary-color: #000000;
-  --Space_Grotesk: "Space Grotesk", sans-serif;
-  --multi-color: #035597;
-  --F1-btn-color: linear-gradient(45deg, #e1f5c4, #ede574);
-  --transition: all 0.3s ease-in-out;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-color: #ffffff;
-    --primary-color: #ffffff;
-    --secondary-color: #000000;
-  }
-}
-
-body {
-  font-weight: 500;
-  background-color: var(--black);
-  overflow-x: hidden;
-  font-family: "Gordita", sans-serif;
-  font-size: 20px;
-  color: var(--white);
-  scroll-behavior: smooth;
-}
-
-.error-message {
-  padding: 0;
-  color: red;
-  font-size: 12px;
-}
-.padd-top-bottom {
-  padding: 60px 0px;
-  overflow: hidden;
-}
-.F1-btn-color {
-  background-image: var(--F1-btn-color);
-  color: var(--secondary-color, #000000);
-  font-weight: 500;
-
-  border-radius: 8px;
-  font-size: 16px;
-  padding: 5px 10px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  border: 2px solid transparent;
-}
-
-.F1-btn-color:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-  border-color: rgba(237, 229, 116, 0.8);
-  background-position: right center;
-}
-
-.main-bg {
-  background-color: var(--secondary-color);
-}
-
-h2 {
-  font-size: 42px;
-  line-height: 55px;
-  font-family: "Gordita", sans-serif;
-  font-weight: 700;
-  color: var(--primary-color);
-  letter-spacing: 1.5px;
-}
-h3 {
-  font-size: 24px;
-  line-height: 34px;
-  font-weight: 600;
-  color: var(--primary-color);
-  font-family: "Gordita", sans-serif;
-}
-
-p {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 30px;
-  color: var(--primary-color);
-  margin-bottom: 15px;
-}
-label {
-  font: 300;
-}
-
-.btn {
-  background: var(--F1-btn-color);
-  padding: 10px 10px !important;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
-  color: var(--black);
-  position: relative;
-  overflow: hidden;
-  text-transform: uppercase;
-  z-index: 1;
-  border-radius: 150px;
-  letter-spacing: 2px;
-  font-family: var(--Space_Grotesk);
-}
-.btn:hover {
-  transform: scale(1.05);
-  background: #43c6ac;
-}
-.Removeborder-Heading h2 {
-  border-bottom: unset;
-}
-
-.background-banner {
-  background-image: url("../../public//Images//Home/back-banner.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-@media only screen and (max-width: 640px) {
-  p {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    color: var(--primary-color);
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  h2 {
-    font-size: 28px;
-    line-height: 38px;
-    font-family: "Gordita", sans-serif;
-    font-weight: 600;
-    color: var(--primary-color);
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  .btn {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-}
-
-@media only screen and (max-width: 1280px) {
-}
-
-@media only screen and (max-width: 1536px) {
-} */
-
-
-/* New style added */
-
-
-.space-grotesk{
-  font-family: "Space Grotesk", sans-serif;
-  font-optical-sizing: auto;
-  font-weight:500;
-  font-style: normal;
 }
 
 @font-face {
@@ -281,14 +113,11 @@ label {
   --black: #000;
   --primary-color: #ffffff;
   --secondary-color: #000000;
-  --tertiary-color: #EDE574; /* Tertiary color (e.g., Yellow) */
-  --Space_Grotesk: "Space Grotesk", sans-serif; 
+  --Space_Grotesk: "Space Grotesk", sans-serif; /* Corrected variable definition */
   --multi-color: #035597;
-  --F1-btn-color: linear-gradient(45deg, #E1F5C4, #EDE574); 
+  --F1-btn-color: linear-gradient(45deg, #e1f5c4, #ede574);
   --transition: all 0.3s ease-in-out;
 }
-
-
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -304,13 +133,13 @@ body {
   overflow-x: hidden;
   font-family: "Gordita", sans-serif;
   font-size: 20px;
-  color: var( --white);
+  color: var(--white);
   scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 .error-message {
   padding: 0;
-  color: #EDE574;
+  color: red;
   font-size: 12px;
 }
 .padd-top-bottom {
@@ -321,7 +150,7 @@ body {
   background-image: var(--F1-btn-color);
   color: var(--secondary-color, #000000);
   font-weight: 500;
- 
+
   border-radius: 8px;
   font-size: 16px;
   padding: 5px 10px; /* Add padding for a more substantial button */
@@ -331,10 +160,10 @@ body {
 }
 
 .F1-btn-color:hover {
-  transform: scale(1.05); 
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); 
-  border-color: rgba(237, 229, 116, 0.8); 
-  background-position: right center; 
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  border-color: rgba(237, 229, 116, 0.8);
+  background-position: right center;
 }
 
 .main-bg {
@@ -369,7 +198,7 @@ label {
 }
 
 .btn {
-  background: var( --F1-btn-color);
+  background: var(--F1-btn-color);
   padding: 10px 10px !important;
   font-weight: 600;
   font-size: 14px;
@@ -381,24 +210,11 @@ label {
   z-index: 1;
   border-radius: 150px;
   letter-spacing: 2px;
-  font-family: var( --Space_Grotesk); 
+  font-family: var(--Space_Grotesk);
 }
-.btn1 {
-  background: var( --F1-btn-color);
-  padding: 10px 10px !important;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
-  color: var(--black);
-  position: relative;
-  overflow: hidden;
-  text-transform: uppercase;
-  z-index: 1;
-  border-radius: 150px;
-  letter-spacing: 2px;
-  font-family: var( --Space_Grotesk); 
+/* [aria-selected="0"] {
+  background: linear-gradient(74deg, #56c1c1, #000000);
 }
-
 
 [aria-selected="1"] {
   background: rgb(80, 47, 187);
@@ -418,21 +234,24 @@ label {
 
 [aria-selected="5"] {
   background: rgb(20, 227, 213);
-}
+} */
 .btn:hover {
   transform: scale(1.05);
   background: #43c6ac;
 }
-.Removeborder-Heading h2{
+.Removeborder-Heading h2 {
   border-bottom: unset;
 }
 
 .background-banner {
-  background-image: url('../../public/Images//Home/back-banner.svg');
+  background-image: url("../../public//Images//Home/back-banner.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* style os starts */
+/* style os ends */
 
 @media only screen and (max-width: 640px) {
   p {
@@ -462,7 +281,6 @@ label {
 }
 
 @media only screen and (max-width: 1280px) {
-
 }
 
 @media only screen and (max-width: 1536px) {

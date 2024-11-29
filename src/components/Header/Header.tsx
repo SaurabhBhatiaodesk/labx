@@ -20,11 +20,11 @@ import { RiArrowDropUpLine } from "react-icons/ri";
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const [isMobileServicesDropdownOpen, setIsMobileServicesDropdownOpen] =
-    useState(false);
+  const [isMobileServicesDropdownOpen, setIsMobileServicesDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const menuItems = [
+
     // { label: "B2B Repair", path: "/coming-soon" },
     {
       label: "Services",
@@ -44,7 +44,6 @@ export default function App() {
     { label: "Parts Store", path: "/coming-soon" },
     { label: "Training", path: "/training" },
     { label: "Screen Refurbishment", path: "/coming-soon" },
-    { label: "About us", path: "/about-us" },
     { label: "Contact Us", path: "/coming-soon" },
     { label: "Price List", path: "/coming-soon" },
   ];
@@ -83,9 +82,7 @@ export default function App() {
       >
         {/* Mobile Menu Toggle */}
         <NavbarContent className="lg:hidden">
-          <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          />
+          <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
         </NavbarContent>
 
         {/* Brand Logo */}
@@ -99,7 +96,7 @@ export default function App() {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex flex-grow justify-center">
-          <div className="flex gap-[20px] xl:gap-[30px]">
+          <div className="flex gap-[20px] xl:gap-[40px]">
             {menuItems.map((item) => (
               <NavbarItem key={item.label}>
                 {item.dropdown ? (
@@ -132,18 +129,18 @@ export default function App() {
                       </div>
                     )}
                   </div>
-                ) : item.path ? (
-                  <Link
-                    className="relative tracking-[1.5px] font-medium group"
-                    href={item.path}
-                  >
-                    {item.label}
-                    <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                  </Link>
                 ) : (
-                  <span className="tracking-[1.5px] font-medium">
-                    {item.label}
-                  </span>
+                  item.path ? (
+                    <Link
+                      className="relative tracking-[1.5px] font-medium group"
+                      href={item.path}
+                    >
+                      {item.label}
+                      <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                    </Link>
+                  ) : (
+                    <span className="tracking-[1.5px] font-medium">{item.label}</span>
+                  )
                 )}
               </NavbarItem>
             ))}
@@ -192,12 +189,14 @@ export default function App() {
                     </div>
                   )}
                 </div>
-              ) : item.path ? (
-                <Link className="w-full" href={item.path}>
-                  {item.label}
-                </Link>
               ) : (
-                <span className="w-full block px-4 py-2">{item.label}</span>
+                item.path ? (
+                  <Link className="w-full" href={item.path}>
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span className="w-full block px-4 py-2">{item.label}</span>
+                )
               )}
             </NavbarMenuItem>
           ))}

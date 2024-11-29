@@ -29,51 +29,58 @@ export default function Productswiper() {
     {
       src: p1,
       alt: "Toyota Fortuner",
-      Product: "iPhone 16 Pro Max Screen  Original Service Pack",
-      price: "$600+GST",
-      cross: "$800",
+      Product:
+        "iPhone 16 Pro Max Screen  Original Service Pack",
+        price:"$600+GST",
+        cross:"$800"
     },
     {
       src: p2,
       alt: "Honda Civic",
-      Product: "iPhone 16 Pro Screen Original Service Pack",
-      price: " $530+GST",
-      cross: "$730",
+      Product:
+        "iPhone 16 Pro Screen Original Service Pack",
+        price:" 530+GST",
+          cross:"$730"
     },
     {
       src: p1,
       alt: "BMW X5",
-      Product: "iPhone 16 Plus Screen Original Service Pack",
-      price: " $530+GST",
-      cross: "$730",
+      Product:
+        "iPhone 16 Plus Screen Original Service Pack",
+        price:" 530+GST",
+           cross:"$730"
     },
     {
       src: p2,
       alt: "Mercedes Benz",
-      Product: "iPhone 16 Screen Original Service Pack",
-      price: " $465+GST",
-      cross: "$665",
+      Product:
+        "iPhone 16 Screen Original Service Pack",
+        price:" $465+GST",
+           cross:"$665"
     },
     {
       src: p1,
       alt: "Toyota Fortuner",
-      Product: "iPhone 16 Pro Max Screen  Original Service Pack",
-      price: "$600+GST",
-      cross: "$800",
+      Product:
+        "iPhone 16 Pro Max Screen  Original Service Pack",
+        price:"$600+GST",
+           cross:"$800"
     },
     {
       src: p2,
       alt: "Honda Civic",
-      Product: "iPhone 16 Pro Screen Original Service Pack",
-      price: "$530+GST",
-      cross: "$730",
+      Product:
+        "iPhone 16 Pro Screen Original Service Pack",
+        price:"$530+GST",
+             cross:"$730"
     },
+
   ];
 
   return (
-    <div className="lg:py-4 py-3 bg-[#0b0b0b]">
+    <div className="lg:py-8 py-3 bg-[#0b0b0b]">
       <div className="container  ">
-        <div className="lg:py-2 py-2 ">
+        <div className="lg:py-5 py-4 ">
           <MainHeading Heading="Parts Store Service" />
           <MainTitle Title="Our Parts Store for mobile repair offers a wide selection of high-quality phone screens, iphone mobile parts, and accessories. With full e-commerce functionality, businesses can easily purchase the parts they need for efficient mobile phone repairs and services." />
         </div>
@@ -106,16 +113,16 @@ export default function Productswiper() {
                     alt={slide.alt}
                   />
                   <div className="product">
-                    <p className="product-title text-[13px] lg:text-[15px]   mb-[0] font-poppins ">
+                    <p className="product-title text-[13px] lg:text-[15px] leading-6 line my-3 font-poppins ">
                       {slide.Product}
                     </p>
-                    <div className="price-offer-discount flex justify-between">
+                    <div className="price-offer-discount flex justify-between py-[5px]">
                       <div className="">
                         <span className="line-through text-[#6d6d6dd2] lg:text-[20px] text-[16px]">
-                          {/* {slide.cross} */}
+                         {/* {slide.cross} */}
                         </span>
-                        <span className="lg:text-[20px] text-[16px] font-poppins text-tertiary">
-                          {slide.price}
+                        <span className="lg:text-[20px] text-[16px] font-poppins">
+                         {slide.price}
                         </span>
                       </div>
                       <div>
@@ -134,14 +141,14 @@ export default function Productswiper() {
       <div className="flex justify-center xl:py-[20px]">
         {/* <button className="btn  flex items-center ">VISIT STORE <GoArrowRight fontSize={25}/></button> */}
         <Link href="/coming-soon">
-          <button className="btn  flex items-center ">
-            VISIT STORE{" "}
-            <Lottie
-              animationData={lottiearrow}
-              style={{ width: 30, height: 30 }}
-              className="lottie-icon"
-            />
-          </button>
+        <button className="btn  flex items-center ">
+          VISIT STORE{" "}
+          <Lottie
+            animationData={lottiearrow}
+            style={{ width: 30, height: 30 }}
+            className="lottie-icon" 
+          />
+        </button>
         </Link>
       </div>
     </div>
