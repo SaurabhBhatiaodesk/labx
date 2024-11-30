@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { TextField, Button, MenuItem, Select, FormControl, InputLabel, SelectChangeEvent } from "@mui/material";
 import { TextareaAutosize } from "@mui/base"; // For the message input
-import "./form.css";
+import "./Form.css";
 
 const FormCode: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -37,7 +37,7 @@ const FormCode: React.FC = () => {
             helperText={isInvalid ? "Please enter a valid email" : ""}
           />
           <TextField label="Phone Number" name="phone_number" fullWidth variant="outlined" />
-          
+
           {/* Convert to Select component for course selection */}
           <FormControl fullWidth variant="outlined">
             <InputLabel>Select Your Course</InputLabel>
@@ -65,7 +65,7 @@ const FormCode: React.FC = () => {
               <MenuItem value="laravel" sx={{ color: "black" }}>Data Recovery</MenuItem>
               <MenuItem value="wordpress" sx={{ color: "black" }}>Parts Store</MenuItem>
               <MenuItem value="c++" sx={{ color: "black" }}>Repair Solutions</MenuItem>
-             
+
             </Select>
           </FormControl>
         </div>
