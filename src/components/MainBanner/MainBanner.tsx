@@ -4,10 +4,10 @@ import Image from "next/image";
 import MainButton from "../MainButton/MainButton";
 
 import bannerimage from "../../../public/Images/Home/bannerimage-top.png";
-import mainb1 from "../../../public/Images/Home/mainb1.png";
-import mainb2 from "../../../public/Images/Home/mainb2.png";
-import mainb3 from "../../../public/Images/Home/mainb3.png";
-import mainb4 from "../../../public/Images/Home/mainb4.png";
+import mainb1 from "../../../public/Images/Home/banner.svg";
+import mainb2 from "../../../public/Images/Home/banner1.svg";
+import mainb3 from "../../../public/Images/Home/banner2.svg";
+import mainb4 from "../../../public/Images/Home/banner3.svg";
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -54,7 +54,7 @@ export default function MainBanner() {
       >
         <div className="container">
           <div className="mb-4 lg:mt-[0] mt-[0px] relative">
-            <Link href="/coming-soon">
+            <Link href="/training">
               <button
                 className="px-[20px] py-[6px] border-[2px] rounded-full bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] 
                   animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px] relative top-6"
