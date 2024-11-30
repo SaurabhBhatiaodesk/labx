@@ -79,7 +79,7 @@ export default function BlogSidebar() {
         {blogs.map((blog) => (
           <li  onClick={() => sendId(blog._id)}
             key={blog._id}
-            className="flex items-start mb-4  shadow-sm rounded-lg p-2 hover:shadow-md gap-4"
+            className="flex items-start mb-4  shadow-sm rounded-lg p-2 hover:shadow-md gap-4 cursor-pointer"
           >
             {blog.featuredImage.length > 0 && (
               <Image
@@ -88,6 +88,7 @@ export default function BlogSidebar() {
                 className="blog_slide_img rounded-md object-cover"
                 width={100}
                 height={100}
+                style={{border:'2px solid #EDE574'}}
               />
             )}
             <div>

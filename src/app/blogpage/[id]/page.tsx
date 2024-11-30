@@ -2,6 +2,7 @@
 import { Metadata } from "next";
 import React from "react";
 import BlogSidebar from "../../../components/BlogSidebar/BlogSidebar";
+import FixLabx from "../../../components/HomeCpmponents/FixLabx/FixLabx";
 import Image from "next/image";
 import "./BlogDetails.css";
 import Banner from '../../../../public/Images/blog/banner.svg'
@@ -117,8 +118,8 @@ export default async function BlogDetails({
             <BlogSidebar />
           </div>
         </div>
-
-        <img src={Banner.src} className="banner_img" />
+            <FixLabx />
+        {/* <img src={Banner.src} className="banner_img" /> */}
       </div>
     );
   } catch (error) {

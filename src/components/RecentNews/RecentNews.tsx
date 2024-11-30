@@ -482,7 +482,7 @@ const RecentNews: React.FC = () => {
                       <div className="flex justify-between items-center mt-4">
                         <button
                           onClick={() => sendId(blog._id)}
-                          className="capitalize text-[16px] text-[#9D9C98]"
+                          className="capitalize text-[16px] text-[#EDE574]"
                         >
                           Read More
                         </button>

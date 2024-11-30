@@ -26,15 +26,15 @@ const FixLabx = () => {
           </div>
           <div className="text-center lg:p-0 p-4">
             <span className="text-[#696969]">Mobile Phone Repair</span>
-            <h2 className="text-[#040404] text-[32px]  lg:text-[42px] 2xl:text-[42px] font-[800] pb-3">
+            <h2 className="text-[#040404] text-[32px]  lg:text-[42px] 2xl:text-[42px] font-[800] pb-3" style={{color:'#040404'}}>
               LabX Mobile Phone Repair
             </h2>
-            <p className="text-black pb-5">
+            <p className="text-black pb-5" style={{color:'#040404'}}> 
            
             {" I'm Bharat Dhingra, the founder of LabX, dedicated to providing exceptional, complex mobile phone repair services. With years of experience in the tech industry, I combine innovation and expertise to offer reliable solutions, ensuring quality and customer satisfaction for everyone who trusts LabX."}
 
             </p>
-            <MainButton MainButton="LEARN MORE" link="/mail-in-repair" />
+            <MainButton MainButton="VIEW MORE" link="/about-us" />
           </div>
         </div>
       </div>
