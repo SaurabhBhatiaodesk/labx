@@ -379,7 +379,7 @@ const RecentNews: React.FC = () => {
     <div className="RecentNews-os">
       <div className="container">
         <div className="py-5 xl:py-8" data-aos="fade-up">
-        
+
         <MainHeading Heading="Recent News"/>
           <p className="text-center text-lg mt-2 mb-6">
             Explore our latest blogs for insights, news, and expert tips on
@@ -454,7 +454,7 @@ const RecentNews: React.FC = () => {
             ) : blogs.length > 0 ? (
               <div className="blogs-row-os grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:py-5 py-3">
                 {blogs.map((blog) => (
-                  <div
+                  <div  onClick={() => sendId(blog._id)}
                     className="blogs-row-col-os"
                     key={blog._id}
                     data-aos="zoom-in"
@@ -482,7 +482,7 @@ const RecentNews: React.FC = () => {
                       <div className="flex justify-between items-center mt-4">
                         <button
                           onClick={() => sendId(blog._id)}
-                          className="capitalize text-[16px] text-[#9D9C98]"
+                          className="capitalize text-[16px] text-[#EDE574]"
                         >
                           Read More
                         </button>

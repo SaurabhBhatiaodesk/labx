@@ -325,7 +325,7 @@ const StaperForm: React.FC = () => {
                       activeStep === index
                         ? "bg-yellow-500"
                         : activeStep > index
-                        ? "bg-black" 
+                        ? "bg-black"
                         : " relative z-10"
                     }`}
                   >
@@ -570,7 +570,7 @@ const StaperForm: React.FC = () => {
                           {activeStep > 0 && (
                             <button
                               onClick={handlePrevStep}
-                              className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
+                              className="btn hidden lg:block"
                             >
                               Previous
                             </button>
@@ -578,12 +578,12 @@ const StaperForm: React.FC = () => {
                           {activeStep < 3 ? (
                            <button
                            onClick={handleNextStep}
-                           className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4] flex items-center gap-2"
+                           className="btn flex items-center gap-2"
                          >
                            Next
                            <IoIosArrowRoundForward />
                          </button>
-                         
+
                           ) : (
                             <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
                               <IoCheckmarkDoneOutline className="mr-2" />
@@ -626,7 +626,6 @@ const StaperForm: React.FC = () => {
                               })
                             }
                             required
-                            style={{ fontStyle: 'italic' }}
                           />
                           {errors.issueDescription && (
                             <p className="text-[red] text-sm mb-0">
@@ -723,7 +722,7 @@ const StaperForm: React.FC = () => {
                           </Select>
 
                           {repairDetails.jumpQueueForFasterService == "Yes" && (
-                            <p className="text-yellow-500 text-sm mt-2 italic">
+                            <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
                               $20 extra for this service.
                             </p>
                           )}
@@ -744,7 +743,7 @@ const StaperForm: React.FC = () => {
                                 additionalComments: e.target.value,
                               })
                             }
-                            style={{ fontStyle: 'italic' }}
+
                           />
                         </div>
                       </div>
@@ -753,7 +752,7 @@ const StaperForm: React.FC = () => {
                           {activeStep > 0 && (
                             <button
                               onClick={handlePrevStep}
-                              className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
+                              className="btn hidden lg:block"
                             >
                               Previous
                             </button>
@@ -761,12 +760,12 @@ const StaperForm: React.FC = () => {
                           {activeStep < 3 ? (
                            <button
                            onClick={handleNextStep}
-                           className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4] flex items-center gap-2"
+                           className="btn  flex items-center gap-2"
                          >
                            Next
                            <IoIosArrowRoundForward />
                          </button>
-                         
+
                           ) : (
                             <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
                               <IoCheckmarkDoneOutline className="mr-2" />
@@ -833,7 +832,6 @@ const StaperForm: React.FC = () => {
                                 })
                               }
                               required
-                              style={{ fontStyle: 'italic' }}
                             />
                             {/* Validation Error */}
                             {errors.requireReturnLabel && (
@@ -882,7 +880,6 @@ const StaperForm: React.FC = () => {
                                   pickupLabelDetails: e.target.value,
                                 })
                               }
-                              style={{ fontStyle: 'italic' }}
                               required
                             />
                             {/* Validation Error */}
@@ -901,8 +898,7 @@ const StaperForm: React.FC = () => {
                           Terms and Conditions Acknowledgment *
                         </h4>
                         <div>
-                          <Checkbox
-                            isSelected={shippingDetails.termsAndConditions}
+                          <input type="checkbox" className="check__box"
                             onChange={(
                               e: React.ChangeEvent<HTMLInputElement>
                             ) =>
@@ -911,8 +907,9 @@ const StaperForm: React.FC = () => {
                                 termsAndConditions: e.target.checked,
                               })
                             }
-                          >
-                            <span className="lg:text-base text-sm text-white">
+                           />
+
+                          <span className="lg:text-base text-sm text-white ml-2">
                               By checking this box, I confirm that I have read
                               and agree to the LabX
                               <Link
@@ -922,9 +919,10 @@ const StaperForm: React.FC = () => {
                                 {" "}
                                 Terms and Conditions{" "}
                               </Link>
-                              Privacy Policy, and Warranty Terms.{" "}
+                             <Link  className="text-[#EDE574] border-[#EDE574] border-b-1"
+                                href="/coming-soon">Privacy Policy</Link> and  <Link className="text-[#EDE574] border-[#EDE574] border-b-1"
+                                href="/coming-soon">Warranty Terms</Link>.{" "}
                             </span>
-                          </Checkbox>
                           {errors.termsAndConditions && (
                             <p className="text-[red] text-sm mb-0">
                               {errors.termsAndConditions}
@@ -940,7 +938,7 @@ const StaperForm: React.FC = () => {
                             Draw Your Signature *
                           </span>
                           <button
-                            className="text-lg italic border-b-[1px] border-[--F1-btn-color]"
+                            className="text-lg italic text-[#EDE574]  border-[--F1-btn-color]"
                             onClick={clearSignature}
                           >
                             clear
@@ -966,7 +964,7 @@ const StaperForm: React.FC = () => {
                       <div className="flex justify-between mt-4">
                         {activeStep > 0 && (
                           <button
-                            className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
+                            className="btn hidden lg:block"
                             onClick={handlePrevStep}
                           >
                             Previous
@@ -975,15 +973,15 @@ const StaperForm: React.FC = () => {
                         {activeStep < 3 ? (
                         <button
                         onClick={handleNextStep}
-                        className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4] flex items-center gap-2"
+                        className="btn flex items-center gap-2"
                       >
                         Next
                         <IoIosArrowRoundForward />
                       </button>
-                      
+
                         ) : (
                           <button
-                            className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
+                            className="btn hidden lg:block"
                             onClick={handleSubmit}
                           >
                             Submit
@@ -1012,9 +1010,7 @@ const StaperForm: React.FC = () => {
                       Pricing Agreement*
                     </h2>
                     <div className="flex items-start gap-4 text-yellow-400">
-                      <Checkbox
-                        className="pt-4 px-0 pb-0"
-                        isSelected={pricingAgreement}
+                    <input type="checkbox" className="check__boxs"
                         onChange={() => {
                           setPricingAgreement(!pricingAgreement);
                           setErrors((prevErrors) => ({
@@ -1024,7 +1020,7 @@ const StaperForm: React.FC = () => {
                               : "You must agree to the pricing agreement",
                           }));
                         }}
-                      ></Checkbox>
+                      />
 
                       <p className="">
                         By submitting this form, I agree to proceed with repairs
@@ -1046,7 +1042,7 @@ const StaperForm: React.FC = () => {
 
                     <div className="flex justify-between mt-4">
                       <button
-                        className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
+                        className="btn hidden lg:block"
                         onClick={handlePrevStep}
                       >
                         Previous
@@ -1054,7 +1050,7 @@ const StaperForm: React.FC = () => {
                       <button
                         onClick={handleSubmit}
                         disabled={!pricingAgreement}
-                        className={`bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4] ${
+                        className={`btn hidden lg:block ${
                           !pricingAgreement
                             ? "opacity-50 cursor-not-allowed"
                             : ""
