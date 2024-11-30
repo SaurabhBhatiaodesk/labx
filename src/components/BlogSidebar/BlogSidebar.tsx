@@ -1,7 +1,11 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-
+import { useRouter } from "next/navigation";
+import Facebook from '../../../public/Images/blog/facebook.svg';
+import Telegram_logo from '../../../public/Images/blog/Telegram_logo.svg';
+import Instagram from '../../../public/Images/blog/instagram.svg';
+import Twitter from '../../../public/Images/blog/twitter.svg';
 interface BlogData {
   _id: string;
   heading: string;
@@ -36,6 +40,7 @@ export default function BlogSidebar() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const blogsPerPage = 5;
+  const router = useRouter();
 
   useEffect(() => {
     fetchBlogs(currentPage, blogsPerPage);
@@ -54,13 +59,25 @@ export default function BlogSidebar() {
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
-
+  const sendId = (id: string) => {
+    router.push(`/blogpage/${id}`);
+  };
   return (
     <div>
-      <h3 className="text-lg font-semibold mb-4 text-center">Recent Blogs</h3>
+      <div className="social_section">
+        <h4>Share</h4>
+        <div className="social__icon">
+          <a><img src={Facebook.src} /></a>
+          <a><img src={Telegram_logo.src} /></a>
+          <a><img src={Instagram.src} /></a>
+          <a><img src={Twitter.src} /></a>
+        </div>
+      </div>
+      <div className="side_bg_img"></div>
+      <h3 className="text-lg font-semibold mb-4">More Posts</h3>
       <ul>
         {blogs.map((blog) => (
-          <li
+          <li  onClick={() => sendId(blog._id)}
             key={blog._id}
             className="flex items-start mb-4  shadow-sm rounded-lg p-2 hover:shadow-md gap-4"
           >
@@ -68,9 +85,9 @@ export default function BlogSidebar() {
               <Image
                 src={blog.featuredImage[0]}
                 alt={blog.heading}
-                className="h-12 w-12 rounded-md object-cover"
-                width={400}
-                height={300}
+                className="blog_slide_img rounded-md object-cover"
+                width={100}
+                height={100}
               />
             )}
             <div>

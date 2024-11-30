@@ -454,7 +454,7 @@ const RecentNews: React.FC = () => {
             ) : blogs.length > 0 ? (
               <div className="blogs-row-os grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:py-5 py-3">
                 {blogs.map((blog) => (
-                  <div
+                  <div  onClick={() => sendId(blog._id)}
                     className="blogs-row-col-os"
                     key={blog._id}
                     data-aos="zoom-in"
