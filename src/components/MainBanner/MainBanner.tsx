@@ -32,7 +32,7 @@ export default function MainBanner() {
     AOS.init({ duration: 1000 }); // Initialize AOS
     AOS.refresh(); // Refresh AOS for updated DOM
   }, []);
-  const Paginationback = ["#FF0000", "#FF9966", "#6DD5ED", "#A044FF"]; 
+  const Paginationback = ["#FF0000", "#FF9966", "#6DD5ED", "#A044FF"];
   const backgroundImages = [mainf1, mainf2, mainf3, mainf4];
 
   const handleSlideChange = (swiper: any) => {
@@ -56,7 +56,7 @@ export default function MainBanner() {
           <div className="mb-4 lg:mt-[0] mt-[0px] relative">
             <Link href="/training">
               <button
-                className="px-[20px] py-[6px] border-[2px] rounded-full bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] 
+                className="px-[20px] py-[6px] border-[2px] rounded-full bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98]
                   animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px] relative top-6"
                 style={{ transform: "rotate(-5deg)" }}
               >
@@ -115,7 +115,7 @@ export default function MainBanner() {
                 <div className="w-full">
                   <Image
                     className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
-                    src={mainb1}
+                    src={mainb4}
                     alt="Banner"
                   />
                 </div>
@@ -147,9 +147,9 @@ export default function MainBanner() {
                 <div className="w-full">
                   <Image
                     className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
-                    src={mainb2}
+                    src={mainb3}
                     alt="Quick Repairs"
-                    
+
                   />
                 </div>
               </div>
@@ -184,7 +184,7 @@ export default function MainBanner() {
                 <div className="w-full">
                   <Image
                     className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
-                    src={mainb3}
+                    src={mainb2}
                     alt="Training and Repairs"
                   />
                 </div>
@@ -207,15 +207,15 @@ export default function MainBanner() {
                     skills—your go-to destination for all things mobile repair.`}
                   </p>
                   <div className="my-4 xl:my-10">
-                 
+
                     <MainButton MainButton="Join Us Now" link="/coming-soon" color="bg-[#A044FF]" />
-                  
+
                   </div>
                 </div>
                 <div className="w-full">
                   <Image
                     className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
-                    src={mainb4}
+                    src={mainb1}
                     alt="Device Repair"
                   />
                 </div>
@@ -224,7 +224,7 @@ export default function MainBanner() {
           </Swiper>
         </div>
       </section>
-      
+
     </>
   );
 }
