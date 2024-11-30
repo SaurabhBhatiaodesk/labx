@@ -21,30 +21,15 @@ const FeeSolutions = () => {
               </div>
               <div className="p-3 lg:p-6 bg-black text-white rounded-md ">
                 <h2 className="text-3xl font-bold mb-4">
-                  No Fix, No Fee Solutions
+                Comprehensive B2B and Public Phone Repair Services
                 </h2>
 
-                <p className="text-base">
-                  No Fix, No Fee Solutions for your iPhone Logic Board Repair Problems.
-                  <br />
-                  With Lifetime Warranty!
-                </p>
+              
                 <ul className="space-y-2 pb-5">
-                  <li>
-                    We provide diverse solutions for all your circuit board microsoldering
-                    requirements, extending beyond iPhones and MacBooks to encompass Samsung
-                    and other Android mobile devices. Our services also include HDMI
-                    replacement for various game consoles, such as Sony Playstation 5 and
-                    Microsoft Xbox.
-                  </li>
-                  <li>
-                    Whether it&apos;s replacing connectors, fixing backlights, resolving
-                    charging issues, repairing broken traces, or tackling other intricate
-                    problems, we offer a comprehensive range of expertise.
-                  </li>
+                <p>{`Our mail in cell phone repair service caters to both end users and businesses, providing a fast, reliable solution for complex repairs. We welcome repair shops and individual customers to send phone for repair, offering expert motherboard repairs, soldering, and component replacements. With quick turnaround times, our phone repair mail in service ensures that your devices are returned in optimal working condition.`}</p>
                 </ul>
                 <div>
-                  <MainButton MainButton="Learn More" />
+                  <MainButton MainButton="Learn More" link="/b2b-repair-services" />
                 </div>
               </div>
             </div>

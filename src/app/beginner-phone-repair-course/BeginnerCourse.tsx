@@ -11,45 +11,45 @@ import React from "react";
 const BeginnerCourse = () => {
   const accordionData = [
     {
-      title: "Can I learn phone repair through a course?",
+      title: "Who is this course suitable for?",
       content:
-        "Yes, our phone repair coaching Australia focuses on key repair techniques, diagnostics, and device management to help aspiring technicians enhance their skills and knowledge.",
+        "This motherboard repair course is designed for individuals with basic device repair knowledge who want to advance their skills in motherboard repair and micro soldering techniques.",
     },
     {
-      title: "Can Water damage repair fully restore my phone?",
+      title: "Do I need prior experience in soldering?",
       content:
-        "In many cases, yes. Our technicians use advanced techniques to clean, dry, and repair water-damaged components, aiming for full restoration if possible.",
+        "Basic soldering knowledge is helpful but not mandatory. The course starts with foundational techniques, gradually advancing to expert-level micro soldering skills.",
     },
     {
-      title: "Are OEM parts used in your phone repairs?",
+      title: "What tools will I learn to use?",
       content:
-        "Yes, we use genuine OEM parts replacement for mobile phones whenever possible to ensure optimal compatibility, performance, and longevity for your mobile device.",
+        "You’ll learn to work with precision tools like soldering stations, microscopes, multimeters, and hot air rework stations essential for motherboard-level repairs.",
     },
     {
-      title: "How soon should I bring in a water-damaged phone?",
+      title: "What devices does the course cover?",
       content:
-        "Bring it in as soon as possible! Delays can lead to corrosion and further damage. Immediate action improves the chances of recovery.",
+        "The micro soldering course covers a wide range of devices, including smartphones, tablets, and other electronics, focusing on advanced motherboard-level repairs.",
     },
     {
-      title: "Do you offer warranties on replaced phone parts?",
+      title: "Will I receive hands-on training?",
       content:
-        "Yes, we offer warranties on most replaced parts, covering defects and issues that arise after repair, giving you peace of mind.",
+        "Yes, the course emphasizes hands-on practice, allowing you to work on real devices under expert guidance to build confidence and precision.",
     },
     {
-      title: "Do you offer repair services for all phone brands?",
+      title: "Is certification provided after completion?",
       content:
-        "Yes, we provide repair services for a wide range of phone brands, including Apple, Samsung, Xiaomi, and more. Our technicians are experienced in handling various devices and models.",
+        "Yes, students receive a recognized certification upon successful completion, showcasing their expertise in advanced motherboard repair and micro soldering.",
     },
     {
-      title: "How long does a typical phone repair take?",
+      title: "How long is the course?",
       content:
-        "Most phone repairs are completed within a few hours, depending on the complexity of the issue. We strive to return your device in working condition as quickly as possible.",
+        "The Advanced Motherboard Repair – Micro Soldering course is one week long, offering intensive, hands-on training to build expertise within a focused timeframe.",
     },
   ];
   return (
     <>
       <TraningBanner
-        pageName="Beginner Phone Repair Course"
+        pageName="Advanced Motherboard Repair – Micro Soldering (Level 1)"
         pageDescription="This course is designed and based on the highest industry standards and over 14 years of industry experience. It includes everything that anyone needs to be one of the best technicians or a successful business owner."
         backgroundImage="/Images/BannerImages/mailinrepair.png"
         AdminImage="/Images/adminimage.png"
@@ -57,36 +57,39 @@ const BeginnerCourse = () => {
         courseName="Beginner"
         courseRating="4.7"
         courseHour="40 Hours"
-        Duration="5 Day"
-        Price="$1249 (Includes a free toolkit for each student"
+        Duration=" 1 Week"
+        Price="$2200"
       />
 
       <TraningWillLearn
-        title="What You will Learn"
+        title="Course Highlights"
         Course="Course Format"
-        param1="Learn the fundamentals of mobile phone repair in our comprehensive beginner course, designed to give you hands-on experience with a wide range of repairs. Our expert trainers will guide you through each step, ensuring you gain practical knowledge and confidence in repairing various devices.
+        paramtitle1="Master Complex Repairs with Expert Guidance"
+        param1="Learn to diagnose and repair damaged motherboards with advanced techniques. This hands-on training covers common issues like power problems, faulty connectors, and damaged circuits, all with expert instruction to build your repair confidence.
 "
-        param2="Learn the fundamentals of mobile phone repair in our comprehensive beginner course, designed to give you hands-on experience with a wide range of repairs. Our expert trainers will guide you through each step, ensuring you gain practical knowledge and confidence in repairing various devices.
-"
-        param3="Learn the fundamentals of mobile phone repair in our comprehensive beginner course, designed to give you hands-on experience with a wide range of repairs. Our expert trainers will guide you through each step, ensuring you gain practical knowledge and confidence in repairing various devices.
-"
+        paramtitle2="Precision Micro Soldering Skills"
+        param2="Develop expert-level micro soldering skills required for repairing modern electronics. Learn to handle tiny components on circuit boards with precision, using specialized tools for soldering and rework, ensuring high-quality, professional repairs.
 
-Courseformate1="Video Tutorials"
-Courseformate2="Checking the Task"
-Courseformate3="Pulvinar sapien"
-Courseformate4="Software"
-
+"
+        paramtitle3="Troubleshooting & Diagnostics Techniques"
+        param3="Gain proficiency in advanced troubleshooting techniques using tools like oscilloscopes, multimeters, and thermal cameras. Learn how to efficiently diagnose and repair complex motherboard issues, equipping you with the skills to tackle any electronic problem.
+"
+        Courseformate1="Video Tutorials"
+        Courseformate2="   1 Week Duration"
+        Courseformate3="   Experienced Instructors"
+        Courseformate4="  Free Toolkit"
       />
-      <TraningTabBigner/>
+      <TraningTabBigner />
 
-      <TraningTabBignersecond/>
-      <TraningCourseInstructors/>
-      <BeginnerPhoneRepaiCourseSale/>
+      {/* <TraningTabBignersecond /> */}
+      <TraningCourseInstructors />
+      <BeginnerPhoneRepaiCourseSale />
       <FrequentlyAskedQuestions
-    heading="Frequently Asked Questions"
-    title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing."
-    accordionData={accordionData}
-  />
+        heading="Frequently Asked Questions (FAQs)"
+        title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications.
+"
+        accordionData={accordionData}
+      />
       <GoogleReviews />
     </>
   );

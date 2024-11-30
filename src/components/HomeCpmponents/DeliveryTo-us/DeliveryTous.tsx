@@ -103,7 +103,7 @@ const VerticalTabs: React.FC = () => {
       contentf6:
         "Upon receipt, we’ll confirm via email and place your device in the repair queue, notifying you of any updates during the process.",
       button: "READ MORE",
-      link: "/coming-soon",
+      link: "/mail-in-repair",
       image: MailinRepair,
     },
     {
@@ -126,7 +126,7 @@ const VerticalTabs: React.FC = () => {
       contentf6:
         "Setting up a B2B account is straightforward. Complete the Apply for Business Account form on our website, and your account will be activated within moments, providing you with fast turnaround time for exclusive B2B phone repair services.",
       button: "READ MORE",
-      link: "/coming-soon",
+      link: "/b2b-repair-services",
       image: repairsoloutaion,
     },
     {

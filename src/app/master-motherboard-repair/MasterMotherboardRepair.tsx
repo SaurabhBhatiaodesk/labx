@@ -8,13 +8,13 @@ import TraningTabBignersecond from "@/components/TraningBanner/TraningTabBigners
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
 import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
 import React from "react";
-import FristTraningTab from "./FristTraningTab";
-import SecondTraningTab from "./SecondTraningTab";
-import TrainingInstructors from "./TrainingInstructors";
-import TraningSales from "./TraningSales";
+import FristTraningTab from "../expert-motherboard-repair/FristTraningTab";
+import TrainingInstructors from "../expert-motherboard-repair/TrainingInstructors";
+import TraningSales from "../expert-motherboard-repair/TraningSales";
+import ThreeTraningTab from "./ThreeTraningTab";
 
 
-const BeginnerCourse = () => {
+const MasterMotherboardRepair = () => {
   const accordionData = [
     {
       title: "Who is this course suitable for?",
@@ -53,7 +53,7 @@ const BeginnerCourse = () => {
     },
   ];
   const instructorData = {
-    instructorName: "Bharat Dhingra",
+    instructorName: "Bharat Dhingra & Team",
     instructorImage: "/Images/CourseInstructors.png", // Update with the correct image path
     courseRating: 4.7,
     courseDuration: "40 Hours",
@@ -71,7 +71,7 @@ const BeginnerCourse = () => {
   return (
     <>
       <TraningBanner
-        pageName="Expert Motherboard Repair – Micro Soldering (Level 2)"
+        pageName="Master Motherboard Repair – Micro Soldering (Level 3)"
         pageDescription="This course is designed and based on the highest industry standards and over 14 years of industry experience. It includes everything that anyone needs to be one of the best technicians or a successful business owner."
         backgroundImage="/Images/BannerImages/mailinrepair.png"
         AdminImage="/Images/adminimage.png"
@@ -79,36 +79,40 @@ const BeginnerCourse = () => {
         courseName="Beginner"
         courseRating="4.7"
         courseHour="40 Hours"
-        Duration="1 Week"
-        Price="$2800 (Includes a free toolkit for each student"
+        Duration=" 5 Days"
+        Price=" $5500"
       />
 
       <TraningWillLearn
         title="Course Highlights"
         Course="Course Format"
-        paramtitle1=" Hands-On Training in Micro Soldering Techniques :-"
-        param1="Master advanced micro soldering skills with practical, hands-on training. Learn precise soldering techniques for repairing complex motherboard circuits, ensuring accuracy and efficiency in professional repairs for modern electronic devices.
+        paramtitle1=" Advanced Motherboard Repair Techniques :-"
+        param1=" Gain hands-on experience in diagnosing and fixing complex motherboard issues, including IC replacement and chip-level troubleshooting, guided by industry experts.
+
 
 "
-        paramtitle2="Comprehensive Understanding of Motherboard Components :-"
-        param2="Learn the fundamentals of mobile phone repair in our comprehensive beginner course, designed to give you hands-on experience with a wide range of repairs. Our expert trainers will guide you through each step, ensuring you gain practical knowledge and confidence in repairing various devices.
+        paramtitle2="Mastering Soldering Skills :-"
+        param2=" Learn precision soldering techniques for microcomponents, enabling you to handle delicate repairs with confidence, ensuring professional-grade results for every repair task.
+
 "
-        paramtitle3="Cutting-Edge Tools and Industry Practices"
-        param3="Learn the fundamentals of mobile phone repair in our comprehensive beginner course, designed to give you hands-on experience with a wide range of repairs. Our expert trainers will guide you through each step, ensuring you gain practical knowledge and confidence in repairing various devices.
+        paramtitle3="Comprehensive Practical Training :-"
+        param3="Work with real-world scenarios and modern tools to develop expertise in motherboard repair and soldering, preparing you for a successful career in mobile phone repair.
+
 "
         Courseformate1="Video Tutorials"
         Courseformate2="1 Week Duration"
         Courseformate3="Experienced Instructors"
         Courseformate4="Free Toolkit"
       />
-      <FristTraningTab />
+      <ThreeTraningTab/>
+      {/* <FristTraningTab /> */}
       {/* <SecondTraningTab/> */}
       <TrainingInstructors {...instructorData} />
 
       <TraningSales
-        courseName="Become a Master in Motherboard Repairs"
+        courseName="The Course Will Prepare You for Expert Mobile Phone Repair"
         imagedata="/Images/CourseInstructors.png"
-        courseDescription={["Complete this comprehensive mainboard repair training and build the confidence to handle complex motherboard repairs with ease. From advanced diagnostics to precise micro soldering, you’ll develop the expertise to tackle intricate challenges and deliver exceptional results. Equip yourself to work professionally on a wide array of devices, ensuring top-notch performance and reliability."]}
+        courseDescription={["This Level 3 mainboard repair training is designed to take your repair expertise to the highest level, enabling you to handle the most advanced repairs and data recovery tasks. By the end of this course, you’ll be prepared to tackle any challenge, from CPU reballing to restoring devices with critical board damage."]}
         saleDurationDays={7}
         initialCounters={{
           personsMentored: 50,
@@ -120,8 +124,10 @@ const BeginnerCourse = () => {
 
       {/* <BeginnerPhoneRepaiCourseSale /> */}
       <FrequentlyAskedQuestions
-        heading="Frequently Asked Questions"
-        title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing."
+        heading="Frequently Asked Questions (FAQs)
+"
+        title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications
+"
         accordionData={accordionData}
       />
       <GoogleReviews />
@@ -129,4 +135,4 @@ const BeginnerCourse = () => {
   );
 };
 
-export default BeginnerCourse;
+export default MasterMotherboardRepair;
