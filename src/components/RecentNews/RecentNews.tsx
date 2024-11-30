@@ -379,7 +379,7 @@ const RecentNews: React.FC = () => {
     <div className="RecentNews-os">
       <div className="container">
         <div className="py-5 xl:py-8" data-aos="fade-up">
-        
+
         <MainHeading Heading="Recent News"/>
           <p className="text-center text-lg mt-2 mb-6">
             Explore our latest blogs for insights, news, and expert tips on

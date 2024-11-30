@@ -95,7 +95,7 @@ export default function BlogSidebar() {
        >
          {index + 1}
        </button>
-       
+
         ))}
       </div>
     </div>

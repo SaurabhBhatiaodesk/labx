@@ -316,7 +316,7 @@ const StaperForm: React.FC = () => {
                       activeStep === index
                         ? "bg-yellow-500"
                         : activeStep > index
-                        ? "bg-black" 
+                        ? "bg-black"
                         : " relative z-10"
                     }`}
                   >
@@ -574,7 +574,7 @@ const StaperForm: React.FC = () => {
                            Next
                            <IoIosArrowRoundForward />
                          </button>
-                         
+
                           ) : (
                             <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
                               <IoCheckmarkDoneOutline className="mr-2" />
@@ -757,7 +757,7 @@ const StaperForm: React.FC = () => {
                            Next
                            <IoIosArrowRoundForward />
                          </button>
-                         
+
                           ) : (
                             <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
                               <IoCheckmarkDoneOutline className="mr-2" />
@@ -971,7 +971,7 @@ const StaperForm: React.FC = () => {
                         Next
                         <IoIosArrowRoundForward />
                       </button>
-                      
+
                         ) : (
                           <button
                             className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
