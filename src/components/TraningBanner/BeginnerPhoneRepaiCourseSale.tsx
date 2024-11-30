@@ -72,6 +72,7 @@ function BeginnerPhoneRepairCourseSale() {
               </h2>
               <ul className="space-y-2 pb-5">
               <p>
+                
                 {`By the end of this mainboard repair training, you'll gain the confidence and skills to tackle a variety of motherboard-level repairs with precision. From advanced diagnostics to micro soldering, you’ll be equipped to handle intricate challenges, ensuring high-quality results and readiness to work on a wide range of devices professionally.`}
               </p>
               </ul>
