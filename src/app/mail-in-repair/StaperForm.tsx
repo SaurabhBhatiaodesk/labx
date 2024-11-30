@@ -316,7 +316,7 @@ const StaperForm: React.FC = () => {
                       activeStep === index
                         ? "bg-yellow-500"
                         : activeStep > index
-                        ? "bg-black" 
+                        ? "bg-black"
                         : " relative z-10"
                     }`}
                   >
@@ -574,7 +574,7 @@ const StaperForm: React.FC = () => {
                            Next
                            <IoIosArrowRoundForward />
                          </button>
-                         
+
                           ) : (
                             <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
                               <IoCheckmarkDoneOutline className="mr-2" />
@@ -616,7 +616,7 @@ const StaperForm: React.FC = () => {
                                 issueDescription: e.target.value,
                               })
                             }
-                            required 
+                            required
                           />
                           {errors.issueDescription && (
                             <p className="text-[red] text-sm mb-0">
@@ -734,7 +734,7 @@ const StaperForm: React.FC = () => {
                                 additionalComments: e.target.value,
                               })
                             }
-                             
+
                           />
                         </div>
                       </div>
@@ -756,7 +756,7 @@ const StaperForm: React.FC = () => {
                            Next
                            <IoIosArrowRoundForward />
                          </button>
-                         
+
                           ) : (
                             <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
                               <IoCheckmarkDoneOutline className="mr-2" />
@@ -822,7 +822,7 @@ const StaperForm: React.FC = () => {
                                   returnLabelDetails: e.target.value,
                                 })
                               }
-                              required 
+                              required
                             />
                             {/* Validation Error */}
                             {errors.requireReturnLabel && (
@@ -870,7 +870,7 @@ const StaperForm: React.FC = () => {
                                   ...shippingDetails,
                                   pickupLabelDetails: e.target.value,
                                 })
-                              } 
+                              }
                               required
                             />
                             {/* Validation Error */}
@@ -899,7 +899,7 @@ const StaperForm: React.FC = () => {
                               })
                             }
                            />
-                         
+
                           <span className="lg:text-base text-sm text-white ml-2">
                               By checking this box, I confirm that I have read
                               and agree to the LabX
@@ -908,8 +908,8 @@ const StaperForm: React.FC = () => {
                                 href="/coming-soon"
                               >
                                 {" "}
-                                Terms and Conditions{" "} 
-                              </Link> 
+                                Terms and Conditions{" "}
+                              </Link>
                              <Link  className="text-[#EDE574] border-[#EDE574] border-b-1"
                                 href="/coming-soon">Privacy Policy</Link> and  <Link className="text-[#EDE574] border-[#EDE574] border-b-1"
                                 href="/coming-soon">Warranty Terms</Link>.{" "}
@@ -969,7 +969,7 @@ const StaperForm: React.FC = () => {
                         Next
                         <IoIosArrowRoundForward />
                       </button>
-                      
+
                         ) : (
                           <button
                             className="btn hidden lg:block"
@@ -1001,7 +1001,7 @@ const StaperForm: React.FC = () => {
                       Pricing Agreement*
                     </h2>
                     <div className="flex items-start gap-4 text-yellow-400">
-                    <input type="checkbox" className="check__boxs" 
+                    <input type="checkbox" className="check__boxs"
                         onChange={() => {
                           setPricingAgreement(!pricingAgreement);
                           setErrors((prevErrors) => ({
@@ -1011,7 +1011,7 @@ const StaperForm: React.FC = () => {
                               : "You must agree to the pricing agreement",
                           }));
                         }}
-                      /> 
+                      />
 
                       <p className="">
                         By submitting this form, I agree to proceed with repairs

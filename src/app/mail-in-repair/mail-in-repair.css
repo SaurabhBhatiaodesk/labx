@@ -6,7 +6,8 @@
   background-color: #ede574 !important;
   color: black !important;
 }
-label[data-slot="label ,trigger"] {
+
+a label[data-slot="label ,trigger"] {
   color: #ffffff;
 }
 
@@ -14,6 +15,7 @@ textarea::placeholder {
   color: #ffffff;
   opacity: 1;
 }
+
 .subpixel-antialiased {
   color: white !important;
 }
@@ -32,6 +34,7 @@ input[type="submit"]:hover {
   transform: scale(1.05);
   background-color: #e1f5c4;
 }
+
 .gauav button {
   background: #ff000000;
   border: 1px solid;
@@ -41,8 +44,7 @@ input[type="submit"]:hover {
   background-color: transparent;
 }
 
-.group[data-has-value="true"]
-  .group-data-\[has-value\=true\]\:text-default-foreground {
+.group[data-has-value="true"] .group-data-\[has-value\=true\]\:text-default-foreground {
   --tw-text-opacity: 1;
   color: white !important;
 }
@@ -50,6 +52,7 @@ input[type="submit"]:hover {
 .gaurav-bg-trans .transition-background {
   background: transparent;
 }
+
 .subpixel-antialiased {
   color: white !important;
   background: black;
@@ -60,49 +63,49 @@ input[type="submit"]:hover {
   border: 1px solid #fff;
   /* background-color: #000; */
 }
+
 .steper-form-section-os .MuiFormControl-root fieldset.css-xhkvgb:hover .MuiOutlinedInput-notchedOutline {
-  border-color:#fff;
+  border-color: #fff;
 }
+
 .steper-form-section-os .MuiFormControl-root .css-xhkvgb:hover .MuiOutlinedInput-notchedOutline {
-  border-color:#fff;
+  border-color: #fff;
 }
-.steper-form-section-os
-  .MuiFormControl-root
-  fieldset.MuiOutlinedInput-notchedOutline:hover
-  .MuiOutlinedInput-notchedOutline {
+
+.steper-form-section-os .MuiFormControl-root fieldset.MuiOutlinedInput-notchedOutline:hover .MuiOutlinedInput-notchedOutline {
   border: 1px solid #fff !important;
 }
-.steper-form-section-os
-  .css-1blp12k-MuiInputBase-root-MuiOutlinedInput-root:hover
-  .MuiOutlinedInput-notchedOutline {
+
+.steper-form-section-os .css-1blp12k-MuiInputBase-root-MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
   border-color: #fff !important;
 }
 
-.steper-form-section-os
-  .MuiFormControl-root
-  .css-19qnlrw-MuiFormLabel-root-MuiInputLabel-root {
+.steper-form-section-os .MuiFormControl-root .css-19qnlrw-MuiFormLabel-root-MuiInputLabel-root {
   color: #fff;
 }
+
 .steper-form-section-os .MuiFormControl-root label {
   color: #fff;
 }
+
 .steper-form-section-os .MuiFormControl-root .MuiInputBase-root input {
   color: #fff;
 }
+
 .steper-textarea-os .MuiTextarea-root {
   background: #000;
   color: #fff;
 }
+
 .steper-textarea-os .MuiTextarea-root textarea::placeholder {
   opacity: 1;
 }
-.steper-textarea-os
-  .MuiTextarea-root.css-1cquhrj-JoyTextarea-root:not(
-    [data-inverted-colors="false"]
-  ) {
+
+.steper-textarea-os .MuiTextarea-root.css-1cquhrj-JoyTextarea-root:not([data-inverted-colors="false"]) {
   --Textarea-focusedHighlight: #fff;
   border: 1px solid #fff !important;
 }
+
 /* style os ends */
 
 /* .steper-form-section-os
