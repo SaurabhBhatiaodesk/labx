@@ -372,9 +372,9 @@ label {
 
 .btn {
   background: var( --F1-btn-color);
-  padding: 10px 10px !important;
+  padding: 10px 15px !important;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 20px;
   color: var(--black);
   position: relative;
