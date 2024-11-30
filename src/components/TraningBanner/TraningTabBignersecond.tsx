@@ -96,7 +96,7 @@ const TraningTabBignersecond: React.FC = () => {
       contentf6:
         " Upon receipt, we’ll confirm via email and place your device in the repair queue, notifying you of any updates during the process.",
       button: "Get Course",
-      link: "/coming-soon",
+      link: "/mail-in-repair",
       image: tabimage,
     },
     {
@@ -119,7 +119,7 @@ const TraningTabBignersecond: React.FC = () => {
       contentf6:
         "Setting up a B2B account is straightforward. Complete the Apply for Business Account form on our website, and your account will be activated within moments, providing you with fast turnaround time for exclusive B2B phone repair services.",
       button: "Get Course",
-      link: "/coming-soon",
+      link: "/mail-in-repair",
       image: tabimage,
     },
     {
@@ -237,18 +237,10 @@ const TraningTabBignersecond: React.FC = () => {
                 .filter((item) => item.content)
                 .map((item, index) => (
                   <div className="flex items-start gap-4" key={index}>
-                    {/* <Image
-                      className="w-[30px] h-[30px]"
-                      src={pointet}
-                      alt="Pointing Right Icon"
-                      width={50}
-                      height={50}
-                    /> */}
+                  
                     <div>
                       <p>
-                        {/* <span className="font-bold pb-[2px] border-b-[#fff563] border-b-[1px]">
-                          {item.title}
-                        </span> */}
+                      
                         {item.content}
                       </p>
                     </div>

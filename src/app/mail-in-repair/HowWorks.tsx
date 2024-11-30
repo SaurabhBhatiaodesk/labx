@@ -8,20 +8,20 @@ const HowWorks = () => {
     {
       title: 'Review Our Pricing',
       content:
-        'Check out our Price List for no-fix, no-fee pricing on common logic board issues. If your issue isn’t listed, contact us for a custom quote. Please note, a $65 service fee is charged for any device that has undergone a previous repair attempt by another technician, whether or not we’re able to fix the device.',
+        'Check out our Price List for no-fix, no-fee pricing on common logic board issues. If your issue isn’t listed, contact us for a custom quote. Please note, a $66 service fee is charged for any device that has undergone a previous repair attempt by another technician, whether or not we’re able to fix the device and it includes B2B repair.',
     },
     {
-      title: 'Start Your Repair',
+      title: 'Start Mail in Repair',
       content:
-        'Click on “Start Repair” and provide details about your device and its issue, including its repair history (e.g., prior repairs, water damage). You’ll receive a quote and mailing instructions within 24 hours.',
+        'Click on "Start Repair" and provide details about your device and its issue, including its repair history (e.g., prior repairs, water damage). You’ll receive a quote and mailing instructions within 24 hours.',
     },
     {
-      title: 'Need Help Now?',
+      title: 'For Immediate Help Call Directly',
       content:
-        'If you want immediate assistance, call us directly to get started right away.',
+        'For immediate assistance with your mobile repair needs, call us directly. Our team is ready to guide you through the mail-in phone repairs process and get your device fixed fast.',
     },
     {
-      title: 'Send Your Device',
+      title: 'Post Phone for Repair',
       content:
         'Once your repair is pre-approved, follow the Mailing Instructions to ship your device to us.',
     },
@@ -49,8 +49,10 @@ const HowWorks = () => {
     <div className='py-5'>
       <div className="container">
         <div>
-          <MainHeading Heading='HOW IT WORKS' />
-          <MainTitle Title='Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing.' />
+          <MainHeading Heading='How Mail in Phone Repair Service Work?
+
+' />
+          {/* <MainTitle Title='Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing.' /> */}
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:gap-5 xl:gap-4 gap-3 my-4'>
           {steps.map((step, index) => (

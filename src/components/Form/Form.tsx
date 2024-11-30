@@ -10,7 +10,7 @@ const Form = () => {
    <div className="py-4 lg:py-[20px]" >
    <div className='container '>
     <div className="form-section">
-       <MainHeading Heading='Inquire about the Training Program/Course to learn "How to Repair Phones/Tablets" and express your interest.'/>
+       <MainHeading Heading='Ready to Kickstart Your Career in Mobile Repair? Enquire Now!'/>
        <div className='form'>
         <FormCode/>
        </div>

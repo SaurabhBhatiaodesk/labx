@@ -144,6 +144,20 @@ input[type="submit"]:hover {
   right: 0;
   z-index: 1;
 }
+@media only screen and (max-width: 600px) {
+  .gaurav-line:after {
+    position: absolute;
+    content: "";
+    width: 79%;
+    height: 2px;
+    background: var(--tertiary-color);
+    top: 20% !important;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+}
 
 input.check__box {
   width: 20px;

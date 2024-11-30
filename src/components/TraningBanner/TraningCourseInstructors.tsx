@@ -26,9 +26,9 @@ function TraningCourseInstructors() {
       }, 50); // Adjust the interval speed as needed
     };
 
-    incrementCounters(45, setPersonsMentored);
-    incrementCounters(10, setWorkshopsAttended);
-    incrementCounters(8, setCoachingCertificates);
+    incrementCounters(10, setPersonsMentored);
+    incrementCounters(500, setWorkshopsAttended);
+    incrementCounters(9, setCoachingCertificates);
   }, []);
 
   return (
@@ -47,9 +47,9 @@ function TraningCourseInstructors() {
                 />
               </div>
               <div className="p-3 lg:p-6 bg-black text-white rounded-md">
-                <h2 className="text-3xl font-bold mb-4">Course Instructors</h2>
+                <h2 className="text-3xl font-bold mb-4">Training Instructors</h2>
 
-                <p className="text-base text-[#EDE574]">Bharat Dhingra</p>
+                <p className="text-base text-[#EDE574]">Bharat Dhingra & Team</p>
                 <div className="flex gap-3 mb-2">
                   <div className="flex gap-2 items-center">
                     <Image src={coursereating} alt="Course rating icon" />
@@ -62,27 +62,23 @@ function TraningCourseInstructors() {
                 </div>
 
                 <ul className="space-y-2 pb-5">
-                  <li>
-                    Our Level 3 Master Course is designed for experienced technicians seeking to master the most advanced techniques in mobile motherboard repair. This intensive program covers complex repairs and data recovery, ensuring you can handle the most challenging issues in modern devices.
-                  </li>
-                  <li>
-                    Our Level 3 Master Course is designed for experienced technicians seeking to master the most advanced techniques in mobile motherboard repair.
-                  </li>
+                <p>{`Our instructors for the Advanced Motherboard Repair – Micro Soldering course are seasoned professionals with over a decade of expertise in mobile device repair. They bring extensive industry knowledge, practical insights, and hands-on guidance to every session. Dedicated to helping students master micro soldering techniques they ensure confidence and precision in advanced motherboard diagnostics, circuit repair, and component-level replacements.`}</p>
+                 
                 </ul>
 
                 {/* Dynamic Counter Section */}
                 <div className="flex gap-6 mt-4">
                   <div className="text-center">
                     <h3 className="text-[40px] lg:text-[50px] font-bold text-[#EDE574]">{personsMentored}+</h3>
-                    <p>Persons Mentored</p>
+                    <p>Years of industry experience</p>
                   </div>
                   <div className="text-center">
                     <h3 className="text-[40px] lg:text-[50px] font-bold text-[#EDE574]">{workshopsAttended}+</h3>
-                    <p>Workshops Attended</p>
+                    <p>Professionals trained </p>
                   </div>
                   <div className="text-center">
                     <h3 className="text-[40px] lg:text-[50px] font-bold text-[#EDE574]">{coachingCertificates}</h3>
-                    <p>Coaching Certificates</p>
+                    <p> Positive feedback</p>
                   </div>
                 </div>
               </div>

@@ -290,19 +290,28 @@ const StaperForm: React.FC = () => {
               className="max-w-5xl m-auto bg-[#FFFFFF] text-center text-black p-4 rounded-[20px]"
               style={{ boxShadow: "10px 15px 0px 3px #EDE574" }}
             >
-              <span className="text-[16px]">
-                Please Note: Our current turnaround time for regular service is
-                4-8 weeks. Expedited service is 1-9 days. It is the customer’s
-                responsibility to reach out for a quote ahead of time, if one is
-                needed.
-              </span>
+             <span className="text-[16px]">
+  <strong className="blink">Please Note:</strong> Our standard turnaround time for mail-in phone repair is 1-2 weeks, with expedited service available in 1-9 days. Customers needing a quote should contact us in advance.
+</span>
+
+<style jsx>{`
+  .blink {
+    animation: blink-animation 1s step-start 0s infinite;
+  }
+
+  @keyframes blink-animation {
+    50% {
+      visibility: hidden;
+    }
+  }
+`}</style>
             </div>
           </div>
           <div className="py-3 xl:py-6 2xl:py-6">
             <MainHeading Heading="LabX Mail-In Repair Submission Form" />
           </div>
 
-          <div className="max-w-5xl mx-auto p-4 ">
+          <div className="max-w-5xl mx-auto p-0 lg-p-4 ">
             <div className="grid grid-cols-4 mb-8  relative gaurav-line">
               {[
                 "Personal Details",
@@ -312,7 +321,7 @@ const StaperForm: React.FC = () => {
               ].map((step, index) => (
                 <div key={index} className="flex items-center flex-col  relative z-10">
                   <div
-                    className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px] bg-black  ${
+                    className={`w-[2rem] h-[2rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px] bg-black  ${
                       activeStep === index
                         ? "bg-yellow-500"
                         : activeStep > index

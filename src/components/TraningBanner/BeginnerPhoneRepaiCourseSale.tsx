@@ -21,12 +21,12 @@ function BeginnerPhoneRepairCourseSale() {
 
   // Function to calculate time left until sale ends
   useEffect(() => {
-    const saleEndDate:any = new Date();
+    const saleEndDate: any = new Date();
     saleEndDate.setDate(saleEndDate.getDate() + 29); // Change this as needed
 
     const updateCountdown = () => {
-      const now:any = new Date();
-      const difference = saleEndDate  - now;
+      const now: any = new Date();
+      const difference = saleEndDate - now;
 
       if (difference > 0) {
         setTimeLeft({
@@ -44,7 +44,7 @@ function BeginnerPhoneRepairCourseSale() {
 
   // Effect for counting up to the target numbers
   useEffect(() => {
-    const incrementCounters = (target:any, setCounter:any) => {
+    const incrementCounters = (target: any, setCounter: any) => {
       let current = 0;
       const interval = setInterval(() => {
         current += 1;
@@ -67,63 +67,50 @@ function BeginnerPhoneRepairCourseSale() {
           {/* Course Details */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
             <div className="p-3 lg:p-6 bg-black text-white rounded-md">
-              <h2 className="text-3xl font-bold mb-4">Beginner Phone Repair Course</h2>
-
+              <h2 className="text-3xl font-bold mb-4">
+              Master Motherboard  Repairs with Confidence
+              </h2>
               <ul className="space-y-2 pb-5">
-                <li>
-                  Our Level 3 Master Course is designed for experienced technicians seeking to master the most advanced techniques in mobile motherboard repair. This intensive program covers complex repairs and data recovery, ensuring you can handle the most challenging issues in modern devices.
-                </li>
-                <li>
-                  Our Level 3 Master Course is designed for experienced technicians seeking to master the most advanced techniques in mobile motherboard repair.
-                </li>
+              <p>
+                
+                {`By the end of this mainboard repair training, you'll gain the confidence and skills to tackle a variety of motherboard-level repairs with precision. From advanced diagnostics to micro soldering, you’ll be equipped to handle intricate challenges, ensuring high-quality results and readiness to work on a wide range of devices professionally.`}
+              </p>
               </ul>
 
               {/* Countdown Timer */}
               <div className=" flex justify-between w-full gap-2">
-             
                 <div className="flex justify-between items-center  border-[2px] border-[#EDE574] text-black p-4 rounded-md w-full">
-                <div className="text-center">
-                  <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-[#EDE574]">{timeLeft.days}</h3>
-                  <p className="m-0">Days</p>
-                </div>
-                <div className="text-center">
-                  <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-[#EDE574]">{timeLeft.hours}</h3>
-                  <p className="m-0"> Hours</p>
-                </div>
-                <div className="text-center">
-                  <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-[#EDE574]">{timeLeft.minutes}</h3>
-                  <p className="m-0">Minutes</p>
-                </div>
-                <div className="text-center">
-                  <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-[#EDE574]">{timeLeft.seconds}</h3>
-                  <p className="m-0">Seconds</p>
-                </div>
+                  <div className="text-center">
+                    <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-[#EDE574]">
+                      {timeLeft.days}
+                    </h3>
+                    <p className="m-0">Days</p>
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-[#EDE574]">
+                      {timeLeft.hours}
+                    </h3>
+                    <p className="m-0"> Hours</p>
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-[#EDE574]">
+                      {timeLeft.minutes}
+                    </h3>
+                    <p className="m-0">Minutes</p>
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-[#EDE574]">
+                      {timeLeft.seconds}
+                    </h3>
+                    <p className="m-0">Seconds</p>
+                  </div>
                 </div>
 
-            
-                <div className="text-center bg-yellow-400 p-2 rounded w-fit text-[40px]  ">
+                <div className="text-center bg-yellow-400 p-2 rounded w-fit text-[40px]  flex flex-col items-center justify-center ">
                   <h3 className="lg:text-[50px] font-bold text-black">40%</h3>
                   <p className="m-0 text-[black]">SALE</p>
                 </div>
-              
               </div>
-           
-
-              {/* Dynamic Counter Section */}
-              {/* <div className="flex gap-6 mt-4">
-                <div className="text-center">
-                  <h3 className="text-[40px] lg:text-[50px] font-bold text-[#EDE574]">{personsMentored}+</h3>
-                  <p>Persons Mentored</p>
-                </div>
-                <div className="text-center">
-                  <h3 className="text-[40px] lg:text-[50px] font-bold text-[#EDE574]">{workshopsAttended}+</h3>
-                  <p>Workshops Attended</p>
-                </div>
-                <div className="text-center">
-                  <h3 className="text-[40px] lg:text-[50px] font-bold text-[#EDE574]">{coachingCertificates}</h3>
-                  <p>Coaching Certificates</p>
-                </div>
-              </div> */}
             </div>
 
             <div className="relative w-full h-[300px] md:h-[550px]">
@@ -131,7 +118,7 @@ function BeginnerPhoneRepairCourseSale() {
                 className="object-cover rounded-[30px]"
                 src={CourseInstructors}
                 alt="Course Image"
-                fill // Ensures the image fills its parent container responsively
+                fill
               />
             </div>
           </div>
