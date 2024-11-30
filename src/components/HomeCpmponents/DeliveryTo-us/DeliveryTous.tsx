@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import screenreplace from "../../../../public/Images/Home/hammer.svg";
-import traning from "../../../../public/Images/Home/Training.svg";
-import MailinRepair from "../../../../public/Images/Home/Mail in Repair.svg";
+import screenreplace from "../../../../public/Images/Home/screen.svg";
+import traning from "../../../../public/Images/Home/phone.svg";
+import MailinRepair from "../../../../public/Images/Home/mail.svg";
 import repairsoloutaion from "../../../../public/Images/Home/repairsoloutaion.svg";
 import B2BRepair from "../../../../public/Images/Home/B2B Repair.svg";
-import datarecovery from "../../../../public/Images/Home/datarecovery.svg";
+import datarecovery from "../../../../public/Images/Home/data.svg";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import MainTitle from "@/components/MainTitle/MainTitle";
 import "./DeliveryTo.css";
@@ -103,7 +103,7 @@ const VerticalTabs: React.FC = () => {
       contentf6:
         "Upon receipt, we’ll confirm via email and place your device in the repair queue, notifying you of any updates during the process.",
       button: "READ MORE",
-      link: "/coming-soon",
+      link: "/mail-in-repair",
       image: MailinRepair,
     },
     {
@@ -126,7 +126,7 @@ const VerticalTabs: React.FC = () => {
       contentf6:
         "Setting up a B2B account is straightforward. Complete the Apply for Business Account form on our website, and your account will be activated within moments, providing you with fast turnaround time for exclusive B2B phone repair services.",
       button: "READ MORE",
-      link: "/coming-soon",
+      link: "/b2b-repair-services",
       image: repairsoloutaion,
     },
     {

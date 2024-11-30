@@ -2,9 +2,10 @@
 import { Metadata } from "next";
 import React from "react";
 import BlogSidebar from "../../../components/BlogSidebar/BlogSidebar";
+import FixLabx from "../../../components/HomeCpmponents/FixLabx/FixLabx";
 import Image from "next/image";
 import "./BlogDetails.css";
-
+import Banner from '../../../../public/Images/blog/banner.svg'
 interface BlogData {
   _id: string;
   heading: string;
@@ -68,6 +69,12 @@ export default async function BlogDetails({
 
     return (
       <div className="blog-details-os">
+        <div className="container">
+         <div className="main__section text-center">
+            <h1>Our Blogs</h1>
+            <p>This course is designed and based on the highest industry standards and over 14 years of industry experience.  It includes everything that anyone needs to be one of the best technicians or a successful business owner.</p>
+          </div>
+          </div>
         <div className="container mx-auto my-10 p-6 bg-black shadow-lg rounded-lg flex flex-col lg:flex-row">
           {/* Main Blog Content */}
           <div className="w-full lg:w-3/4 pr-6 mb-6 lg:mb-0">
@@ -96,7 +103,7 @@ export default async function BlogDetails({
               "No Image"
             )}
 
-            <h2 className="text-3xl font-bold my-[10px]">{blog.heading}</h2>
+            <h2 className="text-3xl font-bold my-[10px] mt-5">{blog.heading}</h2>
 
             <div className="mb-4">
               <div
@@ -111,6 +118,8 @@ export default async function BlogDetails({
             <BlogSidebar />
           </div>
         </div>
+            <FixLabx />
+        {/* <img src={Banner.src} className="banner_img" /> */}
       </div>
     );
   } catch (error) {
