@@ -95,9 +95,9 @@ export default function BlogSidebar() {
               <h4 className="text-sm font-medium text-white">
                 {blog.heading}
               </h4>
-              <p className="text-xs text-white">
+              {/* <p className="text-xs text-white">
                 {new Date(blog.createdAt).toLocaleDateString()}
-              </p>
+              </p> */}
             </div>
           </li>
         ))}
@@ -113,7 +113,7 @@ export default function BlogSidebar() {
        >
          {index + 1}
        </button>
-       
+
         ))}
       </div>
     </div>
