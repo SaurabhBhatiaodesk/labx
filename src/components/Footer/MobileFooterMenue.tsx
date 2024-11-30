@@ -32,9 +32,15 @@ const MobileFooterMenue = () => {
           }`}
         >
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
+           <Link href="/mail-in-repair">
             <li className="mb-2">Mail-In-Repair</li>
+            </Link>
+            <Link href="/training">
             <li className="mb-2">Training</li>
+            </Link>
+            <Link href="/b2b-repair-services">
             <li className="mb-2">B2B Repair</li>
+            </Link>
             <li className="mb-2">Screen Refurbishment</li>
             <li className="mb-2">Data Recovery</li>
             <li className="mb-2">Parts Store</li>
