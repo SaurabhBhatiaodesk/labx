@@ -4,6 +4,8 @@ import Image from "next/image";
 import CourseInstructors from "../../../public/Images/CourseInstructors.png";
 import coursereating from "../../../public/Images/icons/coursereating.svg";
 import clock from "../../../public/Images/icons/clock.svg";
+import Textarea from "@mui/joy/Textarea";
+import { TextField } from "@mui/material";
 
 function TraningCourseInstructors() {
   // State for counters

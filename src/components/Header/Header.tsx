@@ -33,7 +33,7 @@ export default function App() {
       subItems: [
         { label: "Mail-In-Repair", path: "/mail-in-repair" },
         { label: "Training", path: "/training" },
-        { label: "B2B Repair", path: "/coming-soon" },
+        { label: "B2B Repair", path: "b2b-repair-services" },
         { label: "Screen Refurbishment", path: "/coming-soon" },
         { label: "Data Recovery", path: "/coming-soon" },
         { label: "Parts Store", path: "/coming-soon" },

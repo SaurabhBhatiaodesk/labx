@@ -12,7 +12,7 @@ import secondmail from "../../../public/Images/second mail.png";
 import StaperForm3 from "../../../public/Images/StaperForm3.png";
 import StaperForm4 from "../../../public/Images/StaperForm4.png";
 import Textarea from "@mui/joy/Textarea";
-
+import { TextField } from "@mui/material";
 import Image from "next/image";
 import { Select, SelectItem } from "@nextui-org/react";
 import "./mail-in-repair.css";
@@ -20,7 +20,9 @@ import { Checkbox } from "@nextui-org/react";
 import Link from "next/link";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { TextField } from "@mui/material";
+
+import { IoIosArrowRoundForward } from "react-icons/io";
+
 type Errors = {
   businessName?: string;
   fullName?: string;
@@ -300,22 +302,22 @@ const StaperForm: React.FC = () => {
             <MainHeading Heading="LabX Mail-In Repair Submission Form" />
           </div>
 
-          <div className="max-w-5xl mx-auto p-4">
-            <div className="grid grid-cols-4 mb-8">
+          <div className="max-w-5xl mx-auto p-4 ">
+            <div className="grid grid-cols-4 mb-8  relative gaurav-line">
               {[
                 "Personal Details",
                 "Repair Details",
                 "Shipping Details",
                 "Terms & Pricing Agreement",
               ].map((step, index) => (
-                <div key={index} className="flex items-center flex-col">
+                <div key={index} className="flex items-center flex-col  relative z-10">
                   <div
-                    className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px]  ${
+                    className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px] bg-black  ${
                       activeStep === index
                         ? "bg-yellow-500"
                         : activeStep > index
-                        ? ""
-                        : ""
+                        ? "bg-black" 
+                        : " relative z-10"
                     }`}
                   >
                     {activeStep > index ? (
@@ -474,7 +476,7 @@ const StaperForm: React.FC = () => {
 
                         {/* Device Details Section */}
                         <div>
-                          <h4 className="lg:text-lg text-sm pb-[4px]">
+                          <h4 className="lg:text-lg text-sm pb-[10px]">
                             Device Details
                           </h4>
                           <div className="grid grid-cols-2 gap-4 form-label">
@@ -565,12 +567,14 @@ const StaperForm: React.FC = () => {
                             </button>
                           )}
                           {activeStep < 3 ? (
-                            <button
-                              onClick={handleNextStep}
-                              className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
-                            >
-                              Next
-                            </button>
+                           <button
+                           onClick={handleNextStep}
+                           className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4] flex items-center gap-2"
+                         >
+                           Next
+                           <IoIosArrowRoundForward />
+                         </button>
+                         
                           ) : (
                             <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
                               <IoCheckmarkDoneOutline className="mr-2" />
@@ -601,7 +605,7 @@ const StaperForm: React.FC = () => {
                     <div className="p-4">
                       <div className="flex flex-col gap-4 bg-black text-white">
                         {/* Description of Issue */}
-                        <div className="steper-textarea-os">
+                        <div className="steper-textarea-os ">
                           <Textarea
                             placeholder="Enter your message here"
                             minRows={5}
@@ -613,6 +617,7 @@ const StaperForm: React.FC = () => {
                               })
                             }
                             required
+                            style={{ fontStyle: 'italic' }}
                           />
                           {errors.issueDescription && (
                             <p className="text-[red] text-sm mb-0">
@@ -730,6 +735,7 @@ const StaperForm: React.FC = () => {
                                 additionalComments: e.target.value,
                               })
                             }
+                            style={{ fontStyle: 'italic' }}
                           />
                         </div>
                       </div>
@@ -744,12 +750,14 @@ const StaperForm: React.FC = () => {
                             </button>
                           )}
                           {activeStep < 3 ? (
-                            <button
-                              onClick={handleNextStep}
-                              className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
-                            >
-                              Next
-                            </button>
+                           <button
+                           onClick={handleNextStep}
+                           className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4] flex items-center gap-2"
+                         >
+                           Next
+                           <IoIosArrowRoundForward />
+                         </button>
+                         
                           ) : (
                             <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
                               <IoCheckmarkDoneOutline className="mr-2" />
@@ -779,7 +787,7 @@ const StaperForm: React.FC = () => {
                   <div className="p-4">
                     <div className="flex flex-col gap-4 bg-black text-white">
                       {/* Require Return Label */}
-                      <div className="steper-textarea-os">
+                      <div className="steper-textarea-os space-y-4">
                         <p className="text-base leading-5 mb-2">
                           Do you require a return label?
                         </p>
@@ -805,6 +813,7 @@ const StaperForm: React.FC = () => {
                         {shippingDetails.requireReturnLabel === "Yes" && (
                           <>
                             <Textarea
+                            className="italic-placeholder"
                               placeholder="Please provide details for the return label"
                               minRows={5}
                               value={shippingDetails.returnLabelDetails}
@@ -815,6 +824,7 @@ const StaperForm: React.FC = () => {
                                 })
                               }
                               required
+                              style={{ fontStyle: 'italic' }}
                             />
                             {/* Validation Error */}
                             {errors.requireReturnLabel && (
@@ -827,7 +837,7 @@ const StaperForm: React.FC = () => {
                       </div>
 
                       {/* Require Pickup Label */}
-                      <div className="steper-textarea-os">
+                      <div className="steper-textarea-os space-y-4">
                         <p className="text-base leading-5 mb-2">
                           Do you require a pickup label from LabX?
                         </p>
@@ -853,6 +863,7 @@ const StaperForm: React.FC = () => {
                         {shippingDetails.requirePickupLabel === "Yes" && (
                           <>
                             <Textarea
+                            className="italic-placeholder"
                               minRows={5}
                               placeholder="Please provide details for the pickup label"
                               value={shippingDetails.pickupLabelDetails || ""}
@@ -862,6 +873,7 @@ const StaperForm: React.FC = () => {
                                   pickupLabelDetails: e.target.value,
                                 })
                               }
+                              style={{ fontStyle: 'italic' }}
                               required
                             />
                             {/* Validation Error */}
@@ -919,7 +931,7 @@ const StaperForm: React.FC = () => {
                             Draw Your Signature *
                           </span>
                           <button
-                            className="text-md italic"
+                            className="text-lg italic border-b-[1px] border-[--F1-btn-color]"
                             onClick={clearSignature}
                           >
                             clear
@@ -952,12 +964,14 @@ const StaperForm: React.FC = () => {
                           </button>
                         )}
                         {activeStep < 3 ? (
-                          <button
-                            className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"
-                            onClick={handleNextStep}
-                          >
-                            Next
-                          </button>
+                        <button
+                        onClick={handleNextStep}
+                        className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4] flex items-center gap-2"
+                      >
+                        Next
+                        <IoIosArrowRoundForward />
+                      </button>
+                      
                         ) : (
                           <button
                             className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]"

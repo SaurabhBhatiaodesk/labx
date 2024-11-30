@@ -22,9 +22,9 @@
     width: 20px;
     height: 12px;
     border-radius: 5px !important;
-    background-color: #ffffff; /* Change color to your preference */
-    border-radius: 0; /* This makes the bullets square */
-    margin: 0 4px; /* Adjust spacing between bullets */
+    background-color: #ffffff; 
+    border-radius: 0; 
+    margin: 0 4px;
   }
   
   .mySwipergk .swiper-pagination-bullet-active {

@@ -7,17 +7,17 @@ import clockbig from  "../../../public/Images/icons/clockbig.svg"
 
 interface TraningWillLearn {
   title: string;
+  paramtitle1?:string
+  paramtitle2?:string
+  paramtitle3?:string
   param1: string;
   param2:string;
   param3:string;
-  // backgroundImage: string;
-  // AdminImage: string;
-  // link: any; 
-  // courseName:string;
-  // courseRating:any;
-  // courseHour:any;
-  // Duration:any;
-  // Price:any;
+  Course:string;
+  Courseformate1:string;
+  Courseformate2:string;
+  Courseformate3:string;
+  Courseformate4:string;
 }
 
 function TraningWillLearn({
@@ -25,14 +25,14 @@ function TraningWillLearn({
   param1,
   param2,
   param3,
-  // backgroundImage,
-  // AdminImage,
-  // link, 
-  // courseName,
-  // courseRating,
-  // courseHour,
-  // Duration,
-  // Price,
+  paramtitle1,
+  paramtitle2,
+  paramtitle3,
+  Course,
+  Courseformate1,
+  Courseformate2,
+  Courseformate3,
+  Courseformate4,
 
 }: TraningWillLearn) {
   return (
@@ -44,20 +44,23 @@ function TraningWillLearn({
             <div>
               <div className="flex gap-2 items-start">
                 <Image src={checkmark} alt="" />
+               
                 <p>
-                  {param1}
+                  <strong className="text-[22px]">{paramtitle1} </strong> {param1}
+
+                  
                 </p>
               </div>
               <div className="flex gap-2 items-start">
                 <Image src={checkmark} alt="" />
                 <p>
-                 {param2}
+                <strong className="text-[22px]">{paramtitle2} </strong>  {param2}
                 </p>
               </div>
               <div className="flex gap-2 items-start">
                 <Image src={checkmark} alt="" />
                 <p>
-                {param3}
+                <strong className="text-[22px]">{paramtitle3} </strong>  {param3}
                 </p>
               </div>
             </div>
@@ -65,24 +68,24 @@ function TraningWillLearn({
           <div className="grid md:grid-cols-2 gap-3 items-center">
             <div className="p-3 border-[1px] border-[#8c8c8c96] rounded-[15px] items-center">
               <Image src={moniter} alt="" />
-              <h3 className="mb-1">Course Format</h3>
+              <h3 className="mb-1"> {Course}</h3>
               <ul className="space-y-3">
                 <div className="flex gap-1">
                 <Image src={arrowright} alt=""/>
-                <li className="text-sm lg:text-base ">Video Tutorials</li>
+                <li className="text-sm lg:text-base ">{Courseformate1}</li>
                 </div>
 
                 <div className="flex gap-1">
                 <Image src={arrowright} alt=""/>
-                <li className="text-sm lg:text-base ">Checking the Task</li>
+                <li className="text-sm lg:text-base "> {Courseformate2}</li>
                 </div>
                 <div className="flex gap-1">
                 <Image src={arrowright} alt=""/>
-                <li className="text-sm lg:text-base ">Pulvinar sapien </li>
+                <li className="text-sm lg:text-base "> {Courseformate3}</li>
                 </div>
                 <div className="flex gap-1">
                 <Image src={arrowright} alt=""/>
-                <li className="text-sm lg:text-base ">Software</li>
+                <li className="text-sm lg:text-base ">{Courseformate4}</li>
                 </div>
               </ul>
             </div>

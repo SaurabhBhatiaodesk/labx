@@ -307,7 +307,9 @@ body {
   color: var( --white);
   scroll-behavior: smooth; /* Smooth scrolling */
 }
-
+.italic-placeholder::placeholder {
+  font-style: italic !important;
+}
 .error-message {
   padding: 0;
   color: #EDE574;
@@ -370,9 +372,9 @@ label {
 
 .btn {
   background: var( --F1-btn-color);
-  padding: 10px 10px !important;
+  padding: 10px 15px !important;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 20px;
   color: var(--black);
   position: relative;
@@ -381,23 +383,10 @@ label {
   z-index: 1;
   border-radius: 150px;
   letter-spacing: 2px;
-  font-family: var( --Space_Grotesk); 
+  /* font-family: var( --Space_Grotesk);  */
+
 }
-.btn1 {
-  background: var( --F1-btn-color);
-  padding: 10px 10px !important;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
-  color: var(--black);
-  position: relative;
-  overflow: hidden;
-  text-transform: uppercase;
-  z-index: 1;
-  border-radius: 150px;
-  letter-spacing: 2px;
-  font-family: var( --Space_Grotesk); 
-}
+
 
 
 [aria-selected="1"] {
@@ -427,12 +416,12 @@ label {
   border-bottom: unset;
 }
 
-.background-banner {
+/* .background-banner {
   background-image: url('../../public/Images//Home/back-banner.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
+} */
 
 @media only screen and (max-width: 640px) {
   p {

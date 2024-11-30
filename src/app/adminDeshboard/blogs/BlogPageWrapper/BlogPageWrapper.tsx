@@ -136,6 +136,8 @@ const BlogPageWrapper: React.FC = () => {
 
     try {
       const formData = new FormData();
+
+      // Append basic blog data
       formData.append("heading", blogData.heading);
       formData.append("content", blogData.content);
       formData.append("pageTitle", blogData.pageTitle);
@@ -143,19 +145,17 @@ const BlogPageWrapper: React.FC = () => {
       formData.append("metaDescription", blogData.metaDescription);
       formData.append("status", String(blogData.status));
 
-      // Append all the image files to the formData
+      // Append image files if they exist
       blogData.featuredImages.forEach((file) => {
-        console.log('filefileee',file)
-        formData.append("image", file); // Each file will be sent with the key "image"
+        formData.append("image", file); // The key "image" will be used for each file
       });
-
-
 
       const url = isEditMode
         ? `https://labxbackend.labxrepair.com.au/api/admin/blog/${blogId}`
         : "https://labxbackend.labxrepair.com.au/api/admin/blog";
       const method = isEditMode ? "PUT" : "POST";
 
+      // Send the request with FormData
       const response = await fetch(url, {
         method,
         body: formData,
@@ -167,6 +167,8 @@ const BlogPageWrapper: React.FC = () => {
             ? "Blog updated successfully!"
             : "Blog created successfully!"
         );
+
+        // Reset form data after successful submission
         setBlogData({
           heading: "",
           content: "",
@@ -176,16 +178,19 @@ const BlogPageWrapper: React.FC = () => {
           status: true,
           featuredImages: [],
         });
+
+        // Redirect to the blog listing page
         router.push("/adminDeshboard/bloglisting");
       } else {
         const error = await response.json();
-        alert(`Error: ${error.error}`);
+        alert(`Error: ${error.error || "Something went wrong"}`);
       }
     } catch (error) {
       console.error("Request failed", error);
       alert("Request failed");
     }
   };
+
 console.log('blogDataaaa',blogData)
   return (
     <div

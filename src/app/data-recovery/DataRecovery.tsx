@@ -1,4 +1,5 @@
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb'
+import MainHeading from '@/components/ManinHeading/MainHeading'
 import React from 'react'
 
 const DataRecovery = () => {
@@ -16,6 +17,12 @@ const DataRecovery = () => {
              link="/coming-soon"
           />
         </div>
+
+        <section>
+          <div className=' py-4 xl:py-6'>
+          <MainHeading Heading='Your Data. What Happened Is Terrible, We Can Help!'/>
+          </div>
+        </section>
 
 
    </>

@@ -63,12 +63,18 @@ const BeginnerCourse = () => {
 
       <TraningWillLearn
         title="What You will Learn"
+        Course="Course Format"
         param1="Learn the fundamentals of mobile phone repair in our comprehensive beginner course, designed to give you hands-on experience with a wide range of repairs. Our expert trainers will guide you through each step, ensuring you gain practical knowledge and confidence in repairing various devices.
 "
         param2="Learn the fundamentals of mobile phone repair in our comprehensive beginner course, designed to give you hands-on experience with a wide range of repairs. Our expert trainers will guide you through each step, ensuring you gain practical knowledge and confidence in repairing various devices.
 "
         param3="Learn the fundamentals of mobile phone repair in our comprehensive beginner course, designed to give you hands-on experience with a wide range of repairs. Our expert trainers will guide you through each step, ensuring you gain practical knowledge and confidence in repairing various devices.
 "
+
+Courseformate1="Video Tutorials"
+Courseformate2="Checking the Task"
+Courseformate3="Pulvinar sapien"
+Courseformate4="Software"
 
       />
       <TraningTabBigner/>

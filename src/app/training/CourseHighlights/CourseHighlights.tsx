@@ -62,7 +62,7 @@ const CourseHighlights = () => {
                   </li>
                 </ul>
                 <div>
-                  <MainButton MainButton="Learn More" />
+                  <MainButton MainButton="Learn More" link="/beginner-phone-repair-course" />
                 </div>
                 <div className="my-4">
                   <div className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px]">
@@ -113,7 +113,7 @@ const CourseHighlights = () => {
                   </li>
                 </ul>
                 <div>
-                  <MainButton MainButton="Learn More" />
+                  <MainButton MainButton="Learn More"  link="/expert-motherboard-repair"/>
                 </div>
                 <div className="my-4">
                   <div className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px] text-base font-poppins">

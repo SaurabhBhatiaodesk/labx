@@ -37,16 +37,16 @@
   }
   
   button.active-tab[data-selected="3"] {
-    background: linear-gradient(74deg, #cf2362a7, #000000);
+    background: linear-gradient(74deg, #A044FF, #000000);
   }
   
   button.active-tab[data-selected="4"] {
     background: linear-gradient(74deg, #2052e8a5, #000000);
   }
   
-  button.active-tab[data-selected="5"] {
+  /* button.active-tab[data-selected="5"] {
     background: linear-gradient(74deg, #56c1c1, #000000);
-  }
+  } */
   
 
 

@@ -321,6 +321,7 @@ import "aos/dist/aos.css";
 import "./RecentNews.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import MainHeading from "../ManinHeading/MainHeading";
 
 interface BlogData {
   _id: string;
@@ -377,8 +378,9 @@ const RecentNews: React.FC = () => {
   return (
     <div className="RecentNews-os">
       <div className="container">
-        <div className="py-5 xl:py-10" data-aos="fade-up">
-          <h2 className="text-3xl font-bold text-center">Recent News</h2>
+        <div className="py-5 xl:py-8" data-aos="fade-up">
+        
+        <MainHeading Heading="Recent News"/>
           <p className="text-center text-lg mt-2 mb-6">
             Explore our latest blogs for insights, news, and expert tips on
             mobile phone repair and technology. Stay updated with LabX’s tech
@@ -501,12 +503,12 @@ const RecentNews: React.FC = () => {
 
           {blogs && blogs.length > 0 ? (
             <div className="flex justify-center text-center">
-              <Link
+              {/* <Link
                 href="/"
                 className="capitalize text-[16px] tracking-[1px] px-4 py-2 bg-blue-500 text-white rounded-md"
               >
                 View All
-              </Link>
+              </Link> */}
             </div>
           ) : (
             ""
