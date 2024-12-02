@@ -112,7 +112,7 @@
 
 //     try {
 //       const response = await axios.post(
-//         "http://localhost:7000/api/create/training",
+//         "https://labxbackend.labxrepair.com.au/api/create/training",
 //         requestData
 //       );
 //       console.log(await response.data, "xxxxxxxxxxx");
@@ -422,7 +422,7 @@ const FormCode: React.FC = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:7000/api/create/training",
+        "https://labxbackend.labxrepair.com.au/api/create/training",
         requestData
       );
       console.log(await response.data, "Form submitted successfully");
