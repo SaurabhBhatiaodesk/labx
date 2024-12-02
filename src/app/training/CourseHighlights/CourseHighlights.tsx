@@ -247,7 +247,7 @@ const CourseHighlights = () => {
                   <strong className="text-yellow-400">
                     Advanced Data Recovery:
                   </strong>
-                  <p>{`Learn specialized techniques for recovering data from severely damaged or non-functional devices, including water-damaged phones and corrupted storage chips. This module will provide you with expertise in extracting critical data in difficult recovery cases.`}</p>
+                  &nbsp;Learn specialized techniques for recovering data from severely damaged or non-functional devices, including water-damaged phones and corrupted storage chips. This module will provide you with expertise in extracting critical data in difficult recovery cases.
                 </ul>
                 <div>
                   <MainButton
@@ -296,18 +296,14 @@ const CourseHighlights = () => {
                   <strong className="text-yellow-400">
                     Screen Disassembly and Inspection:
                   </strong>
-                  <p>{`Learn how to safely disassemble mobile devices and inspect LCD and OLED screens for damage, determining whether a screen is suitable for refurbishing or replacement.`}</p>
+                &nbsp;Learn how to safely disassemble mobile devices and inspect LCD and OLED screens for damage, determining whether a screen is suitable for refurbishing or replacement.
                 </ul>
                 <div>
                   <MainButton MainButton="Learn More" />
                 </div>
                 <div className="my-4">
                   <div className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px] text-base font-poppins">
-                    You&apos;ll have the opportunity to watch live
-                    demonstrations of each repair, followed by hands-on practice
-                    under our supervision. By the end of the course, you&apos;ll
-                    have the skills and confidence to perform a wide range of
-                    repairs on most modern devices.
+                  This course provides a complete understanding of the professional screen refurbishing process, enabling you to offer high-quality refurbishing services for both LCD and OLED screens on iPhones, Samsung devices, and other popular smartphones. 
                   </div>
                 </div>
               </div>
