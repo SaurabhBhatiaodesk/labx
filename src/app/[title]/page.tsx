@@ -3,7 +3,7 @@ import { Typography, Box, Grid, Card, CardMedia, CardContent } from '@mui/materi
 
 // Function to fetch data from the server
 async function fetchPageData(title: string) {
-  const res = await fetch(`https://labxbackend.labxrepair.com.au/api/admin/title/${encodeURIComponent(title)}`, {
+  const res = await fetch(`http://localhost:7000/api/admin/title/${encodeURIComponent(title)}`, {
     cache: 'no-store',
   });
 

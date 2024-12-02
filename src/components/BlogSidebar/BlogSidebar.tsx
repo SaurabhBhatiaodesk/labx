@@ -67,18 +67,10 @@ export default function BlogSidebar() {
       <div className="social_section">
         <h4>Share</h4>
         <div className="social__icon">
-          <a>
-            <Image alt="" src={Facebook.src} />
-          </a>
-          <a>
-            <Image alt="" src={Telegram_logo.src} />
-          </a>
-          <a>
-            <Image alt="" src={Instagram.src} />
-          </a>
-          <a>
-            <Image alt="" src={Twitter.src} />
-          </a>
+          <a><Image alt='' src={Facebook.src} /></a>
+          <a><Image alt='' src={Telegram_logo.src} /></a>
+          <a><Image alt='' src={Instagram.src} /></a>
+          <a><Image alt='' src={Twitter.src} /></a>
         </div>
       </div>
       <div className="side_bg_img"></div>
