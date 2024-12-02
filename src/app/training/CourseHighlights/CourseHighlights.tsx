@@ -291,10 +291,10 @@ const CourseHighlights = () => {
                   reassembly, ensuring high-quality results for both{" "}
                   <strong>LCD</strong> and <strong>OLED</strong> screens.{" "}
                 </p>
-                <h3>{`What You’ll Learn:`}</h3>
+                <h3>{`What You’ll Learn`}</h3>
                 <ul className="space-y-2 pb-5">
                   <strong className="text-yellow-400">
-                    Screen Disassembly and Inspection
+                    Screen Disassembly and Inspection:
                   </strong>
                   <p>{`Learn how to safely disassemble mobile devices and inspect LCD and OLED screens for damage, determining whether a screen is suitable for refurbishing or replacement.`}</p>
                 </ul>
