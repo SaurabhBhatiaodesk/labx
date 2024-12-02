@@ -322,7 +322,7 @@ const StaperForm: React.FC = () => {
     console.log("payloadd", payload);
     try {
       const response = await axios.post(
-        "https://labxbackend.labxrepair.com.au/api/repair_info",
+        "http://localhost:7000/api/repair_info",
         payload,
         {
           headers: {
@@ -335,6 +335,8 @@ const StaperForm: React.FC = () => {
         const { orderReferenceId } = response.data.data; // Assuming the orderReferenceId is returned in the response data
 
       if (typeof window !== "undefined") {
+        localStorage.removeItem("formData");
+
         // Pass orderReferenceId as query parameter in the URL
         router.push(`/mail-in-repair/thank-you?id=${orderReferenceId}`);
       }
@@ -366,7 +368,6 @@ const StaperForm: React.FC = () => {
   useEffect(() => {
     // When 'requireReturnLabel' is set to 'No', clear returnLabelDetails
     if (shippingDetails.requireReturnLabel === "No") {
-      console.log("Running for requireReturnLabel === 'No'");
       setShippingDetails((prevState) => ({
         ...prevState,
         returnLabelDetails: "", // Clear returnLabelDetails when 'No' is selected
@@ -375,7 +376,6 @@ const StaperForm: React.FC = () => {
 
     // When 'requirePickupLabel' is set to 'No', clear pickupLabelDetails
     if (shippingDetails.requirePickupLabel === "No") {
-      console.log("Running for requirePickupLabel === 'No'");
       setShippingDetails((prevState) => ({
         ...prevState,
         pickupLabelDetails: "", // Clear pickupLabelDetails when 'No' is selected
@@ -407,28 +407,19 @@ const StaperForm: React.FC = () => {
               className="max-w-5xl m-auto bg-[#FFFFFF] text-center text-black p-4 rounded-[20px]"
               style={{ boxShadow: "10px 15px 0px 3px #EDE574" }}
             >
-             <span className="text-[16px]">
-  <strong className="blink">Please Note:</strong> Our standard turnaround time for mail-in phone repair is 1-2 weeks, with expedited service available in 1-9 days. Customers needing a quote should contact us in advance.
-</span>
-
-<style jsx>{`
-  .blink {
-    animation: blink-animation 1s step-start 0s infinite;
-  }
-
-  @keyframes blink-animation {
-    50% {
-      visibility: hidden;
-    }
-  }
-`}</style>
+              <span className="text-[16px]">
+                Please Note: Our current turnaround time for regular service is
+                4-8 weeks. Expedited service is 1-9 days. It is the customer’s
+                responsibility to reach out for a quote ahead of time, if one is
+                needed.
+              </span>
             </div>
           </div>
           <div className="py-3 xl:py-6 2xl:py-6">
             <MainHeading Heading="LabX Mail-In Repair Submission Form" />
           </div>
 
-          <div className="max-w-5xl mx-auto p-0 lg-p-4 ">
+          <div className="max-w-5xl mx-auto p-4 ">
             <div className="grid grid-cols-4 mb-8  relative gaurav-line">
               {[
                 "Personal Details",
@@ -441,7 +432,7 @@ const StaperForm: React.FC = () => {
                   className="flex items-center flex-col  relative z-10"
                 >
                   <div
-                    className={`w-[2rem] h-[2rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px] bg-black  ${
+                    className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px] bg-black  ${
                       activeStep === index
                         ? "bg-yellow-500"
                         : activeStep > index
@@ -759,9 +750,13 @@ const StaperForm: React.FC = () => {
                             Any Previous Repair Attempts?*
                           </p>
                           <Select
-                            defaultSelectedKeys={["No"]}
+                            defaultSelectedKeys={
+                              repairDetails.previousRepairAttempts != "Yes"
+                                ? ["No"]
+                                : ["Yes"]
+                            }
                             className="bg-black text-white gauav"
-                            value={repairDetails?.previousRepairAttempts}
+                            value={repairDetails?.previousRepairAttempts != "Yes" ? "No" : "Yes"}
                             onChange={(
                               e: React.ChangeEvent<HTMLSelectElement>
                             ) =>
@@ -818,9 +813,13 @@ const StaperForm: React.FC = () => {
                           </p>
                           <Select
                             className="bg-black text-white gauav"
-                            defaultSelectedKeys={["No"]}
+                            defaultSelectedKeys={
+                              repairDetails.jumpQueueForFasterService != "Yes"
+                                ? ["No"]
+                                : ["Yes"]
+                            }
                             value={
-                              repairDetails.jumpQueueForFasterService || "No"
+                              repairDetails.jumpQueueForFasterService != "Yes" ? "No" :"Yes"
                             }
                             onChange={(
                               e: React.ChangeEvent<HTMLSelectElement>
@@ -918,12 +917,12 @@ const StaperForm: React.FC = () => {
                         </p>
                         <Select
                           defaultSelectedKeys={
-                            shippingDetails.requireReturnLabel !== "Yes"
+                            shippingDetails.requirePickupLabel != "Yes"
                               ? ["No"]
                               : ["Yes"]
                           }
                           className="bg-black text-white gauav"
-                          value={shippingDetails.requirePickupLabel}
+                          value={shippingDetails.requirePickupLabel != 'Yes'? 'No' : 'Yes' }
                           onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                             setShippingDetails({
                               ...shippingDetails,
@@ -971,7 +970,7 @@ const StaperForm: React.FC = () => {
                         </p>
                         <Select
                           defaultSelectedKeys={
-                            shippingDetails.requireReturnLabel !== "Yes"
+                            shippingDetails.requireReturnLabel != "Yes"
                               ? ["No"]
                               : ["Yes"]
                           }
@@ -1007,7 +1006,7 @@ const StaperForm: React.FC = () => {
                               }
                               required
                             />
-                            {/* Validation Error */}
+
                             {errors.requireReturnLabel && (
                               <p className="text-red-500 text-sm mt-1">
                                 {errors.requireReturnLabel}
@@ -1189,6 +1188,11 @@ const StaperForm: React.FC = () => {
                       <input
                         type="checkbox"
                         className="check__boxs"
+                        checked={
+                          pricingAgreement == true
+                            ? true
+                            : false
+                        }
                         onChange={() => {
                           setPricingAgreement(!pricingAgreement);
                           setErrors((prevErrors) => ({

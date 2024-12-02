@@ -18,7 +18,6 @@ interface BlogData {
   createdAt: string;
   updatedAt: string;
 }
-
 // Fetch Blog Data by ID
 async function fetchBlogData(blogId: string): Promise<BlogData> {
   const res = await fetch(
