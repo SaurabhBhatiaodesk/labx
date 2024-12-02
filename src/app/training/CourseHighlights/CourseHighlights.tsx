@@ -35,14 +35,14 @@ const CourseHighlights = () => {
                     <strong className="text-yellow-400">
                       Introduction to Tools and Parts:
                     </strong>
-                    Tools and parts are essential for mobile repairs, ensuring
+                    &nbsp;Tools and parts are essential for mobile repairs, ensuring
                     precision, efficiency, and high-quality results.
                   </li>
                   <li>
                     <strong className="text-yellow-400">
-                      Screen Replacement Techniques
+                      Screen Replacement Techniques:
                     </strong>
-                    Screen replacement requires careful handling, precise
+                    &nbsp;Screen replacement requires careful handling, precise
                     alignment, and using quality parts for flawless display
                     functionality.
                   </li>
@@ -50,7 +50,7 @@ const CourseHighlights = () => {
                     <strong className="text-yellow-400">
                       Camera and Flashlight Replacements:
                     </strong>
-                    Replacing the camera and flashlight involves disassembling
+                    &nbsp;Replacing the camera and flashlight involves disassembling
                     components, securing new parts, and ensuring full
                     functionality.
                   </li>
@@ -106,21 +106,21 @@ const CourseHighlights = () => {
                     <strong className="text-yellow-400">
                       Component Familiarity:
                     </strong>
-                    Learn to work with essential components and advanced tools,
+                    &nbsp;Learn to work with essential components and advanced tools,
                     including reballing techniques.
                   </li>
                   <li>
                     <strong className="text-yellow-400">
                       Schematics and Diagnostics:
                     </strong>
-                    Understand how to read board schematics, trace faults, and
+                    &nbsp;Understand how to read board schematics, trace faults, and
                     diagnose common issues.
                   </li>
                   <li>
                     <strong className="text-yellow-400">
                       Repair Techniques:
                     </strong>
-                    Tackle problems like no image, no backlight, underfilled
+                    &nbsp;Tackle problems like no image, no backlight, underfilled
                     chips, and create jumpers for board repairs.
                   </li>
                 </ul>
@@ -161,34 +161,34 @@ const CourseHighlights = () => {
                     <strong className="text-yellow-400">
                       Face ID and Sensor Repairs:
                     </strong>
-                    Repair Face ID components, dot projectors, and infrared
+                    &nbsp;Repair Face ID components, dot projectors, and infrared
                     cameras.
                   </li>
                   <li>
                     <strong className="text-yellow-400">
                       Removing Part Warnings:
                     </strong>
-                    Learn how to remove non-genuine part warnings (battery,
+                    &nbsp;Learn how to remove non-genuine part warnings (battery,
                     screen, and camera).
                   </li>
                   <li>
                     <strong className="text-yellow-400">
                       Baseband and Chip Repairs:
                     </strong>
-                    {`Fix "no service" issues and work with large ICs and baseband
+                    {` Fix "no service" issues and work with large ICs and baseband
                     chips.`}
                   </li>
                   <li>
                     <strong className="text-yellow-400">
                       NAND Programming and iCloud Unlocking:
                     </strong>
-                    Master NAND reprogramming and unlock iCloud on iPads.
+                    &nbsp;Master NAND reprogramming and unlock iCloud on iPads.
                   </li>
                   <li>
                     <strong className="text-yellow-400">
                       Reballing and Dual-Board Repairs:
                     </strong>
-                    Handle complex reballing techniques and fix broken
+                    &nbsp;Handle complex reballing techniques and fix broken
                     connections on dual-layer boards.
                   </li>
                 </ul>
@@ -242,7 +242,7 @@ const CourseHighlights = () => {
                   ensuring you can handle the most challenging issues in modern
                   devices.
                 </p>
-                <h3>What You’ll Learn:</h3>
+                <h3>What You’ll Learn</h3>
                 <ul className="space-y-2 pb-5">
                   <strong className="text-yellow-400">
                     Advanced Data Recovery:
@@ -282,7 +282,7 @@ const CourseHighlights = () => {
                 <p className="text-base">
                   Our
                   <strong>
-                    Professional Phone Screen Refurbishing Course
+                  &nbsp;Professional Phone Screen Refurbishing Course
                   </strong>{" "}
                   is designed to teach technicians how to refurbish damaged or
                   broken phone screens using industry-standard tools and
