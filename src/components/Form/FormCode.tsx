@@ -538,6 +538,8 @@ const FormCode: React.FC = () => {
               color: "white",
               borderRadius: "8px",
               borderColor: "white",
+              fontSize: "17px",
+              textTransform: "capitalize",
             }}
           />
         </div>

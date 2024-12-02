@@ -6,7 +6,7 @@ import TraningCourseInstructors from "@/components/TraningBanner/TraningCourseIn
 import TraningTabBigner from "@/components/TraningBanner/TraningTabBigner";
 import TraningTabBignersecond from "@/components/TraningBanner/TraningTabBignersecond";
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
-import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
+import MasterReviews from "@/components/GoogleReviews/MasterReviews";
 import React from "react";
 import FristTraningTab from "../expert-motherboard-repair/FristTraningTab";
 import TrainingInstructors from "../expert-motherboard-repair/TrainingInstructors";
@@ -17,39 +17,39 @@ import ThreeTraningTab from "./ThreeTraningTab";
 const MasterMotherboardRepair = () => {
   const accordionData = [
     {
-      title: "Who is this course suitable for?",
+      title: "1. What will I learn in the Master Motherboard Repair course?",
       content:
-        "This course is ideal for technicians, hobbyists, and beginners aiming to master advanced motherboard repair and micro soldering techniques for professional electronic repairs.",
+        "You'll learn advanced micro soldering techniques, CPU reballing, board-level repairs, and how to troubleshoot and restore damaged mobile phone motherboards effectively.",
     },
     {
-      title: "What skills will I gain from this course?",
+      title: "2. Is prior experience required for this course?",
       content:
-        "You’ll learn diagnostics, micro soldering, reballing, NAND programming, Face ID repairs, and more, equipping you with essential skills for complex motherboard-level electronic repairs.",
+        "While prior experience in basic mobile phone repair is beneficial, the micro soldering course is designed for both beginners and those looking to upgrade their soldering skills.",
     },
     {
-      title: "Do I need prior experience in motherboard repairs?",
+      title: "3. What tools are needed for the course?",
       content:
-        "No prior experience is necessary. This motherboard repair course covers foundational concepts and advanced techniques, making it suitable for both beginners and experienced repair technicians.",
+        "You'll need a soldering iron, magnification tools, heat station, tweezers, and a multimeter. The course covers tool usage and setup in detail.",
     },
     {
-      title: "What tools are required for this course?",
+      title: "4. How long is the motherboard repair course?",
       content:
-        "You’ll need soldering stations, hot air rework tools, microscopes, and diagnostic equipment. A detailed list of tools will be provided upon enrollment..",
+        "The Master Motherboard Repair course lasts for five days. You'll get both theoretical knowledge and hands-on practical experience.",
     },
     {
-      title: "Is this course hands-on or theoretical?",
+      title: "5. Can I start my own repair business after completing the course?",
       content:
-        "The motherboard repair course emphasizes hands-on training, allowing you to practice repair techniques directly. Theoretical lessons complement practical sessions to build a strong technical foundation.",
+        "Yes, this course equips you with industry-standard skills that will prepare you to open a repair business or work as a professional technician.",
     },
     {
-      title: "Will I receive certification after completing the course?",
+      title: "6. Will I get certification after completing the course?",
       content:
-        "Yes, participants will receive a certification upon successful completion, validating their expertise in motherboard repairs and enhancing their professional credentials.",
+        "Yes, upon successful completion, you'll receive a certificate verifying your skills in micro soldering and motherboard repair, recognized in the mobile phone repair industry.",
     },
     {
-      title: "How long does the course take to complete?",
+      title: "7. Is this course suitable for data recovery specialists?",
       content:
-        "The course duration varies but typically spans several weeks, depending on the intensity of the program and your chosen schedule. Flexible options are available.",
+        "Absolutely! This motherboard repair course is ideal for data recovery specialists, as it includes techniques to restore devices with critical board damage and recover valuable data.",
     },
   ];
   const instructorData = {
@@ -76,7 +76,7 @@ const MasterMotherboardRepair = () => {
         backgroundImage="/Images/BannerImages/mailinrepair.png"
         AdminImage="/Images/adminimage.png"
         link="/coming-soon"
-        courseName="Beginner"
+        courseName="Master Motherboard"
         courseRating="4.7"
         courseHour="40 Hours"
         Duration=" 5 Days"
@@ -86,16 +86,16 @@ const MasterMotherboardRepair = () => {
       <TraningWillLearn
         title="Course Highlights"
         Course="Course Format"
-        paramtitle1=" Advanced Motherboard Repair Techniques :-"
+        paramtitle1="Advanced Data Recovery"
         param1=" Gain hands-on experience in diagnosing and fixing complex motherboard issues, including IC replacement and chip-level troubleshooting, guided by industry experts.
 
 
 "
-        paramtitle2="Mastering Soldering Skills :-"
+        paramtitle2="Mastering Soldering Skills"
         param2=" Learn precision soldering techniques for microcomponents, enabling you to handle delicate repairs with confidence, ensuring professional-grade results for every repair task.
 
 "
-        paramtitle3="Comprehensive Practical Training :-"
+        paramtitle3="Comprehensive Practical Training"
         param3="Work with real-world scenarios and modern tools to develop expertise in motherboard repair and soldering, preparing you for a successful career in mobile phone repair.
 
 "
@@ -130,7 +130,7 @@ const MasterMotherboardRepair = () => {
 "
         accordionData={accordionData}
       />
-      <GoogleReviews />
+      <MasterReviews />
     </>
   );
 };

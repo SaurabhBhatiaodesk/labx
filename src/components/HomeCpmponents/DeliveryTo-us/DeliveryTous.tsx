@@ -13,11 +13,11 @@ import "./DeliveryTo.css";
 import pointet from "../../../../public/Images/icons/pointingright.svg";
 import DeliveryTousMobile from "./DeliveryTousMobile";
 import Link from "next/link";
-import arrow1 from "../../../../public/Images/icons/arrow1.svg";
-import arrow2 from "../../../../public/Images/icons/arrow2.svg";
-import arrow3 from "../../../../public/Images/icons/arrow3.svg";
-import arrow4 from "../../../../public/Images/icons/arrow4.svg";
-import arrow5 from "../../../../public/Images/icons/arrow5.svg";
+import arrow1 from "../../../../public/Images/icons/arrow1-1.svg";
+import arrow2 from "../../../../public/Images/icons/arrow1-2.svg";
+import arrow3 from "../../../../public/Images/icons/arrow1-3.svg";
+import arrow4 from "../../../../public/Images/icons/arrow1-4.svg";
+import arrow5 from "../../../../public/Images/icons/arrow1-5.svg";
 
 interface Tab {
   id: number;
@@ -179,17 +179,17 @@ const VerticalTabs: React.FC = () => {
   const getTextColor = (id: number) => {
     switch (id) {
       case 0:
-        return "#43C6AC"; // Greenish
+        return "#56c1c1"; // Greenish
       case 1:
-        return "#FF9966"; // Orange
+        return "#f35520c0"; // Orange
       case 2:
-        return "#FFE000"; // Yellow
+        return "#d5fd33a1"; // Yellow
       case 3:
         return "#A044FF"; // Purple
       case 4:
-        return "#6DD5ED"; // Light Blue
+        return "#2052e8a5"; // Light Blue
       default:
-        return "#56c1c1"; // Default color if no match
+        return "#2052e8a5"; // Default color if no match
     }
   };
 

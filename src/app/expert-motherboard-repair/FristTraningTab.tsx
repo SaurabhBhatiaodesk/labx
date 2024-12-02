@@ -81,7 +81,7 @@ const FristTraningTab: React.FC = () => {
       content: "",
       contentf2title: "",
       contentf2:
-        "Learn to fix no service issues by repairing large ICs and baseband chips. Develop essential skills for handling intricate motherboard repairs and restoring connectivity in smartphones with persistent signal-related problems.",
+        "Learn to fix 'no service' issues by repairing large ICs and baseband chips. Develop essential skills for handling intricate motherboard repairs and restoring connectivity in smartphones with persistent signal-related problems.",
       contentf3title: "",
       contentf3:
         "",

@@ -89,7 +89,8 @@ function TraningWillLearn({
                 </div>
               </ul>
             </div>
-            <div className="p-3 border-[1px] border-[#8c8c8c96] rounded-[15px] items-center">
+
+            {/* <div className="p-3 border-[1px] border-[#8c8c8c96] rounded-[15px] items-center">
               <Image src={clockbig} alt="" />
               <h3 className="mb-1">Duration Course</h3>
               <ul className="space-y-3">
@@ -111,7 +112,8 @@ function TraningWillLearn({
                 <li className="text-sm lg:text-base ">Software</li>
                 </div>
               </ul>
-            </div>
+            </div> */}
+
           </div>
         </div>
       </div>

@@ -68,17 +68,18 @@ function BeginnerPhoneRepairCourseSale() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
             <div className="p-3 lg:p-6 bg-black text-white rounded-md">
               <h2 className="text-3xl font-bold mb-4">
-              Hands-On Learning for Real-World Skills
+              Master Motherboard  Repairs with Confidence
               </h2>
               <ul className="space-y-2 pb-5">
               <p>
                 
-                {`This mobile phone training program is designed to provide hands-on experience in mobile device repair, covering everything from essential tools to complex diagnostics. Our expert instructors guide students through each repair technique, emphasizing real-world applications and precision. By mastering key skills like screen and battery replacement, troubleshooting, and component replacement, students gain confidence to handle repairs on a wide range of devices.`}
+                {`By the end of this mainboard repair training, you'll gain the confidence and skills to tackle a variety of motherboard-level repairs with precision. From advanced diagnostics to micro soldering, you’ll be equipped to handle intricate challenges, ensuring high-quality results and readiness to work on a wide range of devices professionally.
+`}
               </p>
               </ul>
 
               {/* Countdown Timer */}
-              <div className=" flex justify-between w-full gap-2">
+              {/* <div className=" flex justify-between w-full gap-2">
                 <div className="flex justify-between items-center  border-[2px] border-[#EDE574] text-black p-4 rounded-md w-full">
                   <div className="text-center">
                     <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-[#EDE574]">
@@ -110,7 +111,7 @@ function BeginnerPhoneRepairCourseSale() {
                   <h3 className="lg:text-[50px] font-bold text-black">40%</h3>
                   <p className="m-0 text-[black]">SALE</p>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="relative w-full h-[300px] md:h-[550px]">

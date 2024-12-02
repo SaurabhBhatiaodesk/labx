@@ -2,10 +2,10 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Facebook from '../../../public/Images/blog/facebook.svg';
-import Telegram_logo from '../../../public/Images/blog/Telegram_logo.svg';
-import Instagram from '../../../public/Images/blog/instagram.svg';
-import Twitter from '../../../public/Images/blog/twitter.svg';
+import Facebook from "../../../public/Images/blog/facebook.svg";
+import Telegram_logo from "../../../public/Images/blog/Telegram_logo.svg";
+import Instagram from "../../../public/Images/blog/instagram.svg";
+import Twitter from "../../../public/Images/blog/twitter.svg";
 interface BlogData {
   _id: string;
   heading: string;
@@ -77,7 +77,8 @@ export default function BlogSidebar() {
       <h3 className="text-lg font-semibold mb-4">More Posts</h3>
       <ul>
         {blogs.map((blog) => (
-          <li  onClick={() => sendId(blog._id)}
+          <li
+            onClick={() => sendId(blog._id)}
             key={blog._id}
             className="flex items-start mb-4  shadow-sm rounded-lg p-2 hover:shadow-md gap-4 cursor-pointer"
           >
@@ -88,13 +89,11 @@ export default function BlogSidebar() {
                 className="blog_slide_img rounded-md object-cover"
                 width={100}
                 height={100}
-                style={{border:'2px solid #EDE574'}}
+                style={{ border: "2px solid #EDE574" }}
               />
             )}
             <div>
-              <h4 className="text-sm font-medium text-white">
-                {blog.heading}
-              </h4>
+              <h4 className="text-sm font-medium text-white">{blog.heading}</h4>
               {/* <p className="text-xs text-white">
                 {new Date(blog.createdAt).toLocaleDateString()}
               </p> */}
@@ -105,15 +104,23 @@ export default function BlogSidebar() {
       {/* Pagination Buttons */}
       <div className="flex justify-center mt-4">
         {[...Array(totalPages)].map((_, index) => (
-         <button
-         key={index}
-         onClick={() => handlePageChange(index + 1)}
-         className={`px-4 py-2 text-black mx-1 rounded-full text-sm ${currentPage === index + 1 ? 'active' : 'bg-gray-200 text-gray-700'}`}
-         style={currentPage === index + 1 ? { background: 'linear-gradient(45deg, #E1F5C4, #EDE574)', color: 'black' } : {}}
-       >
-         {index + 1}
-       </button>
-
+          <button
+            key={index}
+            onClick={() => handlePageChange(index + 1)}
+            className={`px-4 py-2 text-black mx-1 rounded-full text-sm ${
+              currentPage === index + 1 ? "active" : "bg-gray-200 text-gray-700"
+            }`}
+            style={
+              currentPage === index + 1
+                ? {
+                    background: "linear-gradient(45deg, #E1F5C4, #EDE574)",
+                    color: "black",
+                  }
+                : {}
+            }
+          >
+            {index + 1}
+          </button>
         ))}
       </div>
     </div>

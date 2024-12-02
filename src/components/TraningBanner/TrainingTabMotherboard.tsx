@@ -43,11 +43,11 @@ const TraningTabBigner: React.FC = () => {
   const tabs: Tab[] = [
     {
       id: 0,
-      label: "Introduction to Essential Tools and Parts",
+      label: "1.Component Familiarity",
       content: "",
       contentf2title: "",
       contentf2:
-        "Familiarize yourself with the key tools and parts required for effective phone repairs. This foundational knowledge ensures you are equipped to handle various repairs confidently, covering everything from small fixes to advanced troubleshooting techniques.",
+        "Learn to identify and work with essential motherboard components and advanced tools. With this motherboard repair course, master reballing techniques and gain hands-on experience with various components like capacitors, resistors, and ICs to enhance your repair skills.",
       contentf3title: "",
       contentf3:
         "",
@@ -58,11 +58,11 @@ const TraningTabBigner: React.FC = () => {
     },
     {
       id: 1,
-      label: "Screen Replacement Techniques for Phones and iPads",
+      label: "2. Schematics and Diagnostics",
       content: "",
       contentf2title: "",
       contentf2:
-        "Learn step-by-step methods for replacing damaged screens on smartphones and iPads. Master techniques that ensure safe disassembly, proper alignment, and a flawless finish, restoring devices to optimal functionality and maintaining their aesthetic appeal.",
+        "Understand how to read and interpret motherboard schematics for accurate fault tracing. Learn diagnostic methods to identify common issues like power failure, short circuits, or damaged components, boosting your troubleshooting and repair capabilities.",
       contentf3title: "",
       contentf3:
         " ",
@@ -73,11 +73,11 @@ const TraningTabBigner: React.FC = () => {
     },
     {
       id: 2,
-      label: "Battery Replacement for Smartphones and Tablets",
+      label: "3. Repair Techniques",
       content: "",
       contentf2title: "",
       contentf2:
-        "Understand the intricacies of safely removing and replacing batteries in various devices. This course repairing mobile phones ensures you can efficiently handle battery-related issues, enhancing the longevity and performance of smartphones and tablets while maintaining safety standards.",
+        "Master techniques to solve problems like no image, no backlight, or underfilled chips. Learn to create jumpers and perform board-level repairs to restore function and performance, ensuring that even complex repairs are completed successfully.",
       contentf3title: "",
       contentf3:
         "",
@@ -95,11 +95,11 @@ const TraningTabBigner: React.FC = () => {
     },
     {
       id: 3,
-      label: "Charging Port Repairs",
+      label: "4. Flex Cable and Connector Repairs",
       content: "",
       contentf2title: "",
       contentf2:
-        "Gain expertise in diagnosing and repairing faulty charging ports. Learn how to clean, replace, and test ports effectively, ensuring smooth power flow and connectivity, which are crucial for device functionality and user satisfaction.",
+        "Develop skills to repair torn flex cables, connectors, and charging ports. Learn techniques to fix broken or damaged connectors, ensuring that your repairs restore full functionality and maintain the integrity of your device.",
       contentf3title: "",
       contentf3:
         " ",
@@ -110,21 +110,21 @@ const TraningTabBigner: React.FC = () => {
       link: "/coming-soon",
       image: tabimage,
     },
-    // {
-    //   id: 4,
-    //   label: "Device Coverage",
-    //   content: "",
-    //   contentf2title: " ",
-    //   contentf2:
-    //     " Learn how to work on a wide range of devices, from older models to the latest releases. Gain the skills to handle smartphones, tablets, and more, across various brands and technologies.",
-    //   contentf3title: " ",
-    //   contentf3:
-    //     " ",
+    {
+      id: 4,
+      label: "5. Device Coverage",
+      content: "",
+      contentf2title: " ",
+      contentf2:
+        "Learn how to work on a wide range of devices, from older models to the latest releases. Gain the skills to handle smartphones, tablets, and more, across various brands and technologies.",
+      contentf3title: " ",
+      contentf3:
+        " ",
      
-    //   button: "Get Course",
-    //   link: "/coming-soon",
-    //   image: tabimage,
-    // },
+      button: "Get Course",
+      link: "/coming-soon",
+      image: tabimage,
+    },
   ];
 
   const getGradientColor = (id: number) => {
@@ -146,7 +146,7 @@ const TraningTabBigner: React.FC = () => {
 
   return (
     <section
-      className="py-4 lg:py-[20px]"
+      className="py-4 lg:py-[60px]"
       style={{
         backgroundImage: "url('/images/Home/back-banner.svg')",
         backgroundRepeat: "no-repeat",
@@ -155,12 +155,12 @@ const TraningTabBigner: React.FC = () => {
     >
       <div className="container bgchange">
         <div className="mb-3">
-          <MainHeading Heading="Phone Repair Course Syllabus" />
+          <MainHeading Heading="Course Syllabus" />
         </div>
 
         <div className="p-3 bg-white mb-6">
           <p className="text-black mb-0 font-[600]">
-          Section 1. Basic Phone Repair
+          Advanced Motherboard Repair – Micro Soldering (Level 1)
           </p>
         </div>
         <div className="">
