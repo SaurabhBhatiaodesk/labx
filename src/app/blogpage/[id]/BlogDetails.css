@@ -42,4 +42,7 @@
     .main__section{
         width: 100% !important; 
     }
+    .blog-details-os .w-full.lg\:w-3\/4.pr-6 {
+    padding: 0 !important;
+}
 }

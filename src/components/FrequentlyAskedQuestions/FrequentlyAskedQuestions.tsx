@@ -37,7 +37,7 @@ const FrequentlyAskedQuestions: React.FC<FrequentlyAskedQuestionsProps> = ({
   return (
     <>
     <div>
-      <section className="py-5 xl:py-10 bg-[url('/Images/Home/faq.svg')]  bg-no-repeat bg-cover">
+      <section className="py-5 xl:py-10 bg-[url('/Images/Home/faq.svg')]  bg-no-repeat bg-cover faq-main-title">
         <div className="container">
           <MainHeading Heading={heading} />
           <MainTitle Title={title} />

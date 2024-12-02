@@ -428,6 +428,9 @@ label {
 .text-black-custom{
   color:#000 !important;
 }
+.faq-main-title h2, .faq-main-title p {
+    color: #000 !important;
+}
 @media only screen and (max-width: 640px) {
   p {
     font-size: 16px;
@@ -445,6 +448,7 @@ label {
     font-weight: 600;
     color: var(--primary-color);
   }
+
 }
 
 @media only screen and (max-width: 1024px) {

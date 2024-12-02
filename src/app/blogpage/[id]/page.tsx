@@ -75,9 +75,9 @@ export default async function BlogDetails({
             <p>This course is designed and based on the highest industry standards and over 14 years of industry experience.  It includes everything that anyone needs to be one of the best technicians or a successful business owner.</p>
           </div>
           </div>
-        <div className="container mx-auto my-10 p-6 bg-black shadow-lg rounded-lg flex flex-col lg:flex-row">
+        <div className="container mx-auto my-10 p-6 bg-black shadow-lg rounded-lg flex flex-col lg:flex-row mb-right">
           {/* Main Blog Content */}
-          <div className="w-full lg:w-3/4 pr-6 mb-6 lg:mb-0">
+          <div className="w-full lg:w-3/4 mb-6 lg:mb-0">
             {blog?.featuredImage.length > 0 ? (
               <div className="flex flex-wrap gap-2">
                 {blog?.featuredImage.map((image, index) => (
@@ -94,7 +94,7 @@ export default async function BlogDetails({
                       layout="responsive"
                       width={700}
                       height={300}
-                      className="w-full rounded-md"
+                      className="w-full rounded-md max-100-custom"
                     />
                   </div>
                 ))}
