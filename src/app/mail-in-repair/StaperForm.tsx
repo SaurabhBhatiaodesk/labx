@@ -3,7 +3,7 @@ import "./mail-in-repair.css";
 import Lottie from "lottie-react";
 import lottiearrow from "../../../public/Images/jsonfile/lottieflow-fill.json";
 // import { Input, Textarea } from "@nextui-org/react";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
 import MainHeading from "@/components/ManinHeading/MainHeading";
@@ -106,7 +106,6 @@ const StaperForm: React.FC = () => {
   const [deviceDetails, setDeviceDetails] = useState({
     deviceType: "",
     brand: "",
-
     imeiOrSerialNo: "",
     devicePassword: "",
   });
@@ -134,25 +133,72 @@ const StaperForm: React.FC = () => {
   console.log("shippingDetails", shippingDetails);
   console.log("pricingAgreement", pricingAgreement);
 
+  useEffect(() => {
+    // Check if there's saved signature in localStorage
+    const savedSignature = localStorage.getItem("signatureData");
+    if (savedSignature) {
+      setShippingDetails((prevState) => ({
+        ...prevState,
+        signature: savedSignature,
+      }));
+    }
+  }, []);
+
+  // const saveSignature = () => {
+  //   if (sigPad?.current) {
+  //     const signatureData = sigPad.current.toDataURL("image/png"); // This is a base64 string
+  //     setShippingDetails((prevState) => ({
+  //       ...prevState,
+  //       signature: signatureData,
+  //     }));
+
+  //     // Save signature to localStorage
+  //     localStorage.setItem("signatureData", signatureData);
+  //   }
+  // };
+  // // Function to clear the signature
+  // // Function to clear the signature
+  // const clearSignature = () => {
+  //   sigPad.current?.clear();
+  //   setShippingDetails((prevState) => ({
+  //     ...prevState,
+  //     signature: "",
+  //   }));
+  //   localStorage.removeItem("signatureData"); // Clear from localStorage as well
+  // };
+
+  const saveSignature = () => {
+    if (sigPad?.current) {
+      const signatureData = sigPad.current.toDataURL("image/png"); // Get the base64 image
+      setShippingDetails((prevState) => ({
+        ...prevState,
+        signature: signatureData,
+      }));
+
+      // Save signature to localStorage
+      localStorage.setItem("signatureData", signatureData);
+    }
+  };
+
   // Function to clear the signature
   const clearSignature = () => {
     sigPad.current?.clear();
-    setShippingDetails({
-      ...shippingDetails,
+    setShippingDetails((prevState) => ({
+      ...prevState,
       signature: "",
-    });
+    }));
+    localStorage.removeItem("signatureData"); // Clear from localStorage as well
   };
 
-  // Function to handle signature save
-  const saveSignature = () => {
-    if (sigPad.current) {
-      const signatureData = sigPad.current.toDataURL("image/png"); // This is a base64 string
-      setShippingDetails({
-        ...shippingDetails,
-        signature: signatureData,
-      });
+  // const sigPad = useRef(null);
+
+  useEffect(() => {
+    // Load the signature from localStorage or shippingDetails on component mount
+    const savedSignature = localStorage.getItem("signatureData");
+    if (savedSignature && sigPad?.current) {
+      sigPad.current.fromDataURL(savedSignature); // Load the signature into the canvas
     }
-  };
+  }, [shippingDetails?.signature]); // Re-run when signature changes
 
   const handleValidation = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -206,14 +252,35 @@ const StaperForm: React.FC = () => {
 
     if (activeStep === 2) {
       // Shipping Details Validation
+      // if (
+      //   !shippingDetails.requireReturnLabel &&
+      //   !shippingDetails.returnLabelDetails
+      // )
+      //   newErrors.requireReturnLabel = "Return label details are required";
+
+      // // if (shippingDetails.requirePickupLabel && !shippingDetails.pickupLabelDetails)
+      // // newErrors.requirePickupLabel = "Pickup label details are required";
+
+      // if (!shippingDetails.termsAndConditions)
+      //   newErrors.termsAndConditions =
+      //     "Accepting terms and conditions is required";
+
+      // if (!shippingDetails.signature.trim())
+      //   newErrors.signature = "Signature is required";
+
+      // Check for return label details
       if (
-        !shippingDetails.requireReturnLabel &&
-        !shippingDetails.returnLabelDetails
+        shippingDetails.requireReturnLabel === "Yes" &&
+        !shippingDetails.returnLabelDetails.trim()
       )
         newErrors.requireReturnLabel = "Return label details are required";
 
-      // if (shippingDetails.requirePickupLabel && !shippingDetails.pickupLabelDetails)
-      // newErrors.requirePickupLabel = "Pickup label details are required";
+      // Check for pickup label details
+      if (
+        shippingDetails.requirePickupLabel === "Yes" &&
+        !shippingDetails.pickupLabelDetails.trim()
+      )
+        newErrors.requirePickupLabel = "Pickup label details are required";
 
       if (!shippingDetails.termsAndConditions)
         newErrors.termsAndConditions =
@@ -263,11 +330,14 @@ const StaperForm: React.FC = () => {
           },
         }
       );
-      console.log("response.json()", response.status);
+      console.log("response.json()", response.data);
       if (response.status === 200 || response.status == 201) {
-        if (typeof window !== "undefined") {
-          router.push("/mail-in-repair/thank-you");
-        }
+        const { orderReferenceId } = response.data.data; // Assuming the orderReferenceId is returned in the response data
+
+      if (typeof window !== "undefined") {
+        // Pass orderReferenceId as query parameter in the URL
+        router.push(`/mail-in-repair/thank-you?id=${orderReferenceId}`);
+      }
       } else {
         alert("Failed to submit the form. Please try again.");
       }
@@ -277,10 +347,57 @@ const StaperForm: React.FC = () => {
     }
   };
 
-  console.log(
-    "repairDetails?.previousRepairAttempts",
-    repairDetails?.previousRepairAttempts
-  );
+  useEffect(() => {
+    // You can use `localStorage` or the `useEffect` hook to persist form values
+    const storedData = JSON.parse(localStorage.getItem("formData") || "{}");
+    if (storedData) {
+      setShippingDetails(storedData.shippingDetails || {});
+      setRepairDetails(storedData.repairDetails || {});
+      setPersonalDetails(storedData.personalDetails || {});
+      setDeviceDetails(storedData.deviceDetails || {});
+    }
+  }, []);
+
+  // requireReturnLabel: "No",
+  // pickupLabelDetails: "",
+  // returnLabelDetails: "",
+  // requirePickupLabel: "No",s
+
+  useEffect(() => {
+    // When 'requireReturnLabel' is set to 'No', clear returnLabelDetails
+    if (shippingDetails.requireReturnLabel === "No") {
+      console.log("Running for requireReturnLabel === 'No'");
+      setShippingDetails((prevState) => ({
+        ...prevState,
+        returnLabelDetails: "", // Clear returnLabelDetails when 'No' is selected
+      }));
+    }
+
+    // When 'requirePickupLabel' is set to 'No', clear pickupLabelDetails
+    if (shippingDetails.requirePickupLabel === "No") {
+      console.log("Running for requirePickupLabel === 'No'");
+      setShippingDetails((prevState) => ({
+        ...prevState,
+        pickupLabelDetails: "", // Clear pickupLabelDetails when 'No' is selected
+      }));
+    }
+
+    // Save the updated state to localStorage
+    const formData = {
+      shippingDetails,
+      repairDetails,
+      personalDetails,
+      deviceDetails,
+    };
+
+    localStorage.setItem("formData", JSON.stringify(formData));
+  }, [
+    shippingDetails.requireReturnLabel, // Watch for changes in requireReturnLabel
+    shippingDetails.requirePickupLabel, // Watch for changes in requirePickupLabel
+  ]);
+
+  console.log("sigPaddddd", sigPad);
+
   return (
     <>
       <section className="steper-form-section-os">
@@ -310,7 +427,10 @@ const StaperForm: React.FC = () => {
                 "Shipping Details",
                 "Terms & Pricing Agreement",
               ].map((step, index) => (
-                <div key={index} className="flex items-center flex-col  relative z-10">
+                <div
+                  key={index}
+                  className="flex items-center flex-col  relative z-10"
+                >
                   <div
                     className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px] bg-black  ${
                       activeStep === index
@@ -567,14 +687,13 @@ const StaperForm: React.FC = () => {
                             </button>
                           )}
                           {activeStep < 3 ? (
-                           <button
-                           onClick={handleNextStep}
-                           className="btn flex items-center gap-2"
-                         >
-                           Next
-                           <IoIosArrowRoundForward />
-                         </button>
-
+                            <button
+                              onClick={handleNextStep}
+                              className="btn flex items-center gap-2"
+                            >
+                              Next
+                              <IoIosArrowRoundForward />
+                            </button>
                           ) : (
                             <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
                               <IoCheckmarkDoneOutline className="mr-2" />
@@ -734,7 +853,6 @@ const StaperForm: React.FC = () => {
                                 additionalComments: e.target.value,
                               })
                             }
-
                           />
                         </div>
                       </div>
@@ -749,14 +867,13 @@ const StaperForm: React.FC = () => {
                             </button>
                           )}
                           {activeStep < 3 ? (
-                           <button
-                           onClick={handleNextStep}
-                           className="btn  flex items-center gap-2"
-                         >
-                           Next
-                           <IoIosArrowRoundForward />
-                         </button>
-
+                            <button
+                              onClick={handleNextStep}
+                              className="btn  flex items-center gap-2"
+                            >
+                              Next
+                              <IoIosArrowRoundForward />
+                            </button>
                           ) : (
                             <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
                               <IoCheckmarkDoneOutline className="mr-2" />
@@ -785,62 +902,17 @@ const StaperForm: React.FC = () => {
                   </div>
                   <div className="p-4">
                     <div className="flex flex-col gap-4 bg-black text-white">
-                      {/* Require Return Label */}
-                      <div className="steper-textarea-os space-y-4">
-                        <p className="text-base leading-5 mb-2">
-                          Do you require a return label?
-                        </p>
-                        <Select
-                          defaultSelectedKeys={["No"]}
-                          className="bg-black text-white gauav"
-                          value={shippingDetails.requireReturnLabel}
-                          onChange={(e) =>
-                            setShippingDetails({
-                              ...shippingDetails,
-                              requireReturnLabel: e.target.value,
-                            })
-                          }
-                        >
-                          {selectOptions.map((animal) => {
-                            return (
-                              <SelectItem key={animal.key}>
-                                {animal.label}
-                              </SelectItem>
-                            );
-                          })}
-                        </Select>
-                        {shippingDetails.requireReturnLabel === "Yes" && (
-                          <>
-                            <Textarea
-                            className="italic-placeholder"
-                              placeholder="Please provide details for the return label"
-                              minRows={5}
-                              value={shippingDetails.returnLabelDetails}
-                              onChange={(e) =>
-                                setShippingDetails({
-                                  ...shippingDetails,
-                                  returnLabelDetails: e.target.value,
-                                })
-                              }
-                              required
-                            />
-                            {/* Validation Error */}
-                            {errors.requireReturnLabel && (
-                              <p className="text-red-500 text-sm mt-1">
-                                {errors.requireReturnLabel}
-                              </p>
-                            )}
-                          </>
-                        )}
-                      </div>
-
                       {/* Require Pickup Label */}
                       <div className="steper-textarea-os space-y-4">
                         <p className="text-base leading-5 mb-2">
                           Do you require a pickup label from LabX?
                         </p>
                         <Select
-                          defaultSelectedKeys={["No"]}
+                          defaultSelectedKeys={
+                            shippingDetails.requireReturnLabel !== "Yes"
+                              ? ["No"]
+                              : ["Yes"]
+                          }
                           className="bg-black text-white gauav"
                           value={shippingDetails.requirePickupLabel}
                           onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
@@ -861,7 +933,7 @@ const StaperForm: React.FC = () => {
                         {shippingDetails.requirePickupLabel === "Yes" && (
                           <>
                             <Textarea
-                            className="italic-placeholder"
+                              className="italic-placeholder"
                               minRows={5}
                               placeholder="Please provide details for the pickup label"
                               value={shippingDetails.pickupLabelDetails || ""}
@@ -883,37 +955,107 @@ const StaperForm: React.FC = () => {
                         )}
                       </div>
 
+                      {/* Require Return Label */}
+                      <div className="steper-textarea-os space-y-4">
+                        <p className="text-base leading-5 mb-2">
+                          Do you require a return label?
+                        </p>
+                        <Select
+                          defaultSelectedKeys={
+                            shippingDetails.requireReturnLabel !== "Yes"
+                              ? ["No"]
+                              : ["Yes"]
+                          }
+                          className="bg-black text-white gauav"
+                          value={"Yes"}
+                          onChange={(e) =>
+                            setShippingDetails({
+                              ...shippingDetails,
+                              requireReturnLabel: e.target.value,
+                            })
+                          }
+                        >
+                          {selectOptions.map((animal) => {
+                            return (
+                              <SelectItem key={animal.key}>
+                                {animal.label}
+                              </SelectItem>
+                            );
+                          })}
+                        </Select>
+                        {shippingDetails.requireReturnLabel === "Yes" && (
+                          <>
+                            <Textarea
+                              className="italic-placeholder"
+                              placeholder="Please provide details for the return label"
+                              minRows={5}
+                              value={shippingDetails.returnLabelDetails}
+                              onChange={(e) =>
+                                setShippingDetails({
+                                  ...shippingDetails,
+                                  returnLabelDetails: e.target.value,
+                                })
+                              }
+                              required
+                            />
+                            {/* Validation Error */}
+                            {errors.requireReturnLabel && (
+                              <p className="text-red-500 text-sm mt-1">
+                                {errors.requireReturnLabel}
+                              </p>
+                            )}
+                          </>
+                        )}
+                      </div>
+
                       {/* Terms and Conditions */}
                       <div className="border-b-[1px] border-[#6161617b] xl:py-3">
                         <h4 className="xl:mb-2 mb-[4px] text-[#EDE574]">
                           Terms and Conditions Acknowledgment *
                         </h4>
                         <div>
-                          <input type="checkbox" className="check__box"
+                          <input
+                            type="checkbox"
+                            className="check__box"
+                            checked={
+                              shippingDetails.termsAndConditions == true
+                                ? true
+                                : false
+                            } // Retain state when revisited
                             onChange={(
                               e: React.ChangeEvent<HTMLInputElement>
                             ) =>
                               setShippingDetails({
                                 ...shippingDetails,
-                                termsAndConditions: e.target.checked,
+                                termsAndConditions: e.target.checked, // Update state based on checkbox value
                               })
                             }
-                           />
-
+                          />
                           <span className="lg:text-base text-sm text-white ml-2">
-                              By checking this box, I confirm that I have read
-                              and agree to the LabX
-                              <Link
-                                className="text-[#EDE574] border-[#EDE574] border-b-1"
-                                href="/coming-soon"
-                              >
-                                {" "}
-                                Terms and Conditions{" "}
-                              </Link>
-                             <Link  className="text-[#EDE574] border-[#EDE574] border-b-1"
-                                href="/coming-soon">Privacy Policy</Link> and  <Link className="text-[#EDE574] border-[#EDE574] border-b-1"
-                                href="/coming-soon">Warranty Terms</Link>.{" "}
-                            </span>
+                            By checking this box, I confirm that I have read and
+                            agree to the LabX
+                            <Link
+                              className="text-[#EDE574] border-[#EDE574] border-b-1"
+                              href="/coming-soon"
+                            >
+                              {" "}
+                              Terms and Conditions{" "}
+                            </Link>
+                            <Link
+                              className="text-[#EDE574] border-[#EDE574] border-b-1"
+                              href="/coming-soon"
+                            >
+                              Privacy Policy
+                            </Link>{" "}
+                            and{" "}
+                            <Link
+                              className="text-[#EDE574] border-[#EDE574] border-b-1"
+                              href="/coming-soon"
+                            >
+                              Warranty Terms
+                            </Link>
+                            .{" "}
+                          </span>
                           {errors.termsAndConditions && (
                             <p className="text-[red] text-sm mb-0">
                               {errors.termsAndConditions}
@@ -935,7 +1077,7 @@ const StaperForm: React.FC = () => {
                             clear
                           </button>
                         </div>
-                        <SignatureCanvas
+                        {/* <SignatureCanvas
                           ref={sigPad}
                           penColor="black"
                           canvasProps={{
@@ -943,10 +1085,45 @@ const StaperForm: React.FC = () => {
                               "w-full h-[200px] bg-white border border-white rounded-md",
                           }}
                           onEnd={saveSignature} // Save signature on end
-                        />
-                        {errors.signature && (
+                          backgroundColor={
+                            shippingDetails?.signature ? "red" : "#fff"
+                          }
+                        /> */}
+
+                        <div className="signature-canvas-row-os">
+                          <div className="signature-canvas-col-os">
+                            <SignatureCanvas
+                              ref={sigPad}
+                              penColor="black"
+                              canvasProps={{
+                                className:
+                                  "w-full h-[200px] bg-white border border-white rounded-md",
+                              }}
+                              onEnd={saveSignature} // Save signature when drawing ends
+                              backgroundColor={
+                                shippingDetails?.signature ? "white" : "#fff"
+                              }
+                            />
+                          </div>
+
+                          {shippingDetails?.signature && (
+                            <div className="signature-canvas-col-os">
+                              <Image
+                                src={shippingDetails.signature}
+                                alt="Saved Signature"
+                                width={200}
+                                height={400}
+                              />
+                              {/* <button onClick={clearSignature}>
+                                Clear Signature
+                              </button> */}
+                            </div>
+                          )}
+                        </div>
+
+                        {shippingDetails.signature === "" && (
                           <p className="text-[red] text-sm mb-0">
-                            {errors.signature}
+                            Signature is required
                           </p>
                         )}
                       </div>
@@ -962,14 +1139,13 @@ const StaperForm: React.FC = () => {
                           </button>
                         )}
                         {activeStep < 3 ? (
-                        <button
-                        onClick={handleNextStep}
-                        className="btn flex items-center gap-2"
-                      >
-                        Next
-                        <IoIosArrowRoundForward />
-                      </button>
-
+                          <button
+                            onClick={handleNextStep}
+                            className="btn flex items-center gap-2"
+                          >
+                            Next
+                            <IoIosArrowRoundForward />
+                          </button>
                         ) : (
                           <button
                             className="btn hidden lg:block"
@@ -1001,7 +1177,9 @@ const StaperForm: React.FC = () => {
                       Pricing Agreement*
                     </h2>
                     <div className="flex items-start gap-4 text-yellow-400">
-                    <input type="checkbox" className="check__boxs"
+                      <input
+                        type="checkbox"
+                        className="check__boxs"
                         onChange={() => {
                           setPricingAgreement(!pricingAgreement);
                           setErrors((prevErrors) => ({
