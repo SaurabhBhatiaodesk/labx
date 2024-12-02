@@ -127,7 +127,7 @@ const CourseHighlights = () => {
                 <div>
                   <MainButton
                     MainButton="Learn More"
-                    link="/beginner-phone-repair-course"
+                    link="/advanced-motherboard"
                   />
                 </div>
                 <div className="my-4">

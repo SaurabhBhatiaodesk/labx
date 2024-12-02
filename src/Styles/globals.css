@@ -422,7 +422,12 @@ label {
   background-position: center;
   background-repeat: no-repeat;
 } */
-
+.text-yellow-400 {
+    color: #EDE574;
+}
+.text-black-custom{
+  color:#000 !important;
+}
 @media only screen and (max-width: 640px) {
   p {
     font-size: 16px;

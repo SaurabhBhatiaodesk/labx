@@ -25,7 +25,7 @@ const FixLabx = () => {
             />
           </div>
           <div className="text-center lg:p-0 p-4">
-            <span className="text-[#696969]">About Us</span>
+            {/* <span className="text-[#696969]">About Us</span> */}
             <h2 className="text-[#040404] text-[32px]  lg:text-[42px] 2xl:text-[42px] font-[800] pb-3">
             LabX Mobile Phone Repair 
             </h2>

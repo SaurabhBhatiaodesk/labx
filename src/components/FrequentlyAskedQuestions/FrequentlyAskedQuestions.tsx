@@ -5,6 +5,8 @@ import MainTitle from "../MainTitle/MainTitle";
 import React, { useState } from "react";
 import { LuPlus } from "react-icons/lu";
 import { GrSubtract } from "react-icons/gr";
+import mobilerepair from "../../../public/Images/Home/iphone221.svg";
+import Image from "next/image";
 
 interface AccordionItem {
   title: string;
@@ -33,12 +35,13 @@ const FrequentlyAskedQuestions: React.FC<FrequentlyAskedQuestionsProps> = ({
   };
 
   return (
+    <>
     <div>
-      <section className="py-5 xl:py-10">
+      <section className="py-5 xl:py-10 bg-[url('/Images/Home/faq.svg')]  bg-no-repeat bg-cover">
         <div className="container">
           <MainHeading Heading={heading} />
           <MainTitle Title={title} />
-          <div className="grid grid-cols-1 gap-4 lg:py-5 py-3">
+          <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_2fr] grid-cols-1 gap-4 lg:py-5 py-3">
             <div>
               <div className="flex flex-col xl:space-y-2">
                 {accordionData.map((item, index) => (
@@ -50,28 +53,39 @@ const FrequentlyAskedQuestions: React.FC<FrequentlyAskedQuestionsProps> = ({
                       className="flex w-full items-center justify-between py-4 text-left"
                       onClick={() => handleToggle(index)}
                     >
-                      <h3 className="text-white xl:text-[24px] text-[18px] font-[500] xl:leading-[2rem] leading-[24px]">
+                      <h3 className="text-black xl:text-[24px] text-[18px] font-[500] xl:leading-[2rem] leading-[24px]">
                         {item.title}
                       </h3>
                       {active === index ? (
-                        <GrSubtract color="white" />
+                        <GrSubtract color="black" />
                       ) : (
-                        <LuPlus color="white" />
+                        <LuPlus color="black" />
                       )}
                     </button>
                     {active === index && (
                       <div className="py-4 pt-0">
-                        <p className="text-white">{item.content}</p>
+                        <p className="text-[#0B0B0B]">{item.content}</p>
                       </div>
                     )}
                   </div>
                 ))}
               </div>
             </div>
+
+            <div className="seconf-grid">
+                <div className="flex justify-center">
+                  <Image
+                    className="lg:h-auto h-[300px] object-contain"
+                    src={mobilerepair}
+                    alt=""
+                  />
+                </div>
+              </div>
           </div>
         </div>
       </section>
     </div>
+    </>
   );
 };
 

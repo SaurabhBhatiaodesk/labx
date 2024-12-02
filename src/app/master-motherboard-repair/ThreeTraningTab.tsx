@@ -113,11 +113,25 @@ const ThreeTraningTab: React.FC = () => {
     },
     {
       id: 4,
-      label: "eMMC Repair",
+      label: ".eMMC Repairs",
       content: "",
       contentf2title: "",
       contentf2:
         " Handle embedded MultiMediaCard (eMMC) repairs, learning how to safely remove, reprogram, and replace these chips on mobile phone devices.",
+        
+      contentf3title: "",
+     
+      button: "Get Course",
+      link: "/coming-soon",
+      image: tabimage,
+    },
+    {
+      id: 5,
+      label: "Deep Diagnostics and Fault Tracing:",
+      content: "",
+      contentf2title: "",
+      contentf2:
+        "Learn in-depth diagnostic techniques to trace and identify faults that even seasoned technicians struggle with, ensuring you're equipped to resolve complex motherboard issues.",
         
       contentf3title: "",
      

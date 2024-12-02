@@ -6,7 +6,7 @@ import TraningCourseInstructors from "@/components/TraningBanner/TraningCourseIn
 import TraningTabBigner from "@/components/TraningBanner/TraningTabBigner";
 import TraningTabBignersecond from "@/components/TraningBanner/TraningTabBignersecond";
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
-import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
+import ExpertMotherboardReviews from "@/components/GoogleReviews/ExpertMotherboardReviews";
 import React from "react";
 import FristTraningTab from "./FristTraningTab";
 import SecondTraningTab from "./SecondTraningTab";
@@ -17,37 +17,37 @@ import TraningSales from "./TraningSales";
 const BeginnerCourse = () => {
   const accordionData = [
     {
-      title: "Who is this course suitable for?",
+      title: "1. Who is this course suitable for?",
       content:
         "This course is ideal for technicians, hobbyists, and beginners aiming to master advanced motherboard repair and micro soldering techniques for professional electronic repairs.",
     },
     {
-      title: "What skills will I gain from this course?",
+      title: "2. What skills will I gain from this course?",
       content:
         "You’ll learn diagnostics, micro soldering, reballing, NAND programming, Face ID repairs, and more, equipping you with essential skills for complex motherboard-level electronic repairs.",
     },
     {
-      title: "Do I need prior experience in motherboard repairs?",
+      title: "3. Do I need prior experience in motherboard repairs?",
       content:
         "No prior experience is necessary. This motherboard repair course covers foundational concepts and advanced techniques, making it suitable for both beginners and experienced repair technicians.",
     },
     {
-      title: "What tools are required for this course?",
+      title: "4. What tools are required for this course?",
       content:
-        "You’ll need soldering stations, hot air rework tools, microscopes, and diagnostic equipment. A detailed list of tools will be provided upon enrollment..",
+        "You’ll need soldering stations, hot air rework tools, microscopes, and diagnostic equipment. A detailed list of tools will be provided upon enrollment.",
     },
     {
-      title: "Is this course hands-on or theoretical?",
+      title: "5. Is this course hands-on or theoretical?",
       content:
         "The motherboard repair course emphasizes hands-on training, allowing you to practice repair techniques directly. Theoretical lessons complement practical sessions to build a strong technical foundation.",
     },
     {
-      title: "Will I receive certification after completing the course?",
+      title: "6. Will I receive certification after completing the course?",
       content:
         "Yes, participants will receive a certification upon successful completion, validating their expertise in motherboard repairs and enhancing their professional credentials.",
     },
     {
-      title: "How long does the course take to complete?",
+      title: "7. How long does the course take to complete?",
       content:
         "The course duration varies but typically spans several weeks, depending on the intensity of the program and your chosen schedule. Flexible options are available.",
     },
@@ -76,7 +76,7 @@ const BeginnerCourse = () => {
         backgroundImage="/Images/BannerImages/mailinrepair.png"
         AdminImage="/Images/adminimage.png"
         link="/coming-soon"
-        courseName="Beginner"
+        courseName="Motherboard"
         courseRating="4.7"
         courseHour="40 Hours"
         Duration="1 Week"
@@ -91,10 +91,10 @@ const BeginnerCourse = () => {
 
 "
         paramtitle2="Comprehensive Understanding of Motherboard Components :-"
-        param2="Learn the fundamentals of mobile phone repair in our comprehensive beginner course, designed to give you hands-on experience with a wide range of repairs. Our expert trainers will guide you through each step, ensuring you gain practical knowledge and confidence in repairing various devices.
+        param2="Gain in-depth knowledge of motherboard architecture and components. Our motherboard repair course equips you to diagnose, troubleshoot, and repair intricate issues, enhancing your expertise in motherboard repair for laptops, desktops, and more.
 "
         paramtitle3="Cutting-Edge Tools and Industry Practices"
-        param3="Learn the fundamentals of mobile phone repair in our comprehensive beginner course, designed to give you hands-on experience with a wide range of repairs. Our expert trainers will guide you through each step, ensuring you gain practical knowledge and confidence in repairing various devices.
+        param3="Work with state-of-the-art tools and learn the latest industry-standard practices. Develop proficiency in handling microchips and delicate electronic parts, setting you apart as a certified expert in motherboard micro soldering.
 "
         Courseformate1="Video Tutorials"
         Courseformate2="1 Week Duration"
@@ -106,7 +106,7 @@ const BeginnerCourse = () => {
       <TrainingInstructors {...instructorData} />
 
       <TraningSales
-        courseName="Become a Master in Motherboard Repairs"
+        courseName="Become a Master in Motherboard Repairs" 
         imagedata="/Images/CourseInstructors.png"
         courseDescription={["Complete this comprehensive mainboard repair training and build the confidence to handle complex motherboard repairs with ease. From advanced diagnostics to precise micro soldering, you’ll develop the expertise to tackle intricate challenges and deliver exceptional results. Equip yourself to work professionally on a wide array of devices, ensuring top-notch performance and reliability."]}
         saleDurationDays={7}
@@ -120,11 +120,11 @@ const BeginnerCourse = () => {
 
       {/* <BeginnerPhoneRepaiCourseSale /> */}
       <FrequentlyAskedQuestions
-        heading="Frequently Asked Questions"
-        title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing."
+        heading="Frequently Asked Questions (FAQs)"
+        title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."
         accordionData={accordionData}
       />
-      <GoogleReviews />
+      <ExpertMotherboardReviews />
     </>
   );
 };

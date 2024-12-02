@@ -62,7 +62,7 @@ const MainHeading: React.FC<MainHeadingProps> = ({
   return (
     <div data-aos={animation || "fade-up"} className="relative w-fit m-auto">
       <h2
-        className="text-center w-fit m-auto"
+        className="text-center w-fit m-auto text-black-custom"
         style={{ color: color || "inherit" }}
       >
         {Heading}
