@@ -45,7 +45,7 @@ export default function App() {
     { label: "Training", path: "/training" },
     { label: "Screen Refurbishment", path: "/coming-soon" },
     { label: "About us", path: "/about-us" },
-    { label: "Contact Us", path: "/coming-soon" },
+    { label: "Contact Us", path: "/contact-us" },
     { label: "Price List", path: "/coming-soon" },
   ];
 
