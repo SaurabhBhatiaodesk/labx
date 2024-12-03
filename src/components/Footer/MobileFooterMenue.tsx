@@ -32,14 +32,30 @@ const MobileFooterMenue = () => {
           }`}
         >
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
-            <li className="mb-2">Mail-In-Repair</li>
-            <li className="mb-2">Training</li>
-            <li className="mb-2">B2B Repair</li>
-            <li className="mb-2">Screen Refurbishment</li>
-            <li className="mb-2">Data Recovery</li>
-            <li className="mb-2">Parts Store</li>
-            <li className="mb-2">Repair Forum</li>
-            <li className="mb-2">Repair Solutions</li>
+            <li className="mb-2">
+            <Link href="/mail-in-repair">Mail-In-Repair</Link>
+              </li>
+            <li className="mb-2">
+            <Link href="/coming-soon">Training</Link>
+              </li>
+            <li className="mb-2">
+            <Link href="/coming-soon">B2B Repair</Link>
+              </li>
+            <li className="mb-2">
+            <Link href="/coming-soon">Screen Refurbishment</Link>
+              </li>
+            <li className="mb-2">
+            <Link href="/coming-soon"> Data Recovery</Link>
+             </li>
+            <li className="mb-2">
+            <Link href="/coming-soon">Parts Store</Link>
+              </li>
+            <li className="mb-2">
+            <Link href="/coming-soon">Repair Forum</Link>
+              </li>
+            <li className="mb-2">
+            <Link href="/coming-soon">Repair Solutions</Link>
+              </li>
           </ul>
         </div>
       </div>
@@ -63,8 +79,10 @@ const MobileFooterMenue = () => {
           }`}
         >
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
-            <li className="mb-2">Contact Us</li>
-            <li className="mb-2">Blogs</li>
+            <li className="mb-2">
+              <Link href="/coming-soon">Contact Us</Link></li>
+            <li className="mb-2">
+            <Link href="/blogs">Blogs</Link></li>
             <li className="mb-2">
               <Link href="/Trademark_Disclaimer">Trademark Disclaimer</Link>
             </li>
@@ -74,7 +92,9 @@ const MobileFooterMenue = () => {
             <li className="mb-2">
               <Link href="/Shipping_Policy">Shipping Policy</Link>
             </li>
-            <li className="mb-2">FAQ’s</li>
+            <li className="mb-2">
+            <Link href="/coming-soon">FAQ's</Link>
+              </li>
             <li className="mb-2">
               <Link href="/terms-and-conditions">Terms and Conditions</Link>
             </li>
