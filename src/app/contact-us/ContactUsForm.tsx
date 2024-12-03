@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Image from "next/image";
+import Link from "next/link";
+
 import {
   TextField,
   Button,
@@ -11,13 +13,19 @@ import {
   InputLabel,
   SelectChangeEvent,
 } from "@mui/material";
-import { TextareaAutosize } from "@mui/base"; 
-import "./contactus.css"
-import contactusimage from "../../../public/Images/contactusimage.png"
+import { TextareaAutosize } from "@mui/base";
+import "./contactus.css";
+import contactusimage from "../../../public/Images/contactusimage.png";
+
+// icons
+import localtion from "../../../public/Images/localtion.svg";
+import contactustime from "../../../public/Images/icons/contactustime.svg";
+import callcontactus from "../../../public/Images/icons/callcontactus.svg";
+import contactusmail from "../../../public/Images/icons/contactusmail.svg";
 
 const ContactUsForm: React.FC = () => {
   const [formData, setFormData] = useState({
-   First_name: "",
+    First_name: "",
     email_address: "",
     contact_no: "",
     course_name: "",
@@ -176,43 +184,113 @@ const ContactUsForm: React.FC = () => {
 
   return (
     <>
-        <section
-      className="py-4 lg:py-[30px]"
-      style={{
-        backgroundImage: "url('/images/Home/back-banner.svg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
+      <section
+        className="py-4 lg:py-[30px] "
+        style={{
+          backgroundImage: "url('/images/Home/back-banner.svg')",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
+        <div className="container">
+          <div className="grid md:grid-cols-[3fr_5fr] grid-cols-1    ">
+            <div
+              className="w-full flex flex-col items-center justify-center hello"
+              style={{
+                backgroundImage: "url('/images/contactusimage.png')",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                // borderRadius: "20px 0 10px 20px",
+              }}
+            >
+              <div className="relative w-full h-[100%]">
+                <div className="lg:absolute w-full lg:top-[20%] xl:right-[80px] lg:right-[40px] lg:transform lg:translate-x-[10px] lg:translate-y-[10px]">
+                <div className="flex gap-3 flex-col justify-center p-4 lg:p-6 bg-white text-black rounded-3xl">
+  {/* Address */}
+  <div className="flex items-center gap-3">
+    <span className="flex-shrink-0">
+      <Image
+        className="w-[50px] h-[50px] object-contain" // Ensure size is same
+        src={localtion}
+        alt="Location Icon"
+      />
+    </span>
+    <Link
+      href="https://www.google.com/maps/place/122+Queen+St,+St+Marys+NSW+2760,+Australia"
+      passHref
     >
-    <div className="container">
-    <div className="grid grid-cols-[3fr_5fr]   " >
-    <div className="w-full"
-      style={{
-        backgroundImage: "url('/images/contactusimage.png')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        borderRadius:"20px 0 10px 20px"
-      }}>
-  {/* <Image className="w-full h-full object-cover" src={contactusimage} alt="Contact Us Image" /> */}
+      <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
+        122 Queen St, St Marys NSW 2760, Australia
+      </p>
+    </Link>
+  </div>
+  {/* Phone */}
+  <div className="flex items-center gap-3">
+    <span className="flex-shrink-0">
+      <Image
+        className="w-[50px] h-[50px] object-contain" // Ensure size is same
+        src={callcontactus}
+        alt="Phone Icon"
+      />
+    </span>
+    <Link href="tel:+61455777077" passHref>
+      <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
+        +61455777077
+      </p>
+    </Link>
+  </div>
+  {/* Email */}
+  <div className="flex items-center gap-3">
+    <span className="flex-shrink-0">
+      <Image
+        className="w-[50px] h-[50px] object-contain" // Ensure size is same
+        src={contactusmail}
+        alt="Email Icon"
+      />
+    </span>
+    <Link href="mailto:bharat@labxrepair.com.au" passHref>
+      <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
+        bharat@labxrepair.com.au
+      </p>
+    </Link>
+  </div>
+  {/* Operating Hours */}
+  <div className="flex items-center gap-3">
+    <span className="flex-shrink-0">
+      <Image
+        className="w-[50px] h-[50px] object-contain" // Ensure size is same
+        src={contactustime}
+        alt="Clock Icon"
+      />
+    </span>
+    <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
+      Monday-Friday: 9am - 6pm
+    </p>
+  </div>
 </div>
 
-    <div>
-    <div className="p-4 lg:p-10 steper-form-section-os bg-black ">
-      <form onSubmit={handleSubmit}>
-        <div className="flex flex-col gap-4 bg-black text-white">
-          <div className="grid grid-cols-2 gap-4 form-label">
-            {/* Business Name Input */}
-            <TextField
-              label="First Name"
-              name="First_name"
-              fullWidth
-              variant="outlined"
-              value={formData.First_name}
-              onChange={handleChange}
-            />
+                </div>
+              </div>
+              {/* <Image className="w-full h-full object-cover" src={contactusimage} alt="Contact Us Image" /> */}
+            </div>
 
-            {/* Email Input with validation */}
-            {/* <TextField
+            <div>
+              <div className="p-4 lg:p-10 steper-form-section-os bg-black ">
+                <form onSubmit={handleSubmit}>
+                  <div className="flex flex-col gap-4 bg-black text-white">
+                    <div className="grid grid-cols-2 gap-4 form-label">
+                      {/* Business Name Input */}
+                      <TextField
+                        label="First Name"
+                        name="First_name"
+                        fullWidth
+                        variant="outlined"
+                        value={formData.First_name}
+                        onChange={handleChange}
+                      />
+
+                      {/* Email Input with validation */}
+                      {/* <TextField
               label="Your Email *"
               name="email_address"
               fullWidth
@@ -222,41 +300,40 @@ const ContactUsForm: React.FC = () => {
               error={!!formErrors.email}
               helperText={formErrors.email}
             /> */}
-             <TextField
-              label="Last Name"
-              // name=""Last_Name"
-              fullWidth
-              variant="outlined"
-              value={formData.First_name}
-              onChange={handleChange}
-            />
+                      <TextField
+                        label="Last Name"
+                        // name=""Last_Name"
+                        fullWidth
+                        variant="outlined"
+                        value={formData.First_name}
+                        onChange={handleChange}
+                      />
 
+                      <TextField
+                        label="Your Email *"
+                        name="email_address"
+                        fullWidth
+                        variant="outlined"
+                        value={formData.email_address}
+                        onChange={handleChange}
+                        error={!!formErrors.email}
+                        helperText={formErrors.email}
+                      />
 
-             <TextField
-              label="Your Email *"
-              name="email_address"
-              fullWidth
-              variant="outlined"
-              value={formData.email_address}
-              onChange={handleChange}
-              error={!!formErrors.email}
-              helperText={formErrors.email}
-            />
+                      {/* Phone Number Input with validation */}
+                      <TextField
+                        label="Phone Number *"
+                        name="contact_no"
+                        fullWidth
+                        variant="outlined"
+                        value={formData.contact_no}
+                        onChange={handleChange}
+                        error={!!formErrors.phoneNumber}
+                        helperText={formErrors.phoneNumber}
+                      />
 
-            {/* Phone Number Input with validation */}
-            <TextField
-              label="Phone Number *"
-              name="contact_no"
-              fullWidth
-              variant="outlined"
-              value={formData.contact_no}
-              onChange={handleChange}
-              error={!!formErrors.phoneNumber}
-              helperText={formErrors.phoneNumber}
-            />
-
-            {/* Course Selection */}
-            {/* <FormControl fullWidth variant="outlined">
+                      {/* Course Selection */}
+                      {/* <FormControl fullWidth variant="outlined">
               <InputLabel>Select Your Course *</InputLabel>
               <Select
                 label="Select Your Course *"
@@ -292,62 +369,64 @@ const ContactUsForm: React.FC = () => {
                 </p>
               )}
             </FormControl> */}
-          </div>
+                    </div>
 
-          {/* Training Message */}
-          <div>
-          <h3>Write Your Enquiry</h3>
-          <TextareaAutosize
-            className="border-[1.5px]"
-            minRows={6}
-            placeholder="Enter your message here"
-            value={formData.training_message}
-            onChange={handleChange}
-            name="training_message"
-            style={{
-              width: "100%",
-              padding: "10px",
-              marginTop: "10px",
-              backgroundColor: "black",
-              color: "white",
-              borderRadius: "8px",
-              borderColor: "white",
-              fontSize: "17px",
-              textTransform: "capitalize",
-            }}
-          />
+                    {/* Training Message */}
+                    <div>
+                      <h3 className="text-[20px] lg:text-[26px]">
+                        Write Your Enquiry
+                      </h3>
+                      <TextareaAutosize
+                        className="border-[1.5px]"
+                        minRows={6}
+                        placeholder="Enter your message here"
+                        value={formData.training_message}
+                        onChange={handleChange}
+                        name="training_message"
+                        style={{
+                          width: "100%",
+                          padding: "10px",
+                          marginTop: "10px",
+                          backgroundColor: "black",
+                          color: "white",
+                          borderRadius: "8px",
+                          borderColor: "white",
+                          fontSize: "17px",
+                          textTransform: "capitalize",
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Submit Button */}
+                  <div className="py-4">
+                    <Button
+                      variant="contained"
+                      sx={{
+                        background:
+                          "linear-gradient(to right, #E1F5C4, #EDE574)",
+                        color: "black",
+                        textTransform: "uppercase",
+                        fontSize: "14px",
+                        padding: "12px 18px",
+                        borderRadius: "50px",
+                        "&:hover": {
+                          background:
+                            "linear-gradient(to right, #EDE574, #E1F5C4)",
+                        },
+                      }}
+                      type="submit"
+                    >
+                      Submit
+                    </Button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
-
-        {/* Submit Button */}
-        <div className="py-4">
-          <Button
-            variant="contained"
-            sx={{
-              background: "linear-gradient(to right, #E1F5C4, #EDE574)",
-              color: "black",
-              textTransform: "uppercase",
-              fontSize: "14px",
-              padding: "12px 18px",
-              borderRadius: "50px",
-              "&:hover": {
-                background: "linear-gradient(to right, #EDE574, #E1F5C4)",
-              },
-            }}
-            type="submit"
-          >
-            Submit
-          </Button>
-        </div>
-      </form>
-    </div>
-    </div>
-  </div>
-  </div>
-  </section>
-    
+      </section>
     </>
- 
   );
 };
 

@@ -1,6 +1,8 @@
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb'
 import React from 'react'
 import ContactUsForm from './ContactUsForm'
+import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
+import YouTubeHome from '@/components/HomeCpmponents/YouTubeHome/YouTubeHome';
 
 const page = () => {
   return (
@@ -17,6 +19,8 @@ const page = () => {
 
       <div>
         <ContactUsForm/>
+        <YouTubeHome/>
+        <GoogleReviews />
       </div>
     
     </div></>

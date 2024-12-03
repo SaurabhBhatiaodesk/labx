@@ -69,12 +69,16 @@ const MobileFooterMenue = () => {
           }`}
         >
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
+            <Link href="/contact-us">
             <li className="mb-2">Contact Us</li>
+            </Link>
             <li className="mb-2">Blogs</li>
             <li className="mb-2">Trademark Disclaimer</li>
             <li className="mb-2">Warranty and Terms</li>
             <li className="mb-2">Shipping Policy</li>
+            <Link href="/faq">
             <li className="mb-2">FAQ’s</li>
+            </Link>
             <li className="mb-2">Terms and conditions</li>
           </ul>
         </div>
