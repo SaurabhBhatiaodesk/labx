@@ -5,6 +5,7 @@ import MainHeading from "@/components/ManinHeading/MainHeading";
 import MainButton from "@/components/MainButton/MainButton";
 import BlogList from "./BlogListing";
 
+
 const Blogs = () => {
   return (
     <>
