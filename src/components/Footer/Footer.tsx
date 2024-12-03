@@ -158,7 +158,7 @@ const Footer = () => {
                         </Link>
                       </div>
                       <div>
-                        <Link href="/coming-soon">
+                        <Link href="/Trademark_Disclaimer">
                           <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Trademark Disclaimer
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
@@ -166,7 +166,7 @@ const Footer = () => {
                         </Link>
                       </div>
                       <div>
-                        <Link href="/coming-soon">
+                        <Link href="/Warranty_and_Terms">
                           <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Warranty and Terms
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
@@ -174,7 +174,7 @@ const Footer = () => {
                         </Link>
                       </div>
                       <div>
-                        <Link href="/coming-soon">
+                        <Link href="/Shipping_Policy">
                           <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Shipping Policy
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
@@ -190,7 +190,7 @@ const Footer = () => {
                         </Link>
                       </div>
                       <div>
-                        <Link href="/coming-soon">
+                        <Link href="/Terms_and_Conditions">
                           <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Terms and conditions
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
