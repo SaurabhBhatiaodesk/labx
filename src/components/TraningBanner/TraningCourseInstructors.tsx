@@ -62,7 +62,8 @@ function TraningCourseInstructors() {
                 </div>
 
                 <ul className="space-y-2 pb-5">
-                <p>{`Our instructors for the Advanced Motherboard Repair – Micro Soldering course are seasoned professionals with over a decade of expertise in mobile device repair. They bring extensive industry knowledge, practical insights, and hands-on guidance to every session. Dedicated to helping students master micro soldering techniques they ensure confidence and precision in advanced motherboard diagnostics, circuit repair, and component-level replacements.`}</p>
+                <p>{`Our instructors for the Advanced Motherboard Repair – Micro Soldering course are seasoned professionals with over a decade of expertise in mobile device repair. They bring extensive industry knowledge, practical insights, and hands-on guidance to every session. Dedicated to helping students master micro soldering techniques, they ensure confidence and precision in advanced motherboard diagnostics, circuit repair, and component-level replacements.
+`}</p>
                  
                 </ul>
 

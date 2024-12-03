@@ -43,14 +43,14 @@ const TraningTabBignersecond: React.FC = () => {
   const tabs: Tab[] = [
     {
       id: 0,
-      label: "basic Phone Repair Introduction",
-      content: "basic Phone Repair Introduction",
-      contentf2title: "Expert B2B Screen Refurbishing",
+      label: "Back Glass and Housing Replacements",
+      content: "",
+      contentf2title: "",
       contentf2:
-        " Learn the fundamentals of mobile phone repair in our comprehensive beginner course, designed to give you hands-on experience with a wide range of repairs. Our expert trainers will guide you through each step, ensuring you gain practical knowledge and confidence in repairing various devices.",
-      contentf3title: "State-of-the-Art Technology",
+        "Master techniques to remove and replace back glass and housings on smartphones. This skill ensures seamless repairs that maintain the device’s durability and aesthetics, helping restore its original look and feel after damage.",
+      contentf3title: "",
       contentf3:
-        " Learn the fundamentals of mobile phone repair in our comprehensive beginner course, designed to give you hands-on experience with a wide range of repairs.",
+        "",
 
       button: "Get Course",
       link: "/coming-soon",
@@ -58,66 +58,66 @@ const TraningTabBignersecond: React.FC = () => {
     },
     {
       id: 1,
-      label: "basic Phone Repair Introduction",
-      content: "LabX Professional Phone Repair Courses:",
-      contentf2title: "Beginner Training",
+      label: "Camera and Flashlight Replacements",
+      content: "",
+      contentf2title: "",
       contentf2:
-        " Our beginner phone repairing course covers essential phone repairs, including screen replacement services and charging port repairs. Gain hands-on experience and confidence in your repair skills.",
-      contentf3title: "Advanced Training",
+        "Learn to diagnose and replace damaged camera modules and flashlights. This phone repair course teaches safe removal and installation procedures to ensure excellent image quality and reliable flashlight performance, restoring full device functionality.",
+      contentf3title: "",
       contentf3:
-        " In our advanced course, you will master complex repairs like motherboard and microsoldering training. Enhance your skill set to tackle challenging issues with precision and professionalism.",
-      contentf4title: "Software Training ",
+        "",
+      contentf4title: "",
       contentf4:
-        " This course focuses on essential software repairs, including phone flashing, unlocking, and other software fixes. Learn how to troubleshoot and resolve software-related problems effectively.",
-      contentf5title: "Screen Refurbishing Training",
+        "",
+      contentf5title: "",
       contentf5:
-        " Learn how to restore damaged screens to their original quality. Master the techniques needed to refurbish screens for a variety of devices.",
+        "",
       button: "Get Course",
       link: "/coming-soon",
       image: tabimage,
     },
     {
       id: 2,
-      label: "Mail In Repair",
-      content: "basic Phone Repair Introduction",
-      contentf2title: "Review Our Pricing",
+      label: "Removing Non-Genuine Part Warnings",
+      content: "",
+      contentf2title: "",
       contentf2:
-        "Review Our Pricing: Check our Price List for no-fix, no-fee pricing on common logic board issues. A $66 service fee applies for devices with previous repair attempts.",
-      contentf3title: "Start Your Repair",
+        "Understand how to address non-genuine part warnings related to batteries and cameras. This phone repairing course equips you to resolve these issues effectively, ensuring the device operates without intrusive warnings, improving customer satisfaction and device usability.",
+      contentf3title: "",
       contentf3:
-        " Click Start Repair to provide details about your device and its issues. You’ll receive a quote and mailing instructions within 24 hours.",
-      contentf4title: "Need Help Now?",
+        "",
+      contentf4title: "",
       contentf4:
-        " For immediate assistance, call us directly to start the repair process right away.",
-      contentf5title: "Send Your Device",
+        "",
+      contentf5title: "",
       contentf5:
-        "Send Your Device: Once approved, follow the provided mailing instructions to ship your device to us securely.",
-      contentf6title: "Device Intake and Repair",
+        "",
+      contentf6title: "",
       contentf6:
-        " Upon receipt, we’ll confirm via email and place your device in the repair queue, notifying you of any updates during the process.",
+        "",
       button: "Get Course",
       link: "/mail-in-repair",
       image: tabimage,
     },
     {
       id: 3,
-      label: "B2B Phone Repair",
-      content: "LabX Professional B2B Phone Repair:",
-      contentf2title: "Competitive Pricing",
+      label: "Power and Volume Button Repairs",
+      content: "",
+      contentf2title: "",
       contentf2:
-        "Our pricing is competitive with one standard rate for both end users and shops. We focus on providing high-quality repair services and offer support to businesses when they need reliable, cost-effective solutions for their repair needs.",
-      contentf3title: "Bulk Repair Solutions",
+        "Develop skills to repair or replace malfunctioning power and volume buttons. Learn the techniques for diagnosing issues and restoring button functionality, ensuring a seamless user experience and extending the device's lifespan.",
+      contentf3title: "",
       contentf3:
-        " Our infrastructure is designed to handle bulk repair orders efficiently, ensuring quick turnaround times without compromising on quality. Whether you need screen refurbishments or complex repairs for multiple devices, we can scale our services to match your volume",
-      contentf4title: "Custom Repair Solutions",
+        "",
+      contentf4title: "",
       contentf4:
-        "We offer tailored repair solutions to suit your business requirements, whether you need bulk repairs, iphone parts, screen refurbishing, or specialized services. Our flexible offerings can adapt to your unique needs.",
-      contentf5title: "Repair Tracking and Updates",
+        "",
+      contentf5title: "",
       contentf5:
-        "Stay informed with our comprehensive mobile phone repair tracking system. We provide automated updates at each stage, ensuring you always know the status of your devices throughout the mobile phone repair process",
-      contentf6title: "Easy B2B Account Setup",
+        "",
+      contentf6title: "",
       contentf6:
-        "Setting up a B2B account is straightforward. Complete the Apply for Business Account form on our website, and your account will be activated within moments, providing you with fast turnaround time for exclusive B2B phone repair services.",
+        "",
       button: "Get Course",
       link: "/mail-in-repair",
       image: tabimage,
@@ -170,14 +170,14 @@ const TraningTabBignersecond: React.FC = () => {
         backgroundSize: "cover",
       }}
     >
-      <div className="container bgchange">
+      <div className="container bgchange pt-5">
         {/* <div className="mb-3">
           <MainHeading Heading="Course Content" />
         </div> */}
 
         <div className="p-3 bg-white mb-6">
           <p className="text-black mb-0 font-[600]">
-            Section 2. Phone Repair Course
+            Section 2: Removing and Replacing Parts
           </p>
         </div>
         <div className="">

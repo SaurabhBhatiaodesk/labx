@@ -22,77 +22,59 @@ import { Swiper as SwiperType } from "swiper";
 
 const reviews = [
   {
-    name: "Hamza Javaid",
+    name: "Liam Foster",
     date: "September 12, 2023",
     profileImage: hname,
     logoImage: Googletest,
     rating: 5,
     param:
-      "I recently took a course at Lab X , and it was outstanding expeience. The instructor Bharat was knowledgeable , patient and genuinely passionate about sharing their expertise.",
+      "The course was incredibly detailed, and the hands-on practice helped me build confidence. The instructors were patient and knowledgeable, making even complex micro soldering techniques easy to understand.",
   },
   {
-    name: "Rakesh Vaghela",
+    name: "Emma Williams",
     date: "September 12, 2023",
     profileImage: rname,
     logoImage: Googletest,
     rating: 5,
     param:
-      "I had an outstanding experience at the LabX Repair Training Centre! Bharat is highly knowledgeable and patient, offering clear, step-by-step guidance throughout the course..",
+      "This course transformed my skills! I can now confidently repair motherboards and handle advanced micro soldering tasks. Highly recommend it for anyone serious about electronics repair.",
   },
   {
-    name: "Sahil Sardana",
+    name: "Jack O'Connor",
     date: "September 12, 2023",
     profileImage: Sname,
     logoImage: Googletest,
     rating: 5,
     param:
-      "I recently had my Samsung Galaxy S23 Ultra screen repaired, and the experience was absolutely wonderful! From start to finish, everything was handled with.",
+      "The one-week intensive program was perfect. I learned advanced diagnostics and component replacement with expert guidance. The hands-on approach made everything clear and practical. Excellent experience!",
   },
   {
-    name: "Liam Brown",
+    name: "Chloe Brown",
     date: "October 5, 2023",
     profileImage: jname,
     logoImage: Googletest,
     rating: 5,
     param:
-      "I had a great experience with LabX Repair. Their team handled my data recovery effortlessly. They were professional and kept me informed every step of the way. Truly impressive service!",
+      "Fantastic course! The instructors were highly experienced, and their step-by-step guidance on micro soldering was invaluable. I feel ready to handle complex motherboard repairs now. ",
   },
   {
-    name: "Ashley Jay",
+    name: "Oliver Harris",
     date: "November 1, 2023",
     profileImage: Aname,
     logoImage: Googletest,
     rating: 5,
     param:
-      "Top quality service from Bharat in repairing my mum's Samsung S24. He was very understanding and helpful in understanding the costs both potential and up front",
+      "The training exceeded my expectations. From using advanced tools to mastering micro soldering techniques, I gained practical skills that I can apply immediately. Great value for time and money!",
   },
   {
-    name: "Navdeep Narang",
+    name: "Sophie Clark",
     date: "November 1, 2023",
     profileImage: Nname,
     logoImage: Googletest,
     rating: 5,
     param:
-      "I had an incredible experience with Business Lab X. Bharat is a fantastic instructor who truly knows his craft and is dedicated to teaching others the skills of repair...",
+      "A must-attend course for repair professionals. The small class size allowed personalized attention, and the hands-on exercises helped me master motherboard repairs quickly. Truly worth every minute!",
   },
-  // {
-  //   name: "Isabella Johnson",
-  //   date: "November 1, 2023",
-  //   profileImage: Iname,
-  //   logoImage: Googletest,
-  //   rating: 5,
-  //   param:"Fantastic experience with LabX Repair! They not only fixed my phone quickly but also offered invaluable advice on maintenance. Their team is friendly and efficient. I’ll be back for sure!",
-  // },
-  {
-    name: "Ethan Wilson",
-    date: "November 1, 2023",
-    profileImage: jname,
-    logoImage: Googletest,
-    rating: 5,
-    param:
-      "LabX Repair's B2B services are top-notch! They handle our bulk repairs with efficiency and transparency. Communication is excellent, and we’ve never had an issue. Highly recommended for business needs!",
-  },
-  // Add more review objects as needed
 ];
 
 export default function Productswiper({}) {
@@ -102,8 +84,8 @@ export default function Productswiper({}) {
     <div className="bg-[#0b0b0b]">
       <div className="container">
         <div className="py-5 xl:p-6">
-          <MainHeading Heading="Google Reviews" />
-          <MainTitle Title="Read our genuine customer reviews to see why so many trust LabX. Real feedback from satisfied customers speaks for itself!" />
+          <MainHeading Heading="Learner Testimonials" />
+          <MainTitle Title="" />
           <div className="service-slide-box flex gap-5 lg:flex-row items-center flex-col">
             <Swiper
               onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -166,7 +148,7 @@ export default function Productswiper({}) {
                       className="font-extralight font-poppins text-[16px] leading-[24px]"
                       style={{
                         display: "-webkit-box",
-                        WebkitLineClamp: 5,
+                        WebkitLineClamp: 4,
                         WebkitBoxOrient: "vertical",
                         overflow: "hidden",
                       }}
