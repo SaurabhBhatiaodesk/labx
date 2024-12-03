@@ -51,7 +51,7 @@ const WhyChooseLabX: React.FC = () => {
       content:"Duration: 5 Days | Price: $5500",
       description: `Our Professional Phone Screen Refurbishing Course is designed to teach technicians how to refurbish damaged or broken phone screens using industry-standard tools and techniques. This hands-on phone fixing course covers the entire refurbishing process, from screen disassembly to reassembly, ensuring high-quality results for both LCD and OLED screens.`,
       hoverBackground: "linear-gradient(74deg, rgba(207, 35, 98, 0.655), rgb(0, 0, 0))",
-      pageUrl:'/abc'
+      pageUrl:'/professional-phone-screen'
     },
   ];
 
