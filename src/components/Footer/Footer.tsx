@@ -150,7 +150,7 @@ const Footer = () => {
                         </Link>
                       </div>
                       <div>
-                        <Link href="/">
+                        <Link href="/blogs">
                           <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Blogs
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
