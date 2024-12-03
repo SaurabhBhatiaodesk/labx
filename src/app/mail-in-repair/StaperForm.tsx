@@ -127,6 +127,7 @@ const StaperForm: React.FC = () => {
   });
   const [pricingAgreement, setPricingAgreement] = useState(false);
 
+
   console.log("personalDetails", personalDetails);
   console.log("deviceDetails", deviceDetails);
   console.log("repairDetails", repairDetails);
