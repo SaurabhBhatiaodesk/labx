@@ -13,7 +13,7 @@ const page = () => {
           pageDescription="Contact Us For More Information "
           backgroundImage="/Images/BannerImages/contact-us.png"
           AdminImage="/Images/contactus.svg"
-          link="/coming-soon"
+          link="/contact-us"
         />
 
         <div>

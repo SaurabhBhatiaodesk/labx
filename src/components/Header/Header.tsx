@@ -18,8 +18,8 @@ import { RiArrowDropUpLine } from "react-icons/ri";
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const [isDropdownDelayedClose, setIsDropdownDelayedClose] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null); // Added reference for the entire menu
 
   const menuItems = [
     {
@@ -51,18 +51,11 @@ export default function App() {
     setIsServicesDropdownOpen((prev) => !prev); // Toggle Services dropdown state
   };
 
-  // Close the dropdown when clicking outside
+  // Close the dropdown and menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: any) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        if (isDropdownDelayedClose) {
-          const timer = setTimeout(() => {
-            setIsServicesDropdownOpen(false);
-            setIsDropdownDelayedClose(false); // Reset the delayed close flag
-          }, 300); // Delay to close the dropdown
-          return () => clearTimeout(timer); // Cleanup the timeout on component unmount or change
-        }
-        // Close dropdown if clicked outside
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false); // Close the menu if clicked outside
       }
     };
 
@@ -70,25 +63,24 @@ export default function App() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isDropdownDelayedClose]);
+  }, []);
 
   // Prevent closing dropdown when clicking on a menu item
   const handleLinkClick = (e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent the dropdown from toggling when a link is clicked
   };
 
+  // Close the menu when an item is clicked
+  const handleMenuItemClick = () => {
+    setIsMenuOpen(false); // Close the menu when an item is clicked
+  };
+
+
   return (
     <div className="header-component">
-      <Navbar
-        className="text-white bg-black"
-        isBordered
-        isMenuOpen={isMenuOpen}
-        onMenuOpenChange={setIsMenuOpen}
-      >
+      <Navbar className="text-white bg-black" isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
         <NavbarContent className="lg:hidden">
-          <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          />
+          <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
         </NavbarContent>
 
         <NavbarContent className="flex justify-center items-center">
@@ -100,32 +92,21 @@ export default function App() {
         </NavbarContent>
 
         <div className="hidden lg:flex flex-grow justify-center">
-          <div className="flex gap-[20px] xl:gap-[30px]">
+          <div className="flex gap-[20px] xl:gap-[30px]" ref={menuRef}> {/* Wrap menu in the ref */}
             {menuItems.map((item) => (
               <NavbarItem key={item.label}>
                 {item.dropdown ? (
                   <div className="relative" ref={dropdownRef}>
-                    <button
-                      onClick={handleServicesDropdownToggle}
-                      className="flex items-center tracking-[1.5px] font-medium group"
-                    >
+                    <button onClick={handleServicesDropdownToggle} className="flex items-center tracking-[1.5px] font-medium group">
                       {item.label}
-                      <span
-                        className={`ml-2 transform transition-transform ${
-                          isServicesDropdownOpen ? "rotate-0" : "rotate-180"
-                        }`}
-                      >
+                      <span className={`ml-2 transform transition-transform ${isServicesDropdownOpen ? "rotate-0" : "rotate-180"}`}>
                         <RiArrowDropUpLine />
                       </span>
                     </button>
                     {isServicesDropdownOpen && (
                       <div className="absolute left-0 mt-2 p-2 bg-black text-white rounded shadow-lg">
                         {item.subItems.map((subItem) => (
-                          <Link
-                            key={subItem.label}
-                            href={subItem.path || "#"}
-                            className="block px-4 py-2 hover:bg-gray-800"
-                          >
+                          <Link key={subItem.label} href={subItem.path || "#"} onClick={handleMenuItemClick} className="block px-4 py-2 hover:bg-gray-800">
                             {subItem.label}
                           </Link>
                         ))}
@@ -133,17 +114,12 @@ export default function App() {
                     )}
                   </div>
                 ) : item.path ? (
-                  <Link
-                    className="relative tracking-[1.5px] font-medium group"
-                    href={item.path}
-                  >
+                  <Link className="relative tracking-[1.5px] font-medium group" href={item.path} onClick={handleMenuItemClick}>
                     {item.label}
                     <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                   </Link>
                 ) : (
-                  <span className="tracking-[1.5px] font-medium">
-                    {item.label}
-                  </span>
+                  <span className="tracking-[1.5px] font-medium">{item.label}</span>
                 )}
               </NavbarItem>
             ))}
@@ -161,16 +137,9 @@ export default function App() {
             <NavbarMenuItem key={`${item.label}-${index}`}>
               {item.dropdown ? (
                 <div>
-                  <button
-                    onClick={handleServicesDropdownToggle}
-                    className="flex justify-between w-full px-4 py-2"
-                  >
+                  <button onClick={handleServicesDropdownToggle} className="flex justify-between w-full px-4 py-2">
                     {item.label}
-                    <span
-                      className={`ml-2 transform transition-transform ${
-                        isServicesDropdownOpen ? "rotate-180" : "rotate-0"
-                      }`}
-                    >
+                    <span className={`ml-2 transform transition-transform ${isServicesDropdownOpen ? "rotate-180" : "rotate-0"}`}>
                       <RiArrowDropUpLine />
                     </span>
                   </button>
@@ -181,7 +150,10 @@ export default function App() {
                         <Link
                           key={subItem.label}
                           href={subItem.path || "#"}
-                          onClick={handleLinkClick} // Prevent closing the dropdown on click
+                          onClick={(e) => {
+                            handleLinkClick(e); // Prevent closing the dropdown on click
+                            handleMenuItemClick(); // Close the menu
+                          }}
                           className="block px-0 py-2 hover:bg-gray-800"
                         >
                           {subItem.label}
@@ -191,7 +163,7 @@ export default function App() {
                   )}
                 </div>
               ) : item.path ? (
-                <Link className="w-full" href={item.path}>
+                <Link className="w-full" href={item.path} onClick={handleMenuItemClick}>
                   {item.label}
                 </Link>
               ) : (
@@ -204,6 +176,8 @@ export default function App() {
     </div>
   );
 }
+
+
 
 // "use client";
 // import React, { useState, useEffect, useRef } from "react";
