@@ -1,12 +1,12 @@
 import React from 'react'
-import Blogs from './blog'
+import WhatWeDo from './what-we-do'
 const page = () => {
 
   
   return (
    <>
 <div>
-    <Blogs/>
+    <WhatWeDo/>
 </div>
    </>
   )

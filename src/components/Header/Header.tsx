@@ -239,8 +239,13 @@ export default function App() {
     { label: "Parts Store", path: "/coming-soon" },
     { label: "Training", path: "/training" },
     { label: "Screen Refurbishment", path: "/coming-soon" },
-    { label: "About us", path: "/about-us" },
-    { label: "Contact Us", path: "/contact-us" },
+    {
+      label: "About us",
+      path: "/about-us",
+      dropdown: true,
+      subItems: [{ label: "What We Do", path: "/what-we-do" }],
+    },
+    { label: "Contact Us", path: "/coming-soon" },
     { label: "Price List", path: "/coming-soon" },
   ];
 
@@ -260,7 +265,6 @@ export default function App() {
     setIsServicesDropdownOpenDesktop((prev) => !prev); // Toggle Services dropdown state for desktop
   };
 
-  // Close the dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -409,3 +413,4 @@ export default function App() {
     </div>
   );
 }
+

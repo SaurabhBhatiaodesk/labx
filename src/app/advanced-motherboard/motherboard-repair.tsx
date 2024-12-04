@@ -6,6 +6,7 @@ import TraningCourseInstructors from "@/components/TraningBanner/TraningCourseIn
 import TrainingTabMotherboard from "@/components/TraningBanner/TrainingTabMotherboard";
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
 import MotherboardReviews from "@/components/GoogleReviews/MotherboardReviews";
+import AdvancedChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/advancedMotherboardChooseLab"
 import React from "react";
 
 const BeginnerCourse = () => {
@@ -82,6 +83,7 @@ const BeginnerCourse = () => {
       <TrainingTabMotherboard />
       <TraningCourseInstructors />
       <MotherboardPhoneReapair />
+      <AdvancedChooseLab />
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."

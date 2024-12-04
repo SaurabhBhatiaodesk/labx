@@ -12,6 +12,7 @@ import FristTraningTab from "../expert-motherboard-repair/FristTraningTab";
 import TrainingInstructors from "../expert-motherboard-repair/TrainingInstructors";
 import TraningSales from "../expert-motherboard-repair/TraningSales";
 import ThreeTraningTab from "./ThreeTraningTab";
+import MasterChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/MasterChooseLab"
 
 
 const MasterMotherboardRepair = () => {
@@ -121,7 +122,7 @@ const MasterMotherboardRepair = () => {
         }}
       />
 
-
+      <MasterChooseLab />
       {/* <BeginnerPhoneRepaiCourseSale /> */}
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)
