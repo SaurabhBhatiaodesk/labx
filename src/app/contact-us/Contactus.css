@@ -9,6 +9,7 @@ textarea::placeholder {
   color: white !important;
 }
 
+
 input[type="submit"] {
   background-color: #ede574; /* Button background */
   color: black;
