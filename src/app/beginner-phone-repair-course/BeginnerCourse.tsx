@@ -5,7 +5,7 @@ import TraningCourseInstructors from "@/components/TraningBanner/TraningCourseIn
 import TraningTabBigner from "@/components/TraningBanner/TraningTabBigner";
 import TraningTabBignersecond from "@/components/TraningBanner/TraningTabBignersecond";
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
-import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
+import BiginnerChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/BiginnerChooseLab";
 import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
 import React from "react";
 
@@ -85,6 +85,7 @@ const BeginnerCourse = () => {
       <TraningTabBignersecond />
       <TraningCourseInstructors />
       <BeginnerPhoneRepaiCourseSale />
+      <BiginnerChooseLab />
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."

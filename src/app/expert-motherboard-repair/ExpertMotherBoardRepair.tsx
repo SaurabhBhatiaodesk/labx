@@ -5,6 +5,7 @@ import TraningBanner from "@/components/TraningBanner/TraningBanner";
 import TraningCourseInstructors from "@/components/TraningBanner/TraningCourseInstructors";
 import TraningTabBigner from "@/components/TraningBanner/TraningTabBigner";
 import TraningTabBignersecond from "@/components/TraningBanner/TraningTabBignersecond";
+import ExpertChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/ExpertChooseLab"
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
 import ExpertMotherboardReviews from "@/components/GoogleReviews/ExpertMotherboardReviews";
 import React from "react";
@@ -119,6 +120,7 @@ const BeginnerCourse = () => {
 
 
       {/* <BeginnerPhoneRepaiCourseSale /> */}
+      <ExpertChooseLab />
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."

@@ -68,17 +68,17 @@ function BeginnerPhoneRepairCourseSale() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
             <div className="p-3 lg:p-6 bg-black text-white rounded-md">
               <h2 className="text-3xl font-bold mb-4">
-              Hands-On Learning for Real-World Skills
+              Tools and Techniques Covered
               </h2>
               <ul className="space-y-2 pb-5">
               <p>
                 
-                {`This mobile phone training program is designed to provide hands-on experience in mobile device repair, covering everything from essential tools to complex diagnostics. Our expert instructors guide students through each repair technique, emphasizing real-world applications and precision. By mastering key skills like screen and battery replacement, troubleshooting, and component replacement, students gain confidence to handle repairs on a wide range of devices.`}
+                {`The Screen Refurbishment Course offers hands-on learning with essential tools, including screen separators, OCA laminating equipment, vacuum laminators, and laser machines for precise repairs. Master techniques like LOCA UV glue application, ultrasonic cleaning, and polarizer film replacement. Learn to safely remove back glass and create flawless displays, equipping you with professional skills for LCD and OLED screen restoration.`}
               </p>
               </ul>
 
               {/* Countdown Timer */}
-              <div className=" flex justify-between w-full gap-2">
+              {/* <div className=" flex justify-between w-full gap-2">
                 <div className="flex justify-between items-center  border-[2px] border-[#EDE574] text-black p-4 rounded-md w-full">
                   <div className="text-center">
                     <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-[#EDE574]">
@@ -106,11 +106,11 @@ function BeginnerPhoneRepairCourseSale() {
                   </div>
                 </div>
 
-                {/* <div className="text-center bg-yellow-400 p-2 rounded w-fit text-[40px]  flex flex-col items-center justify-center ">
+                <div className="text-center bg-yellow-400 p-2 rounded w-fit text-[40px]  flex flex-col items-center justify-center ">
                   <h3 className="lg:text-[50px] font-bold text-black">40%</h3>
                   <p className="m-0 text-[black]">SALE</p>
-                </div> */}
-              </div>
+                </div>
+              </div> */}
             </div>
 
             <div className="relative w-full h-[300px] md:h-[550px]">
