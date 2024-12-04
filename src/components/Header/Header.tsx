@@ -84,14 +84,12 @@ export default function App() {
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
       >
-        {/* Mobile Menu Toggle */}
         <NavbarContent className="lg:hidden">
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           />
         </NavbarContent>
 
-        {/* Brand Logo */}
         <NavbarContent className="flex justify-center items-center">
           <NavbarBrand>
             <Link href="/">
@@ -100,7 +98,6 @@ export default function App() {
           </NavbarBrand>
         </NavbarContent>
 
-        {/* Desktop Menu */}
         <div className="hidden lg:flex flex-grow justify-center">
           <div className="flex gap-[20px] xl:gap-[30px]">
             {menuItems.map((item) => (
@@ -152,14 +149,12 @@ export default function App() {
           </div>
         </div>
 
-        {/* Right Side Content */}
         <NavbarContent justify="end">
           <Link href="/coming-soon">
             <button className="btn hidden lg:block">GET STARTED</button>
           </Link>
         </NavbarContent>
 
-        {/* Mobile Menu */}
         <NavbarMenu className="bg-black text-white lg:hidden">
           {menuItems.map((item, index) => (
             <NavbarMenuItem key={`${item.label}-${index}`}>
@@ -179,7 +174,6 @@ export default function App() {
                     </span>
                   </button>
 
-                  {/* Conditional rendering for the dropdown */}
                   {isServicesDropdownOpen && (
                     <div className="pl-4">
                       {item.subItems.map((subItem) => (
@@ -302,14 +296,14 @@ export default function App() {
 //         isMenuOpen={isMenuOpen}
 //         onMenuOpenChange={setIsMenuOpen}
 //       >
-//         {/* Mobile Menu Toggle */}
+//         {/ Mobile Menu Toggle /}
 //         <NavbarContent className="lg:hidden">
 //           <NavbarMenuToggle
 //             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
 //           />
 //         </NavbarContent>
 
-//         {/* Brand Logo */}
+//         {/ Brand Logo /}
 //         <NavbarContent className="flex justify-center items-center">
 //           <NavbarBrand>
 //             <Link href="/">
@@ -318,7 +312,7 @@ export default function App() {
 //           </NavbarBrand>
 //         </NavbarContent>
 
-//         {/* Desktop Menu */}
+//         {/ Desktop Menu /}
 //         <div className="hidden lg:flex flex-grow justify-center">
 //           <div className="flex gap-[20px] xl:gap-[30px]">
 //             {menuItems.map((item) => (
@@ -372,14 +366,14 @@ export default function App() {
 //           </div>
 //         </div>
 
-//         {/* Right Side Content */}
+//         {/ Right Side Content /}
 //         <NavbarContent justify="end">
 //           <Link href="/coming-soon">
 //             <button className="btn hidden lg:block">GET STARTED</button>
 //           </Link>
 //         </NavbarContent>
 
-//         {/* Mobile Menu */}
+//         {/ Mobile Menu /}
 //         <NavbarMenu className="bg-black text-white lg:hidden">
 //           {menuItems.map((item, index) => (
 //             <NavbarMenuItem key={`${item.label}-${index}`}>
@@ -399,7 +393,7 @@ export default function App() {
 //                     </span>
 //                   </button>
 
-//                   {/* This part will conditionally render the dropdown */}
+//                   {/ This part will conditionally render the dropdown /}
 //                   {isServicesDropdownOpenMobile && (
 //                     <div className="pl-4">
 //                       {item.subItems.map((subItem) => (

@@ -111,8 +111,7 @@ const ContactUsForm: React.FC = () => {
       errors.email_address ||
       errors.contact_no
     ) {
-
-      alert("Please fill all the required fields")
+      alert("Please fill all the required fields");
       return; // Prevent form submission
     }
     const requestData = {
@@ -145,7 +144,7 @@ const ContactUsForm: React.FC = () => {
       alert("An error occurred while submitting the form.");
     }
   };
-console.log("formDataaaa",formData)
+  console.log("formDataaaa", formData);
   return (
     <>
       <section
@@ -170,7 +169,7 @@ console.log("formDataaaa",formData)
               <div className="relative w-full h-[100%]">
                 <div className="lg:absolute w-full lg:top-[20%] xl:right-[80px] lg:right-[40px] lg:transform lg:translate-x-[10px] lg:translate-y-[10px]">
                   <div className="flex gap-3 flex-col justify-center p-4 lg:p-6 bg-white text-black rounded-3xl">
-                    {/* Address */}
+                    {/* {/ Address /} */}
                     <div className="flex items-center gap-3">
                       <span className="flex-shrink-0">
                         <Image
@@ -188,7 +187,7 @@ console.log("formDataaaa",formData)
                         </p>
                       </Link>
                     </div>
-                    {/* Phone */}
+                    {/* {/ Phone /} */}
                     <div className="flex items-center gap-3">
                       <span className="flex-shrink-0">
                         <Image
@@ -203,7 +202,7 @@ console.log("formDataaaa",formData)
                         </p>
                       </Link>
                     </div>
-                    {/* Email */}
+                    {/* {/ Email /} */}
                     <div className="flex items-center gap-3">
                       <span className="flex-shrink-0">
                         <Image
@@ -214,11 +213,11 @@ console.log("formDataaaa",formData)
                       </span>
                       <Link href="mailto:bharat@labxrepair.com.au" passHref>
                         <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
-                          bharat@labxrepair.com.au
+                          mailto:bharat@labxrepair.com.au
                         </p>
                       </Link>
                     </div>
-                    {/* Operating Hours */}
+                    {/* {/ Operating Hours /} */}
                     <div className="flex items-center gap-3">
                       <span className="flex-shrink-0">
                         <Image
@@ -234,7 +233,7 @@ console.log("formDataaaa",formData)
                   </div>
                 </div>
               </div>
-              {/* <Image className="w-full h-full object-cover" src={contactusimage} alt="Contact Us Image" /> */}
+              {/* {/ <Image className="w-full h-full object-cover" src={contactusimage} alt="Contact Us Image" /> /} */}
             </div>
 
             <div>
@@ -242,7 +241,7 @@ console.log("formDataaaa",formData)
                 <form onSubmit={handleSubmit}>
                   <div className="flex flex-col gap-4 bg-black text-white">
                     <div className="grid grid-cols-2 gap-4 form-label">
-                      {/* Business Name Input */}
+                      {/* {/ Business Name Input /} */}
                       <TextField
                         label="First Name*"
                         name="first_name"
@@ -254,7 +253,7 @@ console.log("formDataaaa",formData)
                         helperText={formErrors.first_name}
                       />
 
-                      {/* Email Input with validation */}
+                      {/* {/ Email Input with validation /} */}
                       {/* <TextField
               label="Your Email *"
               name="email_address"
@@ -286,8 +285,8 @@ console.log("formDataaaa",formData)
                         error={!!formErrors.email_address}
                         helperText={formErrors.email_address}
                       />
-
-                      {/* Phone Number Input with validation */}
+                      {/* 
+                      {/ Phone Number Input with validation /} */}
                       <TextField
                         label="Phone Number *"
                         name="contact_no"
@@ -300,7 +299,7 @@ console.log("formDataaaa",formData)
                         helperText={formErrors.contact_no}
                       />
 
-                      {/* Course Selection */}
+                      {/* {/ Course Selection /} */}
                       {/* <FormControl fullWidth variant="outlined">
               <InputLabel>Select Your Course *</InputLabel>
               <Select
@@ -339,7 +338,7 @@ console.log("formDataaaa",formData)
             </FormControl> */}
                     </div>
 
-                    {/* Training Message */}
+                    {/* {/ Training Message /} */}
                     <div>
                       <h3 className="text-[20px] lg:text-[26px]">
                         Write Your Enquiry
@@ -366,7 +365,7 @@ console.log("formDataaaa",formData)
                     </div>
                   </div>
 
-                  {/* Submit Button */}
+                  {/* {/ Submit Button /} */}
                   <div className="py-4">
                     <Button
                       variant="contained"

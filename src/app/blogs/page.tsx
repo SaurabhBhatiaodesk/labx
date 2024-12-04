@@ -1,15 +1,13 @@
-import React from 'react'
-import Blogs from './blog'
+import React from "react";
+import Blogs from "./blog";
 const page = () => {
-
-  
   return (
-   <>
-<div>
-    <Blogs/>
-</div>
-   </>
-  )
-}
+    <>
+      <div>
+        <Blogs />
+      </div>
+    </>
+  );
+};
 
-export default page
+export default page;

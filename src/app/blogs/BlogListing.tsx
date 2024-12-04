@@ -87,7 +87,7 @@ const Blogs: React.FC = () => {
         </div>
       </div>
 
-      {/* Numbered Pagination Controls */}
+      {/* {/ Numbered Pagination Controls /} */}
       {pagination && (
         <div className="pagination-controls flex justify-center mt-4">
           {Array.from({ length: pagination.totalPages }, (_, index) => (
