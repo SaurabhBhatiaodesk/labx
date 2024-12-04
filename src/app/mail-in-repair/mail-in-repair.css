@@ -1,0 +1,188 @@
+.data-\[hover\=true\]\:transition-colors[data-hover="true"] {
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+  background-color: #ede574 !important;
+  color: black !important;
+}
+
+a label[data-slot="label ,trigger"] {
+  color: #ffffff;
+}
+
+textarea::placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.subpixel-antialiased {
+  color: white !important;
+}
+
+input[type="submit"] {
+  background-color: #ede574;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  transform: scale(1.05);
+  background-color: #e1f5c4;
+}
+
+.gauav button {
+  background: #ff000000;
+  border: 1px solid;
+}
+
+.gauav button:hover {
+  background-color: transparent;
+}
+
+.group[data-has-value="true"] .group-data-\[has-value\=true\]\:text-default-foreground {
+  --tw-text-opacity: 1;
+  color: white !important;
+}
+
+.gaurav-bg-trans .transition-background {
+  background: transparent;
+}
+
+.subpixel-antialiased {
+  color: white !important;
+  background: black;
+}
+
+/* style os starts */
+.steper-form-section-os .MuiFormControl-root fieldset {
+  border: 1px solid #fff;
+  /* background-color: #000; */
+}
+
+.steper-form-section-os .MuiFormControl-root fieldset.css-xhkvgb:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #fff;
+}
+
+.steper-form-section-os .MuiFormControl-root .css-xhkvgb:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #fff;
+}
+
+.steper-form-section-os .MuiFormControl-root fieldset.MuiOutlinedInput-notchedOutline:hover .MuiOutlinedInput-notchedOutline {
+  border: 1px solid #fff !important;
+}
+
+.steper-form-section-os .css-1blp12k-MuiInputBase-root-MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #fff !important;
+}
+
+.steper-form-section-os .MuiFormControl-root .css-19qnlrw-MuiFormLabel-root-MuiInputLabel-root {
+  color: #fff;
+}
+
+.steper-form-section-os .MuiFormControl-root label {
+  color: #fff;
+}
+
+.steper-form-section-os .MuiFormControl-root .MuiInputBase-root input {
+  color: #fff;
+}
+
+.steper-textarea-os .MuiTextarea-root {
+  background: #000;
+  color: #fff;
+}
+
+.steper-textarea-os .MuiTextarea-root textarea::placeholder {
+  opacity: 1;
+}
+
+.steper-textarea-os .MuiTextarea-root.css-1cquhrj-JoyTextarea-root:not([data-inverted-colors="false"]) {
+  --Textarea-focusedHighlight: #fff;
+  border: 1px solid #fff !important;
+}
+
+/* style os ends */
+
+/* .steper-form-section-os
+  .MuiFormControl-root
+  .MuiInputBase-root
+  input:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.steper-form-section-os
+  .MuiFormControl-root
+  .MuiInputBase-root
+  input:-webkit-autofill:focus {
+  border-color: #fff !important;
+  background-color: transparent !important;
+}
+
+.steper-form-section-os
+  .MuiFormControl-root
+  .MuiInputBase-root
+  input:-webkit-autofill:focus::-webkit-input-placeholder {
+  color: white !important;
+} */
+.gaurav-line:after {
+  position: absolute;
+  content: "";
+  width: 79%;
+  height: 2px;
+  background: var(--tertiary-color);
+  top: 37%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+@media only screen and (max-width: 600px) {
+  .gaurav-line:after {
+    position: absolute;
+    content: "";
+    width: 79%;
+    height: 2px;
+    background: var(--tertiary-color);
+    top: 20% !important;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+input.check__box {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 4px;
+}
+.check__boxs{
+  min-width: 20px;
+  height: 25px;
+  position: relative;
+  top: 4px;
+}
+
+.signature-canvas-row-os {
+  display: flex
+;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.signature-canvas-row-os > div {
+  width: calc(50% - 8px);
+}
+.signature-canvas-row-os > div img {
+  width: 100%;
+  height: auto;
+  min-height: 199px;
+}
