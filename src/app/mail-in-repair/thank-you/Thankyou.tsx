@@ -8,6 +8,7 @@ interface Params {
   id: string | null; // id can be a string or null if not found
 }
 
+
 const Thankyou = () => {
   const [params, setParams] = useState<Params>({ id: null });
 
