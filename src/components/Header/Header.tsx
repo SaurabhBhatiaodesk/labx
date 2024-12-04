@@ -41,7 +41,8 @@ export default function App() {
     { label: "Training", path: "/training" },
     { label: "Screen Refurbishment", path: "/coming-soon" },
     { label: "About us", path: "/about-us" },
-    { label: "Contact Us", path: "/coming-soon" },
+    { label: "What We Do", path: "/what-we-do" },
+    { label: "Contact Us", path: "/contact-us" },
     { label: "Price List", path: "/coming-soon" },
   ];
 
@@ -181,7 +182,7 @@ export default function App() {
                           key={subItem.label}
                           href={subItem.path || "#"}
                           onClick={handleLinkClick} // Prevent closing the dropdown on click
-                          className="block px-4 py-2 hover:bg-gray-800"
+                          className="block px-0 py-2 hover:bg-gray-800"
                         >
                           {subItem.label}
                         </Link>

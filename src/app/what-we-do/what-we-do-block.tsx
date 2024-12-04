@@ -19,14 +19,31 @@ const WhatWeDo = () => {
       <div className="ship-device">
         <div className="container">
           <div className="text-center py-5 my-5">
-            <h1 className="text-3xl font-bold mb-4 relative w-fit m-auto aos-init aos-animate">Ship Your Device To Us</h1>
-             <p>
+            <h1 className="text-3xl font-bold mb-4 relative w-fit m-auto aos-init aos-animate">
+              Ship Your Device To Us
+            </h1>
+            <svg
+              className="ship-svg-ico relative top-full left-0"
+              width="100%"
+              height="20"
+              viewBox="0 0 100 30"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0 15 Q50 0 100 15"
+                fill="none"
+                stroke="#fff563"
+                stroke-width="6"
+              ></path>
+            </svg>
+            <p>
               Please securely package your phone and ship it to us at the
               designated address. Make sure to include any required
               documentation for efficient processing.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 md:grid-cols-2 justify-center text-center gap-4 mb-2">
+          <div className="max-container grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 md:grid-cols-2 justify-center text-center gap-4 mb-2">
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
               <Image src={Shop1} alt="" />
               <h1 className="mb-4 mt-4 custom-absolute">Training</h1>

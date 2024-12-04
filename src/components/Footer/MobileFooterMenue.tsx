@@ -4,7 +4,6 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import sendicon from "../../../public/Images/icons/send.svg";
 import Link from "next/link";
 
-
 const MobileFooterMenue = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -64,7 +63,9 @@ const MobileFooterMenue = () => {
           }`}
         >
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
-            <li className="mb-2">Contact Us</li>
+            <li className="mb-2">
+              <Link href="/contact-us">Contact Us</Link>
+            </li>
             <li className="mb-2">Blogs</li>
             <li className="mb-2">
               <Link href="/Trademark_Disclaimer">Trademark Disclaimer</Link>

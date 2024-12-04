@@ -1,0 +1,8 @@
+.max-container {
+    max-width: 1200px;
+    margin: auto;
+}
+.ship-device svg.ship-svg-ico {
+    max-width: 480px;
+    margin: auto;
+}

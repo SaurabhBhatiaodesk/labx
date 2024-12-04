@@ -1,15 +1,14 @@
-import React from 'react'
-import WhatWeDo from './what-we-do'
+import React from "react";
+import WhatWeDo from "./what-we-do";
+import "./WhatWeDo.css";
 const page = () => {
-
-  
   return (
-   <>
-<div>
-    <WhatWeDo/>
-</div>
-   </>
-  )
-}
+    <>
+      <div>
+        <WhatWeDo />
+      </div>
+    </>
+  );
+};
 
-export default page
+export default page;
