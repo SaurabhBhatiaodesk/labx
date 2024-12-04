@@ -77,7 +77,7 @@ const MobileFooterMenue = () => {
               <Link href="/Shipping_Policy">Shipping Policy</Link>
             </li>
             <li className="mb-2">
-            <Link href="/faq">FAQ's</Link>
+            <Link href="/faq">FAQs</Link>
             </li>
             <li className="mb-2">
               <Link href="/terms-and-conditions">Terms and Conditions</Link>
