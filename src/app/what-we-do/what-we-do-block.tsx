@@ -26,7 +26,7 @@ const WhatWeDo = () => {
               documentation for efficient processing.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 md:grid-cols-2 justify-center text-center gap-4 mb-2">
+          <div className="max-container grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 md:grid-cols-2 justify-center text-center gap-4 mb-2">
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
               <Image src={Shop1} alt="" />
               <h1 className="mb-4 mt-4 custom-absolute">Training</h1>
