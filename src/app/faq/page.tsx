@@ -2,6 +2,7 @@ import React from 'react'
 import FaqPageCall from './FaqPageCall'
 
 
+
 export const metadata = {
   title: "LabX Repair Mobile Phone Services - Expert Repair & Training",
   description: "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
