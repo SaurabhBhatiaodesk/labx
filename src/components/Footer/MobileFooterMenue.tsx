@@ -4,6 +4,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import sendicon from "../../../public/Images/icons/send.svg";
 import Link from "next/link";
 
+
 const MobileFooterMenue = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -32,15 +33,9 @@ const MobileFooterMenue = () => {
           }`}
         >
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
-           <Link href="/mail-in-repair">
             <li className="mb-2">Mail-In-Repair</li>
-            </Link>
-            <Link href="/training">
             <li className="mb-2">Training</li>
-            </Link>
-            <Link href="/b2b-repair-services">
             <li className="mb-2">B2B Repair</li>
-            </Link>
             <li className="mb-2">Screen Refurbishment</li>
             <li className="mb-2">Data Recovery</li>
             <li className="mb-2">Parts Store</li>
@@ -69,9 +64,7 @@ const MobileFooterMenue = () => {
           }`}
         >
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
-            <Link href="/contact-us">
             <li className="mb-2">Contact Us</li>
-            </Link>
             <li className="mb-2">Blogs</li>
             <li className="mb-2">
               <Link href="/Trademark_Disclaimer">Trademark Disclaimer</Link>

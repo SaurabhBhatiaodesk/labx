@@ -69,7 +69,7 @@ const Footer = () => {
                         </Link>
                       </div>
                       <div>
-                        <Link href="/training">
+                        <Link href="/coming-soon">
                           <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             Training
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
@@ -77,7 +77,7 @@ const Footer = () => {
                         </Link>
                       </div>
                       <div>
-                        <Link href="/b2b-repair-services">
+                        <Link href="/coming-soon">
                           <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             B2B Repair
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
@@ -182,7 +182,7 @@ const Footer = () => {
                         </Link>
                       </div>
                       <div>
-                        <Link href="/faq">
+                        <Link href="/coming-soon">
                           <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
                             FAQ’s
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>

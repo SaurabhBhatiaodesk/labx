@@ -282,7 +282,7 @@ import {
   InputLabel,
   SelectChangeEvent,
 } from "@mui/material";
-import { TextareaAutosize } from "@mui/base"; 
+import { TextareaAutosize } from "@mui/base"; // For the message input
 import "./Form.css";
 
 const FormCode: React.FC = () => {
