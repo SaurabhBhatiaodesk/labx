@@ -9,6 +9,7 @@ interface Params {
 }
 
 
+
 const Thankyou = () => {
   const [params, setParams] = useState<Params>({ id: null });
 
