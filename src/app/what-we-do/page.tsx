@@ -1,6 +1,6 @@
 import React from "react";
 import WhatWeDo from "./what-we-do";
-import "./WhatWeDo.css";
+import "./whatWeDo.css";
 const page = () => {
   return (
     <>

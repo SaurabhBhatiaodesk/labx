@@ -14,7 +14,7 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import { TextareaAutosize } from "@mui/base";
-import "./contactus.css";
+import "./Contactus.css";
 import contactusimage from "../../../public/Images/contactusimage.png";
 
 // icons
