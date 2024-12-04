@@ -208,97 +208,181 @@ const StaperForm: React.FC = () => {
     setIsInvalid(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value));
   };
 
-  const validateStep = () => {
-    const newErrors: Errors = {};
+    const validateStep = () => {
+      const newErrors: Errors = {};
+console.log('personalDetails',personalDetails)
+console.log('activeStepppp',activeStep)
+      if (activeStep === 0) {
+        // Only validate required fields for Step 0
+        if (!personalDetails?.fullName.trim())
+          newErrors.fullName = "Full name is required";
 
-    if (activeStep === 0) {
-      // Only validate required fields for Step 0
-      if (!personalDetails.fullName.trim())
-        newErrors.fullName = "Full name is required";
+        // Contact number validation: 10 digits only
+        if (!/^\d{10}$/.test(personalDetails?.contactNo))
+          newErrors.contactNo = "Contact number must be 10 digits";
 
-      // Contact number validation: 10 digits only
-      if (!/^\d{10}$/.test(personalDetails.contactNo))
-        newErrors.contactNo = "Contact number must be 10 digits";
+        // Email validation
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(personalDetails?.emailAddress))
+          newErrors.emailAddress = "Invalid email format";
 
-      // Email validation
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(personalDetails.emailAddress))
-        newErrors.emailAddress = "Invalid email format";
+        if (!personalDetails?.returnShippingAddress.trim())
+          newErrors.returnShippingAddress = "Return shipping address is required";
+      }
+      if (activeStep === 1) {
+        // Validate Repair Details (Step 1)
 
-      if (!personalDetails.returnShippingAddress.trim())
-        newErrors.returnShippingAddress = "Return shipping address is required";
-    }
-    if (activeStep === 1) {
-      // Validate Repair Details (Step 1)
+        if (!repairDetails.issueDescription.trim())
+          newErrors.issueDescription = "Description is required";
+        if (repairDetails.previousRepairAttempts === undefined)
+          newErrors.previousRepairAttempts =
+            "Please indicate if there were previous attempts";
 
-      if (!repairDetails.issueDescription.trim())
-        newErrors.issueDescription = "Description is required";
-      if (repairDetails.previousRepairAttempts === undefined)
-        newErrors.previousRepairAttempts =
-          "Please indicate if there were previous attempts";
+        if (
+          repairDetails.previousRepairAttempts == "Yes" &&
+          !repairDetails.previousRepairAttemptsComments.trim()
+        ) {
+          newErrors.previousRepairAttemptsComments =
+            "Explanation of previous repair attempts is required";
+        }
 
-      if (
-        repairDetails.previousRepairAttempts == "Yes" &&
-        !repairDetails.previousRepairAttemptsComments.trim()
-      ) {
-        newErrors.previousRepairAttemptsComments =
-          "Explanation of previous repair attempts is required";
+        if (repairDetails.jumpQueueForFasterService === undefined)
+          newErrors.jumpQueueForFasterService =
+            "Please indicate if you want to jump the queue";
+
+        // If Previous Repair Attempts is "Yes", the additional comments field is required
       }
 
-      if (repairDetails.jumpQueueForFasterService === undefined)
-        newErrors.jumpQueueForFasterService =
-          "Please indicate if you want to jump the queue";
+      if (activeStep === 2) {
+        // Shipping Details Validation
+        // if (
+        //   !shippingDetails.requireReturnLabel &&
+        //   !shippingDetails.returnLabelDetails
+        // )
+        //   newErrors.requireReturnLabel = "Return label details are required";
 
-      // If Previous Repair Attempts is "Yes", the additional comments field is required
-    }
+        // // if (shippingDetails.requirePickupLabel && !shippingDetails.pickupLabelDetails)
+        // // newErrors.requirePickupLabel = "Pickup label details are required";
 
-    if (activeStep === 2) {
-      // Shipping Details Validation
-      // if (
-      //   !shippingDetails.requireReturnLabel &&
-      //   !shippingDetails.returnLabelDetails
-      // )
-      //   newErrors.requireReturnLabel = "Return label details are required";
+        // if (!shippingDetails.termsAndConditions)
+        //   newErrors.termsAndConditions =
+        //     "Accepting terms and conditions is required";
 
-      // // if (shippingDetails.requirePickupLabel && !shippingDetails.pickupLabelDetails)
-      // // newErrors.requirePickupLabel = "Pickup label details are required";
+        // if (!shippingDetails.signature.trim())
+        //   newErrors.signature = "Signature is required";
 
-      // if (!shippingDetails.termsAndConditions)
-      //   newErrors.termsAndConditions =
-      //     "Accepting terms and conditions is required";
+        // Check for return label details
+        if (
+          shippingDetails.requireReturnLabel === "Yes" &&
+          !shippingDetails.returnLabelDetails.trim()
+        )
+          newErrors.requireReturnLabel = "Return label details are required";
 
-      // if (!shippingDetails.signature.trim())
-      //   newErrors.signature = "Signature is required";
+        // Check for pickup label details
+        if (
+          shippingDetails.requirePickupLabel === "Yes" &&
+          !shippingDetails.pickupLabelDetails.trim()
+        )
+          newErrors.requirePickupLabel = "Pickup label details are required";
 
-      // Check for return label details
-      if (
-        shippingDetails.requireReturnLabel === "Yes" &&
-        !shippingDetails.returnLabelDetails.trim()
-      )
-        newErrors.requireReturnLabel = "Return label details are required";
+        if (!shippingDetails.termsAndConditions)
+          newErrors.termsAndConditions =
+            "Accepting terms and conditions is required";
 
-      // Check for pickup label details
-      if (
-        shippingDetails.requirePickupLabel === "Yes" &&
-        !shippingDetails.pickupLabelDetails.trim()
-      )
-        newErrors.requirePickupLabel = "Pickup label details are required";
+        if (!shippingDetails.signature.trim())
+          newErrors.signature = "Signature is required";
+      }
 
-      if (!shippingDetails.termsAndConditions)
-        newErrors.termsAndConditions =
-          "Accepting terms and conditions is required";
+      if (activeStep === 3) {
+        if (!pricingAgreement)
+          newErrors.pricingAgreement = "You must agree to the pricing agreement";
+      }
 
-      if (!shippingDetails.signature.trim())
-        newErrors.signature = "Signature is required";
-    }
+      setErrors(newErrors);
+      return Object.keys(newErrors).length === 0;
+    };
 
-    if (activeStep === 3) {
-      if (!pricingAgreement)
-        newErrors.pricingAgreement = "You must agree to the pricing agreement";
-    }
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+
+// const validateStep = () => {
+//   const newErrors: Errors = {};
+//   console.log('activeSteppppqqq', activeStep);
+
+//   // Alternative to trim using regular expression
+//   const cleanString = (str: string) => str.replace(/^\s+|\s+$/g, '');
+
+//   console.log('personalDetails.fullName.trim()', cleanString(personalDetails.fullName));
+
+//   if (activeStep == 0) {
+//     // Only validate required fields for Step 0
+//     if (!cleanString(personalDetails.fullName))
+//       newErrors.fullName = "Full name is required";
+
+//     // Contact number validation: 10 digits only
+//     if (!/^\d{10}$/.test(personalDetails.contactNo))
+//       newErrors.contactNo = "Contact number must be 10 digits";
+
+//     // Email validation
+//     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(personalDetails.emailAddress))
+//       newErrors.emailAddress = "Invalid email format";
+
+//     if (!cleanString(personalDetails.returnShippingAddress))
+//       newErrors.returnShippingAddress = "Return shipping address is required";
+//   }
+
+//   if (activeStep === 1) {
+//     // Validate Repair Details (Step 1)
+
+//     if (!cleanString(repairDetails.issueDescription))
+//       newErrors.issueDescription = "Description is required";
+
+//     if (repairDetails.previousRepairAttempts === undefined)
+//       newErrors.previousRepairAttempts = "Please indicate if there were previous attempts";
+
+//     if (
+//       repairDetails.previousRepairAttempts === "Yes" &&
+//       !cleanString(repairDetails.previousRepairAttemptsComments)
+//     ) {
+//       newErrors.previousRepairAttemptsComments =
+//         "Explanation of previous repair attempts is required";
+//     }
+
+//     if (repairDetails.jumpQueueForFasterService === undefined)
+//       newErrors.jumpQueueForFasterService = "Please indicate if you want to jump the queue";
+//   }
+
+//   if (activeStep === 2) {
+//     // Shipping Details Validation
+
+//     // Check for return label details
+//     if (
+//       shippingDetails.requireReturnLabel === "Yes" &&
+//       !cleanString(shippingDetails.returnLabelDetails)
+//     )
+//       newErrors.requireReturnLabel = "Return label details are required";
+
+//     // Check for pickup label details
+//     if (
+//       shippingDetails.requirePickupLabel === "Yes" &&
+//       !cleanString(shippingDetails.pickupLabelDetails)
+//     )
+//       newErrors.requirePickupLabel = "Pickup label details are required";
+
+//     if (!shippingDetails.termsAndConditions)
+//       newErrors.termsAndConditions = "Accepting terms and conditions is required";
+
+//     if (!cleanString(shippingDetails.signature))
+//       newErrors.signature = "Signature is required";
+//   }
+
+//   if (activeStep === 3) {
+//     if (!pricingAgreement)
+//       newErrors.pricingAgreement = "You must agree to the pricing agreement";
+//   }
+
+//   setErrors(newErrors);
+//   return Object.keys(newErrors).length === 0;
+// };
+
 
   const handleNextStep = () => {
     if (validateStep()) {

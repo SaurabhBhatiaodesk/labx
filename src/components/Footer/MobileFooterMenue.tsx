@@ -4,6 +4,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import sendicon from "../../../public/Images/icons/send.svg";
 import Link from "next/link";
 
+
 const MobileFooterMenue = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -32,9 +33,15 @@ const MobileFooterMenue = () => {
           }`}
         >
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
+           <Link href="/mail-in-repair">
             <li className="mb-2">Mail-In-Repair</li>
+            </Link>
+            <Link href="/training">
             <li className="mb-2">Training</li>
+            </Link>
+            <Link href="/b2b-repair-services">
             <li className="mb-2">B2B Repair</li>
+            </Link>
             <li className="mb-2">Screen Refurbishment</li>
             <li className="mb-2">Data Recovery</li>
             <li className="mb-2">Parts Store</li>
@@ -63,13 +70,23 @@ const MobileFooterMenue = () => {
           }`}
         >
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
+            <Link href="/contact-us">
             <li className="mb-2">Contact Us</li>
+            </Link>
             <li className="mb-2">Blogs</li>
-            <li className="mb-2">Trademark Disclaimer</li>
-            <li className="mb-2">Warranty and Terms</li>
-            <li className="mb-2">Shipping Policy</li>
+            <li className="mb-2">
+              <Link href="/Trademark_Disclaimer">Trademark Disclaimer</Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/Warranty_and_Terms">Warranty and Terms</Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/Shipping_Policy">Shipping Policy</Link>
+            </li>
             <li className="mb-2">FAQ’s</li>
-            <li className="mb-2">Terms and conditions</li>
+            <li className="mb-2">
+              <Link href="/terms-and-conditions">Terms and Conditions</Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -98,29 +115,23 @@ const MobileFooterMenue = () => {
                 href="mailto:bharat@labxrepair.com.au"
                 className="hover:underline"
               >
-               bharat@labxrepair.com.au
-
+                bharat@labxrepair.com.au
               </a>
             </li>
             <li className="mb-2">
               <a href="tel:+61455777077" className="hover:underline">
-              +61455777077
+                +61455777077
               </a>
             </li>
 
-
-
-
-<Link href="https://www.google.com/maps/place/LabXRepair/@-33.766127,150.7743917,15z/data=!4m6!3m5!1s0x6b129b2ceccf72d7:0x2bd3b51996f0eed4!8m2!3d-33.766127!4d150.7743917!16s%2Fg%2F11lv7kb0ct?hl=en-GB&entry=ttu&g_ep=EgoyMDI0MTExMC4wIKXMDSoASAFQAw%3D%3D" legacyBehavior>
-    <a
-      className=" "
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      122 Queen St, St Marys NSW 2760, Australia
-    </a>
-  </Link>
-           
+            <Link
+              href="https://www.google.com/maps/place/LabXRepair/@-33.766127,150.7743917,15z/data=!4m6!3m5!1s0x6b129b2ceccf72d7:0x2bd3b51996f0eed4!8m2!3d-33.766127!4d150.7743917!16s%2Fg%2F11lv7kb0ct?hl=en-GB&entry=ttu&g_ep=EgoyMDI0MTExMC4wIKXMDSoASAFQAw%3D%3D"
+              legacyBehavior
+            >
+              <a className=" " target="_blank" rel="noopener noreferrer">
+                122 Queen St, St Marys NSW 2760, Australia
+              </a>
+            </Link>
 
             <li className="mb-2">Sign-Up The LABX</li>
           </ul>
@@ -133,8 +144,8 @@ const MobileFooterMenue = () => {
           <input
             type="email"
             placeholder="Enter your email address"
-                        className="text-black w-full p-[11px] rounded-[50px] cursor-pointer border-[1px] border-gray-300 focus:outline-none my-2 placeholder:text-[#3737379c] placeholder:font-normal placeholder:text-[16px]"
-                      />
+            className="text-black w-full p-[11px] rounded-[50px] cursor-pointer border-[1px] border-gray-300 focus:outline-none my-2 placeholder:text-[#3737379c] placeholder:font-normal placeholder:text-[16px]"
+          />
           <button
             type="submit"
             className="text-white rounded-[50px] flex items-center justify-center game absolute bg-black p-[11px] right-[2px] top-1/2 transform -translate-y-1/2"

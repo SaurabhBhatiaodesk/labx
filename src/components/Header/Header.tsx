@@ -13,25 +13,20 @@
 // import "./Header.css";
 // import Link from "next/link";
 // import Image from "next/image";
-// // import headercallicon from "../../../public/Images/icons/headercallicon.svg";
-// import searchicon from "../../../public/Images/icons/search-interface-symbol.svg";
 // import { RiArrowDropUpLine } from "react-icons/ri";
 
 // export default function App() {
 //   const [isMenuOpen, setIsMenuOpen] = useState(false);
 //   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-//   const [isMobileServicesDropdownOpen, setIsMobileServicesDropdownOpen] =
-//     useState(false);
 //   const dropdownRef = useRef<HTMLDivElement>(null);
 
 //   const menuItems = [
-//     // { label: "B2B Repair", path: "/coming-soon" },
 //     {
 //       label: "Services",
 //       path: "/coming-soon",
 //       dropdown: true,
 //       subItems: [
-//         { label: "Mail-In-Repair", path: "/mail-in-repair" },
+//         { label: "Mail-In-Repairkkkyy", path: "/mail-in-repair" },
 //         { label: "Training", path: "/training" },
 //         { label: "B2B Repair", path: "b2b-repair-services" },
 //         { label: "Screen Refurbishment", path: "/coming-soon" },
@@ -43,32 +38,22 @@
 //     },
 //     { label: "Parts Store", path: "/coming-soon" },
 //     { label: "Training", path: "/training" },
-//     { label: "Screen Refurbishment", path: "/coming-soon"},
-//     { label: "About us", path: "/about-us", 
-//       dropdown: true,
-//       subItems: [
-//         { label: "What We Do", path: "/what-we-do" },
-//       ],
-//     },
+//     { label: "Screen Refurbishment", path: "/coming-soon" },
+//     { label: "About us", path: "/about-us" },
 //     { label: "Contact Us", path: "/coming-soon" },
 //     { label: "Price List", path: "/coming-soon" },
 //   ];
 
-//   // Single function to toggle dropdowns based on type
-//   const handleDropdownToggle = (type: "desktop" | "mobile") => {
-//     if (type === "desktop") {
-//       setIsServicesDropdownOpen((prev) => !prev);
-//     } else {
-//       setIsMobileServicesDropdownOpen((prev) => !prev);
-//     }
+//   // Function to toggle the "Services" dropdown only
+//   const handleServicesDropdownToggle = () => {
+//     setIsServicesDropdownOpen((prev) => !prev); // Toggle Services dropdown state
 //   };
 
 //   // Close the dropdown when clicking outside
 //   useEffect(() => {
 //     const handleClickOutside = (event: any) => {
 //       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-//         setIsServicesDropdownOpen(false);
-//         setIsMobileServicesDropdownOpen(false);
+//         setIsServicesDropdownOpen(false); // Close dropdown if clicked outside
 //       }
 //     };
 
@@ -110,7 +95,7 @@
 //                 {item.dropdown ? (
 //                   <div className="relative" ref={dropdownRef}>
 //                     <button
-//                       onClick={() => handleDropdownToggle("desktop")}
+//                       onClick={handleServicesDropdownToggle}
 //                       className="flex items-center tracking-[1.5px] font-medium group"
 //                     >
 //                       {item.label}
@@ -129,7 +114,6 @@
 //                             key={subItem.label}
 //                             href={subItem.path || "#"}
 //                             className="block px-4 py-2 hover:bg-gray-800"
-//                             onClick={() => setIsServicesDropdownOpen(false)}
 //                           >
 //                             {subItem.label}
 //                           </Link>
@@ -157,7 +141,6 @@
 
 //         {/* Right Side Content */}
 //         <NavbarContent justify="end">
-//           {/* <Image src={searchicon} alt="Search Icon" /> */}
 //           <Link href="/coming-soon">
 //             <button className="btn hidden lg:block">GET STARTED</button>
 //           </Link>
@@ -170,26 +153,25 @@
 //               {item.dropdown ? (
 //                 <div>
 //                   <button
-//                     onClick={() => handleDropdownToggle("mobile")}
+//                     onClick={handleServicesDropdownToggle}
 //                     className="flex justify-between w-full px-4 py-2"
 //                   >
-//                     {item.label}
+//                     {item.label} eee
 //                     <span
 //                       className={`ml-2 transform transition-transform ${
-//                         isMobileServicesDropdownOpen ? "rotate-180" : "rotate-0"
+//                         isServicesDropdownOpen ? "rotate-180" : "rotate-0"
 //                       }`}
 //                     >
 //                       <RiArrowDropUpLine />
 //                     </span>
 //                   </button>
-//                   {isMobileServicesDropdownOpen && (
+//                   {isServicesDropdownOpen && (
 //                     <div className="pl-4">
 //                       {item.subItems.map((subItem) => (
 //                         <Link
 //                           key={subItem.label}
 //                           href={subItem.path || "#"}
 //                           className="block px-4 py-2 hover:bg-gray-800"
-//                           onClick={() => setIsMobileServicesDropdownOpen(false)}
 //                         >
 //                           {subItem.label}
 //                         </Link>
@@ -213,7 +195,6 @@
 // }
 
 
-
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import {
@@ -229,12 +210,14 @@ import rktaxilog from "../../../public/Images/Brand logos/Frame.svg";
 import "./Header.css";
 import Link from "next/link";
 import Image from "next/image";
-import searchicon from "../../../public/Images/icons/search-interface-symbol.svg";
 import { RiArrowDropUpLine } from "react-icons/ri";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null); // Track which dropdown is active
+  const [isServicesDropdownOpenMobile, setIsServicesDropdownOpenMobile] =
+    useState(false); // For mobile dropdown state
+  const [isServicesDropdownOpenDesktop, setIsServicesDropdownOpenDesktop] =
+    useState(false); // For desktop dropdown state
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const menuItems = [
@@ -266,14 +249,27 @@ export default function App() {
     { label: "Price List", path: "/coming-soon" },
   ];
 
-  const toggleDropdown = (label: string) => {
-    setActiveDropdown((prev) => (prev === label ? null : label)); // Toggle the dropdown based on label
+  useEffect(() => {
+    console.log("isServicesDropdownOpenMobile ::", isServicesDropdownOpenMobile)
+  }, [isServicesDropdownOpenMobile])
+
+  // Function to toggle the "Services" dropdown only for mobile
+  const handleServicesDropdownToggleMobile = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Stop the click event from propagating to parent elements
+    setIsServicesDropdownOpenMobile((prev) => !prev); // Toggle Services dropdown state for mobile
+  };
+
+  // Function to toggle the "Services" dropdown only for desktop
+  const handleServicesDropdownToggleDesktop = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Stop the click event from propagating to parent elements
+    setIsServicesDropdownOpenDesktop((prev) => !prev); // Toggle Services dropdown state for desktop
   };
 
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setActiveDropdown(null); // Close dropdown if clicked outside
+        setIsServicesDropdownOpenMobile(false); // Close mobile dropdown if clicked outside
+        setIsServicesDropdownOpenDesktop(false); // Close desktop dropdown if clicked outside
       }
     };
 
@@ -315,26 +311,27 @@ export default function App() {
                 {item.dropdown ? (
                   <div className="relative" ref={dropdownRef}>
                     <button
-                      onClick={() => toggleDropdown(item.label)}
+                      onClick={handleServicesDropdownToggleDesktop}
                       className="flex items-center tracking-[1.5px] font-medium group"
                     >
                       {item.label}
                       <span
                         className={`ml-2 transform transition-transform ${
-                          activeDropdown === item.label ? "rotate-0" : "rotate-180"
+                          isServicesDropdownOpenDesktop
+                            ? "rotate-0"
+                            : "rotate-180"
                         }`}
                       >
                         <RiArrowDropUpLine />
                       </span>
                     </button>
-                    {activeDropdown === item.label && (
+                    {isServicesDropdownOpenDesktop && (
                       <div className="absolute left-0 mt-2 p-2 bg-black text-white rounded shadow-lg">
                         {item.subItems.map((subItem) => (
                           <Link
                             key={subItem.label}
                             href={subItem.path || "#"}
                             className="block px-4 py-2 hover:bg-gray-800"
-                            onClick={() => setActiveDropdown(null)}
                           >
                             {subItem.label}
                           </Link>
@@ -374,26 +371,27 @@ export default function App() {
               {item.dropdown ? (
                 <div>
                   <button
-                    onClick={() => toggleDropdown(item.label)}
+                    onClick={handleServicesDropdownToggleMobile}
                     className="flex justify-between w-full px-4 py-2"
                   >
                     {item.label}
                     <span
                       className={`ml-2 transform transition-transform ${
-                        activeDropdown === item.label ? "rotate-180" : "rotate-0"
+                        isServicesDropdownOpenMobile ? "rotate-180" : "rotate-0"
                       }`}
                     >
                       <RiArrowDropUpLine />
                     </span>
                   </button>
-                  {activeDropdown === item.label && (
+
+                  {/* This part will conditionally render the dropdown */}
+                  {isServicesDropdownOpenMobile && (
                     <div className="pl-4">
                       {item.subItems.map((subItem) => (
                         <Link
                           key={subItem.label}
                           href={subItem.path || "#"}
                           className="block px-4 py-2 hover:bg-gray-800"
-                          onClick={() => setActiveDropdown(null)}
                         >
                           {subItem.label}
                         </Link>

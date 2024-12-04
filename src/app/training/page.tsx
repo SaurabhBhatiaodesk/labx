@@ -17,6 +17,7 @@ const Training = () => {
         <CourseHighlights/>
         <Form />
         <GoogleReviews />
+      
       </div>
     </>
   );
