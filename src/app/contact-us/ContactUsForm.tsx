@@ -125,7 +125,7 @@ const ContactUsForm: React.FC = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:7000/api/create/contact-us",
+        "https://labxbackend.labxrepair.com.au/api/create/contact-us",
         requestData
       );
       if (response.status === 201) {
