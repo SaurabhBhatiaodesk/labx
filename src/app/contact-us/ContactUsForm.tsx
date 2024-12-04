@@ -25,17 +25,19 @@ import contactusmail from "../../../public/Images/icons/contactusmail.svg";
 
 const ContactUsForm: React.FC = () => {
   const [formData, setFormData] = useState({
-    First_name: "",
+    first_name: "",
+    last_name: "",
     email_address: "",
     contact_no: "",
-    course_name: "",
-    training_message: "",
+    enquiry_message: "",
   });
 
   const [formErrors, setFormErrors] = useState({
-    email: "",
-    phoneNumber: "",
-    course_name: "",
+    first_name: "",
+    last_name: "",
+    email_address: "",
+    contact_no: "",
+    enquiry_message: "",
   });
 
   // Handle changes for all form fields
@@ -52,27 +54,18 @@ const ContactUsForm: React.FC = () => {
     validateField(name!, value as string);
   };
 
-  // Handle course selection change
-  const handleCourseChange = (e: SelectChangeEvent<string>) => {
-    const value = e.target.value;
-    setFormData((prev) => ({
-      ...prev,
-      course_name: value,
-    }));
-
-    // Log the updated course name
-    console.log("Selected Course:", value);
-
-    // Validate course field
-    validateField("course_name", value);
-  };
-
   const validateField = (name: string, value: string) => {
     let errors = { ...formErrors };
     switch (name) {
+      case "first_name":
+        errors.first_name = value ? "" : "First Name is required";
+        break;
+      case "last_name":
+        errors.last_name = value ? "" : "Last Name is required";
+        break;
       case "email_address":
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        errors.email =
+        errors.email_address =
           value === ""
             ? "Email is required"
             : emailPattern.test(value)
@@ -81,16 +74,14 @@ const ContactUsForm: React.FC = () => {
         break;
       case "contact_no":
         const phonePattern = /^[0-9]{10}$/;
-        errors.phoneNumber =
+        errors.contact_no =
           value === ""
             ? "Phone number is required"
             : phonePattern.test(value)
             ? ""
             : "Please enter a valid 10-digit phone number";
         break;
-      case "course_name":
-        errors.course_name = value ? "" : "Please select a course";
-        break;
+
       default:
         break;
     }
@@ -98,15 +89,11 @@ const ContactUsForm: React.FC = () => {
   };
 
   const validateAllFields = () => {
-    let errors = { email: "", phoneNumber: "", course_name: "" }; // Reset errors first
-
-    // Manually validate each field
+    let errors = { ...formErrors };
+    validateField("first_name", formData.first_name);
+    validateField("last_name", formData.last_name);
     validateField("email_address", formData.email_address);
     validateField("contact_no", formData.contact_no);
-    validateField("course_name", formData.course_name);
-
-    // Check the state of the form data before returning errors
-    console.log("All Errors After Validation:", errors);
 
     return errors;
   };
@@ -114,64 +101,41 @@ const ContactUsForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Early validation: Check if any required field is empty
-    const errors: { email: string; phoneNumber: string; course_name: string } =
-      {
-        email: "",
-        phoneNumber: "",
-        course_name: "",
-      };
+    const errors = validateAllFields(); // Validate all fields
+    setFormErrors(errors); // Update form errors state
 
-    // Check if the required fields are empty and set errors immediately
-    if (formData.email_address === "") {
-      errors.email = "Email is required";
+    // If there are any errors in the required fields, prevent form submission
+    if (
+      errors.first_name ||
+      errors.last_name ||
+      errors.email_address ||
+      errors.contact_no
+    ) {
+
+      alert("Please fill all the required fields")
+      return; // Prevent form submission
     }
-
-    if (formData.contact_no === "") {
-      errors.phoneNumber = "Phone number is required";
-    }
-
-    if (formData.course_name === "") {
-      errors.course_name = "Please select a course";
-    }
-
-    // If there are errors, prevent the form submission and display validation messages
-    if (errors.email || errors.phoneNumber || errors.course_name) {
-      setFormErrors(errors);
-      return; // Prevent API call if any required field is empty
-    }
-
-    // Perform the usual field validation after the initial check
-    validateAllFields();
-
-    // If validation fails after the field check, stop the submission
-    if (formErrors.email || formErrors.phoneNumber || formErrors.course_name) {
-      return;
-    }
-
-    // If everything is validated, proceed with the form submission
     const requestData = {
-      First_name: formData.First_name || undefined,
-      email_address: formData.email_address,
+      first_name: formData.first_name,
+      last_name: formData.last_name,
+      email: formData.email_address,
       contact_no: formData.contact_no,
-      course_name: formData.course_name,
-      training_message: formData.training_message || undefined,
+      enquiry_message: formData.enquiry_message,
     };
 
     try {
       const response = await axios.post(
-        "https://labxbackend.labxrepair.com.au/api/create/training",
+        "http://localhost:7000/api/create/contact-us",
         requestData
       );
-      console.log(await response.data, "Form submitted successfully");
-      if (response) {
+      if (response.status === 201) {
         alert("Form submitted successfully!");
         setFormData({
-          First_name: "",
+          first_name: "",
+          last_name: "",
           email_address: "",
           contact_no: "",
-          course_name: "",
-          training_message: "",
+          enquiry_message: "",
         });
       } else {
         alert("Error submitting the form.");
@@ -181,7 +145,7 @@ const ContactUsForm: React.FC = () => {
       alert("An error occurred while submitting the form.");
     }
   };
-
+console.log("formDataaaa",formData)
   return (
     <>
       <section
@@ -205,70 +169,69 @@ const ContactUsForm: React.FC = () => {
             >
               <div className="relative w-full h-[100%]">
                 <div className="lg:absolute w-full lg:top-[20%] xl:right-[80px] lg:right-[40px] lg:transform lg:translate-x-[10px] lg:translate-y-[10px]">
-                <div className="flex gap-3 flex-col justify-center p-4 lg:p-6 bg-white text-black rounded-3xl">
-  {/* Address */}
-  <div className="flex items-center gap-3">
-    <span className="flex-shrink-0">
-      <Image
-        className="w-[50px] h-[50px] object-contain" // Ensure size is same
-        src={localtion}
-        alt="Location Icon"
-      />
-    </span>
-    <Link
-      href="https://www.google.com/maps/place/122+Queen+St,+St+Marys+NSW+2760,+Australia"
-      passHref
-    >
-      <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
-        122 Queen St, St Marys NSW 2760, Australia
-      </p>
-    </Link>
-  </div>
-  {/* Phone */}
-  <div className="flex items-center gap-3">
-    <span className="flex-shrink-0">
-      <Image
-        className="w-[50px] h-[50px] object-contain" // Ensure size is same
-        src={callcontactus}
-        alt="Phone Icon"
-      />
-    </span>
-    <Link href="tel:+61455777077" passHref>
-      <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
-        +61455777077
-      </p>
-    </Link>
-  </div>
-  {/* Email */}
-  <div className="flex items-center gap-3">
-    <span className="flex-shrink-0">
-      <Image
-        className="w-[50px] h-[50px] object-contain" // Ensure size is same
-        src={contactusmail}
-        alt="Email Icon"
-      />
-    </span>
-    <Link href="mailto:bharat@labxrepair.com.au" passHref>
-      <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
-        bharat@labxrepair.com.au
-      </p>
-    </Link>
-  </div>
-  {/* Operating Hours */}
-  <div className="flex items-center gap-3">
-    <span className="flex-shrink-0">
-      <Image
-        className="w-[50px] h-[50px] object-contain" // Ensure size is same
-        src={contactustime}
-        alt="Clock Icon"
-      />
-    </span>
-    <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
-      Monday-Friday: 9am - 6pm
-    </p>
-  </div>
-</div>
-
+                  <div className="flex gap-3 flex-col justify-center p-4 lg:p-6 bg-white text-black rounded-3xl">
+                    {/* Address */}
+                    <div className="flex items-center gap-3">
+                      <span className="flex-shrink-0">
+                        <Image
+                          className="w-[50px] h-[50px] object-contain" // Ensure size is same
+                          src={localtion}
+                          alt="Location Icon"
+                        />
+                      </span>
+                      <Link
+                        href="https://www.google.com/maps/place/122+Queen+St,+St+Marys+NSW+2760,+Australia"
+                        passHref
+                      >
+                        <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
+                          122 Queen St, St Marys NSW 2760, Australia
+                        </p>
+                      </Link>
+                    </div>
+                    {/* Phone */}
+                    <div className="flex items-center gap-3">
+                      <span className="flex-shrink-0">
+                        <Image
+                          className="w-[50px] h-[50px] object-contain" // Ensure size is same
+                          src={callcontactus}
+                          alt="Phone Icon"
+                        />
+                      </span>
+                      <Link href="tel:+61455777077" passHref>
+                        <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
+                          +61455777077
+                        </p>
+                      </Link>
+                    </div>
+                    {/* Email */}
+                    <div className="flex items-center gap-3">
+                      <span className="flex-shrink-0">
+                        <Image
+                          className="w-[50px] h-[50px] object-contain" // Ensure size is same
+                          src={contactusmail}
+                          alt="Email Icon"
+                        />
+                      </span>
+                      <Link href="mailto:bharat@labxrepair.com.au" passHref>
+                        <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
+                          bharat@labxrepair.com.au
+                        </p>
+                      </Link>
+                    </div>
+                    {/* Operating Hours */}
+                    <div className="flex items-center gap-3">
+                      <span className="flex-shrink-0">
+                        <Image
+                          className="w-[50px] h-[50px] object-contain" // Ensure size is same
+                          src={contactustime}
+                          alt="Clock Icon"
+                        />
+                      </span>
+                      <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
+                        Monday-Friday: 9am - 6pm
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
               {/* <Image className="w-full h-full object-cover" src={contactusimage} alt="Contact Us Image" /> */}
@@ -281,12 +244,14 @@ const ContactUsForm: React.FC = () => {
                     <div className="grid grid-cols-2 gap-4 form-label">
                       {/* Business Name Input */}
                       <TextField
-                        label="First Name"
-                        name="First_name"
+                        label="First Name*"
+                        name="first_name"
                         fullWidth
                         variant="outlined"
-                        value={formData.First_name}
+                        value={formData.first_name}
                         onChange={handleChange}
+                        error={!!formErrors.first_name}
+                        helperText={formErrors.first_name}
                       />
 
                       {/* Email Input with validation */}
@@ -301,12 +266,14 @@ const ContactUsForm: React.FC = () => {
               helperText={formErrors.email}
             /> */}
                       <TextField
-                        label="Last Name"
-                        // name=""Last_Name"
+                        label="Last Name*"
+                        name="last_name"
                         fullWidth
                         variant="outlined"
-                        value={formData.First_name}
+                        value={formData.last_name}
                         onChange={handleChange}
+                        error={!!formErrors.last_name}
+                        helperText={formErrors.last_name}
                       />
 
                       <TextField
@@ -316,20 +283,21 @@ const ContactUsForm: React.FC = () => {
                         variant="outlined"
                         value={formData.email_address}
                         onChange={handleChange}
-                        error={!!formErrors.email}
-                        helperText={formErrors.email}
+                        error={!!formErrors.email_address}
+                        helperText={formErrors.email_address}
                       />
 
                       {/* Phone Number Input with validation */}
                       <TextField
                         label="Phone Number *"
                         name="contact_no"
+                        type="number"
                         fullWidth
                         variant="outlined"
                         value={formData.contact_no}
                         onChange={handleChange}
-                        error={!!formErrors.phoneNumber}
-                        helperText={formErrors.phoneNumber}
+                        error={!!formErrors.contact_no}
+                        helperText={formErrors.contact_no}
                       />
 
                       {/* Course Selection */}
@@ -380,9 +348,9 @@ const ContactUsForm: React.FC = () => {
                         className="border-[1.5px]"
                         minRows={6}
                         placeholder="Enter your message here"
-                        value={formData.training_message}
+                        value={formData.enquiry_message}
                         onChange={handleChange}
-                        name="training_message"
+                        name="enquiry_message"
                         style={{
                           width: "100%",
                           padding: "10px",
