@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import Price from './Price'
 import Device from "../../../public/Images/about/device.svg"
 import GoogleReview from "@/components/GoogleReviews/what-we-do-review";
+import Image from 'next/image';
 
-const page = () => {
+const Page = () => {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -103,7 +104,7 @@ const page = () => {
       </form>
   </div>
   <div className='device__img text-center container pt-8 mt-5 pb-8 mb-5 relative'>
-    <img src={Device.src} alt="" className='m-auto' />
+    <Image src={Device.src} alt="" className='m-auto' />
     <div className="overlap__number">
         <h2>Get Your Device Fixed Now!</h2>
         <h3>+1-800-1234567</h3>
@@ -115,4 +116,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

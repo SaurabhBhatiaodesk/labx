@@ -22,7 +22,7 @@ const Price = () => {
                   <th className="border-bottom px-4 py-2">Refurb price ($AUD)</th>
                   <th className="border-bottom px-4 py-2">Buy Back ( Grade A )</th>
                   <th className="border-bottom px-4 py-2">Buy Back ( Grade B )</th>
-                  <th className="border-bottom px-4 py-2">Grade D</th>
+                  <th className="border-bottom px-4 py-2">Grade C</th>
                   <th className="border-bottom px-4 py-2">Unqualified</th>
                   <th className="border-bottom px-4 py-2">Updated at</th>
                 </tr>
@@ -372,7 +372,7 @@ const Price = () => {
             }`}
             onClick={() => setActiveTab(tab.id)}
           >
-          <Image width={100} height={100} src={tab.image} className='logo__img' />   
+          <Image alt='' width={100} height={100} src={tab.image} className='logo__img' />   
           </button>
         ))}
       </div>
