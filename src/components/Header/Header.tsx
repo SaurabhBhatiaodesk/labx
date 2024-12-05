@@ -43,7 +43,7 @@ export default function App() {
     { label: "About us", path: "/about-us" },
     { label: "What We Do", path: "/what-we-do" },
     { label: "Contact Us", path: "/contact-us" },
-    { label: "Price List", path: "/coming-soon" },
+    { label: "Price List", path: "/price" },
   ];
 
   // Function to toggle the "Services" dropdown only
