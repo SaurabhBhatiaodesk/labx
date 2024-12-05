@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
-import { Typography, Box, Grid, Card, CardMedia, CardContent } from '@mui/material';
+import { Typography, Box, Grid, Card, CardMedia, CardContent } from '@mui/material'; 
+import Link from "next/link";
+import './policy.css';
 
 // Function to fetch data from the server
 async function fetchPageData(title: string) {
@@ -45,80 +47,54 @@ export default async function PageDetail({ params }: { params: { title: string }
     const page = data.data;
 
     return (
-      <Box sx={{ padding: 4, backgroundColor: 'white' }}>
-        {/* Title Section */}
-        <Typography
-          variant="h2"
-          gutterBottom
-          sx={{
-            fontWeight: 'bold',
-            textAlign: 'center',
-            textTransform: 'uppercase',
-            color: 'black',
-            backgroundColor: 'white',
-            padding: 2,
-            borderRadius: 2,
-          }}
-        >
-          {formatPageName(page.pageName)}
-        </Typography>
-
-        {/* Images Section */}
-        {/* <Typography
-          variant="h4"
-          sx={{
-            marginTop: 4,
-            textAlign: 'center',
-            fontWeight: 'bold',
-            color: '#333',
-          }}
-        >
-          Featured Images
-        </Typography> */}
-        <Grid container spacing={2} sx={{ marginTop: 2 }}>
-          {page.images.map((image: string, index: number) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card
-                sx={{
-                  boxShadow: '0px 4px 10px rgba(0,0,0,0.2)',
-                  borderRadius: 3,
-                  overflow: 'hidden',
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  image={image}
-                  alt={`Image ${index + 1}`}
-                  sx={{ height: 200 }}
-                />
-                <CardContent>
-                  {/* <Typography variant="subtitle1" sx={{ textAlign: 'center', color: '#555' }}>
-                    Image {index + 1}
-                  </Typography> */}
-                </CardContent>
-              </Card>
-            </Grid>
+<>
+<section
+        className="bg-no-repeat bg-cover p-0 relative" 
+      >
+         {page.images.map((image: string, index: number) => (
+                <img src={image} alt="" className='dynamic__img' />
+                  
           ))}
-        </Grid>
 
-        {/* Description Section */}
-        {/* <Typography
-          variant="h5"
-          gutterBottom
-          sx={{
-            textAlign: 'center',
-            color: 'black',
-            fontStyle: 'italic',
-            marginTop: 4,
-          }}
-        >
-          {page.pageDescription}
-        </Typography> */}
+        <div className="container overlap__term__data" >
+          <div className="grid lg:grid-cols-[5fr_3fr] items-center pt-3">
+            <div className="w-full px-4">
+              <div className="text-center lg:text-left">
+                <ul className="flex items-center lg:justify-start justify-center gap-[10px]">
+                  <li>
+                    <Link
+                      href="/"
+                      className="text-dark flex items-center gap-[10px] text-base font-medium dark:text-white"
+                    >
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <p className="text-body-color flex items-center gap-[10px] text-base font-medium mb-0">
+                      <span className="text-body-color dark:text-dark-6">/</span>
+                      {formatPageName(page.pageName)}
+                    </p>
+                  </li>
+                </ul>
+                <h1 className="text-dark mb-0 text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
+                {formatPageName(page.pageName)}
+                </h1> 
+                
+              </div>
 
-        {/* Page Editor Section */}
+            </div>
+           
+          </div>
+        </div>
+      </section>
+        <div className="container">
+      <Box sx={{ backgroundColor: '000' }}>
+        {/* Title Section */}
+         
         <Box
           sx={{
-            backgroundColor: '#f4f4f4',
+            backgroundColor: '#000',
+            color:'#fff',
             borderRadius: 2,
             boxShadow: '0px 4px 10px rgba(0,0,0,0.1)',
             padding: 3,
@@ -127,6 +103,8 @@ export default async function PageDetail({ params }: { params: { title: string }
           dangerouslySetInnerHTML={{ __html: page.pageEditor }}
         />
       </Box>
+      </div>
+      </>
     );
   } catch (error) {
     const errorMessage = (error as Error).message || 'Error loading page details or page not found';
