@@ -36,32 +36,56 @@ const ContactUsForm: React.FC = () => {
     first_name: "",
     last_name: "",
     email_address: "",
-    contact_no: "",
-    enquiry_message: "",
+    contact_no: ""
+
   });
 
-  // Handle changes for all form fields
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | { name?: string; value: unknown }>
-  ) => {
-    const { name, value } = e.target;
+
+   // Handle changes for all form fields
+  //  / Handle changes for all form fields
+ // Handle changes for all form fields
+// Handle changes for all form fields
+const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement | { name?: string; value: unknown }>
+) => {
+  const { name, value } = e.target;
+
+  // Ensure `value` is treated as a string (type assertion)
+  const valueAsString = value as string;
+
+  // Prevent spaces in specific fields
+  if (
+    name === "first_name" ||
+    name === "last_name" ||
+    name === "email_address" ||
+    name === "contact_no"
+  ) {
+    const trimmedValue = valueAsString.replace(/\s/g, ""); // Remove spaces
     setFormData((prev) => ({
       ...prev,
-      [name!]: value,
+      [name!]: trimmedValue,
     }));
-
     // Validate the field as the user types
-    validateField(name!, value as string);
-  };
+    validateField(name!, trimmedValue);
+  } else {
+    setFormData((prev) => ({
+      ...prev,
+      [name!]: valueAsString,
+    }));
+    // Validate the field as the user types
+    validateField(name!, valueAsString);
+  }
+};
+
 
   const validateField = (name: string, value: string) => {
     let errors = { ...formErrors };
     switch (name) {
       case "first_name":
-        errors.first_name = value ? "" : "First Name is required";
+        errors.first_name = value === "" ? "First name is required" : "";
         break;
       case "last_name":
-        errors.last_name = value ? "" : "Last Name is required";
+        errors.last_name = value === "" ? "Last name is required" : "";
         break;
       case "email_address":
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -81,60 +105,99 @@ const ContactUsForm: React.FC = () => {
             ? ""
             : "Please enter a valid 10-digit phone number";
         break;
-
       default:
         break;
     }
     setFormErrors(errors); // Update errors state after validation
   };
 
+
   const validateAllFields = () => {
-    let errors = { ...formErrors };
+    let errors = {
+      first_name: "",
+      last_name: "",
+      email_address: "",
+      contact_no: "",
+    }; // Reset errors first
+
+    // Manually validate each field
     validateField("first_name", formData.first_name);
     validateField("last_name", formData.last_name);
     validateField("email_address", formData.email_address);
     validateField("contact_no", formData.contact_no);
 
+    // Check the state of the form data before returning errors
     return errors;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const errors = validateAllFields(); // Validate all fields
-    setFormErrors(errors); // Update form errors state
+    // Early validation: Check if any required field is empty
+    const errors: { first_name: string; last_name: string; email_address: string; contact_no: string } = {
+      first_name: "",
+      last_name: "",
+      email_address: "",
+      contact_no: "",
+    };
 
-    // If there are any errors in the required fields, prevent form submission
-    if (
-      errors.first_name ||
-      errors.last_name ||
-      errors.email_address ||
-      errors.contact_no
-    ) {
-      alert("Please fill all the required fields");
-      return; // Prevent form submission
+    // Check if the required fields are empty and set errors immediately
+    if (formData.first_name === "") {
+      errors.first_name = "First name is required";
     }
+
+    if (formData.last_name === "") {
+      errors.last_name = "Last name is required";
+    }
+
+    if (formData.email_address === "") {
+      errors.email_address = "Email is required";
+    }
+
+    if (formData.contact_no === "") {
+      errors.contact_no = "Phone number is required";
+    }
+
+    // If there are errors, prevent the form submission and display validation messages
+    if (errors.first_name || errors.last_name || errors.email_address || errors.contact_no) {
+      setFormErrors(errors);
+      return; // Prevent API call if any required field is empty
+    }
+
+    // Perform the usual field validation after the initial check
+    validateAllFields();
+
+    // If validation fails after the field check, stop the submission
+    if (formErrors.first_name || formErrors.last_name || formErrors.email_address || formErrors.contact_no) {
+      return;
+    }
+
+    // If everything is validated, proceed with the form submission
     const requestData = {
-      first_name: formData.first_name,
-      last_name: formData.last_name,
+      first_name: formData.first_name || "",
+      last_name: formData.last_name || "",
       email: formData.email_address,
       contact_no: formData.contact_no,
-      enquiry_message: formData.enquiry_message,
+      enquiry_message: formData.enquiry_message || "", // Always include enquiry_message
     };
+
+    console.log("requestDataaa",requestData)
 
     try {
       const response = await axios.post(
-        "https://labxbackend.labxrepair.com.au/api/create/contact-us",
+        "https://labxbackend.labxrepair.com.au/api/create/contact-us", // Replace with your actual API endpoint
         requestData
       );
-      if (response.status === 201) {
+      console.log(await response.data, "Form submitted successfully");
+      if (response) {
         alert("Form submitted successfully!");
+        // Reset form state with all fields, including enquiry_message
         setFormData({
           first_name: "",
           last_name: "",
           email_address: "",
           contact_no: "",
-          enquiry_message: "",
+          enquiry_message: "", // Ensure enquiry_message is reset
         });
       } else {
         alert("Error submitting the form.");
@@ -144,6 +207,8 @@ const ContactUsForm: React.FC = () => {
       alert("An error occurred while submitting the form.");
     }
   };
+
+
   console.log("formDataaaa", formData);
   return (
     <>
@@ -285,7 +350,7 @@ const ContactUsForm: React.FC = () => {
                         error={!!formErrors.email_address}
                         helperText={formErrors.email_address}
                       />
-                      {/* 
+                      {/*
                       {/ Phone Number Input with validation /} */}
                       <TextField
                         label="Phone Number *"
