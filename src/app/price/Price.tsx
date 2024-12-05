@@ -372,7 +372,7 @@ const Price = () => {
             }`}
             onClick={() => setActiveTab(tab.id)}
           >
-          <Image width={100} height={100} src={tab.image} className='logo__img' />   
+          <Image alt='' width={100} height={100} src={tab.image} className='logo__img' />   
           </button>
         ))}
       </div>
