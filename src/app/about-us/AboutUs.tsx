@@ -187,12 +187,12 @@ const AboutUs = () => {
         <div className="container text-center">
           <h2> From Market Stall to a Full-Fledged Shop </h2>
           <Image src={Leap.src} alt="" className="pb-3 pl-3 m-auto about_line" />
-          <p>By 2013, as my business at Parklea Markets thrived, I realized it was time to upgrade. I replaced my modest table and chair setup with a proper counter, creating a more professional and welcoming space. Over time, I expanded from a single stall to a double stall, complete with a roof, fans, seating, and improved displays. Eventually, I moved to a better location within the market, equipping the shop with a full fit-out, LED lighting, and a polished appearance. My shop became one of the standout businesses in the market, known for its professional look and high-quality service." </p>
+          <p>By 2013, as my business at Parklea Markets thrived, I realized it was time to upgrade. I replaced my modest table and chair setup with a proper counter, creating a more professional and welcoming space. Over time, I expanded from a single stall to a double stall, complete with a roof, fans, seating, and improved displays. Eventually, I moved to a better location within the market, equipping the shop with a full fit-out, LED lighting, and a polished appearance. My shop became one of the standout businesses in the market, known for its professional look and high-quality service. </p>
           <div >
-            <p>Despite this progress, I felt the need to expand further. While I was busy on weekends at the market, my weekdays were relatively free. I decided it was time to open a dedicated shop outside the market. One of my suppliers, who had helped me early on by providing accessories on credit, suggested I look for an affordable location. When I asked about areas with low rent, he smiled and said, “Try St Marys.”" </p>
+            <p>Despite this progress, I felt the need to expand further. While I was busy on weekends at the market, my weekdays were relatively free. I decided it was time to open a dedicated shop outside the market. One of my suppliers, who had helped me early on by providing accessories on credit, suggested I look for an affordable location. When I asked about areas with low rent, he smiled and said, Try St Marys. </p>
           </div>
           <div >
-            <p>At the time, St Marys was not considered a prime area. The streets were plagued by issues, and many businesses failed shortly after opening. However, the low rents made it a viable option for me to take the risk. After some exploration, I found an empty shop that used to be a Kodak store." </p>
+            <p>At the time, St Marys was not considered a prime area. The streets were plagued by issues, and many businesses failed shortly after opening. However, the low rents made it a viable option for me to take the risk. After some exploration, I found an empty shop that used to be a Kodak store. </p>
           </div>
 
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
@@ -206,16 +206,16 @@ const AboutUs = () => {
           </div>
 
           <div >
-            <p>I had saved about $10,000, which I thought would be enough to cover the setup and initial stock. But I underestimated the costs—security deposits, advance rent, and other expenses quickly drained my funds. By the time I got the keys to the shop, I had no money left to stock it or set it up." </p>
+            <p>I had saved about $10,000, which I thought would be enough to cover the setup and initial stock. But I underestimated the costs—security deposits, advance rent, and other expenses quickly drained my funds. By the time I got the keys to the shop, I had no money left to stock it or set it up. </p>
           </div>
           <div >
-            <p>I reached out to my friends, Gagan Jhutty and Robin, who both came to my rescue. They lent me additional funds and helped me search Gumtree for free items—counters, displays, and anything that could be repurposed. The shop was a massive 150-square-meter space, but I could only afford to fill half of it initially." </p>
+            <p>I reached out to my friends, Gagan Jhutty and Robin, who both came to my rescue. They lent me additional funds and helped me search Gumtree for free items—counters, displays, and anything that could be repurposed. The shop was a massive 150-square-meter space, but I could only afford to fill half of it initially. </p>
           </div>
           <div >
-            <p>With no money to hire professional shopfitters or tradespeople, we rolled up our sleeves and did everything ourselves. We bought inexpensive materials, screws, and tools to build wall panels, counters, and fittings. Those same fittings, built with our hands, remain in use today, even as of late 2024. Over time, we upgraded the shop with better counters and showcases, but the foundation of our work remained a testament to resourcefulness and determination." </p>
+            <p>With no money to hire professional shopfitters or tradespeople, we rolled up our sleeves and did everything ourselves. We bought inexpensive materials, screws, and tools to build wall panels, counters, and fittings. Those same fittings, built with our hands, remain in use today, even as of late 2024. Over time, we upgraded the shop with better counters and showcases, but the foundation of our work remained a testament to resourcefulness and determination. </p>
           </div>
           <div >
-            <p>When we first opened, we had no budget for proper signage. However, my confidence in our services and the shop &apos;s potential kept me motivated. Despite the challenges, I was steadfast and determined to succeed, knowing this shop would become the cornerstone of my growing business." </p>
+            <p>When we first opened, we had no budget for proper signage. However, my confidence in our services and the shop &apos;s potential kept me motivated. Despite the challenges, I was steadfast and determined to succeed, knowing this shop would become the cornerstone of my growing business. </p>
           </div>
         </div>
       </section>
@@ -394,7 +394,7 @@ const AboutUs = () => {
           <div className="container text-white text-center rounded-md">
             <h2 className="mb-0">LabX: A Passion Project Born from Purpose </h2>
             <Image src={Service.src} className="pb-3 m-auto" alt="" />
-            <p className="">
+            <p className=""> 
             The concept of LabX emerged from a vision to bring together every aspect of the repair industry under one roof. I wanted to go beyond just running a repair shop—to create a space that offers solutions for everyone. From wholesale services and data recovery to screen refurbishing, business-to-business repairs, selling spare parts, and accessories online, LabX was designed to be a comprehensive hub for all things repair-related.
             </p>
             <p className=" ">
