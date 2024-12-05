@@ -5,7 +5,7 @@ import Device from "../../../public/Images/about/device.svg"
 import GoogleReview from "@/components/GoogleReviews/what-we-do-review";
 import Image from 'next/image';
 
-const page = () => {
+const Page = () => {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -116,4 +116,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

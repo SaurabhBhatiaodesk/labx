@@ -87,7 +87,7 @@ const AboutUs = () => {
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 lg:py-6 py-3 items-center ">
           <div className="container text-white text-center rounded-md">
             <p className="">
-              From a young age, I was fascinated with technology, particularly mobile phones.  After completing my higher secondary education, in 2005, I enrolled in a six-month course at one of the big city &apos;s institutes to learn mobile phone repair. My passion and dedication quickly set me apart— I was not only excelling in my assignments but also helping my classmates with theirs. Recognizing my potential, the institute's owner, who ran a well-known repair shop, offered me an unpaid apprenticeship at his store—a rare opportunity, as most paid for the chance to work there. I gladly worked for two years without pay, absorbing everything I could about the trade.
+              From a young age, I was fascinated with technology, particularly mobile phones.  After completing my higher secondary education, in 2005, I enrolled in a six-month course at one of the big city &apos;s institutes to learn mobile phone repair. My passion and dedication quickly set me apart— I was not only excelling in my assignments but also helping my classmates with theirs. Recognizing my potential, the institute&apos;s owner, who ran a well-known repair shop, offered me an unpaid apprenticeship at his store—a rare opportunity, as most paid for the chance to work there. I gladly worked for two years without pay, absorbing everything I could about the trade.
             </p>
             <p className=" ">
               After gaining hands-on experience, I opened my first small repair business in my village. Within six months, it was thriving. However, my ambitions took me beyond my hometown—I migrated to Australia in 2008 in search of greater opportunities.
@@ -274,7 +274,7 @@ const AboutUs = () => {
               <h2 className="mb-0 w-auto">Recognizing a Need for Training
               </h2>
               <Image src={NeedLine.src} alt="" className="pb-3 about_line" />
-              <p>As my business grew, I began noticing a troubling trend in the industry: many technicians were inadvertently damaging customers' devices due to a lack of proper skills and knowledge. It became clear to me that there was a need for structured training to elevate the standard of repairs in the industry.</p>
+              <p>As my business grew, I began noticing a troubling trend in the industry: many technicians were inadvertently damaging customers devices due to a lack of proper skills and knowledge. It became clear to me that there was a need for structured training to elevate the standard of repairs in the industry.</p>
               <p>Rather than accepting poorly executed repairs from other technicians, I decided to shift my focus toward education. My idea was simple yet impactful: instead of taking repair jobs from technicians, I would teach them the right way to perform these repairs and charge for my coaching.</p>
               <p>Around 2018 or 2019, I began investing in the necessary equipment and laying the groundwork for training programs. I was preparing to launch my first batch of students, and there was significant interest from individuals eager to learn the skills I had mastered over the years.</p>
               <p>Unfortunately, the outbreak of COVID-19 put everything on hold. Lockdowns and restrictions delayed my plans, but the experience reinforced the importance of creating a platform to upskill technicians and improve the industry overall.</p>
@@ -362,7 +362,7 @@ const AboutUs = () => {
             <Image src={Labx.src} className="pb-3 about_line" alt="" />
             <p>My focus has always been on providing top-notch services at truly affordable prices. I believe that good repairs shouldn &apos;t come at an unreasonable cost. Unfortunately, many technicians charge excessively for basic services, like replacing an iPhone battery for $100 to $200. This often stems from a lack of skill—technicians add hidden costs to cover potential mistakes, such as cracking the screen during disassembly, instead of mastering their craft.
             </p>
-            <p>As a technician, you are entrusted with customers' devices and data. It is your responsibility to handle their property with care and professionalism. You should know how to perform repairs without damaging the device, respect their privacy, and honor the trust they place in you.
+            <p>As a technician, you are entrusted with customers devices and data. It is your responsibility to handle their property with care and professionalism. You should know how to perform repairs without damaging the device, respect their privacy, and honor the trust they place in you.
             </p>
             <p>This belief inspired me to create LabX—a one-stop solution for consumers, businesses, wholesalers, and retailers. At LabX, we focus on delivering transparent, professional services at affordable prices. Whether it &apos;s data recovery, screen refurbishing, or advanced repairs, our mission is to provide exceptional value while setting new standards in the industry.
             </p>
