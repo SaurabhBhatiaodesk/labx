@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { Typography, Box, Grid, Card, CardMedia, CardContent } from '@mui/material'; 
 import Link from "next/link";
 import './policy.css';
+import Image from 'next/image';
 
 // Function to fetch data from the server
 async function fetchPageData(title: string) {
@@ -52,7 +53,7 @@ export default async function PageDetail({ params }: { params: { title: string }
         className="bg-no-repeat bg-cover p-0 relative" 
       >
          {page.images.map((image: string, index: number) => (
-                <img src={image} alt="" className='dynamic__img' />
+                <Image key={image}  src={image} alt="" className='dynamic__img' />
                   
           ))}
 
