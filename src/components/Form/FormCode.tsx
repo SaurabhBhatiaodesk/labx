@@ -472,6 +472,7 @@ const FormCode: React.FC = () => {
             <TextField
               label="Your Email *"
               name="email_address"
+
               fullWidth
               variant="outlined"
               value={formData.email_address}
