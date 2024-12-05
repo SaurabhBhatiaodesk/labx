@@ -305,13 +305,20 @@ const FormCode: React.FC = () => {
     e: React.ChangeEvent<HTMLInputElement | { name?: string; value: unknown }>
   ) => {
     const { name, value } = e.target;
+
+    // Prevent spaces in email and phone number fields
+    let valueAsString = value as string;
+    if (name === "email_address" || name === "contact_no") {
+      valueAsString = valueAsString.replace(/\s/g, ""); // Remove spaces
+    }
+
     setFormData((prev) => ({
       ...prev,
-      [name!]: value,
+      [name!]: valueAsString, // Update form data with trimmed value
     }));
 
     // Validate the field as the user types
-    validateField(name!, value as string);
+    validateField(name!, valueAsString);
   };
 
   // Handle course selection change
@@ -420,6 +427,8 @@ const FormCode: React.FC = () => {
       training_message: formData.training_message || undefined,
     };
 
+    console.log('requestData',requestData)
+
     try {
       const response = await axios.post(
         "https://labxbackend.labxrepair.com.au/api/create/training",
@@ -475,6 +484,7 @@ const FormCode: React.FC = () => {
             <TextField
               label="Phone Number *"
               name="contact_no"
+              type="number"
               fullWidth
               variant="outlined"
               value={formData.contact_no}
@@ -504,14 +514,11 @@ const FormCode: React.FC = () => {
                 }}
               >
                 <MenuItem value="">-- Select a Course --</MenuItem>
-                <MenuItem value="video_editing">Screen Refurbishment</MenuItem>
-                <MenuItem value="graphic_design">Mail-In-Repair</MenuItem>
-                <MenuItem value="web_design">Web Designing</MenuItem>
-                <MenuItem value="web_development">Training</MenuItem>
-                <MenuItem value="php">B2B Repair</MenuItem>
-                <MenuItem value="laravel">Data Recovery</MenuItem>
-                <MenuItem value="wordpress">Parts Store</MenuItem>
-                <MenuItem value="c++">Repair Solutions</MenuItem>
+                <MenuItem value="Beginner_Phone_Repair">Beginner Phone Repair</MenuItem>
+                <MenuItem value="Advanced_Motherboard_Repair">Advanced Motherboard Repair</MenuItem>
+                <MenuItem value="Expert_Motherboard_Repair">Expert Motherboard Repair </MenuItem>
+                <MenuItem value="Master_Motherboard_Repair">Master Motherboard Repair </MenuItem>
+                <MenuItem value="Professional_Phone_Screen">Professional Phone Screen</MenuItem>
               </Select>
 
               {formErrors.course_name && (
