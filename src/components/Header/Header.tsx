@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useState, useEffect, useRef } from "react";
 import {
   Navbar,
@@ -19,7 +19,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const menuRef = useRef<HTMLDivElement>(null); // Added reference for the entire menu
+  const menuRef = useRef<HTMLDivElement>(null); // Reference for the entire menu
 
   const menuItems = [
     {
@@ -51,12 +51,13 @@ export default function App() {
     setIsServicesDropdownOpen((prev) => !prev); // Toggle Services dropdown state
   };
 
-  // Close the dropdown and menu when clicking outside
+  // Close the menu if clicked outside the menu (and not on a link)
   useEffect(() => {
     const handleClickOutside = (event: any) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsMenuOpen(false); // Close the menu if clicked outside
-      }
+      // Check if the click is outside the menu or NavbarMenuItem
+      // if (menuRef.current && !menuRef.current.contains(event.target)) {
+      //   setIsMenuOpen(false); // Close the menu if clicked outside the menu
+      // }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -65,16 +66,15 @@ export default function App() {
     };
   }, []);
 
-  // Prevent closing dropdown when clicking on a menu item
+  // Prevent closing dropdown when clicking inside the menu (except on links)
   const handleLinkClick = (e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent the dropdown from toggling when a link is clicked
   };
 
-  // Close the menu when an item is clicked
+  // Close the menu when an item is clicked (link)
   const handleMenuItemClick = () => {
-    setIsMenuOpen(false); // Close the menu when an item is clicked
+    setIsMenuOpen(false); // Close the menu when an item (link) is clicked
   };
-
 
   return (
     <div className="header-component">
@@ -92,7 +92,7 @@ export default function App() {
         </NavbarContent>
 
         <div className="hidden lg:flex flex-grow justify-center">
-          <div className="flex gap-[20px] xl:gap-[30px]" ref={menuRef}> {/* Wrap menu in the ref */}
+          <div className="flex gap-[20px] xl:gap-[30px]" ref={menuRef}>
             {menuItems.map((item) => (
               <NavbarItem key={item.label}>
                 {item.dropdown ? (
@@ -106,7 +106,15 @@ export default function App() {
                     {isServicesDropdownOpen && (
                       <div className="absolute left-0 mt-2 p-2 bg-black text-white rounded shadow-lg">
                         {item.subItems.map((subItem) => (
-                          <Link key={subItem.label} href={subItem.path || "#"} onClick={handleMenuItemClick} className="block px-4 py-2 hover:bg-gray-800">
+                          <Link
+                            key={subItem.label}
+                            href={subItem.path || "#"}
+                            onClick={(e) => {
+                              handleLinkClick(e); // Prevent closing dropdown when clicking a link
+                              handleMenuItemClick(); // Close the menu
+                            }}
+                            className="block px-4 py-2 hover:bg-gray-800"
+                          >
                             {subItem.label}
                           </Link>
                         ))}
@@ -114,7 +122,7 @@ export default function App() {
                     )}
                   </div>
                 ) : item.path ? (
-                  <Link className="relative tracking-[1.5px] font-medium group" href={item.path} onClick={handleMenuItemClick}>
+                  <Link className="relative tracking-[1.5px] font-medium group" href={item.path} onClick={(e) => { handleMenuItemClick(); handleLinkClick(e); }}>
                     {item.label}
                     <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                   </Link>
@@ -151,7 +159,7 @@ export default function App() {
                           key={subItem.label}
                           href={subItem.path || "#"}
                           onClick={(e) => {
-                            handleLinkClick(e); // Prevent closing the dropdown on click
+                            handleLinkClick(e); // Prevent closing dropdown when clicking a link
                             handleMenuItemClick(); // Close the menu
                           }}
                           className="block px-0 py-2 hover:bg-gray-800"
@@ -176,6 +184,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
