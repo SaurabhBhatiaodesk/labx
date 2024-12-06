@@ -14,6 +14,10 @@ import "./Header.css";
 import Link from "next/link";
 import Image from "next/image";
 import { RiArrowDropUpLine } from "react-icons/ri";
+import Facebook from "../../../public/Images/blog/facebook.svg";
+import Telegram_logo from "../../../public/Images/blog/Telegram_logo.svg";
+import Instagram from "../../../public/Images/blog/instagram.svg";
+import Twitter from "../../../public/Images/blog/twitter.svg";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -88,7 +92,7 @@ export default function App() {
     <NavbarContent className="lg:hidden" id="nav-toggle"  onClick={toggleMenu}>
                     <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
                     </NavbarContent>
-        <div className="w-full relative">
+        <div className="w-full">
             <div className="navbar text-pastelBlue items-center justify-between">
                 <div className="navmenu flex items-center justify-between">
                      <NavbarContent className="flex justify-center items-center">
@@ -136,13 +140,20 @@ export default function App() {
                             <ul className="dropdown-menu absolute hidden text-white pt-1">
                             <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/about-us" onClick={toggleMenu}>About</Link></li>
                              <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/what-we-do" onClick={toggleMenu}>What We Do</Link></li>
-                             <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/blogs" onClick={toggleMenu}>Blog </Link></li> 
                              <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/faq" onClick={toggleMenu}>FAQ </Link></li> 
+                             <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/blogs" onClick={toggleMenu}>Blogs </Link></li> 
                             </ul>
                           </div>
  
                             </li>
                         </ul>
+
+                        <div className="social__icon">
+                        <a><Image alt='' src={Facebook} /></a>
+                        <a><Image alt='' src={Telegram_logo} /></a>
+                        <a><Image alt='' src={Instagram} /></a>
+                        <a><Image alt='' src={Twitter} /></a>
+                      </div>
                     </div>  
                   <Link  href="/coming-soon">
                     <button className="btn hidden lg:block">GET STARTED</button>

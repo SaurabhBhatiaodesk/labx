@@ -312,6 +312,7 @@ body {
   margin: auto;
   padding: 0px 15px;
 }
+
 .italic-placeholder::placeholder {
   font-style: italic !important;
 }
@@ -447,6 +448,9 @@ label {
     font-weight: 400;
     line-height: 24px;
     color: var(--primary-color);
+  }
+  .sm-order-2{
+    order:2 !important;
   }
 }
 

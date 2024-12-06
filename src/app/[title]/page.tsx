@@ -3,7 +3,8 @@ import { Typography, Box, Grid, Card, CardMedia, CardContent } from '@mui/materi
 import Link from "next/link";
 import './policy.css';
 import Image from 'next/image';
-
+import YouTubeHome from '@/components/HomeCpmponents/YouTubeHome/YouTubeHome';
+import GoogleReviews from '@/components/GoogleReviews/GoogleReviews'
 // Function to fetch data from the server
 async function fetchPageData(title: string) {
   const res = await fetch(`https://labxbackend.labxrepair.com.au/api/admin/title/${encodeURIComponent(title)}`, {
@@ -57,7 +58,7 @@ export default async function PageDetail({ params }: { params: { title: string }
                   
           ))} */}
 
-        <div className="max-container overlap__term__data" >
+        <div className="max-container overlap__term__data pt-8" >
           <div className="grid lg:grid-cols-[5fr_3fr] items-center pt-3">
             <div className="w-full px-4">
               <div className="text-center lg:text-left">
@@ -105,6 +106,9 @@ export default async function PageDetail({ params }: { params: { title: string }
         />
       </Box>
       </div>
+
+      <YouTubeHome />
+      <GoogleReviews />
       </>
     );
   } catch (error) {
