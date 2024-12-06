@@ -67,10 +67,10 @@ export default function BlogSidebar() {
       <div className="social_section">
         <h4>Share</h4>
         <div className="social__icon">
-          <a><Image alt='' src={Facebook.src} /></a>
-          <a><Image alt='' src={Telegram_logo.src} /></a>
-          <a><Image alt='' src={Instagram.src} /></a>
-          <a><Image alt='' src={Twitter.src} /></a>
+          <a><Image alt='' src={Facebook} /></a>
+          <a><Image alt='' src={Telegram_logo} /></a>
+          <a><Image alt='' src={Instagram} /></a>
+          <a><Image alt='' src={Twitter} /></a>
         </div>
       </div>
       <div className="side_bg_img"></div>
@@ -79,7 +79,7 @@ export default function BlogSidebar() {
         {blogs.map((blog) => (
           <li
             onClick={() => sendId(blog._id)}
-            key={blog._id}
+            key={blog._id} style={{zIndex:'9999', position:'relative'}}
             className="flex items-start mb-4  shadow-sm rounded-lg p-2 hover:shadow-md gap-4 cursor-pointer"
           >
             {blog.featuredImage.length > 0 && (

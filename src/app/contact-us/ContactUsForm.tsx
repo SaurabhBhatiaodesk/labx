@@ -22,7 +22,7 @@ import localtion from "../../../public/Images/localtion.svg";
 import contactustime from "../../../public/Images/icons/contactustime.svg";
 import callcontactus from "../../../public/Images/icons/callcontactus.svg";
 import contactusmail from "../../../public/Images/icons/contactusmail.svg";
-
+import ContactForm from "./ContactForm";
 const ContactUsForm: React.FC = () => {
   const [formData, setFormData] = useState({
     first_name: "",
@@ -220,7 +220,7 @@ const handleChange = (
           backgroundSize: "cover",
         }}
       >
-        <div className="container">
+        <div className="max-container">
           <div className="grid md:grid-cols-[3fr_5fr] grid-cols-1    ">
             <div
               className="w-full flex flex-col items-center justify-center hello"
@@ -302,11 +302,12 @@ const handleChange = (
             </div>
 
             <div>
-              <div className="p-4 lg:p-10 steper-form-section-os bg-black ">
+              <ContactForm />
+              {/* <div className="p-4 lg:p-10 steper-form-section-os bg-black ">
                 <form onSubmit={handleSubmit}>
                   <div className="flex flex-col gap-4 bg-black text-white">
                     <div className="grid grid-cols-2 gap-4 form-label">
-                      {/* {/ Business Name Input /} */}
+                    
                       <TextField
                         label="First Name*"
                         name="first_name"
@@ -318,17 +319,7 @@ const handleChange = (
                         helperText={formErrors.first_name}
                       />
 
-                      {/* {/ Email Input with validation /} */}
-                      {/* <TextField
-              label="Your Email *"
-              name="email_address"
-              fullWidth
-              variant="outlined"
-              value={formData.email_address}
-              onChange={handleChange}
-              error={!!formErrors.email}
-              helperText={formErrors.email}
-            /> */}
+                       
                       <TextField
                         label="Last Name*"
                         name="last_name"
@@ -351,7 +342,7 @@ const handleChange = (
                         helperText={formErrors.email_address}
                       />
                       {/*
-                      {/ Phone Number Input with validation /} */}
+                     
                       <TextField
                         label="Phone Number *"
                         name="contact_no"
@@ -364,46 +355,10 @@ const handleChange = (
                         helperText={formErrors.contact_no}
                       />
 
-                      {/* {/ Course Selection /} */}
-                      {/* <FormControl fullWidth variant="outlined">
-              <InputLabel>Select Your Course *</InputLabel>
-              <Select
-                label="Select Your Course *"
-                name="course_name"
-                value={formData.course_name} // This is binding the course name to the Select value
-                onChange={handleCourseChange}
-                error={!!formErrors.course_name} // Show error if course is not selected
-
-                sx={{
-                  color: "white", // Set the text color of the selected option to white
-                  "& .MuiSelect-icon": {
-                    color: "white", // Set the dropdown icon color to white
-                  },
-                  "& .MuiOutlinedInput-notchedOutline": {
-                    borderColor: "white", // Set the border color of the select input
-                  },
-                }}
-              >
-                <MenuItem value="">-- Select a Course --</MenuItem>
-                <MenuItem value="video_editing">Screen Refurbishment</MenuItem>
-                <MenuItem value="graphic_design">Mail-In-Repair</MenuItem>
-                <MenuItem value="web_design">Web Designing</MenuItem>
-                <MenuItem value="web_development">Training</MenuItem>
-                <MenuItem value="php">B2B Repair</MenuItem>
-                <MenuItem value="laravel">Data Recovery</MenuItem>
-                <MenuItem value="wordpress">Parts Store</MenuItem>
-                <MenuItem value="c++">Repair Solutions</MenuItem>
-              </Select>
-
-              {formErrors.course_name && (
-                <p style={{ color: "#d32f2f", fontSize: "12px" }}>
-                  {formErrors.course_name}
-                </p>
-              )}
-            </FormControl> */}
+                   
                     </div>
 
-                    {/* {/ Training Message /} */}
+                    
                     <div>
                       <h3 className="text-[20px] lg:text-[26px]">
                         Write Your Enquiry
@@ -429,8 +384,7 @@ const handleChange = (
                       />
                     </div>
                   </div>
-
-                  {/* {/ Submit Button /} */}
+ 
                   <div className="py-4">
                     <Button
                       variant="contained"
@@ -453,7 +407,7 @@ const handleChange = (
                     </Button>
                   </div>
                 </form>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

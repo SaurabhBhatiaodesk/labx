@@ -307,6 +307,11 @@ body {
   color: var( --white);
   scroll-behavior: smooth; /* Smooth scrolling */
 }
+.max-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0px 15px;
+}
 .italic-placeholder::placeholder {
   font-style: italic !important;
 }

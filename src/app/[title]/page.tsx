@@ -52,12 +52,12 @@ export default async function PageDetail({ params }: { params: { title: string }
 <section
         className="bg-no-repeat bg-cover p-0 relative" 
       >
-         {page.images.map((image: string, index: number) => (
-                <Image key={image}  src={image} alt="" className='dynamic__img' />
+         {/* {page.images.map((image: string, index: number) => (
+                <Image key={image}  src={image} alt="" width='100' height='100' className='dynamic__img' />
                   
-          ))}
+          ))} */}
 
-        <div className="container overlap__term__data" >
+        <div className="max-container overlap__term__data" >
           <div className="grid lg:grid-cols-[5fr_3fr] items-center pt-3">
             <div className="w-full px-4">
               <div className="text-center lg:text-left">
@@ -88,7 +88,7 @@ export default async function PageDetail({ params }: { params: { title: string }
           </div>
         </div>
       </section>
-        <div className="container">
+        <div className="max-container">
       <Box sx={{ backgroundColor: '000' }}>
         {/* Title Section */}
          

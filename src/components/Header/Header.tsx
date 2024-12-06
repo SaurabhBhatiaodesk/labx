@@ -17,8 +17,8 @@ import { RiArrowDropUpLine } from "react-icons/ri";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  // const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  // const dropdownRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null); // Reference for the entire menu
 
   const menuItems = [
@@ -47,24 +47,24 @@ export default function App() {
   ];
 
   // Function to toggle the "Services" dropdown only
-  const handleServicesDropdownToggle = () => {
-    setIsServicesDropdownOpen((prev) => !prev); // Toggle Services dropdown state
-  };
+  // const handleServicesDropdownToggle = () => {
+  //   setIsServicesDropdownOpen((prev) => !prev); // Toggle Services dropdown state
+  // };
 
   // Close the menu if clicked outside the menu (and not on a link)
-  useEffect(() => {
-    const handleClickOutside = (event: any) => {
-      // Check if the click is outside the menu or NavbarMenuItem
-      // if (menuRef.current && !menuRef.current.contains(event.target)) {
-      //   setIsMenuOpen(false); // Close the menu if clicked outside the menu
-      // }
-    };
+  // useEffect(() => {
+  //   const handleClickOutside = (event: any) => {
+  //     // Check if the click is outside the menu or NavbarMenuItem
+  //     // if (menuRef.current && !menuRef.current.contains(event.target)) {
+  //     //   setIsMenuOpen(false); // Close the menu if clicked outside the menu
+  //     // }
+  //   };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, []);
 
   // Prevent closing dropdown when clicking inside the menu (except on links)
   const handleLinkClick = (e: React.MouseEvent) => {
@@ -74,114 +74,191 @@ export default function App() {
   // Close the menu when an item is clicked (link)
   const handleMenuItemClick = () => {
     setIsMenuOpen(false); // Close the menu when an item (link) is clicked
+  }; 
+
+  // Toggle function to change menu state
+  const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
   };
-
+  
   return (
-    <div className="header-component">
-      <Navbar className="text-white bg-black" isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
-        <NavbarContent className="lg:hidden">
-          <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
-        </NavbarContent>
+    <>
+    <div className="w-full header header-component">
+    <Navbar className="text-white bg-black" isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+    <NavbarContent className="lg:hidden" id="nav-toggle"  onClick={toggleMenu}>
+                    <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
+                    </NavbarContent>
+        <div className="w-full relative">
+            <div className="navbar text-pastelBlue items-center justify-between">
+                <div className="navmenu flex items-center justify-between">
+                     <NavbarContent className="flex justify-center items-center">
+                        <NavbarBrand>
+                           <Link  href="/">
+                            <Image src={rktaxilog} alt="Brand Logo" className="logo_LabX" />
+                            </Link>
+                         </NavbarBrand>
+                     </NavbarContent>
+                   
 
-        <NavbarContent className="flex justify-center items-center">
-          <NavbarBrand>
-            <Link href="/">
-              <Image src={rktaxilog} alt="Brand Logo" />
-            </Link>
-          </NavbarBrand>
-        </NavbarContent>
-
-        <div className="hidden lg:flex flex-grow justify-center">
-          <div className="flex gap-[20px] xl:gap-[30px]" ref={menuRef}>
-            {menuItems.map((item) => (
-              <NavbarItem key={item.label}>
-                {item.dropdown ? (
-                  <div className="relative" ref={dropdownRef}>
-                    <button onClick={handleServicesDropdownToggle} className="flex items-center tracking-[1.5px] font-medium group">
-                      {item.label}
-                      <span className={`ml-2 transform transition-transform ${isServicesDropdownOpen ? "rotate-0" : "rotate-180"}`}>
-                        <RiArrowDropUpLine />
-                      </span>
-                    </button>
-                    {isServicesDropdownOpen && (
-                      <div className="absolute left-0 mt-2 p-2 bg-black text-white rounded shadow-lg">
-                        {item.subItems.map((subItem) => (
-                          <Link
-                            key={subItem.label}
-                            href={subItem.path || "#"}
-                            onClick={(e) => {
-                              handleLinkClick(e); // Prevent closing dropdown when clicking a link
-                              handleMenuItemClick(); // Close the menu
-                            }}
-                            className="block px-4 py-2 hover:bg-gray-800"
-                          >
-                            {subItem.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : item.path ? (
-                  <Link className="relative tracking-[1.5px] font-medium group" href={item.path} onClick={(e) => { handleMenuItemClick(); handleLinkClick(e); }}>
-                    {item.label}
-                    <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                  </Link>
-                ) : (
-                  <span className="tracking-[1.5px] font-medium">{item.label}</span>
-                )}
-              </NavbarItem>
-            ))}
-          </div>
-        </div>
-
-        <NavbarContent justify="end">
-          <Link href="/coming-soon">
-            <button className="btn hidden lg:block">GET STARTED</button>
-          </Link>
-        </NavbarContent>
-
-        <NavbarMenu className="bg-black text-white lg:hidden">
-          {menuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item.label}-${index}`}>
-              {item.dropdown ? (
-                <div>
-                  <button onClick={handleServicesDropdownToggle} className="flex justify-between w-full px-4 py-2">
-                    {item.label}
-                    <span className={`ml-2 transform transition-transform ${isServicesDropdownOpen ? "rotate-180" : "rotate-0"}`}>
-                      <RiArrowDropUpLine />
-                    </span>
-                  </button>
-
-                  {isServicesDropdownOpen && (
-                    <div className="pl-4">
-                      {item.subItems.map((subItem) => (
-                        <Link
-                          key={subItem.label}
-                          href={subItem.path || "#"}
-                          onClick={(e) => {
-                            handleLinkClick(e); // Prevent closing dropdown when clicking a link
-                            handleMenuItemClick(); // Close the menu
-                          }}
-                          className="block px-0 py-2 hover:bg-gray-800"
-                        >
-                          {subItem.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                        <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:flex  flex-grow justify-center`} id="nav-content">
+                    <ul className="menu menu-horizontal px-1 flex">
+                    
+                            <li> 
+                          <div className="dropdowns services_drop inline-block relative">
+                            <button className="btn__menu inline-flex items-center">
+                              <span className="mr-1">Services</span>
+                              <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+                            </button>
+                            <ul className="dropdown-menus absolute hidden text-white pt-1">
+                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/mail-in-repair" onClick={toggleMenu}>Mail In Repair</Link></li>
+                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/training" onClick={toggleMenu}>Training </Link></li>
+                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/b2b-repair-services" onClick={toggleMenu}>B2B Repair </Link></li>
+                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/coming-soon" onClick={toggleMenu}>Screen Refurbishment </Link></li> 
+                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/coming-soon" onClick={toggleMenu}>Data Recovery </Link></li>
+                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/coming-soon" onClick={toggleMenu}>Parts Store </Link></li>
+                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/coming-soon" onClick={toggleMenu}>Repair Forum </Link></li>
+                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/coming-soon" onClick={toggleMenu}>Repair Solutions </Link></li>
+                            </ul>
+                          </div>
+ 
+                            </li>
+                            <li><Link href="/coming-soon" onClick={toggleMenu}>Parts Store</Link></li>
+                            <li><Link href="/training" onClick={toggleMenu}>Training</Link></li>
+                            <li><Link href="/coming-soon" onClick={toggleMenu}>Screen Refurbishment</Link></li>
+                            <li><Link href="/price" onClick={toggleMenu}>Price List</Link></li>
+                            <li><Link href="/contact-us" onClick={toggleMenu}>Contact Us</Link></li>
+                            <li> 
+                          <div className="dropdown inline-block relative">
+                            <button className="btn__menu inline-flex items-center">
+                              <span className="mr-1">About us</span>
+                              <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+                            </button>
+                            <ul className="dropdown-menu absolute hidden text-white pt-1">
+                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/about-us" onClick={toggleMenu}>About</Link></li>
+                             <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/what-we-do" onClick={toggleMenu}>What We Do</Link></li>
+                             <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/blogs" onClick={toggleMenu}>Blog </Link></li> 
+                             <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/faq" onClick={toggleMenu}>FAQ </Link></li> 
+                            </ul>
+                          </div>
+ 
+                            </li>
+                        </ul>
+                    </div>  
+                  <Link  href="/coming-soon">
+                    <button className="btn hidden lg:block">GET STARTED</button>
+                  </Link> 
                 </div>
-              ) : item.path ? (
-                <Link className="w-full" href={item.path} onClick={handleMenuItemClick}>
-                  {item.label}
-                </Link>
-              ) : (
-                <span className="w-full block px-4 py-2">{item.label}</span>
-              )}
-            </NavbarMenuItem>
-          ))}
-        </NavbarMenu>
-      </Navbar>
+                
+            </div>
+        </div>
+        </Navbar>
     </div>
+    </>
+    // <div classNameName="header-component">
+    //   <Navbar classNameName="text-white bg-black" isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+    //     <NavbarContent classNameName="lg:hidden">
+    //       <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
+    //     </NavbarContent>
+
+    //     <NavbarContent classNameName="flex justify-center items-center">
+    //       <NavbarBrand>
+    //         <Link  href="/">
+    //           <Image src={rktaxilog} alt="Brand Logo" />
+    //         </Link>
+    //       </NavbarBrand>
+    //     </NavbarContent>
+
+    //     <div classNameName="hidden lg:flex flex-grow justify-center">
+    //       <div classNameName="flex gap-[20px] xl:gap-[30px]" ref={menuRef}>
+    //         {menuItems.map((item) => (
+    //           <NavbarItem key={item.label}>
+    //             {item.dropdown ? (
+    //               <div classNameName="relative" ref={dropdownRef}>
+    //                 <button onClick={handleServicesDropdownToggle} classNameName="flex items-center tracking-[1.5px] font-medium group">
+    //                   {item.label}
+    //                   <span classNameName={`ml-2 transform transition-transform ${isServicesDropdownOpen ? "rotate-0" : "rotate-180"}`}>
+    //                     <RiArrowDropUpLine />
+    //                   </span>
+    //                 </button>
+    //                 {isServicesDropdownOpen && (
+    //                   <div classNameName="absolute left-0 mt-2 p-2 bg-black text-white rounded shadow-lg">
+    //                     {item.subItems.map((subItem) => (
+    //                       <Link 
+    //                         key={subItem.label}
+    //                         href={subItem.path || "#"}
+    //                         onClick={(e) => {
+    //                           handleLinkClick(e); // Prevent closing dropdown when clicking a link
+    //                           handleMenuItemClick(); // Close the menu
+    //                         }}
+    //                         classNameName="block px-4 py-2 hover:bg-gray-800"
+    //                       >
+    //                         {subItem.label}
+    //                       </Link>
+    //                     ))}
+    //                   </div>
+    //                 )}
+    //               </div>
+    //             ) : item.path ? (
+    //               <Link  classNameName="relative tracking-[1.5px] font-medium group" href={item.path} onClick={(e) => { handleMenuItemClick(); handleLinkClick(e); }}>
+    //                 {item.label}
+    //                 <span classNameName="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+    //               </Link>
+    //             ) : (
+    //               <span classNameName="tracking-[1.5px] font-medium">{item.label}</span>
+    //             )}
+    //           </NavbarItem>
+    //         ))}
+    //       </div>
+    //     </div>
+
+    //     <NavbarContent justify="end">
+    //       <Link  href="/coming-soon">
+    //         <button classNameName="btn hidden lg:block">GET STARTED</button>
+    //       </Link>
+    //     </NavbarContent>
+
+    //     <NavbarMenu classNameName="bg-black text-white lg:hidden">
+    //       {menuItems.map((item, index) => (
+    //         <NavbarMenuItem key={`${item.label}-${index}`}>
+    //           {item.dropdown ? (
+    //             <div>
+    //               <button onClick={handleServicesDropdownToggle} classNameName="flex justify-between w-full px-4 py-2">
+    //                 {item.label}
+    //                 <span classNameName={`ml-2 transform transition-transform ${isServicesDropdownOpen ? "rotate-180" : "rotate-0"}`}>
+    //                   <RiArrowDropUpLine />
+    //                 </span>
+    //               </button>
+
+    //               {isServicesDropdownOpen && (
+    //                 <div classNameName="pl-4">
+    //                   {item.subItems.map((subItem) => (
+    //                     <Link 
+    //                       key={subItem.label}
+    //                       href={subItem.path || "#"}
+    //                       onClick={(e) => {
+    //                         handleLinkClick(e); // Prevent closing dropdown when clicking a link
+    //                         handleMenuItemClick(); // Close the menu
+    //                       }}
+    //                       classNameName="block px-0 py-2 hover:bg-gray-800"
+    //                     >
+    //                       {subItem.label}
+    //                     </Link>
+    //                   ))}
+    //                 </div>
+    //               )}
+    //             </div>
+    //           ) : item.path ? (
+    //             <Link  classNameName="w-full" href={item.path} onClick={handleMenuItemClick}>
+    //               {item.label}
+    //             </Link>
+    //           ) : (
+    //             <span classNameName="w-full block px-4 py-2">{item.label}</span>
+    //           )}
+    //         </NavbarMenuItem>
+    //       ))}
+    //     </NavbarMenu>
+    //   </Navbar>
+    // </div>
   );
 }
 
@@ -273,43 +350,43 @@ export default function App() {
 //   }, []);
 
 //   return (
-//     <div className="header-component">
+//     <div classNameName="header-component">
 //       <Navbar
-//         className="text-white bg-black"
+//         classNameName="text-white bg-black"
 //         isBordered
 //         isMenuOpen={isMenuOpen}
 //         onMenuOpenChange={setIsMenuOpen}
 //       >
 //         {/ Mobile Menu Toggle /}
-//         <NavbarContent className="lg:hidden">
+//         <NavbarContent classNameName="lg:hidden">
 //           <NavbarMenuToggle
 //             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
 //           />
 //         </NavbarContent>
 
 //         {/ Brand Logo /}
-//         <NavbarContent className="flex justify-center items-center">
+//         <NavbarContent classNameName="flex justify-center items-center">
 //           <NavbarBrand>
-//             <Link href="/">
+//             <Link  href="/">
 //               <Image src={rktaxilog} alt="Brand Logo" />
 //             </Link>
 //           </NavbarBrand>
 //         </NavbarContent>
 
 //         {/ Desktop Menu /}
-//         <div className="hidden lg:flex flex-grow justify-center">
-//           <div className="flex gap-[20px] xl:gap-[30px]">
+//         <div classNameName="hidden lg:flex flex-grow justify-center">
+//           <div classNameName="flex gap-[20px] xl:gap-[30px]">
 //             {menuItems.map((item) => (
 //               <NavbarItem key={item.label}>
 //                 {item.dropdown ? (
-//                   <div className="relative" ref={dropdownRef}>
+//                   <div classNameName="relative" ref={dropdownRef}>
 //                     <button
 //                       onClick={handleServicesDropdownToggleDesktop}
-//                       className="flex items-center tracking-[1.5px] font-medium group"
+//                       classNameName="flex items-center tracking-[1.5px] font-medium group"
 //                     >
 //                       {item.label}
 //                       <span
-//                         className={`ml-2 transform transition-transform ${
+//                         classNameName={`ml-2 transform transition-transform ${
 //                           isServicesDropdownOpenDesktop
 //                             ? "rotate-0"
 //                             : "rotate-180"
@@ -319,12 +396,12 @@ export default function App() {
 //                       </span>
 //                     </button>
 //                     {isServicesDropdownOpenDesktop && (
-//                       <div className="absolute left-0 mt-2 p-2 bg-black text-white rounded shadow-lg">
+//                       <div classNameName="absolute left-0 mt-2 p-2 bg-black text-white rounded shadow-lg">
 //                         {item.subItems.map((subItem) => (
-//                           <Link
+//                           <Link 
 //                             key={subItem.label}
 //                             href={subItem.path || "#"}
-//                             className="block px-4 py-2 hover:bg-gray-800"
+//                             classNameName="block px-4 py-2 hover:bg-gray-800"
 //                           >
 //                             {subItem.label}
 //                           </Link>
@@ -333,15 +410,15 @@ export default function App() {
 //                     )}
 //                   </div>
 //                 ) : item.path ? (
-//                   <Link
-//                     className="relative tracking-[1.5px] font-medium group"
+//                   <Link 
+//                     classNameName="relative tracking-[1.5px] font-medium group"
 //                     href={item.path}
 //                   >
 //                     {item.label}
-//                     <span className="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+//                     <span classNameName="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
 //                   </Link>
 //                 ) : (
-//                   <span className="tracking-[1.5px] font-medium">
+//                   <span classNameName="tracking-[1.5px] font-medium">
 //                     {item.label}
 //                   </span>
 //                 )}
@@ -352,24 +429,24 @@ export default function App() {
 
 //         {/ Right Side Content /}
 //         <NavbarContent justify="end">
-//           <Link href="/coming-soon">
-//             <button className="btn hidden lg:block">GET STARTED</button>
+//           <Link  href="/coming-soon">
+//             <button classNameName="btn hidden lg:block">GET STARTED</button>
 //           </Link>
 //         </NavbarContent>
 
 //         {/ Mobile Menu /}
-//         <NavbarMenu className="bg-black text-white lg:hidden">
+//         <NavbarMenu classNameName="bg-black text-white lg:hidden">
 //           {menuItems.map((item, index) => (
 //             <NavbarMenuItem key={`${item.label}-${index}`}>
 //               {item.dropdown ? (
 //                 <div>
 //                   <button
 //                     onClick={handleServicesDropdownToggleMobile}
-//                     className="flex justify-between w-full px-4 py-2"
+//                     classNameName="flex justify-between w-full px-4 py-2"
 //                   >
 //                     {item.label}
 //                     <span
-//                       className={`ml-2 transform transition-transform ${
+//                       classNameName={`ml-2 transform transition-transform ${
 //                         isServicesDropdownOpenMobile ? "rotate-180" : "rotate-0"
 //                       }`}
 //                     >
@@ -379,12 +456,12 @@ export default function App() {
 
 //                   {/ This part will conditionally render the dropdown /}
 //                   {isServicesDropdownOpenMobile && (
-//                     <div className="pl-4">
+//                     <div classNameName="pl-4">
 //                       {item.subItems.map((subItem) => (
-//                         <Link
+//                         <Link 
 //                           key={subItem.label}
 //                           href={subItem.path || "#"}
-//                           className="block px-4 py-2 hover:bg-gray-800"
+//                           classNameName="block px-4 py-2 hover:bg-gray-800"
 //                         >
 //                           {subItem.label}
 //                         </Link>
@@ -393,11 +470,11 @@ export default function App() {
 //                   )}
 //                 </div>
 //               ) : item.path ? (
-//                 <Link className="w-full" href={item.path}>
+//                 <Link  classNameName="w-full" href={item.path}>
 //                   {item.label}
 //                 </Link>
 //               ) : (
-//                 <span className="w-full block px-4 py-2">{item.label}</span>
+//                 <span classNameName="w-full block px-4 py-2">{item.label}</span>
 //               )}
 //             </NavbarMenuItem>
 //           ))}

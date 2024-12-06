@@ -58,7 +58,7 @@ const Faqinner: React.FC<FaqinnerProps> = ({ heading, categories }) => {
   return (
     <div>
       <section className="py-5 xl:py-10">
-        <div className="container">
+        <div className="max-container">
           <div className="my-4">
             <MainHeading Heading={heading} />
           </div>

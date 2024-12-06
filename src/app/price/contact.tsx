@@ -4,27 +4,16 @@ import Price from './Price'
 import Device from "../../../public/Images/about/device.svg"
 import GoogleReview from "@/components/GoogleReviews/what-we-do-review";
 import Image from 'next/image';
+import ContactForm from '../contact-us/ContactForm';
 
-const Page = () => {
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        message: '',
-      });
-    
-      const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value.trim() });
-      };
+const Page = () => { 
   return (
   <>
   
   <div className='container_small bg-black pt-8 pb-6'>
-    <h2 className='text-center mb-5'>Contact Information</h2>
-
-    <form>
+    <h2 className='text-center'>Contact Information</h2>
+    <ContactForm />
+    {/* <form>
         <div className="grid grid-cols-1 gap-6">
           <div className='grid grid-cols-2 gap-6'>
             <div>
@@ -101,10 +90,10 @@ const Page = () => {
             </button>
           </div>
         </div>
-      </form>
+      </form> */}
   </div>
   <div className='device__img text-center container pt-8 mt-5 pb-8 mb-5 relative'>
-    <Image src={Device.src} alt="" className='m-auto' />
+    <Image height='1000' width='1000' src={Device.src} alt="" className='m-auto' />
     <div className="overlap__number">
         <h2>Get Your Device Fixed Now!</h2>
         <h3>+1-800-1234567</h3>

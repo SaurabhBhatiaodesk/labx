@@ -2,6 +2,7 @@ th.border-bottom.px-4.py-2 {
     background: #181818;
     text-align: left;
     color: #fff;
+    font-size: 16px;
 }
 td.border-bottom.px-4.py-2 {
     border-bottom: 1px solid #ccc; 
