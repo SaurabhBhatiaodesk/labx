@@ -81,7 +81,7 @@ const CourseHighlights = () => {
 
             {/* course 1 */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
-              <div className="relative w-full h-[300px] md:h-[550px]">
+              <div className="relative w-full h-[300px] md:h-[550px] sm-order-2">
                 <Image
                   className="object-cover rounded-[30px]"
                   src={course2}
@@ -206,7 +206,7 @@ const CourseHighlights = () => {
                   </div>
                 </div>
               </div>
-              <div className="relative w-full h-[300px] md:h-[550px] order-1 lg:order-2">
+              <div className="relative w-full h-[300px] md:h-[550px] sm-order-2 lg:order-2">
                 <Image
                   className="object-cover rounded-[30px]"
                   src={course2}
@@ -217,7 +217,7 @@ const CourseHighlights = () => {
             </div>
             {/* course 3 */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
-              <div className="relative w-full h-[300px] md:h-[550px]">
+              <div className="relative w-full h-[300px] md:h-[550px] sm-order-2">
                 <Image
                   className="object-cover rounded-[30px]"
                   src={course2}
@@ -310,7 +310,7 @@ const CourseHighlights = () => {
                   </div>
                 </div>
               </div>
-              <div className="relative w-full h-[300px] md:h-[550px] order-1 lg:order-2">
+              <div className="relative w-full h-[300px] md:h-[550px] order-2 lg:order-2">
                 <Image
                   className="object-cover rounded-[30px]"
                   src={course2}

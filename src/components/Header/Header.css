@@ -48,15 +48,23 @@ ul.dropdown-menu li a, ul.dropdown-menus li a {
 .logo_LabX{
     width: 200px;
 }
+.social__icon {
+    display: none;
+}
 @media only screen and (max-width: 	767px) {
     .logo_LabX{
         width: 120px;
+    }
+    .social__icon {
+        display: flex !important;
+        gap: 10px;
+        margin-top: 2rem;
     }
     .flex.basis-0.flex-row.flex-grow.flex-nowrap.justify-start.bg-transparent.items-center.no-underline.text-medium.whitespace-nowrap.box-border {
         justify-content: center;
         margin-right: 25px;
     }
-    ul.dropdown-menus.absolute.hidden.text-white.pt-1 {
+    ul.dropdown-menus.absolute.hidden.text-white.pt-1, ul.dropdown-menu.absolute.hidden.text-white.pt-1 {
         z-index: 999;
         position: relative;
     }
@@ -65,7 +73,7 @@ ul.dropdown-menu li a, ul.dropdown-menus li a {
     }
     .block.lg\:flex.flex-grow.justify-center {
         position: absolute;
-        left: -52px;
+        left: 0;
         background: #000;
         top: 50px;
         padding: 15px;
