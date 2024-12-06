@@ -37,12 +37,18 @@
     background: linear-gradient(90deg, #EDE574 0%, #E1F5C4 100%);
     border-radius: 20px;
 }
-
+h2 {
+    font-size: 32px !important;
+    line-height: 40px;
+}
+.max-container p{
+    font-size: 16px;
+}
 @media screen and (max-width: 767px) {
 img.pb-3.m-auto, .about_line{
     opacity: 0;
 }
-.grid.xl\:grid-cols-2.lg\:grid-cols-3.grid-cols-1.gap-8.lg\:py-5.py-3.items-center, .container p, .overlap__description h3 {
+.grid.xl\:grid-cols-2.lg\:grid-cols-3.grid-cols-1.gap-8.lg\:py-5.py-3.items-center, .max-container p, .overlap__description h3 {
     text-align: center;
 }
 .overlap__description { 
@@ -54,6 +60,6 @@ img.pb-3.m-auto, .about_line{
     width: 100%;
 }
 .overlap__section_labX.relative {
-    margin-bottom: 40rem;
+    margin-bottom: 47rem;
 }
 }

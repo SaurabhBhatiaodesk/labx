@@ -5,6 +5,7 @@ import axios from "axios"; // Import axios
 import Image from "next/image";
 import MainButton from "@/components/MainButton/MainButton";
 import BlogImage from "../../../public/Images/adminimage.png"; // Fallback image
+import Link from "next/link";
 
 // Define types for the blog data
 interface Blog {
@@ -61,10 +62,11 @@ const Blogs: React.FC = () => {
                   : BlogImage; // Fallback to a dummy image if no image is available
 
               return (
-                <div
+                <div 
                   key={index}
                   className="blog-article p-4 p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]"
                 >
+                  <Link   href={`/blogpage/${blog._id}`}>
                   <Image
                     src={featuredImage}
                     alt={blog.heading || "Blog Image"}
@@ -78,6 +80,7 @@ const Blogs: React.FC = () => {
                       link={`/blogpage/${blog._id}`}
                     />
                   </div>
+                  </Link>
                 </div>
               );
             })

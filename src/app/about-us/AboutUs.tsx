@@ -42,7 +42,7 @@ const AboutUs = () => {
         className="bg-no-repeat bg-cover p-0"
         style={{ backgroundImage: `url(${Banner})` }}
       >
-        <div className="container">
+        <div className="max-container">
           <div className="grid lg:grid-cols-[5fr_3fr] items-center pt-3">
             <div className="w-full px-4">
               <div className="text-center lg:text-left">
@@ -65,7 +65,7 @@ const AboutUs = () => {
                 <h1 className="text-dark mb-0 text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
                   About Us
                 </h1>
-                <Image src={UnderLine.src} alt="" className="mb-3 about_line" />
+                <Image  height="100" width="200"src={UnderLine.src} alt="" className="mb-3 about_line" />
                 <p className="text-body-color dark:text-dark-6 mb-5 text-base">
                   Born in 1986 in Punjab, India, my journey has been one of passion, perseverance, and purpose.
                 </p>
@@ -77,7 +77,7 @@ const AboutUs = () => {
                 src={Adminimage}
                 alt="Admin Visual"
                 className="object-contain pt-3"
-                fill // Makes the image fill the parent container
+                fill // Makes the image fill the parent max-container
               />
             </div>
           </div>
@@ -85,7 +85,7 @@ const AboutUs = () => {
       </section>
       <div className="about__bg__gradiant">
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 lg:py-6 py-3 items-center ">
-          <div className="container text-white text-center rounded-md">
+          <div className="max-container text-white text-center rounded-md">
             <p className="">
               From a young age, I was fascinated with technology, particularly mobile phones.  After completing my higher secondary education, in 2005, I enrolled in a six-month course at one of the big city &apos;s institutes to learn mobile phone repair. My passion and dedication quickly set me apart— I was not only excelling in my assignments but also helping my classmates with theirs. Recognizing my potential, the institute&apos;s owner, who ran a well-known repair shop, offered me an unpaid apprenticeship at his store—a rare opportunity, as most paid for the chance to work there. I gladly worked for two years without pay, absorbing everything I could about the trade.
             </p>
@@ -97,14 +97,14 @@ const AboutUs = () => {
       </div>
 
       <section data-aos="fade-up" className="aos-init aos-animate">
-        <div className="container">
+        <div className="max-container">
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
             <div className="User_Image">
-              <Image src={User} alt="" className="" />
+              <Image  height="1000" width="1000" src={User} alt="" className="" />
             </div>
             <div className="">
               <h2>Starting From Scratch in Australia</h2>
-              <Image src={Line.src} alt="" className="pb-3 m-auto" />
+              <Image  height="1000" width="1000"src={Line.src} alt="" className="pb-3 m-auto" />
               <p>When I arrived in Australia, I quickly realized the road ahead would be anything but easy. People often told me that my skills were useless here because mobile phones were mostly on contracts, and broken ones were typically replaced rather than repaired. My poor English made things even harder, but I refused to give up on my passion. </p>
               <p>Desperate to stay in the industry, I took a job at a phone repair shop. The working conditions were tough— two weeks of unpaid training, followed by a very low hourly wage, with no guarantee of regular payment. Many days, I couldn&apos;t even afford train fare to attend my classes. I vividly remember standing at the shop, asking the staff for $10 to buy a train ticket. Often, I had to wait for the shop &apos;s first sale of the day to get the money I needed.</p>
             </div>
@@ -112,13 +112,13 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <div className="container "   >
+      <div className="max-container "   >
         <section>
           <div className="bg-black text-white flex flex-col items-center py-2 lg:py-4">
 
             <div className="w-full p-6">
-              <h2 className="font-bold text-center mb-0 text-white">A Breakthrough </h2>
-              <Image src={Break.src} alt="" className="pb-3 m-auto" />
+              <h2 className="font-bold text-center mb-2 text-white">A Breakthrough </h2>
+              <Image  height="100" width="200"src={Break.src} alt="" className="pb-3 m-auto" />
               <p className="  text-center  text-white">
                 Despite these hardships, I stayed there for six months, determined to learn and grow. Eventually, I found another opportunity at a repair shop in Blacktown. When I approached the owner, I struggled to communicate in English and asked if he spoke Hindi. He didn &apos;t, but he gave me a chance, recognizing my skills instead of focusing on my language barrier.
               </p>
@@ -131,17 +131,17 @@ const AboutUs = () => {
       </div>
 
       <section className=""  >
-        <div className="container">
+        <div className="max-container">
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
             <div className="">
-              <h2 className="mb-0 w-auto">Taking a Leap of Faith</h2>
-              <Image src={Leap.src} alt="" className="pb-3 pl-3 about_line" />
+              <h2 className="mb-2 w-auto">Taking a Leap of Faith</h2>
+              <Image  height="100" width="350"src={Leap.src} alt="" className="pb-3 pl-3 about_line" />
               <p>After working for three years at the shop in Blacktown, I began to feel a strong urge to start something of my own. While the job provided stability, I wanted to pursue my dream of independence and building something for myself. Eventually, I made the tough decision to leave the job and began working from home.   </p>
               <p>During this time, I relied on small repair jobs from other shops, using the relationships I had built in the industry. I would visit local shops and offer my services for motherboard repairs and phone unlocks, collecting phones during the week and returning them repaired. However, this was not sustainable in the long term, and I knew I needed a more permanent solution.</p>
               <p>One weekend in early 2012, while delivering repaired phones to a market, I noticed the bustling activity and thought to myself, Why not start here? I approached the information desk at Parklea Markets to inquire about setting up a stall. The staff explained that I could rent a stall for $282 for two days (Saturday and Sunday only). At that moment, I had just enough money to pay for one week, and despite having no plan or resources, I decided to take the leap.</p>
             </div>
             <div className="User_Image">
-              <Image src={Hill} alt="" className="" />
+              <Image  height="1000" width="1000"src={Hill} alt="" className="" />
             </div>
           </div>
         </div>
@@ -150,9 +150,9 @@ const AboutUs = () => {
 
       <div className="about__bg__gradiant "  >
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 lg:py-6 py-3 items-center ">
-          <div className="container text-white text-center rounded-md">
-            <h2 className="mb-0">A Helping Hand</h2>
-            <Image src={Hand.src} alt="" className="pb-3 m-auto" />
+          <div className="max-container text-white text-center rounded-md">
+            <h2 className="mb-2">A Helping Hand</h2>
+            <Image  height="100" width="200"src={Hand.src} alt="" className="pb-3 m-auto" />
             <p className=""> Back at home, I shared my plans with my uncle, Paramjit Thiara (I was a paying guest at his place), who had always been a pillar of support. Recognizing my determination, he gave me an old, broken cupboard, which we creatively transformed into a makeshift workbench. This simple gesture played a crucial role in getting me started.
             </p>
 
@@ -165,7 +165,7 @@ const AboutUs = () => {
             </p>
 
             <div className="overlap__section_labX relative">
-              <Image src={Helping.src} alt="" />
+              <Image  height="1000" width="1000"src={Helping.src} alt="" />
               <div className="overlap__description ">
                 <h3 >Building My Dream</h3>
                 <p>After one week of preparation, I transformed a simple cupboard into a makeshift workbench. My setup at Parklea Markets was modest—a plastic chair, a laptop, a few spare parts, and a black-and-white paper sign that read, “Yes, we do repairs.”</p>
@@ -183,10 +183,10 @@ const AboutUs = () => {
 
       {/* our value */}
 
-      <section className="py-4 lg-py-[20px] " >
-        <div className="container text-center">
+      <section className="py-4 lg-py-[20px] pt-8 mt-5" >
+        <div className="max-container text-center">
           <h2> From Market Stall to a Full-Fledged Shop </h2>
-          <Image src={Leap.src} alt="" className="pb-3 pl-3 m-auto about_line" />
+          <Image  height="100" width="600"src={Leap.src} alt="" className="pb-3 pl-3 m-auto about_line" />
           <p>By 2013, as my business at Parklea Markets thrived, I realized it was time to upgrade. I replaced my modest table and chair setup with a proper counter, creating a more professional and welcoming space. Over time, I expanded from a single stall to a double stall, complete with a roof, fans, seating, and improved displays. Eventually, I moved to a better location within the market, equipping the shop with a full fit-out, LED lighting, and a polished appearance. My shop became one of the standout businesses in the market, known for its professional look and high-quality service. </p>
           <div >
             <p>Despite this progress, I felt the need to expand further. While I was busy on weekends at the market, my weekdays were relatively free. I decided it was time to open a dedicated shop outside the market. One of my suppliers, who had helped me early on by providing accessories on credit, suggested I look for an affordable location. When I asked about areas with low rent, he smiled and said, Try St Marys. </p>
@@ -198,10 +198,10 @@ const AboutUs = () => {
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
 
             <div className="about__Image">
-              <Image src={Express} alt="" className="" />
+              <Image  height="1000" width="1000"src={Express} alt="" className="" />
             </div>
             <div className="about__Image">
-              <Image src={Entry} alt="" className="" />
+              <Image  height="1000" width="1000"src={Entry} alt="" className="" />
             </div>
           </div>
 
@@ -222,14 +222,14 @@ const AboutUs = () => {
 
 
       <section  className="">
-        <div className="container">
+        <div className="max-container">
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
             <div className="User_Image">
-              <Image src={Dream} alt="" className="" />
+              <Image  height="1000" width="1000"src={Dream} alt="" className="" />
             </div>
             <div className="">
               <h2 className="mb-0 w-auto">Balancing Dreams with Determination </h2>
-              <Image src={Leap.src} alt="" className="pb-3 pl-3 about_line" />
+              <Image  height="1000" width="500"src={Leap.src} alt="" className="pb-3 pl-3 about_line" />
               <p>As my shop grew and I worked tirelessly day and night to build it, a new challenge emerged—my application for permanent residency in Australia. To qualify, I was required to pass an English proficiency test (IELTS) with a score of 7 in each module: reading, writing, speaking, and listening. </p>
               <p>At the time, my English proficiency level was only 5.5, and the gap seemed daunting. Adding to the challenge, I was still a student, juggling my studies, running my business, and preparing for the exam. Despite these pressures, I began rigorous training to improve my English skills, dedicating significant time to studying. This shift in focus meant I had to divide my attention between my shop and my studies, which impacted my business operations.              </p>
             </div>
@@ -247,9 +247,9 @@ const AboutUs = () => {
 
       <div className="about__bg__gradiant pt-8 " >
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 lg:py-6 py-3 items-center ">
-          <div className="container text-white text-center rounded-md">
-            <h2 className="mb-0">Scaling Up: Building a Team and Expanding Services</h2>
-            <Image src={Service.src} className="pb-3 m-auto" alt="" />
+          <div className="max-container text-white text-center rounded-md">
+            <h2 className="mb-2">Scaling Up: Building a Team and Expanding Services</h2>
+            <Image  height="1000" width="800"src={Service.src} className="pb-3 m-auto" alt="" />
             <p className="">
               After securing my residency, I shifted my full focus back to growing the business. The shop at St Marys flourished alongside the stall at Parklea Markets, and both locations gained momentum. I worked tirelessly to maximize their potential, experimenting with different strategies and services to meet the growing demand.
             </p>
@@ -258,7 +258,7 @@ const AboutUs = () => {
             </p>
             <p>With a strong team in place, I was able to take the business to the next level. I began offering professional motherboard repairs and launched a YouTube channel to showcase my expertise and reach a wider audience. This increased our visibility and helped us secure partnerships with local repair shops.
             </p>
-            <Image src={Team.src} alt="" />
+            <Image  height="1000" width="1000" style={{ width: '100%' }} src={Team.src} alt="" />
             <p>Our B2B services became a significant part of the business, with local shops sending us devices for advanced repairs they couldn &apos;t handle. Many were curious about the techniques and expertise that allowed us to fix complex issues. This recognition and trust from others in the industry further solidified our reputation as specialists in mobile phone repairs.
             </p>
             <p>This phase marked a turning point for the business as we transitioned from a local repair shop to a hub for specialized services and industry collaborations.</p>
@@ -267,20 +267,20 @@ const AboutUs = () => {
       </div>
 
       <section  className="">
-        <div className="container">
+        <div className="max-container">
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
 
             <div className="">
-              <h2 className="mb-0 w-auto">Recognizing a Need for Training
+              <h2 className="mb-2 w-auto">Recognizing a Need for Training
               </h2>
-              <Image src={NeedLine.src} alt="" className="pb-3 about_line" />
+              <Image  height="1000" width="500"src={NeedLine.src} alt="" className="pb-3 about_line" />
               <p>As my business grew, I began noticing a troubling trend in the industry: many technicians were inadvertently damaging customers devices due to a lack of proper skills and knowledge. It became clear to me that there was a need for structured training to elevate the standard of repairs in the industry.</p>
               <p>Rather than accepting poorly executed repairs from other technicians, I decided to shift my focus toward education. My idea was simple yet impactful: instead of taking repair jobs from technicians, I would teach them the right way to perform these repairs and charge for my coaching.</p>
               <p>Around 2018 or 2019, I began investing in the necessary equipment and laying the groundwork for training programs. I was preparing to launch my first batch of students, and there was significant interest from individuals eager to learn the skills I had mastered over the years.</p>
               <p>Unfortunately, the outbreak of COVID-19 put everything on hold. Lockdowns and restrictions delayed my plans, but the experience reinforced the importance of creating a platform to upskill technicians and improve the industry overall.</p>
             </div>
             <div className="User_Image">
-              <Image src={Need} alt="" className="" />
+              <Image  height="1000" width="1000"src={Need} alt="" className="" />
             </div>
           </div>
           {/* <p> During this challenging time, my friend Robin became an invaluable part of my journey. He stepped in to manage the shop while I concentrated on my studies. I trained him extensively in phone repairs and the day-to-day operations of the business, and he took on the responsibility with dedication and care.
@@ -291,16 +291,16 @@ const AboutUs = () => {
       </section>
 
       <section className="mt-5 pt-8 bg_light_black " >
-        <div className="container">
+        <div className="max-container">
           <div className="text-center mt-5">
-            <h2 className="mb-0 w-auto">A New Chapter: Focus and Growth
+            <h2 className="mb-2 w-auto">A New Chapter: Focus and Growth
             </h2>
-            <Image src={New.src} alt="" className="pb-3 m-auto" />
+            <Image  height="1000" width="400" src={New.src} alt="" className="pb-3 m-auto" />
           </div>
           <p>During the COVID-19 pandemic, something remarkable happened—my business thrived despite the challenges. While I had initially planned to focus on launching training programs, the surge in demand for repairs and services led me to postpone those plans. Whether it was due to luck, goodwill, or sheer hard work, I found myself busier than ever.</p>
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
             <div className="chap_Image">
-              <Image src={Chapter} alt="" className="" />
+              <Image  height="1000" width="1000"src={Chapter} alt="" className="" />
             </div>
             <div className="">
               <p>One significant milestone during this period was securing authorization to become a Samsung Service Centre. This partnership brought a tremendous influx of work and solidified our reputation as a trusted repair provider.
@@ -315,7 +315,7 @@ const AboutUs = () => {
       </section>
 
       <section className="mt-5 pt-8 bg_light_yellow " >
-        <div className="container ">
+        <div className="max-container ">
           <div className="text-center mt-5">
             <h2 className="mb-0 w-auto text-black">Expanding Horizons: The Birth of TechCity
             </h2>
@@ -332,17 +332,17 @@ const AboutUs = () => {
               </p>
             </div>
             <div className="tech_Image">
-              <Image src={Techcity} alt="" className="" />
+              <Image  height="1000" width="1000"src={Techcity} alt="" className="" />
             </div>
           </div>
         </div>
       </section>
 
       <section className="pt-8 pb-8 bg_light_black " >
-        <div className="container text-white pt-8 mt-5">
+        <div className="max-container text-white pt-8 mt-5">
           <div className="text-center">
             <h2 className="mb-0"> Introducing Screen Refurbishing with a Transparent Approach</h2>
-            <Image src={Service.src} className="pb-3 m-auto" alt="" />
+            <Image  height="1000" width="1000"src={Service.src} className="pb-3 m-auto" alt="" />
             <p>As my business continued to grow and operations became more streamlined—with excellent staff, management, repairs, and customer service—I knew it was time to take another bold step forward. Around this time, I welcomed Imran to the team, a talented and creative addition who brought innovative ideas and energy. Together, we formed a dedicated team committed to elevating the business to new heights.</p>
             <p>One of the biggest frustrations in the industry was the lack of transparency in screen buyback programs. Suppliers would grade screens as A, B, or C, or reject them outright, often without any explanation. This lack of clarity felt like a monopoly, and I knew there was a better way</p>
             <p>Driven by the desire to offer transparency and fairness, we decided to bring screen refurbishing in-house. We invested in the latest machines, crafted a fair pricing model, and set out to do things differently. The results were transformative. For every screen we handled, we provided clear grading criteria and photos, ensuring complete honesty and trust.</p>
@@ -352,14 +352,14 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <div className="container text-white pt-8 mt-5 " >
+      <div className="max-container text-white pt-8 mt-5 " >
         <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
           <div className="tech_Image">
-            <Image src={Techcity} alt="" className="" />
+            <Image  height="1000" width="1000"src={Techcity} alt="" className="" />
           </div>
           <div>
-            <h2 className="mb-0">The Vision Behind LabX</h2>
-            <Image src={Labx.src} className="pb-3 about_line" alt="" />
+            <h2 className="mb-2">The Vision Behind LabX</h2>
+            <Image  height="1000" width="300"src={Labx.src} className="pb-3 about_line" alt="" />
             <p>My focus has always been on providing top-notch services at truly affordable prices. I believe that good repairs shouldn &apos;t come at an unreasonable cost. Unfortunately, many technicians charge excessively for basic services, like replacing an iPhone battery for $100 to $200. This often stems from a lack of skill—technicians add hidden costs to cover potential mistakes, such as cracking the screen during disassembly, instead of mastering their craft.
             </p>
             <p>As a technician, you are entrusted with customers devices and data. It is your responsibility to handle their property with care and professionalism. You should know how to perform repairs without damaging the device, respect their privacy, and honor the trust they place in you.
@@ -372,9 +372,9 @@ const AboutUs = () => {
 
       </div>
 
-      <div className="container pt-8 mt-5 mb-5 " >
+      <div className="max-container pt-8 mt-5 mb-5 " >
         <div className="overlap__section_labX relative">
-          <Image src={Traning.src} alt="" />
+          <Image  height="1000" width="1000"src={Traning.src} alt="" />
           <div className="overlap__description ">
             <h3 className="pt-6">The Decision to Provide Training
             </h3>
@@ -391,9 +391,9 @@ const AboutUs = () => {
 
       <div className="about__bg__gradiant pt-8 mt-5 " >
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 lg:py-6 py-3 items-center ">
-          <div className="container text-white text-center rounded-md">
-            <h2 className="mb-0">LabX: A Passion Project Born from Purpose </h2>
-            <Image src={Service.src} className="pb-3 m-auto" alt="" />
+          <div className="max-container text-white text-center rounded-md">
+            <h2 className="mb-2">LabX: A Passion Project Born from Purpose </h2>
+            <Image  height="1000" width="600"src={Service.src} className="pb-3 m-auto" alt="" />
             <p className=""> 
             The concept of LabX emerged from a vision to bring together every aspect of the repair industry under one roof. I wanted to go beyond just running a repair shop—to create a space that offers solutions for everyone. From wholesale services and data recovery to screen refurbishing, business-to-business repairs, selling spare parts, and accessories online, LabX was designed to be a comprehensive hub for all things repair-related.
             </p>

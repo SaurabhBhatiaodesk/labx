@@ -13,6 +13,7 @@ import Shop8 from "../../../public/Images/shop8.png";
 import Shop9 from "../../../public/Images/shop9.png";
 import YTube1 from "../../../public/Images/youtube1.png";
 import YTube2 from "../../../public/Images/youtube2.png";
+import Link from "next/link";
 const WhatWeDo = () => {
   return (
     <>
@@ -44,50 +45,59 @@ const WhatWeDo = () => {
             </p>
           </div>
           <div className="max-container grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 md:grid-cols-2 justify-center text-center gap-4 mb-2">
+           <Link href='/training'>
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
               <Image src={Shop1} alt="" />
               <h1 className="mb-4 mt-4 custom-absolute">Training</h1>
             </div>
-
+            </Link>
+           <Link href='/mail-in-repair'>
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
               <Image src={Shop2} alt="" />
               <h1 className="mb-4 mt-4 custom-absolute">Mail in Repair</h1>
             </div>
-
+            </Link>
+            <Link href='/coming-soon'> 
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
               <Image src={Shop3} alt="" />
               <h1 className="mb-4 mt-4 custom-absolute">Data Recovery</h1>
             </div>
-
+            </Link>
+            <Link href='/coming-soon'>  
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
               <Image src={Shop4} alt="" />
               <h1 className="mb-4 mt-4 custom-absolute">Screen Refurbishing</h1>
             </div>
-
+            </Link>
+            <Link href='/b2b-repair-services'>   
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
               <Image src={Shop5} alt="" />
               <h1 className="mb-4 mt-4 custom-absolute">B2B Repair</h1>
             </div>
-
+            </Link>
+            <Link href='/coming-soon'>    
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
               <Image src={Shop6} alt="" />
               <h1 className="mb-4 mt-4 custom-absolute">Repair Solutions</h1>
             </div>
-
+            </Link>
+            <Link href='/coming-soon'>    
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
               <Image src={Shop7} alt="" />
               <h1 className="mb-4 mt-4 custom-absolute">Parts Store</h1>
             </div>
-
+            </Link>
+            <Link href='/coming-soon'>    
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
               <Image src={Shop8} alt="" />
               <h1 className="mb-4 mt-4 custom-absolute">Repair Forum</h1>
             </div>
+            </Link>
 
-            <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
+            {/* <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
               <Image src={Shop8} alt="" />
               <h1 className="mb-4 mt-4 custom-absolute">Training</h1>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

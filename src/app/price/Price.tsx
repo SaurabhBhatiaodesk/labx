@@ -350,7 +350,7 @@ const Price = () => {
           link="/price"
         />
         <section className="pt-8">
-            <div className="container">
+            <div className="max-container">
                 <div className="text-center">
                     <h2>Prices to Repair Your Devices</h2>
                     <p>Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing.</p>
@@ -359,7 +359,7 @@ const Price = () => {
         </section>
 
         <section className="pt-8">
-        <div className="container p-4">
+        <div className="max-container p-4">
       {/* {/ Tabs /} */}
       <div className="flex flex-wrap justify-center   space-x-2 mb-4">
         {tabs.map((tab) => (
