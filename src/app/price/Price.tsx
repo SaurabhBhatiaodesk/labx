@@ -10,9 +10,9 @@ import Image from 'next/image';
 const Price = () => {
 
     const tabs = [
-        { 
-          id: 1, 
-          label: "IPHONE", 
+        {
+          id: 1,
+          label: "IPHONE",
           image:Iphone,
           content: (
             <table className="table min-w-full table-auto">
@@ -240,9 +240,9 @@ const Price = () => {
             </table>
           )
         },
-        { 
-          id: 2, 
-          label: "SAMSUNG", 
+        {
+          id: 2,
+          label: "SAMSUNG",
           image:Samsung,
           content: (
               <table className="table min-w-full table-auto">
@@ -272,10 +272,10 @@ const Price = () => {
             </table>
           )
         },
-        { 
-          id: 3, 
-          label: "NOKIA", 
-          image:Nokia, 
+        {
+          id: 3,
+          label: "NOKIA",
+          image:Nokia,
           content: (
               <table className="table min-w-full table-auto">
               <thead>
@@ -304,10 +304,10 @@ const Price = () => {
             </table>
           )
         },
-        { 
-          id: 4, 
-          label: "OPPO", 
-          image:Oppo,  
+        {
+          id: 4,
+          label: "OPPO",
+          image:Oppo,
           content: (
               <table className="table min-w-full table-auto">
               <thead>
@@ -337,17 +337,17 @@ const Price = () => {
           )
         },
       ];
-      
+
       const [activeTab, setActiveTab] = useState(tabs[0].id);
 
   return (
      <>
        <Breadcrumb
-          pageName="Price List" 
+          pageName="Price List"
           pageDescription="This course is designed and based on the highest industry standards and over 14 years of industry experience. It includes everything that anyone needs to be one of the best technicians or a successful business owner."
           backgroundImage="/Images/BannerImages/price.png"
           AdminImage="/Images/money.png"
-          link="/coming-soon"
+          link="/price"
         />
         <section className="pt-8">
             <div className="container">
@@ -372,7 +372,7 @@ const Price = () => {
             }`}
             onClick={() => setActiveTab(tab.id)}
           >
-          <Image alt='' width={100} height={100} src={tab.image} className='logo__img' />   
+          <Image alt='' width={100} height={100} src={tab.image} className='logo__img' />
           </button>
         ))}
       </div>
