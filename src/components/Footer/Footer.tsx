@@ -30,18 +30,24 @@ const Footer = () => {
                     provider in Australia
                   </p>
                   <div className="flex gap-3 mt-5">
+                  <Link href='/'> 
                     <SlSocialFacebook
                       className="hover:scale-110 transition-transform duration-200"
                       fontSize={30}
                     />
+                    </Link>
+                    <Link href='/'> 
                     <FaInstagram
                       className="hover:scale-110 transition-transform duration-200"
                       fontSize={30}
                     />
+                    </Link> 
+                    <Link href='/'>
                     <FaXTwitter
                       className="hover:scale-110 transition-transform duration-200"
                       fontSize={30}
                     />
+                    </Link>
                     <Link
                       href="https://www.youtube.com/@PRCRepair"
                       target="_blank"
@@ -62,39 +68,39 @@ const Footer = () => {
                     <ul className="text-[18px]">
                       <div>
                         <Link href="/mail-in-repair">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] ">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200 ">
                             Mail-In-Repair
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
                       <div>
-                        <Link href="/coming-soon">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
+                        <Link href="/training">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200">
                             Training
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
                       <div>
-                        <Link href="/coming-soon">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
+                        <Link href="/b2b-repair-services">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200">
                             B2B Repair
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
                       <div>
-                        <Link href="/coming-soon">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
+                        <Link href="/screen-refurbishing">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200">
                             Screen Refurbishment
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
                       <div>
-                        <Link href="/coming-soon">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
+                        <Link href="/data-recovery">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200">
                             Data Recovery
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -102,7 +108,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/coming-soon">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200">
                             Parts Store
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -110,7 +116,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/coming-soon">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200">
                             Repair Forum
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -118,7 +124,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/coming-soon">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200">
                             Repair Solutions
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -135,7 +141,7 @@ const Footer = () => {
                     <ul className="text-[18px]">
                       <div>
                         <Link href="/about-us">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             About Us
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -143,7 +149,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/contact-us">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             Contact Us
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -151,15 +157,23 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/blogs">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             Blogs
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
                       <div>
+                        <Link href="/faq">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
+                            FAQ’s
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
+                        </Link>
+                      </div>
+                      <div>
                         <Link href="/Trademark_Disclaimer">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             Trademark Disclaimer
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -167,7 +181,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/Warranty_and_Terms">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             Warranty and Terms
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -175,23 +189,16 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/Shipping_Policy">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             Shipping Policy
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>
                       </div>
-                      <div>
-                        <Link href="/faq">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
-                            FAQ’s
-                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-                          </li>
-                        </Link>
-                      </div>
+                     
                       <div>
                         <Link href="/Terms_and_Conditions">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             Terms and conditions
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -214,7 +221,7 @@ const Footer = () => {
                         href="mailto:bharat@labxrepair.com.au"
                         legacyBehavior
                       >
-                        <a className="text-[18px] transition-transform duration-300 hover:scale-105 font-poppins font-[300]">
+                        <a className="text-[18px] transition-transform duration-300 hover:scale-105 font-poppins font-[300] hover:text-yellow-200">
                           bharat@labxrepair.com.au
                         </a>
                       </Link>
@@ -227,7 +234,7 @@ const Footer = () => {
                       <Link href="" legacyBehavior>
                         <a
                           href="tel:+61455777077"
-                          className="text-[18px] transition-transform duration-300 hover:scale-105 font-poppins font-[300]"
+                          className="text-[18px] transition-transform duration-300 hover:scale-105 font-poppins font-[300] hover:text-yellow-200"
                         >
                           +61455777077
                         </a>
@@ -243,7 +250,7 @@ const Footer = () => {
                         legacyBehavior
                       >
                         <a
-                          className="text-[18px] transition-transform duration-300 hover:scale-105 font-poppins font-[300]"
+                          className="text-[18px] transition-transform duration-300 hover:scale-105 font-poppins font-[300] hover:text-yellow-200"
                           target="_blank"
                           rel="noopener noreferrer"
                         >

@@ -48,12 +48,15 @@ ul.dropdown-menu li a, ul.dropdown-menus li a {
 .logo_LabX{
     width: 200px;
 }
-.social__icon {
+.social__icon, .showmobile {
     display: none;
 }
 @media only screen and (max-width: 	767px) {
     .logo_LabX{
         width: 120px;
+    }
+    .showmobile {
+        display: block !important;
     }
     .social__icon {
         display: flex !important;
