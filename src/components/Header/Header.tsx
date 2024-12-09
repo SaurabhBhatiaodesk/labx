@@ -97,7 +97,7 @@ export default function App() {
                 <div className="navmenu flex items-center justify-between">
                      <NavbarContent className="flex justify-center items-center">
                         <NavbarBrand>
-                           <Link  href="/">
+                           <Link  href="/"> 
                             <Image src={rktaxilog} alt="Brand Logo" className="logo_LabX" />
                             </Link>
                          </NavbarBrand>
