@@ -179,6 +179,45 @@ const StaperForm: React.FC = () => {
     setIsInvalid(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value));
   };
 
+  useEffect(()=>{
+    setPersonalDetails({
+      businessName: personalDetails?.businessName || "",
+      fullName: personalDetails?.fullName||"",
+      contactNo: personalDetails?.contactNo||"",
+      emailAddress: personalDetails?.emailAddress||"",
+      returnShippingAddress: personalDetails?.returnShippingAddress||"",
+    });
+
+    setDeviceDetails({
+      deviceType: "",
+    brand: "",
+    imeiOrSerialNo: "",
+    devicePassword: "",
+    });
+    setRepairDetails({
+      issueDescription: "",
+      previousRepairAttempts: "No",
+      previousRepairAttemptsComments: "", // New field
+      jumpQueueForFasterService: "No",
+      additionalComments: "",
+    });
+
+    setShippingDetails({
+      requireReturnLabel: "No",
+      pickupLabelDetails: "",
+      returnLabelDetails: "",
+      requirePickupLabel: "No",
+      termsAndConditions: false,
+      signature: "", // Assume this is captured
+    });
+
+    setPricingAgreement(false);
+
+
+  },[])
+
+
+
     const validateStep = () => {
       const newErrors: Errors = {};
 
@@ -192,8 +231,8 @@ setPersonalDetails({
 });
 
 
-console.log('personalDetails',personalDetails)
-console.log('activeStepppp',activeStep)
+console.log('personalDetailskkk',personalDetails)
+console.log('activeSteppppkkkk',activeStep)
       if (activeStep === 0) {
         // Only validate required fields for Step 0
         if (!personalDetails?.fullName.trim())
