@@ -32,11 +32,25 @@ const MobileFooterMenue = () => {
           }`}
         >
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
-            <li className="mb-2">Mail-In-Repair</li>
-            <li className="mb-2">Training</li>
-            <li className="mb-2">B2B Repair</li>
-            <li className="mb-2">Screen Refurbishment</li>
-            <li className="mb-2">Data Recovery</li>
+            <li className="mb-2">
+              <Link href='/mail-in-repair'>
+              Mail-In-Repair
+              </Link>
+              </li>
+            <li className="mb-2">
+              <Link href='/training'>Training</Link>
+              </li>
+            <li className="mb-2">
+              <Link href='/b2b-repair-services'>B2B Repair</Link>
+              </li>
+            <li className="mb-2">
+              <Link href='/screen-refurbishing'>
+              Screen Refurbishment
+              </Link>
+              </li>
+            <li className="mb-2">
+              <Link href='data-recovery'>Data Recovery</Link>
+              </li>
             <li className="mb-2">Parts Store</li>
             <li className="mb-2">Repair Forum</li>
             <li className="mb-2">Repair Solutions</li>
@@ -66,7 +80,15 @@ const MobileFooterMenue = () => {
             <li className="mb-2">
               <Link href="/contact-us">Contact Us</Link>
             </li>
-            <li className="mb-2">Blogs</li>
+            <li className="mb-2">
+              <Link href='/blogs'>Blogs</Link>
+            </li>
+            <li className="mb-2">
+            <Link href="/faq">FAQs</Link>
+            </li>
+            <li className="mb-2">
+            <Link href="/what-we-do">What we do</Link>
+            </li>
             <li className="mb-2">
               <Link href="/Trademark_Disclaimer">Trademark Disclaimer</Link>
             </li>
@@ -76,9 +98,7 @@ const MobileFooterMenue = () => {
             <li className="mb-2">
               <Link href="/Shipping_Policy">Shipping Policy</Link>
             </li>
-            <li className="mb-2">
-            <Link href="/faq">FAQs</Link>
-            </li>
+            
             <li className="mb-2">
               <Link href="/terms-and-conditions">Terms and Conditions</Link>
             </li>

@@ -3,6 +3,20 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import Image from "next/image";
 import pointet from "../../../../public/Images/icons/pointingright.svg";
 
+// import screenreplace from "../../../../public/Images/Home/screen.svg";
+// import traning from "../../../../public/Images/Home/phone.svg";
+// import MailinRepair from "../../../../public/Images/Home/mail.svg";
+// import repairsoloutaion from "../../../../public/Images/Home/repairsoloutaion.svg";
+// import B2BRepair from "../../../../public/Images/Home/B2B Repair.svg";
+// import datarecovery from "../../../../public/Images/Home/data.svg";
+
+
+import arrow1 from "../../../../public/Images/icons/arrow1-1.svg";
+import arrow2 from "../../../../public/Images/icons/arrow1-2.svg";
+import arrow3 from "../../../../public/Images/icons/arrow1-3.svg";
+import arrow4 from "../../../../public/Images/icons/arrow1-4.svg";
+import arrow5 from "../../../../public/Images/icons/arrow1-5.svg";
+
 interface Tab {
   id: number;
   label: string;
@@ -13,6 +27,7 @@ interface Tab {
   contentf5?: string;
   contentf6?: string;
   button?: string;
+  image?: any;
 }
 
 const tabs: Tab[] = [
@@ -29,6 +44,7 @@ const tabs: Tab[] = [
     contentf5:
       "Fast Turnaround Phone Repair: We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
     button: "LEARN MORE",
+    image: arrow1,
   },
   {
     id: 1,
@@ -43,6 +59,8 @@ const tabs: Tab[] = [
     contentf5:
       "Screen Refurbishing Training: Learn how to restore damaged screens to their original quality. Master the techniques needed to refurbish screens for a variety of devices.",
     button: "LEARN MORE",
+    image: arrow2,
+
   },
   {
     id: 2,
@@ -59,6 +77,8 @@ const tabs: Tab[] = [
     contentf6:
       "Device Intake and Repair: Upon receipt, we’ll confirm via email and place your device in the repair queue, notifying you of any updates during the process.",
     button: "LEARN MORE",
+    image: arrow3,
+
   },
   {
     id: 3,
@@ -75,6 +95,7 @@ const tabs: Tab[] = [
     contentf6:
       "Easy B2B Account Setup: Setting up a B2B account is straightforward. Complete the Apply for Business Account form on our website, and your account will be activated within moments, providing you with fast turnaround time for exclusive B2B phone repair services.",
     button: "LEARN MORE",
+    image: arrow4,
   },
   {
     id: 4,
@@ -89,6 +110,7 @@ const tabs: Tab[] = [
     contentf5:
       "Failed or Broken Logic Boards: Our team of mobile technicians specializes in recovering data from devices with broken or failed logic boards, using advanced techniques.",
     button: "LEARN MORE",
+    image: arrow5,
   },
 ];
 
@@ -141,36 +163,36 @@ const DeliveryTousMobile: React.FC = () => {
           >
             <div className="p-[12px] rounded-b-lg text-[16px]">
               <div className="flex items-start gap-2 mb-2">
-                <Image src={pointet} alt="Pointing icon" width={20} height={20} />
+                <Image src={tab.image} alt="Pointing icon" width={20} height={20} />
                 <p className="xl:pb-2 pb-1">{tab.content}</p>
               </div>
               {tab.contentf2 && (
                 <div className="flex items-start gap-2 mb-2">
-                  <Image src={pointet} alt="Pointing icon" width={20} height={20} />
+                  <Image src={tab.image} alt="Pointing icon" width={20} height={20} />
                   <p>{tab.contentf2}</p>
                 </div>
               )}
               {tab.contentf3 && (
                 <div className="flex items-start gap-2 mb-2">
-                  <Image src={pointet} alt="Pointing icon" width={20} height={20} />
+                  <Image src={tab.image} alt="Pointing icon" width={20} height={20} />
                   <p>{tab.contentf3}</p>
                 </div>
               )}
               {tab.contentf4 && (
                 <div className="flex items-start gap-2 mb-2">
-                  <Image src={pointet} alt="Pointing icon" width={20} height={20} />
+                  <Image src={tab.image} alt="Pointing icon" width={20} height={20} />
                   <p>{tab.contentf4}</p>
                 </div>
               )}
               {tab.contentf5 && (
                 <div className="flex items-start gap-2 mb-2">
-                  <Image src={pointet} alt="Pointing icon" width={20} height={20} />
+                  <Image src={tab.image} alt="Pointing icon" width={20} height={20} />
                   <p>{tab.contentf5}</p>
                 </div>
               )}
               {tab.contentf6 && (
                 <div className="flex items-start gap-2 mb-2">
-                  <Image src={pointet} alt="Pointing icon" width={20} height={20} />
+                  <Image src={tab.image} alt="Pointing icon" width={20} height={20} />
                   <p>{tab.contentf6}</p>
                 </div>
               )}
