@@ -127,13 +127,6 @@ const StaperForm: React.FC = () => {
   });
   const [pricingAgreement, setPricingAgreement] = useState(false);
 
-
-  console.log("personalDetails", personalDetails);
-  console.log("deviceDetails", deviceDetails);
-  console.log("repairDetails", repairDetails);
-  console.log("shippingDetails", shippingDetails);
-  console.log("pricingAgreement", pricingAgreement);
-
   useEffect(() => {
     // Check if there's saved signature in localStorage
     const savedSignature = localStorage.getItem("signatureData");
@@ -145,28 +138,6 @@ const StaperForm: React.FC = () => {
     }
   }, []);
 
-  // const saveSignature = () => {
-  //   if (sigPad?.current) {
-  //     const signatureData = sigPad.current.toDataURL("image/png"); // This is a base64 string
-  //     setShippingDetails((prevState) => ({
-  //       ...prevState,
-  //       signature: signatureData,
-  //     }));
-
-  //     // Save signature to localStorage
-  //     localStorage.setItem("signatureData", signatureData);
-  //   }
-  // };
-  // // Function to clear the signature
-  // // Function to clear the signature
-  // const clearSignature = () => {
-  //   sigPad.current?.clear();
-  //   setShippingDetails((prevState) => ({
-  //     ...prevState,
-  //     signature: "",
-  //   }));
-  //   localStorage.removeItem("signatureData"); // Clear from localStorage as well
-  // };
 
   const saveSignature = () => {
     if (sigPad?.current) {
@@ -208,13 +179,60 @@ const StaperForm: React.FC = () => {
     setIsInvalid(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value));
   };
 
+  // useEffect(()=>{
+  //   setPersonalDetails({
+  //     businessName: personalDetails?.businessName || "",
+  //     fullName: personalDetails?.fullName||"",
+  //     contactNo: personalDetails?.contactNo||"",
+  //     emailAddress: personalDetails?.emailAddress||"",
+  //     returnShippingAddress: personalDetails?.returnShippingAddress||"",
+  //   });
+
+  //   setDeviceDetails({
+  //     deviceType: "",
+  //   brand: "",
+  //   imeiOrSerialNo: "",
+  //   devicePassword: "",
+  //   });
+  //   setRepairDetails({
+  //     issueDescription: "",
+  //     previousRepairAttempts: "No",
+  //     previousRepairAttemptsComments: "", // New field
+  //     jumpQueueForFasterService: "No",
+  //     additionalComments: "",
+  //   });
+
+  //   setShippingDetails({
+  //     requireReturnLabel: "No",
+  //     pickupLabelDetails: "",
+  //     returnLabelDetails: "",
+  //     requirePickupLabel: "No",
+  //     termsAndConditions: false,
+  //     signature: "", // Assume this is captured
+  //   });
+
+  //   setPricingAgreement(false);
+
+
+  // },[])
+
+
+
     const validateStep = () => {
       const newErrors: Errors = {};
-console.log('personalDetails',personalDetails)
-console.log('activeStepppp',activeStep)
+
+
+setPersonalDetails({
+  businessName: personalDetails?.businessName || "",
+  fullName: personalDetails?.fullName||"",
+  contactNo: personalDetails?.contactNo||"",
+  emailAddress: personalDetails?.emailAddress||"",
+  returnShippingAddress: personalDetails?.returnShippingAddress||"",
+});
+
       if (activeStep === 0) {
         // Only validate required fields for Step 0
-        if (!personalDetails?.fullName.trim())
+        if (!personalDetails?.fullName.trim()|| !personalDetails.hasOwnProperty('fullName'))
           newErrors.fullName = "Full name is required";
 
         // Contact number validation: 10 digits only
@@ -253,22 +271,7 @@ console.log('activeStepppp',activeStep)
       }
 
       if (activeStep === 2) {
-        // Shipping Details Validation
-        // if (
-        //   !shippingDetails.requireReturnLabel &&
-        //   !shippingDetails.returnLabelDetails
-        // )
-        //   newErrors.requireReturnLabel = "Return label details are required";
 
-        // // if (shippingDetails.requirePickupLabel && !shippingDetails.pickupLabelDetails)
-        // // newErrors.requirePickupLabel = "Pickup label details are required";
-
-        // if (!shippingDetails.termsAndConditions)
-        //   newErrors.termsAndConditions =
-        //     "Accepting terms and conditions is required";
-
-        // if (!shippingDetails.signature.trim())
-        //   newErrors.signature = "Signature is required";
 
         // Check for return label details
         if (
@@ -300,89 +303,6 @@ console.log('activeStepppp',activeStep)
       setErrors(newErrors);
       return Object.keys(newErrors).length === 0;
     };
-
-
-
-// const validateStep = () => {
-//   const newErrors: Errors = {};
-//   console.log('activeSteppppqqq', activeStep);
-
-//   // Alternative to trim using regular expression
-//   const cleanString = (str: string) => str.replace(/^\s+|\s+$/g, '');
-
-//   console.log('personalDetails.fullName.trim()', cleanString(personalDetails.fullName));
-
-//   if (activeStep == 0) {
-//     // Only validate required fields for Step 0
-//     if (!cleanString(personalDetails.fullName))
-//       newErrors.fullName = "Full name is required";
-
-//     // Contact number validation: 10 digits only
-//     if (!/^\d{10}$/.test(personalDetails.contactNo))
-//       newErrors.contactNo = "Contact number must be 10 digits";
-
-//     // Email validation
-//     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(personalDetails.emailAddress))
-//       newErrors.emailAddress = "Invalid email format";
-
-//     if (!cleanString(personalDetails.returnShippingAddress))
-//       newErrors.returnShippingAddress = "Return shipping address is required";
-//   }
-
-//   if (activeStep === 1) {
-//     // Validate Repair Details (Step 1)
-
-//     if (!cleanString(repairDetails.issueDescription))
-//       newErrors.issueDescription = "Description is required";
-
-//     if (repairDetails.previousRepairAttempts === undefined)
-//       newErrors.previousRepairAttempts = "Please indicate if there were previous attempts";
-
-//     if (
-//       repairDetails.previousRepairAttempts === "Yes" &&
-//       !cleanString(repairDetails.previousRepairAttemptsComments)
-//     ) {
-//       newErrors.previousRepairAttemptsComments =
-//         "Explanation of previous repair attempts is required";
-//     }
-
-//     if (repairDetails.jumpQueueForFasterService === undefined)
-//       newErrors.jumpQueueForFasterService = "Please indicate if you want to jump the queue";
-//   }
-
-//   if (activeStep === 2) {
-//     // Shipping Details Validation
-
-//     // Check for return label details
-//     if (
-//       shippingDetails.requireReturnLabel === "Yes" &&
-//       !cleanString(shippingDetails.returnLabelDetails)
-//     )
-//       newErrors.requireReturnLabel = "Return label details are required";
-
-//     // Check for pickup label details
-//     if (
-//       shippingDetails.requirePickupLabel === "Yes" &&
-//       !cleanString(shippingDetails.pickupLabelDetails)
-//     )
-//       newErrors.requirePickupLabel = "Pickup label details are required";
-
-//     if (!shippingDetails.termsAndConditions)
-//       newErrors.termsAndConditions = "Accepting terms and conditions is required";
-
-//     if (!cleanString(shippingDetails.signature))
-//       newErrors.signature = "Signature is required";
-//   }
-
-//   if (activeStep === 3) {
-//     if (!pricingAgreement)
-//       newErrors.pricingAgreement = "You must agree to the pricing agreement";
-//   }
-
-//   setErrors(newErrors);
-//   return Object.keys(newErrors).length === 0;
-// };
-
 
   const handleNextStep = () => {
     if (validateStep()) {
@@ -445,10 +365,7 @@ console.log('activeStepppp',activeStep)
     }
   }, []);
 
-  // requireReturnLabel: "No",
-  // pickupLabelDetails: "",
-  // returnLabelDetails: "",
-  // requirePickupLabel: "No",s
+
 
   useEffect(() => {
     // When 'requireReturnLabel' is set to 'No', clear returnLabelDetails
@@ -480,8 +397,6 @@ console.log('activeStepppp',activeStep)
     shippingDetails.requireReturnLabel, // Watch for changes in requireReturnLabel
     shippingDetails.requirePickupLabel, // Watch for changes in requirePickupLabel
   ]);
-
-  console.log("sigPaddddd", sigPad);
 
   return (
     <>
