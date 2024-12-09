@@ -179,42 +179,42 @@ const StaperForm: React.FC = () => {
     setIsInvalid(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value));
   };
 
-  useEffect(()=>{
-    setPersonalDetails({
-      businessName: personalDetails?.businessName || "",
-      fullName: personalDetails?.fullName||"",
-      contactNo: personalDetails?.contactNo||"",
-      emailAddress: personalDetails?.emailAddress||"",
-      returnShippingAddress: personalDetails?.returnShippingAddress||"",
-    });
+  // useEffect(()=>{
+  //   setPersonalDetails({
+  //     businessName: personalDetails?.businessName || "",
+  //     fullName: personalDetails?.fullName||"",
+  //     contactNo: personalDetails?.contactNo||"",
+  //     emailAddress: personalDetails?.emailAddress||"",
+  //     returnShippingAddress: personalDetails?.returnShippingAddress||"",
+  //   });
 
-    setDeviceDetails({
-      deviceType: "",
-    brand: "",
-    imeiOrSerialNo: "",
-    devicePassword: "",
-    });
-    setRepairDetails({
-      issueDescription: "",
-      previousRepairAttempts: "No",
-      previousRepairAttemptsComments: "", // New field
-      jumpQueueForFasterService: "No",
-      additionalComments: "",
-    });
+  //   setDeviceDetails({
+  //     deviceType: "",
+  //   brand: "",
+  //   imeiOrSerialNo: "",
+  //   devicePassword: "",
+  //   });
+  //   setRepairDetails({
+  //     issueDescription: "",
+  //     previousRepairAttempts: "No",
+  //     previousRepairAttemptsComments: "", // New field
+  //     jumpQueueForFasterService: "No",
+  //     additionalComments: "",
+  //   });
 
-    setShippingDetails({
-      requireReturnLabel: "No",
-      pickupLabelDetails: "",
-      returnLabelDetails: "",
-      requirePickupLabel: "No",
-      termsAndConditions: false,
-      signature: "", // Assume this is captured
-    });
+  //   setShippingDetails({
+  //     requireReturnLabel: "No",
+  //     pickupLabelDetails: "",
+  //     returnLabelDetails: "",
+  //     requirePickupLabel: "No",
+  //     termsAndConditions: false,
+  //     signature: "", // Assume this is captured
+  //   });
 
-    setPricingAgreement(false);
+  //   setPricingAgreement(false);
 
 
-  },[])
+  // },[])
 
 
 
@@ -230,12 +230,9 @@ setPersonalDetails({
   returnShippingAddress: personalDetails?.returnShippingAddress||"",
 });
 
-
-console.log('personalDetailskkk',personalDetails)
-console.log('activeSteppppkkkk',activeStep)
       if (activeStep === 0) {
         // Only validate required fields for Step 0
-        if (!personalDetails?.fullName.trim())
+        if (!personalDetails?.fullName.trim()|| !personalDetails.hasOwnProperty('fullName'))
           newErrors.fullName = "Full name is required";
 
         // Contact number validation: 10 digits only
