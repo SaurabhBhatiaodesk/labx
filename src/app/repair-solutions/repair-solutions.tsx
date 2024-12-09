@@ -14,8 +14,8 @@ const page = () => {
   return (
   <>
     <Breadcrumb
-            pageName="Data Recovery"
-            pageDescription="At LabX, we specialize in recovering data from a wide range of mobile devices, including phones, tablets, and other gadgets that may have suffered significant damage. However, device data recovery comes with certain limitations that customers need to be aware of before submitting a device."
+            pageName="Repair Solutions"
+            pageDescription="This course is designed and based on the highest industry standards and over 14 years of industry experience. It includes everything that anyone needs to be one of the best technicians or a successful business owner."
             backgroundImage="/Images/BannerImages/repair.png"
             AdminImage="/Images/repair-ph.png"
              link="/coming-soon"

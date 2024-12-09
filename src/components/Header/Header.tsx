@@ -97,7 +97,7 @@ export default function App() {
                 <div className="navmenu flex items-center justify-between">
                      <NavbarContent className="flex justify-center items-center">
                         <NavbarBrand>
-                           <Link  href="/">
+                           <Link  href="/"> 
                             <Image src={rktaxilog} alt="Brand Logo" className="logo_LabX" />
                             </Link>
                          </NavbarBrand>
@@ -112,39 +112,39 @@ export default function App() {
                     
                             <li> 
                           <div className="dropdowns services_drop inline-block relative">
-                            <button className="btn__menu inline-flex items-center">
+                            <button className="btn__menu inline-flex items-center hover:text-yellow-200">
                               <span className="mr-1">Services</span>
                               <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
                             </button>
                             <ul className="dropdown-menus absolute hidden text-white pt-1">
-                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/mail-in-repair" onClick={toggleMenu}>Mail In Repair</Link></li>
-                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/training" onClick={toggleMenu}>Training </Link></li>
-                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/b2b-repair-services" onClick={toggleMenu}>B2B Repair </Link></li>
-                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/screen-refurbishing" onClick={toggleMenu}>Screen Refurbishment </Link></li> 
-                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/data-recovery" onClick={toggleMenu}>Data Recovery </Link></li>
-                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/coming-soon" onClick={toggleMenu}>Parts Store </Link></li>
-                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/coming-soon" onClick={toggleMenu}>Repair Forum </Link></li>
-                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/repair-solutions" onClick={toggleMenu}>Repair Solutions </Link></li>
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200"><Link href="/mail-in-repair" onClick={toggleMenu}>Mail In Repair</Link></li>
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200"><Link href="/training" onClick={toggleMenu}>Training </Link></li>
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200"><Link href="/b2b-repair-services" onClick={toggleMenu}>B2B Repair </Link></li>
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200"><Link href="/screen-refurbishing" onClick={toggleMenu}>Screen Refurbishment </Link></li> 
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200"><Link href="/data-recovery" onClick={toggleMenu}>Data Recovery </Link></li>
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200"><Link href="/coming-soon" onClick={toggleMenu}>Parts Store </Link></li>
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200"><Link href="/coming-soon" onClick={toggleMenu}>Repair Forum </Link></li>
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200"><Link href="/repair-solutions" onClick={toggleMenu}>Repair Solutions </Link></li>
                             </ul>
                           </div>
  
                             </li>
-                            <li><Link href="/coming-soon" onClick={toggleMenu}>Parts Store</Link></li>
-                            <li><Link href="/training" onClick={toggleMenu}>Training</Link></li>
-                            <li><Link href="/screen-refurbishing" onClick={toggleMenu}>Screen Refurbishment</Link></li>
-                            <li><Link href="/price" onClick={toggleMenu}>Price List</Link></li>
-                            <li><Link href="/contact-us" onClick={toggleMenu}>Contact Us</Link></li>
+                            <li><Link className="hover:text-yellow-200" href="/coming-soon" onClick={toggleMenu}>Parts Store</Link></li>
+                            <li><Link className="hover:text-yellow-200" href="/training" onClick={toggleMenu}>Training</Link></li>
+                            <li><Link className="hover:text-yellow-200" href="/screen-refurbishing" onClick={toggleMenu}>Screen Refurbishment</Link></li>
+                            <li><Link className="hover:text-yellow-200" href="/price" onClick={toggleMenu}>Price List</Link></li>
+                            <li><Link className="hover:text-yellow-200" href="/contact-us" onClick={toggleMenu}>Contact Us</Link></li>
                             <li> 
                           <div className="dropdown inline-block relative">
-                            <button className="btn__menu inline-flex items-center">
+                            <button className="btn__menu inline-flex items-center hover:text-yellow-200">
                               <span className="mr-1">About us</span>
                               <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
                             </button>
                             <ul className="dropdown-menu absolute hidden text-white pt-1">
-                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/about-us" onClick={toggleMenu}>About</Link></li>
-                             <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/what-we-do" onClick={toggleMenu}>What We Do</Link></li>
-                             <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/faq" onClick={toggleMenu}>FAQ </Link></li> 
-                             <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/blogs" onClick={toggleMenu}>Blogs </Link></li> 
+                            <li className="block px-4 py-2 hover:bg-gray-800"><Link className="hover:text-yellow-200" href="/about-us" onClick={toggleMenu}>About</Link></li>
+                             <li className="block px-4 py-2 hover:bg-gray-800"><Link className="hover:text-yellow-200" href="/what-we-do" onClick={toggleMenu}>What We Do</Link></li>
+                             <li className="block px-4 py-2 hover:bg-gray-800"><Link className="hover:text-yellow-200" href="/faq" onClick={toggleMenu}>FAQ </Link></li> 
+                             <li className="block px-4 py-2 hover:bg-gray-800"><Link className="hover:text-yellow-200" href="/blogs" onClick={toggleMenu}>Blogs </Link></li> 
                             </ul>
                           </div>
  
