@@ -53,7 +53,10 @@ const MobileFooterMenue = () => {
               </li>
             <li className="mb-2">Parts Store</li>
             <li className="mb-2">Repair Forum</li>
-            <li className="mb-2">Repair Solutions</li>
+            <li className="mb-2">
+             <Link href='/repair-solutions'>
+             Repair Solutions
+             </Link> </li>
           </ul>
         </div>
       </div>

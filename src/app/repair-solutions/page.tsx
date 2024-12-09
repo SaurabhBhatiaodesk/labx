@@ -1,6 +1,8 @@
 "use client";
 import React from 'react'
-import RepairSolutions from './repair-solutions' 
+import RepairSolutions from './repair-solutions';
+import "./repair.css";
+
 const page = () => {
   return (
   <>
