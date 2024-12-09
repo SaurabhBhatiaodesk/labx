@@ -138,7 +138,6 @@ const StaperForm: React.FC = () => {
     }
   }, []);
 
-
   const saveSignature = () => {
     if (sigPad?.current) {
       const signatureData = sigPad.current.toDataURL("image/png"); // Get the base64 image
@@ -179,130 +178,153 @@ const StaperForm: React.FC = () => {
     setIsInvalid(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value));
   };
 
-  // useEffect(()=>{
-  //   setPersonalDetails({
-  //     businessName: personalDetails?.businessName || "",
-  //     fullName: personalDetails?.fullName||"",
-  //     contactNo: personalDetails?.contactNo||"",
-  //     emailAddress: personalDetails?.emailAddress||"",
-  //     returnShippingAddress: personalDetails?.returnShippingAddress||"",
-  //   });
+  useEffect(() => {
+    setPersonalDetails({
+      businessName: personalDetails?.businessName || "",
+      fullName: personalDetails?.fullName || "",
+      contactNo: personalDetails?.contactNo || "",
+      emailAddress: personalDetails?.emailAddress || "",
+      returnShippingAddress: personalDetails?.returnShippingAddress || "",
+    });
 
-  //   setDeviceDetails({
-  //     deviceType: "",
-  //   brand: "",
-  //   imeiOrSerialNo: "",
-  //   devicePassword: "",
-  //   });
-  //   setRepairDetails({
-  //     issueDescription: "",
-  //     previousRepairAttempts: "No",
-  //     previousRepairAttemptsComments: "", // New field
-  //     jumpQueueForFasterService: "No",
-  //     additionalComments: "",
-  //   });
+    setDeviceDetails({
+      deviceType: deviceDetails.deviceType,
+      brand: deviceDetails.brand,
+      imeiOrSerialNo: deviceDetails.imeiOrSerialNo,
+      devicePassword: deviceDetails.devicePassword,
+    });
+    setRepairDetails({
+      issueDescription: repairDetails.issueDescription,
+      previousRepairAttempts: repairDetails.previousRepairAttempts,
+      previousRepairAttemptsComments:
+        repairDetails.previousRepairAttemptsComments, // New field
+      jumpQueueForFasterService:
+        repairDetails.jumpQueueForFasterService || "No",
+      additionalComments: repairDetails.additionalComments || "",
+    });
 
-  //   setShippingDetails({
-  //     requireReturnLabel: "No",
-  //     pickupLabelDetails: "",
-  //     returnLabelDetails: "",
-  //     requirePickupLabel: "No",
-  //     termsAndConditions: false,
-  //     signature: "", // Assume this is captured
-  //   });
+    setShippingDetails({
+      requireReturnLabel: shippingDetails.requireReturnLabel || "No",
+      pickupLabelDetails: shippingDetails.pickupLabelDetails || "",
+      returnLabelDetails: shippingDetails.returnLabelDetails || "",
+      requirePickupLabel: shippingDetails.requirePickupLabel || "No",
+      termsAndConditions: shippingDetails.termsAndConditions || false,
+      signature: shippingDetails.signature || "", // Assume this is captured
+    });
 
-  //   setPricingAgreement(false);
+    setPricingAgreement(false);
+  }, []);
 
+  const validateStep = () => {
+    const newErrors: Errors = {};
 
-  // },[])
+    setPersonalDetails({
+      businessName: personalDetails?.businessName || "",
+      fullName: personalDetails?.fullName || "",
+      contactNo: personalDetails?.contactNo || "",
+      emailAddress: personalDetails?.emailAddress || "",
+      returnShippingAddress: personalDetails?.returnShippingAddress || "",
+    });
 
+    setDeviceDetails({
+      deviceType: "",
+      brand: "",
+      imeiOrSerialNo: "",
+      devicePassword: "",
+    });
+    setRepairDetails({
+      issueDescription: "",
+      previousRepairAttempts: "No",
+      previousRepairAttemptsComments: "", // New field
+      jumpQueueForFasterService: "No",
+      additionalComments: "",
+    });
 
+    setShippingDetails({
+      requireReturnLabel: "No",
+      pickupLabelDetails: "",
+      returnLabelDetails: "",
+      requirePickupLabel: "No",
+      termsAndConditions: false,
+      signature: "", // Assume this is captured
+    });
 
-    const validateStep = () => {
-      const newErrors: Errors = {};
+    setPricingAgreement(false);
 
+    if (activeStep === 0) {
+      // Only validate required fields for Step 0
+      if (
+        !personalDetails?.fullName.trim() ||
+        !personalDetails.hasOwnProperty("fullName")
+      )
+        newErrors.fullName = "Full name is required";
 
-setPersonalDetails({
-  businessName: personalDetails?.businessName || "",
-  fullName: personalDetails?.fullName||"",
-  contactNo: personalDetails?.contactNo||"",
-  emailAddress: personalDetails?.emailAddress||"",
-  returnShippingAddress: personalDetails?.returnShippingAddress||"",
-});
+      // Contact number validation: 10 digits only
+      if (!/^\d{10}$/.test(personalDetails?.contactNo))
+        newErrors.contactNo = "Contact number must be 10 digits";
 
-      if (activeStep === 0) {
-        // Only validate required fields for Step 0
-        if (!personalDetails?.fullName.trim()|| !personalDetails.hasOwnProperty('fullName'))
-          newErrors.fullName = "Full name is required";
+      // Email validation
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(personalDetails?.emailAddress))
+        newErrors.emailAddress = "Invalid email format";
 
-        // Contact number validation: 10 digits only
-        if (!/^\d{10}$/.test(personalDetails?.contactNo))
-          newErrors.contactNo = "Contact number must be 10 digits";
+      if (!personalDetails?.returnShippingAddress.trim())
+        newErrors.returnShippingAddress = "Return shipping address is required";
+    }
+    if (activeStep === 1) {
+      // Validate Repair Details (Step 1)
 
-        // Email validation
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(personalDetails?.emailAddress))
-          newErrors.emailAddress = "Invalid email format";
+      if (!repairDetails.issueDescription.trim())
+        newErrors.issueDescription = "Description is required";
+      if (repairDetails.previousRepairAttempts === undefined)
+        newErrors.previousRepairAttempts =
+          "Please indicate if there were previous attempts";
 
-        if (!personalDetails?.returnShippingAddress.trim())
-          newErrors.returnShippingAddress = "Return shipping address is required";
-      }
-      if (activeStep === 1) {
-        // Validate Repair Details (Step 1)
-
-        if (!repairDetails.issueDescription.trim())
-          newErrors.issueDescription = "Description is required";
-        if (repairDetails.previousRepairAttempts === undefined)
-          newErrors.previousRepairAttempts =
-            "Please indicate if there were previous attempts";
-
-        if (
-          repairDetails.previousRepairAttempts == "Yes" &&
-          !repairDetails.previousRepairAttemptsComments.trim()
-        ) {
-          newErrors.previousRepairAttemptsComments =
-            "Explanation of previous repair attempts is required";
-        }
-
-        if (repairDetails.jumpQueueForFasterService === undefined)
-          newErrors.jumpQueueForFasterService =
-            "Please indicate if you want to jump the queue";
-
-        // If Previous Repair Attempts is "Yes", the additional comments field is required
-      }
-
-      if (activeStep === 2) {
-
-
-        // Check for return label details
-        if (
-          shippingDetails.requireReturnLabel === "Yes" &&
-          !shippingDetails.returnLabelDetails.trim()
-        )
-          newErrors.requireReturnLabel = "Return label details are required";
-
-        // Check for pickup label details
-        if (
-          shippingDetails.requirePickupLabel === "Yes" &&
-          !shippingDetails.pickupLabelDetails.trim()
-        )
-          newErrors.requirePickupLabel = "Pickup label details are required";
-
-        if (!shippingDetails.termsAndConditions)
-          newErrors.termsAndConditions =
-            "Accepting terms and conditions is required";
-
-        if (!shippingDetails.signature.trim())
-          newErrors.signature = "Signature is required";
+      if (
+        repairDetails.previousRepairAttempts == "Yes" &&
+        !repairDetails.previousRepairAttemptsComments.trim()
+      ) {
+        newErrors.previousRepairAttemptsComments =
+          "Explanation of previous repair attempts is required";
       }
 
-      if (activeStep === 3) {
-        if (!pricingAgreement)
-          newErrors.pricingAgreement = "You must agree to the pricing agreement";
-      }
+      if (repairDetails.jumpQueueForFasterService === undefined)
+        newErrors.jumpQueueForFasterService =
+          "Please indicate if you want to jump the queue";
 
-      setErrors(newErrors);
-      return Object.keys(newErrors).length === 0;
-    };
+      // If Previous Repair Attempts is "Yes", the additional comments field is required
+    }
+
+    if (activeStep === 2) {
+      // Check for return label details
+      if (
+        shippingDetails.requireReturnLabel === "Yes" &&
+        !shippingDetails.returnLabelDetails.trim()
+      )
+        newErrors.requireReturnLabel = "Return label details are required";
+
+      // Check for pickup label details
+      if (
+        shippingDetails.requirePickupLabel === "Yes" &&
+        !shippingDetails.pickupLabelDetails.trim()
+      )
+        newErrors.requirePickupLabel = "Pickup label details are required";
+
+      if (!shippingDetails.termsAndConditions)
+        newErrors.termsAndConditions =
+          "Accepting terms and conditions is required";
+
+      if (!shippingDetails.signature.trim())
+        newErrors.signature = "Signature is required";
+    }
+
+    if (activeStep === 3) {
+      if (!pricingAgreement)
+        newErrors.pricingAgreement = "You must agree to the pricing agreement";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleNextStep = () => {
     if (validateStep()) {
@@ -339,12 +361,12 @@ setPersonalDetails({
       if (response.status === 200 || response.status == 201) {
         const { orderReferenceId } = response.data.data; // Assuming the orderReferenceId is returned in the response data
 
-      if (typeof window !== "undefined") {
-        localStorage.removeItem("formData");
+        if (typeof window !== "undefined") {
+          localStorage.removeItem("formData");
 
-        // Pass orderReferenceId as query parameter in the URL
-        router.push(`/mail-in-repair/thank-you?id=${orderReferenceId}`);
-      }
+          // Pass orderReferenceId as query parameter in the URL
+          router.push(`/mail-in-repair/thank-you?id=${orderReferenceId}`);
+        }
       } else {
         alert("Failed to submit the form. Please try again.");
       }
@@ -364,8 +386,6 @@ setPersonalDetails({
       setDeviceDetails(storedData.deviceDetails || {});
     }
   }, []);
-
-
 
   useEffect(() => {
     // When 'requireReturnLabel' is set to 'No', clear returnLabelDetails
@@ -726,7 +746,7 @@ setPersonalDetails({
                         {/* Description of Issue */}
                         <div className="steper-textarea-os ">
                           <Textarea
-                            placeholder="Enter your message here"
+                            placeholder="Enter your message here *"
                             minRows={5}
                             value={repairDetails.issueDescription}
                             onChange={(e) =>
@@ -756,7 +776,11 @@ setPersonalDetails({
                                 : ["Yes"]
                             }
                             className="bg-black text-white gauav"
-                            value={repairDetails?.previousRepairAttempts != "Yes" ? "No" : "Yes"}
+                            value={
+                              repairDetails?.previousRepairAttempts != "Yes"
+                                ? "No"
+                                : "Yes"
+                            }
                             onChange={(
                               e: React.ChangeEvent<HTMLSelectElement>
                             ) =>
@@ -819,7 +843,9 @@ setPersonalDetails({
                                 : ["Yes"]
                             }
                             value={
-                              repairDetails.jumpQueueForFasterService != "Yes" ? "No" :"Yes"
+                              repairDetails.jumpQueueForFasterService != "Yes"
+                                ? "No"
+                                : "Yes"
                             }
                             onChange={(
                               e: React.ChangeEvent<HTMLSelectElement>
@@ -922,7 +948,11 @@ setPersonalDetails({
                               : ["Yes"]
                           }
                           className="bg-black text-white gauav"
-                          value={shippingDetails.requirePickupLabel != 'Yes'? 'No' : 'Yes' }
+                          value={
+                            shippingDetails.requirePickupLabel != "Yes"
+                              ? "No"
+                              : "Yes"
+                          }
                           onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                             setShippingDetails({
                               ...shippingDetails,
@@ -1188,11 +1218,7 @@ setPersonalDetails({
                       <input
                         type="checkbox"
                         className="check__boxs"
-                        checked={
-                          pricingAgreement == true
-                            ? true
-                            : false
-                        }
+                        checked={pricingAgreement == true ? true : false}
                         onChange={() => {
                           setPricingAgreement(!pricingAgreement);
                           setErrors((prevErrors) => ({
