@@ -124,7 +124,7 @@ export default function App() {
                             <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/data-recovery" onClick={toggleMenu}>Data Recovery </Link></li>
                             <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/coming-soon" onClick={toggleMenu}>Parts Store </Link></li>
                             <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/coming-soon" onClick={toggleMenu}>Repair Forum </Link></li>
-                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/coming-soon" onClick={toggleMenu}>Repair Solutions </Link></li>
+                            <li className="block px-4 py-2 hover:bg-gray-800"><Link href="/repair-solutions" onClick={toggleMenu}>Repair Solutions </Link></li>
                             </ul>
                           </div>
  

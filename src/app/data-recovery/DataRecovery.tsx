@@ -35,7 +35,7 @@ const DataRecovery = () => {
             </div>
           </div>
         </section>
-      <div className="process_section pt-8">
+      <div className="process_section pt-8 pb-8">
         <div className="container">
           <div className="main__cart_section">
         <div className="card_box">

@@ -57,13 +57,13 @@ const WhatWeDo = () => {
               <h1 className="mb-4 mt-4 custom-absolute">Mail in Repair</h1>
             </div>
             </Link>
-            <Link href='/coming-soon'> 
+            <Link href='/data-recovery'> 
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
               <Image src={Shop3} alt="" />
               <h1 className="mb-4 mt-4 custom-absolute">Data Recovery</h1>
             </div>
             </Link>
-            <Link href='/coming-soon'>  
+            <Link href='/screen-refurbishing'>  
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
               <Image src={Shop4} alt="" />
               <h1 className="mb-4 mt-4 custom-absolute">Screen Refurbishing</h1>
@@ -75,7 +75,7 @@ const WhatWeDo = () => {
               <h1 className="mb-4 mt-4 custom-absolute">B2B Repair</h1>
             </div>
             </Link>
-            <Link href='/coming-soon'>    
+            <Link href='/repair-solutions'>    
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
               <Image src={Shop6} alt="" />
               <h1 className="mb-4 mt-4 custom-absolute">Repair Solutions</h1>
