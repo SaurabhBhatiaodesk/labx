@@ -188,16 +188,16 @@ const StaperForm: React.FC = () => {
     });
 
     setDeviceDetails({
-      deviceType: deviceDetails.deviceType,
-      brand: deviceDetails.brand,
-      imeiOrSerialNo: deviceDetails.imeiOrSerialNo,
-      devicePassword: deviceDetails.devicePassword,
+      deviceType: deviceDetails.deviceType||"",
+      brand: deviceDetails.brand||"",
+      imeiOrSerialNo: deviceDetails.imeiOrSerialNo||"",
+      devicePassword: deviceDetails.devicePassword||"",
     });
     setRepairDetails({
-      issueDescription: repairDetails.issueDescription,
-      previousRepairAttempts: repairDetails.previousRepairAttempts,
+      issueDescription: repairDetails.issueDescription||"",
+      previousRepairAttempts: repairDetails.previousRepairAttempts||"",
       previousRepairAttemptsComments:
-        repairDetails.previousRepairAttemptsComments, // New field
+        repairDetails.previousRepairAttemptsComments || "", // New field
       jumpQueueForFasterService:
         repairDetails.jumpQueueForFasterService || "No",
       additionalComments: repairDetails.additionalComments || "",
@@ -225,28 +225,29 @@ const StaperForm: React.FC = () => {
       emailAddress: personalDetails?.emailAddress || "",
       returnShippingAddress: personalDetails?.returnShippingAddress || "",
     });
-
     setDeviceDetails({
-      deviceType: "",
-      brand: "",
-      imeiOrSerialNo: "",
-      devicePassword: "",
+      deviceType: deviceDetails.deviceType||"",
+      brand: deviceDetails.brand||"",
+      imeiOrSerialNo: deviceDetails.imeiOrSerialNo||"",
+      devicePassword: deviceDetails.devicePassword||"",
     });
     setRepairDetails({
-      issueDescription: "",
-      previousRepairAttempts: "No",
-      previousRepairAttemptsComments: "", // New field
-      jumpQueueForFasterService: "No",
-      additionalComments: "",
+      issueDescription: repairDetails.issueDescription||"",
+      previousRepairAttempts: repairDetails.previousRepairAttempts||"",
+      previousRepairAttemptsComments:
+        repairDetails.previousRepairAttemptsComments || "", // New field
+      jumpQueueForFasterService:
+        repairDetails.jumpQueueForFasterService || "No",
+      additionalComments: repairDetails.additionalComments || "",
     });
 
     setShippingDetails({
-      requireReturnLabel: "No",
-      pickupLabelDetails: "",
-      returnLabelDetails: "",
-      requirePickupLabel: "No",
-      termsAndConditions: false,
-      signature: "", // Assume this is captured
+      requireReturnLabel: shippingDetails.requireReturnLabel || "No",
+      pickupLabelDetails: shippingDetails.pickupLabelDetails || "",
+      returnLabelDetails: shippingDetails.returnLabelDetails || "",
+      requirePickupLabel: shippingDetails.requirePickupLabel || "No",
+      termsAndConditions: shippingDetails.termsAndConditions || false,
+      signature: shippingDetails.signature || "", // Assume this is captured
     });
 
     setPricingAgreement(false);
