@@ -185,7 +185,7 @@ const handleChange = (
 
     try {
       const response = await axios.post(
-        "http://localhost:7000/api/create/contact-us", // Replace with your actual API endpoint
+        "https://labxbackend.labxrepair.com.au/api/create/contact-us", // Replace with your actual API endpoint
         requestData
       );
       console.log(await response.data, "Form submitted successfully");

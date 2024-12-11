@@ -21,7 +21,7 @@ interface BlogData {
 // Fetch Blog Data by ID
 async function fetchBlogData(blogId: string): Promise<BlogData> {
   const res = await fetch(
-    `http://localhost:7000/api/admin/blog/${blogId}`,
+    `https://labxbackend.labxrepair.com.au/api/admin/blog/${blogId}`,
     {
       cache: "no-store",
     }

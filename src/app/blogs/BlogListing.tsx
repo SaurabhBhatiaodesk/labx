@@ -31,7 +31,7 @@ const Blogs: React.FC = () => {
     const fetchBlogs = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:7000/api/admin/blogs?page=${currentPage}&limit=${limit}`
+          `https://labxbackend.labxrepair.com.au/api/admin/blogs?page=${currentPage}&limit=${limit}`
         );
 
         setBlogs(response?.data?.blogs); // Set blogs
