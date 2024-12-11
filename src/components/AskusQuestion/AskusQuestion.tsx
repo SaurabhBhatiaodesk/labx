@@ -1,12 +1,11 @@
 "use client";
 
-import MainHeading from "../ManinHeading/MainHeading";
-import MainTitle from "../MainTitle/MainTitle";
 import React, { useState } from "react";
 import { LuPlus } from "react-icons/lu";
 import { GrSubtract } from "react-icons/gr";
 import Image from "next/image";
-import mobilerepair from "../../../public/Images/Home/iphone221.svg";
+import mobilerepair from "../../../public/Images/Home/iphonefq.png";
+import MainHeading from "../ManinHeading/MainHeading";
 
 export default function Accordion() {
   const [active, setActive] = useState<number | null>(null);
@@ -26,7 +25,7 @@ export default function Accordion() {
     {
       title: "Do you offer any warranties on your repairs?",
       content:
-        "Yes, all repairs come with a  1 Year warranty on parts and workmanship. This ensures that if the same issue reoccurs, we will repair it free of charge, provided no further damage has occurred to the device.",
+        "Yes, all repairs come with a 1 Year warranty on parts and workmanship. This ensures that if the same issue reoccurs, we will repair it free of charge, provided no further damage has occurred to the device.",
     },
     {
       title: "What is the warranty on liquid-damaged devices?",
@@ -51,66 +50,57 @@ export default function Accordion() {
   ];
 
   const handleToggle = (index: number) => {
-    if (index === active) {
-      setActive(null);
-    } else {
-      setActive(index);
-    }
+    setActive(active === index ? null : index);
   };
 
   return (
-    <>
-      <div>
-        <section className=" py-5 xl:py-10 bg-[url('/Images/Home/faq.svg')]  bg-no-repeat bg-cover">
-          <div className="container">
-            <MainHeading Heading="General FAQs" color="black" />
-            {/* <MainTitle
-              Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing."
-              color="black"
-            /> */}
-            <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_2fr] grid-cols-1 gap-4 lg:py-5 py-3">
-              <div>
-                <div className="flex flex-col xl:space-y-2">
-                  {accordionData.map((item, index) => (
-                    <div
-                      key={index}
-                      className=" border-b border-gray-200 dark:border-gray-700"
-                    >
-                      <button
-                        className="flex w-full items-center justify-between py-4 text-left"
-                        onClick={() => handleToggle(index)}
-                      >
-                        <h3 className="  text-black xl:text-[24px] text-[18px] font-[500] xl:leading-[2rem] leading-[24px]">
-                          {item.title}
-                        </h3>
-                        {active === index ? (
-                          <GrSubtract color="black" />
-                        ) : (
-                          <LuPlus color="black" />
-                        )}
-                      </button>
-                      {active === index && (
-                        <div className="py-4 pt-0">
-                          <p className="text-[#0B0B0B]">{item.content}</p>
-                        </div>
-                      )}
-                    </div>
-                  ))}
+    <section className="py-5 xl:py-10 bg-[url('/Images/Home/faq.svg')] bg-no-repeat bg-cover">
+      <div className="container">
+        <MainHeading Heading="General FAQs" color="black" />
+        <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_2fr] grid-cols-1 gap-4 lg:py-5 py-3">
+          <div>
+            <div className="flex flex-col xl:space-y-2">
+              {accordionData.map((item, index) => (
+                <div
+                  key={index}
+                  className="border-b border-gray-200 dark:border-gray-700"
+                >
+                  <button
+                    className="flex w-full items-center justify-between py-4 text-left"
+                    onClick={() => handleToggle(index)}
+                  >
+                    <h3 className="text-black xl:text-[24px] text-[18px] font-[500] xl:leading-[2rem] leading-[24px]">
+                      {item.title}
+                    </h3>
+                    {active === index ? (
+                      <GrSubtract color="black" />
+                    ) : (
+                      <LuPlus color="black" />
+                    )}
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-400 ease-in-out`}
+                    style={{
+                      maxHeight: active === index ? "500px" : "0px",
+                    }}
+                  >
+                    <p className="py-4 pt-0 text-[#0B0B0B]">{item.content}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="seconf-grid">
-                <div className="flex justify-center">
-                  <Image
-                    className=" lg:h-auto h-[300px] object-contain"
-                    src={mobilerepair}
-                    alt=""
-                  />
-                </div>
-              </div>
+              ))}
             </div>
           </div>
-        </section>
+          <div className="seconf-grid">
+            <div className="flex justify-center">
+              <Image
+                className="lg:h-auto h-[300px] object-contain"
+                src={mobilerepair}
+                alt="Mobile repair"
+              />
+            </div>
+          </div>
+        </div>
       </div>
-    </>
+    </section>
   );
 }

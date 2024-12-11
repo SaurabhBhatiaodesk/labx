@@ -20,13 +20,14 @@ const CourseHighlights = () => {
                 <h2 className="text-3xl font-bold mb-4">
                   Beginner Phone Repair Course
                 </h2>
-                <div className="flex gap-4 text-yellow-400">
-                  <p className="font-semibold">Duration: 5 Days</p>
-                  <p className="font-semibold">|</p>
-                  <p className="font-semibold">
+                <div className="flex gap-2 flex-wrap text-yellow-400">
+                  <p className="font-semibold m-0">Duration: 5 Days</p>
+                  <p className="font-semibold m-0">|</p>
+                  <p className="font-semibold m-0">
                     Price: $1249 (Includes a free toolkit for each student)
                   </p>
                 </div>
+                
                 <p className="text-base">
                   {`Learn the fundamentals of mobile phone repair in our comprehensive beginner course, designed to give you hands-on experience with a wide range of repairs.`}
                 </p>

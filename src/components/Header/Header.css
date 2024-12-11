@@ -6,6 +6,8 @@
     /* background-color: transparent !important; */
 
 }
+
+  
 .header-component {
     position: sticky;
     top: 0;
@@ -51,7 +53,7 @@ ul.dropdown-menu li a, ul.dropdown-menus li a {
 .social__icon, .showmobile {
     display: none;
 }
-@media only screen and (max-width: 	767px) {
+@media only screen and (max-width: 	1023px) {
     .logo_LabX{
         width: 120px;
     }
@@ -78,7 +80,7 @@ ul.dropdown-menu li a, ul.dropdown-menus li a {
         position: absolute;
         left: 0;
         background: #000;
-        top: 50px;
+        top: 68px;
         padding: 15px;
         width: 100%;
         height: 500px;

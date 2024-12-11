@@ -1,17 +1,18 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import screenreplace from "../../../../public/Images/Home/screen.svg";
-import traning from "../../../../public/Images/Home/phone.svg";
-import MailinRepair from "../../../../public/Images/Home/mail.svg";
-import repairsoloutaion from "../../../../public/Images/Home/repairsoloutaion.svg";
-import B2BRepair from "../../../../public/Images/Home/B2B Repair.svg";
-import datarecovery from "../../../../public/Images/Home/data.svg";
+
+import screenreplace from "../../../../public/Images/Home/ScreenRefurbishment.png";
+import Phone_Repair_Courses from "../../../../public/Images/Home/Phonerepaircourses.png";
+import MailinRepair from "../../../../public/Images/Home/Mailinrepair.png";
+import B2B_Phone_Repair from "../../../../public/Images/Home/repairsoloutaion.svg";
+import datarecovery from "../../../../public/Images/Home/Datarecovery.png";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import MainTitle from "@/components/MainTitle/MainTitle";
 import "./DeliveryTo.css";
 import pointet from "../../../../public/Images/icons/pointingright.svg";
 import DeliveryTousMobile from "./DeliveryTousMobile";
+import B2BRepair from "../../../../public/Images/Home/B2B Repair.svg";
 import Link from "next/link";
 import arrow1 from "../../../../public/Images/icons/arrow1-1.svg";
 import arrow2 from "../../../../public/Images/icons/arrow1-2.svg";
@@ -81,7 +82,7 @@ const VerticalTabs: React.FC = () => {
         "Learn how to restore damaged screens to their original quality. Master the techniques needed to refurbish screens for a variety of devices.",
       button: "READ MORE",
       link: "/coming-soon",
-      image: traning,
+      image: Phone_Repair_Courses,
     },
     {
       id: 2,
@@ -127,7 +128,7 @@ const VerticalTabs: React.FC = () => {
         "Setting up a B2B account is straightforward. Complete the Apply for Business Account form on our website, and your account will be activated within moments, providing you with fast turnaround time for exclusive B2B phone repair services.",
       button: "READ MORE",
       link: "/b2b-repair-services",
-      image: repairsoloutaion,
+      image: B2B_Phone_Repair,
     },
     {
       id: 4,
@@ -146,7 +147,7 @@ const VerticalTabs: React.FC = () => {
       contentf5:
         "Our team of mobile technicians specializes in recovering data from devices with broken or failed logic boards, using advanced techniques.",
       button: "READ MORE",
-      link: "/coming-soon",
+      link: "/data-recovery",
       image: datarecovery,
     },
   ];

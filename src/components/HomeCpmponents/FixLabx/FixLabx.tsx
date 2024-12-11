@@ -10,7 +10,7 @@ const FixLabx = () => {
     // <div>FixLabx LabX Mobile Tech</div>
 
     <>
-      <div className="bg-[url('/Images/Home/LabXMobileTech.svg')]  gk bg-no-repeat bg-cover bg-fixed bg-center	">
+      <div className="bg-[url('/Images/Home/LabXMobileTech1.png')]  gk bg-no-repeat bg-cover bg-fixed bg-center	">
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_4fr] xl:grid-cols-[2fr_4fr_2fr] items-center pxs-0 md:px-[30px]  ">
           <div className="owener-image">
             <Image
@@ -26,10 +26,10 @@ const FixLabx = () => {
           </div>
           <div className="text-center lg:p-0 p-4">
             {/* <span className="text-[#696969]">About Us</span> */}
-            <h2 className="text-[#040404] text-[32px]  lg:text-[42px] 2xl:text-[42px] font-[800] pb-3">
+            <h2 className="text-[#040404] text-[32px]  lg:text-[36px] 2xl:text-[42px] font-[800] pb-3">
             LabX Mobile Phone Repair 
             </h2>
-            <p className="text-black pb-5" style={{color:'#040404'}}> 
+            <p className="text-black " style={{color:'#040404'}}> 
            
             {" I'm Bharat Dhingra, the founder of LabX, dedicated to providing exceptional, complex mobile phone repair services. With years of experience in the tech industry, I combine innovation and expertise to offer reliable solutions, ensuring quality and customer satisfaction for everyone who trusts LabX."}
 

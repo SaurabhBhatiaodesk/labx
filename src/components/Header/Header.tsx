@@ -18,6 +18,9 @@ import Facebook from "../../../public/Images/blog/facebook.svg";
 import Telegram_logo from "../../../public/Images/blog/Telegram_logo.svg";
 import Instagram from "../../../public/Images/blog/instagram.svg";
 import Twitter from "../../../public/Images/blog/twitter.svg";
+import { SlSocialFacebook } from "react-icons/sl";
+import { FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -151,12 +154,38 @@ export default function App() {
                             </li>
                         </ul>
 
-                        <div className="social__icon">
+                        {/* <div className="social__icon">
                         <a><Image alt='' src={Facebook} /></a>
                         <a><Image alt='' src={Telegram_logo} /></a>
                         <a><Image alt='' src={Instagram} /></a>
                         <a><Image alt='' src={Twitter} /></a>
-                      </div>
+                      </div> */}
+                      <div className="lg:hidden block">
+                      <div className=" flex gap-3 mt-5 justify-start pt-3">
+                <SlSocialFacebook
+                  className="hover:scale-110 transition-transform duration-200"
+                  fontSize={40}
+                />
+                <FaInstagram
+                  className="hover:scale-110 transition-transform duration-200"
+                  fontSize={40}
+                />
+                <FaXTwitter
+                  className="hover:scale-110 transition-transform duration-200"
+                  fontSize={40}
+                />
+                <Link
+                  href="https://www.youtube.com/@PRCRepair"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaYoutube
+                    className="hover:scale-110 transition-transform duration-200"
+                    fontSize={40}
+                  />
+                </Link>
+              </div>
+              </div>
                     </div>  
                   <Link  href="/coming-soon">
                     <button className="btn hidden lg:block">GET STARTED</button>

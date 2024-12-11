@@ -49,7 +49,7 @@ const tabs: Tab[] = [
   {
     id: 1,
     label: "Phone Repair Courses",
-    content: "LabX Professional Screen Refurbishment Services:",
+    content: "LabX Professional Phone Repair Courses:",
     contentf2:
       "Beginner Training: Our beginner phone repairing course covers essential phone repairs, including screen replacement services and charging port repairs. Gain hands-on experience and confidence in your repair skills.",
     contentf3:
@@ -65,7 +65,7 @@ const tabs: Tab[] = [
   {
     id: 2,
     label: "Mail In Repair",
-    content: "LabX Professional Screen Refurbishment Services:",
+    content: "LabX Professional Mail In Repair:",
     contentf2:
       "Review Our Pricing: Check our Price List for no-fix, no-fee pricing on common logic board issues. A $66 service fee applies for devices with previous repair attempts.",
     contentf3:
@@ -83,7 +83,7 @@ const tabs: Tab[] = [
   {
     id: 3,
     label: "B2B Phone Repair",
-    content: "LabX Professional Screen Refurbishment Services:",
+    content: "LabX Professional B2B Phone Repair:",
     contentf2:
       "Competitive Pricing: Our pricing is competitive with one standard rate for both end users and shops. We focus on providing high-quality repair services and offer support to businesses when they need reliable, cost-effective solutions for their repair needs.",
     contentf3:
@@ -100,7 +100,7 @@ const tabs: Tab[] = [
   {
     id: 4,
     label: "Data Recovery",
-    content: "LabX Professional Screen Refurbishment Services:",
+    content: "LabX Professional Data Recovery:",
     contentf2:
       "Data from Dead: We can do data recovery from damaged phones that won’t turn on due to hardware damage, shock, or water exposure.",
     contentf3:
@@ -163,7 +163,7 @@ const DeliveryTousMobile: React.FC = () => {
           >
             <div className="p-[12px] rounded-b-lg text-[16px]">
               <div className="flex items-start gap-2 mb-2">
-                <Image src={tab.image} alt="Pointing icon" width={20} height={20} />
+                {/* <Image src={tab.image} alt="Pointing icon" width={20} height={20} /> */}
                 <p className="xl:pb-2 pb-1">{tab.content}</p>
               </div>
               {tab.contentf2 && (
