@@ -208,7 +208,7 @@ const B2BRepairServices: React.FC = () => {
           pageDescription="We offer tailored B2B solutions designed to streamline your operations and ensure the highest quality mobile phone repairs for your customers. LabX provides specialized services that help you maintain your business efficiency and product quality."
           backgroundImage="/Images/BannerImages/about.png"
           AdminImage="/Images/B2BRepairServices.svg"
-          link="/coming-soon"
+          link="/contact-us"
         />
 
         {/* <section>

@@ -9,6 +9,7 @@ import YouTubeHome from '@/components/HomeCpmponents/YouTubeHome/YouTubeHome';
 import GoogleReview from '@/components/GoogleReviews/GoogleReviews';
 import FixLabx from '@/components/HomeCpmponents/FixLabx/FixLabx';
 import Line from "../../../public/Images/about/leap.svg"
+import MainButton from '@/components/MainButton/MainButton';
 
 const page = () => {
   return (
@@ -18,7 +19,7 @@ const page = () => {
             pageDescription="This course is designed and based on the highest industry standards and over 14 years of industry experience. It includes everything that anyone needs to be one of the best technicians or a successful business owner."
             backgroundImage="/Images/BannerImages/repair.png"
             AdminImage="/Images/repair-ph.png"
-             link="/coming-soon"
+             link="/contact-us"
           />
   <div>
 
@@ -30,8 +31,12 @@ const page = () => {
             <Image  height="300" width="600"src={Line.src} alt="" className="pb-3" />
 
             <p>Are you in search of a reliable B2B repair service provider? Look no further than LabX With years of experience and thousands of satisfied clients,  LabX is the go-to destination for all your B2B phone repair needs. </p>
+            
              <p>Are you in search of a reliable B2B repair service provider? Look no further than LabX With years of experience and thousands of satisfied clients,  LabX is the go-to destination for all your B2B phone repair needs. </p>
-            <button className='btn'><a href='/price'>VIEW PRICE LIST</a></button>
+
+            {/* <button className='btn'><a href='/price'>VIEW PRICE LIST</a></button> */}
+            <MainButton MainButton='VIEW PRICE LIST' link='/price'/>
+
           </div>
              <Image src={Phone} alt='' className='w-full' />
           </div> 
@@ -49,7 +54,8 @@ const page = () => {
 
               <p>We are local and offer appointment scheduling, but due to limited hours, please contact us at 585.397.4174 via phone or text to schedule a time with us!</p>
               <p>We are local and offer appointment scheduling, but due to limited hours, please contact us at 585.397.4174 via phone or text to schedule a time with us!</p>
-              <button className='btn'>GET STARTED</button>
+              {/* <button className='btn'>GET STARTED</button> */}
+              <MainButton MainButton='GET STARTED' link='/contact-us'/>
             </div>
             <div>
               <Image src={Offers} alt=''  className='w-full'  />

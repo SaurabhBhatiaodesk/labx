@@ -70,7 +70,7 @@ export default function MainBanner() {
             modules={[Pagination, Autoplay, Navigation]}
             className="mySwipergk"
             spaceBetween={20}
-            loop={false}
+            loop={true}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
@@ -106,7 +106,7 @@ export default function MainBanner() {
                   <div className="my-4 xl:my-10">
                     <MainButton
                       MainButton="Request a Quote"
-                      link="/coming-soon"
+                      link="/contact-us"
                     />
 
                     {/* <button className="btn1"> hello</button> */}
@@ -176,7 +176,7 @@ export default function MainBanner() {
                   <div className="my-4 xl:my-10">
                     <MainButton
                       MainButton="Start Training"
-                      link="/coming-soon"
+                      link="/training"
                       color="bg-[#6DD5ED]"
                     />
                   </div>
@@ -208,7 +208,7 @@ export default function MainBanner() {
                   </p>
                   <div className="my-4 xl:my-10">
 
-                    <MainButton MainButton="Join Us Now" link="/coming-soon" color="bg-[#A044FF]" />
+                    <MainButton MainButton="Join Us Now" link="/contact-us" color="bg-[#A044FF]" />
 
                   </div>
                 </div>

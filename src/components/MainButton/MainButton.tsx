@@ -16,14 +16,14 @@ const MainButton: React.FC<MainButtonProps> = ({ MainButton, link, color }) => {
       {link ? (
         <Link href={link}>
           <button
-            className={`${buttonColor} text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]`}
+            className={`${buttonColor} text-[13px] 2xl:text-[13px] xl:text-[14px] font-semibold tracking-[2px] uppercase text-black py-3 2xl:py-[10px] xl:py-[10px] px-[15px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]`}
           >
             {MainButton}
           </button>
         </Link>
       ) : (
         <button
-          className={`${buttonColor} text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]`}
+          className={`${buttonColor} text-[13px] 2xl:text-[13px] xl:text-[14px] font-semibold tracking-[2px] uppercase text-black py-3 2xl:py-[10px] xl:py-[10px] px-[15px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]`}
         >
           {MainButton}
         </button>

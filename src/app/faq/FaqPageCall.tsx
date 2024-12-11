@@ -8,6 +8,8 @@ import YouTubeHome from '@/components/HomeCpmponents/YouTubeHome/YouTubeHome';
 // import { title } from 'process';
 // import { Content } from 'next/font/google';
 import "./Faq.css"
+import FixLabx from '@/components/HomeCpmponents/FixLabx/FixLabx';
+import TabFaq from './TabFaq';
 
 
 const FaqPageCall = () => {
@@ -183,9 +185,19 @@ const FaqPageCall = () => {
         pageDescription=""
         backgroundImage="/Images/BannerImages/about.png"
         AdminImage="/Images/faq.svg"
-        link="/coming-soon"
+        link="/contact-us"
       />
-       <Faqinner heading="Frequently Asked Questions" categories={faqData} />
+     <div className=' hidden lg:block'>
+      <Faqinner  heading="Frequently Asked Questions" categories={faqData}  />
+      </div>
+
+<div className='block lg:hidden'>
+  <TabFaq/>
+</div>
+
+      <FixLabx />
+      
+      
       <YouTubeHome/>
       <GoogleReviews />
    

@@ -32,7 +32,6 @@ const Faqinner: React.FC<FaqinnerProps> = ({ heading, categories }) => {
     "linear-gradient(74deg, #d5fd33a1, #000000)",
     "linear-gradient(74deg, #A044FF, #000000)",
     "linear-gradient(74deg, #2052e8a5, #000000)",
-  
     "linear-gradient(74deg, #56c1c1, #000000)",
     "linear-gradient(74deg, #c35520c0, #000000)",
     "linear-gradient(74deg, #2055e8a5, #000000)",
@@ -57,7 +56,7 @@ const Faqinner: React.FC<FaqinnerProps> = ({ heading, categories }) => {
 
   return (
     <div>
-      <section className="py-5 xl:py-10">
+      <section className="py-5 xl:py-10 hidden lg:block">
         <div className="max-container">
           <div className="my-4">
             <MainHeading Heading={heading} />
@@ -107,7 +106,7 @@ const Faqinner: React.FC<FaqinnerProps> = ({ heading, categories }) => {
 
         </div>
       </section>
-      <FixLabx />
+  
     </div>
   );
 };
