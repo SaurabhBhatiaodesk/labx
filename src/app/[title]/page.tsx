@@ -78,15 +78,20 @@ export default async function PageDetail({ params }: { params: { title: string }
                     </p>
                   </li>
                 </ul>
-                <h1 className="text-dark mb-0 text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
+                </div>
+               
+              </div>
+            
+
+           
+           
+          </div>
+          <div>
+                 <h1 className="text-dark mb-0 text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2] text-center">
                 {formatPageName(page.pageName)}
                 </h1> 
                 
               </div>
-
-            </div>
-           
-          </div>
         </div>
       </section>
         <div className="max-container">

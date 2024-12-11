@@ -57,8 +57,8 @@ const BeginnerCourse = () => {
         link="/coming-soon"
         courseName="Beginner"
         courseRating="4.7"
-        courseHour="40 Hours"
-        Duration=" 5 Days"
+        courseHour="25 Hours"
+        Duration="5 Days"
         Price="$1249 (Includes a free toolkit for each student)"
       />
 

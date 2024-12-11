@@ -479,3 +479,15 @@ label {
 
 @media only screen and (max-width: 1536px) {
 }
+@keyframes zoomInOut {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); /* Adjust the zoom level here */
+  }
+}
+
+.animate-zoomInOut {
+  animation: zoomInOut 1s infinite; /* Adjust the duration as needed */
+}
