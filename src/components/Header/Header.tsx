@@ -155,36 +155,37 @@ export default function App() {
                             </li>
                         </ul>
 
-                        {/* <div className="social__icon">
-                        <a><Image alt='' src={Facebook} /></a>
-                        <a><Image alt='' src={Telegram_logo} /></a>
-                        <a><Image alt='' src={Instagram} /></a>
-                        <a><Image alt='' src={Twitter} /></a>
-                      </div> */}
+                     
                       <div className="lg:hidden block">
                       <div className=" flex gap-3 mt-5 justify-start pt-3">
-                <SlSocialFacebook
-                  className="hover:scale-110 transition-transform duration-200"
-                  fontSize={40}
-                />
-                <FaInstagram
-                  className="hover:scale-110 transition-transform duration-200"
-                  fontSize={40}
-                />
-                <FaXTwitter
-                  className="hover:scale-110 transition-transform duration-200"
-                  fontSize={40}
-                />
-                <Link
-                  href="https://www.youtube.com/@PRCRepair"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaYoutube
-                    className="hover:scale-110 transition-transform duration-200"
-                    fontSize={40}
-                  />
-                </Link>
+                      <Link href='https://www.facebook.com/profile.php?id=61568955864034' target="blank"> 
+                    <SlSocialFacebook
+                      className="hover:scale-110 transition-transform duration-200"
+                      fontSize={30}
+                    />
+                    </Link>
+                    <Link href='https://www.instagram.com/labxrepair/' target="blank"> 
+                    <FaInstagram
+                      className="hover:scale-110 transition-transform duration-200"
+                      fontSize={30}
+                    />
+                    </Link> 
+                    <Link href='https://x.com/LabxRepair' target="blank">
+                    <FaXTwitter
+                      className="hover:scale-110 transition-transform duration-200"
+                      fontSize={30}
+                    />
+                    </Link>
+                    <Link
+                      href="https://www.youtube.com/@PRCRepair"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaYoutube
+                        className="hover:scale-110 transition-transform duration-200"
+                        fontSize={30}
+                      />
+                    </Link>
               </div>
               </div>
                     </div>  

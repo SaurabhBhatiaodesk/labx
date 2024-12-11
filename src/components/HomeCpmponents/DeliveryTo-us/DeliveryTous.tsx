@@ -61,7 +61,7 @@ const VerticalTabs: React.FC = () => {
       contentf5:
         "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
-      link: "/coming-soon",
+      link: "/screen-refurbishing",
       image: screenreplace,
     },
     {
@@ -81,7 +81,7 @@ const VerticalTabs: React.FC = () => {
       contentf5:
         "Learn how to restore damaged screens to their original quality. Master the techniques needed to refurbish screens for a variety of devices.",
       button: "READ MORE",
-      link: "/coming-soon",
+      link: "/repair-solutions",
       image: Phone_Repair_Courses,
     },
     {

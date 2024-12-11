@@ -167,12 +167,12 @@ Course Syllabus
           </p>
         </div>
         <div className="">
-          <div className="grid xl:grid-cols-[2fr_5fr] lg:grid-cols-[3fr_6fr] gap-4 ">
+          <div className="grid xl:grid-cols-[2fr_5fr] lg:grid-cols-[3fr_6fr] gap-4">
             <div className="flex flex-col w-full gap-4">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
-                  className={`p-3 lg:p-6 xl:p-6 text-white rounded-[5px] border-[1.5px] text-base tracking-[1.2px] ${
+                  className={`p-3 lg:p-5 xl:p-4 text-white rounded-[5px] border-[1.5px] text-base tracking-[1.2px] ${
                     activeTab === tab.id
                       ? "active-tab"
                       : "bg-opacity-50 hover:bg-opacity-75"

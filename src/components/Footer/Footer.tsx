@@ -30,19 +30,19 @@ const Footer = () => {
                     provider in Australia
                   </p>
                   <div className="flex gap-3 mt-5">
-                  <Link href='/'> 
+                  <Link href='https://www.facebook.com/profile.php?id=61568955864034' target="blank"> 
                     <SlSocialFacebook
                       className="hover:scale-110 transition-transform duration-200"
                       fontSize={30}
                     />
                     </Link>
-                    <Link href='/'> 
+                    <Link href='https://www.instagram.com/labxrepair/' target="blank"> 
                     <FaInstagram
                       className="hover:scale-110 transition-transform duration-200"
                       fontSize={30}
                     />
                     </Link> 
-                    <Link href='/'>
+                    <Link href='https://x.com/LabxRepair' target="blank">
                     <FaXTwitter
                       className="hover:scale-110 transition-transform duration-200"
                       fontSize={30}
@@ -299,28 +299,34 @@ const Footer = () => {
                 in Australia
               </p>
               <div className="flex gap-3 mt-5 justify-center">
-                <SlSocialFacebook
-                  className="hover:scale-110 transition-transform duration-200"
-                  fontSize={30}
-                />
-                <FaInstagram
-                  className="hover:scale-110 transition-transform duration-200"
-                  fontSize={30}
-                />
-                <FaXTwitter
-                  className="hover:scale-110 transition-transform duration-200"
-                  fontSize={30}
-                />
-                <Link
-                  href="https://www.youtube.com/@PRCRepair"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaYoutube
-                    className="hover:scale-110 transition-transform duration-200"
-                    fontSize={30}
-                  />
-                </Link>
+              <Link href='https://www.facebook.com/profile.php?id=61568955864034' target="blank"> 
+                    <SlSocialFacebook
+                      className="hover:scale-110 transition-transform duration-200"
+                      fontSize={30}
+                    />
+                    </Link>
+                    <Link href='https://www.instagram.com/labxrepair/' target="blank"> 
+                    <FaInstagram
+                      className="hover:scale-110 transition-transform duration-200"
+                      fontSize={30}
+                    />
+                    </Link> 
+                    <Link href='https://x.com/LabxRepair' target="blank">
+                    <FaXTwitter
+                      className="hover:scale-110 transition-transform duration-200"
+                      fontSize={30}
+                    />
+                    </Link>
+                    <Link
+                      href="https://www.youtube.com/@PRCRepair"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaYoutube
+                        className="hover:scale-110 transition-transform duration-200"
+                        fontSize={30}
+                      />
+                    </Link>
               </div>
 
               <MobileFooterMenue />

@@ -72,7 +72,7 @@ export default function Productswiper({}) {
              
                   <div className="relative  client-slider ">
                     <Image
-                      className="w-full"
+                      className="w-full transition-transform duration-300 ease-in-out hover:scale-110"
                       src={logo1}
                       alt="Toyota Fortuner"
                     />
@@ -82,42 +82,46 @@ export default function Productswiper({}) {
               <SwiperSlide>
                
                   <div className="relative  client-slider">
-                    <Image className="w-full" src={logo2} alt="Honda Civic" />
+                    <Image className="w-full transition-transform duration-300 ease-in-out hover:scale-110" src={logo2} alt="Honda Civic" />
                   </div>
              
               </SwiperSlide>
               <SwiperSlide>
              
                   <div className="relative  client-slider">
-                    <Image className="w-full" src={logo3} alt="BMW X5" />
+                    <Image className="w-full transition-transform duration-300 ease-in-out hover:scale-110" src={logo3} alt="BMW X5" />
                   </div>
               
               </SwiperSlide>
               <SwiperSlide>
                
                   <div className="relative  client-slider">
-                    <Image className="w-full" src={logo4} alt="Mercedes Benz" />
+                    <Image className="w-full transition-transform duration-300 ease-in-out hover:scale-110" src={logo4} alt="Mercedes Benz" />
                   </div>
               
               </SwiperSlide>
               <SwiperSlide>
                
                   <div className="relative  client-slider">
-                    <Image className="w-full" src={logo1} alt="Mercedes Benz" />
+                    <Image className="w-full transition-transform duration-300 ease-in-out hover:scale-110" src={logo1} alt="Mercedes Benz" />
                   </div>
             
               </SwiperSlide>
               <SwiperSlide>
                
                   <div className="relative  client-slider">
-                    <Image className="w-full" src={logo2} alt="BMW X5" />
+                  <Image 
+  className="w-full transition-transform duration-300 ease-in-out hover:scale-110" 
+  src={logo2} 
+  alt="BMW X5" 
+/>
                   </div>
               
               </SwiperSlide>
               <SwiperSlide>
                 
                   <div className="relative client-slider">
-                    <Image className="w-full" src={logo3} alt="Mercedes Benz" />
+                    <Image className="w-full transition-transform duration-300 ease-in-out hover:scale-110" src={logo3} alt="Mercedes Benz" />
                   </div>
               
               </SwiperSlide>

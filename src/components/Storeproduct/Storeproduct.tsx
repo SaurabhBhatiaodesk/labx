@@ -11,11 +11,14 @@ import Link from "next/link";
 import "./Storeproduct.css";
 import p1 from "../../../public/Images/productimages/apple1.svg";
 import p2 from "../../../public/Images/productimages/apple2.svg";
+import { CiShoppingCart } from "react-icons/ci";
 
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper as SwiperType } from "swiper";
 // import { GoArrowRight } from "react-icons/go";
 import lottiearrow from "../../../public/Images/jsonfile/lottieflowbtn.json";
+import { IoCart } from "react-icons/io5";
+import { transform } from "next/dist/build/swc";
 
 export default function Productswiper() {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -134,13 +137,15 @@ export default function Productswiper() {
       <div className="flex justify-center xl:py-[20px]">
         {/* <button className="btn  flex items-center ">VISIT STORE <GoArrowRight fontSize={25}/></button> */}
         <Link href="/coming-soon">
-          <button className="btn  flex items-center ">
-            VISIT STORE{" "}
-            <Lottie
+          <button className="btn  flex items-center">
+           
+            VISIT STORE
+            {/* <Lottie
               animationData={lottiearrow}
               style={{ width: 30, height: 30 }}
               className="lottie-icon"
-            />
+            /> */}
+          <IoCart style={{ width: '25px', height: '30px',}} />
           </button>
         </Link>
       </div>
