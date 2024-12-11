@@ -1,9 +1,9 @@
-.main__box_section {
+/* .main__box_section {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 4rem; 
-}
+} */
 .front__box{
     position: relative;
     overflow: hidden;
@@ -12,7 +12,7 @@
       background: radial-gradient(50.91% 76.58% at 18.73% 75.25%, #799F0C 0, #111616 100%);
 }
 .front__box {
-    width: 30%;
+
     border: 1px solid #EDE574;
     box-shadow: 0px 4px 15px 0px #EDE57466;
     padding: 20px;
@@ -52,6 +52,15 @@
     width: 100%;
     height: 310px;
     background-repeat: no-repeat;
+}
+@media only screen and (max-width: 1024px) {
+    .process__section{
+        background-image: url('../../../public//Images//process.svg');
+        background-size: 100%;
+        width: 100%;
+        height: 200px;
+        background-repeat: no-repeat;
+    }
 }
 .grid__processs_section {
     display: flex;  

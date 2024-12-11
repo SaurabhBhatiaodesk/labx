@@ -4,10 +4,10 @@ import Image from "next/image";
 import MainButton from "../MainButton/MainButton";
 
 import bannerimage from "../../../public/Images/Home/bannerimage-top.png";
-import mainb1 from "../../../public/Images/Home/banner.svg";
-import mainb2 from "../../../public/Images/Home/banner1.svg";
-import mainb3 from "../../../public/Images/Home/banner2.svg";
-import mainb4 from "../../../public/Images/Home/banner3.svg";
+import mainb1 from "../../../public/Images/Home/banner3.svg";
+import mainb4 from "../../../public/Images/Home/mainb4.png";
+import mainb3 from "../../../public/Images/Home/mainb3.png";
+import mainb2 from "../../../public/Images/Home/mainb2.png";
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -115,7 +115,7 @@ export default function MainBanner() {
                 <div className="w-full">
                   <Image
                     className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
-                    src={mainb4}
+                    src={mainb1}
                     alt="Banner"
                   />
                 </div>
@@ -147,7 +147,7 @@ export default function MainBanner() {
                 <div className="w-full">
                   <Image
                     className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
-                    src={mainb3}
+                    src={mainb2}
                     alt="Quick Repairs"
 
                   />
@@ -184,7 +184,7 @@ export default function MainBanner() {
                 <div className="w-full">
                   <Image
                     className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
-                    src={mainb2}
+                    src={mainb3}
                     alt="Training and Repairs"
                   />
                 </div>
@@ -215,7 +215,7 @@ export default function MainBanner() {
                 <div className="w-full">
                   <Image
                     className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
-                    src={mainb1}
+                    src={mainb4}
                     alt="Device Repair"
                   />
                 </div>

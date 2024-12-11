@@ -63,36 +63,39 @@ const page = () => {
           <div>
             <p className='text-center'>We have the following levels of repair – L0, L1, L2, L3 and L4 repair levels, where the following is the definition of repair</p>
             <div className='responsive'>
-            <table className='table min-w-full table-auto'>
-              <thead>
-                <tr>
-                  <th className="border px-2 py-2 text-left" style={{minWidth:'200px'}}>Level of Repair</th>
-                  <th className="border px-2 py-2 text-left">Definition</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="border px-4 py-2">Level 0</td>
-                  <td className="border px-4 py-2">Issuing DOA Certificate, Accessories Replacement</td>
-                </tr>
-                <tr>
-                  <td className="border px-4 py-2">Level 1</td>
-                  <td className="border px-4 py-2">Software upgrading, Escalation to Higher level, Parts cleaning</td>
-                </tr>
-                <tr>
-                  <td className="border px-4 py-2">Level 2</td>
-                  <td className="border px-4 py-2">Replacement of LCD, Camera, Lens, and Key pad Dome, Mic., Ringer, Speaker, Flash LED, and Antenna (Mechanical).</td>
-                </tr>
-                <tr>
-                  <td className="border px-4 py-2">Level 3</td>
-                  <td className="border px-4 py-2">Replacement of LCD (multi point solder type), Charging Connector multi point solder type</td>
-                </tr>
-                <tr>
-                  <td className="border px-4 py-2">Level 4</td>
-                  <td className="border px-4 py-2">Main board Replacement, Oscillators, Tunner, FM IC, Charging IC, FM IC., I/O IC.</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="overflow-x-auto">
+  <table className="table-auto border-collapse border border-gray-300 w-full text-left">
+    <thead className="">
+      <tr>
+        <th className="border border-gray-300 px-4 py-4 text-sm font-medium">Level of Repair</th>
+        <th className="border border-gray-300 px-4 py-4 text-sm font-medium">Definition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className="border border-gray-300 px-4 py-4  text-sm">Level 0</td>
+        <td className="border border-gray-300 px-4 py-4  text-sm">Issuing DOA Certificate, Accessories Replacement</td>
+      </tr>
+      <tr>
+        <td className="border border-gray-300 px-4 py-4 text-sm">Level 1</td>
+        <td className="border border-gray-300 px-4 py-4  text-sm">Software upgrading, Escalation to Higher level, Parts cleaning</td>
+      </tr>
+      <tr>
+        <td className="border border-gray-300 px-4 py-4  text-sm">Level 2</td>
+        <td className="border border-gray-300 px-4 py-4  text-sm">Replacement of LCD, Camera, Lens, and Key pad Dome, Mic., Ringer, Speaker, Flash LED, and Antenna (Mechanical).</td>
+      </tr>
+      <tr>
+        <td className="border border-gray-300 px-4 py-4 text-sm">Level 3</td>
+        <td className="border border-gray-300 px-4 py-4  text-sm">Replacement of LCD (multi point solder type), Charging Connector multi point solder type</td>
+      </tr>
+      <tr>
+        <td className="border border-gray-300 px-4 py-4  text-sm">Level 4</td>
+        <td className="border border-gray-300 px-4 py-4  text-sm">Main board Replacement, Oscillators, Tunner, FM IC, Charging IC, FM IC., I/O IC.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
             </div>
           </div> 
           </div> 

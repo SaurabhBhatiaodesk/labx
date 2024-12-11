@@ -5,7 +5,7 @@ import MainTitle from "../MainTitle/MainTitle";
 import React, { useState } from "react";
 import { LuPlus } from "react-icons/lu";
 import { GrSubtract } from "react-icons/gr";
-import mobilerepair from "../../../public/Images/Home/iphone221.svg";
+import mobilerepair from "../../../public/Images/Home/iphonefq.png";
 import Image from "next/image";
 
 interface AccordionItem {

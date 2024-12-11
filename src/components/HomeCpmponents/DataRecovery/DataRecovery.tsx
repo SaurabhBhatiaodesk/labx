@@ -1,3 +1,4 @@
+"use client";
 import MainTitle from "@/components/MainTitle/MainTitle";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import React from "react";
@@ -5,6 +6,7 @@ import Image from "next/image";
 import pointer from "../../../../public/Images/icons/pointing-right.svg";
 import MainButton from "@/components/MainButton/MainButton";
 import cloud from "../../../../public/Images/Home/3dillustrationcloud.png";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const DataRecovery = () => {
   return (
@@ -95,15 +97,18 @@ const DataRecovery = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <MainButton MainButton="READ MORE" link="/coming-soon" />
+                <MainButton MainButton="READ MORE" link="/data-recovery" />
               </div>
             </div>
           </div>
 
           <div>
-            <div>
-              <Image src={cloud} alt="" />
-            </div>
+          <DotLottieReact
+          src="/Images/jsonfile/data_recovery.json"
+          loop
+          autoplay
+          className=""
+        />
           </div>
         </div>
       </div>
