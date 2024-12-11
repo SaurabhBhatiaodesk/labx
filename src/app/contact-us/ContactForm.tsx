@@ -185,7 +185,7 @@ const handleChange = (
 
     try {
       const response = await axios.post(
-        "https://labxbackend.labxrepair.com.au/api/create/contact-us", // Replace with your actual API endpoint
+        "http://localhost:7000/api/create/contact-us", // Replace with your actual API endpoint
         requestData
       );
       console.log(await response.data, "Form submitted successfully");
@@ -228,7 +228,7 @@ const handleChange = (
                         helperText={formErrors.first_name}
                       />
 
-                      
+
                       <TextField
                         label="Last Name*"
                         name="last_name"
@@ -264,7 +264,7 @@ const handleChange = (
                         helperText={formErrors.contact_no}
                       />
 
-                    
+
                     </div>
 
                     {/* {/ Training Message /} */}

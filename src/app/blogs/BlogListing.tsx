@@ -31,7 +31,7 @@ const Blogs: React.FC = () => {
     const fetchBlogs = async () => {
       try {
         const response = await axios.get(
-          `https://labxbackend.labxrepair.com.au/api/admin/blogs?page=${currentPage}&limit=${limit}`
+          `http://localhost:7000/api/admin/blogs?page=${currentPage}&limit=${limit}`
         );
 
         setBlogs(response?.data?.blogs); // Set blogs
@@ -62,7 +62,7 @@ const Blogs: React.FC = () => {
                   : BlogImage; // Fallback to a dummy image if no image is available
 
               return (
-                <div 
+                <div
                   key={index}
                   className="blog-article p-4 p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]"
                 >

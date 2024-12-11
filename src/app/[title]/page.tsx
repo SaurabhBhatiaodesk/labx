@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { Typography, Box, Grid, Card, CardMedia, CardContent } from '@mui/material'; 
+import { Typography, Box, Grid, Card, CardMedia, CardContent } from '@mui/material';
 import Link from "next/link";
 import './policy.css';
 import Image from 'next/image';
@@ -7,7 +7,7 @@ import YouTubeHome from '@/components/HomeCpmponents/YouTubeHome/YouTubeHome';
 import GoogleReviews from '@/components/GoogleReviews/GoogleReviews'
 // Function to fetch data from the server
 async function fetchPageData(title: string) {
-  const res = await fetch(`https://labxbackend.labxrepair.com.au/api/admin/title/${encodeURIComponent(title)}`, {
+  const res = await fetch(`http://localhost:7000/api/admin/title/${encodeURIComponent(title)}`, {
     cache: 'no-store',
   });
 
@@ -51,11 +51,11 @@ export default async function PageDetail({ params }: { params: { title: string }
     return (
 <>
 <section
-        className="bg-no-repeat bg-cover p-0 relative" 
+        className="bg-no-repeat bg-cover p-0 relative"
       >
          {/* {page.images.map((image: string, index: number) => (
                 <Image key={image}  src={image} alt="" width='100' height='100' className='dynamic__img' />
-                  
+
           ))} */}
 
         <div className="max-container overlap__term__data pt-8" >
@@ -80,19 +80,19 @@ export default async function PageDetail({ params }: { params: { title: string }
                 </ul>
                 <h1 className="text-dark mb-0 text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
                 {formatPageName(page.pageName)}
-                </h1> 
-                
+                </h1>
+
               </div>
 
             </div>
-           
+
           </div>
         </div>
       </section>
         <div className="max-container">
       <Box sx={{ backgroundColor: '000' }}>
         {/* Title Section */}
-         
+
         <Box
           sx={{
             backgroundColor: '#000',

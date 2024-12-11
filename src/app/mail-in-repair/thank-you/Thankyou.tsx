@@ -74,7 +74,7 @@ const Thankyou = () => {
             </div>
             {params.id && (
               <MainTitle
-                Title={`Your order reference ID: ${params.id}`}
+                Title={`Your order reference ID: #${params.id}`}
                 color="black"
               />
             )}
