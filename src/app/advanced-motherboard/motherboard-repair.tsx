@@ -8,6 +8,7 @@ import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
 import MotherboardReviews from "@/components/GoogleReviews/MotherboardReviews";
 import AdvancedChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/advancedMotherboardChooseLab"
 import React from "react";
+import TrainingTabMotherboardsecond from "@/components/TraningBanner/TrainingTabMotherboardsecond";
 
 const BeginnerCourse = () => {
   const accordionData = [
@@ -65,7 +66,7 @@ const BeginnerCourse = () => {
       <TraningWillLearn
         title="Course Highlights"
         Course="Course Format"
-        paramtitle1="MMaster Complex Repairs with Expert Guidance"
+        paramtitle1="Master Complex Repairs with Expert Guidance"
         param1="Learn to diagnose and repair damaged motherboards with advanced techniques. This hands-on training covers common issues like power problems, faulty connectors, and damaged circuits, all with expert instruction to build your repair confidence.
 "
         paramtitle2="Precision Micro Soldering Skills"
@@ -81,6 +82,7 @@ const BeginnerCourse = () => {
         Courseformate4="  Free Toolkit"
       />
       <TrainingTabMotherboard />
+      <TrainingTabMotherboardsecond/>
       <TraningCourseInstructors />
       <MotherboardPhoneReapair />
       <AdvancedChooseLab />

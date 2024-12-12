@@ -1,3 +1,5 @@
+"use client"
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
@@ -8,7 +10,7 @@ interface BreadcrumbProps {
   pageDescription: string;
   backgroundImage: string;
   AdminImage: string;
-  link: any; // Add this prop to dynamically change the link
+  link?: any; // Add this prop to dynamically change the link
 }
 
 function Breadcrumb({
@@ -18,6 +20,28 @@ function Breadcrumb({
   AdminImage,
   link, // Destructure the link prop
 }: BreadcrumbProps) {
+  const [isBrowser, setIsBrowser] = useState(false);
+
+  // Check if we're in the browser
+  useEffect(() => {
+    setIsBrowser(true);
+  }, []);
+
+  const handleScrollToTarget = () => {
+    const target = document.getElementById("stapergk");
+    const offset = 12 * 5; // 3rem in pixels (assuming 1rem = 16px)
+
+    if (target) {
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const scrollToPosition = targetPosition - offset;
+
+      window.scrollTo({
+        top: scrollToPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <>
       <section
@@ -39,7 +63,9 @@ function Breadcrumb({
                   </li>
                   <li>
                     <p className="text-body-color flex items-center gap-[10px] text-base font-medium mb-0">
-                      <span className="text-body-color dark:text-dark-6">/</span>
+                      <span className="text-body-color dark:text-dark-6">
+                        /
+                      </span>
                       {pageName}
                     </p>
                   </li>
@@ -53,9 +79,18 @@ function Breadcrumb({
               </div>
               <div className="flex lg:justify-start justify-center">
                 {/* Button is now dynamic */}
-                <Link href={link}>
-                  <button className="btn">Request a Quote</button>
-                </Link>
+                {isBrowser && window.location.pathname === "/mail-in-repair" ? (
+                  <button
+                    className="btn"
+                    onClick={handleScrollToTarget}
+                  >
+                    Request a Quote
+                  </button>
+                ) : (
+                  <Link href={link}>
+                    <button className="btn">Request a Quote</button>
+                  </Link>
+                )}
               </div>
             </div>
             <div className="admin-image relative 2xl:h-[500px] lg:h-[350px] h-[350px]">

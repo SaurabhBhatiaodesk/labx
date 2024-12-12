@@ -8,6 +8,7 @@ import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
 import BiginnerChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/BiginnerChooseLab";
 import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
 import React from "react";
+import TraningTabBignerThird from "@/components/TraningBanner/TraningTabBignerThird";
 
 const BeginnerCourse = () => {
   const accordionData = [
@@ -83,6 +84,7 @@ const BeginnerCourse = () => {
       <TraningTabBigner />
 
       <TraningTabBignersecond />
+      <TraningTabBignerThird/>
       <TraningCourseInstructors />
       <BeginnerPhoneRepaiCourseSale />
       <BiginnerChooseLab />

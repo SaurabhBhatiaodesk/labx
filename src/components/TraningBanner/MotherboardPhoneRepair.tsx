@@ -65,18 +65,19 @@ function BeginnerPhoneRepairCourseSale() {
       <section>
         <div className="container">
           {/* Course Details */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
-            <div className="p-3 lg:p-6 bg-black text-white rounded-md">
-              <h2 className="text-3xl font-bold mb-4">
+          <div className="grid grid-cols-1 gap-4 lg:py-6 py-3 items-center">
+            <div className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px] text-base font-poppins">
+              <h2 className="text-3xl font-bold mb-4 text-center">
               Master Motherboard  Repairs with Confidence
               </h2>
               <ul className="space-y-2 pb-5">
-              <p>
+              <p className="text-center">
                 
                 {`By the end of this mainboard repair training, you'll gain the confidence and skills to tackle a variety of motherboard-level repairs with precision. From advanced diagnostics to micro soldering, you’ll be equipped to handle intricate challenges, ensuring high-quality results and readiness to work on a wide range of devices professionally.
 `}
               </p>
               </ul>
+              </div>
 
               {/* Countdown Timer */}
               {/* <div className=" flex justify-between w-full gap-2">
@@ -112,16 +113,16 @@ function BeginnerPhoneRepairCourseSale() {
                   <p className="m-0 text-[black]">SALE</p>
                 </div>
               </div> */}
-            </div>
+          
 
-            <div className="relative w-full h-[300px] md:h-[550px]">
+            {/* <div className="relative w-full h-[300px] md:h-[550px]">
               <Image
                 className="object-cover rounded-[30px]"
                 src={CourseInstructors}
                 alt="Course Image"
                 fill
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

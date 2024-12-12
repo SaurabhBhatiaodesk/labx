@@ -10,6 +10,8 @@ import {
   NavbarItem,
 } from "@nextui-org/react";
 import rktaxilog from "../../../public/Images/Brand logos/Frame.svg";
+import { PiShoppingCartSimpleLight } from "react-icons/pi";
+
 import "./Header.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -21,6 +23,7 @@ import Twitter from "../../../public/Images/blog/twitter.svg";
 import { SlSocialFacebook } from "react-icons/sl";
 import { FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { VscCallOutgoing } from "react-icons/vsc";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -106,10 +109,16 @@ export default function App() {
                          </NavbarBrand>
                      </NavbarContent>
 
-                    {/* <a className="showmobile" href="tel:+4733378901"> */}
-                      <Link className="showmobile" href="tel:+61455777077">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" className="hover:scale-110 transition-transform duration-200" font-size="25" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke-miterlimit="10" stroke-width="32" d="M451 374c-15.88-16-54.34-39.35-73-48.76-24.3-12.24-26.3-13.24-45.4.95-12.74 9.47-21.21 17.93-36.12 14.75s-47.31-21.11-75.68-49.39-47.34-61.62-50.53-76.48 5.41-23.23 14.79-36c13.22-18 12.22-21 .92-45.3-8.81-18.9-32.84-57-48.9-72.8C119.9 44 119.9 47 108.83 51.6A160.15 160.15 0 0 0 83 65.37C67 76 58.12 84.83 51.91 98.1s-9 44.38 23.07 102.64 54.57 88.05 101.14 134.49S258.5 406.64 310.85 436c64.76 36.27 89.6 29.2 102.91 23s22.18-15 32.83-31a159.09 159.09 0 0 0 13.8-25.8C465 391.17 468 391.17 451 374z"></path></svg>
+                <div className="flex gap-2 relative">
+                      <Link className="showmobile hover:scale-110 transition-transform duration-200" href="tel:+61455777077">
+                      <VscCallOutgoing color="white" />
                     </Link>
+                    <Link className="showmobile hover:scale-110 transition-transform duration-200" href="tel:+61455777077">
+                    <PiShoppingCartSimpleLight  color="white"/>
+                    </Link>
+                    </div>
+
+
 
                         <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:flex  flex-grow justify-center`} id="nav-content">
                     <ul className="menu menu-horizontal px-1 flex">
@@ -192,6 +201,7 @@ export default function App() {
                   <Link  href="/coming-soon">
                     <button className="btn hidden lg:block">GET STARTED</button>
                   </Link> 
+                  
                 </div>
                 
             </div>

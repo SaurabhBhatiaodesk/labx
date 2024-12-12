@@ -82,7 +82,7 @@ const CourseHighlights = () => {
 
               <div className="relative w-full h-[300px] md:h-[550px]">
                 <Image
-                 className="object-[4%_10%] object-none rounded-[30px] border-2 border-[#EDE574] "
+                 className="object-[4%_10%] object-cover rounded-[30px] border-2 border-[#EDE574] "
                   src={course2}
                   alt="Course Image"
                   fill
@@ -94,7 +94,7 @@ const CourseHighlights = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
               <div className="relative w-full h-[300px] md:h-[550px] sm-order-2">
                 <Image
-                  className="object-[4%_10%] object-none rounded-[30px] border-2 border-[#6DD5ED] "
+                  className="object-[4%_10%] object-cover rounded-[30px] border-2 border-[#6DD5ED] "
                   src={course2}
                   alt="Course Image"
                   fill
@@ -235,7 +235,7 @@ const CourseHighlights = () => {
               </div>
               <div className="relative w-full h-[300px] md:h-[550px] sm-order-2 lg:order-2">
                 <Image
-                 className="object-[4%_10%] object-none rounded-[30px] border-2 border-[#FF9966] "
+                 className="object-[4%_10%] object-cover rounded-[30px] border-2 border-[#FF9966] "
                   src={course2}
                   alt="Course Image"
                   fill
@@ -246,7 +246,7 @@ const CourseHighlights = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
               <div className="relative w-full h-[300px] md:h-[550px] sm-order-2">
                 <Image
-                className="object-[4%_10%] object-none rounded-[30px] border-2 border-[#799F0C] "
+                className="object-[4%_10%] object-cover rounded-[30px] border-2 border-[#799F0C] "
                   src={course2}
                   alt="Course Image"
                   fill
@@ -355,7 +355,7 @@ const CourseHighlights = () => {
               </div>
               <div className="relative w-full h-[300px] md:h-[550px] order-2 lg:order-2">
                 <Image
-                   className="object-[4%_10%] object-none rounded-[30px] border-2 border-[#A044FF] "
+                   className="object-[4%_10%] object-cover rounded-[30px] border-2 border-[#A044FF] "
                   src={course2}
                   alt="Course Image"
                   fill

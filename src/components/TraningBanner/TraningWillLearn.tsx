@@ -55,7 +55,7 @@ function TraningWillLearn({
                 <Image src={checkmark} alt="" />
                
                 <p>
-                  <strong className="text-[22px]">{paramtitle1} </strong> {param1}
+                  <strong className="text-[22px]  text-[#EDE574]">{paramtitle1} :</strong> {param1}
 
 
                 </p>
@@ -63,13 +63,13 @@ function TraningWillLearn({
               <div className="flex gap-2 items-start">
                 <Image src={checkmark} alt="" />
                 <p>
-                <strong className="text-[22px]">{paramtitle2} </strong>  {param2}
+                <strong className="text-[22px]  text-[#EDE574]">{paramtitle2} :</strong>  {param2}
                 </p>
               </div>
               <div className="flex gap-2 items-start">
                 <Image src={checkmark} alt="" />
                 <p>
-                <strong className="text-[22px]">{paramtitle3} </strong>  {param3}
+                <strong className="text-[22px]  text-[#EDE574]">{paramtitle3} :</strong>  {param3}
                 </p>
               </div>
             </div>
@@ -94,7 +94,7 @@ function TraningWillLearn({
                 </div>
                 <div className="flex gap-1">
                 <Image src={arrowright} alt=""/>
-                <li className="text-sm lg:text-base animate-zoomInOut">{Courseformate4} </li>
+                <li className="text-sm lg:text-base animate-zoomInOut  text-[#EDE574]">{Courseformate4} </li>
 
 
                 </div>
