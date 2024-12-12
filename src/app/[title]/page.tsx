@@ -16,7 +16,7 @@ import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
 import Line from "../../../public/Images/about/leap.svg"; // Function to fetch data from the server
 async function fetchPageData(title: string) {
   const res = await fetch(
-    `http://localhost:7000/api/admin/title/${encodeURIComponent(
+    `https://labxbackend.labxrepair.com.au/api/admin/title/${encodeURIComponent(
       title
     )}`,
     {

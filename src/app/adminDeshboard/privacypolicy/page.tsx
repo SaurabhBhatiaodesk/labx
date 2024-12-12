@@ -50,7 +50,7 @@
 //       const fetchPolicy = async () => {
 //         try {
 //           const response = await fetch(
-//             `http://localhost:7000/api/admin/privacypolicybyId/${policyId}`
+//             `https://labxbackend.labxrepair.com.au/api/admin/privacypolicybyId/${policyId}`
 //           );
 //           if (!response.ok)
 //             throw new Error(`Error fetching policy: ${response.statusText}`);
@@ -143,8 +143,8 @@
 
 //     try {
 //       const url = isEditMode
-//         ? `http://localhost:7000/api/admin/privacypolicy/${policyId}`
-//         : "http://localhost:7000/api/admin/privacypolicy";
+//         ? `https://labxbackend.labxrepair.com.au/api/admin/privacypolicy/${policyId}`
+//         : "https://labxbackend.labxrepair.com.au/api/admin/privacypolicy";
 //       const method = isEditMode ? "PUT" : "POST";
 
 //       const response = await fetch(url, {
