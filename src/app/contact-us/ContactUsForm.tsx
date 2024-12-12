@@ -307,7 +307,7 @@ const handleChange = (
                 <form onSubmit={handleSubmit}>
                   <div className="flex flex-col gap-4 bg-black text-white">
                     <div className="grid grid-cols-2 gap-4 form-label">
-                    
+
                       <TextField
                         label="First Name*"
                         name="first_name"
@@ -319,7 +319,7 @@ const handleChange = (
                         helperText={formErrors.first_name}
                       />
 
-                       
+
                       <TextField
                         label="Last Name*"
                         name="last_name"
@@ -342,7 +342,7 @@ const handleChange = (
                         helperText={formErrors.email_address}
                       />
                       {/*
-                     
+
                       <TextField
                         label="Phone Number *"
                         name="contact_no"
@@ -355,10 +355,10 @@ const handleChange = (
                         helperText={formErrors.contact_no}
                       />
 
-                   
+
                     </div>
 
-                    
+
                     <div>
                       <h3 className="text-[20px] lg:text-[26px]">
                         Write Your Enquiry
@@ -384,7 +384,7 @@ const handleChange = (
                       />
                     </div>
                   </div>
- 
+
                   <div className="py-4">
                     <Button
                       variant="contained"

@@ -228,7 +228,7 @@ const handleChange = (
                         helperText={formErrors.first_name}
                       />
 
-                      
+
                       <TextField
                         label="Last Name*"
                         name="last_name"
@@ -264,7 +264,7 @@ const handleChange = (
                         helperText={formErrors.contact_no}
                       />
 
-                    
+
                     </div>
 
                     {/* {/ Training Message /} */}

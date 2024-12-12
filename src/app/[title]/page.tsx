@@ -74,7 +74,7 @@ export default async function PageDetail({
         <section className="bg-no-repeat bg-cover p-0 relative">
           {/* {page.images.map((image: string, index: number) => (
                 <Image key={image}  src={image} alt="" width='100' height='100' className='dynamic__img' />
-                  
+
           ))} */}
 
           <div className="max-container overlap__term__data pt-8">

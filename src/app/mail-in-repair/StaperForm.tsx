@@ -96,6 +96,7 @@ const StaperForm: React.FC = () => {
   const [isInvalid, setIsInvalid] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
   const [errors, setErrors] = useState<Errors>({});
+  const [isLoading, setIsLoading] = useState(false); // State for loader
   const [personalDetails, setPersonalDetails] = useState({
     businessName: "",
     fullName: "",
@@ -118,12 +119,10 @@ const StaperForm: React.FC = () => {
   });
 
   const [shippingDetails, setShippingDetails] = useState({
-    requireReturnLabel: "No",
-    pickupLabelDetails: "",
-    returnLabelDetails: "",
+    requireReturnLabel: "I will arrange pickup myself",
     requirePickupLabel: "No",
     termsAndConditions: false,
-    signature: "", // Assume this is captured from a signature input
+    signature: "",
   });
   const [pricingAgreement, setPricingAgreement] = useState(false);
 
@@ -188,14 +187,14 @@ const StaperForm: React.FC = () => {
     });
 
     setDeviceDetails({
-      deviceType: deviceDetails.deviceType||"",
-      brand: deviceDetails.brand||"",
-      imeiOrSerialNo: deviceDetails.imeiOrSerialNo||"",
-      devicePassword: deviceDetails.devicePassword||"",
+      deviceType: deviceDetails.deviceType || "",
+      brand: deviceDetails.brand || "",
+      imeiOrSerialNo: deviceDetails.imeiOrSerialNo || "",
+      devicePassword: deviceDetails.devicePassword || "",
     });
     setRepairDetails({
-      issueDescription: repairDetails.issueDescription||"",
-      previousRepairAttempts: repairDetails.previousRepairAttempts||"",
+      issueDescription: repairDetails.issueDescription || "",
+      previousRepairAttempts: repairDetails.previousRepairAttempts || "",
       previousRepairAttemptsComments:
         repairDetails.previousRepairAttemptsComments || "", // New field
       jumpQueueForFasterService:
@@ -204,9 +203,8 @@ const StaperForm: React.FC = () => {
     });
 
     setShippingDetails({
-      requireReturnLabel: shippingDetails.requireReturnLabel || "No",
-      pickupLabelDetails: shippingDetails.pickupLabelDetails || "",
-      returnLabelDetails: shippingDetails.returnLabelDetails || "",
+      requireReturnLabel:
+        shippingDetails.requireReturnLabel || "I will arrange pickup myself",
       requirePickupLabel: shippingDetails.requirePickupLabel || "No",
       termsAndConditions: shippingDetails.termsAndConditions || false,
       signature: shippingDetails.signature || "", // Assume this is captured
@@ -226,14 +224,14 @@ const StaperForm: React.FC = () => {
       returnShippingAddress: personalDetails?.returnShippingAddress || "",
     });
     setDeviceDetails({
-      deviceType: deviceDetails.deviceType||"",
-      brand: deviceDetails.brand||"",
-      imeiOrSerialNo: deviceDetails.imeiOrSerialNo||"",
-      devicePassword: deviceDetails.devicePassword||"",
+      deviceType: deviceDetails.deviceType || "",
+      brand: deviceDetails.brand || "",
+      imeiOrSerialNo: deviceDetails.imeiOrSerialNo || "",
+      devicePassword: deviceDetails.devicePassword || "",
     });
     setRepairDetails({
-      issueDescription: repairDetails.issueDescription||"",
-      previousRepairAttempts: repairDetails.previousRepairAttempts||"",
+      issueDescription: repairDetails.issueDescription || "",
+      previousRepairAttempts: repairDetails.previousRepairAttempts || "",
       previousRepairAttemptsComments:
         repairDetails.previousRepairAttemptsComments || "", // New field
       jumpQueueForFasterService:
@@ -242,9 +240,8 @@ const StaperForm: React.FC = () => {
     });
 
     setShippingDetails({
-      requireReturnLabel: shippingDetails.requireReturnLabel || "No",
-      pickupLabelDetails: shippingDetails.pickupLabelDetails || "",
-      returnLabelDetails: shippingDetails.returnLabelDetails || "",
+      requireReturnLabel:
+        shippingDetails.requireReturnLabel || "I will arrange pickup myself",
       requirePickupLabel: shippingDetails.requirePickupLabel || "No",
       termsAndConditions: shippingDetails.termsAndConditions || false,
       signature: shippingDetails.signature || "", // Assume this is captured
@@ -297,18 +294,18 @@ const StaperForm: React.FC = () => {
 
     if (activeStep === 2) {
       // Check for return label details
-      if (
-        shippingDetails.requireReturnLabel === "Yes" &&
-        !shippingDetails.returnLabelDetails.trim()
-      )
-        newErrors.requireReturnLabel = "Return label details are required";
+      // if (
+      //   shippingDetails.requireReturnLabel === "Yes" &&
+      //   !shippingDetails.returnLabelDetails.trim()
+      // )
+      //   newErrors.requireReturnLabel = "Return label details are required";
 
-      // Check for pickup label details
-      if (
-        shippingDetails.requirePickupLabel === "Yes" &&
-        !shippingDetails.pickupLabelDetails.trim()
-      )
-        newErrors.requirePickupLabel = "Pickup label details are required";
+      // // Check for pickup label details
+      // if (
+      //   shippingDetails.requirePickupLabel === "Yes" &&
+      //   !shippingDetails.pickupLabelDetails.trim()
+      // )
+      //   newErrors.requirePickupLabel = "Pickup label details are required";
 
       if (!shippingDetails.termsAndConditions)
         newErrors.termsAndConditions =
@@ -340,6 +337,7 @@ const StaperForm: React.FC = () => {
   };
 
   const handleSubmit = async () => {
+    setIsLoading(true);
     const payload = {
       personalDetails,
       deviceDetails,
@@ -347,7 +345,6 @@ const StaperForm: React.FC = () => {
       shippingDetails,
       pricingAgreement,
     };
-    console.log("payloadd", payload);
     try {
       const response = await axios.post(
         "https://labxbackend.labxrepair.com.au/api/repair_info",
@@ -358,7 +355,6 @@ const StaperForm: React.FC = () => {
           },
         }
       );
-      console.log("response.json()", response.data);
       if (response.status === 200 || response.status == 201) {
         const { orderReferenceId } = response.data.data; // Assuming the orderReferenceId is returned in the response data
 
@@ -366,7 +362,11 @@ const StaperForm: React.FC = () => {
           localStorage.removeItem("formData");
 
           // Pass orderReferenceId as query parameter in the URL
-          router.push(`/mail-in-repair/thank-you?id=${orderReferenceId}`);
+          // router.push(`/mail-in-repair/thank-you?id=${orderReferenceId}`);
+          const cleanOrderReferenceId = orderReferenceId.startsWith("#")
+            ? orderReferenceId.slice(1)
+            : orderReferenceId;
+          router.push(`/mail-in-repair/thank-you?id=${cleanOrderReferenceId}`);
         }
       } else {
         alert("Failed to submit the form. Please try again.");
@@ -374,6 +374,8 @@ const StaperForm: React.FC = () => {
     } catch (error) {
       console.error("Error submitting the form:", error);
       alert("An error occurred while submitting the form.");
+    } finally {
+      setIsLoading(false); // Hide loader after processing
     }
   };
 
@@ -421,7 +423,35 @@ const StaperForm: React.FC = () => {
 
   return (
     <>
-      <section className="steper-form-section-os " >
+      {isLoading && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            zIndex: 9999,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              width: "50px",
+              height: "50px",
+              border: "5px solid #f3f3f3",
+              borderTop: "5px solid #3498db",
+              borderRadius: "50%",
+              animation: "spin 1s linear infinite",
+            }}
+          ></div>
+        </div>
+      )}
+
+      <section className="steper-form-section-os">
         <div className="container gaurav-bg-trans ">
           <div className="my-5">
             <div
@@ -507,7 +537,7 @@ const StaperForm: React.FC = () => {
                           {/* Business Name (Optional) */}
                           <div>
                             <TextField
-                              label="Business Name"
+                              label="Business Name(If any)"
                               name="business_name"
                               fullWidth
                               value={personalDetails.businessName}
@@ -548,15 +578,21 @@ const StaperForm: React.FC = () => {
                               required
                               label="Contact Number"
                               name="contact_number"
+                              type="number"
                               fullWidth
                               value={personalDetails.contactNo}
-                              onChange={(e) =>
-                                setPersonalDetails({
-                                  ...personalDetails,
-                                  contactNo: e.target.value,
-                                })
-                              }
+                              onChange={(e) => {
+                                // Allow only up to 10 digits
+                                if (e.target.value.length <= 10) {
+                                  setPersonalDetails({
+                                    ...personalDetails,
+                                    contactNo: e.target.value,
+                                  });
+                                }
+                              }}
+                              inputProps={{ maxLength: 10 }} // Additional safeguard to restrict input length
                             />
+
                             {errors.contactNo && (
                               <p className="text-[red] text-sm mb-0">
                                 {errors.contactNo}
@@ -625,7 +661,7 @@ const StaperForm: React.FC = () => {
                             <div className="w-full">
                               <TextField
                                 type="text"
-                                label="Enter Device Type"
+                                label="Enter Device Type(eg:Mobile Phone/Tablet/laptop) "
                                 name="deviceType"
                                 fullWidth
                                 value={deviceDetails.deviceType}
@@ -646,7 +682,7 @@ const StaperForm: React.FC = () => {
                               <TextField
                                 id="brandModel"
                                 type="text"
-                                label="Enter Brand/Model (e.g., Apple - iPhone 13 Pro)"
+                                label="Enter Brand/Model (e.g:Apple-iPhone 13 Pro)"
                                 name="brandModel"
                                 fullWidth
                                 value={deviceDetails.brand}
@@ -665,7 +701,7 @@ const StaperForm: React.FC = () => {
                             <div>
                               <TextField
                                 type="text"
-                                label="IMEI/Serial No."
+                                label="IMEI/Serial No.(If known)"
                                 name="imei_serial_no"
                                 fullWidth
                                 value={deviceDetails.imeiOrSerialNo}
@@ -682,7 +718,7 @@ const StaperForm: React.FC = () => {
                             <div>
                               <TextField
                                 type="text"
-                                label="Device Password"
+                                label="Device Password(Must be correct)"
                                 name="device_password"
                                 fullWidth
                                 value={deviceDetails?.devicePassword}
@@ -747,7 +783,7 @@ const StaperForm: React.FC = () => {
                         {/* Description of Issue */}
                         <div className="steper-textarea-os ">
                           <Textarea
-                            placeholder="Enter your message here *"
+                            placeholder="Please provide a detailed information of the damage(The more information you include, the better chances of successfully repairing the device).*"
                             minRows={5}
                             value={repairDetails.issueDescription}
                             onChange={(e) =>
@@ -834,7 +870,7 @@ const StaperForm: React.FC = () => {
                         {/* Jump the Queue */}
                         <div>
                           <p className=" text-base leading-5 mb-2">
-                            Jump the QA?*
+                            Do you require Priority Repair Service?*
                           </p>
                           <Select
                             className="bg-black text-white gauav"
@@ -868,7 +904,8 @@ const StaperForm: React.FC = () => {
 
                           {repairDetails.jumpQueueForFasterService == "Yes" && (
                             <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
-                              $20 extra for this service.
+                              A minimum fee of $100 (or higher) will be charged
+                              for priority service.
                             </p>
                           )}
                         </div>
@@ -940,17 +977,18 @@ const StaperForm: React.FC = () => {
                       {/* Require Pickup Label */}
                       <div className="steper-textarea-os space-y-4">
                         <p className="text-base leading-5 mb-2">
-                          Do you require a pickup label from LabX?
+                          Would you like LABX to arrange a pickup from your
+                          location?
                         </p>
                         <Select
                           defaultSelectedKeys={
-                            shippingDetails.requirePickupLabel != "Yes"
+                            shippingDetails.requirePickupLabel !== "Yes"
                               ? ["No"]
                               : ["Yes"]
                           }
                           className="bg-black text-white gauav"
                           value={
-                            shippingDetails.requirePickupLabel != "Yes"
+                            shippingDetails.requirePickupLabel !== "Yes"
                               ? "No"
                               : "Yes"
                           }
@@ -961,89 +999,67 @@ const StaperForm: React.FC = () => {
                             })
                           }
                         >
-                          {selectOptions.map((animal) => {
+                          {selectOptions.map((option) => {
                             return (
-                              <SelectItem key={animal.key}>
-                                {animal.label}
+                              <SelectItem key={option.key}>
+                                {option.label}
                               </SelectItem>
                             );
                           })}
                         </Select>
                         {shippingDetails.requirePickupLabel === "Yes" && (
-                          <>
-                            <Textarea
-                              className="italic-placeholder"
-                              minRows={5}
-                              placeholder="Please provide details for the pickup label"
-                              value={shippingDetails.pickupLabelDetails || ""}
-                              onChange={(e) =>
-                                setShippingDetails({
-                                  ...shippingDetails,
-                                  pickupLabelDetails: e.target.value,
-                                })
-                              }
-                              required
-                            />
-                            {/* Validation Error */}
-                            {errors.requirePickupLabel && (
-                              <p className="text-red-500 text-sm mt-1">
-                                {errors.requirePickupLabel}
-                              </p>
-                            )}
-                          </>
+                          <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                            A one way shipping fee of $15-$20 will be added to
+                            your invoice, regardless of whether the device is
+                            repaired or not. Connote label will be sent to your
+                            email.
+                          </p>
+                        )}
+                        {shippingDetails.requirePickupLabel === "No" && (
+                          <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                            No, I will send the device myself.
+                          </p>
                         )}
                       </div>
 
                       {/* Require Return Label */}
                       <div className="steper-textarea-os space-y-4">
                         <p className="text-base leading-5 mb-2">
-                          Do you require a return label?
+                          How would LABX return your device?
                         </p>
                         <Select
                           defaultSelectedKeys={
-                            shippingDetails.requireReturnLabel != "Yes"
-                              ? ["No"]
-                              : ["Yes"]
+                            shippingDetails.requireReturnLabel ==
+                            "Please ship the device back to me"
+                              ? ["Please ship the device back to me"]
+                              : ["I will arrange pickup myself"]
                           }
                           className="bg-black text-white gauav"
-                          value={"Yes"}
-                          onChange={(e) =>
+                          value={
+                            shippingDetails.requireReturnLabel ||
+                            "I will arrange pickup myself"
+                          }
+                          onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                             setShippingDetails({
                               ...shippingDetails,
                               requireReturnLabel: e.target.value,
                             })
                           }
                         >
-                          {selectOptions.map((animal) => {
-                            return (
-                              <SelectItem key={animal.key}>
-                                {animal.label}
-                              </SelectItem>
-                            );
-                          })}
+                          <SelectItem key="I will arrange pickup myself">
+                            I will arrange pickup myself
+                          </SelectItem>
+                          <SelectItem key="Please ship the device back to me">
+                            Please ship the device back to me
+                          </SelectItem>
                         </Select>
-                        {shippingDetails.requireReturnLabel === "Yes" && (
-                          <>
-                            <Textarea
-                              className="italic-placeholder"
-                              placeholder="Please provide details for the return label"
-                              minRows={5}
-                              value={shippingDetails.returnLabelDetails}
-                              onChange={(e) =>
-                                setShippingDetails({
-                                  ...shippingDetails,
-                                  returnLabelDetails: e.target.value,
-                                })
-                              }
-                              required
-                            />
 
-                            {errors.requireReturnLabel && (
-                              <p className="text-red-500 text-sm mt-1">
-                                {errors.requireReturnLabel}
-                              </p>
-                            )}
-                          </>
+                        {shippingDetails.requireReturnLabel ===
+                          "Please ship the device back to me" && (
+                          <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                            Additional shipping fee of $15-$20 will be added to
+                            your invoice.
+                          </p>
                         )}
                       </div>
 
@@ -1075,21 +1091,21 @@ const StaperForm: React.FC = () => {
                             agree to the LabX
                             <Link
                               className="text-[#EDE574] border-[#EDE574] border-b-1"
-                              href="/coming-soon"
+                              href="/Terms_and_Conditions"
                             >
                               {" "}
                               Terms and Conditions{" "}
                             </Link>
                             <Link
                               className="text-[#EDE574] border-[#EDE574] border-b-1"
-                              href="/coming-soon"
+                              href="/Shipping_Policy"
                             >
                               Privacy Policy
                             </Link>{" "}
                             and{" "}
                             <Link
                               className="text-[#EDE574] border-[#EDE574] border-b-1"
-                              href="/coming-soon"
+                              href="/Warranty_and_Terms"
                             >
                               Warranty Terms
                             </Link>
@@ -1187,10 +1203,20 @@ const StaperForm: React.FC = () => {
                           </button>
                         ) : (
                           <button
-                            className="btn hidden lg:block"
                             onClick={handleSubmit}
+                            disabled={isLoading} // Disable button while loading
+                            className={`btn flex items-center gap-2 ${
+                              isLoading ? "opacity-50 cursor-not-allowed" : ""
+                            }`}
                           >
-                            Submit
+                            {isLoading ? (
+                              <span className="loader" /> // You can use a loader component or spinner
+                            ) : (
+                              <>
+                                Submit
+                                <IoIosArrowRoundForward />
+                              </>
+                            )}
                           </button>
                         )}
                       </div>
@@ -1258,14 +1284,14 @@ const StaperForm: React.FC = () => {
                       </button>
                       <button
                         onClick={handleSubmit}
-                        disabled={!pricingAgreement}
+                        disabled={!pricingAgreement || isLoading} // Disable when loading
                         className={`btn hidden lg:block ${
-                          !pricingAgreement
+                          !pricingAgreement || isLoading
                             ? "opacity-50 cursor-not-allowed"
                             : ""
                         }`}
                       >
-                        Submit
+                        {isLoading ? "Processing..." : "Submit"}
                       </button>
                     </div>
                   </div>
