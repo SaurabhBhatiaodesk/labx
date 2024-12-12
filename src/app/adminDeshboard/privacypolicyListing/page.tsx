@@ -26,7 +26,7 @@ const PrivacyPolicyList: React.FC = () => {
   useEffect(() => {
     const fetchPolicies = async () => {
       try {
-        const response = await fetch("http://localhost:7000/api/admin/privacypolicy");
+        const response = await fetch("https://labxbackend.labxrepair.com.au/api/admin/privacypolicy");
 
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
@@ -68,7 +68,7 @@ const PrivacyPolicyList: React.FC = () => {
     setShowModal(false);
 
     try {
-      const response = await fetch(`http://localhost:7000/api/admin/privacypolicy/${deleteId}`, {
+      const response = await fetch(`https://labxbackend.labxrepair.com.au/api/admin/privacypolicy/${deleteId}`, {
         method: "DELETE",
       });
 
