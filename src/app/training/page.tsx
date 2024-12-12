@@ -39,6 +39,7 @@ const Training = () => {
           backgroundImage="/Images/BannerImages/traningback.png"
           AdminImage="/Images/adminimage.png"
               link="/contact-us"
+              buttonname='Request a Quote'
         />
         <CourseHighlights/>
         <Form />

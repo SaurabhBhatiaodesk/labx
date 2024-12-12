@@ -348,6 +348,7 @@ const Price = () => {
           backgroundImage="/Images/BannerImages/price.png"
           AdminImage="/Images/money.png"
           link="/price"
+          buttonname="Request a Quote"
         />
         <section className="pt-8">
             <div className="max-container">
