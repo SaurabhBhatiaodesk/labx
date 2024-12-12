@@ -4,6 +4,7 @@ import checkmark from "../../../public/Images/icons/checkmark.svg";
 import moniter from "../../../public/Images/icons/monitor.svg";
 import arrowright from  "../../../public/Images/icons/arrowright.svg";
 import clockbig from  "../../../public/Images/icons/clockbig.svg"
+import Line from "../../../public/Images/about/leap.svg";
 
 interface TraningWillLearn {
   title: string;
@@ -37,35 +38,43 @@ function TraningWillLearn({
 }: TraningWillLearn) {
   return (
     <>
-      <div className="container py-4 lg:py-[30px]">
-        <div className="grid xl:grid-cols-[4fr_2fr] lg:grid-cols-2 gap-4 ">
-          <div className="space-y-4">
-            <h2>{title}</h2>
+      <div className="container py-4 lg:py-[30px] space-y-2 lg:space-y-4">
+      <h2 className="text-center">{title}</h2>
+            <Image
+              height="300"
+              width="500"
+              src={Line}
+              alt=""
+              className="pb-3 m-auto"
+            />
+        <div className="grid xl:grid-cols-[6fr_2fr] lg:grid-cols-2 gap-4 ">
+          <div className="">
+           
             <div>
               <div className="flex gap-2 items-start">
                 <Image src={checkmark} alt="" />
                
                 <p>
-                  <strong className="text-[22px]">{paramtitle1} </strong> {param1}
+                  <strong className="text-[22px]  text-[#EDE574]">{paramtitle1} :</strong> {param1}
 
-                  
+
                 </p>
               </div>
               <div className="flex gap-2 items-start">
                 <Image src={checkmark} alt="" />
                 <p>
-                <strong className="text-[22px]">{paramtitle2} </strong>  {param2}
+                <strong className="text-[22px]  text-[#EDE574]">{paramtitle2} :</strong>  {param2}
                 </p>
               </div>
               <div className="flex gap-2 items-start">
                 <Image src={checkmark} alt="" />
                 <p>
-                <strong className="text-[22px]">{paramtitle3} </strong>  {param3}
+                <strong className="text-[22px]  text-[#EDE574]">{paramtitle3} :</strong>  {param3}
                 </p>
               </div>
             </div>
           </div>
-          <div className="grid md:grid-cols-2 gap-3 items-center">
+          <div className="grid  gap-3 items-center">
             <div className="p-3 border-[1px] border-[#8c8c8c96] rounded-[15px] items-center">
               <Image src={moniter} alt="" />
               <h3 className="mb-1"> {Course}</h3>
@@ -85,7 +94,9 @@ function TraningWillLearn({
                 </div>
                 <div className="flex gap-1">
                 <Image src={arrowright} alt=""/>
-                <li className="text-sm lg:text-base ">{Courseformate4}</li>
+                <li className="text-sm lg:text-base animate-zoomInOut  text-[#EDE574]">{Courseformate4} </li>
+
+
                 </div>
               </ul>
             </div>

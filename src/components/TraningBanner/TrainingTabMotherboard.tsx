@@ -43,11 +43,11 @@ const TraningTabBigner: React.FC = () => {
   const tabs: Tab[] = [
     {
       id: 0,
-      label: "1.Component Familiarity",
+      label: "Learn Multimeter Usage",
       content: "",
       contentf2title: "",
       contentf2:
-        "Learn to identify and work with essential motherboard components and advanced tools. With this motherboard repair course, master reballing techniques and gain hands-on experience with various components like capacitors, resistors, and ICs to enhance your repair skills.",
+        "Master the proper use of a multimeter to measure battery voltage, detect shorts, trace alignments, and troubleshoot circuits with precision.",
       contentf3title: "",
       contentf3:
         "",
@@ -58,11 +58,11 @@ const TraningTabBigner: React.FC = () => {
     },
     {
       id: 1,
-      label: "2. Schematics and Diagnostics",
+      label: "Component Familiarity ",
       content: "",
       contentf2title: "",
       contentf2:
-        "Understand how to read and interpret motherboard schematics for accurate fault tracing. Learn diagnostic methods to identify common issues like power failure, short circuits, or damaged components, boosting your troubleshooting and repair capabilities.",
+        "Gain a clear understanding of key electronic components like capacitors, resistors, ICs, and more, including their functions and uses in mobile devices.",
       contentf3title: "",
       contentf3:
         " ",
@@ -73,17 +73,17 @@ const TraningTabBigner: React.FC = () => {
     },
     {
       id: 2,
-      label: "3. Repair Techniques",
-      content: "",
+      label: "Motherboard layout learning",
+      content: "	",
       contentf2title: "",
       contentf2:
-        "Master techniques to solve problems like no image, no backlight, or underfilled chips. Learn to create jumpers and perform board-level repairs to restore function and performance, ensuring that even complex repairs are completed successfully.",
+        "Learn to identify and understand the sections of a motherboard, including areas dedicated to power, display, graphics, touch, Wi-Fi, and more.",
       contentf3title: "",
       contentf3:
-        "",
+        "1.	Mastering Schematics and Board-view Diagrams",
       contentf4title: "",
       contentf4:
-        " ",
+        "Learn to read schematics, trace tracks, interpret board-view diagrams, and utilise solution-provider software to troubleshoot and resolve hardware issues effectively.",
       contentf5title: "",
       contentf5:
         "",
@@ -93,38 +93,8 @@ const TraningTabBigner: React.FC = () => {
       link: "/coming-soon",
       image: tabimage,
     },
-    {
-      id: 3,
-      label: "4. Flex Cable and Connector Repairs",
-      content: "",
-      contentf2title: "",
-      contentf2:
-        "Develop skills to repair torn flex cables, connectors, and charging ports. Learn techniques to fix broken or damaged connectors, ensuring that your repairs restore full functionality and maintain the integrity of your device.",
-      contentf3title: "",
-      contentf3:
-        " ",
-      contentf4title: "",
-    
-     
-      button: "Get Course",
-      link: "/coming-soon",
-      image: tabimage,
-    },
-    {
-      id: 4,
-      label: "5. Device Coverage",
-      content: "",
-      contentf2title: " ",
-      contentf2:
-        "Learn how to work on a wide range of devices, from older models to the latest releases. Gain the skills to handle smartphones, tablets, and more, across various brands and technologies.",
-      contentf3title: " ",
-      contentf3:
-        " ",
-     
-      button: "Get Course",
-      link: "/coming-soon",
-      image: tabimage,
-    },
+  
+   
   ];
 
   const getGradientColor = (id: number) => {

@@ -2,6 +2,7 @@ import React from "react";
 import MainButton from "@/components/MainButton/MainButton";
 import FeeSolutionss from "../../../public/Images/FeeSolutions.png";
 import Image from "next/image";
+import Line from "../../../public/Images/about/leap.svg"
 
 const FeeSolutions = () => {
   return (
@@ -20,8 +21,9 @@ const FeeSolutions = () => {
                 />
               </div>
               <div className="p-3 lg:p-6 bg-black text-white rounded-md ">
-                <h2 className="text-3xl font-bold mb-4">
+                <h2 className="text-3xl font-bold mb-4 ">
                 Comprehensive B2B and Public Phone Repair Services
+                <Image  height="300" width="400"src={Line.src} alt="" className="pt-3" />
                 </h2>
 
               

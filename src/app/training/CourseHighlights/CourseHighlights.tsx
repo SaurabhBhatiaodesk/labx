@@ -3,6 +3,9 @@ import Image from "next/image";
 import course2 from "../../../../public/Images/course2.png";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import MainButton from "@/components/MainButton/MainButton";
+import Line from "../../../../public/Images/about/leap.svg";
+
+
 
 const CourseHighlights = () => {
   return (
@@ -20,6 +23,13 @@ const CourseHighlights = () => {
                 <h2 className="text-3xl font-bold mb-4">
                   Beginner Phone Repair Course
                 </h2>
+                <Image
+              height="500"
+              width="500"
+              src={Line}
+              alt=""
+              className="pb-3 "
+            />
                 <div className="flex gap-2 flex-wrap text-yellow-400">
                   <p className="font-semibold m-0">Duration: 5 Days</p>
                   <p className="font-semibold m-0">|</p>
@@ -72,7 +82,7 @@ const CourseHighlights = () => {
 
               <div className="relative w-full h-[300px] md:h-[550px]">
                 <Image
-                  className="object-cover rounded-[30px]"
+                 className="object-[4%_10%] object-cover rounded-[30px] border-2 border-[#EDE574] "
                   src={course2}
                   alt="Course Image"
                   fill
@@ -84,7 +94,7 @@ const CourseHighlights = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
               <div className="relative w-full h-[300px] md:h-[550px] sm-order-2">
                 <Image
-                  className="object-cover rounded-[30px]"
+                  className="object-[4%_10%] object-cover rounded-[30px] border-2 border-[#6DD5ED] "
                   src={course2}
                   alt="Course Image"
                   fill
@@ -94,6 +104,14 @@ const CourseHighlights = () => {
                 <h2 className="text-3xl font-bold mb-4">
                   Advanced Motherboard Repair – Micro Soldering (Level 1)
                 </h2>
+              
+                <Image
+              height="500"
+              width="500"
+              src={Line}
+              alt=""
+              className="pb-3 "
+            />
                 <div className="flex gap-4 text-yellow-400">
                   <p className="font-semibold">Duration: 1 Week</p>
                   <p className="font-semibold">|</p>
@@ -147,6 +165,14 @@ const CourseHighlights = () => {
                 <h2 className="text-3xl font-bold mb-4">
                   Expert Motherboard Repair – Micro Soldering (Level 2)
                 </h2>
+                
+                <Image
+              height="500"
+              width="500"
+              src={Line}
+              alt=""
+              className="pb-3 "
+            />
                 <div className="flex gap-4 text-yellow-400">
                   <p className="font-semibold">Duration: 1 Week</p>
                   <p className="font-semibold">|</p>
@@ -209,7 +235,7 @@ const CourseHighlights = () => {
               </div>
               <div className="relative w-full h-[300px] md:h-[550px] sm-order-2 lg:order-2">
                 <Image
-                  className="object-cover rounded-[30px]"
+                 className="object-[4%_10%] object-cover rounded-[30px] border-2 border-[#FF9966] "
                   src={course2}
                   alt="Course Image"
                   fill
@@ -220,7 +246,7 @@ const CourseHighlights = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
               <div className="relative w-full h-[300px] md:h-[550px] sm-order-2">
                 <Image
-                  className="object-cover rounded-[30px]"
+                className="object-[4%_10%] object-cover rounded-[30px] border-2 border-[#799F0C] "
                   src={course2}
                   alt="Course Image"
                   fill
@@ -230,6 +256,14 @@ const CourseHighlights = () => {
                 <h2 className="text-3xl font-bold mb-4">
                   Master Motherboard Repair – Micro Soldering (Level 3)
                 </h2>
+                
+                <Image
+              height="500"
+              width="500"
+              src={Line}
+              alt=""
+              className="pb-3 "
+            />
                 <div className="flex gap-4 text-yellow-400">
                   <p className="font-semibold">Duration: 5 Days</p>
                   <p className="font-semibold">|</p>
@@ -275,6 +309,14 @@ const CourseHighlights = () => {
                 <h2 className="text-3xl font-bold mb-4">
                   Professional Phone Screen Refurbishing Course
                 </h2>
+                
+                <Image
+              height="500"
+              width="500"
+              src={Line}
+              alt=""
+              className="pb-3 "
+            />
                 <div className="flex gap-4 text-yellow-400">
                   <p className="font-semibold">Duration: 5 Days</p>
                   <p className="font-semibold">|</p>
@@ -313,7 +355,7 @@ const CourseHighlights = () => {
               </div>
               <div className="relative w-full h-[300px] md:h-[550px] order-2 lg:order-2">
                 <Image
-                  className="object-cover rounded-[30px]"
+                   className="object-[4%_10%] object-cover rounded-[30px] border-2 border-[#A044FF] "
                   src={course2}
                   alt="Course Image"
                   fill

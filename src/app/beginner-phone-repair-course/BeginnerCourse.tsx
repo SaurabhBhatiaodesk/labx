@@ -8,6 +8,7 @@ import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
 import BiginnerChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/BiginnerChooseLab";
 import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
 import React from "react";
+import TraningTabBignerThird from "@/components/TraningBanner/TraningTabBignerThird";
 
 const BeginnerCourse = () => {
   const accordionData = [
@@ -57,8 +58,8 @@ const BeginnerCourse = () => {
         link="/coming-soon"
         courseName="Beginner"
         courseRating="4.7"
-        courseHour="40 Hours"
-        Duration=" 5 Days"
+        courseHour="25 Hours"
+        Duration="5 Days"
         Price="$1249 (Includes a free toolkit for each student)"
       />
 
@@ -83,6 +84,7 @@ const BeginnerCourse = () => {
       <TraningTabBigner />
 
       <TraningTabBignersecond />
+      <TraningTabBignerThird/>
       <TraningCourseInstructors />
       <BeginnerPhoneRepaiCourseSale />
       <BiginnerChooseLab />

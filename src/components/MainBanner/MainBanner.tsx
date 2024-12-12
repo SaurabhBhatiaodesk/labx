@@ -2,7 +2,6 @@
 import "./MainBanner.css";
 import Image from "next/image";
 import MainButton from "../MainButton/MainButton";
-
 import bannerimage from "../../../public/Images/Home/bannerimage-top.png";
 import mainb1 from "../../../public/Images/Home/banner3.svg";
 import mainb4 from "../../../public/Images/Home/mainb4.png";
@@ -18,20 +17,19 @@ import { Pagination } from "swiper/modules";
 import Link from "next/link";
 import { Autoplay, Navigation } from "swiper/modules";
 import mainf1 from "../../../public/Images/BannerImages/mainf1.png";
-import mainf2 from "../../../public/Images/BannerImages/mainf2.png";
-import mainf3 from "../../../public/Images/BannerImages/mainf3.png";
+import mainf2 from "../../../public/Images/BannerImages/mainf3.png";
+import mainf3 from "../../../public/Images/BannerImages/mainf2.png";
 import mainf4 from "../../../public/Images/BannerImages/mainf4.png";
-
-
-
 
 export default function MainBanner() {
   const [backgroundImage, setBackgroundImage] = useState(mainf1); // State to track background image
+  const [isPaused, setIsPaused] = useState(false); // State to control autoplay pause
 
   useEffect(() => {
-    AOS.init({ duration: 1000 }); // Initialize AOS
-    AOS.refresh(); // Refresh AOS for updated DOM
+    AOS.init({ duration: 1000 }); 
+    AOS.refresh();
   }, []);
+
   const Paginationback = ["#FF0000", "#FF9966", "#6DD5ED", "#A044FF"];
   const backgroundImages = [mainf1, mainf2, mainf3, mainf4];
 
@@ -74,6 +72,7 @@ export default function MainBanner() {
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
+              pauseOnMouseEnter: true, // Automatically pause on hover
             }}
             speed={1000}
             onSlideChange={handleSlideChange} // Update background image and trigger animation
@@ -82,6 +81,8 @@ export default function MainBanner() {
               1440: { slidesPerView: 1 },
               1600: { slidesPerView: 1 },
             }}
+            onMouseEnter={() => setIsPaused(true)} // Pause autoplay when mouse enters
+            onMouseLeave={() => setIsPaused(false)} // Resume autoplay when mouse leaves
           >
             {/* Slide 1 */}
             <SwiperSlide>
@@ -108,8 +109,6 @@ export default function MainBanner() {
                       MainButton="Request a Quote"
                       link="/contact-us"
                     />
-
-                    {/* <button className="btn1"> hello</button> */}
                   </div>
                 </div>
                 <div className="w-full">
@@ -121,41 +120,7 @@ export default function MainBanner() {
                 </div>
               </div>
             </SwiperSlide>
-
             {/* Slide 2 */}
-            <SwiperSlide>
-              <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-start xl:py-5">
-                <div>
-                  <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
-                    Quick Repairs, Quality Service
-                    <span className="text-[#FF9966]">
-                      {" "}
-                      – Only at LabX Repair!
-                    </span>
-                  </h1>
-                  <p>
-                    {` LabX Repair goes beyond standard mobile repair! We're your
-                    complete platform for top-quality repairs, professional
-                    training, and community support. From iPhone and smartphone
-                    repairs to purchasing parts and skill-building courses, LabX
-                    Repair is here to meet all your mobile needs.`}
-                  </p>
-                  <div className="my-4 xl:my-10">
-                    <MainButton MainButton="Get Started" link="/coming-soon"  color="bg-[#FF9966]" />
-                  </div>
-                </div>
-                <div className="w-full">
-                  <Image
-                    className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
-                    src={mainb2}
-                    alt="Quick Repairs"
-
-                  />
-                </div>
-              </div>
-            </SwiperSlide>
-
-            {/* Slide 3 */}
             <SwiperSlide>
               <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-start xl:py-5">
                 <div>
@@ -190,33 +155,64 @@ export default function MainBanner() {
                 </div>
               </div>
             </SwiperSlide>
-
+            {/* Slide 3 */}
+            <SwiperSlide>
+              <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-start xl:py-5">
+                <div>
+                  <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
+                    Quick Repairs, Quality Service
+                    <span className="text-[#FF9966]">
+                      {" "}
+                      – Only at LabX Repair!
+                    </span>
+                  </h1>
+                  <p>
+                    {` LabX Repair goes beyond standard mobile repair! We're your
+                    complete platform for top-quality repairs, professional
+                    training, and community support. From iPhone and smartphone
+                    repairs to purchasing parts and skill-building courses, LabX
+                    Repair is here to meet all your mobile needs.`}
+                  </p>
+                  <div className="my-4 xl:my-10">
+                    <MainButton MainButton="Start Repair" link="/coming-soon"  color="bg-[#FF9966]" />
+                  </div>
+                </div>
+                <div className="w-full">
+                  <Image
+                    className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
+                    src={mainb2}
+                    alt="Quick Repairs"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
             {/* Slide 4 */}
             <SwiperSlide>
               <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-start xl:py-5">
                 <div>
                   <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
                     Fix Your Device, Learn to Repair
-                    <span className="text-[#A044FF]"> – LabX Repair!</span>
+                    <span className="text-[#A044FF]">
+                      {" "}
+                      – LabX Repair Has You Covered!
+                    </span>
                   </h1>
                   <p>
-                    {`At LabX Repair, we do more than fix phones! We're a
-                    full-service platform with expert repair solutions, quality
-                    repair parts, and professional training programs. Choose
-                    LabX Repair to upgrade your device or advance your
-                    skills—your go-to destination for all things mobile repair.`}
+                    {`LabX Repair is the platform for expert mobile phone repairs
+                    and advanced repair training. With quality service and
+                    trusted training programs, we make repairing your device
+                    easier while empowering you to repair and fix mobile phones
+                    on your own.`}
                   </p>
                   <div className="my-4 xl:my-10">
-
-                    <MainButton MainButton="Join Us Now" link="/contact-us" color="bg-[#A044FF]" />
-
+                    <MainButton MainButton="Request a Quote" link="/contact-us" color="bg-[#A044FF]" />
                   </div>
                 </div>
                 <div className="w-full">
                   <Image
                     className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
                     src={mainb4}
-                    alt="Device Repair"
+                    alt="Fix Your Device"
                   />
                 </div>
               </div>
@@ -224,7 +220,6 @@ export default function MainBanner() {
           </Swiper>
         </div>
       </section>
-
     </>
   );
 }

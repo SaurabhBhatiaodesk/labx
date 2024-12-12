@@ -470,7 +470,7 @@ const StaperForm: React.FC = () => {
             <MainHeading Heading="LabX Mail-In Repair Submission Form" />
           </div>
 
-          <div className="max-w-5xl mx-auto p-4 ">
+          <div className="max-w-5xl mx-auto p-4 " id="stapergk">
             <div className="grid grid-cols-4 mb-8  relative gaurav-line">
               {[
                 "Personal Details",

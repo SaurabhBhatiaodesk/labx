@@ -34,7 +34,7 @@ const Training = () => {
     <>
       <div>
         <Breadcrumb
-          pageName="Master the Art of Mobile Repair"
+          pageName="Master the Art of Mobile Phone Repair"
           pageDescription="Join LabX's comprehensive mobile phone repairing course to acquire essential skills and certifications. Transform your passion for technology into a rewarding career, and make a difference in people’s lives through mobile phone repair services!"
           backgroundImage="/Images/BannerImages/traningback.png"
           AdminImage="/Images/adminimage.png"

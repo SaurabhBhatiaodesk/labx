@@ -380,7 +380,7 @@ const RecentNews: React.FC = () => {
       <div className="container">
         <div className="py-5 xl:py-8" data-aos="fade-up">
 
-        <MainHeading Heading="Recent News"/>
+        <MainHeading Heading="LabX Mobile Phone Repair: Latest Updates & Insights"/>
           <p className="text-center text-lg mt-2 mb-6">
             Explore our latest blogs for insights, news, and expert tips on
             mobile phone repair and technology. Stay updated with LabX’s tech
