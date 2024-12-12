@@ -337,7 +337,7 @@ const StaperForm: React.FC = () => {
   };
 
   const handleSubmit = async () => {
-    // setIsLoading(true);
+    setIsLoading(true);
     const payload = {
       personalDetails,
       deviceDetails,
@@ -345,7 +345,6 @@ const StaperForm: React.FC = () => {
       shippingDetails,
       pricingAgreement,
     };
-    console.log("payloadd", payload);
     try {
       const response = await axios.post(
         "https://labxbackend.labxrepair.com.au/api/repair_info",
@@ -356,7 +355,6 @@ const StaperForm: React.FC = () => {
           },
         }
       );
-      console.log("response.json()", response.data);
       if (response.status === 200 || response.status == 201) {
         const { orderReferenceId } = response.data.data; // Assuming the orderReferenceId is returned in the response data
 
@@ -376,6 +374,8 @@ const StaperForm: React.FC = () => {
     } catch (error) {
       console.error("Error submitting the form:", error);
       alert("An error occurred while submitting the form.");
+    } finally {
+      setIsLoading(false); // Hide loader after processing
     }
   };
 
@@ -423,6 +423,34 @@ const StaperForm: React.FC = () => {
 
   return (
     <>
+      {isLoading && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            zIndex: 9999,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              width: "50px",
+              height: "50px",
+              border: "5px solid #f3f3f3",
+              borderTop: "5px solid #3498db",
+              borderRadius: "50%",
+              animation: "spin 1s linear infinite",
+            }}
+          ></div>
+        </div>
+      )}
+
       <section className="steper-form-section-os">
         <div className="container gaurav-bg-trans ">
           <div className="my-5">
@@ -1175,22 +1203,21 @@ const StaperForm: React.FC = () => {
                           </button>
                         ) : (
                           <button
-                          onClick={handleSubmit}
-                          disabled={isLoading} // Disable button while loading
-                          className={`btn flex items-center gap-2 ${
-                            isLoading ? "opacity-50 cursor-not-allowed" : ""
-                          }`}
-                        >
-                          {isLoading ? (
-                            <span className="loader" /> // You can use a loader component or spinner
-                          ) : (
-                            <>
-                              Submit
-                              <IoIosArrowRoundForward />
-                            </>
-                          )}
-                        </button>
-
+                            onClick={handleSubmit}
+                            disabled={isLoading} // Disable button while loading
+                            className={`btn flex items-center gap-2 ${
+                              isLoading ? "opacity-50 cursor-not-allowed" : ""
+                            }`}
+                          >
+                            {isLoading ? (
+                              <span className="loader" /> // You can use a loader component or spinner
+                            ) : (
+                              <>
+                                Submit
+                                <IoIosArrowRoundForward />
+                              </>
+                            )}
+                          </button>
                         )}
                       </div>
                     </div>
@@ -1257,14 +1284,14 @@ const StaperForm: React.FC = () => {
                       </button>
                       <button
                         onClick={handleSubmit}
-                        disabled={!pricingAgreement}
+                        disabled={!pricingAgreement || isLoading} // Disable when loading
                         className={`btn hidden lg:block ${
-                          !pricingAgreement
+                          !pricingAgreement || isLoading
                             ? "opacity-50 cursor-not-allowed"
                             : ""
                         }`}
                       >
-                        Submit
+                        {isLoading ? "Processing..." : "Submit"}
                       </button>
                     </div>
                   </div>
