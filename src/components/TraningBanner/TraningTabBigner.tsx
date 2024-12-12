@@ -95,7 +95,7 @@ const TraningTabBigner: React.FC = () => {
     },
     {
       id: 3,
-      label: "Charging Port Repairs",
+      label: "Charging Port Replacement",
       content: "",
       contentf2title: "",
       contentf2:

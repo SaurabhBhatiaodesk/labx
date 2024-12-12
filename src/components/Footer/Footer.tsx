@@ -2,16 +2,20 @@
 import React from "react";
 import Image from "next/image";
 import labx from "../../../public/Images/Brand logos/Frame.svg";
-import { SlSocialFacebook } from "react-icons/sl";
+import { SlCallOut, SlSocialFacebook } from "react-icons/sl";
 import { FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import Link from "next/link";
-import { IoCallOutline } from "react-icons/io5";
+import { IoCallOutline, IoHomeOutline } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
 import { CiMail } from "react-icons/ci";
 import MobileFooterMenue from "./MobileFooterMenue";
 import sendicon from "../../../public/Images/icons/send.svg";
+import { FiMail } from "react-icons/fi";
+import homefooter from "../../../public/Images/icons/homefooter.svg"
+import traning from "../../../public/Images/icons/traning.svg"
+
 
 const Footer = () => {
   return (
@@ -30,23 +34,29 @@ const Footer = () => {
                     provider in Australia
                   </p>
                   <div className="flex gap-3 mt-5">
-                  <Link href='https://www.facebook.com/profile.php?id=61568955864034' target="blank"> 
-                    <SlSocialFacebook
-                      className="hover:scale-110 transition-transform duration-200"
-                      fontSize={30}
-                    />
+                    <Link
+                      href="https://www.facebook.com/profile.php?id=61568955864034"
+                      target="blank"
+                    >
+                      <SlSocialFacebook
+                        className="hover:scale-110 transition-transform duration-200"
+                        fontSize={30}
+                      />
                     </Link>
-                    <Link href='https://www.instagram.com/labxrepair/' target="blank"> 
-                    <FaInstagram
-                      className="hover:scale-110 transition-transform duration-200"
-                      fontSize={30}
-                    />
-                    </Link> 
-                    <Link href='https://x.com/LabxRepair' target="blank">
-                    <FaXTwitter
-                      className="hover:scale-110 transition-transform duration-200"
-                      fontSize={30}
-                    />
+                    <Link
+                      href="https://www.instagram.com/labxrepair/"
+                      target="blank"
+                    >
+                      <FaInstagram
+                        className="hover:scale-110 transition-transform duration-200"
+                        fontSize={30}
+                      />
+                    </Link>
+                    <Link href="https://x.com/LabxRepair" target="blank">
+                      <FaXTwitter
+                        className="hover:scale-110 transition-transform duration-200"
+                        fontSize={30}
+                      />
                     </Link>
                     <Link
                       href="https://www.youtube.com/@PRCRepair"
@@ -195,7 +205,7 @@ const Footer = () => {
                           </li>
                         </Link>
                       </div>
-                     
+
                       <div>
                         <Link href="/Terms_and_Conditions">
                           <li className="relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
@@ -299,34 +309,40 @@ const Footer = () => {
                 in Australia
               </p>
               <div className="flex gap-3 mt-5 justify-center">
-              <Link href='https://www.facebook.com/profile.php?id=61568955864034' target="blank"> 
-                    <SlSocialFacebook
-                      className="hover:scale-110 transition-transform duration-200"
-                      fontSize={30}
-                    />
-                    </Link>
-                    <Link href='https://www.instagram.com/labxrepair/' target="blank"> 
-                    <FaInstagram
-                      className="hover:scale-110 transition-transform duration-200"
-                      fontSize={30}
-                    />
-                    </Link> 
-                    <Link href='https://x.com/LabxRepair' target="blank">
-                    <FaXTwitter
-                      className="hover:scale-110 transition-transform duration-200"
-                      fontSize={30}
-                    />
-                    </Link>
-                    <Link
-                      href="https://www.youtube.com/@PRCRepair"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaYoutube
-                        className="hover:scale-110 transition-transform duration-200"
-                        fontSize={30}
-                      />
-                    </Link>
+                <Link
+                  href="https://www.facebook.com/profile.php?id=61568955864034"
+                  target="blank"
+                >
+                  <SlSocialFacebook
+                    className="hover:scale-110 transition-transform duration-200"
+                    fontSize={30}
+                  />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/labxrepair/"
+                  target="blank"
+                >
+                  <FaInstagram
+                    className="hover:scale-110 transition-transform duration-200"
+                    fontSize={30}
+                  />
+                </Link>
+                <Link href="https://x.com/LabxRepair" target="blank">
+                  <FaXTwitter
+                    className="hover:scale-110 transition-transform duration-200"
+                    fontSize={30}
+                  />
+                </Link>
+                <Link
+                  href="https://www.youtube.com/@PRCRepair"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaYoutube
+                    className="hover:scale-110 transition-transform duration-200"
+                    fontSize={30}
+                  />
+                </Link>
               </div>
 
               <MobileFooterMenue />
@@ -340,7 +356,7 @@ const Footer = () => {
               backgroundColor: "#42425a",
             }}
           />
-          <section className="copywrite py-5 xl:py-8">
+          <section className="copywrite py-5 pb-10 xl:py-8">
             <div className="flex-col flex justify-between xl:flex-row">
               <div className="">
                 <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center ">
@@ -355,6 +371,38 @@ const Footer = () => {
                 </p>
               </div>
             </div>
+          </section>
+<section className="block lg:hidden">
+          <div className="py-3 bg-black  relative z-[100]  ">
+            <div className="grid grid-cols-4 justify-between gap-5 footer-app py-3 fixed bottom-0 w-full left-0 right-0 bg-black border-t-1 border-[#4a4a4a77] ">
+              <Link href="mailto:bharat@labxrepair.com.au">
+              <div className="flex flex-col items-center">
+                <FiMail fontSize={24} />
+                <span className="text-[12px] tracking-[1.5px] ">Mail</span>
+              </div>
+              </Link>
+              <Link href="/training">
+              <div className="flex flex-col items-center">
+                <Image  className="w-[27px]" src={traning} alt="" />
+                <span className="text-[12px] tracking-[1.5px] ">Training</span>
+              </div>
+              </Link>
+              <Link href="/">
+              <div className="flex flex-col items-center">
+                <Image className="w-[24px]" src={homefooter} alt="" />
+                <span className="text-[12px] tracking-[1.5px] ">Home</span>
+              </div>
+              </Link>
+              <Link href="tel:+61455777077">
+              <div className="flex flex-col items-center">
+                <SlCallOut fontSize={24} />
+                <span className="text-[12px] tracking-[1.5px] ">Call</span>
+              </div>
+              </Link>
+            </div>
+          </div>
+          
+          
           </section>
         </div>
       </div>
