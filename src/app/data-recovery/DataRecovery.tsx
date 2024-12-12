@@ -14,6 +14,7 @@ const DataRecovery = () => {
             backgroundImage="/Images/BannerImages/mailinrepair.png"
             AdminImage="/Images/Data Recovery side.png"
              link="/contact-us"
+             buttonname='Request a Quote'
           />
         </div>
 

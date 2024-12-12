@@ -138,14 +138,14 @@ export default function Productswiper() {
         {/* <button className="btn  flex items-center ">VISIT STORE <GoArrowRight fontSize={25}/></button> */}
         <Link href="/coming-soon">
           <button className="btn  flex items-center">
-           
+          <IoCart fontSize="24px" style={{marginRight:"3px",}} />
             VISIT STORE
             {/* <Lottie
               animationData={lottiearrow}
               style={{ width: 30, height: 30 }}
               className="lottie-icon"
             /> */}
-          <IoCart style={{ width: '25px', height: '30px',}} />
+          <IoCart fontSize="24px" />
           </button>
         </Link>
       </div>

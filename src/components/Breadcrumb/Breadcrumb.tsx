@@ -10,7 +10,8 @@ interface BreadcrumbProps {
   pageDescription: string;
   backgroundImage: string;
   AdminImage: string;
-  link?: any; // Add this prop to dynamically change the link
+  link?: any; 
+  buttonname?:string;
 }
 
 function Breadcrumb({
@@ -18,7 +19,8 @@ function Breadcrumb({
   pageDescription,
   backgroundImage,
   AdminImage,
-  link, // Destructure the link prop
+  link, 
+  buttonname, // Destructure the link prop
 }: BreadcrumbProps) {
   const [isBrowser, setIsBrowser] = useState(false);
 
@@ -84,11 +86,11 @@ function Breadcrumb({
                     className="btn"
                     onClick={handleScrollToTarget}
                   >
-                    Request a Quote
+                   {buttonname}
                   </button>
                 ) : (
                   <Link href={link}>
-                    <button className="btn">Request a Quote</button>
+                    <button className="btn">{buttonname}</button>
                   </Link>
                 )}
               </div>

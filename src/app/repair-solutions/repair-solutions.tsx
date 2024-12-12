@@ -20,6 +20,7 @@ const page = () => {
             backgroundImage="/Images/BannerImages/repair.png"
             AdminImage="/Images/repair-ph.png"
              link="/contact-us"
+                buttonname="Request a Quote"
           />
   <div>
 

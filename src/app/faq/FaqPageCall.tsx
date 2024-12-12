@@ -186,6 +186,7 @@ const FaqPageCall = () => {
         backgroundImage="/Images/BannerImages/about.png"
         AdminImage="/Images/faq.svg"
         link="/contact-us"
+           buttonname="Request a Quote"
       />
      <div className=' hidden lg:block'>
       <Faqinner  heading="Frequently Asked Questions" categories={faqData}  />

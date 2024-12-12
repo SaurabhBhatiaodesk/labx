@@ -16,6 +16,7 @@ const WhatWeDo = () => {
           backgroundImage="/Images/BannerImages/about.png"
           AdminImage="/Images/adminimage.png"
           link="/coming-soon"
+             buttonname="Request a Quote"
         />
       </div>
       <WhatBlock/>

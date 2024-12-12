@@ -37,6 +37,7 @@ const Page = () => {
           backgroundImage="/Images/BannerImages/price.png"
           AdminImage="/Images/screen-refurbishing.png"
           link="/price"
+          buttonname="View Pricing"
         />
         <div className="bg__shade relative pb-8">
           <div className="container text-center ">
