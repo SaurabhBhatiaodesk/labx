@@ -20,16 +20,25 @@ const CourseHighlights = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
               <div className="p-2 lg:p-2 bg-black text-white rounded-md">
-                <h2 className="text-3xl font-bold mb-4">
+                <h2 className="text-3xl font-bold mb-4 w-fit">
                   Beginner Phone Repair Course
+                  <svg
+        className="relative top-full left-0"
+        width="100%"
+        height="20"
+        viewBox="0 0 100 30"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0 10 Q50 20 100 10"
+          fill="none"
+          stroke="#fff563"
+          strokeWidth="6"
+        />
+      </svg>
                 </h2>
-                <Image
-              height="500"
-              width="500"
-              src={Line}
-              alt=""
-              className="pb-3 "
-            />
+                
                 <div className="flex gap-2 flex-wrap text-yellow-400">
                   <p className="font-semibold m-0">Duration: 5 Days</p>
                   <p className="font-semibold m-0">|</p>
@@ -101,17 +110,32 @@ const CourseHighlights = () => {
                 />
               </div>
               <div className="p-2 lg:p-2 bg-black text-white rounded-md">
-                <h2 className="text-3xl font-bold mb-4">
+                <h2 className="text-3xl font-bold mb-4 w-fit">
                   Advanced Motherboard Repair – Micro Soldering (Level 1)
+                  <svg
+        className="relative top-full left-0"
+        width="100%"
+        height="20"
+        viewBox="0 0 100 30"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0 10 Q50 20 100 10"
+          fill="none"
+          stroke="#6DD5ED"
+          strokeWidth="6"
+        />
+      </svg>
                 </h2>
               
-                <Image
+                {/* <Image
               height="500"
               width="500"
               src={Line}
               alt=""
               className="pb-3 "
-            />
+            /> */}
                 <div className="flex gap-4 text-yellow-400">
                   <p className="font-semibold">Duration: 1 Week</p>
                   <p className="font-semibold">|</p>
@@ -162,17 +186,32 @@ const CourseHighlights = () => {
             {/* course 2 */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
               <div className="order-2 lg:order-1 p-2 lg:p-2 bg-black text-white rounded-md">
-                <h2 className="text-3xl font-bold mb-4">
+                <h2 className="text-3xl font-bold mb-4 w-fit">
                   Expert Motherboard Repair – Micro Soldering (Level 2)
+                  <svg
+        className="relative top-full left-0"
+        width="100%"
+        height="20"
+        viewBox="0 0 100 30"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0 10 Q50 20 100 10"
+          fill="none"
+          stroke="#FF9966"
+          strokeWidth="6"
+        />
+      </svg>
                 </h2>
                 
-                <Image
+                {/* <Image
               height="500"
               width="500"
               src={Line}
               alt=""
               className="pb-3 "
-            />
+            /> */}
                 <div className="flex gap-4 text-yellow-400">
                   <p className="font-semibold">Duration: 1 Week</p>
                   <p className="font-semibold">|</p>
@@ -255,15 +294,30 @@ const CourseHighlights = () => {
               <div className="p-2 lg:p-2 bg-black text-white rounded-md">
                 <h2 className="text-3xl font-bold mb-4">
                   Master Motherboard Repair – Micro Soldering (Level 3)
+                  <svg
+        className="relative top-full left-0"
+        width="100%"
+        height="20"
+        viewBox="0 0 100 30"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0 10 Q50 20 100 10"
+          fill="none"
+          stroke="#799F0C"
+          strokeWidth="6"
+        />
+      </svg>
                 </h2>
                 
-                <Image
+                {/* <Image
               height="500"
               width="500"
               src={Line}
               alt=""
               className="pb-3 "
-            />
+            /> */}
                 <div className="flex gap-4 text-yellow-400">
                   <p className="font-semibold">Duration: 5 Days</p>
                   <p className="font-semibold">|</p>
@@ -306,17 +360,32 @@ const CourseHighlights = () => {
             {/* course 0 */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
               <div className="order-2 lg:order-1 p-2 lg:p-2 bg-black text-white rounded-md">
-                <h2 className="text-3xl font-bold mb-4">
+                <h2 className="text-3xl font-bold mb-4 w-fit">
                   Professional Phone Screen Refurbishing Course
+                  <svg
+        className="relative top-full left-0"
+        width="100%"
+        height="20"
+        viewBox="0 0 100 30"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0 10 Q50 20 100 10"
+          fill="none"
+          stroke="#cf2362a7"
+          strokeWidth="6"
+        />
+      </svg>
                 </h2>
                 
-                <Image
+                {/* <Image
               height="500"
               width="500"
               src={Line}
               alt=""
               className="pb-3 "
-            />
+            /> */}
                 <div className="flex gap-4 text-yellow-400">
                   <p className="font-semibold">Duration: 5 Days</p>
                   <p className="font-semibold">|</p>
@@ -355,7 +424,7 @@ const CourseHighlights = () => {
               </div>
               <div className="relative w-full h-[300px] md:h-[550px] order-2 lg:order-2">
                 <Image
-                   className="object-[4%_10%] object-cover rounded-[30px] border-2 border-[#A044FF] "
+                   className="object-[4%_10%] object-cover rounded-[30px] border-2 border-[#cf2362a7] "
                   src={course2}
                   alt="Course Image"
                   fill

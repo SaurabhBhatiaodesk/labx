@@ -459,8 +459,9 @@ const StaperForm: React.FC = () => {
               style={{ boxShadow: "10px 15px 0px 3px #EDE574" }}
             >
               <span className="text-[16px]">
+            
                 Please Note: Our current turnaround time for regular service is
-                4-8 weeks. Expedited service is 1-9 days. It is the customer’s
+                3-4 weeks. Expedited service is 1-9 days. It is the customer’s
                 responsibility to reach out for a quote ahead of time, if one is
                 needed.
               </span>
@@ -1277,7 +1278,7 @@ const StaperForm: React.FC = () => {
 
                     <div className="flex justify-between mt-4">
                       <button
-                        className="btn hidden lg:block"
+                        className="btn "
                         onClick={handlePrevStep}
                       >
                         Previous
@@ -1285,7 +1286,7 @@ const StaperForm: React.FC = () => {
                       <button
                         onClick={handleSubmit}
                         disabled={!pricingAgreement || isLoading} // Disable when loading
-                        className={`btn hidden lg:block ${
+                        className={`btn ${
                           !pricingAgreement || isLoading
                             ? "opacity-50 cursor-not-allowed"
                             : ""

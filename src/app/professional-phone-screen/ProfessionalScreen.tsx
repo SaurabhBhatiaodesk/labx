@@ -54,7 +54,7 @@ const ProfessionalScreen = () => {
     instructorName: "Bharat Dhingra & Team",
     instructorImage: "/Images/CourseInstructors.png", // Update with the correct image path
     courseRating: 4.7,
-    courseDuration: "40 Hours",
+    courseDuration: "25 Hours",
     personsMentoredTarget: 10,
     workshopsAttendedTarget: 500,
     coachingCertificatesTarget: 9,
@@ -76,7 +76,7 @@ const ProfessionalScreen = () => {
         link="/coming-soon"
         courseName="Professional Phone Screen"
         courseRating="4.7"
-        courseHour="40 Hours"
+        courseHour="25 Hours"
         Duration=" 5 Days"
         Price="$5500"
       />

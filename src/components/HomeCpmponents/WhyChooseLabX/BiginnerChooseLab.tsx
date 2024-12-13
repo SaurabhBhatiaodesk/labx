@@ -10,6 +10,7 @@ import B2BServices from "../../../../public/Images/icons/B2B Services.svg";
 import MainButton from "@/components/MainButton/MainButton";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Link from "next/link";
 
 const WhyChooseLabX: React.FC = () => {
   useEffect(() => {
@@ -69,7 +70,9 @@ const WhyChooseLabX: React.FC = () => {
                 style={{ background: section.Background }} // Set background directly
                 className="p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between"
               >
-                <a href={section.pageUrl}>
+
+                <Link href={section.pageUrl} >
+               
                   <h3 className="text-[#EDE574] xl:text-xl lg:w-[100%] m-auto mb-3">{section.title}</h3>
                   <p>{section.content}</p>
                   <p style={{
@@ -86,7 +89,7 @@ const WhyChooseLabX: React.FC = () => {
                       link={section.pageUrl}
                     />
                   </div>
-                </a>
+                  </Link>
               </div>
             ))}
           </div>

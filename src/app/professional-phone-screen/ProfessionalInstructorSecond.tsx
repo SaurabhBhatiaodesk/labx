@@ -65,9 +65,9 @@ function BeginnerPhoneRepairCourseSale() {
       <section>
         <div className="container">
           {/* Course Details */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
-            <div className="p-3 lg:p-6 bg-black text-white rounded-md">
-              <h2 className="text-3xl font-bold mb-4">
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 lg:py-6 py-3 items-center">
+            <div className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px]">
+              <h2 className="text-3xl font-bold mb-4 text-center">
               Tools and Techniques Covered
               </h2>
               <ul className="space-y-2 pb-5">
@@ -76,7 +76,7 @@ function BeginnerPhoneRepairCourseSale() {
                 {`The Screen Refurbishment Course offers hands-on learning with essential tools, including screen separators, OCA laminating equipment, vacuum laminators, and laser machines for precise repairs. Master techniques like LOCA UV glue application, ultrasonic cleaning, and polarizer film replacement. Learn to safely remove back glass and create flawless displays, equipping you with professional skills for LCD and OLED screen restoration.`}
               </p>
               </ul>
-
+              </div>
               {/* Countdown Timer */}
               {/* <div className=" flex justify-between w-full gap-2">
                 <div className="flex justify-between items-center  border-[2px] border-[#EDE574] text-black p-4 rounded-md w-full">
@@ -111,16 +111,16 @@ function BeginnerPhoneRepairCourseSale() {
                   <p className="m-0 text-[black]">SALE</p>
                 </div>
               </div> */}
-            </div>
+            
 
-            <div className="relative w-full h-[300px] md:h-[550px]">
+            {/* <div className="relative w-full h-[300px] md:h-[550px]">
               <Image
                 className="object-cover rounded-[30px]"
                 src={CourseInstructors}
                 alt="Course Image"
                 fill
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

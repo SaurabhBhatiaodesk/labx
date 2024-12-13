@@ -10,6 +10,7 @@ import B2BServices from "../../../../public/Images/icons/B2B Services.svg";
 import MainButton from "@/components/MainButton/MainButton";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Link from "next/link";
 
 const WhyChooseLabX: React.FC = () => {
   useEffect(() => {
@@ -23,7 +24,7 @@ const WhyChooseLabX: React.FC = () => {
       title: `Beginner Phone Repair Course`,
       content:"Duration: 5 Days | Price: $1249 (Includes a free toolkit for each student)",
       description: `Learn the fundamentals of mobile phone repair in our comprehensive beginner course, designed to give you hands-on experience with a wide range of repairs.`,
-      Background: "linear-gradient(74deg, rgb(86, 193, 193), rgb(0, 0, 0))",
+      Background: "linear-gradient(74deg, #fff563, #000000)",
       pageUrl: "/beginner-phone-repair-course"
     },
     {
@@ -32,7 +33,7 @@ const WhyChooseLabX: React.FC = () => {
       title: "Expert Motherboard Repair – Micro Soldering (Level 2)",
       content:"Duration: 1 Week | Price: $2800",
       description: `The Level 2 cell phone repair course builds on foundational micro soldering techniques and focuses on advanced repairs for modern devices. This phone repairing course covers..`,
-      Background: "linear-gradient(74deg, rgba(243, 85, 32, 0.753), rgb(0, 0, 0))",
+      Background: "linear-gradient(74deg, #f35520c0, rgb(0, 0, 0)",
       pageUrl:'/expert-motherboard-repair'
     },
     {
@@ -41,7 +42,7 @@ const WhyChooseLabX: React.FC = () => {
       title: "Master Motherboard Repair – Micro Soldering (Level 3)",
       content:"Duration: 5 Days | Price: $5500",
       description: `Our Level 3 Master Course is designed for experienced technicians seeking to master the most advanced techniques in mobile motherboard repair. This intensive phone repairing course covers complex repairs and data recovery, ensuring you can handle the most challenging issues in modern devices.`,
-      Background: "linear-gradient(74deg, rgba(213, 253, 51, 0.63), rgb(0, 0, 0))",
+      Background: "linear-gradient(74deg, #d5fd33a1, rgb(0, 0, 0)",
       pageUrl:'/master-motherboard-repair'
     },
     {
@@ -69,7 +70,8 @@ const WhyChooseLabX: React.FC = () => {
                 style={{ background: section.Background }} // Set background directly
                 className="p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between"
               >
-                <a href={section.pageUrl}>
+                <Link href={section.pageUrl} >
+               
                   <h3 className="text-[#EDE574] xl:text-xl lg:w-[100%] m-auto mb-3">{section.title}</h3>
                   <p>{section.content}</p>
                   <p style={{
@@ -86,7 +88,7 @@ const WhyChooseLabX: React.FC = () => {
                       link={section.pageUrl}
                     />
                   </div>
-                </a>
+                  </Link>
               </div>
             ))}
           </div>
