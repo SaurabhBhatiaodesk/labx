@@ -87,11 +87,11 @@ const BeginnerCourse = () => {
       <TraningWillLearn
         title="Course Highlights"
         Course="Course Format"
-        paramtitle1=" Hands-On Training in Micro Soldering Techniques :-"
+        paramtitle1=" Hands-On Training in Micro Soldering Techniques"
         param1="Master advanced micro soldering skills with practical, hands-on training. Learn precise soldering techniques for repairing complex motherboard circuits, ensuring accuracy and efficiency in professional repairs for modern electronic devices.
 
 "
-        paramtitle2="Comprehensive Understanding of Motherboard Components :-"
+        paramtitle2="Comprehensive Understanding of Motherboard Components"
         param2="Gain in-depth knowledge of motherboard architecture and components. Our motherboard repair course equips you to diagnose, troubleshoot, and repair intricate issues, enhancing your expertise in motherboard repair for laptops, desktops, and more.
 "
         paramtitle3="Cutting-Edge Tools and Industry Practices"
@@ -101,6 +101,8 @@ const BeginnerCourse = () => {
         Courseformate2="1 Week Duration"
         Courseformate3="Experienced Instructors"
         Courseformate4="Free Toolkit"
+         border="#d5fd33a1"
+         color="#d5fd33a1"
       />
       <FristTraningTab />
       {/* <SecondTraningTab/> */}

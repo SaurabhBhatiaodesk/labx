@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect, useRef } from "react";
 import {
   Navbar,
@@ -21,7 +21,7 @@ import Telegram_logo from "../../../public/Images/blog/Telegram_logo.svg";
 import Instagram from "../../../public/Images/blog/instagram.svg";
 import Twitter from "../../../public/Images/blog/twitter.svg";
 import { SlCallOut, SlSocialFacebook } from "react-icons/sl";
-import { FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { VscCallOutgoing } from "react-icons/vsc";
 
@@ -84,133 +84,285 @@ export default function App() {
   // Close the menu when an item is clicked (link)
   const handleMenuItemClick = () => {
     setIsMenuOpen(false); // Close the menu when an item (link) is clicked
-  }; 
+  };
 
   // Toggle function to change menu state
   const toggleMenu = () => {
-      setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen(!isMenuOpen);
   };
-  
+
   return (
     <>
-    <div className="w-full header header-component">
-    <Navbar className="text-white bg-black" isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
-    <NavbarContent className="lg:hidden" id="nav-toggle"  onClick={toggleMenu}>
-                    <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
-                    </NavbarContent>
-        <div className="w-full">
+      <div className="w-full header header-component">
+        <Navbar
+          className="text-white bg-black"
+          isBordered
+          isMenuOpen={isMenuOpen}
+          onMenuOpenChange={setIsMenuOpen}
+        >
+          <NavbarContent
+            className="lg:hidden"
+            id="nav-toggle"
+            onClick={toggleMenu}
+          >
+            <NavbarMenuToggle
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            />
+          </NavbarContent>
+          <div className="w-full">
             <div className="navbar text-pastelBlue items-center justify-between">
-                <div className="navmenu flex items-center justify-between">
-                     <NavbarContent className="flex justify-center items-center">
-                        <NavbarBrand>
-                           <Link  href="/"> 
-                            <Image src={rktaxilog} alt="Brand Logo" className="logo_LabX" />
-                            </Link>
-                         </NavbarBrand>
-                     </NavbarContent>
+              <div className="navmenu flex items-center justify-between">
+                <NavbarContent className="flex justify-center items-center">
+                  <NavbarBrand>
+                    <Link href="/">
+                      <Image
+                        src={rktaxilog}
+                        alt="Brand Logo"
+                        className="logo_LabX"
+                      />
+                    </Link>
+                  </NavbarBrand>
+                </NavbarContent>
 
                 <div className="flex gap-2 relative">
-                     
-                      <span className="showmobile">
-                      <Link href="tel:+61455777077">
+                  <span className="showmobile">
+                    <Link href="tel:+61455777077">
                       <SlCallOut fontSize="20px" />
-                      </Link>
-                      </span>     
-                    <Link className="showmobile hover:scale-110 transition-transform duration-200" href="tel:+61455777077">
-                    <PiShoppingCartSimpleLight  fontSize="20px" color="white"/>
                     </Link>
-                    </div>
+                  </span>
+                  <Link
+                    className="showmobile hover:scale-110 transition-transform duration-200"
+                    href="tel:+61455777077"
+                  >
+                    <PiShoppingCartSimpleLight fontSize="20px" color="white" />
+                  </Link>
+                </div>
 
-
-
-                        <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:flex  flex-grow justify-center`} id="nav-content">
-                    <ul className="menu menu-horizontal px-1 flex">
-                    
-                            <li> 
-                          <div className="dropdowns services_drop inline-block relative">
-                            <button className="btn__menu inline-flex items-center hover:text-yellow-200">
-                              <span className="mr-1">Services</span>
-                              <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
-                            </button>
-                            <ul className="dropdown-menus absolute hidden text-white pt-1">
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200"><Link href="/mail-in-repair" onClick={toggleMenu}>Mail In Repair</Link></li>
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200"><Link href="/training" onClick={toggleMenu}>Training </Link></li>
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200"><Link href="/b2b-repair-services" onClick={toggleMenu}>B2B Repair </Link></li>
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200"><Link href="/screen-refurbishing" onClick={toggleMenu}>Screen Refurbishment </Link></li> 
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200"><Link href="/data-recovery" onClick={toggleMenu}>Data Recovery </Link></li>
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200"><Link href="/coming-soon" onClick={toggleMenu}>Parts Store </Link></li>
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200"><Link href="/coming-soon" onClick={toggleMenu}>Repair Forum </Link></li>
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200"><Link href="/repair-solutions" onClick={toggleMenu}>Repair Solutions </Link></li>
-                            </ul>
-                          </div>
- 
-                            </li>
-                            <li><Link className="hover:text-yellow-200" href="/coming-soon" onClick={toggleMenu}>Parts Store</Link></li>
-                            <li><Link className="hover:text-yellow-200" href="/training" onClick={toggleMenu}>Training</Link></li>
-                            <li><Link className="hover:text-yellow-200" href="/screen-refurbishing" onClick={toggleMenu}>Screen Refurbishment</Link></li>
-                            <li><Link className="hover:text-yellow-200" href="/price" onClick={toggleMenu}>Price List</Link></li>
-                            <li><Link className="hover:text-yellow-200" href="/contact-us" onClick={toggleMenu}>Contact Us</Link></li>
-                            <li> 
-                          <div className="dropdown inline-block relative">
-                            <button className="btn__menu inline-flex items-center hover:text-yellow-200">
-                              <span className="mr-1">About us</span>
-                              <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
-                            </button>
-                            <ul className="dropdown-menu absolute hidden text-white pt-1">
-                            <li className="block px-4 py-2 hover:bg-gray-800"><Link className="hover:text-yellow-200" href="/about-us" onClick={toggleMenu}>About</Link></li>
-                             <li className="block px-4 py-2 hover:bg-gray-800"><Link className="hover:text-yellow-200" href="/what-we-do" onClick={toggleMenu}>What We Do</Link></li>
-                             <li className="block px-4 py-2 hover:bg-gray-800"><Link className="hover:text-yellow-200" href="/faq" onClick={toggleMenu}>FAQ </Link></li> 
-                             <li className="block px-4 py-2 hover:bg-gray-800"><Link className="hover:text-yellow-200" href="/blogs" onClick={toggleMenu}>Blogs </Link></li> 
-                            </ul>
-                          </div>
- 
-                            </li>
+                <div
+                  className={`${
+                    isMenuOpen ? "block" : "hidden"
+                  } lg:flex  flex-grow justify-center`}
+                  id="nav-content"
+                >
+                  <ul className="menu menu-horizontal px-1 flex">
+                    <li>
+                      <div className="dropdowns services_drop inline-block relative">
+                        <button className="btn__menu inline-flex items-center hover:text-yellow-200">
+                          <span className="mr-1">Services</span>
+                          <svg
+                            className="fill-current h-4 w-4"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                          >
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                          </svg>
+                        </button>
+                        <ul className="dropdown-menus absolute hidden text-white pt-1">
+                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
+                            <Link href="/mail-in-repair" onClick={toggleMenu}>
+                              Mail In Repair
+                            </Link>
+                          </li>
+                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
+                            <Link href="/training" onClick={toggleMenu}>
+                              Training{" "}
+                            </Link>
+                          </li>
+                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
+                            <Link
+                              href="/b2b-repair-services"
+                              onClick={toggleMenu}
+                            >
+                              B2B Repair{" "}
+                            </Link>
+                          </li>
+                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
+                            <Link
+                              href="/screen-refurbishing"
+                              onClick={toggleMenu}
+                            >
+                              Screen Refurbishment{" "}
+                            </Link>
+                          </li>
+                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
+                            <Link href="/data-recovery" onClick={toggleMenu}>
+                              Data Recovery{" "}
+                            </Link>
+                          </li>
+                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
+                            <Link href="/coming-soon" onClick={toggleMenu}>
+                              Parts Store{" "}
+                            </Link>
+                          </li>
+                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
+                            <Link href="/coming-soon" onClick={toggleMenu}>
+                              Repair Forum{" "}
+                            </Link>
+                          </li>
+                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
+                            <Link href="/repair-solutions" onClick={toggleMenu}>
+                              Repair Solutions{" "}
+                            </Link>
+                          </li>
                         </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <Link
+                        className="hover:text-yellow-200"
+                        href="/coming-soon"
+                        onClick={toggleMenu}
+                      >
+                        Parts Store
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="hover:text-yellow-200"
+                        href="/training"
+                        onClick={toggleMenu}
+                      >
+                        Training
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="hover:text-yellow-200"
+                        href="/screen-refurbishing"
+                        onClick={toggleMenu}
+                      >
+                        Screen Refurbishment
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="hover:text-yellow-200"
+                        href="/price"
+                        onClick={toggleMenu}
+                      >
+                        Price List
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="hover:text-yellow-200"
+                        href="/contact-us"
+                        onClick={toggleMenu}
+                      >
+                        Contact Us
+                      </Link>
+                    </li>
+                    <li>
+                      <div className="dropdown inline-block relative">
+                        <button className="btn__menu inline-flex items-center hover:text-yellow-200">
+                          <span className="mr-1">About us</span>
+                          <svg
+                            className="fill-current h-4 w-4"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                          >
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                          </svg>
+                        </button>
+                        <ul className="dropdown-menu absolute hidden text-white pt-1">
+                          <li className="block px-4 py-2 hover:bg-gray-800">
+                            <Link
+                              className="hover:text-yellow-200"
+                              href="/about-us"
+                              onClick={toggleMenu}
+                            >
+                              About
+                            </Link>
+                          </li>
+                          <li className="block px-4 py-2 hover:bg-gray-800">
+                            <Link
+                              className="hover:text-yellow-200"
+                              href="/what-we-do"
+                              onClick={toggleMenu}
+                            >
+                              What We Do
+                            </Link>
+                          </li>
+                          <li className="block px-4 py-2 hover:bg-gray-800">
+                            <Link
+                              className="hover:text-yellow-200"
+                              href="/faq"
+                              onClick={toggleMenu}
+                            >
+                              FAQ{" "}
+                            </Link>
+                          </li>
+                          <li className="block px-4 py-2 hover:bg-gray-800">
+                            <Link
+                              className="hover:text-yellow-200"
+                              href="/blogs"
+                              onClick={toggleMenu}
+                            >
+                              Blogs{" "}
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
 
-                     
-                      <div className="lg:hidden block">
-                      <div className=" flex gap-3 mt-5 justify-start pt-3">
-                      <Link href='https://www.facebook.com/profile.php?id=61568955864034' target="blank"> 
-                    <SlSocialFacebook
-                      className="hover:scale-110 transition-transform duration-200"
-                      fontSize={30}
-                    />
-                    </Link>
-                    <Link href='https://www.instagram.com/labxrepair/' target="blank"> 
-                    <FaInstagram
-                      className="hover:scale-110 transition-transform duration-200"
-                      fontSize={30}
-                    />
-                    </Link> 
-                    <Link href='https://x.com/LabxRepair' target="blank">
-                    <FaXTwitter
-                      className="hover:scale-110 transition-transform duration-200"
-                      fontSize={30}
-                    />
-                    </Link>
-                    <Link
-                      href="https://www.youtube.com/@PRCRepair"
+                  <div className="lg:hidden block">
+                    <div className=" flex gap-3 mt-5 justify-start pt-3">
+                      <Link
+                        href="https://www.facebook.com/profile.php?id=61568955864034"
+                        target="blank"
+                      >
+                        <SlSocialFacebook
+                          className="hover:scale-110 transition-transform duration-200"
+                          fontSize={30}
+                        />
+                      </Link>
+                      <Link
+                        href="https://www.instagram.com/labxrepair/"
+                        target="blank"
+                      >
+                        <FaInstagram
+                          className="hover:scale-110 transition-transform duration-200"
+                          fontSize={30}
+                        />
+                      </Link>
+                      <Link href="https://x.com/LabxRepair" target="blank">
+                        <FaXTwitter
+                          className="hover:scale-110 transition-transform duration-200"
+                          fontSize={30}
+                        />
+                      </Link>
+                      <Link
+                        href="https://www.youtube.com/@PRCRepair"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaYoutube
+                          className="hover:scale-110 transition-transform duration-200"
+                          fontSize={30}
+                        />
+                      </Link>
+                      <Link
+                      href="https://www.tiktok.com/@labxrepair"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaYoutube
+                      <FaTiktok 
                         className="hover:scale-110 transition-transform duration-200"
                         fontSize={30}
                       />
                     </Link>
-              </div>
-              </div>
-                    </div>  
-                  <Link  href="/coming-soon">
-                    <button className="btn hidden lg:block">GET STARTED</button>
-                  </Link> 
-                  
+                    </div>
+                  </div>
                 </div>
-                
+                <Link href="/mail-in-repair">
+                  <button className="btn hidden lg:block uppercase">Start Repair </button>
+                </Link>
+              </div>
             </div>
-        </div>
+          </div>
         </Navbar>
-    </div>
+      </div>
     </>
     // <div classNameName="header-component">
     //   <Navbar classNameName="text-white bg-black" isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
@@ -241,7 +393,7 @@ export default function App() {
     //                 {isServicesDropdownOpen && (
     //                   <div classNameName="absolute left-0 mt-2 p-2 bg-black text-white rounded shadow-lg">
     //                     {item.subItems.map((subItem) => (
-    //                       <Link 
+    //                       <Link
     //                         key={subItem.label}
     //                         href={subItem.path || "#"}
     //                         onClick={(e) => {
@@ -290,7 +442,7 @@ export default function App() {
     //               {isServicesDropdownOpen && (
     //                 <div classNameName="pl-4">
     //                   {item.subItems.map((subItem) => (
-    //                     <Link 
+    //                     <Link
     //                       key={subItem.label}
     //                       href={subItem.path || "#"}
     //                       onClick={(e) => {
@@ -319,9 +471,6 @@ export default function App() {
     // </div>
   );
 }
-
-
-
 
 // "use client";
 // import React, { useState, useEffect, useRef } from "react";
@@ -456,7 +605,7 @@ export default function App() {
 //                     {isServicesDropdownOpenDesktop && (
 //                       <div classNameName="absolute left-0 mt-2 p-2 bg-black text-white rounded shadow-lg">
 //                         {item.subItems.map((subItem) => (
-//                           <Link 
+//                           <Link
 //                             key={subItem.label}
 //                             href={subItem.path || "#"}
 //                             classNameName="block px-4 py-2 hover:bg-gray-800"
@@ -468,7 +617,7 @@ export default function App() {
 //                     )}
 //                   </div>
 //                 ) : item.path ? (
-//                   <Link 
+//                   <Link
 //                     classNameName="relative tracking-[1.5px] font-medium group"
 //                     href={item.path}
 //                   >
@@ -516,7 +665,7 @@ export default function App() {
 //                   {isServicesDropdownOpenMobile && (
 //                     <div classNameName="pl-4">
 //                       {item.subItems.map((subItem) => (
-//                         <Link 
+//                         <Link
 //                           key={subItem.label}
 //                           href={subItem.path || "#"}
 //                           classNameName="block px-4 py-2 hover:bg-gray-800"

@@ -44,7 +44,7 @@ const page = () => {
   return (
     <div>
       <MainBanner />
-      <OurClient />
+    
       <DeliveryTous/>
       <Storeproduct/>
       <DataRecovery/>
@@ -53,6 +53,7 @@ const page = () => {
       <GoogleReviews />
       <RecentNews/>
       <YouTubeHome/>
+      <OurClient />
       <AskusQuestion />
      
     

@@ -1,9 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import labx from "../../../public/Images/Brand logos/Frame.svg";
 import { SlCallOut, SlSocialFacebook } from "react-icons/sl";
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import Link from "next/link";
@@ -13,15 +13,80 @@ import { CiMail } from "react-icons/ci";
 import MobileFooterMenue from "./MobileFooterMenue";
 import sendicon from "../../../public/Images/icons/send.svg";
 import { FiMail } from "react-icons/fi";
-import homefooter from "../../../public/Images/icons/homefooter.svg"
-import traning from "../../../public/Images/icons/traning.svg"
-
+import homefooter from "../../../public/Images/icons/homefooter.svg";
+import traning from "../../../public/Images/icons/traning.svg";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState(""); // State to handle error message
+  const [loading, setLoading] = useState(false); // To track loading state
+
+  // Email validation regex pattern
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Handle the subscription logic
+  const handleSubscribe = async (e: { preventDefault: () => void }) => {
+    e.preventDefault(); // Prevent default form submission
+
+    // Validate email format
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    // Reset error if the email is valid
+    setError("");
+    setLoading(true); // Show loader when processing starts
+
+    try {
+      const response = await fetch(
+        "https://labxbackend.labxrepair.com.au/api/create/subscription",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer <your-token>`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email_address: email }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Thank you for subscribing to LABX!");
+        setEmail(""); // Reset email input
+      } else {
+        alert(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error subscribing:", error);
+      alert("An error occurred. Please try again later.");
+    } finally {
+      setLoading(false); // Hide the loader once the process is complete
+    }
+  };
+
+  // Handle email input change
+  const handleEmailChange = (e: { target: { value: any } }) => {
+    const value = e.target.value;
+    setEmail(value);
+
+    // Clear error message if the user starts typing a valid email
+    if (emailRegex.test(value)) {
+      setError(""); // Clear error if the email is valid
+    }
+  };
+
   return (
     <>
       <div className="container">
         <div className="pt-5 xl:pt-20">
+          {loading && (
+            <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-50">
+              <div className="text-blue text-xl">Processing...</div>
+            </div>
+          )}
           <section className="hidden lg:block">
             <div className="grid xl:grid-cols-[2fr_2fr_2fr_2.5fr] lg:grid-cols-2 gap-12 pb-6">
               <div className="pr-8">
@@ -68,6 +133,18 @@ const Footer = () => {
                         fontSize={30}
                       />
                     </Link>
+
+                    <Link
+                      href="https://www.tiktok.com/@labxrepair"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaTiktok 
+                        className="hover:scale-110 transition-transform duration-200"
+                        fontSize={30}
+                      />
+                    </Link>
+
                   </div>
                 </div>
               </div>
@@ -270,7 +347,7 @@ const Footer = () => {
                     </div>
                     <div>
                       <h2 className="xl:text-[30px]  lg:text-26px text-30px font-poppins">
-                        Sign-Up The LABX
+                      Newsletter 
                       </h2>
                     </div>
                     <div className="relative max-w-full">
@@ -278,14 +355,19 @@ const Footer = () => {
                         type="email"
                         placeholder="Enter your email address"
                         className="text-black w-full p-[11px] rounded-[50px] cursor-pointer border-[1px] border-gray-300 focus:outline-none my-2 placeholder:text-[#3737379c] placeholder:font-normal placeholder:text-[16px]"
+                        value={email}
+                        onChange={handleEmailChange} // Update email state on change
                       />
                       <button
                         type="submit"
                         className="text-white rounded-[50px] flex items-center justify-center game absolute bg-black p-[11px] right-[2px] top-1/2 transform -translate-y-1/2"
                         style={{ width: "14%" }}
+                        onClick={handleSubscribe} // Trigger the subscription logic on button click
                       >
                         <Image className="gl" src={sendicon} alt="Send icon" />
                       </button>
+                      {error && <p className="text-red-500 mt-2">{error}</p>}{" "}
+                      {/* Show error message if email is invalid */}
                     </div>
                   </div>
                 </div>
@@ -343,6 +425,16 @@ const Footer = () => {
                     fontSize={30}
                   />
                 </Link>
+                <Link
+                      href="https://www.tiktok.com/@labxrepair"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaTiktok 
+                        className="hover:scale-110 transition-transform duration-200"
+                        fontSize={30}
+                      />
+                    </Link>
               </div>
 
               <MobileFooterMenue />
@@ -372,37 +464,37 @@ const Footer = () => {
               </div>
             </div>
           </section>
-<section className="block lg:hidden">
-          <div className="py-3 bg-black  relative z-[100]  ">
-            <div className="grid grid-cols-4 justify-between gap-5 footer-app py-3 fixed bottom-0 w-full left-0 right-0 bg-black border-t-1 border-[#4a4a4a77] ">
-              <Link href="mailto:bharat@labxrepair.com.au">
-              <div className="flex flex-col items-center">
-                <FiMail fontSize={24} />
-                <span className="text-[12px] tracking-[1.5px] ">Mail</span>
+          <section className="block lg:hidden">
+            <div className="py-3 bg-black  relative z-[100]  ">
+              <div className="grid grid-cols-4 justify-between gap-5 footer-app py-3 fixed bottom-0 w-full left-0 right-0 bg-black border-t-1 border-[#4a4a4a77] ">
+                <Link href="mailto:bharat@labxrepair.com.au">
+                  <div className="flex flex-col items-center">
+                    <FiMail fontSize={24} />
+                    <span className="text-[12px] tracking-[1.5px] ">Mail</span>
+                  </div>
+                </Link>
+                <Link href="/training">
+                  <div className="flex flex-col items-center">
+                    <Image className="w-[27px]" src={traning} alt="" />
+                    <span className="text-[12px] tracking-[1.5px] ">
+                      Training
+                    </span>
+                  </div>
+                </Link>
+                <Link href="/">
+                  <div className="flex flex-col items-center">
+                    <Image className="w-[24px]" src={homefooter} alt="" />
+                    <span className="text-[12px] tracking-[1.5px] ">Home</span>
+                  </div>
+                </Link>
+                <Link href="tel:+61455777077">
+                  <div className="flex flex-col items-center">
+                    <SlCallOut fontSize={24} />
+                    <span className="text-[12px] tracking-[1.5px] ">Call</span>
+                  </div>
+                </Link>
               </div>
-              </Link>
-              <Link href="/training">
-              <div className="flex flex-col items-center">
-                <Image  className="w-[27px]" src={traning} alt="" />
-                <span className="text-[12px] tracking-[1.5px] ">Training</span>
-              </div>
-              </Link>
-              <Link href="/">
-              <div className="flex flex-col items-center">
-                <Image className="w-[24px]" src={homefooter} alt="" />
-                <span className="text-[12px] tracking-[1.5px] ">Home</span>
-              </div>
-              </Link>
-              <Link href="tel:+61455777077">
-              <div className="flex flex-col items-center">
-                <SlCallOut fontSize={24} />
-                <span className="text-[12px] tracking-[1.5px] ">Call</span>
-              </div>
-              </Link>
             </div>
-          </div>
-          
-          
           </section>
         </div>
       </div>

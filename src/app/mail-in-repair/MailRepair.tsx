@@ -14,7 +14,7 @@ const MailRepair = () => {
             pageName="Mail In Repair Service"
             pageDescription="Get your device back to peak performance with our expert mail in phone repair solutions. We ensure quick turnaround times and exceptional quality work on complex phone repair problems including motherboard repair. Trust us to keep you connected."
             backgroundImage="/Images/BannerImages/mailinrepair.png"
-            AdminImage="/Images/mailinrepair.png"
+              AdminImage="/Images/adminimage.png"
             link=""
             buttonname="Request a Quote"
           />
