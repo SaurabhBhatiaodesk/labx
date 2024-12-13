@@ -6,13 +6,77 @@ import Link from "next/link";
 
 const MobileFooterMenue = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState(""); // State to handle error message
+  const [loading, setLoading] = useState(false); // To track loading state
 
   const handleToggle = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+
+  // Email validation regex pattern
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Handle the subscription logic
+  const handleSubscribe = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault(); // Prevent default form submission
+
+    // Validate email format
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    // Reset error if the email is valid
+    setError("");
+    setLoading(true); // Show loader when processing starts
+
+    try {
+      const response = await fetch("https://labxbackend.labxrepair.com.au/api/create/subscription", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer <your-token>`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email_address: email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Thank you for subscribing to LABX!");
+        setEmail(""); // Reset email input
+      } else {
+        alert(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error subscribing:", error);
+      alert("An error occurred. Please try again later.");
+    } finally {
+      setLoading(false); // Hide the loader once the process is complete
+    }
+  };
+
+  // Handle email input change
+  const handleEmailChange = (e: { target: { value: any; }; }) => {
+    const value = e.target.value;
+    setEmail(value);
+
+    // Clear error message if the user starts typing a valid email
+    if (emailRegex.test(value)) {
+      setError(""); // Clear error if the email is valid
+    }
+  };
+
   return (
     <div className="max-w-lg mx-auto p-[12px] mt-4 ">
+        {loading && (
+            <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-50">
+              <div className="text-blue text-xl">Processing...</div>
+            </div>
+          )}
+
       {/* Our Services Section */}
       <div className="mb-4">
         <div
@@ -101,7 +165,7 @@ const MobileFooterMenue = () => {
             <li className="mb-2">
               <Link href="/Shipping_Policy">Shipping Policy</Link>
             </li>
-            
+
             <li className="mb-2">
               <Link href="/terms-and-conditions">Terms and Conditions</Link>
             </li>
@@ -163,14 +227,18 @@ const MobileFooterMenue = () => {
             type="email"
             placeholder="Enter your email address"
             className="text-black w-full p-[11px] rounded-[50px] cursor-pointer border-[1px] border-gray-300 focus:outline-none my-2 placeholder:text-[#3737379c] placeholder:font-normal placeholder:text-[16px]"
-          />
+            value={email}
+                        onChange={handleEmailChange}
+         />
           <button
             type="submit"
             className="text-white rounded-[50px] flex items-center justify-center game absolute bg-black p-[11px] right-[2px] top-1/2 transform -translate-y-1/2"
             style={{ width: "14%" }}
+            onClick={handleSubscribe}
           >
             <Image className="gl" src={sendicon} alt="Send icon" />
           </button>
+          {error && <p className="text-red-500 mt-2">{error}</p>}{" "}
         </div>
       </div>
     </div>
