@@ -57,7 +57,7 @@ const BeginnerCourse = () => {
     instructorName: "Bharat Dhingra",
     instructorImage: "/Images/CourseInstructors.png", // Update with the correct image path
     courseRating: 4.7,
-    courseDuration: "40 Hours",
+    courseDuration: "25 Hours",
     personsMentoredTarget: 10,
     workshopsAttendedTarget: 500,
     coachingCertificatesTarget: 9,
@@ -79,7 +79,7 @@ const BeginnerCourse = () => {
         link="/coming-soon"
         courseName="Motherboard"
         courseRating="4.7"
-        courseHour="40 Hours"
+        courseHour="25 Hours"
         Duration="1 Week"
         Price="$2800 (Includes a free toolkit for each student"
       />

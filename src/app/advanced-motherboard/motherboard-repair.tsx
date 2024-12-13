@@ -58,7 +58,7 @@ const BeginnerCourse = () => {
         link="/coming-soon"
         courseName="Advanced"
         courseRating="4.7"
-        courseHour="40 Hours"
+        courseHour="25 Hours"
         Duration=" 1 Week"
         Price="$2200"
       />

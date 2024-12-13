@@ -15,7 +15,7 @@ function TraningCourseInstructors() {
 
   // Effect for counting up to the target numbers
   useEffect(() => {
-    const incrementCounters = (target:any, setCounter:any) => {
+    const incrementCounters = (target: any, setCounter: any) => {
       let current = 0;
       const interval = setInterval(() => {
         current += 1;
@@ -47,9 +47,13 @@ function TraningCourseInstructors() {
                 />
               </div>
               <div className="p-3 lg:p-6 bg-black text-white rounded-md">
-                <h2 className="text-3xl font-bold mb-4">Training Instructors</h2>
+                <h2 className="text-3xl font-bold mb-4">
+                  Training Instructors
+                </h2>
 
-                <p className="text-base text-[#EDE574]">Bharat Dhingra & Team</p>
+                <p className="text-base text-[#EDE574]">
+                  Bharat Dhingra & Team
+                </p>
                 <div className="flex gap-3 mb-2">
                   <div className="flex gap-2 items-center">
                     <Image src={coursereating} alt="Course rating icon" />
@@ -57,28 +61,33 @@ function TraningCourseInstructors() {
                   </div>
                   <div className="flex gap-2 items-center">
                     <Image src={clock} alt="Clock icon" />
-                    <span>40 Hour</span>
+                    <span>25 Hour</span>
                   </div>
                 </div>
 
                 <ul className="space-y-2 pb-5">
-                <p>{`Our Screen Refurbishing Training instructors are seasoned professionals with over a decade of experience in mobile device repair. They bring industry expertise, practical insights, and hands-on guidance to every session. Each instructor is dedicated to helping students gain confidence and precision in their repair skills, ensuring a thorough understanding of every technique, from diagnostics to advanced component replacements.
+                  <p>{`Our Screen Refurbishing Training instructors are seasoned professionals with over a decade of experience in mobile device repair. They bring industry expertise, practical insights, and hands-on guidance to every session. Each instructor is dedicated to helping students gain confidence and precision in their repair skills, ensuring a thorough understanding of every technique, from diagnostics to advanced component replacements.
 `}</p>
-                 
                 </ul>
 
                 {/* Dynamic Counter Section */}
                 <div className="flex gap-6 mt-4">
                   <div className="text-center">
-                    <h3 className="text-[40px] lg:text-[50px] font-bold text-[#EDE574]">{personsMentored}+</h3>
+                    <h3 className="text-[40px] lg:text-[50px] font-bold text-[#EDE574]">
+                      {personsMentored}+
+                    </h3>
                     <p>Years of industry experience</p>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-[40px] lg:text-[50px] font-bold text-[#EDE574]">{workshopsAttended}+</h3>
+                    <h3 className="text-[40px] lg:text-[50px] font-bold text-[#EDE574]">
+                      {workshopsAttended}+
+                    </h3>
                     <p>Professionals trained </p>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-[40px] lg:text-[50px] font-bold text-[#EDE574]">{coachingCertificates}</h3>
+                    <h3 className="text-[40px] lg:text-[50px] font-bold text-[#EDE574]">
+                      {coachingCertificates}
+                    </h3>
                     <p> Positive feedback</p>
                   </div>
                 </div>

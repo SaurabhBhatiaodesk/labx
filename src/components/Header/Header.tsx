@@ -20,7 +20,7 @@ import Facebook from "../../../public/Images/blog/facebook.svg";
 import Telegram_logo from "../../../public/Images/blog/Telegram_logo.svg";
 import Instagram from "../../../public/Images/blog/instagram.svg";
 import Twitter from "../../../public/Images/blog/twitter.svg";
-import { SlSocialFacebook } from "react-icons/sl";
+import { SlCallOut, SlSocialFacebook } from "react-icons/sl";
 import { FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { VscCallOutgoing } from "react-icons/vsc";
@@ -110,11 +110,14 @@ export default function App() {
                      </NavbarContent>
 
                 <div className="flex gap-2 relative">
-                      <Link className="showmobile hover:scale-110 transition-transform duration-200" href="tel:+61455777077">
-                      <VscCallOutgoing color="white" />
-                    </Link>
+                     
+                      <span className="showmobile">
+                      <Link href="tel:+61455777077">
+                      <SlCallOut fontSize="20px" />
+                      </Link>
+                      </span>     
                     <Link className="showmobile hover:scale-110 transition-transform duration-200" href="tel:+61455777077">
-                    <PiShoppingCartSimpleLight  color="white"/>
+                    <PiShoppingCartSimpleLight  fontSize="20px" color="white"/>
                     </Link>
                     </div>
 
