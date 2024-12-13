@@ -50,7 +50,7 @@
     background-image: url('../../../public//Images//process.svg');
     background-size: 100%;
     width: 100%;
-    height: 310px;
+    height: 400px;
     background-repeat: no-repeat;
 }
 @media only screen and (max-width: 1024px) {
@@ -72,9 +72,9 @@
 .process__box img {
     margin: auto;
 }
-.process__box p{
+/* .process__box p{
     margin-top: 10px;
-}
+} */
 
 /* .customeBorder:after {
     content: '';

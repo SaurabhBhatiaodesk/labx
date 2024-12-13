@@ -42,8 +42,9 @@ const Page = () => {
         <div className="bg__shade relative pb-8">
           <div className="container text-center ">
             <h2 className="pt-8">
-              Why Choose LabX for Phone Screen Refurbishment?
+            Get your phone back faster than replacement 
             </h2>
+            
             <Image
               height="300"
               width="1000"
@@ -159,7 +160,7 @@ const Page = () => {
           </div>
         </div>
         <div className="pt-8 pb-8 relative bg__shade ">
-          <div className="container">
+          <div className="p-8">
             <h2 className="text-center">Phone Screen Refurbishing Process</h2>
             <Image
               height="500"
@@ -169,43 +170,61 @@ const Page = () => {
               className="pb-3 m-auto"
             />
 
-            <div className="grid__processs_section pt-8 mt-5 relative">
-              <div className="process__box box_1">
+            <div className="grid xl:grid-cols-5  lg:grid-cols-3 grid-cols-1  pt-8 mt-5 relative gap-5">
+              <div className="">
                 <Image src={Screen} alt="" />
-                <p>{"Examine the screen’s condition for scratches or cracks."}</p>
+                <h4>Initial Assessment</h4>
+                <p>{"Evaluate the screen for damage and refurbishing eligibility."}</p>
               </div>
-              <div className="process__box box_2">
+              <div className="">
                 <Image src={Small} alt="" />
+                <h4>Screen Disassembly</h4>
                 <p>Clean the screen to remove dirt and debris.</p>
               </div>
-              <div className="process__box box_3">
+              <div className="">
                 <Image src={Saprate} alt="" />
-                <p>Buff out surface scratches to restore smoothness.</p>
+                <h4>Glass Removal</h4>
+                <p>{"Remove the damaged glass using specialized tools and techniques."}</p>
               </div>
-              <div className="process__box box_4">
+              <div className="">
+              
                 <Image src={OCA} alt="" />
-                <p>Apply sealant to stabilize minor cracks effectively.</p>
+                <h4>Glue and Adhesive Cleaning</h4>
+                <p>{"Clean the LCD and remove any residue or adhesive."}</p>
+              </div>
+              <div className="flex flex-col justify-center">
+                <Image src={Test} alt="" />
+                <h4>Polarizer Film Replacement</h4>
+                <p>{"Replace the polarizer film for improved clarity and functionality."}</p>
               </div>
             </div>
-            <div className="grid__processs_section process__section pt-8 mt-5 relative">
-              <div className="process__box box_1">
-                <Image src={Test} alt="" />
-                <p>Polish the screen for clear, bright display quality.</p>
-              </div>
+
+            <div className="grid__processs_section process__section pt-8 mt-5 relative gap-5">
+             
               <div className="process__box box_2">
                 <Image src={Laminate} alt="" />
-                <p>Add a coating to prevent future scratches and wear.</p>
+                <h4>Lamination Process</h4>
+                <p>{"Attach new glass to the LCD using laminating equipment."}</p>
               </div>
               <div className="process__box box_3">
                 <Image src={Align} alt="" />
-                <p>
-                Inspect the screen for clarity and functionality.
-
-                </p>
+                <h4>Bubble Removal</h4>
+                <p>{"Use vacuum or autoclave machines to eliminate air bubbles."}</p>
               </div>
               <div className="process__box box_3" >
                 <Image src={Align} alt="" />
-                <p>Ensure satisfaction and prepare the device for return.</p>
+                <h4>Quality Inspection</h4>
+                <p>Check for defects, touch functionality, and visual clarity.                </p>
+              </div>
+              <div className="process__box box_3" >
+                <Image src={Align} alt="" />
+                <h4>Final Assembly</h4>
+                <p>{"Reassemble the refurbished screen with a new frame if required."}</p>
+              </div>
+              <div className="process__box box_3" >
+                <Image src={Align} alt="" />
+                <h4>Packaging and Labeling</h4>
+                <p>{"Safely package the refurbished screen and label it for storage or shipping."}</p>
               </div>
             </div>
           </div>
