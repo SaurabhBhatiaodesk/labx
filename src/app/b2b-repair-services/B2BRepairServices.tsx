@@ -209,6 +209,7 @@ const B2BRepairServices: React.FC = () => {
           backgroundImage="/Images/BannerImages/about.png"
           AdminImage="/Images/B2BRepairServices.svg"
           link="/contact-us"
+          buttonname="Request a Quote"
         />
 
         {/* <section>

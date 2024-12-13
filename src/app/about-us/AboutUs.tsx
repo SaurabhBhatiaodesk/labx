@@ -63,9 +63,9 @@ const AboutUs = () => {
                   </li>
                 </ul>
                 <h1 className="text-dark mb-0 text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
-                Meet Bharat Dhingra 
+                Meet Bharat Dhingra  (Founder)
                 </h1>
-                <Image  height="100" width="200"src={UnderLine.src} alt="" className="mb-3 about_line" />
+                <Image  height="80" width="600"src={UnderLine.src} alt="" className="mb-3 about_line" />
                 <p className="text-body-color dark:text-dark-6 mb-5 text-base">
                   Born in 1986 in Punjab, India, my journey has been one of passion, perseverance, and purpose.
                 </p>

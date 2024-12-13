@@ -378,7 +378,7 @@ const RecentNews: React.FC = () => {
   return (
     <div className="RecentNews-os">
       <div className="container">
-        <div className="py-5 xl:py-8" data-aos="fade-up">
+        <div className="py-3 xl:py-5" data-aos="fade-up">
 
         <MainHeading Heading="LabX Mobile Phone Repair: Latest Updates & Insights"/>
           <p className="text-center text-lg mt-2 mb-6">
@@ -452,7 +452,7 @@ const RecentNews: React.FC = () => {
             {loading ? (
               ""
             ) : blogs.length > 0 ? (
-              <div className="blogs-row-os grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:py-5 py-3">
+              <div className="blogs-row-os grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:py-2 py-3">
                 {blogs.map((blog) => (
                   <div  onClick={() => sendId(blog._id)}
                     className="blogs-row-col-os"
