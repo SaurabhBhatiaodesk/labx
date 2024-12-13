@@ -79,7 +79,7 @@ const Thankyou = () => {
               />
             )}
             <MainTitle
-              Title="If you opted for LabX’s shipping label, we will send you the connote details shortly. Otherwise, please include your own shipping information with the reference number provided."
+              Title="Please keep all accessories with you ( cover, sim etc). Any third-party accessories attached to the device may be removed during the disassembly process. We do not take responsibility for any third-party accessories."
               color="black"
             />
           </div>

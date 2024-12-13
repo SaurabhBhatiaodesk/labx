@@ -120,10 +120,11 @@ const StaperForm: React.FC = () => {
 
   const [shippingDetails, setShippingDetails] = useState({
     requireReturnLabel: "I will arrange pickup myself",
-    requirePickupLabel: "No",
+    requirePickupLabel: "No,I will send the device myself",
     termsAndConditions: false,
     signature: "",
   });
+
   const [pricingAgreement, setPricingAgreement] = useState(false);
 
   useEffect(() => {
@@ -205,10 +206,14 @@ const StaperForm: React.FC = () => {
     setShippingDetails({
       requireReturnLabel:
         shippingDetails.requireReturnLabel || "I will arrange pickup myself",
-      requirePickupLabel: shippingDetails.requirePickupLabel || "No",
+      requirePickupLabel:
+        shippingDetails.requirePickupLabel ||
+        "No,I will send the device myself",
       termsAndConditions: shippingDetails.termsAndConditions || false,
       signature: shippingDetails.signature || "", // Assume this is captured
     });
+
+
 
     setPricingAgreement(false);
   }, []);
@@ -982,15 +987,15 @@ const StaperForm: React.FC = () => {
                         </p>
                         <Select
                           defaultSelectedKeys={
-                            shippingDetails.requirePickupLabel !== "Yes"
-                              ? ["No"]
-                              : ["Yes"]
+                            shippingDetails.requirePickupLabel ==
+                            "Yes,Please arrange pickup from my location"
+                              ? ["Yes,Please arrange pickup from my location"]
+                              : ["No,I will send the device myself"]
                           }
                           className="bg-black text-white gauav"
                           value={
-                            shippingDetails.requirePickupLabel !== "Yes"
-                              ? "No"
-                              : "Yes"
+                            shippingDetails.requireReturnLabel ||
+                            "No,I will send the device myself"
                           }
                           onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                             setShippingDetails({
@@ -999,23 +1004,32 @@ const StaperForm: React.FC = () => {
                             })
                           }
                         >
-                          {selectOptions.map((option) => {
-                            return (
-                              <SelectItem key={option.key}>
-                                {option.label}
-                              </SelectItem>
-                            );
-                          })}
+                          <SelectItem
+                            key="No,I will send the device myself"
+                            value="No,I will send the device myself"
+                          >
+                            No, I will send the device myself
+                          </SelectItem>
+                          <SelectItem
+                            key="Yes,Please arrange pickup from my location"
+                            value="Yes,Please arrange pickup from my location"
+                          >
+                            Yes, please arrange pickup from my location
+                          </SelectItem>
                         </Select>
-                        {shippingDetails.requirePickupLabel === "Yes" && (
+
+                        {shippingDetails.requirePickupLabel ==
+                          "Yes,Please arrange pickup from my location" && (
                           <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
-                            A one way shipping fee of $15-$20 will be added to
+                            A one-way shipping fee of $15-$20 will be added to
                             your invoice, regardless of whether the device is
                             repaired or not. Connote label will be sent to your
                             email.
                           </p>
                         )}
-                        {shippingDetails.requirePickupLabel === "No" && (
+
+                        {shippingDetails.requirePickupLabel ===
+                          "No,I will send the device myself" && (
                           <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
                             No, I will send the device myself.
                           </p>
@@ -1176,11 +1190,17 @@ const StaperForm: React.FC = () => {
                           )}
                         </div>
 
-                        {shippingDetails.signature === "" && (
+                        {errors.signature && (
+                            <p className="text-[red] text-sm mb-0">
+                              {errors.signature}
+                            </p>
+                          )}
+
+                        {/* {shippingDetails.signature === "" && (
                           <p className="text-[red] text-sm mb-0">
                             Signature is required
                           </p>
-                        )}
+                        )} */}
                       </div>
                     </div>
                     <div className="py-4">
