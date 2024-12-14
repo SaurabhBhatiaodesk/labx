@@ -80,6 +80,8 @@ const BeginnerCourse = () => {
         Courseformate2="   1 Week Duration"
         Courseformate3="   Experienced Instructors"
         Courseformate4="  Free Toolkit"
+         border="#56c1c1"
+         color="#56c1c1"
       />
       <TrainingTabMotherboard />
       <TrainingTabMotherboardsecond/>

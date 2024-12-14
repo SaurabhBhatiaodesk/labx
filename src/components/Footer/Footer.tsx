@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import labx from "../../../public/Images/Brand logos/Frame.svg";
 import { SlCallOut, SlSocialFacebook } from "react-icons/sl";
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import Link from "next/link";
@@ -133,6 +133,18 @@ const Footer = () => {
                         fontSize={30}
                       />
                     </Link>
+
+                    <Link
+                      href="https://www.tiktok.com/@labxrepair"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaTiktok 
+                        className="hover:scale-110 transition-transform duration-200"
+                        fontSize={30}
+                      />
+                    </Link>
+
                   </div>
                 </div>
               </div>
@@ -335,7 +347,7 @@ const Footer = () => {
                     </div>
                     <div>
                       <h2 className="xl:text-[30px]  lg:text-26px text-30px font-poppins">
-                        Sign-Up The LABX
+                      Newsletter 
                       </h2>
                     </div>
                     <div className="relative max-w-full">
@@ -413,6 +425,16 @@ const Footer = () => {
                     fontSize={30}
                   />
                 </Link>
+                <Link
+                      href="https://www.tiktok.com/@labxrepair"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaTiktok 
+                        className="hover:scale-110 transition-transform duration-200"
+                        fontSize={30}
+                      />
+                    </Link>
               </div>
 
               <MobileFooterMenue />

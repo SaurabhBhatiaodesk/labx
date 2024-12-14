@@ -104,6 +104,8 @@ const MasterMotherboardRepair = () => {
         Courseformate2="1 Week Duration"
         Courseformate3="Experienced Instructors"
         Courseformate4="Free Toolkit"
+           border="#d5fd33a1"
+           color="#d5fd33a1"
       />
       <ThreeTraningTab/>
       {/* <FristTraningTab /> */}

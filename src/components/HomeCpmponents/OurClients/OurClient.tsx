@@ -43,7 +43,7 @@ export default function Productswiper({}) {
           <div className="service-slide-box flex gap-5 lg:flex-row items-center flex-col">
             <Swiper
               onSwiper={(swiper) => (swiperRef.current = swiper)}
-              className="arrow-top-right w-[100%] py-4"
+              className="arrow-top-right w-[100%] "
               modules={[Autoplay, Navigation]}
               spaceBetween={20}
               loop={true}
@@ -70,7 +70,7 @@ export default function Productswiper({}) {
             >
               <SwiperSlide>
              
-                  <div className="relative  client-slider ">
+                  <div className="relative  client-slider  my-5 ">
                     <Image
                       className="w-full transition-transform duration-300 ease-in-out hover:scale-110"
                       src={logo1}
@@ -81,35 +81,35 @@ export default function Productswiper({}) {
               </SwiperSlide>
               <SwiperSlide>
                
-                  <div className="relative  client-slider">
+                  <div className="relative  client-slider  my-5">
                     <Image className="w-full transition-transform duration-300 ease-in-out hover:scale-110" src={logo2} alt="Honda Civic" />
                   </div>
              
               </SwiperSlide>
               <SwiperSlide>
              
-                  <div className="relative  client-slider">
+                  <div className="relative  client-slider  my-5">
                     <Image className="w-full transition-transform duration-300 ease-in-out hover:scale-110" src={logo3} alt="BMW X5" />
                   </div>
               
               </SwiperSlide>
               <SwiperSlide>
                
-                  <div className="relative  client-slider">
+                  <div className="relative  client-slider  my-5">
                     <Image className="w-full transition-transform duration-300 ease-in-out hover:scale-110" src={logo4} alt="Mercedes Benz" />
                   </div>
               
               </SwiperSlide>
               <SwiperSlide>
                
-                  <div className="relative  client-slider">
+                  <div className="relative  client-slider  my-5">
                     <Image className="w-full transition-transform duration-300 ease-in-out hover:scale-110" src={logo1} alt="Mercedes Benz" />
                   </div>
             
               </SwiperSlide>
               <SwiperSlide>
                
-                  <div className="relative  client-slider">
+                  <div className="relative  client-slider  my-5">
                   <Image 
   className="w-full transition-transform duration-300 ease-in-out hover:scale-110" 
   src={logo2} 
@@ -120,7 +120,7 @@ export default function Productswiper({}) {
               </SwiperSlide>
               <SwiperSlide>
                 
-                  <div className="relative client-slider">
+                  <div className="relative client-slider  my-5">
                     <Image className="w-full transition-transform duration-300 ease-in-out hover:scale-110" src={logo3} alt="Mercedes Benz" />
                   </div>
               

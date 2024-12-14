@@ -380,7 +380,7 @@ const RecentNews: React.FC = () => {
       <div className="container">
         <div className="py-3 xl:py-5" data-aos="fade-up">
 
-        <MainHeading Heading="LabX Mobile Phone Repair: Latest Updates & Insights"/>
+        <MainHeading Heading="Read Our Blogs"/>
           <p className="text-center text-lg mt-2 mb-6">
             Explore our latest blogs for insights, news, and expert tips on
             mobile phone repair and technology. Stay updated with LabX’s tech
@@ -471,10 +471,10 @@ const RecentNews: React.FC = () => {
                       )}
                     </div>
                     <div className="mt-4">
-                      <h4 className="font-bold text-lg text-gray-800">
+                      <h4 className="font-bold text-lg text-[#EDE574] ">
                         {blog.heading}
                       </h4>
-                      <p className="text-gray-700 text-base mt-2">
+                      <p className=" text-base mt-2 text-white">
                         {stripHtmlTags(blog.content).length > 160
                           ? `${stripHtmlTags(blog.content).slice(0, 160)}...`
                           : stripHtmlTags(blog.content)}

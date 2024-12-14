@@ -98,6 +98,8 @@ const ProfessionalScreen = () => {
         Courseformate2="  5 Days Duration"
         Courseformate3="  Experienced Instructors"
         Courseformate4="  Free Toolkit"
+        border="#cf2362a7"
+        color="#cf2362a7"
       />
       <TraningProfessionalBanner />
       < ProfessionalSecondTab/>

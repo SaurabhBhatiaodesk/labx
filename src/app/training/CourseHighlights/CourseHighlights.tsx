@@ -110,7 +110,7 @@ const CourseHighlights = () => {
                 />
               </div>
               <div className="p-2 lg:p-2 bg-black text-white rounded-md">
-                <h2 className="text-3xl font-bold mb-4 w-fit">
+                <h2 className="text-3xl font-bold mb-4 w-fit text-[#6DD5ED]">
                   Advanced Motherboard Repair – Micro Soldering (Level 1)
                   <svg
         className="relative top-full left-0"
@@ -146,21 +146,21 @@ const CourseHighlights = () => {
                 </p>
                 <ul className="space-y-2 pb-5">
                   <li>
-                    <strong className="text-yellow-400">
+                    <strong className="text-[#6DD5ED]">
                       Component Familiarity:
                     </strong>
                     &nbsp;Learn to work with essential components and advanced tools,
                     including reballing techniques.
                   </li>
                   <li>
-                    <strong className="text-yellow-400">
+                  <strong className="text-[#6DD5ED]">
                       Schematics and Diagnostics:
                     </strong>
                     &nbsp;Understand how to read board schematics, trace faults, and
                     diagnose common issues.
                   </li>
                   <li>
-                    <strong className="text-yellow-400">
+                  <strong className="text-[#6DD5ED]">
                       Repair Techniques:
                     </strong>
                     &nbsp;Tackle problems like no image, no backlight, underfilled
@@ -171,6 +171,7 @@ const CourseHighlights = () => {
                   <MainButton
                     MainButton="Learn More"
                     link="/advanced-motherboard"
+                     color="bg-[#6DD5ED]"
                   />
                 </div>
                 <div className="my-4">
@@ -186,7 +187,7 @@ const CourseHighlights = () => {
             {/* course 2 */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
               <div className="order-2 lg:order-1 p-2 lg:p-2 bg-black text-white rounded-md">
-                <h2 className="text-3xl font-bold mb-4 w-fit">
+                <h2 className="text-3xl font-bold mb-4 w-fit text-[#FF9966]">
                   Expert Motherboard Repair – Micro Soldering (Level 2)
                   <svg
         className="relative top-full left-0"
@@ -224,34 +225,34 @@ const CourseHighlights = () => {
                 </p>
                 <ul className="space-y-2 pb-5">
                   <li>
-                    <strong className="text-yellow-400">
+                    <strong className="text-[#FF9966]">
                       Face ID and Sensor Repairs:
                     </strong>
                     &nbsp;Repair Face ID components, dot projectors, and infrared
                     cameras.
                   </li>
                   <li>
-                    <strong className="text-yellow-400">
+                  <strong className="text-[#FF9966]">
                       Removing Part Warnings:
                     </strong>
                     &nbsp;Learn how to remove non-genuine part warnings (battery,
                     screen, and camera).
                   </li>
                   <li>
-                    <strong className="text-yellow-400">
+                  <strong className="text-[#FF9966]">
                       Baseband and Chip Repairs:
                     </strong>
                     {` Fix "no service" issues and work with large ICs and baseband
                     chips.`}
                   </li>
                   <li>
-                    <strong className="text-yellow-400">
+                  <strong className="text-[#FF9966]">
                       NAND Programming and iCloud Unlocking:
                     </strong>
                     &nbsp;Master NAND reprogramming and unlock iCloud on iPads.
                   </li>
                   <li>
-                    <strong className="text-yellow-400">
+                  <strong className="text-[#FF9966]">
                       Reballing and Dual-Board Repairs:
                     </strong>
                     &nbsp;Handle complex reballing techniques and fix broken
@@ -262,6 +263,7 @@ const CourseHighlights = () => {
                   <MainButton
                     MainButton="Learn More"
                     link="/expert-motherboard-repair"
+                    color="bg-[#FF9966]"
                   />
                 </div>
                 <div className="my-4">
@@ -292,7 +294,7 @@ const CourseHighlights = () => {
                 />
               </div>
               <div className="p-2 lg:p-2 bg-black text-white rounded-md">
-                <h2 className="text-3xl font-bold mb-4">
+                <h2 className="text-3xl font-bold mb-4 text-[#799F0C]">
                   Master Motherboard Repair – Micro Soldering (Level 3)
                   <svg
         className="relative top-full left-0"
@@ -318,7 +320,7 @@ const CourseHighlights = () => {
               alt=""
               className="pb-3 "
             /> */}
-                <div className="flex gap-4 text-yellow-400">
+                <div className="flex gap-4 ">
                   <p className="font-semibold">Duration: 5 Days</p>
                   <p className="font-semibold">|</p>
                   <p className="font-semibold">Price: $5500</p>
@@ -333,7 +335,7 @@ const CourseHighlights = () => {
                 </p>
                 <h3>What You’ll Learn</h3>
                 <ul className="space-y-2 pb-5">
-                  <strong className="text-yellow-400">
+                  <strong className="text-[#799F0C]">
                     Advanced Data Recovery:
                   </strong>
                   &nbsp;Learn specialized techniques for recovering data from severely damaged or non-functional devices, including water-damaged phones and corrupted storage chips. This module will provide you with expertise in extracting critical data in difficult recovery cases.
@@ -342,6 +344,7 @@ const CourseHighlights = () => {
                   <MainButton
                     MainButton="Learn More"
                     link="/master-motherboard-repair"
+                    color="bg-[#799F0C]"
                   />
                 </div>
                 <div className="my-4">
@@ -360,7 +363,7 @@ const CourseHighlights = () => {
             {/* course 0 */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
               <div className="order-2 lg:order-1 p-2 lg:p-2 bg-black text-white rounded-md">
-                <h2 className="text-3xl font-bold mb-4 w-fit">
+                <h2 className="text-3xl font-bold mb-4 w-fit text-[#cf2362a7]">
                   Professional Phone Screen Refurbishing Course
                   <svg
         className="relative top-full left-0"
@@ -405,7 +408,7 @@ const CourseHighlights = () => {
                 </p>
                 <h3>{`What You’ll Learn`}</h3>
                 <ul className="space-y-2 pb-5">
-                  <strong className="text-yellow-400">
+                  <strong className="text-[#cf2362a7]">
                     Screen Disassembly and Inspection:
                   </strong>
                 &nbsp;Learn how to safely disassemble mobile devices and inspect LCD and OLED screens for damage, determining whether a screen is suitable for refurbishing or replacement.
@@ -414,6 +417,7 @@ const CourseHighlights = () => {
                   <MainButton
                     MainButton="Learn More"
                     link="/professional-phone-screen"
+                    color="bg-[#cf2362a7]"
                   />
                 </div>
                 <div className="my-4">

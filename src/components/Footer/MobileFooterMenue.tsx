@@ -215,13 +215,13 @@ const MobileFooterMenue = () => {
               </a>
             </Link>
 
-            <li className="mb-2">Sign-Up The LABX</li>
+            <li className="mb-2">Newsletter </li>
           </ul>
         </div>
       </div>
 
       <div className="emailsection relative">
-        <h3 className="text-center">Sign-Up The LABX</h3>
+        <h3 className="text-center">Newsletter </h3>
         <div className="relative max-w-full">
           <input
             type="email"
