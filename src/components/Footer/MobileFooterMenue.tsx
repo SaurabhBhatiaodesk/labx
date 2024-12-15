@@ -3,23 +3,27 @@ import Image from "next/image";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import sendicon from "../../../public/Images/icons/send.svg";
 import Link from "next/link";
+import ToastNotification from "../../components/ToastNotification/ToastNotification";
 
 const MobileFooterMenue = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [email, setEmail] = useState("");
   const [error, setError] = useState(""); // State to handle error message
   const [loading, setLoading] = useState(false); // To track loading state
+  const [toast, setToast] = useState<{
+    message: string;
+    type: "success" | "error";
+  } | null>(null);
 
   const handleToggle = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-
   // Email validation regex pattern
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   // Handle the subscription logic
-  const handleSubscribe = async (e: { preventDefault: () => void; }) => {
+  const handleSubscribe = async (e: { preventDefault: () => void }) => {
     e.preventDefault(); // Prevent default form submission
 
     // Validate email format
@@ -33,22 +37,34 @@ const MobileFooterMenue = () => {
     setLoading(true); // Show loader when processing starts
 
     try {
-      const response = await fetch("https://labxbackend.labxrepair.com.au/api/create/subscription", {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer <your-token>`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email_address: email }),
-      });
+      const response = await fetch(
+        "https://labxbackend.labxrepair.com.au/api/create/subscription",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer <your-token>`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email_address: email }),
+        }
+      );
 
       const data = await response.json();
 
       if (response.ok) {
-        alert("Thank you for subscribing to LABX!");
+        setToast({
+          message: "Thank you for subscribing to LABX!",
+          type: "success",
+        });
+        // alert("Thank you for subscribing to LABX!");
         setEmail(""); // Reset email input
       } else {
-        alert(data.message || "Something went wrong. Please try again.");
+        // alert("wrong")
+        setToast({
+          message: data?.message || "Something went wrong. Please try again.",
+          type: "error",
+        });
+        // alert(data.message || "Something went wrong. Please try again.");
       }
     } catch (error) {
       console.error("Error subscribing:", error);
@@ -59,8 +75,8 @@ const MobileFooterMenue = () => {
   };
 
   // Handle email input change
-  const handleEmailChange = (e: { target: { value: any; }; }) => {
-    const value = e.target.value;
+  const handleEmailChange = (e: { target: { value: any } }) => {
+    const value = e?.target?.value;
     setEmail(value);
 
     // Clear error message if the user starts typing a valid email
@@ -69,13 +85,12 @@ const MobileFooterMenue = () => {
     }
   };
 
+  const handleToastHide = () => {
+    setToast(null); // Reset the toast state
+  };
+
   return (
     <div className="max-w-lg mx-auto p-[12px] mt-4 ">
-        {loading && (
-            <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-50">
-              <div className="text-blue text-xl">Processing...</div>
-            </div>
-          )}
 
       {/* Our Services Section */}
       <div className="mb-4">
@@ -97,30 +112,25 @@ const MobileFooterMenue = () => {
         >
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
             <li className="mb-2">
-              <Link href='/mail-in-repair'>
-              Mail-In-Repair
-              </Link>
-              </li>
+              <Link href="/mail-in-repair">Mail-In-Repair</Link>
+            </li>
             <li className="mb-2">
-              <Link href='/training'>Training</Link>
-              </li>
+              <Link href="/training">Training</Link>
+            </li>
             <li className="mb-2">
-              <Link href='/b2b-repair-services'>B2B Repair</Link>
-              </li>
+              <Link href="/b2b-repair-services">B2B Repair</Link>
+            </li>
             <li className="mb-2">
-              <Link href='/screen-refurbishing'>
-              Screen Refurbishment
-              </Link>
-              </li>
+              <Link href="/screen-refurbishing">Screen Refurbishment</Link>
+            </li>
             <li className="mb-2">
-              <Link href='data-recovery'>Data Recovery</Link>
-              </li>
+              <Link href="data-recovery">Data Recovery</Link>
+            </li>
             <li className="mb-2">Parts Store</li>
             <li className="mb-2">Repair Forum</li>
             <li className="mb-2">
-             <Link href='/repair-solutions'>
-             Repair Solutions
-             </Link> </li>
+              <Link href="/repair-solutions">Repair Solutions</Link>{" "}
+            </li>
           </ul>
         </div>
       </div>
@@ -148,13 +158,13 @@ const MobileFooterMenue = () => {
               <Link href="/contact-us">Contact Us</Link>
             </li>
             <li className="mb-2">
-              <Link href='/blogs'>Blogs</Link>
+              <Link href="/blogs">Blogs</Link>
             </li>
             <li className="mb-2">
-            <Link href="/faq">FAQs</Link>
+              <Link href="/faq">FAQs</Link>
             </li>
             <li className="mb-2">
-            <Link href="/what-we-do">What we do</Link>
+              <Link href="/what-we-do">What we do</Link>
             </li>
             <li className="mb-2">
               <Link href="/Trademark_Disclaimer">Trademark Disclaimer</Link>
@@ -215,6 +225,14 @@ const MobileFooterMenue = () => {
               </a>
             </Link>
 
+            {toast && (
+              <ToastNotification
+                message={toast.message}
+                type={toast.type}
+                onHide={handleToastHide}
+              />
+            )}
+
             <li className="mb-2">Newsletter </li>
           </ul>
         </div>
@@ -228,17 +246,27 @@ const MobileFooterMenue = () => {
             placeholder="Enter your email address"
             className="text-black w-full p-[11px] rounded-[50px] cursor-pointer border-[1px] border-gray-300 focus:outline-none my-2 placeholder:text-[#3737379c] placeholder:font-normal placeholder:text-[16px]"
             value={email}
-                        onChange={handleEmailChange}
-         />
+            onChange={handleEmailChange}
+          />
           <button
             type="submit"
-            className="text-white rounded-[50px] flex items-center justify-center game absolute bg-black p-[11px] right-[2px] top-1/2 transform -translate-y-1/2"
+            className={`text-white rounded-[50px] flex items-center justify-center game absolute bg-black p-[11px] right-[2px] top-1/2 transform -translate-y-1/2 ${
+              loading ? "blur-sm pointer-events-none" : ""
+            }`}
             style={{ width: "14%" }}
-            onClick={handleSubscribe}
+            onClick={handleSubscribe} // Trigger the subscription logic on button click
+            disabled={loading} // Prevent multiple clicks
           >
             <Image className="gl" src={sendicon} alt="Send icon" />
           </button>
           {error && <p className="text-red-500 mt-2">{error}</p>}{" "}
+          {loading && (
+            // <div className="absolute left-0 top-[110%] w-full bg-gray-600 bg-opacity-50 flex justify-center items-center z-50 py-2">
+            <p className="xl:text-[30px] lg:text-26px text-30px font-poppins text-blue-500">
+              Processing...
+            </p>
+            // </div>
+          )}
         </div>
       </div>
     </div>
