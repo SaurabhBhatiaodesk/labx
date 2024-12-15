@@ -464,7 +464,7 @@ const StaperForm: React.FC = () => {
               style={{ boxShadow: "10px 15px 0px 3px #EDE574" }}
             >
               <span className="text-[16px]">
-            
+
                 Please Note: Our current turnaround time for regular service is
                 3-4 weeks. Expedited service is 1-9 days. It is the customer’s
                 responsibility to reach out for a quote ahead of time, if one is
