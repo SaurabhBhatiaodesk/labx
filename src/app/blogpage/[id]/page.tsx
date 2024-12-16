@@ -102,7 +102,7 @@ export default async function BlogDetails({
               "No Image"
             )}
 
-            <h2 className="text-3xl font-bold my-[10px] mt-5">{blog.heading}</h2>
+            <h2 className="text-3xl font-bold my-[10px] mt-5 text-tertiary">{blog.heading}</h2>
 
             <div className="mb-4">
               <div

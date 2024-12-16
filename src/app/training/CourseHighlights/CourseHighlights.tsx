@@ -20,7 +20,7 @@ const CourseHighlights = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
               <div className="p-2 lg:p-2 bg-black text-white rounded-md">
-                <h2 className="text-3xl font-bold mb-4 w-fit">
+                <h2 className="text-3xl font-bold mb-4 w-fit text-tertiary">
                   Beginner Phone Repair Course
                   <svg
         className="relative top-full left-0"

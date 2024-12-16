@@ -27,7 +27,7 @@ section.bg-no-repeat.bg-cover:before {
 } */
 img.dynamic__img {
     width: 100%;
-    height: 600px;
+    height: 500px;
     object-fit: cover;
 }
 .MuiBox-root p span , .MuiBox-root p strong {

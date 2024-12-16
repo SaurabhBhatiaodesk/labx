@@ -40,6 +40,7 @@ export async function generateMetadata({
   try {
     const data = await fetchPageData(params.title);
     const page = data.data;
+console.log('page',page);
 
     return {
       title: page.seoPageTitle,
@@ -72,11 +73,7 @@ export default async function PageDetail({
     return (
       <>
         <section className="bg-no-repeat bg-cover p-0 relative">
-          {/* {page.images.map((image: string, index: number) => (
-                <Image key={image}  src={image} alt="" width='100' height='100' className='dynamic__img' />
-
-          ))} */}
-
+        
           <div className="max-container overlap__term__data pt-8">
             <div className="grid lg:grid-cols-[5fr_3fr] items-center pt-3">
               <div className="w-full px-4">
@@ -103,7 +100,7 @@ export default async function PageDetail({
               </div>
             </div>
             <div>
-              <h1 className="text-dark mb-0 text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2] text-center">
+              <h1 className="text-white mb-0 text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2] text-center">
                 {formatPageName(page.pageName)}
                 <Image
                   height="300"
@@ -113,6 +110,9 @@ export default async function PageDetail({
                   className="pb-3 m-auto"
                 />
               </h1>
+               {page.images.map((image: string, index: number) => (
+                <Image key={image}  src={image} alt="" width='100' height='100' className='dynamic__img' />
+          ))}
             </div>
           </div>
         </section>

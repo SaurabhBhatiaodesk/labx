@@ -11,6 +11,7 @@ import {
 } from "@nextui-org/react";
 import rktaxilog from "../../../public/Images/Brand logos/Frame.svg";
 import { PiShoppingCartSimpleLight } from "react-icons/pi";
+import { RxCross2 } from "react-icons/rx";
 
 import "./Header.css";
 import Link from "next/link";
@@ -24,6 +25,7 @@ import { SlCallOut, SlSocialFacebook } from "react-icons/sl";
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { VscCallOutgoing } from "react-icons/vsc";
+import { IoIosArrowForward } from "react-icons/io";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -105,9 +107,13 @@ export default function App() {
             id="nav-toggle"
             onClick={toggleMenu}
           >
-            <NavbarMenuToggle
+            {/* <NavbarMenuToggle
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            />
+            /> */}
+            {!isMenuOpen ?
+            <button className=" w-[74px] text-[13px] font-semibold font-poppins flex items-center rounded-lg p-2 bg-tertiary text-secondary">Menu <span> <IoIosArrowForward fontSize={20} /> </span></button>
+            :
+            <button className="w-[74px]"><RxCross2 /></button>}
           </NavbarContent>
           <div className="w-full">
             <div className="navbar text-pastelBlue items-center justify-between">
@@ -124,17 +130,17 @@ export default function App() {
                   </NavbarBrand>
                 </NavbarContent>
 
-                <div className="flex gap-2 relative">
+                <div className="flex gap-3 relative">
                   <span className="showmobile">
                     <Link href="tel:+61455777077">
-                      <SlCallOut fontSize="20px" />
+                      <SlCallOut fontSize={22} />
                     </Link>
                   </span>
                   <Link
                     className="showmobile hover:scale-110 transition-transform duration-200"
                     href="tel:+61455777077"
                   >
-                    <PiShoppingCartSimpleLight fontSize="20px" color="white" />
+                    <PiShoppingCartSimpleLight fontSize={24} color="white" />
                   </Link>
                 </div>
 

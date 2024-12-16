@@ -14,10 +14,10 @@
     z-index: 9999;
     /* margin-bottom: 15px; */
 }
-header svg {
+/* header svg {
     width: 26px;
     height: 26px;
-}
+} */
 
 ul.dropdown-content {
     position: absolute;
@@ -67,7 +67,7 @@ ul.dropdown-menu li a, ul.dropdown-menus li a {
     }
     .flex.basis-0.flex-row.flex-grow.flex-nowrap.justify-start.bg-transparent.items-center.no-underline.text-medium.whitespace-nowrap.box-border {
         justify-content: center;
-        /* margin-right: 25px; */
+        margin-right: 25px;
     }
     ul.dropdown-menus.absolute.hidden.text-white.pt-1, ul.dropdown-menu.absolute.hidden.text-white.pt-1 {
         z-index: 999;
