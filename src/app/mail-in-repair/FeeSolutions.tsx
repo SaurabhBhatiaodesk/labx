@@ -31,7 +31,7 @@ const FeeSolutions = () => {
                 <p>{`Our mail in cell phone repair service caters to both end users and businesses, providing a fast, reliable solution for complex repairs. We welcome repair shops and individual customers to send phone for repair, offering expert motherboard repairs, soldering, and component replacements. With quick turnaround times, our phone repair mail in service ensures that your devices are returned in optimal working condition.`}</p>
                 </ul>
                 <div>
-                  <MainButton MainButton="Learn More" link="/b2b-repair-services" />
+                  <MainButton MainButton="Learn More about B2B Repair " link="/b2b-repair-services" />
                 </div>
               </div>
             </div>

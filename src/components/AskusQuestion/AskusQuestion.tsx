@@ -4,8 +4,9 @@ import React, { useState } from "react";
 import { LuPlus } from "react-icons/lu";
 import { GrSubtract } from "react-icons/gr";
 import Image from "next/image";
-import mobilerepair from "../../../public/Images/Home/iphonefq.png";
+import faqimages from "../../../public/Images/Home/faqimages.png";
 import MainHeading from "../ManinHeading/MainHeading";
+
 
 export default function Accordion() {
   const [active, setActive] = useState<number | null>(null);
@@ -94,7 +95,7 @@ export default function Accordion() {
             <div className="flex justify-center">
               <Image
                 className="lg:h-auto h-[300px] object-contain"
-                src={mobilerepair}
+                src={faqimages}
                 alt="Mobile repair"
               />
             </div>

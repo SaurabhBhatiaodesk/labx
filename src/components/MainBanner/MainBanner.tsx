@@ -125,18 +125,14 @@ export default function MainBanner() {
               <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-start xl:py-5">
                 <div>
                   <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
-                    Expert Repairs and Training
+                  Learn to Repair Mobile Phones Through 
                     <span className="text-[#6DD5ED]">
                       {" "}
-                      – All at LabX Repair!
+                      – Our Training Programs
                     </span>
                   </h1>
                   <p>
-                    Discover LabX Repair—more than a mobile repair service. We
-                    offer quality repairs, trusted training programs, and
-                    essential parts for all your repair needs. Whether fixing
-                    your smartphone or learning new repair skills, LabX Repair
-                    provides everything to keep you and your devices connected.
+                   {"Join LabX’s mobile phone repair courses and develop your skills from beginner to pro level. Master everything from basic repairs to solving complex issues, and make a real impact by helping others with their mobile repair needs!"}
                   </p>
                   <div className="my-4 xl:my-10">
                     <MainButton
@@ -160,21 +156,17 @@ export default function MainBanner() {
               <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-start xl:py-5">
                 <div>
                   <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
-                    Quick Repairs, Quality Service
+                  Professional Mobile Phone Screen Refurbishing
                     <span className="text-[#FF9966]">
                       {" "}
-                      – Only at LabX Repair!
+                      – Service for Your Devices
                     </span>
                   </h1>
                   <p>
-                    {` LabX Repair goes beyond standard mobile repair! We're your
-                    complete platform for top-quality repairs, professional
-                    training, and community support. From iPhone and smartphone
-                    repairs to purchasing parts and skill-building courses, LabX
-                    Repair is here to meet all your mobile needs.`}
+                    {` Restore your phone’s display to like-new condition with our expert screen refurbishing service. Get high-quality, cost-effective repairs that bring your screen back to life, saving you money and extending your device's lifespan!`}
                   </p>
                   <div className="my-4 xl:my-10">
-                    <MainButton MainButton="Start Repair" link="/coming-soon"  color="bg-[#FF9966]" />
+                    <MainButton MainButton="Start Repair" link="/screen-refurbishing"  color="bg-[#FF9966]" />
                   </div>
                 </div>
                 <div className="w-full">
@@ -191,21 +183,18 @@ export default function MainBanner() {
               <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-start xl:py-5">
                 <div>
                   <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
-                    Fix Your Device, Learn to Repair
+                  Get Back Your Lost Data with Our Expert
                     <span className="text-[#A044FF]">
                       {" "}
-                      – LabX Repair Has You Covered!
+                      – Mobile Phone Recovery Service
+
                     </span>
                   </h1>
                   <p>
-                    {`LabX Repair is the platform for expert mobile phone repairs
-                    and advanced repair training. With quality service and
-                    trusted training programs, we make repairing your device
-                    easier while empowering you to repair and fix mobile phones
-                    on your own.`}
+                    {`Recover lost or corrupted data with our expert data recovery service. Whether it’s from a damaged phone, hard drive, or storage device, we use advanced techniques to retrieve your important files, ensuring your data is safe and accessible again!`}
                   </p>
                   <div className="my-4 xl:my-10">
-                    <MainButton MainButton="Request a Quote" link="/contact-us" color="bg-[#A044FF]" />
+                    <MainButton MainButton="Request a Quote" link="/data-recovery" color="bg-[#A044FF]" />
                   </div>
                 </div>
                 <div className="w-full">

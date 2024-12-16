@@ -373,6 +373,9 @@ const Footer = () => {
                       </h2>
                     </div>
                     <div className="relative max-w-full">
+                    
+
+                     
                       <input
                         type="email"
                         placeholder="Enter your email address"
@@ -391,16 +394,17 @@ const Footer = () => {
                       >
                         <Image className="gl" src={sendicon} alt="Send icon" />
                       </button>
-                      {error && <p className="text-red-500 mt-2">{error}</p>}{" "}
+                     
+                    
+                    </div>
+                    
+                    {error && <p className="text-[red] m-0">{error}</p>}{" "}
                       {loading && (
-                        // <div className="absolute left-0 top-[110%] w-full bg-gray-600 bg-opacity-50 flex justify-center items-center z-50 py-2">
                         <p className="xl:text-[30px] lg:text-26px text-30px font-poppins text-blue-500">
                           Processing...
                         </p>
-                        // </div>
+                      
                       )}
-                      {/* Show error message if email is invalid */}
-                    </div>
                   </div>
                 </div>
               </div>
@@ -498,10 +502,10 @@ const Footer = () => {
           <section className="block lg:hidden">
             <div className="py-3 bg-black  relative z-[100]  ">
               <div className="grid grid-cols-4 justify-between gap-5 footer-app py-3 fixed bottom-0 w-full left-0 right-0 bg-black border-t-1 border-[#4a4a4a77] ">
-                <Link href="mailto:bharat@labxrepair.com.au">
+              <Link href="/">
                   <div className="flex flex-col items-center">
-                    <FiMail fontSize={24} />
-                    <span className="text-[12px] tracking-[1.5px] ">Mail</span>
+                    <Image className="w-[24px]" src={homefooter} alt="" />
+                    <span className="text-[12px] tracking-[1.5px] ">Home</span>
                   </div>
                 </Link>
                 <Link href="/training">
@@ -512,12 +516,14 @@ const Footer = () => {
                     </span>
                   </div>
                 </Link>
-                <Link href="/">
+                <Link href="mailto:bharat@labxrepair.com.au">
                   <div className="flex flex-col items-center">
-                    <Image className="w-[24px]" src={homefooter} alt="" />
-                    <span className="text-[12px] tracking-[1.5px] ">Home</span>
+                    <FiMail fontSize={24} />
+                    <span className="text-[12px] tracking-[1.5px] ">Mail</span>
                   </div>
                 </Link>
+             
+               
                 <Link href="tel:+61455777077">
                   <div className="flex flex-col items-center">
                     <SlCallOut fontSize={24} />

@@ -73,7 +73,7 @@ const Blogs: React.FC = () => {
                     width={500} // Optional: specify width/height for better performance
                     height={300} // Optional: specify width/height for better performance
                   />
-                  <h1 className="mb-4 mt-4">{blog.heading || "Blog Title"}</h1>
+                  <h1 className="mb-4 mt-4 text-tertiary ">{blog.heading || "Blog Title"}</h1>
                   <div className="learnmore">
                     <MainButton
                       MainButton="View Details"

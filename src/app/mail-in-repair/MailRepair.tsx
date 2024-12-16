@@ -16,7 +16,7 @@ const MailRepair = () => {
             backgroundImage="/Images/BannerImages/mailinrepair.png"
               AdminImage="/Images/adminimage.png"
             link=""
-            buttonname="Request a Quote"
+            buttonname="START REPAIR "
           />
         </div>
 

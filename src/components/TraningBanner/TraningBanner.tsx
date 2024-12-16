@@ -86,7 +86,7 @@ function TraningBanner({
               <div className="flex lg:justify-start justify-center">
                 {/* Button is now dynamic */}
                 <Link href={link}>
-                  <button className="btn">joing This Course </button>
+                  <button className="btn">JOIN THIS COURSE </button>
                 </Link>
               </div>
             </div>
