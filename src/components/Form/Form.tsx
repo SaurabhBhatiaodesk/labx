@@ -4,7 +4,6 @@ import FormCode from './FormCode'
 
 const Form = () => {
 
-    
   return (
    <>
    <div className="py-4 lg:py-[20px]" >
@@ -17,7 +16,7 @@ const Form = () => {
     </div>
    </div>
    </div>
-   
+
    </>
   )
 }

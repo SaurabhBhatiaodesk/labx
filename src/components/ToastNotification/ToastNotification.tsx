@@ -14,13 +14,13 @@ const ToastNotification = ({ message, type, onHide }: ToastProps) => {
     const timer = setTimeout(() => {
       setIsVisible(false);
       onHide();  // Reset the toast state in the parent component
-    }, 3000); // Automatically hide the toast after 3 seconds
+    }, 6000); // Automatically hide the toast after 3 seconds
 
     return () => clearTimeout(timer); // Clear the timer on component unmount
   }, [message ,onHide]);
 
   if (!isVisible) return null;
-console.log('isVisible',isVisible)
+// console.log('isVisible',isVisible)
   return (
     <div
       style={{
