@@ -73,7 +73,7 @@ export default async function PageDetail({
     return (
       <>
         <section className="bg-no-repeat bg-cover p-0 relative">
-        
+
           <div className="max-container overlap__term__data pt-8">
             <div className="grid lg:grid-cols-[5fr_3fr] items-center pt-3">
               <div className="w-full px-4">
