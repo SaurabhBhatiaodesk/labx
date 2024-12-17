@@ -259,15 +259,16 @@ const MobileFooterMenue = () => {
           >
             <Image className="gl" src={sendicon} alt="Send icon" />
           </button>
-          {error && <p className="text-red-500 mt-2">{error}</p>}{" "}
+         
+        </div>
+        {error && <p className="text-red-500 mt-2">{error}</p>}{" "}
           {loading && (
-            // <div className="absolute left-0 top-[110%] w-full bg-gray-600 bg-opacity-50 flex justify-center items-center z-50 py-2">
+           
             <p className="xl:text-[30px] lg:text-26px text-30px font-poppins text-blue-500">
               Processing...
             </p>
-            // </div>
+          
           )}
-        </div>
       </div>
     </div>
   );

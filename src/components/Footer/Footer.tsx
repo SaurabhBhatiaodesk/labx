@@ -373,9 +373,9 @@ const Footer = () => {
                       </h2>
                     </div>
                     <div className="relative max-w-full">
-                    
 
-                     
+
+
                       <input
                         type="email"
                         placeholder="Enter your email address"
@@ -394,16 +394,16 @@ const Footer = () => {
                       >
                         <Image className="gl" src={sendicon} alt="Send icon" />
                       </button>
-                     
-                    
+
+
                     </div>
-                    
+
                     {error && <p className="text-[red] m-0">{error}</p>}{" "}
                       {loading && (
                         <p className="xl:text-[30px] lg:text-26px text-30px font-poppins text-blue-500">
                           Processing...
                         </p>
-                      
+
                       )}
                   </div>
                 </div>
@@ -522,8 +522,8 @@ const Footer = () => {
                     <span className="text-[12px] tracking-[1.5px] ">Mail</span>
                   </div>
                 </Link>
-             
-               
+
+
                 <Link href="tel:+61455777077">
                   <div className="flex flex-col items-center">
                     <SlCallOut fontSize={24} />

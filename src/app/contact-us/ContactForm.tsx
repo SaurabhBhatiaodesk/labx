@@ -16,7 +16,7 @@ import {
 import { TextareaAutosize } from "@mui/base";
 import "./Contactus.css";
 import contactusimage from "../../../public/Images/contactusimage.png";
-
+import ToastNotification from "../../components/ToastNotification/ToastNotification";
 // icons
 import localtion from "../../../public/Images/localtion.svg";
 import contactustime from "../../../public/Images/icons/contactustime.svg";
@@ -24,6 +24,11 @@ import callcontactus from "../../../public/Images/icons/callcontactus.svg";
 import contactusmail from "../../../public/Images/icons/contactusmail.svg";
 
 const ContactForm: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(false); // State for loader
+  const [toast, setToast] = useState<{
+    message: string;
+    type: "success" | "error";
+  } | null>(null);
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -127,6 +132,7 @@ const ContactForm: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    setIsLoading(true);
     e.preventDefault();
 
     // Early validation: Check if any required field is empty
@@ -192,16 +198,22 @@ const ContactForm: React.FC = () => {
       enquiry_message: formData.enquiry_message || "", // Always include enquiry_message
     };
 
-    console.log("requestDataaa", requestData);
+    // console.log("requestDataaa",requestData)
 
     try {
       const response = await axios.post(
         "https://labxbackend.labxrepair.com.au/api/create/contact-us", // Replace with your actual API endpoint
         requestData
       );
-      console.log(await response.data, "Form submitted successfully");
+      // console.log(await response.data, "Form submitted successfully");
+      // const responseData = await response.data.json();
+      // console.log('responseDatasss',responseData)
       if (response) {
-        alert("Form submitted successfully!");
+        // alert("Form submitted successfully!");
+        setToast({
+          message: "Thank you for subscribing to LABX!",
+          type: "success",
+        });
         // Reset form state with all fields, including enquiry_message
         setFormData({
           first_name: "",
@@ -211,18 +223,61 @@ const ContactForm: React.FC = () => {
           enquiry_message: "", // Ensure enquiry_message is reset
         });
       } else {
-        alert("Error submitting the form.");
+        // alert("Error submitting the form.");
+        setToast({
+          message: "Something went wrong. Please try again.",
+          type: "error",
+        });
       }
     } catch (error) {
       console.error("Error submitting the form", error);
       alert("An error occurred while submitting the form.");
+    } finally {
+      setIsLoading(false); // Hide loader after processing
     }
   };
+  const handleToastHide = () => {
+    setToast(null); // Reset the toast state
+  };
 
-  console.log("formDataaaa", formData);
+  // console.log("formDataaaa", formData);
   return (
     <>
-      <div className="p-4 lg:p-10 steper-form-section-os bg-black " id="contactId">
+      {isLoading && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            zIndex: 9999,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              width: "50px",
+              height: "50px",
+              border: "5px solid #f3f3f3",
+              borderTop: "5px solid #3498db",
+              borderRadius: "50%",
+              animation: "spin 1s linear infinite",
+            }}
+          ></div>
+        </div>
+      )}
+      {toast && (
+        <ToastNotification
+          message={toast.message}
+          type={toast.type}
+          onHide={handleToastHide}
+        />
+      )}
+      <div className="p-4 lg:p-10 steper-form-section-os bg-black ">
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col gap-4 bg-black text-white">
             <div className="grid grid-cols-2 gap-4 form-label">
