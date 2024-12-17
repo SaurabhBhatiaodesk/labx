@@ -51,7 +51,7 @@ const ThreeTraningTab: React.FC = () => {
     
 
       button: "Get Course",
-      link: "/coming-soon",
+      link: "/training",
       image: tabimage,
     },
     {
@@ -70,7 +70,7 @@ const ThreeTraningTab: React.FC = () => {
       contentf5:
         " ",
       button: "Get Course",
-      link: "/coming-soon",
+      link: "/training",
       image: tabimage,
     },
     {
@@ -92,7 +92,7 @@ const ThreeTraningTab: React.FC = () => {
       contentf6:
         " ",
       button: "Get Course",
-      link: "/coming-soon",
+      link: "/training",
       image: tabimage,
     },
     {
@@ -108,7 +108,7 @@ const ThreeTraningTab: React.FC = () => {
       contentf4title: "Custom Repair Solutions",
      
       button: "Get Course",
-      link: "/coming-soon",
+      link: "/training",
       image: tabimage,
     },
     {
@@ -122,12 +122,12 @@ const ThreeTraningTab: React.FC = () => {
       contentf3title: "",
      
       button: "Get Course",
-      link: "/coming-soon",
+      link: "/training",
       image: tabimage,
     },
     {
       id: 5,
-      label: "Deep Diagnostics and Fault Tracing:",
+      label: "Deep Diagnostics and Fault Tracing",
       content: "",
       contentf2title: "",
       contentf2:
@@ -136,7 +136,7 @@ const ThreeTraningTab: React.FC = () => {
       contentf3title: "",
      
       button: "Get Course",
-      link: "/coming-soon",
+      link: "/training",
       image: tabimage,
     },
   ];

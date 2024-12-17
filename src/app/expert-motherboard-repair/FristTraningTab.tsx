@@ -53,7 +53,7 @@ const FristTraningTab: React.FC = () => {
         " ",
 
       button: "Get Course",
-      link: "/coming-soon",
+      link: "/training",
       image: tabimage,
     },
     {
@@ -72,7 +72,7 @@ const FristTraningTab: React.FC = () => {
       contentf5:
         " ",
       button: "Get Course",
-      link: "/coming-soon",
+      link: "/training",
       image: tabimage,
     },
     {
@@ -94,7 +94,7 @@ const FristTraningTab: React.FC = () => {
       contentf6:
         " ",
       button: "Get Course",
-      link: "/coming-soon",
+      link: "/training",
       image: tabimage,
     },
     {
@@ -110,7 +110,7 @@ const FristTraningTab: React.FC = () => {
       contentf4title: "Custom Repair Solutions",
      
       button: "Get Course",
-      link: "/coming-soon",
+      link: "/training",
       image: tabimage,
     },
     {
@@ -123,7 +123,7 @@ const FristTraningTab: React.FC = () => {
       contentf3title: "",
      
       button: "Get Course",
-      link: "/coming-soon",
+      link: "/training",
       image: tabimage,
     },
   ];
