@@ -57,7 +57,7 @@ function TraningCourseInstructors() {
                   </div>
                   <div className="flex gap-2 items-center">
                     <Image src={clock} alt="Clock icon" />
-                    <span>25 Hour</span>
+                    <span>25 Hours</span>
                   </div>
                 </div>
 

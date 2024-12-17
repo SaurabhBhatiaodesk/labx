@@ -53,7 +53,7 @@ const TraningTabBignerThird: React.FC = () => {
         "",
 
       button: "Get Course",
-      link: "/coming-soon",
+      link: "/training",
       image: tabimage,
     },
     {
@@ -68,7 +68,7 @@ const TraningTabBignerThird: React.FC = () => {
         " ",
       contentf4title: "",
       button: "Get Course",
-      link: "/coming-soon",
+      link: "/training",
       image: tabimage,
     },
     {
@@ -90,7 +90,7 @@ const TraningTabBignerThird: React.FC = () => {
       contentf6title: "",
     
       button: "Get Course",
-      link: "/coming-soon",
+      link: "/training",
       image: tabimage,
     },
     // {
