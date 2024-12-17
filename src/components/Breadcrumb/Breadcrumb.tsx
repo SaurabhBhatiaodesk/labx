@@ -30,9 +30,18 @@ function Breadcrumb({
   }, []);
 
   const handleScrollToTarget = () => {
-    const target = document.getElementById(
-      link === "/mail-in-repair" ? "stapergk" : "contactId"
-    );
+    const currentRoute = window.location.pathname;
+
+    // Set the target ID based on the current route
+    let targetId: any;
+    if (currentRoute === "/mail-in-repair") {
+      targetId = "stapergk";
+    } else if (currentRoute === "/contact-us") {
+      targetId = "contactId";
+    } else if (currentRoute === "/training") {
+      targetId = "Kickstart";
+    }
+    const target = document.getElementById(targetId);
     const offset = 12 * 5; // 3rem in pixels (assuming 1rem = 16px)
 
     if (target) {

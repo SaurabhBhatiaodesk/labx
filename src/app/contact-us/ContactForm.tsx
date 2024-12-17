@@ -277,10 +277,10 @@ const ContactForm: React.FC = () => {
           onHide={handleToastHide}
         />
       )}
-      <div className="p-4 lg:p-10 steper-form-section-os bg-black ">
+      <div className="p-4 lg:p-10 steper-form-section-os bg-black " id="contactId">
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col gap-4 bg-black text-white">
-            <div className="grid grid-cols-2 gap-4 form-label">
+            <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 form-label">
               {/* {/ Business Name Input /} */}
               <TextField
                 label="First Name*"
@@ -291,6 +291,7 @@ const ContactForm: React.FC = () => {
                 onChange={handleChange}
                 error={!!formErrors.first_name}
                 helperText={formErrors.first_name}
+                
               />
 
               <TextField

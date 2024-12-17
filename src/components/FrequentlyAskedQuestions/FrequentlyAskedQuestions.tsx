@@ -41,7 +41,7 @@ const FrequentlyAskedQuestions: React.FC<FrequentlyAskedQuestionsProps> = ({
         <div className="container">
           <MainHeading Heading={heading} />
           <MainTitle Title={title} />
-          <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_2fr] grid-cols-1 gap-4 lg:py-5 py-3">
+          <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_2fr] grid-cols-1 gap-4 lg:py-[8px] py-[5px]">
             <div>
               <div className="flex flex-col xl:space-y-2">
                 {accordionData.map((item, index) => (

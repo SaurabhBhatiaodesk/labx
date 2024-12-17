@@ -73,7 +73,7 @@ function BeginnerPhoneRepairCourseSale() {
               <ul className="space-y-2 pb-5">
               <p className="text-center">
                 
-                {`This mobile phone training program is designed to provide hands-on experience in mobile device repair, covering everything from essential tools to complex diagnostics. Our expert instructors guide students through each repair technique, emphasizing real-world applications and precision. By mastering key skills like screen and battery replacement, troubleshooting, and component replacement, students gain confidence to handle repairs on a wide range of devices.`}
+                {`We provide comprehensive, hands-on demonstrations of each repair process, ensuring you understand the techniques and methods thoroughly. Following the demonstrations, you will have the opportunity to perform the same repairs independently under the close supervision of our expert trainers, allowing you to gain practical experience and confidence in your skills.`}
               </p>
               </ul>
               </div>

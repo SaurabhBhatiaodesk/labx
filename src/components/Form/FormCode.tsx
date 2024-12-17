@@ -477,7 +477,7 @@ const FormCode: React.FC = () => {
   };
 
   return (
-    <div className="p-4 steper-form-section-os">
+    <div className="p-4 steper-form-section-os" id="Kickstart">
        {isLoading && (
         <div
           style={{
@@ -514,7 +514,7 @@ const FormCode: React.FC = () => {
       )}
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col gap-4 bg-black text-white">
-          <div className="grid grid-cols-2 gap-4 form-label">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 form-label">
             {/* Business Name Input */}
             <TextField
               label="Business Name"

@@ -110,21 +110,6 @@ const TraningTabBigner: React.FC = () => {
       link: "/coming-soon",
       image: tabimage,
     },
-    // {
-    //   id: 4,
-    //   label: "Device Coverage",
-    //   content: "",
-    //   contentf2title: " ",
-    //   contentf2:
-    //     " Learn how to work on a wide range of devices, from older models to the latest releases. Gain the skills to handle smartphones, tablets, and more, across various brands and technologies.",
-    //   contentf3title: " ",
-    //   contentf3:
-    //     " ",
-     
-    //   button: "Get Course",
-    //   link: "/coming-soon",
-    //   image: tabimage,
-    // },
   ];
 
   const getGradientColor = (id: number) => {
@@ -220,18 +205,10 @@ const TraningTabBigner: React.FC = () => {
                 .filter((item) => item.content)
                 .map((item, index) => (
                   <div className="flex items-start gap-4" key={index}>
-                    {/* <Image
-                      className="w-[30px] h-[30px]"
-                      src={pointet}
-                      alt="Pointing Right Icon"
-                      width={50}
-                      height={50}
-                    /> */}
+                  
                     <div>
                       <p>
-                        {/* <span className="font-bold pb-[2px] border-b-[#fff563] border-b-[1px]">
-                          {item.title}
-                        </span> */}
+                        
                         {item.content}
                       </p>
                     </div>

@@ -20,14 +20,14 @@ const FeeSolutions = () => {
                   fill // Ensures the image fills its parent container responsively
                 />
               </div>
-              <div className="p-3 lg:p-6 bg-black text-white rounded-md ">
+              <div className="p-2 lg:p-4 bg-black text-white rounded-md ">
                 <h2 className="text-3xl font-bold mb-4 ">
                 Comprehensive B2B and Public Phone Repair Services
                 <Image  height="300" width="400"src={Line.src} alt="" className="pt-3" />
                 </h2>
 
               
-                <ul className="space-y-2 pb-5">
+                <ul className="space-y-2 ">
                 <p>{`Our mail in cell phone repair service caters to both end users and businesses, providing a fast, reliable solution for complex repairs. We welcome repair shops and individual customers to send phone for repair, offering expert motherboard repairs, soldering, and component replacements. With quick turnaround times, our phone repair mail in service ensures that your devices are returned in optimal working condition.`}</p>
                 </ul>
                 <div>
