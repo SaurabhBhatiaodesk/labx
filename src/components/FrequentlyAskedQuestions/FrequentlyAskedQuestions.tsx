@@ -5,7 +5,7 @@ import MainTitle from "../MainTitle/MainTitle";
 import React, { useState } from "react";
 import { LuPlus } from "react-icons/lu";
 import { GrSubtract } from "react-icons/gr";
-import mobilerepair from "../../../public/Images/Home/iphonefq.png";
+import faqimages from "../../../public/Images/Home/faqimages.png";
 import Image from "next/image";
 
 interface AccordionItem {
@@ -76,7 +76,7 @@ const FrequentlyAskedQuestions: React.FC<FrequentlyAskedQuestionsProps> = ({
                 <div className="flex justify-center">
                   <Image
                     className="lg:h-auto h-[300px] object-contain"
-                    src={mobilerepair}
+                    src={faqimages}
                     alt=""
                   />
                 </div>

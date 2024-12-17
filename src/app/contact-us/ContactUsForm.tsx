@@ -278,7 +278,7 @@ const handleChange = (
                       </span>
                       <Link href="mailto:bharat@labxrepair.com.au" passHref>
                         <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
-                          mailto:bharat@labxrepair.com.au
+                          bharat@labxrepair.com.au
                         </p>
                       </Link>
                     </div>

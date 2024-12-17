@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import React from "react";
@@ -10,8 +10,8 @@ interface BreadcrumbProps {
   pageDescription: string;
   backgroundImage: string;
   AdminImage: string;
-  link?: any; 
-  buttonname?:string;
+  link?: any;
+  buttonname?: string;
 }
 
 function Breadcrumb({
@@ -19,7 +19,7 @@ function Breadcrumb({
   pageDescription,
   backgroundImage,
   AdminImage,
-  link, 
+  link,
   buttonname, // Destructure the link prop
 }: BreadcrumbProps) {
   const [isBrowser, setIsBrowser] = useState(false);
@@ -30,11 +30,14 @@ function Breadcrumb({
   }, []);
 
   const handleScrollToTarget = () => {
-    const target = document.getElementById("stapergk");
+    const target = document.getElementById(
+      link === "/mail-in-repair" ? "stapergk" : "contactId"
+    );
     const offset = 12 * 5; // 3rem in pixels (assuming 1rem = 16px)
 
     if (target) {
-      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const targetPosition =
+        target.getBoundingClientRect().top + window.pageYOffset;
       const scrollToPosition = targetPosition - offset;
 
       window.scrollTo({
@@ -81,12 +84,9 @@ function Breadcrumb({
               </div>
               <div className="flex lg:justify-start justify-center">
                 {/* Button is now dynamic */}
-                {isBrowser && window.location.pathname === "/mail-in-repair" ? (
-                  <button
-                    className="btn"
-                    onClick={handleScrollToTarget}
-                  >
-                   {buttonname}
+                {isBrowser && window.location.pathname === link ? (
+                  <button className="btn" onClick={handleScrollToTarget}>
+                    {buttonname}
                   </button>
                 ) : (
                   <Link href={link}>
