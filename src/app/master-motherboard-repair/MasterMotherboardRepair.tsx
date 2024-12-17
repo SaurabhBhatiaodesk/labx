@@ -76,7 +76,7 @@ const MasterMotherboardRepair = () => {
         pageDescription="This course is designed and based on the highest industry standards and over 14 years of industry experience. It includes everything that anyone needs to be one of the best technicians or a successful business owner."
         backgroundImage="/Images/BannerImages/mailinrepair.png"
         AdminImage="/Images/adminimage.png"
-        link="/coming-soon"
+        link="/training"
         courseName="Master Motherboard"
         courseRating="4.7"
         courseHour="25 Hours"
@@ -105,7 +105,7 @@ const MasterMotherboardRepair = () => {
         Courseformate3="Experienced Instructors"
         Courseformate4="Free Toolkit"
            border="#d5fd33a1"
-           color="#d5fd33a1"
+          
       />
       <ThreeTraningTab/>
       {/* <FristTraningTab /> */}

@@ -40,24 +40,24 @@ function TraningBanner({
       >
         <div className="container">
           <div className="grid lg:grid-cols-[5fr_3fr] items-center pt-3">
-            <div className="w-full px-4">
+            <div className="w-full lgh:px-4">
               <div className="text-center lg:text-left">
 
 
                 <div className="flex gap-3 mb-2">
                     <div className="flex gap-2">
                        <Image src={trending} alt=""/>
-                        <span>{courseName}</span>
+                        <span className=" lg:text-lg text-sm">{courseName}</span>
 
                     </div>
                     <div className="flex gap-2">
                        <Image src={coursereating} alt=""/>
-                        <span>{courseRating}</span>
+                       <span className=" lg:text-lg text-sm">{courseRating}</span>
 
                     </div>
                     <div className="flex gap-2">
                        <Image src={clock} alt=""/>
-                        <span>{courseHour}</span>
+                       <span className=" lg:text-lg text-sm">{courseHour}</span>
 
                     </div>
                 </div>

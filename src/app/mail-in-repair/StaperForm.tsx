@@ -539,7 +539,7 @@ const StaperForm: React.FC = () => {
                       <div className="flex flex-col xl:gap-4 lg:gap-3 gap-2 bg-black text-white">
                         <h4 className="lg:text-lg text-sm">Personal Details</h4>
 
-                        <div className="grid grid-cols-2 gap-4 form-label">
+                        <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 form-label">
                           {/* Business Name (Optional) */}
                           <div>
                             <TextField
@@ -662,7 +662,7 @@ const StaperForm: React.FC = () => {
                           <h4 className="lg:text-lg text-sm pb-[10px]">
                             Device Details
                           </h4>
-                          <div className="grid grid-cols-2 gap-4 form-label">
+                          <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 form-label">
                             {/* Device Type (Optional) */}
                             <div className="w-full">
                               <TextField

@@ -99,7 +99,7 @@ const FristTraningTab: React.FC = () => {
     },
     {
       id: 3,
-      label: "NAND Programming and iCloud Unlocking",
+      label: "NAND Programming ",
       content: "",
       contentf2title: "",
       contentf2:

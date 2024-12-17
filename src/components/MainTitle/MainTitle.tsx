@@ -34,7 +34,7 @@ const MainTitle: React.FC<TitleProps> = ({ Title, color, animation }) => {
   return (
     <div
       data-aos={animation || 'fade-up'} 
-      className="title-text text-center 3xl:w-[70%] lg:w-[70%] 2xl:w-[60%] md:w-[90%] m-auto py-3"
+      className="title-text text-center 3xl:w-[70%] lg:w-[70%] 2xl:w-[60%] md:w-[90%] m-auto"
     >
       <p style={{ color: color || 'inherit' }}>{Title}</p>
     </div>
