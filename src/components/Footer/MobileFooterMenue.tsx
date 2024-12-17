@@ -237,7 +237,10 @@ const MobileFooterMenue = () => {
           </ul>
         </div>
       </div>
-
+<div>
+  <h3 className="text-center text-xl mb-3">We DO NOT provide Walk-In Service
+  </h3>
+</div>
       <div className="emailsection relative">
         <h3 className="text-center">Newsletter </h3>
         <div className="relative max-w-full">

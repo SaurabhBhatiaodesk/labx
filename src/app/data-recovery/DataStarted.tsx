@@ -27,7 +27,7 @@ const DataStarted = () => {
                 <Image src={pointer} alt="pointer"  />
 
                 <div className="">
-                  <p className=" text-tertiary">
+                  <p className=" text-primary">
                   Visit our Mail-In Repair page to fill out the submission form and include details about your device and the issue.
                   </p>
                   
@@ -37,7 +37,7 @@ const DataStarted = () => {
                 <Image src={pointer} alt="pointer" />
 
                 <div className="">
-                <p className=" text-tertiary">
+                <p className=" text-primary">
                 Ship your device to LabX or request a shipping label during form submission.
                   </p>
                 </div>
@@ -46,7 +46,7 @@ const DataStarted = () => {
                 <Image src={pointer} alt="pointer" />
 
                 <div className="">
-                <p className=" text-tertiary">
+                <p className=" text-primary">
                 Relax while we handle the rest!
                   </p>
                 </div>

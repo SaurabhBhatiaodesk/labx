@@ -169,32 +169,36 @@ const B2BRepairServices: React.FC = () => {
     {
       image: ApplyforaBusinessAccount,
       alt: "Repairs",
-      title: `Apply for a Business Account`,
-      description: `Start by filling out our Business Account Application form on the website. Once your account is approved, you’ll be able to access bulk pricing, streamlined processes, and specialized services.`,
+      title: "Technician Damage",
+      description: `If you have broken the connector or torn the flex cable during your repair process,You can send it to us,we will fix it for you.`,
       hoverBackground:
         "linear-gradient(74deg, rgb(86, 193, 193), rgb(0, 0, 0))",
     },
     {
       image: SendUsYourDevices,
       alt: "Transparency",
-      title: "Send Us Your Devices",
-      description: `Our grading and repair process is 100% transparent. You'll receive photos and detailed reports for any repair decisions so you always know what's happening.`,
+      title: "Remote Unlocking",
+      description: `We can remove user accounts or reset your phone remotely. Contact us for assistance.`,
       hoverBackground:
         "linear-gradient(74deg, rgba(243, 85, 32, 0.753), rgb(0, 0, 0))",
     },
     {
       image: TrackYourOrders,
       alt: "Recovery",
-      title: "Track Your Orders",
-      description: `Even if your device is non-functional, we employ advanced techniques to recover your important data, providing a valuable opportunity to retrieve lost files.`,
+      title: "Free Guidance",
+      description: `Stuck on something or have questions during your repair? Feel free to ask! If it's within our expertise, we'll provide you with free guidance.`,
       hoverBackground:
         "linear-gradient(74deg, rgba(213, 253, 51, 0.63), rgb(0, 0, 0))",
     },
     {
       image: ReceiveYourRepairedDevices,
       alt: "B2B Services",
-      title: "Receive Your Repaired Devices",
-      description: `LabX Repair offers tailored solutions for businesses, including bulk refurbishments and wholesale repairs, ensuring your operations run smoothly and efficiently.`,
+      title: "Supply Uncommon Parts",
+      description: `We have a wide range of uncommon parts in our inventory that aren’t listed on our website. Feel free to ask if we have what you need on our shelves!`,
+      param1:"Bring our client menu in this page as well.",
+      param2:"Bring Forum Section in this page as well.",
+      param3:"Bring Repair Section in this page as well ",
+
       hoverBackground:
         "linear-gradient(74deg, rgba(207, 35, 98, 0.655), rgb(0, 0, 0))",
     },
@@ -476,8 +480,8 @@ const B2BRepairServices: React.FC = () => {
                 {sectionData.map((section, index) => (
                   <div
                     key={index}
-                    style={{ background: "transparent" }} // Default background
-                    className="p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]"
+                    style={{ background: "transparent" }}
+                    className="p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col  hover:shadow-[0_0_20px_10px_#ede57456] "
                     onMouseEnter={(e) =>
                       (e.currentTarget.style.background =
                         section.hoverBackground)
@@ -493,10 +497,13 @@ const B2BRepairServices: React.FC = () => {
                         alt={section.alt}
                       />
                     </div>
-                    <h3 className="text-[#EDE574] xl:text-lg lg:w-[70%] m-auto line-clamp-2">
+                    <h3 className="text-[#EDE574] xl:text-lg ">
   {section.title}
 </h3>
                     <p>{section.description}</p>
+                    <span className=" text-[16px]">{section.param1}</span>
+                    <span className=" text-[16px]">{section.param2}</span>
+                    <span className=" text-[16px]">{section.param3}</span>
                   </div>
                 ))}
               </div>

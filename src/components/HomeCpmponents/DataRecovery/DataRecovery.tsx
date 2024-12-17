@@ -103,8 +103,8 @@ const DataRecovery = () => {
             </div>
           </div>
 
-          <div className="rounder=[20px]">
-<Image src={datarecovery221} alt="" className="h-[350px] lg:h-auto object-cover rounder-[20px]" />
+          <div className="">
+<Image src={datarecovery221} alt="" className="h-[300px] lg:h-auto object-cover rounded-[30px]" />
 
           </div>
         </div>

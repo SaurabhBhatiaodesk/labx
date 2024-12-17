@@ -357,6 +357,10 @@ const Footer = () => {
                       </Link>
                     </div>
                     <div>
+                      <h3 className="text-xl">We DO NOT provide Walk-In Service
+                      </h3>
+                    </div>
+                    <div>
                       {toast && (
                         <ToastNotification
                           message={toast.message}

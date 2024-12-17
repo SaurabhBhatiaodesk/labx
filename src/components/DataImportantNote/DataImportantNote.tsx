@@ -2,6 +2,7 @@ import React from "react";
 import { LuDot } from "react-icons/lu";
 import Image from "next/image";
 import pointer from "../../../public/Images/icons/pointing-right.svg";
+import Link from "next/link";
 
 const DataImportantNote = () => {
   return (
@@ -29,7 +30,7 @@ const DataImportantNote = () => {
             </div>
             <div className="flex gap-[5px] text-secondary items-center">
               <span><LuDot  /></span>
-              <p className="text-secondary m-0">Data that has already been permanently deleted and overwritten.</p>
+              <p className="text-secondary m-0">Devices that are physically beyond repair to enable temporary access.</p>
             </div>
             </div>
           </div>
@@ -107,7 +108,7 @@ const DataImportantNote = () => {
             </div>
             <div className="flex gap-[5px] text-secondary items-start">
               <span><LuDot  color="black" /></span>
-              <p className="text-secondary m-0">Customers are encouraged to review our FAQ, Terms and Conditions, and Data Privacy Policy for more details.</p>
+              <p className="text-secondary m-0">Customers are encouraged to review our <Link className="font-semibold" href="/faq"> FAQ, </Link>     <Link className="font-semibold" href="/Terms_and_Conditions">Terms and Conditions, </Link> and  <Link className="font-semibold" href="/Shipping_Policy">Data Privacy Policy for more details. </Link> </p>
             </div>
           </div>
         </div>

@@ -55,6 +55,7 @@ function Breadcrumb({
       });
     }
   };
+  
 
   return (
     <>
@@ -64,7 +65,7 @@ function Breadcrumb({
       >
         <div className="container">
           <div className="grid lg:grid-cols-[5fr_3fr] items-center pt-3">
-            <div className="w-full px-4">
+            <div className="w-full lg:px-4">
               <div className="text-center lg:text-left">
                 <ul className="flex items-center lg:justify-start justify-center gap-[10px]">
                   <li>
@@ -87,9 +88,10 @@ function Breadcrumb({
                 <h1 className="text-dark mb-4 text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
                   {pageName}
                 </h1>
-                <p className="text-body-color dark:text-dark-6 mb-5 text-base">
-                  {pageDescription}
-                </p>
+                <p
+  className="text-body-color dark:text-dark-6 mb-5 text-base"
+  dangerouslySetInnerHTML={{ __html: pageDescription }}
+></p>
               </div>
               <div className="flex lg:justify-start justify-center">
                 {/* Button is now dynamic */}
@@ -109,7 +111,7 @@ function Breadcrumb({
                 src={AdminImage}
                 alt="Admin Visual"
                 className="object-contain pt-3"
-                fill // Makes the image fill the parent container
+                fill 
               />
             </div>
           </div>

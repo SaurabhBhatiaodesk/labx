@@ -38,7 +38,7 @@ const BoxComponents = () => {
                   Cutting-Edge Technology:
                   </span>
                   <p>
-                  Utilizing advanced tools and techniques, we maximize the chances of retrieving your valuable data
+                  Utilizing advanced tools and techniques, we maximize the chances of retrieving your valuable data.
                   </p>
                 </div>
               </div>
