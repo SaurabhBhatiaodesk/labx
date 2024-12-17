@@ -104,13 +104,6 @@ const DataRecovery = () => {
           </div>
 
           <div className="rounder=[20px]">
-          {/* <DotLottieReact
-          src="/Images/jsonfile/data_recovery.json"
-          loop
-          autoplay
-          className=""
-        /> */}
-
 <Image src={datarecovery221} alt="" className="h-[350px] lg:h-auto object-cover rounder-[20px]" />
 
           </div>

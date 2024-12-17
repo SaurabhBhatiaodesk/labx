@@ -370,7 +370,6 @@ const ContactForm: React.FC = () => {
                 },
               }}
               type="submit"
-
             >
               Submit
             </Button>

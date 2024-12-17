@@ -62,17 +62,26 @@ export default function BlogSidebar() {
   const sendId = (id: string) => {
     router.push(`/blogpage/${id}`);
   };
+  const currentUrl = window.location.href; 
   return (
     <div>
       <div className="social_section">
-        <h4>Share</h4>
-        <div className="social__icon">
-          <a><Image alt='' src={Facebook} /></a>
-          <a><Image alt='' src={Telegram_logo} /></a>
-          <a><Image alt='' src={Instagram} /></a>
-          <a><Image alt='' src={Twitter} /></a>
-        </div>
+      <h4>Share</h4>
+      <div className="social__icon">
+        <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`} target="_blank" rel="noopener noreferrer">
+          <Image alt="Facebook" src={Facebook} />
+        </a>
+        <a href={`https://t.me/share/url?url=${encodeURIComponent(currentUrl)}`} target="_blank" rel="noopener noreferrer">
+          <Image alt="Telegram" src={Telegram_logo} />
+        </a>
+        <a href={`https://www.instagram.com/sharer.php?u=${encodeURIComponent(currentUrl)}`} target="_blank" rel="noopener noreferrer">
+          <Image alt="Instagram" src={Instagram} />
+        </a>
+        <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}`} target="_blank" rel="noopener noreferrer">
+          <Image alt="Twitter" src={Twitter} />
+        </a>
       </div>
+    </div>
       <div className="side_bg_img"></div>
       <h3 className="text-lg font-semibold mb-4">More Posts</h3>
       <ul>

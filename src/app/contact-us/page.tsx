@@ -14,7 +14,7 @@ const page = () => {
           backgroundImage="/Images/BannerImages/contact-us.png"
           AdminImage="/Images/contactus.svg"
           link="/contact-us"
-             buttonname="Request a Quote"
+          buttonname="Request a Quote"
         />
 
         <div>
