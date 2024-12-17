@@ -389,7 +389,6 @@ const FormCode: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    setIsLoading(true);
     e.preventDefault();
 
     // Early validation: Check if any required field is empty
@@ -426,6 +425,8 @@ const FormCode: React.FC = () => {
     if (formErrors.email || formErrors.phoneNumber || formErrors.course_name) {
       return;
     }
+
+    setIsLoading(true);
 
     // If everything is validated, proceed with the form submission
     const requestData = {
@@ -623,10 +624,13 @@ const FormCode: React.FC = () => {
               "&:hover": {
                 background: "linear-gradient(to right, #EDE574, #E1F5C4)",
               },
+              opacity: isLoading ? 0.5 : 1,
+              cursor: isLoading ? "not-allowed" : "pointer",
             }}
             type="submit"
+            disabled={isLoading}
           >
-            Submit
+           {isLoading ? "Submitting..." : "Submit"}
           </Button>
         </div>
       </form>

@@ -45,9 +45,6 @@ const ContactForm: React.FC = () => {
   });
 
   // Handle changes for all form fields
-  //  / Handle changes for all form fields
-  // Handle changes for all form fields
-  // Handle changes for all form fields
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | { name?: string; value: unknown }>
   ) => {
@@ -132,7 +129,7 @@ const ContactForm: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    setIsLoading(true);
+    // setIsLoading(true);
     e.preventDefault();
 
     // Early validation: Check if any required field is empty
@@ -188,7 +185,7 @@ const ContactForm: React.FC = () => {
     ) {
       return;
     }
-
+    setIsLoading(true);
     // If everything is validated, proceed with the form submission
     const requestData = {
       first_name: formData.first_name || "",
@@ -197,8 +194,6 @@ const ContactForm: React.FC = () => {
       contact_no: formData.contact_no,
       enquiry_message: formData.enquiry_message || "", // Always include enquiry_message
     };
-
-    // console.log("requestDataaa",requestData)
 
     try {
       const response = await axios.post(
@@ -211,7 +206,7 @@ const ContactForm: React.FC = () => {
       if (response) {
         // alert("Form submitted successfully!");
         setToast({
-          message: "Thank you for subscribing to LABX!",
+          message: "your request has been submitted successfully.",
           type: "success",
         });
         // Reset form state with all fields, including enquiry_message
@@ -240,7 +235,6 @@ const ContactForm: React.FC = () => {
     setToast(null); // Reset the toast state
   };
 
-  // console.log("formDataaaa", formData);
   return (
     <>
       {isLoading && (
@@ -368,10 +362,13 @@ const ContactForm: React.FC = () => {
                 "&:hover": {
                   background: "linear-gradient(to right, #EDE574, #E1F5C4)",
                 },
+                opacity: isLoading ? 0.5 : 1,
+                cursor: isLoading ? "not-allowed" : "pointer",
               }}
               type="submit"
+              disabled={isLoading}
             >
-              Submit
+              {isLoading ? "Submitting..." : "Submit"}
             </Button>
           </div>
         </form>

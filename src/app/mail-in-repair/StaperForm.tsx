@@ -1234,7 +1234,7 @@ const StaperForm: React.FC = () => {
                               <span className="loader" /> // You can use a loader component or spinner
                             ) : (
                               <>
-                                Submit
+                                {isLoading ? "Submitting..." : "Submit"}
                                 <IoIosArrowRoundForward />
                               </>
                             )}
