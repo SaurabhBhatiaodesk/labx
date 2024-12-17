@@ -14,33 +14,38 @@ import datarecoverychip from "../../../public/Images/datarecoverychip.png";
 import IconTitleParaImage from "@/components/IconTitleParaImage/IconTitleParaImage";
 import DataImportantNote from "@/components/DataImportantNote/DataImportantNote";
 import DataStarted from "./DataStarted";
+import ContactsandMessages from "../../../public/Images/icons/Contacts and Messages.svg"
+import emaildocument from "../../../public/Images/icons/emaildocument.svg"
+import PhysicallyDamagedDevices from "../../../public/Images/icons/Data from Physically Damaged Devices.svg"
+
 const DataRecovery = () => {
   const sectionData = [
     {
       image: PhotosandVideos,
       alt: "Repairs",
-      title: `Expertise in Complex Repairs`,
+      title: `Photos and 
+Videos`,
       hoverBackground:
         "linear-gradient(74deg, rgb(86, 193, 193), rgb(0, 0, 0))",
     },
     {
-      image: PhotosandVideos,
+      image: ContactsandMessages,
       alt: "Transparency",
-      title: "Complete Transparency in Our Process",
+      title: "Contacts and Messages",
       hoverBackground:
         "linear-gradient(74deg, rgba(243, 85, 32, 0.753), rgb(0, 0, 0))",
     },
     {
-      image: PhotosandVideos,
+      image: emaildocument,
       alt: "Recovery",
-      title: "Specialized Data Recovery",
+      title: "Document Files",
       hoverBackground:
         "linear-gradient(74deg, rgba(213, 253, 51, 0.63), rgb(0, 0, 0))",
     },
     {
-      image: PhotosandVideos,
+      image: PhysicallyDamagedDevices,
       alt: "B2B Services",
-      title: "Customized B2B Services",
+      title: "Data from Physically Damaged Devices",
       hoverBackground:
         "linear-gradient(74deg, rgba(207, 35, 98, 0.655), rgb(0, 0, 0))",
     },

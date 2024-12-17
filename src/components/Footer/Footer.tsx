@@ -16,6 +16,7 @@ import { FiMail } from "react-icons/fi";
 import homefooter from "../../../public/Images/icons/homefooter.svg";
 import traning from "../../../public/Images/icons/traning.svg";
 import ToastNotification from "../../components/ToastNotification/ToastNotification";
+import { MdCall } from "react-icons/md";
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState(""); // State to handle error message
@@ -526,7 +527,7 @@ const Footer = () => {
 
                 <Link href="tel:+61455777077">
                   <div className="flex flex-col items-center">
-                    <SlCallOut fontSize={24} />
+                  <MdCall   fontSize={24}/>
                     <span className="text-[12px] tracking-[1.5px] ">Call</span>
                   </div>
                 </Link>
