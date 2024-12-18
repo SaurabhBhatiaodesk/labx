@@ -1,64 +1,63 @@
 import React from "react";
 import Image from "next/image";
-// import datarecoverytop from "../../../public/Images/Home/datarecoverytop.png"
 
-import datarecoverytop from "../../../public/Images/Home/datarecoverytop.png";
-import pointer from "../../../public/Images/icons/pointing-right.svg";
-// import pointer from "../../../";
 
-const BoxComponents = () => {
+import MainHeading from "../ManinHeading/MainHeading";
+import MainTitle from "../MainTitle/MainTitle";
+
+interface FeatureItemProps {
+  icon: string;
+  title: string;
+  description: string;
+  images?: string[]; // Optional array of additional images
+}
+
+interface BoxComponentsProps {
+  heading: string;
+  title: string;
+  image: any;
+  features: FeatureItemProps[];
+}
+
+const FeatureItem: React.FC<FeatureItemProps> = ({ icon, title, description }) => (
+  <div className="flex items-start gap-3">
+    <Image width={24} height={24} src={icon} alt="icon" />
+    <div>
+      <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">{title}</span>
+      <p>{description}</p>
+    </div>
+  </div>
+);
+
+const BoxComponents: React.FC<BoxComponentsProps> = ({ heading, title, image, features }) => {
   return (
-    <>
-      <section>
-        <div className="grid lg:grid-cols-2 grid-cols-1 gap-4  lg:p-4 p-1 items-center">
-          <div>
-            {" "}
-            <Image src={datarecoverytop} className=" h-auto object-cover rounded-[20px] " alt=""></Image>
-          </div>
-          <div>
-            <div className="flex-col flex">
-            
-              <div className="flex items-start gap-3">
-                <Image src={pointer} alt="pointer"  />
-
-                <div className="">
-                  <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
-                  Expertise in Complex Cases:
-                  </span>
-                  <p>
-                  From water-damaged devices to dead motherboards, we tackle the most challenging recovery scenarios.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Image src={pointer} alt="pointer" />
-
-                <div className="">
-                  <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
-                  Cutting-Edge Technology:
-                  </span>
-                  <p>
-                  Utilizing advanced tools and techniques, we maximize the chances of retrieving your valuable data.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Image src={pointer} alt="pointer" />
-
-                <div className="">
-                  <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
-                  Professional Service:
-                  </span>
-                  <p>
-                  All recovery services are handled with strict confidentiality and care to ensure your data remains secure.
-                  </p>
-                </div>
-              </div>
-            </div>
+    <section className="container">
+      <div className="text-center pt-3">
+        <MainHeading Heading={heading} />
+        <MainTitle Title={title} />
+      </div>
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 lg:p-4 p-1 items-center">
+        <div>
+          <Image
+            src={image}
+            className="h-auto object-cover rounded-[20px]"
+            alt="Data Recovery"
+          />
+        </div>
+        <div>
+          <div className="flex-col flex">
+            {features.map((feature, index) => (
+              <FeatureItem
+                key={index}
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+              />
+            ))}
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

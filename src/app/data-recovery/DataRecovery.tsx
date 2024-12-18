@@ -4,20 +4,21 @@ import React from "react";
 import GoogleReview from "@/components/GoogleReviews/GoogleReviews";
 import MainTitle from "@/components/MainTitle/MainTitle";
 import Image from "next/image";
-import datarecoverytop from "../../../public/Images/Home/datarecoverytop.png";
-import pointer from "../../../../public/Images/icons/pointing-right.svg";
-import BoxComponents from "@/components/BoxComponents/BoxComponents";
+
 import BoxIconComponents from "@/components/BoxIconComponents/BoxIconComponents";
 import PhotosandVideos from "../../../public/Images/icons/PhotosandVideos.svg";
-// import datarecoveryImage from "../../../../public/Images/Home/datarecovery221.png";
+
 import datarecoverychip from "../../../public/Images/datarecoverychip.png";
 import IconTitleParaImage from "@/components/IconTitleParaImage/IconTitleParaImage";
 import DataImportantNote from "@/components/DataImportantNote/DataImportantNote";
 import DataStarted from "./DataStarted";
-import ContactsandMessages from "../../../public/Images/icons/Contacts and Messages.svg"
-import emaildocument from "../../../public/Images/icons/emaildocument.svg"
-import PhysicallyDamagedDevices from "../../../public/Images/icons/Data from Physically Damaged Devices.svg"
+import ContactsandMessages from "../../../public/Images/icons/Contacts and Messages.svg";
+import emaildocument from "../../../public/Images/icons/emaildocument.svg";
+import PhysicallyDamagedDevices from "../../../public/Images/icons/Data from Physically Damaged Devices.svg";
 
+import pointer from "../../../public/Images/icons/pointing-right.svg";
+import datarecoverytop from "../../../public/Images/Home/datarecoverytop.png";
+import BoxComponents from "@/components/BoxComponents/BoxComponents";
 const DataRecovery = () => {
   const sectionData = [
     {
@@ -74,7 +75,47 @@ Videos`,
     {
       title: "Delivery: ",
       description:
-      "Data is transferred back to you via your preferred method, whether on a new device or external storage.",
+        "Data is transferred back to you via your preferred method, whether on a new device or external storage.",
+    },
+  ];
+
+  // box components 1
+  const features = [
+    {
+      icon: pointer,
+      title: "Expertise in Complex Cases:",
+      description:
+        "From water-damaged devices to dead motherboards, we tackle the most challenging recovery scenarios.",
+    },
+    {
+      icon: pointer,
+      title: "Cutting-Edge Technology:",
+      description:
+        "Utilizing advanced tools and techniques, we maximize the chances of retrieving your valuable data.",
+    },
+    {
+      icon: pointer,
+      title: "Professional Service:",
+      description:
+        "All recovery services are handled with strict confidentiality and care to ensure your data remains secure.",
+    },
+  ];
+  const ScenariosHandle = [
+    {
+      icon: pointer,
+      title: "Water Damage:",
+      description:
+        " Quick recovery from devices exposed to liquid spills or submersion.",
+    },
+    {
+      icon: pointer,
+      title: "Impact Damage: ",
+      description: "Devices dropped or damaged due to external force.",
+    },
+    {
+      icon: pointer,
+      title: "Failed Software Updates:",
+      description: "Data recovery from bricked devices after failed updates.",
     },
   ];
   return (
@@ -91,47 +132,41 @@ Videos`,
       </div>
 
       <section style={{ background: "#0B0B0B" }}>
+        <BoxComponents
+          heading="Why Choose LabX for Data Recovery?"
+          title="The only path to data recovery is getting the phone to work again. We bring phones back from the dead every day. There is no manual, no instruction book, for what we do. We are the motherboard whisperers."
+          image={datarecoverytop} // Now correctly typed
+          features={features}
+        />
         <div className="container py-4 xl:py-6">
-          <div className="text-center">
-            <MainHeading Heading="Why Choose LabX for Data Recovery?" />
-            <MainTitle Title="The only path to data recovery is getting the phone to work again. We bring phones back from the dead every day. There is no manual, no instruction book, for what we do. We are the motherboard whisperers." />
-          </div>
-          <BoxComponents />
           <MainHeading Heading="What We Can Recover" />
 
           <BoxIconComponents data={sectionData} />
           <IconTitleParaImage
-            heading="Data Recovery Service"
-            title="At LabX, we provide a seamless, transparent data recovery experience designed to keep you informed and stress-free throughout the entire process. Our commitment to communication and quality ensures you receive timely updates and support every step of the way."
+            heading="Our Data Recovery Process
+"
+            title=""
             points={dataRecoveryPoints}
             buttonLabel="READ MORE"
             buttonLink="/data-recovery"
             imageSrc={datarecoverychip.src}
           />
         </div>
-        <DataImportantNote/>
+        <DataImportantNote />
       </section>
-      <DataStarted/>
 
 
-      {/* <div className="process_section pt-8 pb-8">
-        <div className="container">
-          <div className="main__cart_section">
-        <div className="card_box">
-            <b className='one'>1</b>
-            <p>Start Repair Request: You will fill out a request here and tell us about the history of your phone and what happened to it. Provide as much detail as you can to help us in our detective work to find the problem and get your data back. We will reply with a formal estimate via email within 1 business day.</p>
-          </div>
-          <div className="card_box hoverBlue">
-          <b className='two'>2</b>
-          <p>Mail It In: Follow the mail in instructions provided in your estimate email and send your device to us. We will match your device to your request and let you know that we received your device.</p>
-          </div>
-          <div className="card_box hoverGreen">
-          <b className='three'>3</b>
-          <p>Wait For Results: When your phone is recovered you’ll get the “great news!” email from us with details on your recovery. We will send an invoice you can pay online, and then your phone and drive will be shipped home with a tracking number.</p>
-          </div>
-        </div>
-        </div>
+      {/* <div className="gkhidden">
+        <IconTitleParaImage
+          heading="How to Get Started"
+          title=""
+          points={ScenariosHandle}
+         
+          imageSrc={datarecoverychip.src}
+        />
       </div> */}
+      <DataStarted />
+
       <GoogleReview />
     </>
   );

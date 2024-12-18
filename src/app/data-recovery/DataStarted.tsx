@@ -1,10 +1,7 @@
 import React from "react";
 import Image from "next/image";
-// import datarecoverytop from "../../../public/Images/Home/datarecoverytop.png"
-
-// import HowtoGetStarted from "../../public/Images/Home/HowtoGetStarted.png";
+import Link from "next/link";
 import HowtoGetStarted from "../../../public/Images/HowtoGetStarted.png";
-
 import pointer from "../../../public/Images/icons/pointing-right.svg";
 import MainButton from "@/components/MainButton/MainButton";
 import MainHeading from "@/components/ManinHeading/MainHeading";
@@ -24,17 +21,16 @@ const DataStarted = () => {
             <div className="flex-col flex">
             
               <div className="flex items-start gap-3">
-                <Image src={pointer} alt="pointer"  />
-
+              <Image width={24} height={24} src={pointer} alt="pointer" />
                 <div className="">
                   <p className=" text-primary">
-                  Visit our Mail-In Repair page to fill out the submission form and include details about your device and the issue.
+                  Visit our <Link className="font-semibold" href="/mail-in-repair">Mail-In Repair</Link> page to fill out the submission form and include details about your device and the issue.
                   </p>
                   
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Image src={pointer} alt="pointer" />
+                <Image width={24} height={24} src={pointer} alt="pointer" />
 
                 <div className="">
                 <p className=" text-primary">
@@ -43,7 +39,7 @@ const DataStarted = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Image src={pointer} alt="pointer" />
+              <Image width={24} height={24} src={pointer} alt="pointer" />
 
                 <div className="">
                 <p className=" text-primary">

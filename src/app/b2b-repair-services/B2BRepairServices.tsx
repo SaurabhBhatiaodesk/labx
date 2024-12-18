@@ -195,9 +195,9 @@ const B2BRepairServices: React.FC = () => {
       alt: "B2B Services",
       title: "Supply Uncommon Parts",
       description: `We have a wide range of uncommon parts in our inventory that aren’t listed on our website. Feel free to ask if we have what you need on our shelves!`,
-      param1:"Bring our client menu in this page as well.",
-      param2:"Bring Forum Section in this page as well.",
-      param3:"Bring Repair Section in this page as well ",
+      param1: "Bring our client menu in this page as well.",
+      param2: "Bring Forum Section in this page as well.",
+      param3: "Bring Repair Section in this page as well ",
 
       hoverBackground:
         "linear-gradient(74deg, rgba(207, 35, 98, 0.655), rgb(0, 0, 0))",
@@ -498,12 +498,25 @@ const B2BRepairServices: React.FC = () => {
                       />
                     </div>
                     <h3 className="text-[#EDE574] xl:text-lg ">
-  {section.title}
-</h3>
+                      {section.title}
+                    </h3>
                     <p>{section.description}</p>
-                    <span className=" text-[16px]">{section.param1}</span>
-                    <span className=" text-[16px]">{section.param2}</span>
-                    <span className=" text-[16px]">{section.param3}</span>
+
+                    {section.param1 && (
+                      <span className="text-[16px] text-left flex items-start gap-[4px]">
+                        <Image className=" w-[24px]" src={pointer} alt="" /> {section.param1}
+                      </span>
+                    )}
+                    {section.param2 && (
+                      <span className="text-[16px] text-left flex items-start gap-[4px]">
+                      <Image className=" w-[24px]" src={pointer} alt="" /> {section.param2}
+                    </span>
+                    )}
+                    {section.param3 && (
+                      <span className="text-[16px] text-left flex items-start gap-[4px]">
+                      <Image className=" w-[24px]" src={pointer} alt="" /> {section.param3}
+                    </span>
+                    )}
                   </div>
                 ))}
               </div>
