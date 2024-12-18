@@ -1,16 +1,7 @@
 import React, { useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import Image from "next/image";
-import pointet from "../../../../public/Images/icons/pointingright.svg";
-
-// import screenreplace from "../../../../public/Images/Home/screen.svg";
-// import traning from "../../../../public/Images/Home/phone.svg";
-// import MailinRepair from "../../../../public/Images/Home/mail.svg";
-// import repairsoloutaion from "../../../../public/Images/Home/repairsoloutaion.svg";
-// import B2BRepair from "../../../../public/Images/Home/B2B Repair.svg";
-// import datarecovery from "../../../../public/Images/Home/data.svg";
-
-
+import Link from "next/link";
 import arrow1 from "../../../../public/Images/icons/arrow1-1.svg";
 import arrow2 from "../../../../public/Images/icons/arrow1-2.svg";
 import arrow3 from "../../../../public/Images/icons/arrow1-3.svg";
@@ -28,6 +19,8 @@ interface Tab {
   contentf6?: string;
   button?: string;
   image?: any;
+  link2?: any;
+  buttonColor?: string;
 }
 
 const tabs: Tab[] = [
@@ -43,8 +36,10 @@ const tabs: Tab[] = [
       "Fair and Transparent Grading: We provide a clear and honest grading system. If a screen is rejected or downgraded to a B grade, we will provide a detailed explanation along with photos as proof.",
     contentf5:
       "Fast Turnaround Phone Repair: We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
-    button: "LEARN MORE",
+    button: "Read More",
+    link2: "/screen-refurbishing",
     image: arrow1,
+    buttonColor: "linear-gradient(74deg, #43C6AC, #000000)",
   },
   {
     id: 1,
@@ -58,9 +53,10 @@ const tabs: Tab[] = [
       "Software Training: This course focuses on essential software repairs, including phone flashing, unlocking, and other software fixes. Learn how to troubleshoot and resolve software-related problems effectively.",
     contentf5:
       "Screen Refurbishing Training: Learn how to restore damaged screens to their original quality. Master the techniques needed to refurbish screens for a variety of devices.",
-    button: "LEARN MORE",
+    button: "Read More",
+    link2: "/repair-solutions",
     image: arrow2,
-
+    buttonColor: "linear-gradient(74deg, #FF9966, #000000)",
   },
   {
     id: 2,
@@ -76,9 +72,10 @@ const tabs: Tab[] = [
       "Send Your Device: Once approved, follow the provided mailing instructions to ship your device to us securely.",
     contentf6:
       "Device Intake and Repair: Upon receipt, we’ll confirm via email and place your device in the repair queue, notifying you of any updates during the process.",
-    button: "LEARN MORE",
+    button: "Read More",
+    link2: "/mail-in-repair",
     image: arrow3,
-
+    buttonColor: "linear-gradient(74deg, #FFE000, #000000)",
   },
   {
     id: 3,
@@ -94,8 +91,10 @@ const tabs: Tab[] = [
       "Repair Tracking and Updates: Stay informed with our comprehensive mobile phone repair tracking system. We provide automated updates at each stage, ensuring you always know the status of your devices throughout the mobile phone repair process.",
     contentf6:
       "Easy B2B Account Setup: Setting up a B2B account is straightforward. Complete the Apply for Business Account form on our website, and your account will be activated within moments, providing you with fast turnaround time for exclusive B2B phone repair services.",
-    button: "LEARN MORE",
+    button: "Read More",
+    link2: "/b2b-repair-services",
     image: arrow4,
+    buttonColor: "linear-gradient(74deg, #A044FF, #000000)",
   },
   {
     id: 4,
@@ -109,27 +108,12 @@ const tabs: Tab[] = [
       "Corrupt Operating Systems: We handle cases of OS corruption, which often makes a device unbootable, and recover data like contacts, texts, photos, and videos.",
     contentf5:
       "Failed or Broken Logic Boards: Our team of mobile technicians specializes in recovering data from devices with broken or failed logic boards, using advanced techniques.",
-    button: "LEARN MORE",
+    button: "Read More",
+    link2: "/data-recovery",
     image: arrow5,
+    buttonColor: "linear-gradient(74deg, #2052e8a5, #000000)",
   },
 ];
-
-const getGradientColor = (id: number) => {
-  switch (id) {
-    case 0:
-      return "linear-gradient(74deg, #56c1c1, #000000)";
-    case 1:
-      return "linear-gradient(74deg, #f35520c0, #000000)";
-    case 2:
-      return "linear-gradient(74deg, #d5fd33a1, #000000)";
-    case 3:
-      return "linear-gradient(74deg, #cf2362a7, #000000)";
-    case 4:
-      return "linear-gradient(74deg, #2052e8a5, #000000)";
-    default:
-      return "linear-gradient(74deg, #56c1c1, #000000)";
-  }
-};
 
 const DeliveryTousMobile: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -139,32 +123,32 @@ const DeliveryTousMobile: React.FC = () => {
   };
 
   return (
-    <div className="">
+    <div>
       {tabs.map((tab) => (
         <div key={tab.id} className="mb-4">
           <div
             className="flex justify-between items-center p-[12px] rounded-[50px] cursor-pointer border-[1px]"
             onClick={() => handleToggle(tab.id)}
             style={{
-              background: activeIndex === tab.id ? getGradientColor(tab.id) : undefined,
+              background: activeIndex === tab.id ? tab.buttonColor : undefined,
             }}
           >
-            <span className="text-[17px] tracking-[1.5px]">{tab.label}</span>
+            <span className="text-[17px] tracking-[1.5px] text-white">{tab.label}</span>
             <MdKeyboardArrowDown
-              className={`transition-transform duration-300 ${
+              className={`transition-transform duration-300 text-white ${
                 activeIndex === tab.id ? "rotate-180" : ""
               }`}
             />
           </div>
           <div
             className={`overflow-hidden transition-max-height duration-500 ease-in-out ${
-              activeIndex === tab.id ? "max-h-screen" : "max-h-0"
+              activeIndex === tab.id ? "h-full" : "max-h-0"
             }`}
           >
             <div className="p-[12px] rounded-b-lg text-[16px]">
-              <div className="flex items-start gap-2 mb-2">
-                {/* <Image src={tab.image} alt="Pointing icon" width={20} height={20} /> */}
-                <p className="xl:pb-2 pb-1">{tab.content}</p>
+              <div className="flex items-center gap-2 mb-3">
+              
+                <p className="xl:pb-2 pb-1 m-0">{tab.content}</p>
               </div>
               {tab.contentf2 && (
                 <div className="flex items-start gap-2 mb-2">
@@ -197,6 +181,14 @@ const DeliveryTousMobile: React.FC = () => {
                 </div>
               )}
             </div>
+            <Link href={tab.link2} passHref>
+  <button
+    className="border-[0.5px] py-2 px-5 rounded-[50px] text-sm text-white font-[500]"
+    style={{ background: tab.buttonColor }}
+  >
+    {tab.button}
+  </button>
+</Link>
           </div>
         </div>
       ))}

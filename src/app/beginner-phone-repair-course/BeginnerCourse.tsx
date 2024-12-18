@@ -9,6 +9,8 @@ import BiginnerChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/Biginne
 import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
 import React from "react";
 import TraningTabBignerThird from "@/components/TraningBanner/TraningTabBignerThird";
+import MainHeading from "@/components/ManinHeading/MainHeading";
+import FormCode from "@/components/Form/FormCode";
 
 const BeginnerCourse = () => {
   const accordionData = [
@@ -89,6 +91,10 @@ const BeginnerCourse = () => {
       <TraningCourseInstructors />
       <BeginnerPhoneRepaiCourseSale />
       <BiginnerChooseLab />
+      <div className=" pt-3">
+        <MainHeading Heading="Beginner Phone Repair Course"/>
+          <FormCode/>
+          </div>
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."

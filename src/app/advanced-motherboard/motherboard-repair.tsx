@@ -9,6 +9,8 @@ import MotherboardReviews from "@/components/GoogleReviews/MotherboardReviews";
 import AdvancedChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/advancedMotherboardChooseLab"
 import React from "react";
 import TrainingTabMotherboardsecond from "@/components/TraningBanner/TrainingTabMotherboardsecond";
+import FormCode from "@/components/Form/FormCode";
+import MainHeading from "@/components/ManinHeading/MainHeading";
 
 const BeginnerCourse = () => {
   const accordionData = [
@@ -88,6 +90,10 @@ const BeginnerCourse = () => {
       <TraningCourseInstructors />
       <MotherboardPhoneReapair />
       <AdvancedChooseLab />
+      <div className=" pt-3">
+        <MainHeading Heading="Advanced Motherboard Repair"/>
+          <FormCode/>
+          </div>
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."

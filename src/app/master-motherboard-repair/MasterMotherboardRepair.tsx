@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
 import BeginnerPhoneRepaiCourseSale from "@/components/TraningBanner/BeginnerPhoneRepaiCourseSale";
 import TraningBanner from "@/components/TraningBanner/TraningBanner";
@@ -12,10 +12,11 @@ import FristTraningTab from "../expert-motherboard-repair/FristTraningTab";
 import TrainingInstructors from "../expert-motherboard-repair/TrainingInstructors";
 import TraningSales from "../expert-motherboard-repair/TraningSales";
 
-import MasterChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/MasterChooseLab"
+import MasterChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/MasterChooseLab";
 import MasterTabFirsh from "./MasterTabFirsh";
 import MasterTabSecond from "./MasterTabSecond";
-
+import FormCode from "@/components/Form/FormCode";
+import MainHeading from "@/components/ManinHeading/MainHeading";
 
 const MasterMotherboardRepair = () => {
   const accordionData = [
@@ -40,7 +41,8 @@ const MasterMotherboardRepair = () => {
         "The Master Motherboard Repair course lasts for five days. You'll get both theoretical knowledge and hands-on practical experience.",
     },
     {
-      title: "5. Can I start my own repair business after completing the course?",
+      title:
+        "5. Can I start my own repair business after completing the course?",
       content:
         "Yes, this course equips you with industry-standard skills that will prepare you to open a repair business or work as a professional technician.",
     },
@@ -106,17 +108,18 @@ const MasterMotherboardRepair = () => {
         Courseformate2="1 Week Duration"
         Courseformate3="Experienced Instructors"
         Courseformate4="Free Toolkit"
-           border="#d5fd33a1"
-          
+        border="#d5fd33a1"
       />
-    <MasterTabFirsh/>
-    <MasterTabSecond/>
+      <MasterTabFirsh />
+      <MasterTabSecond />
       <TrainingInstructors {...instructorData} />
 
       <TraningSales
         courseName="The Course Will Prepare You for Expert Mobile Phone Repair"
         imagedata="/Images/CourseInstructors.png"
-        courseDescription={["This Level 3 mainboard repair training is designed to take your repair expertise to the highest level, enabling you to handle the most advanced repairs and data recovery tasks. By the end of this course, you’ll be prepared to tackle any challenge, from CPU reballing to restoring devices with critical board damage."]}
+        courseDescription={[
+          "This Level 3 mainboard repair training is designed to take your repair expertise to the highest level, enabling you to handle the most advanced repairs and data recovery tasks. By the end of this course, you’ll be prepared to tackle any challenge, from CPU reballing to restoring devices with critical board damage.",
+        ]}
         saleDurationDays={7}
         initialCounters={{
           personsMentored: 50,
@@ -127,6 +130,10 @@ const MasterMotherboardRepair = () => {
 
       <MasterChooseLab />
       {/* <BeginnerPhoneRepaiCourseSale /> */}
+      <div className=" pt-3">
+        <MainHeading Heading="Master Motherboard Repair – Micro Soldering"/>
+          <FormCode/>
+          </div>
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)
 "
@@ -134,6 +141,7 @@ const MasterMotherboardRepair = () => {
 "
         accordionData={accordionData}
       />
+     
       <MasterReviews />
     </>
   );

@@ -17,6 +17,7 @@ import homefooter from "../../../public/Images/icons/homefooter.svg";
 import traning from "../../../public/Images/icons/traning.svg";
 import ToastNotification from "../../components/ToastNotification/ToastNotification";
 import { MdCall } from "react-icons/md";
+import { IoIosCart } from "react-icons/io";
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState(""); // State to handle error message
@@ -363,24 +364,19 @@ const Footer = () => {
                     <div>
                       {toast && (
                         <ToastNotification
+                        
                           message={toast.message}
                           type={toast.type}
                           onHide={handleToastHide}
+                        
                         />
                       )}
-                      {/* {loading && (
-                        // <div className="absolute left-0 top-[110%] w-full bg-gray-600 bg-opacity-50 flex justify-center items-center z-50 py-2">
-                          <div className="xl:text-[30px]  lg:text-26px text-30px font-poppins">Processing...</div>
-                        // </div>
-                      )} */}
+                     
                       <h2 className="xl:text-[30px]  lg:text-26px text-30px font-poppins">
                         Newsletter
                       </h2>
                     </div>
                     <div className="relative max-w-full">
-
-
-
                       <input
                         type="email"
                         placeholder="Enter your email address"
@@ -403,11 +399,18 @@ const Footer = () => {
 
                     </div>
 
-                    {error && <p className="text-[red] m-0">{error}</p>}{" "}
+                    {error && <p className="text-[red] text-sm m-0">{error}</p>}{" "}
                       {loading && (
-                        <p className="xl:text-[30px] lg:text-26px text-30px font-poppins text-blue-500">
-                          Processing...
+                        <div className="flex justify-center items-center">
+                        <p className="text-sm text-tertiary flex items-start">
+                        Processing
+                          <span className="ml-2 flex space-x-1">
+                            <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce"></span>
+                            <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce delay-200"></span>
+                            <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce delay-400"></span>
+                          </span>
                         </p>
+                      </div>
 
                       )}
                   </div>
@@ -506,7 +509,7 @@ const Footer = () => {
           </section>
           <section className="block lg:hidden">
             <div className="py-3 bg-black  relative z-[100]  ">
-              <div className="grid grid-cols-4 justify-between gap-5 footer-app py-3 fixed bottom-0 w-full left-0 right-0 bg-black border-t-1 border-[#4a4a4a77] ">
+              <div className="grid grid-cols-5 justify-between gap-2 footer-app py-3 fixed bottom-0 w-full left-0 right-0 bg-black border-t-1 border-[#4a4a4a77] ">
               <Link href="/">
                   <div className="flex flex-col items-center">
                     <Image className="w-[24px]" src={homefooter} alt="" />
@@ -525,6 +528,12 @@ const Footer = () => {
                   <div className="flex flex-col items-center">
                     <FiMail fontSize={24} />
                     <span className="text-[12px] tracking-[1.5px] ">Mail</span>
+                  </div>
+                </Link>
+                <Link href="/coming-soon">
+                  <div className="flex flex-col items-center">
+                  <IoIosCart fontSize={26} />
+                    <span className="text-[12px] tracking-[1.5px] ">Cart</span>
                   </div>
                 </Link>
 
