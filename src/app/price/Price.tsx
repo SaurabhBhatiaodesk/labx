@@ -288,7 +288,7 @@ const Price = () => {
      <div className='gk-hidden'>
        <Breadcrumb
           pageName="Buy Back Price List"
-          pageDescription="This course is designed and based on the highest industry standards and over 14 years of industry experience. It includes everything that anyone needs to be one of the best technicians or a successful business owner."
+          pageDescription="Check the pricing for all our complex mobile phone repair services, including B2B solutions and training courses. Visit our Price List page for detailed cost information and tailored quotes based on the specific repair or course you need."
           backgroundImage="/Images/BannerImages/price.png"
           AdminImage="/Images/money.png"
           link=""
@@ -300,7 +300,8 @@ const Price = () => {
                 <div className="text-center">
                     
                     <MainHeading Heading='Get the Best Value for Your Device - LabX Buyback Prices'/>
-                    <p>Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing.</p>
+                    <p>Select your mobile phone brand and explore our price list for various repair services we offer, from screen refurbishment to advanced motherboard repairs and more.
+                    </p>
                 </div>
             </div>
         </section>
