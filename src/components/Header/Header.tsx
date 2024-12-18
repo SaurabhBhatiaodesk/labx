@@ -112,7 +112,7 @@ export default function App() {
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             /> */}
             {!isMenuOpen ?
-            <button className=" w-[50px] text-[12px] font-medium font-poppins flex flex-col items-center rounded-lg p-[4px] bg-tertiary text-secondary"> <TbMenu2 fontSize={20} height={19} /> <span className="leading-3">  Menu</span></button>
+            <button className=" w-[50px] text-[12px] font-medium font-poppins flex flex-col items-center rounded-lg p-[4px] text-primary"> <TbMenu2 fontSize={24} height={19} /> <span className="leading-3">  Menu</span></button>
             :
             <button className="w-[50px] flex justify-center"><RxCross2 /></button>}
           </NavbarContent>
@@ -132,11 +132,11 @@ export default function App() {
                 </NavbarContent>
 
                 <div className="flex gap-[6px] relative">
-                  <span className="showmobile">
+                  {/* <span className="showmobile">
                     <Link href="tel:+61455777077">
                     <MdCall   fontSize={26}/>
                     </Link>
-                  </span>
+                  </span> */}
                   <Link
                     className="showmobile hover:scale-110 transition-transform duration-200"
                     href="tel:+61455777077"

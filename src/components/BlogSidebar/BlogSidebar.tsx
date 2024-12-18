@@ -88,7 +88,7 @@ export default function BlogSidebar() {
         {blogs.map((blog) => (
           <li
             onClick={() => sendId(blog._id)}
-            key={blog._id} style={{zIndex:'9999', position:'relative'}}
+            key={blog._id} style={{zIndex:'444', position:'relative'}}
             className="flex items-start mb-4  shadow-sm rounded-lg p-2 hover:shadow-md gap-4 cursor-pointer"
           >
             {blog.featuredImage.length > 0 && (

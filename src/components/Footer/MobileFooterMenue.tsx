@@ -264,12 +264,22 @@ const MobileFooterMenue = () => {
           </button>
          
         </div>
-        {error && <p className="text-red-500 mt-2">{error}</p>}{" "}
+        {error && <p className="text-red text-sm mt-2">{error}</p>}{" "}
           {loading && (
            
-            <p className="xl:text-[30px] lg:text-26px text-30px font-poppins text-blue-500">
-              Processing...
-            </p>
+            // <p className="xl:text-[30px] lg:text-26px text-30px font-poppins text-blue-500">
+            //   Processing...
+            // </p>
+              <div className="flex justify-center items-center">
+              <p className="text-sm text-tertiary flex items-center">
+              Processing
+                <span className="ml-2 flex space-x-1">
+                  <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce"></span>
+                  <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce delay-200"></span>
+                  <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce delay-400"></span>
+                </span>
+              </p>
+            </div>
           
           )}
       </div>

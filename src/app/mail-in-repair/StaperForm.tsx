@@ -773,7 +773,7 @@ const StaperForm: React.FC = () => {
 
             {activeStep === 1 && (
               <>
-                <div className="grid md:grid-cols-2 gap-[20px] py-2 lg:py-8 border-y-[1px] border-[#81818175]">
+                <div className=" sdev_bghide grid md:grid-cols-2 gap-[20px] py-2 lg:py-8 border-y-[1px] border-[#81818175]">
                   <div className="hidden md:block">
                     <div className="relative w-full h-full block pb-[61%]">
                       <Image
@@ -812,13 +812,13 @@ const StaperForm: React.FC = () => {
                           <p className="text-base leading-5 mb-2">
                             Any Previous Repair Attempts?*
                           </p>
-                          <Select
+                          <Select 
                             defaultSelectedKeys={
                               repairDetails.previousRepairAttempts != "Yes"
                                 ? ["No"]
                                 : ["Yes"]
                             }
-                            className="bg-black text-white gauav"
+                            className="bg-black text-white gauav "
                             value={
                               repairDetails?.previousRepairAttempts != "Yes"
                                 ? "No"
@@ -939,7 +939,7 @@ const StaperForm: React.FC = () => {
                           {activeStep > 0 && (
                             <button
                               onClick={handlePrevStep}
-                              className="btn hidden lg:block"
+                              className="btn"
                             >
                               Previous
                             </button>
@@ -1208,7 +1208,7 @@ const StaperForm: React.FC = () => {
                       <div className="flex justify-between mt-4">
                         {activeStep > 0 && (
                           <button
-                            className="btn hidden lg:block"
+                            className="btn"
                             onClick={handlePrevStep}
                           >
                             Previous

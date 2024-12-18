@@ -501,3 +501,9 @@ label {
 .gkhidden button{
   display: none;
 }
+
+
+.data-\[selectable\=true\]\:focus\:bg-default:focus[data-selectable="true"] {
+  background: var(--tertiary-color) !important;
+  color: #000 !important;
+}

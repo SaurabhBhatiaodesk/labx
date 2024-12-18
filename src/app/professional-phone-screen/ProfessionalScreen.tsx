@@ -9,6 +9,8 @@ import ProfessionalInstructorSecond from "./ProfessionalInstructorSecond";
 import ProfessionalChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/ProfessionalChooseLab";
 import ProfessionalReviews from "@/components/GoogleReviews/ProfessionalReviews";
 import React from "react";
+import FormCode from "@/components/Form/FormCode";
+import MainHeading from "@/components/ManinHeading/MainHeading";
 
 
 
@@ -106,6 +108,10 @@ const ProfessionalScreen = () => {
       <TraningCourseInstructors />
       <ProfessionalInstructorSecond />
       <ProfessionalChooseLab />
+      <div className=" pt-3">
+        <MainHeading Heading="Professional Phone Screen Refurbishing Course"/>
+          <FormCode/>
+          </div>
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."

@@ -1,277 +1,6 @@
-// "use client";
-// import React, { useState } from "react";
-// import axios from "axios";
-// import {
-//   TextField,
-//   Button,
-//   MenuItem,
-//   Select,
-//   FormControl,
-//   InputLabel,
-//   SelectChangeEvent,
-// } from "@mui/material";
-// import { TextareaAutosize } from "@mui/base"; // For the message input
-// import "./Form.css";
-
-// const FormCode: React.FC = () => {
-//   const [formData, setFormData] = useState({
-//     business_name: "",
-//     email_address: "",
-//     contact_no: "",
-//     course_name: "",
-//     training_message: "",
-//   });
-
-//   const [formErrors, setFormErrors] = useState({
-//     email: "",
-//     phoneNumber: "",
-//     course_name: "",
-//   });
-
-//   // Handle changes for all form fields
-//   const handleChange = (
-//     e: React.ChangeEvent<HTMLInputElement | { name?: string; value: unknown }>
-//   ) => {
-//     const { name, value } = e.target;
-//     setFormData((prev) => ({
-//       ...prev,
-//       [name!]: value,
-//     }));
-
-//     // Validate the field as the user types
-//     validateField(name!, value as string);
-//   };
-
-//   // Handle course selection change
-//   const handleCourseChange = (e: SelectChangeEvent<string>) => {
-//     const value = e.target.value;
-//     setFormData((prev) => ({
-//       ...prev,
-//       course_name: value,
-//     }));
-
-//     // Validate course field
-//     validateField("course_name", value);
-//   };
-
-//   // Validate individual fields
-//   const validateField = (name: string, value: string) => {
-//     let errors = { ...formErrors };
-//     switch (name) {
-//       case "email_address":
-//         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//         errors.email = emailPattern.test(value)
-//           ? ""
-//           : "Please enter a valid email address";
-//         break;
-//       case "contact_no":
-//         const phonePattern = /^[0-9]{10}$/;
-//         errors.phoneNumber = phonePattern.test(value)
-//           ? ""
-//           : "Please enter a valid 10-digit phone number";
-//         break;
-//       case "course_name":
-//         errors.course_name = value ? "" : "Please select a course";
-//         break;
-//       default:
-//         break;
-//     }
-//     setFormErrors(errors);
-//   };
-
-//   const validateAllFields = () => {
-//     let errors = { email: "", phoneNumber: "", course_name: "" }; // Reset errors first
-//     // Validate each field
-//     validateField("email_address", formData.email_address);
-//     validateField("contact_no", formData.contact_no);
-//     validateField("course_name", formData.course_name);
-
-//     return errors;  // Ensure errors are returned after validation
-//   };
-
-//   const handleSubmit = async (e: React.FormEvent) => {
-//     e.preventDefault();
-
-//     // Validate all fields and get errors
-//     const errors = validateAllFields();
-
-//     // If there are validation errors, set the errors state and stop submission
-//     if (errors.email || errors.phoneNumber || errors.course_name) {
-//       setFormErrors(errors); // Set errors so that validation messages appear
-//       return; // Prevent form submission if validation fails
-//     }
-
-//     // Proceed with form submission if validation passes
-//     const requestData = {
-//       business_name: formData.business_name || undefined,
-//       email_address: formData.email_address,
-//       contact_no: formData.contact_no,
-//       course_name: formData.course_name,
-//       training_message: formData.training_message || undefined,
-//     };
-
-//     try {
-//       const response = await axios.post(
-//         "https://labxbackend.labxrepair.com.au/api/create/training",
-//         requestData
-//       );
-//       console.log(await response.data, "xxxxxxxxxxx");
-//       if (response) {
-//         alert("Form submitted successfully!");
-//         setFormData({
-//           business_name: "",
-//           email_address: "",
-//           contact_no: "",
-//           course_name: "",
-//           training_message: "",
-//         }); // Reset form after successful submission
-//       } else {
-//         alert("Error submitting the form.");
-//       }
-//     } catch (error) {
-//       console.error("Error submitting the form", error);
-//       alert("An error occurred while submitting the form.");
-//     }
-//   };
-
-//   return (
-//     <div className="p-4 steper-form-section-os">
-//       <form onSubmit={handleSubmit}>
-//         <div className="flex flex-col gap-4 bg-black text-white">
-//           <div className="grid grid-cols-2 gap-4 form-label">
-//             {/* Business Name Input */}
-//             <TextField
-//               label="Business Name"
-//               name="business_name"
-//               fullWidth
-//               variant="outlined"
-//               value={formData.business_name}
-//               onChange={handleChange}
-//             />
-
-//             {/* Email Input with validation */}
-//             <TextField
-//               label="Your Email"
-//               name="email_address"
-//               fullWidth
-//               variant="outlined"
-//               value={formData.email_address}
-//               onChange={handleChange}
-//               error={!!formErrors.email}
-//               helperText={formErrors.email}
-//             />
-
-//             {/* Phone Number Input with validation */}
-//             <TextField
-//               label="Phone Number"
-//               name="contact_no"
-//               fullWidth
-//               variant="outlined"
-//               value={formData.contact_no}
-//               onChange={handleChange}
-//               error={!!formErrors.phoneNumber}
-//               helperText={formErrors.phoneNumber}
-//             />
-
-//             {/* Course Selection */}
-//             <FormControl fullWidth variant="outlined">
-//               <InputLabel>Select Your Course</InputLabel>
-//               <Select
-//                 label="Select Your Course"
-//                 name="course_name"
-//                 value={formData.course_name}
-//                 onChange={handleCourseChange}
-//                 sx={{
-//                   color: "white", // Set the text color of the selected option to white
-//                   "& .MuiSelect-icon": {
-//                     color: "white", // Set the dropdown icon color to white
-//                   },
-//                   "& .MuiOutlinedInput-notchedOutline": {
-//                     borderColor: "white", // Set the border color of the select input
-//                   },
-//                 }}
-//                 error={!!formErrors.course_name} // Show error if course is not selected
-//               >
-//                 <MenuItem value="" sx={{ color: "black" }}>
-//                   -- Select a Course --
-//                 </MenuItem>
-//                 <MenuItem value="video_editing" sx={{ color: "black" }}>
-//                   Screen Refurbishment
-//                 </MenuItem>
-//                 <MenuItem value="graphic_design" sx={{ color: "black" }}>
-//                   Mail-In-Repair
-//                 </MenuItem>
-//                 <MenuItem value="web_design" sx={{ color: "black" }}>
-//                   Web Designing
-//                 </MenuItem>
-//                 <MenuItem value="web_development" sx={{ color: "black" }}>
-//                   Training
-//                 </MenuItem>
-//                 <MenuItem value="php" sx={{ color: "black" }}>
-//                   B2B Repair
-//                 </MenuItem>
-//                 <MenuItem value="laravel" sx={{ color: "black" }}>
-//                   Data Recovery
-//                 </MenuItem>
-//                 <MenuItem value="wordpress" sx={{ color: "black" }}>
-//                   Parts Store
-//                 </MenuItem>
-//                 <MenuItem value="c++" sx={{ color: "black" }}>
-//                   Repair Solutions
-//                 </MenuItem>
-//               </Select>
-//             </FormControl>
-//           </div>
-
-//           {/* Training Message */}
-//           <TextareaAutosize
-//             className="border-[1.5px]"
-//             minRows={4}
-//             placeholder="Enter your message here"
-//             value={formData.training_message}
-//             onChange={handleChange}
-//             name="training_message"
-//             style={{
-//               width: "100%",
-//               padding: "10px",
-//               marginTop: "10px",
-//               backgroundColor: "black",
-//               color: "white",
-//               borderRadius: "8px",
-//               borderColor: "white",
-//             }}
-//           />
-//         </div>
-
-//         {/* Submit Button */}
-//         <div className="py-4">
-//           <Button
-//             variant="contained"
-//             sx={{
-//               background: "linear-gradient(to right, #E1F5C4, #EDE574)",
-//               color: "black",
-//               textTransform: "uppercase",
-//               fontSize: "14px",
-//               padding: "12px 18px",
-//               borderRadius: "50px",
-//               "&:hover": {
-//                 background: "linear-gradient(to right, #EDE574, #E1F5C4)",
-//               },
-//             }}
-//             type="submit"
-//           >
-//             Submit
-//           </Button>
-//         </div>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default FormCode;
-
 "use client";
 import React, { useState } from "react";
+import lottiearrow from "../../../public/Images/jsonfile/scrolling.json";
 import axios from "axios";
 import {
   TextField,
@@ -285,7 +14,7 @@ import {
 import { TextareaAutosize } from "@mui/base"; // For the message input
 import "./Form.css";
 import ToastNotification from "../../components/ToastNotification/ToastNotification";
-// icons
+import Lottie from "lottie-react";
 
 const FormCode: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false); // State for loader
@@ -478,39 +207,41 @@ const FormCode: React.FC = () => {
   };
 
   return (
-    <div className="p-4 steper-form-section-os" id="Kickstart">
-       {isLoading && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            zIndex: 9999,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <div
-            style={{
-              width: "50px",
-              height: "50px",
-              border: "5px solid #f3f3f3",
-              borderTop: "5px solid #3498db",
-              borderRadius: "50%",
-              animation: "spin 1s linear infinite",
-            }}
-          ></div>
-        </div>
-      )}
+    <div className="container">
+    <div className="p-4 steper-form-section-os " id="Kickstart">
+
+
+ {isLoading && (
+ <div
+    style={{
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
+      zIndex: 9999,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+  >
+ <Lottie
+ animationData={lottiearrow}
+ style={{ width: 50, height: 50 }}
+ className="lottie-icon"
+/>
+  </div>
+
+ )} 
+
+
       {toast && (
         <ToastNotification
           message={toast.message}
           type={toast.type}
           onHide={handleToastHide}
+          
         />
       )}
       <form onSubmit={handleSubmit}>
@@ -518,7 +249,7 @@ const FormCode: React.FC = () => {
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 form-label">
             {/* Business Name Input */}
             <TextField
-              label="Business Name"
+              label="Business Name (if any)"
               name="business_name"
               fullWidth
               variant="outlined"
@@ -578,6 +309,7 @@ const FormCode: React.FC = () => {
                 <MenuItem value="Expert_Motherboard_Repair">Expert Motherboard Repair </MenuItem>
                 <MenuItem value="Master_Motherboard_Repair">Master Motherboard Repair </MenuItem>
                 <MenuItem value="Professional_Phone_Screen">Professional Phone Screen</MenuItem>
+                <MenuItem value="Broken_Ripped_Pads_Repair_Jumbers">Broken/ Ripped Pads Repair Jumbers</MenuItem>
               </Select>
 
               {formErrors.course_name && (
@@ -634,6 +366,7 @@ const FormCode: React.FC = () => {
           </Button>
         </div>
       </form>
+    </div>
     </div>
   );
 };

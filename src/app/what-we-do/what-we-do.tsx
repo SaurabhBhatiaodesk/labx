@@ -12,7 +12,7 @@ const WhatWeDo = () => {
       <div>
         <Breadcrumb
           pageName="What We Do"
-          pageDescription="Write this info before our listed services :”Discover our range of professional services designed to meet all your needs with precision and care. From innovative solutions to industry-leading expertise, we are committed to delivering excellence every step of the way."
+          pageDescription="Discover our range of professional services designed to meet all your needs with precision and care. From innovative solutions to industry-leading expertise, we are committed to delivering excellence every step of the way."
           backgroundImage="/Images/BannerImages/about.png"
           AdminImage="/Images/adminimage.png"
           link="/contact-us"
