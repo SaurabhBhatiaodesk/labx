@@ -37,7 +37,7 @@ interface Tab {
   contentf6title?: string;
 }
 
-const ThreeTraningTab: React.FC = () => {
+const MasterTabFirsh: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const tabs: Tab[] = [
@@ -48,7 +48,6 @@ const ThreeTraningTab: React.FC = () => {
       contentf2title: "Expert B2B Screen Refurbishing",
       contentf2:
         "Learn specialized techniques for recovering data from severely damaged or non-functional devices, including water-damaged phones and corrupted storage chips. This motherboard repair course will provide you with expertise in extracting critical data in difficult recovery cases.",
-    
 
       button: "Get Course",
       link: "/training",
@@ -62,13 +61,10 @@ const ThreeTraningTab: React.FC = () => {
       contentf2:
         "  Master the delicate process of removing and reballing CPUs on mobile phone devices. This technique is essential for repairs involving faulty or damaged CPU connections, ensuring restored functionality in devices.",
       contentf3title: "",
-      contentf3:
-        " ",
-      contentf4:
-        "",
+      contentf3: " ",
+      contentf4: "",
       contentf5title: "",
-      contentf5:
-        " ",
+      contentf5: " ",
       button: "Get Course",
       link: "/training",
       image: tabimage,
@@ -81,60 +77,12 @@ const ThreeTraningTab: React.FC = () => {
       contentf2:
         " Gain the skills required to perform full board swaps, a critical technique when a motherboard is beyond repair but needs to be transferred to a functional device for data recovery or reprogramming.",
       contentf3title: "",
-      contentf3:
-        "",
+      contentf3: "",
       contentf4title: "",
-      contentf4:
-        " ",
+      contentf4: " ",
       contentf5title: "",
-      contentf5:
-        "",
-      contentf6:
-        " ",
-      button: "Get Course",
-      link: "/training",
-      image: tabimage,
-    },
-    {
-      id: 3,
-      label: "UFS Chip Repairs",
-      content: "",
-      contentf2title: "",
-      contentf2:
-        " Dive into advanced techniques for repairing and reprogramming UFS (Universal Flash Storage) chips, which are commonly found in modern high-performance devices.",
-      contentf3title: "",
-      contentf3:
-        " ",
-      contentf4title: "Custom Repair Solutions",
-     
-      button: "Get Course",
-      link: "/training",
-      image: tabimage,
-    },
-    {
-      id: 4,
-      label: ".eMMC Repairs",
-      content: "",
-      contentf2title: "",
-      contentf2:
-        " Handle embedded MultiMediaCard (eMMC) repairs, learning how to safely remove, reprogram, and replace these chips on mobile phone devices.",
-        
-      contentf3title: "",
-     
-      button: "Get Course",
-      link: "/training",
-      image: tabimage,
-    },
-    {
-      id: 5,
-      label: "Deep Diagnostics and Fault Tracing",
-      content: "",
-      contentf2title: "",
-      contentf2:
-        "Learn in-depth diagnostic techniques to trace and identify faults that even seasoned technicians struggle with, ensuring you're equipped to resolve complex motherboard issues.",
-        
-      contentf3title: "",
-     
+      contentf5: "",
+      contentf6: " ",
       button: "Get Course",
       link: "/training",
       image: tabimage,
@@ -169,14 +117,16 @@ const ThreeTraningTab: React.FC = () => {
     >
       <div className="container bgchange">
         <div className="mb-3">
-          <MainHeading Heading="
+          <MainHeading
+            Heading="
 Course Syllabus
-" />
+"
+          />
         </div>
 
         <div className="p-3 bg-white mb-6">
           <p className="text-black mb-0 font-[600]">
-          Master Motherboard Repair – Micro Soldering (Level 3)
+            Master Motherboard Repair – Micro Soldering (Level 1)
           </p>
         </div>
         <div className="">
@@ -201,7 +151,6 @@ Course Syllabus
             <div
               className={`flex-1 xl:pl-4 radial-gradient-background-${activeTab}`}
             >
-            
               <div className="mb-4 text-center">
                 <Image
                   src={tabs[activeTab].image}
@@ -279,4 +228,4 @@ Course Syllabus
   );
 };
 
-export default ThreeTraningTab;
+export default MasterTabFirsh;

@@ -11,8 +11,10 @@ import React from "react";
 import FristTraningTab from "../expert-motherboard-repair/FristTraningTab";
 import TrainingInstructors from "../expert-motherboard-repair/TrainingInstructors";
 import TraningSales from "../expert-motherboard-repair/TraningSales";
-import ThreeTraningTab from "./ThreeTraningTab";
+
 import MasterChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/MasterChooseLab"
+import MasterTabFirsh from "./MasterTabFirsh";
+import MasterTabSecond from "./MasterTabSecond";
 
 
 const MasterMotherboardRepair = () => {
@@ -107,9 +109,8 @@ const MasterMotherboardRepair = () => {
            border="#d5fd33a1"
           
       />
-      <ThreeTraningTab/>
-      {/* <FristTraningTab /> */}
-      {/* <SecondTraningTab/> */}
+    <MasterTabFirsh/>
+    <MasterTabSecond/>
       <TrainingInstructors {...instructorData} />
 
       <TraningSales
