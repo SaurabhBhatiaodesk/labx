@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import axios from "axios"; // Import axios
+import axios from "axios";
 import Image from "next/image";
 import MainButton from "@/components/MainButton/MainButton";
 import BlogImage from "../../../public/Images/adminimage.png"; // Fallback image
@@ -24,25 +24,24 @@ const Blogs: React.FC = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [pagination, setPagination] = useState<Pagination | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [limit] = useState(3); // Limit per page, can be adjusted as needed
+  const [limit] = useState(3); // Limit per page
 
   useEffect(() => {
-    // Fetch blog data from the API using axios with pagination parameters
     const fetchBlogs = async () => {
       try {
         const response = await axios.get(
           `https://labxbackend.labxrepair.com.au/api/admin/blogs?page=${currentPage}&limit=${limit}`
         );
 
-        setBlogs(response?.data?.blogs); // Set blogs
-        setPagination(response?.data?.pagination); // Set pagination data
+        setBlogs(response?.data?.blogs || []); // Set blogs
+        setPagination(response?.data?.pagination || null); // Set pagination data
       } catch (error) {
         console.error("Error fetching blogs:", error);
       }
     };
 
     fetchBlogs();
-  }, [currentPage, limit]); // Re-fetch when page changes
+  }, [currentPage, limit]); // Re-fetch on page change
 
   // Handle page change
   const handlePageChange = (page: number) => {
@@ -54,44 +53,53 @@ const Blogs: React.FC = () => {
       <div className="main-blog-list">
         <div className="container grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 md:grid-cols-2 justify-center text-center gap-4 mb-2">
           {blogs.length > 0 ? (
-            blogs.map((blog, index) => {
-              // Get the featured image (first image) from the API response
+            blogs.map((blog) => {
               const featuredImage =
                 blog.featuredImage && blog.featuredImage.length > 0
-                  ? blog.featuredImage[0] // Use the first image from the array
-                  : BlogImage; // Fallback to a dummy image if no image is available
+                  ? blog.featuredImage[0]
+                  : BlogImage;
 
               return (
                 <div
-                  key={index}
-                  className="blog-article p-4 p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]"
+                  key={blog._id}
+                  className="blog-article p-4 rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]"
                 >
-                  <Link   href={`/blogpage/${blog._id}`}>
-                  <Image
-                    src={featuredImage}
-                    alt={blog.heading || "Blog Image"}
-                    width={500} // Optional: specify width/height for better performance
-                    height={300} // Optional: specify width/height for better performance
-                  />
-                  <h1 className="mb-4 mt-4 text-tertiary ">{blog.heading || "Blog Title"}</h1>
+                  <Link href={`/blogpage/${blog._id}`}>
+                    <Image
+                      src={featuredImage}
+                      alt={blog.heading || "Blog Image"}
+                      width={500}
+                      height={300}
+                      className="rounded-md"
+                    />
+                  </Link>
+                  <h1 className="mb-4 mt-4 text-tertiary">{blog.heading || "Blog Title"}</h1>
                   <div className="learnmore">
                     <MainButton
                       MainButton="View Details"
                       link={`/blogpage/${blog._id}`}
                     />
                   </div>
-                  </Link>
                 </div>
               );
             })
           ) : (
-            <p>Loading blogs...</p>
+            <div className="flex justify-center items-center">
+            <p className="text-lg text-gray-500 flex items-center">
+              Loading blogs
+              <span className="ml-2 flex space-x-1">
+                <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce"></span>
+                <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce delay-200"></span>
+                <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce delay-400"></span>
+              </span>
+            </p>
+          </div>
           )}
         </div>
       </div>
 
-      {/* {/ Numbered Pagination Controls /} */}
-      {pagination && (
+      {/* Pagination Controls */}
+      {pagination && pagination.totalPages > 1 && (
         <div className="pagination-controls flex justify-center mt-4">
           {Array.from({ length: pagination.totalPages }, (_, index) => (
             <button

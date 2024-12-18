@@ -7,7 +7,7 @@ import pointer from "../../../../public/Images/icons/pointing-right.svg";
 import MainButton from "@/components/MainButton/MainButton";
 import cloud from "../../../../public/Images/Home/3dillustrationcloud.png";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import datarecovery221 from "../../../../public/Images/Home/datarecovery221.png"
+import datarecovery221 from "../../../../public/Images/Home/datarecovery221.png";
 
 const DataRecovery = () => {
   return (
@@ -104,8 +104,11 @@ const DataRecovery = () => {
           </div>
 
           <div className="">
-<Image src={datarecovery221} alt="" className="h-[300px] lg:h-auto object-cover rounded-[30px]" />
-
+            <Image
+              src={datarecovery221}
+              alt=""
+              className="h-[300px] lg:h-auto object-cover rounded-[30px]"
+            />
           </div>
         </div>
       </div>

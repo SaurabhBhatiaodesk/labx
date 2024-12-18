@@ -111,6 +111,7 @@ export default function BlogSidebar() {
         ))}
       </ul>
       {/* Pagination Buttons */}
+      {totalPages > 1 && (
       <div className="flex justify-center mt-4">
         {[...Array(totalPages)].map((_, index) => (
           <button
@@ -132,6 +133,7 @@ export default function BlogSidebar() {
           </button>
         ))}
       </div>
+)}
     </div>
   );
 }

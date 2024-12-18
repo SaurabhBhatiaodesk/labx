@@ -377,7 +377,7 @@ label {
 }
 
 .btn {
-  background: var( --F1-btn-color);
+  background: var(--F1-btn-color);
   padding: 8px 13px !important;
   font-weight: 600;
   font-size: 13px;
@@ -389,8 +389,12 @@ label {
   z-index: 1;
   border-radius: 150px;
   letter-spacing: 1px;
-  /* font-family: var( --Space_Grotesk);  */
+  transition: transform 0.3s ease-in-out, background 1.5s ease-in-out;
+}
 
+.btn:hover {
+  transform: scale(0.9);
+  background: linear-gradient(90deg, #43c6ac, #43c6ac);
 }
 
 
@@ -414,10 +418,8 @@ label {
 [aria-selected="5"] {
   background: rgb(20, 227, 213);
 }
-.btn:hover {
-  transform: scale(1.05);
-  background: #43c6ac;
-}
+
+
 .Removeborder-Heading h2{
   border-bottom: unset;
 }
@@ -495,4 +497,7 @@ label {
 /* breadcreaum */
 .strongtx strong {
   font-size: 18px;
+}
+.gkhidden button{
+  display: none;
 }

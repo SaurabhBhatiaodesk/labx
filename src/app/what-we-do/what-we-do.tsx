@@ -12,10 +12,10 @@ const WhatWeDo = () => {
       <div>
         <Breadcrumb
           pageName="What We Do"
-          pageDescription="This course is designed and based on the highest industry standards and over 14 years of industry experience. It includes everything that anyone needs to be one of the best technicians or a successful business owner."
+          pageDescription="Write this info before our listed services :”Discover our range of professional services designed to meet all your needs with precision and care. From innovative solutions to industry-leading expertise, we are committed to delivering excellence every step of the way."
           backgroundImage="/Images/BannerImages/about.png"
           AdminImage="/Images/adminimage.png"
-          link="/coming-soon"
+          link="/contact-us"
              buttonname="Request a Quote"
         />
       </div>

@@ -14,8 +14,8 @@ interface DataRecoveryProps {
   heading: string;
   title: string;
   points: DataPoint[];
-  buttonLabel: string;
-  buttonLink: string;
+  buttonLabel?: any;
+  buttonLink?: string;
   imageSrc: string;
 }
 
@@ -32,7 +32,7 @@ const IconTitleParaImage: React.FC<DataRecoveryProps> = ({
       <MainHeading Heading={heading} />
       <MainTitle Title={title} />
 
-      <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_2fr] grid-cols-1 grid-col-recerse gap-4 lg:py-5 py-3">
+      <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_2fr] grid-cols-1 grid-col-recerse gap-4 lg:py-5 py-3 items-center">
         {/* Text Content */}
         <div>
           <div className="flex-col gap-2 flex">

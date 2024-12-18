@@ -348,20 +348,21 @@ const Page = () => {
                   }
                 </p>
               </div>
-              {/* <div className=" flex flex-col text-center justify-center items-center gap-2">
-              
-                <Image src={OCA} alt="" />
-                <h4>Glass Replacement</h4>
-                <p>{"We use high-quality, durable glass to replace the broken layer, ensuring a flawless finish."}</p>
-              </div>
-              <div className=" flex flex-col text-center justify-center items-center gap-2">
-                <Image src={Test} alt="" />
-                <h4>Final Testing</h4>
-                <p>{" Every refurbished screen is thoroughly tested for touch sensitivity, brightness, and display quality before it is sent back to you."}</p>
-              </div> */}
+             
             </div>
 
             <div className="grid__processs_section process__section pt-8 mt-5 relative gap-5 grid xl:grid-cols-[2fr_1fr_2fr]  lg:grid-cols-2 grid-cols-1">
+            <div className=" flex flex-col text-center justify-center items-center ">
+                <Image src={Test} alt="" />
+                <h4 className="2xl:text-2xl lg:text-xl text-lg  text-tertiary" >Final Testing</h4>
+                <p className="lg:w-[75%] 2xl:w-[50%] w-full">
+                  {
+                    " Every refurbished screen is thoroughly tested for touch sensitivity, brightness, and display quality before it is sent back to you."
+                  }
+                </p>
+              </div>
+              <div className="hidden lg:block"></div>
+            
               <div className=" flex flex-col text-center justify-center items-center ">
                 <Image src={OCA} alt="" />
                 <h4 className="2xl:text-2xl lg:text-xl text-lg  text-tertiary">Glass Replacement</h4>
@@ -371,16 +372,7 @@ const Page = () => {
                   }
                 </p>
               </div>
-              <div className="hidden lg:block"></div>
-              <div className=" flex flex-col text-center justify-center items-center ">
-                <Image src={Test} alt="" />
-                <h4 className="2xl:text-2xl lg:text-xl text-lg  text-tertiary" >Final Testing</h4>
-                <p className="lg:w-[75%] 2xl:w-[50%] w-full">
-                  {
-                    " Every refurbished screen is thoroughly tested for touch sensitivity, brightness, and display quality before it is sent back to you."
-                  }
-                </p>
-              </div>
+              
              
             </div>
           </div>
