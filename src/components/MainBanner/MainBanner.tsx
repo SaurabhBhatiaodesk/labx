@@ -194,7 +194,7 @@ export default function MainBanner() {
                     {`Recover lost or corrupted data with our expert data recovery service. Whether it’s from a damaged phone, hard drive, or storage device, we use advanced techniques to retrieve your important files, ensuring your data is safe and accessible again!`}
                   </p>
                   <div className="my-4 xl:my-10">
-                    <MainButton MainButton="Request a Quote" link="/data-recovery" color="bg-[#A044FF]" />
+                    <MainButton MainButton="Data Recovery" link="/data-recovery" color="bg-[#A044FF]" />
                   </div>
                 </div>
                 <div className="w-full">

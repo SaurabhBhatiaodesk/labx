@@ -79,7 +79,7 @@ const HowWorks = () => {
               <p className="text-sm">{step.content}</p>
               <Link href={step.link}>
                 {step.button && (
-                  <button className="text-[13px] font-semibold tracking-[2px] uppercase py-3 px-[15px] rounded-[50px] border-[1px] w-fit transition duration-300 ease-in-out transform hover:scale-105">
+                  <button className="text-[13px] font-semibold tracking-[2px] uppercase py-[10px] px-[10px] rounded-[50px] border-[1px] w-fit transition duration-300 ease-in-out transform hover:scale-105">
                     {step.button}
                   </button>
                 )}

@@ -295,6 +295,9 @@ const handleChange = (
                         Monday-Friday: 9am - 6pm
                       </p>
                     </div>
+                    <div>
+                      <h3 className="text-secondary text-center">We DO NOT accept walk-ins </h3>
+                    </div>
                   </div>
                 </div>
               </div>

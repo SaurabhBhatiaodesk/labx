@@ -378,7 +378,7 @@ label {
 
 .btn {
   background: var( --F1-btn-color);
-  padding: 10px 15px !important;
+  padding: 8px 13px !important;
   font-weight: 600;
   font-size: 13px;
   line-height: 20px;
@@ -388,7 +388,7 @@ label {
   text-transform: uppercase;
   z-index: 1;
   border-radius: 150px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   /* font-family: var( --Space_Grotesk);  */
 
 }
@@ -490,4 +490,9 @@ label {
 
 .animate-zoomInOut {
   animation: zoomInOut 1s infinite; /* Adjust the duration as needed */
+}
+
+/* breadcreaum */
+.strongtx strong {
+  font-size: 18px;
 }

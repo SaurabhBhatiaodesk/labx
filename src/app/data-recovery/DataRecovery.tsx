@@ -79,10 +79,10 @@ Videos`,
   ];
   return (
     <>
-      <div>
+      <div className="strongtx">
         <Breadcrumb
-          pageName="Data Recovery"
-          pageDescription="At LabX, we specialize in recovering data from a wide range of mobile devices, including phones, tablets, and other gadgets that may have suffered significant damage. However, device data recovery comes with certain limitations that customers need to be aware of before submitting a device."
+          pageName="Data Recovery Services - LabXRepair"
+          pageDescription="At <strong> LabXRepair,</strong> we specialize in professional data recovery services for mobile phones, tablets, MacBooks, laptops, and more. Whether you’ve experienced hardware failure on device, or need to recover vital information from a damaged device, our skilled technicians are here to help."
           backgroundImage="/Images/BannerImages/mailinrepair.png"
           AdminImage="/Images/Data Recovery side.png"
           link="/contact-us"

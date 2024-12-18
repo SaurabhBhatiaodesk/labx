@@ -5,6 +5,7 @@ import Device from "../../../public/Images/about/device.svg"
 import GoogleReview from "@/components/GoogleReviews/what-we-do-review";
 import Image from 'next/image';
 import ContactForm from '../contact-us/ContactForm';
+import Link from 'next/link';
 
 const Page = () => { 
   return (
@@ -95,8 +96,13 @@ const Page = () => {
   <div className='device__img text-center container pt-8 mt-5 pb-8 mb-5 relative'>
     <Image height='1000' width='1000' src={Device.src} alt="" className='m-auto' />
     <div className="overlap__number">
-        <h2>Get Your Device Fixed Now!</h2>
-        <h3>+1-800-1234567</h3>
+        <h2>Start Buy Back Process Now</h2>
+        <h3>
+          <Link href="tel:+61455777077"> 
+          +61455777077
+          </Link>
+          </h3>
+          
     </div>
   </div>
 

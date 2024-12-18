@@ -17,9 +17,7 @@ import Saprate from "../../../public/Images/saprate.svg";
 import OCA from "../../../public/Images/oca.svg";
 import Test from "../../../public/Images/test.svg";
 import Laminate from "../../../public/Images/laminate.svg";
-import Align from "../../../public/Images/align.svg";
-import Round_icon from "../../../public/Images/round_icon.svg";
-import Arrow_icon from "../../../public/Images/errow_icon.svg";
+
 import YouTubeHome from "@/components/HomeCpmponents/YouTubeHome/YouTubeHome";
 import GoogleReview from "@/components/GoogleReviews/GoogleReviews";
 import Line from "../../../public/Images/about/leap.svg";
@@ -28,25 +26,29 @@ import "./screen.css";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import MainTitle from "@/components/MainTitle/MainTitle";
 import Link from "next/link";
-import applescreen from "../../../public/Images/icons/applescreen.svg"
-import allcompany from "../../../public/Images/icons/allcompany.svg"
-import samsung from "../../../public/Images/icons/samsung.svg"
-import EcoFriendlyPractices from "../../../public/Images/Eco-Friendly Practices.png"
+import applescreen from "../../../public/Images/icons/applescreen.svg";
+
+import Huawei from "../../../public/Images/icons/Huawei.svg";
+import Oppo from "../../../public/Images/icons/Oppo.svg";
+import Vivo from "../../../public/Images/icons/Vivo.svg";
+import samsung from "../../../public/Images/icons/samsung.svg";
+import EcoFriendlyPractices from "../../../public/Images/Eco-Friendly Practices.png";
 import MainButton from "@/components/MainButton/MainButton";
 
 const Page = () => {
   return (
     <>
       <div>
-        <Breadcrumb
-          pageName="Phone Screen Refurbishment Service"
-          pageDescription="At LabXRepair, we specialize in professional screen refurbishment for mobile phones, tablets, and other devices. Our advanced techniques and state-of-the-art equipment allow us to restore damaged screens to their original condition, saving both time and money compared to full screen replacements.
-"
-          backgroundImage="/Images/BannerImages/price.png"
-          AdminImage="/Images/screen-refurbishing.png"
-          link="/price"
-          buttonname="View Pricing"
-        />
+        <div className="strongtx">
+          <Breadcrumb
+            pageName="Professional Screen Refurbishment Services"
+            pageDescription={`At LabXRepair, we specialize in <strong>professional screen refurbishment</strong> for mobile phones, tablets, and other devices. Our advanced techniques and state-of-the-art equipment allow us to restore damaged screens to their original condition, saving both time and money compared to full screen replacements.`}
+            backgroundImage="/Images/BannerImages/price.png"
+            AdminImage="/Images/screen-refurbishing.png"
+            link="/price"
+            buttonname="View Pricing"
+          />
+        </div>
 
         <div className="flex justify-center flex-col max-container lg:py-5">
           <h2 className="pt-8 text-center">Why Choose Screen Refurbishment?</h2>
@@ -138,7 +140,7 @@ const Page = () => {
         {/*  */}
         <div className="bg__shade relative pb-8">
           <div className="container text-center ">
-            <h2 className="pt-8">
+            <h2 className="pt-4">
               Get your phone back faster than replacement
             </h2>
 
@@ -207,24 +209,41 @@ const Page = () => {
           </div>
         </div>
         <section>
-          <div className="container pt-8 mt-5">
+          <div className="container pt-8 ">
             <MainHeading Heading="Supported Models" />
             <MainTitle
               Title="We refurbish screens for a wide range of devices, including
 "
             />
 
-            <div className=" grid xl:grid-cols-3 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
-              <div className="flex flex-col justify-center text-center items-center gap-2">
-                <Image src={applescreen} alt="" height={100} />
+            <div className=" grid xl:grid-cols-5 lg:grid-cols-5 grid-cols-1 gap-8 lg:py-5 py-3 items-center aspect-gk ">
+              <div className="flex flex-col justify-center text-center items-center gap-2 aspect-gk">
+              <Image className=" transition-transform duration-300 ease-in-out hover:scale-110" src={applescreen} alt="" height={100} />
                 <p className="text-tertiary">Apple iPhone and iPad</p>
               </div>
               <div className="flex flex-col justify-center text-center items-center gap-2">
-                <Image src={allcompany} alt=""  height={100}/>
-                <p className="text-tertiary">Huawei, Oppo, Vivo, and other Android models</p>
+              <Image className=" transition-transform duration-300 ease-in-out hover:scale-110" src={Huawei} alt="" height={100} />
+                <p className="text-tertiary">
+                  Huawei
+                </p>
+                
               </div>
               <div className="flex flex-col justify-center text-center items-center gap-2">
-                <Image src={samsung} alt="" height={100} />
+                <Image className=" transition-transform duration-300 ease-in-out hover:scale-110" src={Oppo} alt="" height={100} />
+                <p className="text-tertiary">
+                Oppo
+                </p>
+                
+              </div>
+              <div className="flex flex-col justify-center text-center items-center gap-2">
+              <Image className=" transition-transform duration-300 ease-in-out hover:scale-110" src={Vivo} alt="" height={100} />
+                <p className="text-tertiary">
+                Vivo
+                </p>
+                
+              </div>
+              <div className="flex flex-col justify-center text-center items-center gap-2">
+              <Image className=" transition-transform duration-300 ease-in-out hover:scale-110" src={samsung} alt="" height={100} />
                 <p className="text-tertiary">Samsung Galaxy and Note series</p>
               </div>
             </div>
@@ -290,7 +309,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className="pt-8 pb-8 relative bg__shade ">
+        <div className="  relative bg__shade ">
           <div className="p-8">
             <h2 className="text-center">Our Refurbishment Process</h2>
             <Image
@@ -302,28 +321,28 @@ const Page = () => {
             />
 
             <div className="grid xl:grid-cols-3  lg:grid-cols-3 grid-cols-1  pt-8 mt-5 relative gap-5">
-              <div className=" flex flex-col text-center justify-center items-center gap-2">
+              <div className=" flex flex-col text-center justify-center items-center ">
                 <Image src={Screen} alt="" />
-                <h4>Assessment</h4>
-                <p>
+                <h4 className="2xl:text-2xl lg:text-xl text-lg  text-tertiary">Assessment</h4>
+                <p className="lg:w-[75%] 2xl:w-[50%] w-full">
                   {
                     " Each screen undergoes a detailed inspection to determine the level of damage and feasibility of refurbishment."
                   }
                 </p>
               </div>
-              <div className=" flex flex-col text-center justify-center items-center gap-2">
+              <div className=" flex flex-col text-center justify-center items-center ">
                 <Image src={Small} alt="" />
-                <h4>Lamination and Separation</h4>
-                <p>
+                <h4 className="2xl:text-2xl lg:text-xl text-lg  text-tertiary">Lamination and Separation</h4>
+                <p className="lg:w-[75%] 2xl:w-[50%] w-full">
                   {
                     "Using cutting-edge machinery, we separate the broken glass from the LCD while preserving the display's integrity."
                   }
                 </p>
               </div>
-              <div className=" flex flex-col text-center justify-center items-center gap-2">
+              <div className=" flex flex-col text-center justify-center items-center ">
                 <Image src={Saprate} alt="" />
-                <h4>Cleaning and Polishing</h4>
-                <p>
+                <h4 className="2xl:text-2xl lg:text-xl text-lg  text-tertiary">Cleaning and Polishing</h4>
+                <p className="lg:w-[75%] 2xl:w-[50%] w-full">
                   {
                     "The LCD is meticulously cleaned and polished to remove any adhesive residue or surface imperfections."
                   }
@@ -342,55 +361,42 @@ const Page = () => {
               </div> */}
             </div>
 
-            <div className="grid__processs_section process__section pt-8 mt-5 relative gap-5 grid xl:grid-cols-[1fr_1fr]  lg:grid-cols-2 grid-cols-1">
-              <div className=" flex flex-col text-center justify-center items-center gap-2">
+            <div className="grid__processs_section process__section pt-8 mt-5 relative gap-5 grid xl:grid-cols-[2fr_1fr_2fr]  lg:grid-cols-2 grid-cols-1">
+              <div className=" flex flex-col text-center justify-center items-center ">
                 <Image src={OCA} alt="" />
-                <h4>Glass Replacement</h4>
-                <p>
+                <h4 className="2xl:text-2xl lg:text-xl text-lg  text-tertiary">Glass Replacement</h4>
+                <p className="lg:w-[75%] 2xl:w-[50%] w-full">
                   {
                     "We use high-quality, durable glass to replace the broken layer, ensuring a flawless finish."
                   }
                 </p>
               </div>
-              <div className=" flex flex-col text-center justify-center items-center gap-2">
+              <div className="hidden lg:block"></div>
+              <div className=" flex flex-col text-center justify-center items-center ">
                 <Image src={Test} alt="" />
-                <h4>Final Testing</h4>
-                <p>
+                <h4 className="2xl:text-2xl lg:text-xl text-lg  text-tertiary" >Final Testing</h4>
+                <p className="lg:w-[75%] 2xl:w-[50%] w-full">
                   {
                     " Every refurbished screen is thoroughly tested for touch sensitivity, brightness, and display quality before it is sent back to you."
                   }
                 </p>
               </div>
-              {/* <div className=" flex flex-col text-center justify-center items-center gap-2">
-                <Image src={Align} alt="" />
-                <h4>Quality Inspection</h4>
-                <p>Check for defects, touch functionality, and visual clarity.                </p>
-              </div>
-              <div className=" flex flex-col text-center justify-center items-center gap-2">
-                <Image src={Align} alt="" />
-                <h4>Final Assembly</h4>
-                <p>{"Reassemble the refurbished screen with a new frame if required."}</p>
-              </div>
-              <div className=" flex flex-col text-center justify-center items-center gap-2">
-                <Image src={Align} alt="" />
-                <h4>Packaging and Labeling</h4>
-                <p>{"Safely package the refurbished screen and label it for storage or shipping."}</p>
-              </div> */}
+             
             </div>
           </div>
         </div>
 
-        <div className="bg__shade relative pt-8 bg-black">
+        <div className="bg__shade relative  bg-black">
           <div className="container">
-            <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
+            <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
               <div className="glass__description">
                 <h2>
                   Advanced Technology & Equipment for Premium Mobile Phone
                   Refurbishment
                 </h2>
                 <Image
-                  height="500"
-                  width="500"
+                  height="100"
+                  width="1000"
                   src={Line.src}
                   alt=""
                   className="pb-3"
@@ -411,7 +417,7 @@ const Page = () => {
                 </Link>
               </div>
               <div className="text-center m-auto">
-                <Image src={Machine} alt="" />
+                <Image className="h-[300px] lg:h-auto object-contain " src={Machine} alt="" />
               </div>
             </div>
           </div>
@@ -419,32 +425,51 @@ const Page = () => {
 
         <section className="container ">
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-4  lg:p-8 p-4 items-center">
-       <div><Image src={EcoFriendlyPractices} alt=""></Image></div>
-       <div>
-       <h2>
-       Eco-Friendly Practices
-                </h2>
-                <Image
-                  height="500"
-                  width="500"
-                  src={Line.src}
-                  alt=""
-                  className="pb-3"
-                />
-                <p>By choosing refurbishment, you’re contributing to a greener planet. Refurbishing reduces electronic waste and minimizes the need for new manufacturing, helping to lower the carbon footprint of your business.</p>
-       </div>
+            <div>
+              <Image src={EcoFriendlyPractices} alt=""></Image>
+            </div>
+            <div>
+              <h2>Eco-Friendly Practices</h2>
+              <Image
+                height="500"
+                width="500"
+                src={Line.src}
+                alt=""
+                className="pb-3"
+              />
+              <p>
+                By choosing refurbishment, you’re contributing to a{" "}
+                <strong className="font-semibold text-[20px]">
+                  greener planet.
+                </strong>{" "}
+                Refurbishing reduces electronic waste and minimizes the need for
+                new manufacturing, helping to lower the carbon footprint of your
+                business.
+              </p>
+            </div>
           </div>
         </section>
         <section className=" py-4">
           <div className="max-container text-center">
-        <MainHeading Heading="Start Your Refurbishment Today"/>
+            <MainHeading Heading="Start Your Refurbishment Today" />
 
-<p>{"Join hundreds of satisfied clients who trust LabXRepair for their screen refurbishment needs. Whether you have a single device or a bulk batch, we’re ready to help. Contact us today or submit your screens for refurbishment using our Mail-In Repair service!"}</p>
+            <p>
+              Join hundreds of satisfied clients who trust LabXRepair for their
+              screen refurbishment needs. Whether you have a single device or a
+              bulk batch, we’re ready to help. Contact us today or submit your
+              screens for refurbishment using our{" "}
+              <Link
+                className=" text-tertiary font-semibold"
+                href="/mail-in-repair"
+              >
+                {" "}
+                Mail-In Repair{" "}
+              </Link>
+              service!
+            </p>
 
-<MainButton MainButton="START REPAIR" link="/mail-in-repair"/>
+            <MainButton MainButton="START REPAIR" link="/mail-in-repair" />
           </div>
-
-
         </section>
       </div>
       <YouTubeHome />
