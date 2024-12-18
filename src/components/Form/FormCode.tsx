@@ -518,7 +518,7 @@ const FormCode: React.FC = () => {
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 form-label">
             {/* Business Name Input */}
             <TextField
-              label="Business Name"
+              label="Business Name (if any)"
               name="business_name"
               fullWidth
               variant="outlined"
