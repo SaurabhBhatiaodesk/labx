@@ -271,7 +271,7 @@ const ContactForm: React.FC = () => {
           onHide={handleToastHide}
         />
       )}
-      <div className="p-4 lg:p-10 steper-form-section-os bg-black " id="contactId">
+      <div className="p-2 lg:p-10 steper-form-section-os bg-black " id="contactId">
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col gap-4 bg-black text-white">
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 form-label">

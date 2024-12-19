@@ -1,7 +1,7 @@
 "use client";
 import "./mail-in-repair.css";
 import Lottie from "lottie-react";
-import lottiearrow from "../../../public/Images/jsonfile/lottieflow-fill.json";
+import lottiearrow from "../../../public/Images/jsonfile/scrolling.json";
 // import { Input, Textarea } from "@nextui-org/react";
 import React, { useState, useRef, useEffect } from "react";
 import SignatureCanvas from "react-signature-canvas";
@@ -86,6 +86,7 @@ type HandleSubmitParams = {
 };
 
 const StaperForm: React.FC = () => {
+  const formContainerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const sigPad = useRef<SignatureCanvas>(null);
   const selectOptions = [
@@ -329,15 +330,38 @@ const StaperForm: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  // const handleNextStep = () => {
+  //   if (validateStep()) {
+  //     setActiveStep((prev) => prev + 1);
+  //   }
+  // };
+
   const handleNextStep = () => {
     if (validateStep()) {
       setActiveStep((prev) => prev + 1);
+      setTimeout(() => {
+        formContainerRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start", // Ensure the top of the form is aligned with the top of the viewport
+        });
+      }, 100);
     }
   };
+  // const handlePrevStep = () => {
+  //   if (activeStep > 0) {
+  //     setActiveStep((prev) => prev - 1);
+  //   }
+  // };
 
   const handlePrevStep = () => {
     if (activeStep > 0) {
       setActiveStep((prev) => prev - 1);
+      setTimeout(() => {
+        formContainerRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start", // Ensure the top of the form is aligned with the top of the viewport
+        });
+      }, 100);
     }
   };
 
@@ -429,31 +453,26 @@ const StaperForm: React.FC = () => {
   return (
     <>
       {isLoading && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            zIndex: 9999,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <div
-            style={{
-              width: "50px",
-              height: "50px",
-              border: "5px solid #f3f3f3",
-              borderTop: "5px solid #3498db",
-              borderRadius: "50%",
-              animation: "spin 1s linear infinite",
-            }}
-          ></div>
-        </div>
+       <div
+       style={{
+         position: "fixed",
+         top: 0,
+         left: 0,
+         width: "100%",
+         height: "100%",
+         backgroundColor: "rgba(0, 0, 0, 0.5)",
+         zIndex: 9999,
+         display: "flex",
+         justifyContent: "center",
+         alignItems: "center",
+       }}
+     >
+    <Lottie
+    animationData={lottiearrow}
+    style={{ width: 50, height: 50 }}
+    className="lottie-icon"
+   />
+     </div>
       )}
 
       <section className="steper-form-section-os">
@@ -476,7 +495,7 @@ const StaperForm: React.FC = () => {
             <MainHeading Heading="LabX Mail-In Repair Submission Form" />
           </div>
 
-          <div className="max-w-5xl mx-auto p-4 " id="stapergk">
+          <div ref={formContainerRef} className="max-w-5xl mx-auto lg:p-4 " id="stapergk">
             <div className="grid grid-cols-4 mb-8  relative gaurav-line">
               {[
                 "Personal Details",
@@ -508,9 +527,9 @@ const StaperForm: React.FC = () => {
                     )}
                   </div>
                   <p
-                    className={`font-medium lg:text-lg text-sm text-center m-0  ${
+                    className={`font-medium lg:text-lg text-[12px] leading-[14px] text-center m-0  ${
                       activeStep === index
-                        ? "font-medium lg:text-lg text-sm text-center m-0 "
+                        ? "font-medium lg:text-lg text-[12px] leading-[14px]  text-center m-0 "
                         : ""
                     }`}
                   >
@@ -535,8 +554,8 @@ const StaperForm: React.FC = () => {
                     </div>
                   </div>
                   <div>
-                    <div className="p-4">
-                      <div className="flex flex-col xl:gap-4 lg:gap-3 gap-2 bg-black text-white">
+                    <div className="">
+                      <div className="flex flex-col xl:gap-4 lg:gap-3 gap-4 bg-black text-white">
                         <h4 className="lg:text-lg text-sm">Personal Details</h4>
 
                         <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 form-label">
@@ -784,7 +803,7 @@ const StaperForm: React.FC = () => {
                     </div>
                   </div>
                   <div>
-                    <div className="p-4">
+                    <div className="">
                       <div className="flex flex-col gap-4 bg-black text-white">
                         {/* Description of Issue */}
                         <div className="steper-textarea-os ">
@@ -978,7 +997,7 @@ const StaperForm: React.FC = () => {
                       />
                     </div>
                   </div>
-                  <div className="p-4">
+                  <div className="">
                     <div className="flex flex-col gap-4 bg-black text-white">
                       {/* Require Pickup Label */}
                       <div className="steper-textarea-os space-y-4">
@@ -1080,7 +1099,7 @@ const StaperForm: React.FC = () => {
 
                       {/* Terms and Conditions */}
                       <div className="border-b-[1px] border-[#6161617b] xl:py-3">
-                        <h4 className="xl:mb-2 mb-[4px] text-[#EDE574]">
+                        <h4 className=" lg:text-xl text-lg mb-3 text-[#EDE574]">
                           Terms and Conditions Acknowledgment *
                         </h4>
                         <div>
@@ -1101,25 +1120,25 @@ const StaperForm: React.FC = () => {
                               })
                             }
                           />
-                          <span className="lg:text-base text-sm text-white ml-2">
+                          <span className="lg:text-base text-sm text-white ml-2 ">
                             By checking this box, I confirm that I have read and
                             agree to the LabX
                             <Link
-                              className="text-[#EDE574] border-[#EDE574] border-b-1"
+                              className="text-[#EDE574]  "
                               href="/Terms_and_Conditions"
                             >
                               {" "}
                               Terms and Conditions{" "}
                             </Link>
                             <Link
-                              className="text-[#EDE574] border-[#EDE574] border-b-1"
+                              className="text-[#EDE574]  "
                               href="/Shipping_Policy"
                             >
                               Privacy Policy
                             </Link>{" "}
                             and{" "}
                             <Link
-                              className="text-[#EDE574] border-[#EDE574] border-b-1"
+                              className="text-[#EDE574]  "
                               href="/Warranty_and_Terms"
                             >
                               Warranty Terms
@@ -1135,16 +1154,16 @@ const StaperForm: React.FC = () => {
                       </div>
 
                       {/* Signature */}
-                      <div className="my-5">
-                        <div className="flex justify-between">
-                          <span className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-t-[5px] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4]">
+                      <div className="my-2">
+                        <div className="flex justify-between gap-2">
+                          <span className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-t-[5px]  hover:from-[#EDE574] hover:to-[#E1F5C4] w-full">
                             Draw Your Signature *
                           </span>
                           <button
-                            className="text-lg italic text-[#EDE574]  border-[--F1-btn-color]"
+                            className=" italic text-primary  border-[--F1-btn-color] bg-[red] px-2 rounded-t-[5px] text-sm"
                             onClick={clearSignature}
                           >
-                            clear
+                            Clear
                           </button>
                         </div>
                         {/* <SignatureCanvas
@@ -1167,7 +1186,7 @@ const StaperForm: React.FC = () => {
                               penColor="black"
                               canvasProps={{
                                 className:
-                                  "w-full h-[200px] bg-white border border-white rounded-md",
+                                  "w-full h-[200px] bg-white border border-white",
                               }}
                               onEnd={saveSignature} // Save signature when drawing ends
                               backgroundColor={

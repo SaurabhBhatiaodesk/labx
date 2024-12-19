@@ -9,6 +9,8 @@ import BrokenBlink from "./BrokenBlink";
 import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
 
 import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
+import MainHeading from "@/components/ManinHeading/MainHeading";
+import FormCode from "@/components/Form/FormCode";
 
 const BrokenRippedPadsRepairJumbers = () => {
     const accordionData = [
@@ -61,6 +63,7 @@ const BrokenRippedPadsRepairJumbers = () => {
         courseHour="25 Hours"
         Duration="5 Days"
         Price="$1249 (Includes a free toolkit for each student)"
+         buttonname="JOIN THIS COURSE"
       />
 
 
@@ -88,6 +91,11 @@ const BrokenRippedPadsRepairJumbers = () => {
       <BrokenCourseInstructors/>
       <BrokenBlink/>
       <ExpertChooseLab />
+      <div className="container" id="broken-ripped-pads-repair-jumbers-id">
+        <MainHeading Heading="Broken Ripped Pads Repair Jumbers"/>
+        </div>
+          <FormCode/>
+          
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."

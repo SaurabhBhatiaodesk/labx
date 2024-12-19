@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
 import BeginnerPhoneRepaiCourseSale from "@/components/TraningBanner/BeginnerPhoneRepaiCourseSale";
 import TraningBanner from "@/components/TraningBanner/TraningBanner";
 import TraningCourseInstructors from "@/components/TraningBanner/TraningCourseInstructors";
 import TraningTabBigner from "@/components/TraningBanner/TraningTabBigner";
 import TraningTabBignersecond from "@/components/TraningBanner/TraningTabBignersecond";
-import ExpertChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/ExpertChooseLab"
+import ExpertChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/ExpertChooseLab";
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
 import ExpertMotherboardReviews from "@/components/GoogleReviews/ExpertMotherboardReviews";
 import React from "react";
@@ -15,7 +15,6 @@ import TrainingInstructors from "./TrainingInstructors";
 import TraningSales from "./TraningSales";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import FormCode from "@/components/Form/FormCode";
-
 
 const BeginnerCourse = () => {
   const accordionData = [
@@ -78,12 +77,13 @@ const BeginnerCourse = () => {
         pageDescription="This course is designed and based on the highest industry standards and over 14 years of industry experience. It includes everything that anyone needs to be one of the best technicians or a successful business owner."
         backgroundImage="/Images/BannerImages/mailinrepair.png"
         AdminImage="/Images/adminimage.png"
-        link="/training"
+        link="/expert-motherboard-repair"
         courseName="Motherboard"
         courseRating="4.7"
         courseHour="25 Hours"
         Duration="1 Week"
         Price="$2800 (Includes a free toolkit for each student"
+        buttonname="JOIN THIS COURSE"
       />
 
       <TraningWillLearn
@@ -103,17 +103,17 @@ const BeginnerCourse = () => {
         Courseformate2="1 Week Duration"
         Courseformate3="Experienced Instructors"
         Courseformate4="Free Toolkit"
-         border="#d5fd33a1"
-       
+        border="#d5fd33a1"
       />
       <FristTraningTab />
-      {/* <SecondTraningTab/> */}
       <TrainingInstructors {...instructorData} />
 
       <TraningSales
-        courseName="Become a Master in Motherboard Repairs" 
+        courseName="Become a Master in Motherboard Repairs"
         imagedata="/Images/CourseInstructors.png"
-        courseDescription={["Complete this comprehensive mainboard repair training and build the confidence to handle complex motherboard repairs with ease. From advanced diagnostics to precise micro soldering, you’ll develop the expertise to tackle intricate challenges and deliver exceptional results. Equip yourself to work professionally on a wide array of devices, ensuring top-notch performance and reliability."]}
+        courseDescription={[
+          "Complete this comprehensive mainboard repair training and build the confidence to handle complex motherboard repairs with ease. From advanced diagnostics to precise micro soldering, you’ll develop the expertise to tackle intricate challenges and deliver exceptional results. Equip yourself to work professionally on a wide array of devices, ensuring top-notch performance and reliability.",
+        ]}
         saleDurationDays={7}
         initialCounters={{
           personsMentored: 50,
@@ -121,14 +121,11 @@ const BeginnerCourse = () => {
           coachingCertificates: 25,
         }}
       />
-
-
-      {/* <BeginnerPhoneRepaiCourseSale /> */}
       <ExpertChooseLab />
-       <div className=" pt-3">
-              <MainHeading Heading="Expert Motherboard Repair"/>
-                <FormCode/>
-                </div>
+      <div className=" pt-3 " id="expert-motherboard-repair-id">
+        <MainHeading Heading="Expert Motherboard Repair" />
+        <FormCode />
+      </div>
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."

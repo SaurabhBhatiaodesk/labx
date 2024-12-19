@@ -296,7 +296,7 @@ const handleChange = (
                       </p>
                     </div>
                     <div>
-                      <h3 className="text-secondary text-center">We DO NOT accept walk-ins </h3>
+                      <h3 className="text-secondary text-center lg:text-xl text-lg ">We DO NOT accept walk-ins </h3>
                     </div>
                   </div>
                 </div>

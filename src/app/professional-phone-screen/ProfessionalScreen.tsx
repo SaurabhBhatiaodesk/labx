@@ -75,12 +75,13 @@ const ProfessionalScreen = () => {
         pageDescription="This course is designed and based on the highest industry standards and over 14 years of industry experience. It includes everything that anyone needs to be one of the best technicians or a successful business owner."
         backgroundImage="/Images/BannerImages/mailinrepair.png"
         AdminImage="/Images/adminimage.png"
-        link="/training"
+        link="/professional-phone-screen"
         courseName="Professional Phone Screen"
         courseRating="4.7"
         courseHour="25 Hours"
         Duration=" 5 Days"
         Price="$5500"
+         buttonname="JOIN THIS COURSE"
       />
 
       <TraningWillLearn
@@ -108,7 +109,7 @@ const ProfessionalScreen = () => {
       <TraningCourseInstructors />
       <ProfessionalInstructorSecond />
       <ProfessionalChooseLab />
-      <div className=" pt-3">
+      <div className=" pt-3" id="professional-phone-screen-id">
         <MainHeading Heading="Professional Phone Screen Refurbishing Course"/>
           <FormCode/>
           </div>

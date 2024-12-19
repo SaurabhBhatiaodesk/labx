@@ -55,7 +55,6 @@ function Breadcrumb({
       });
     }
   };
-  
 
   return (
     <>
@@ -71,13 +70,13 @@ function Breadcrumb({
                   <li>
                     <Link
                       href="/"
-                      className="text-dark flex items-center gap-[10px] text-base font-medium dark:text-white"
+                      className="text-dark flex items-center gap-[10px] lg:text-base font-medium dark:text-white text-sm"
                     >
                       Home
                     </Link>
                   </li>
                   <li>
-                    <p className="text-body-color flex items-center gap-[10px] text-base font-medium mb-0">
+                    <p className="text-body-color flex items-center gap-[10px] lg:text-base font-medium mb-0 text-sm ">
                       <span className="text-body-color dark:text-dark-6">
                         /
                       </span>
@@ -85,13 +84,13 @@ function Breadcrumb({
                     </p>
                   </li>
                 </ul>
-                <h1 className="text-dark mb-4 text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
+                <h1 className="text-dark lg:mb-3 mb-2 text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
                   {pageName}
                 </h1>
                 <p
-  className="text-body-color dark:text-dark-6 mb-5 text-base"
-  dangerouslySetInnerHTML={{ __html: pageDescription }}
-></p>
+                  className="text-body-color dark:text-dark-6 mb-5 text-base"
+                  dangerouslySetInnerHTML={{ __html: pageDescription }}
+                ></p>
               </div>
               <div className="flex lg:justify-start justify-center">
                 {/* Button is now dynamic */}
@@ -111,7 +110,7 @@ function Breadcrumb({
                 src={AdminImage}
                 alt="Admin Visual"
                 className="object-contain pt-3"
-                fill 
+                fill
               />
             </div>
           </div>

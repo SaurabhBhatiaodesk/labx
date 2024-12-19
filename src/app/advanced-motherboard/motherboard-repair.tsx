@@ -57,12 +57,13 @@ const BeginnerCourse = () => {
         pageDescription="This course is designed and based on the highest industry standards and over 14 years of industry experience. It includes everything that anyone needs to be one of the best technicians or a successful business owner."
         backgroundImage="/Images/BannerImages/mailinrepair.png"
         AdminImage="/Images/adminimage.png"
-        link="/training"
+        link="/advanced-motherboard"
         courseName="Advanced"
         courseRating="4.7"
         courseHour="25 Hours"
         Duration=" 1 Week"
         Price="$2200"
+        buttonname="JOIN THIS COURSE"
       />
 
       <TraningWillLearn
@@ -90,7 +91,7 @@ const BeginnerCourse = () => {
       <TraningCourseInstructors />
       <MotherboardPhoneReapair />
       <AdvancedChooseLab />
-      <div className=" pt-3">
+      <div className=" pt-3" id="mother-board">
         <MainHeading Heading="Advanced Motherboard Repair"/>
           <FormCode/>
           </div>
