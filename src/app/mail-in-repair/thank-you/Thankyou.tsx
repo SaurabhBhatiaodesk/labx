@@ -249,7 +249,7 @@ const Thankyou: React.FC = () => {
              
                 <div
                   className="p-4 bg-gray-800 rounded-md shadow-lg text-white transition-all duration-300 border-[1px] border-[#5b5b5b99] hover:bg-gradient-to-r hover:from-[#56c1c1] hover:to-[#000000] h-full"
-                  style={{ cursor: "pointer" }}
+                  style={{ cursor: "pointer" }}  key={index}
                 >
                   <h3 className="text-xl text-[#EDE574] mb-2">{step.title}</h3>
                   <p className="text-base mb-2">{step.content}</p>
@@ -261,7 +261,7 @@ const Thankyou: React.FC = () => {
                   {step.subcontent && (
                     <p className="text-base mb-2">{step.subcontent}</p>
                   )}
-                   <Link href={step.link || "#"} key={index}>
+                   <Link href={step.link || "#"}>
                   {step.buttonad && (
                     <MainButton MainButton={step.buttonad} />
                   )}
