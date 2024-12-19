@@ -2,6 +2,7 @@
 import "./mail-in-repair.css";
 import Lottie from "lottie-react";
 import lottiearrow from "../../../public/Images/jsonfile/scrolling.json";
+import correct from "../../../public/Images/jsonfile/lottieflow-fill.json"
 // import { Input, Textarea } from "@nextui-org/react";
 import React, { useState, useRef, useEffect } from "react";
 import SignatureCanvas from "react-signature-canvas";
@@ -16,7 +17,7 @@ import { TextField } from "@mui/material";
 import Image from "next/image";
 import { Select, SelectItem } from "@nextui-org/react";
 import "./mail-in-repair.css";
-import { Checkbox } from "@nextui-org/react";
+
 import Link from "next/link";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -518,7 +519,7 @@ const StaperForm: React.FC = () => {
                   >
                     {activeStep > index ? (
                       <Lottie
-                        animationData={lottiearrow}
+                        animationData={correct}
                         style={{ width: 50, height: 50 }}
                         className="lottie-icon"
                       />

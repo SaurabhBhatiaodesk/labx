@@ -11,6 +11,7 @@ const page = () => {
 
           <Price/>
           <Contact />
+          
   </div>
   </>
   )

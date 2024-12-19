@@ -464,9 +464,9 @@ const RecentNews: React.FC = () => {
                         <Image
                           src={blog.featuredImage[0]}
                           alt={blog.heading}
-                          width={100}
-                          height={100}
-                          className="rounded-md"
+                          width={500}
+                      height={350}
+                          className="rounded-md object-cover"
                         />
                       )}
                     </div>
