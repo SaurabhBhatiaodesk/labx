@@ -358,7 +358,7 @@ const Footer = () => {
                       </Link>
                     </div>
                     <div>
-                      <h3 className="text-xl">We DO NOT provide Walk-In Service
+                      <h3 className="lg:text-xl text-lg">We DO NOT provide Walk-In Service
                       </h3>
                     </div>
                     <div>

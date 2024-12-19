@@ -238,7 +238,7 @@ const MobileFooterMenue = () => {
         </div>
       </div>
 <div>
-  <h3 className="text-center text-xl mb-3">We DO NOT provide Walk-In Service
+  <h3 className="text-center lg:text-xl text-lg mb-3">We DO NOT provide Walk-In Service
   </h3>
 </div>
       <div className="emailsection relative">
@@ -264,7 +264,7 @@ const MobileFooterMenue = () => {
           </button>
          
         </div>
-        {error && <p className="text-red text-sm mt-2">{error}</p>}{" "}
+        {error && <p className="text-[red] text-sm mt-2">{error}</p>}{" "}
           {loading && (
            
             // <p className="xl:text-[30px] lg:text-26px text-30px font-poppins text-blue-500">

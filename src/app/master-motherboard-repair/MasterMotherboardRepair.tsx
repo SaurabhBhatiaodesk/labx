@@ -80,12 +80,13 @@ const MasterMotherboardRepair = () => {
         pageDescription="This course is designed and based on the highest industry standards and over 14 years of industry experience. It includes everything that anyone needs to be one of the best technicians or a successful business owner."
         backgroundImage="/Images/BannerImages/mailinrepair.png"
         AdminImage="/Images/adminimage.png"
-        link="/training"
+        link="/master-motherboard-repair"
         courseName="Master Motherboard"
         courseRating="4.7"
         courseHour="25 Hours"
         Duration=" 5 Days"
         Price=" $5500"
+         buttonname="JOIN THIS COURSE"
       />
 
       <TraningWillLearn
@@ -130,10 +131,11 @@ const MasterMotherboardRepair = () => {
 
       <MasterChooseLab />
       {/* <BeginnerPhoneRepaiCourseSale /> */}
-      <div className=" pt-3">
+      <div className=" container" id="master-motherboard-repairi-id">
         <MainHeading Heading="Master Motherboard Repair – Micro Soldering"/>
+        </div>
           <FormCode/>
-          </div>
+         
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)
 "

@@ -57,12 +57,13 @@ const BeginnerCourse = () => {
         pageDescription="This course is designed and based on the highest industry standards and over 14 years of industry experience. It includes everything that anyone needs to be one of the best technicians or a successful business owner."
         backgroundImage="/Images/BannerImages/mailinrepair.png"
         AdminImage="/Images/adminimage.png"
-        link="/training"
+        link="/beginner-phone-repair-course"
         courseName="Beginner"
         courseRating="4.7"
         courseHour="25 Hours"
         Duration="5 Days"
         Price="$1249 (Includes a free toolkit for each student)"
+         buttonname="JOIN THIS COURSE"
       />
 
       <TraningWillLearn
@@ -91,10 +92,11 @@ const BeginnerCourse = () => {
       <TraningCourseInstructors />
       <BeginnerPhoneRepaiCourseSale />
       <BiginnerChooseLab />
-      <div className=" pt-3">
+      <div className=" container" id="beginner-phone-repair-course-id">
         <MainHeading Heading="Beginner Phone Repair Course"/>
+        </div>
           <FormCode/>
-          </div>
+         
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."

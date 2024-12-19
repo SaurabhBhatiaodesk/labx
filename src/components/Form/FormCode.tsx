@@ -208,7 +208,7 @@ const FormCode: React.FC = () => {
 
   return (
     <div className="container">
-    <div className="p-4 steper-form-section-os " id="Kickstart">
+    <div className=" steper-form-section-os " id="Kickstart">
 
 
  {isLoading && (
