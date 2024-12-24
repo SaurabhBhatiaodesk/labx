@@ -145,6 +145,7 @@ export default function Productswiper({}) {
                           <p className="text-gray-500 text-sm mb-2 ">
                             {review.date}
                           </p>
+                          
                         </div>
                       </div>
                       <Image src={review.logoImage} alt="Google logo" />
