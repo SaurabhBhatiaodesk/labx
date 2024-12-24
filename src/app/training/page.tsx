@@ -42,8 +42,6 @@ const Training = () => {
           AdminImage="/Images/adminimage.png"
           link="/training"
           buttonname="Join Course"
-          scrollId = "Kickstart"
-          scrollOffSet = {34 * 5}
         />
         <CourseHighlights />
         <Form />

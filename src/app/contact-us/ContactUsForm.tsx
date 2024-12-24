@@ -221,7 +221,7 @@ const handleChange = (
         }}
       >
         <div className="max-container">
-          <div className="grid lg:grid-cols-[3fr_5fr] grid-cols-1    ">
+          <div className="grid md:grid-cols-[3fr_5fr] grid-cols-1    ">
             <div
               className="w-full flex flex-col items-center justify-center hello"
               style={{
@@ -231,11 +231,11 @@ const handleChange = (
                 // borderRadius: "20px 0 10px 20px",
               }}
             >
-              <div className="relative w-full h-[100%] flex flex-col justify-center lg:right-4 right-0">
-                <div className=" w-full">
+              <div className="relative w-full h-[100%]">
+                <div className="lg:absolute w-full lg:top-[20%] xl:right-[80px] lg:right-[40px] lg:transform lg:translate-x-[10px] lg:translate-y-[10px]">
                   <div className="flex gap-3 flex-col justify-center p-4 lg:p-6 bg-white text-black rounded-3xl">
                     {/* {/ Address /} */}
-                    {/* <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3">
                       <span className="flex-shrink-0">
                         <Image
                           className="w-[50px] h-[50px] object-contain" // Ensure size is same
@@ -251,7 +251,7 @@ const handleChange = (
                           122 Queen St, St Marys NSW 2760, Australia
                         </p>
                       </Link>
-                    </div> */}
+                    </div>
                     {/* {/ Phone /} */}
                     <div className="flex items-center gap-3">
                       <span className="flex-shrink-0">
@@ -283,7 +283,7 @@ const handleChange = (
                       </Link>
                     </div>
                     {/* {/ Operating Hours /} */}
-                    {/* <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3">
                       <span className="flex-shrink-0">
                         <Image
                           className="w-[50px] h-[50px] object-contain" // Ensure size is same
@@ -294,7 +294,7 @@ const handleChange = (
                       <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
                         Monday-Friday: 9am - 6pm
                       </p>
-                    </div> */}
+                    </div>
                     <div>
                       <h3 className="text-secondary text-center lg:text-xl text-lg ">We DO NOT accept walk-ins </h3>
                     </div>

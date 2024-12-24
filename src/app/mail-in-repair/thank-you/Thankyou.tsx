@@ -142,14 +142,21 @@ import React, { useEffect, useState } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import MainHeading from "../../../components/ManinHeading/MainHeading";
 import MainTitle from "../../../components/MainTitle/MainTitle";
-import ThanksData from "../ThanksData";
-
+import Link from "next/link";
+import MainButton from "@/components/MainButton/MainButton";
 
 interface Params {
   id: string | null; // ID can be a string or null if not found
 }
 
-
+interface Step {
+  title: string;
+  content: string;
+  subtitle?: string;
+  subcontent?: string;
+  link?: string;
+  buttonad?: string;
+}
 
 const Thankyou: React.FC = () => {
   const [params, setParams] = useState<Params>({ id: null });
@@ -164,14 +171,7 @@ const Thankyou: React.FC = () => {
     console.log("params ::", params);
   }, [params]);
 
-
-
-  const ShippingMessage = (
-    <p className="text-secondary text-center">
-      If you choose LabX’s shipping label, we will email you the connote details shortly. Please include the reference number with your device when sending it to us. This reference number is essential for tracking your repair and will serve as the primary communication method.
-    </p>
-  );
-  const stepsData = [
+  const steps: Step[] = [
     {
       title: "Print & Pack",
       content:
@@ -205,8 +205,13 @@ const Thankyou: React.FC = () => {
       content:
         "Your device will be mailed back to you once the repair is complete and the invoice is paid. The tracking number will be emailed to you and updated on your ticket.",
     },
-    
   ];
+
+  const ShippingMessage = (
+    <p className="text-secondary text-center">
+      If you choose LabX’s shipping label, we will email you the connote details shortly. Please include the reference number with your device when sending it to us. This reference number is essential for tracking your repair and will serve as the primary communication method.
+    </p>
+  );
 
   return (
     <>
@@ -234,12 +239,38 @@ const Thankyou: React.FC = () => {
               )}
               {ShippingMessage}
             </div>
-          
           </div>
         </div>
-        <ThanksData steps={stepsData} HeadingData="What Will Happen Next"/>
 
-       
+        <div className="container lg:py-8 py-3">
+          <MainHeading Heading="What Will Happen Next" />
+          <div className="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-2 gap-5 my-4">
+            {steps.map((step, index) => (
+             
+                <div
+                  className="p-4 bg-gray-800 rounded-md shadow-lg text-white transition-all duration-300 border-[1px] border-[#5b5b5b99] hover:bg-gradient-to-r hover:from-[#56c1c1] hover:to-[#000000] h-full"
+                  style={{ cursor: "pointer" }}  key={index}
+                >
+                  <h3 className="text-xl text-[#EDE574] mb-2">{step.title}</h3>
+                  <p className="text-base mb-2">{step.content}</p>
+                  {step.subtitle && (
+                    <p className="text-xl text-[#EDE574] mb-2">
+                      {step.subtitle}
+                    </p>
+                  )}
+                  {step.subcontent && (
+                    <p className="text-base mb-2">{step.subcontent}</p>
+                  )}
+                   <Link href={step.link || "#"}>
+                  {step.buttonad && (
+                    <MainButton MainButton={step.buttonad} />
+                  )}
+                   </Link>
+                </div>
+             
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );

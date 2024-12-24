@@ -45,23 +45,19 @@ const IconTitleParaImage: React.FC<DataRecoveryProps> = ({
                   height={24}
                 />
                 <div className="">
-                  <p className="">
-                    <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
-                      {point.title}
-                    </span>
+                    <p className="">
+                  <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
+                    {point.title}
+                  </span>
 
-                    {point.description}
+                  {point.description}
                   </p>
                 </div>
               </div>
             ))}
 
             <div className="flex items-start gap-3">
-              {buttonLabel && buttonLink ? (
-                <MainButton MainButton={buttonLabel} link={buttonLink} />
-              ) : (
-                ""
-              )}
+              <MainButton MainButton={buttonLabel} link={buttonLink} />
             </div>
           </div>
         </div>

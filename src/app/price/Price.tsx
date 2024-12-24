@@ -288,7 +288,7 @@ const Price = () => {
      <div className='gk-hidden'>
        <Breadcrumb
           pageName="Buy Back Price List"
-          pageDescription="View the pricing for our advanced mobile phone repair services, B2B solutions, and training programs. Visit our Price List page for detailed information and personalised quotes tailored to your specific repair or training needs."
+          pageDescription="Check the pricing for all our complex mobile phone repair services, including B2B solutions and training courses. Visit our Price List page for detailed cost information and tailored quotes based on the specific repair or course you need."
           backgroundImage="/Images/BannerImages/price.png"
           AdminImage="/Images/money.png"
           link=""

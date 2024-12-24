@@ -81,7 +81,7 @@ const VerticalTabs: React.FC = () => {
       contentf5:
         "Learn how to restore damaged screens to their original quality. Master the techniques needed to refurbish screens for a variety of devices.",
       button: "READ MORE",
-      link: "/training",
+      link: "/repair-solutions",
       image: Phone_Repair_Courses,
     },
     {

@@ -478,7 +478,20 @@ const StaperForm: React.FC = () => {
 
       <section className="steper-form-section-os">
         <div className="container gaurav-bg-trans ">
-      
+          <div className="my-5">
+            <div
+              className="max-w-5xl m-auto bg-[#FFFFFF] text-center text-black p-4 rounded-[20px]"
+              style={{ boxShadow: "10px 15px 0px 3px #EDE574" }}
+            >
+              <span className="text-[16px]">
+
+                Please Note: Our current turnaround time for regular service is
+                3-4 weeks. Expedited service is 1-9 days. It is the customer’s
+                responsibility to reach out for a quote ahead of time, if one is
+                needed.
+              </span>
+            </div>
+          </div>
           <div className="py-3 xl:py-6 2xl:py-6">
             <MainHeading Heading="LabX Mail-In Repair Submission Form" />
           </div>
@@ -587,7 +600,7 @@ const StaperForm: React.FC = () => {
 
                           {/* Contact Number (Required) */}
                           <div>
-                            {/* <TextField
+                            <TextField
                               required
                               label="Contact Number"
                               name="contact_number"
@@ -604,26 +617,7 @@ const StaperForm: React.FC = () => {
                                 }
                               }}
                               inputProps={{ maxLength: 10 }} // Additional safeguard to restrict input length
-                            /> */}
-
-<TextField
-  required
-  label="Contact Number"
-  name="contact_number"
-  type="tel" // Change from "number" to "tel"
-  fullWidth
-  value={personalDetails.contactNo}
-  onChange={(e) => {
-    // Allow only up to 10 digits
-    if (/^\d{0,10}$/.test(e.target.value)) {
-      setPersonalDetails({
-        ...personalDetails,
-        contactNo: e.target.value,
-      });
-    }
-  }}
-  inputProps={{ maxLength: 10 }} // Additional safeguard to restrict input length
-/>
+                            />
 
                             {errors.contactNo && (
                               <p className="text-[red] text-sm mb-0">

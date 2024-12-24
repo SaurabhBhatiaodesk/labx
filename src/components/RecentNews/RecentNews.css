@@ -1,8 +1,7 @@
 .RecentNews-os img {
   max-width: 100%;
   width: 100%;
-  height: 250px !important;
-  border-radius: 20px;
+  height: auto;
 }
 
 

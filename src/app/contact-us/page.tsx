@@ -8,7 +8,7 @@ import FixLabx from "@/components/HomeCpmponents/FixLabx/FixLabx";
 const page = () => {
   return (
     <>
-      <div className="gkhidden button ">
+      <div>
         <Breadcrumb
           pageName="Contact Us"
           pageDescription="Contact Us For More Information "
@@ -16,9 +16,8 @@ const page = () => {
           AdminImage="/Images/contactus.svg"
           link="/contact-us"
           buttonname="Request a Quote"
-          scrollId = "contactId"
-          scrollOffSet = {24 * 5}
         />
+
         <div>
           <ContactUsForm />
           <FixLabx/>

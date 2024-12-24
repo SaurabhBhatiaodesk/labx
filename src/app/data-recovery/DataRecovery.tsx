@@ -19,7 +19,6 @@ import PhysicallyDamagedDevices from "../../../public/Images/icons/Data from Phy
 import pointer from "../../../public/Images/icons/pointing-right.svg";
 import datarecoverytop from "../../../public/Images/Home/datarecoverytop.png";
 import BoxComponents from "@/components/BoxComponents/BoxComponents";
-import StaperForm from "../mail-in-repair/StaperForm";
 const DataRecovery = () => {
   const sectionData = [
     {
@@ -127,8 +126,8 @@ Videos`,
           pageDescription="At <strong> LabXRepair,</strong> we specialize in professional data recovery services for mobile phones, tablets, MacBooks, laptops, and more. Whether you’ve experienced hardware failure on device, or need to recover vital information from a damaged device, our skilled technicians are here to help."
           backgroundImage="/Images/BannerImages/mailinrepair.png"
           AdminImage="/Images/Data Recovery side.png"
-          link="/price"
-          buttonname="View Pricing"
+          link="/contact-us"
+          buttonname="Request a Quote"
         />
       </div>
 
@@ -148,14 +147,24 @@ Videos`,
 "
             title=""
             points={dataRecoveryPoints}
-            // buttonLabel="READ MORE"
-            // buttonLink="/data-recovery"
+            buttonLabel="READ MORE"
+            buttonLink="/data-recovery"
             imageSrc={datarecoverychip.src}
           />
         </div>
         <DataImportantNote />
       </section>
-      <StaperForm/>
+
+
+      {/* <div className="gkhidden">
+        <IconTitleParaImage
+          heading="How to Get Started"
+          title=""
+          points={ScenariosHandle}
+         
+          imageSrc={datarecoverychip.src}
+        />
+      </div> */}
       <DataStarted />
 
       <GoogleReview />

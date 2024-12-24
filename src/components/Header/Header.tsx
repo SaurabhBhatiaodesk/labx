@@ -10,54 +10,74 @@ import {
   NavbarItem,
 } from "@nextui-org/react";
 import rktaxilog from "../../../public/Images/Brand logos/Frame.svg";
-
+import { PiShoppingCartSimpleLight } from "react-icons/pi";
 import { RxCross2 } from "react-icons/rx";
 
 import "./Header.css";
 import Link from "next/link";
 import Image from "next/image";
-
+import { RiArrowDropUpLine } from "react-icons/ri";
+import Facebook from "../../../public/Images/blog/facebook.svg";
+import Telegram_logo from "../../../public/Images/blog/Telegram_logo.svg";
+import Instagram from "../../../public/Images/blog/instagram.svg";
+import Twitter from "../../../public/Images/blog/twitter.svg";
+import { SlCallOut, SlSocialFacebook } from "react-icons/sl";
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { TbMenu2 } from "react-icons/tb";
-
+import { MdCall } from "react-icons/md";
 import { IoIosCart } from "react-icons/io";
-import Marquee from "../Marquee/Marquee";
-import { SlSocialFacebook } from "react-icons/sl";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   // const dropdownRef = useRef<HTMLDivElement>(null);
-  // const menuRef = useRef<HTMLDivElement>(null); // Reference for the entire menu
+  const menuRef = useRef<HTMLDivElement>(null); // Reference for the entire menu
 
-  // const menuItems = [
-  //   {
-  //     label: "Services",
-  //     path: "/coming-soon",
-  //     dropdown: true,
-  //     subItems: [
-  //       // { label: "Mail-In-Repair", path: "/mail-in-repair" },
-  //       { label: "Training", path: "/training" },
-  //       { label: "B2B Repair", path: "b2b-repair-services" },
-  //       { label: "Screen Refurbishment", path: "/coming-soon" },
-  //       { label: "Data Recovery", path: "/coming-soon" },
-  //       { label: "Parts Store", path: "/coming-soon" },
-  //       { label: "Repair Forum", path: "/coming-soon" },
-  //       { label: "Repair Solutions", path: "/coming-soon" },
-  //     ],
-  //   },
-  //   { label: "Parts Store", path: "/coming-soon" },
-  //   { label: "Parts Store", path: "/coming-soon" },
-  //   { label: "Training", path: "/training" },
-  //   { label: "Screen Refurbishment", path: "/coming-soon" },
-  //   { label: "About us", path: "/about-us" },
-  //   { label: "What We Do", path: "/what-we-do" },
-  //   { label: "Contact Us", path: "/contact-us" },
-  //   { label: "Price List", path: "/price" },
-  // ];
+  const menuItems = [
+    {
+      label: "Services",
+      path: "/coming-soon",
+      dropdown: true,
+      subItems: [
+        { label: "Mail-In-Repair", path: "/mail-in-repair" },
+        { label: "Training", path: "/training" },
+        { label: "B2B Repair", path: "b2b-repair-services" },
+        { label: "Screen Refurbishment", path: "/coming-soon" },
+        { label: "Data Recovery", path: "/coming-soon" },
+        { label: "Parts Store", path: "/coming-soon" },
+        { label: "Repair Forum", path: "/coming-soon" },
+        { label: "Repair Solutions", path: "/coming-soon" },
+      ],
+    },
+    { label: "Parts Store", path: "/coming-soon" },
+    { label: "Training", path: "/training" },
+    { label: "Screen Refurbishment", path: "/coming-soon" },
+    { label: "About us", path: "/about-us" },
+    { label: "What We Do", path: "/what-we-do" },
+    { label: "Contact Us", path: "/contact-us" },
+    { label: "Price List", path: "/price" },
+  ];
 
+  // Function to toggle the "Services" dropdown only
+  // const handleServicesDropdownToggle = () => {
+  //   setIsServicesDropdownOpen((prev) => !prev); // Toggle Services dropdown state
+  // };
 
+  // Close the menu if clicked outside the menu (and not on a link)
+  // useEffect(() => {
+  //   const handleClickOutside = (event: any) => {
+  //     // Check if the click is outside the menu or NavbarMenuItem
+  //     // if (menuRef.current && !menuRef.current.contains(event.target)) {
+  //     //   setIsMenuOpen(false); // Close the menu if clicked outside the menu
+  //     // }
+  //   };
+
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, []);
 
   // Prevent closing dropdown when clicking inside the menu (except on links)
   const handleLinkClick = (e: React.MouseEvent) => {
@@ -76,7 +96,6 @@ export default function App() {
 
   return (
     <>
-    <Marquee/>
       <div className="w-full header header-component">
         <Navbar
           className="text-white bg-black"
@@ -146,11 +165,11 @@ export default function App() {
                           </svg>
                         </button>
                         <ul className="dropdown-menus absolute hidden text-white pt-1">
-                          {/* <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
+                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
                             <Link href="/mail-in-repair" onClick={toggleMenu}>
                               Mail In Repair
                             </Link>
-                          </li> */}
+                          </li>
                           <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
                             <Link href="/training" onClick={toggleMenu}>
                               Training{" "}
@@ -188,24 +207,16 @@ export default function App() {
                             </Link>
                           </li>
                           <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
-                            <Link href="/coming-soon" onClick={toggleMenu}>
+                            <Link href="/repair-solutions" onClick={toggleMenu}>
                               Repair Solutions{" "}
                             </Link>
                           </li>
                         </ul>
                       </div>
                     </li>
-                    
-
-                    {/* header */}
                     <li>
-                    <Link href="/mail-in-repair" onClick={toggleMenu}>
-                              Mail In Repair
-                            </Link>
-                    </li>
-                    <li className="flex justify-center flex-col border-b-[1px] border-primary w-fit">
                       <Link
-                        className=""
+                        className="hover:text-yellow-200"
                         href="/coming-soon"
                         onClick={toggleMenu}
                       >
@@ -267,7 +278,7 @@ export default function App() {
                               href="/about-us"
                               onClick={toggleMenu}
                             >
-                            Meet Bharat
+                              About
                             </Link>
                           </li>
                           <li className="block px-4 py-2 hover:bg-gray-800">

@@ -18,7 +18,6 @@ import traning from "../../../public/Images/icons/traning.svg";
 import ToastNotification from "../../components/ToastNotification/ToastNotification";
 import { MdCall } from "react-icons/md";
 import { IoIosCart } from "react-icons/io";
-import { TiArrowForward } from "react-icons/ti";
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState(""); // State to handle error message
@@ -103,7 +102,7 @@ const Footer = () => {
         <div className="pt-5 xl:pt-20">
           <section className="hidden lg:block">
             <div className="grid xl:grid-cols-[2fr_2fr_2fr_2.5fr] lg:grid-cols-2 gap-12 pb-6">
-              <div className="">
+              <div className="pr-8">
                 <div>
                   <Link href="/">
                     <Image className="mb-4" src={labx} alt=" lab-x" />
@@ -158,15 +157,6 @@ const Footer = () => {
                         fontSize={30}
                       />
                     </Link>
-                  </div>
-                  <div className="Abn number flex  items-center   mt-2">
-                    <span>
-                      <TiArrowForward fontSize={30} />
-                    </span>
-                    <span className="lg:text-lg text-sm ">
-                      ABN No :-{" "}
-                      <span className="text-tertiary ">31646271829</span>
-                    </span>
                   </div>
                 </div>
               </div>
@@ -349,7 +339,7 @@ const Footer = () => {
                         </a>
                       </Link>
                     </div>
-                    {/* <div className="flex gap-4 items-center xl:py-[8px] py-[5px] border-b-[0.5px] border-[#a7a7a7b3]">
+                    <div className="flex gap-4 items-center xl:py-[8px] py-[5px] border-b-[0.5px] border-[#a7a7a7b3]">
                       <IoLocationOutline
                         className="hover:scale-110 transition-transform duration-200"
                         fontSize={25}
@@ -366,21 +356,22 @@ const Footer = () => {
                           122 Queen St, St Marys NSW 2760, Australia
                         </a>
                       </Link>
-                    </div> */}
+                    </div>
                     <div>
-                      <h3 className="lg:text-xl text-lg">
-                        We DO NOT provide Walk-In Service
+                      <h3 className="lg:text-xl text-lg">We DO NOT provide Walk-In Service
                       </h3>
                     </div>
                     <div>
                       {toast && (
                         <ToastNotification
+                        
                           message={toast.message}
                           type={toast.type}
                           onHide={handleToastHide}
+                        
                         />
                       )}
-
+                     
                       <h2 className="xl:text-[30px]  lg:text-26px text-30px font-poppins">
                         Newsletter
                       </h2>
@@ -404,12 +395,15 @@ const Footer = () => {
                       >
                         <Image className="gl" src={sendicon} alt="Send icon" />
                       </button>
+
+
                     </div>
+
                     {error && <p className="text-[red] text-sm m-0">{error}</p>}{" "}
-                    {loading && (
-                      <div className="flex justify-center items-center">
+                      {loading && (
+                        <div className="flex justify-center items-center">
                         <p className="text-sm text-tertiary flex items-start">
-                          Processing
+                        Processing
                           <span className="ml-2 flex space-x-1">
                             <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce"></span>
                             <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce delay-200"></span>
@@ -417,7 +411,8 @@ const Footer = () => {
                           </span>
                         </p>
                       </div>
-                    )}
+
+                      )}
                   </div>
                 </div>
               </div>
@@ -484,15 +479,6 @@ const Footer = () => {
                   />
                 </Link>
               </div>
-              <div className="Abn number flex  items-center justify-center  mt-2">
-                    <span>
-                      <TiArrowForward fontSize={30} />
-                    </span>
-                    <span className="lg:text-lg text-sm ">
-                      ABN No :-{" "}
-                      <span className="text-tertiary ">31646271829</span>
-                    </span>
-                  </div>
 
               <MobileFooterMenue />
             </div>
@@ -522,9 +508,9 @@ const Footer = () => {
             </div>
           </section>
           <section className="block lg:hidden">
-            <div className="py-3 bg-black  relative z-[1000]  ">
+            <div className="py-3 bg-black  relative z-[100]  ">
               <div className="grid grid-cols-5 justify-between gap-2 footer-app py-3 fixed bottom-0 w-full left-0 right-0 bg-black border-t-1 border-[#4a4a4a77] ">
-                <Link href="/">
+              <Link href="/">
                   <div className="flex flex-col items-center">
                     <Image className="w-[24px]" src={homefooter} alt="" />
                     <span className="text-[12px] tracking-[1.5px] ">Home</span>
@@ -546,14 +532,15 @@ const Footer = () => {
                 </Link>
                 <Link href="/coming-soon">
                   <div className="flex flex-col items-center">
-                    <IoIosCart fontSize={26} />
+                  <IoIosCart fontSize={26} />
                     <span className="text-[12px] tracking-[1.5px] ">Cart</span>
                   </div>
                 </Link>
 
+
                 <Link href="tel:+61455777077">
                   <div className="flex flex-col items-center">
-                    <MdCall fontSize={24} />
+                  <MdCall   fontSize={24}/>
                     <span className="text-[12px] tracking-[1.5px] ">Call</span>
                   </div>
                 </Link>

@@ -25,7 +25,7 @@ const YouTubeHome = () => {
 
   return (
     <>
-      <div className="bg-[#0b0b0b] py-5 ">
+      <div className="bg-[#0b0b0b] py-5 xl:py-10">
         <div className="max-container relative ">
           <MainHeading Heading="Learn Like a Pro: Video Guides" />
           <MainTitle Title="Discover our YouTube channel featuring informative videos on mobile phone repairs, tutorials, and expert tips. Join our community and enhance your skills while staying updated on the latest repair techniques!" />
