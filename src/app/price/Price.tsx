@@ -25,6 +25,7 @@ const Price = () => {
                   <th className="border-bottom px-4 py-2 text-center">Refurb price ($AUD)</th>
                   <th className="border-bottom px-4 py-2 text-center">Buy Back ( Grade A )</th>
                   <th className="border-bottom px-4 py-2 text-center">Buy Back ( Grade B )</th>
+       
                  
                 </tr>
               </thead>
