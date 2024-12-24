@@ -106,6 +106,7 @@ const BeginnerCourse = () => {
         border="#d5fd33a1"
       />
       <FristTraningTab />
+      <SecondTraningTab/>
       <TrainingInstructors {...instructorData} />
 
       <TraningSales

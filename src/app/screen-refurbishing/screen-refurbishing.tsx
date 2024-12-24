@@ -34,6 +34,7 @@ import Vivo from "../../../public/Images/icons/Vivo.svg";
 import samsung from "../../../public/Images/icons/samsung.svg";
 import EcoFriendlyPractices from "../../../public/Images/Eco-Friendly Practices.png";
 import MainButton from "@/components/MainButton/MainButton";
+import MobileBrandName from "@/components/MobileBrandName";
 
 const Page = () => {
   return (
@@ -208,47 +209,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <section>
-          <div className="container pt-8 ">
-            <MainHeading Heading="Supported Models" />
-            <MainTitle
-              Title="We refurbish screens for a wide range of devices, including
-"
-            />
-
-            <div className=" grid xl:grid-cols-5 lg:grid-cols-5 grid-cols-1 gap-8 lg:py-5 py-3 items-center aspect-gk ">
-              <div className="flex flex-col justify-center text-center items-center gap-2 aspect-gk">
-              <Image className=" transition-transform duration-300 ease-in-out hover:scale-110" src={applescreen} alt="" height={100} />
-                <p className="text-tertiary">Apple iPhone and iPad</p>
-              </div>
-              <div className="flex flex-col justify-center text-center items-center gap-2">
-              <Image className=" transition-transform duration-300 ease-in-out hover:scale-110" src={Huawei} alt="" height={100} />
-                <p className="text-tertiary">
-                  Huawei
-                </p>
-                
-              </div>
-              <div className="flex flex-col justify-center text-center items-center gap-2">
-                <Image className=" transition-transform duration-300 ease-in-out hover:scale-110" src={Oppo} alt="" height={100} />
-                <p className="text-tertiary">
-                Oppo
-                </p>
-                
-              </div>
-              <div className="flex flex-col justify-center text-center items-center gap-2">
-              <Image className=" transition-transform duration-300 ease-in-out hover:scale-110" src={Vivo} alt="" height={100} />
-                <p className="text-tertiary">
-                Vivo
-                </p>
-                
-              </div>
-              <div className="flex flex-col justify-center text-center items-center gap-2">
-              <Image className=" transition-transform duration-300 ease-in-out hover:scale-110" src={samsung} alt="" height={100} />
-                <p className="text-tertiary">Samsung Galaxy and Note series</p>
-              </div>
-            </div>
-          </div>
-        </section>
+<MobileBrandName/>
         <div className="container pt-8 mt-5">
           <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
             <div>

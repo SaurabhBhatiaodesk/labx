@@ -433,7 +433,7 @@ const CourseHighlights = () => {
 
             {/* course 6 */}
              
-               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
+               {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
               <div className="relative w-full h-[300px] md:h-[550px] sm-order-2">
                 <Image
                   className="object-[4%_10%] object-cover rounded-[30px] border-2 border-[#26bd9aed] "
@@ -491,7 +491,7 @@ const CourseHighlights = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

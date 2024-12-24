@@ -195,9 +195,7 @@ const B2BRepairServices: React.FC = () => {
       alt: "B2B Services",
       title: "Supply Uncommon Parts",
       description: `We have a wide range of uncommon parts in our inventory that aren’t listed on our website. Feel free to ask if we have what you need on our shelves!`,
-      param1: "Bring our client menu in this page as well.",
-      param2: "Bring Forum Section in this page as well.",
-      param3: "Bring Repair Section in this page as well ",
+ 
 
       hoverBackground:
         "linear-gradient(74deg, rgba(207, 35, 98, 0.655), rgb(0, 0, 0))",
@@ -212,8 +210,8 @@ const B2BRepairServices: React.FC = () => {
           pageDescription="We offer tailored B2B solutions designed to streamline your operations and ensure the highest quality mobile phone repairs for your customers. LabX provides specialized services that help you maintain your business efficiency and product quality."
           backgroundImage="/Images/BannerImages/about.png"
           AdminImage="/Images/B2BRepairServices.svg"
-          link="/contact-us"
-          buttonname="Request a Quote"
+          link="/coming-soon"
+          buttonname="Apply for B2B Account"
         />
 
         {/* <section>
@@ -502,7 +500,7 @@ const B2BRepairServices: React.FC = () => {
                     </h3>
                     <p>{section.description}</p>
 
-                    {section.param1 && (
+                    {/* {section.param1 && (
                       <span className="text-[16px] text-left flex items-start gap-[4px]">
                         <Image className=" w-[24px]" src={pointer} alt="" /> {section.param1}
                       </span>
@@ -516,7 +514,7 @@ const B2BRepairServices: React.FC = () => {
                       <span className="text-[16px] text-left flex items-start gap-[4px]">
                       <Image className=" w-[24px]" src={pointer} alt="" /> {section.param3}
                     </span>
-                    )}
+                    )} */}
                   </div>
                 ))}
               </div>

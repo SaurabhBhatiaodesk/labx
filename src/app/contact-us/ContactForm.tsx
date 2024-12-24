@@ -311,7 +311,7 @@ const ContactForm: React.FC = () => {
               />
               {/*
                       {/ Phone Number Input with validation /} */}
-              <TextField
+              {/* <TextField
                 label="Phone Number *"
                 name="contact_no"
                 type="number"
@@ -321,7 +321,26 @@ const ContactForm: React.FC = () => {
                 onChange={handleChange}
                 error={!!formErrors.contact_no}
                 helperText={formErrors.contact_no}
-              />
+              /> */}
+
+<TextField
+  label="Phone Number *"
+  name="contact_no"
+  type="tel" // Changed to "text" to remove number spinner
+  fullWidth
+  variant="outlined"
+  value={formData.contact_no}
+  onChange={(e) => {
+    if (/^\d{0,10}$/.test(e.target.value)) { // Allows only up to 10 digits
+      setFormData({
+        ...formData,
+        contact_no: e.target.value,
+      });
+    }
+  }}
+  error={!!formErrors.contact_no}
+  helperText={formErrors.contact_no}
+/>
             </div>
 
             {/* {/ Training Message /} */}

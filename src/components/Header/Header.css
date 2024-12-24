@@ -83,14 +83,14 @@ ul.dropdown-menu li a, ul.dropdown-menus li a {
         top: 68px;
         padding: 15px;
         width: 100%;
-        height: 500px;
+        height: 100vh;
         overflow: auto;
         z-index: 999;
 
     }
     .navmenu ul.menu > li > a, .navmenu ul.menu li summary {
-        padding: 5px 0px;
-        font-size: 16px;
+        padding: 5px 5px;
+        font-size: 15px;
     }
     ul.menu.menu-horizontal.px-1.flex li {
         margin-bottom: 12px;
