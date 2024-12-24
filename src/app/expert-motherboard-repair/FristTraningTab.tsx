@@ -97,35 +97,7 @@ const FristTraningTab: React.FC = () => {
       link: "/training",
       image: tabimage,
     },
-    {
-      id: 3,
-      label: "NAND Programming ",
-      content: "",
-      contentf2title: "",
-      contentf2:
-        "Become proficient in NAND reprogramming and unlocking iCloud on iPads. Equip yourself with advanced tools and techniques to address data storage errors and bypass restrictions on Apple devices effectively.",
-      contentf3title: "",
-      contentf3:
-        " ",
-      contentf4title: "Custom Repair Solutions",
-     
-      button: "Get Course",
-      link: "/training",
-      image: tabimage,
-    },
-    {
-      id: 4,
-      label: "Reballing and Dual-Board Repairs",
-      content: "",
-      contentf2title: "",
-      contentf2:
-        " Specialize in complex reballing techniques to repair damaged connections on dual-layer boards. Gain expertise in addressing intricate motherboard issues and restoring functionality to modern devices with advanced multilayer designs.",
-      contentf3title: "",
-     
-      button: "Get Course",
-      link: "/training",
-      image: tabimage,
-    },
+    
   ];
 
   const getGradientColor = (id: number) => {
@@ -163,7 +135,7 @@ Course Syllabus
 
         <div className="p-3 bg-white mb-6">
           <p className="text-black mb-0 font-[600]">
-          Expert Motherboard Repair – Micro Soldering (Level 2)
+          Expert Motherboard Repair – Micro Soldering (Level 1)
           </p>
         </div>
         <div className="">

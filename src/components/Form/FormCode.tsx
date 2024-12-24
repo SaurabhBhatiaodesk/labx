@@ -271,7 +271,7 @@ const FormCode: React.FC = () => {
             />
 
             {/* Phone Number Input with validation */}
-            <TextField
+            {/* <TextField
               label="Phone Number *"
               name="contact_no"
               type="number"
@@ -281,7 +281,24 @@ const FormCode: React.FC = () => {
               onChange={handleChange}
               error={!!formErrors.phoneNumber}
               helperText={formErrors.phoneNumber}
-            />
+            /> */}
+<TextField
+  label="Phone Number *"
+  name="contact_no"
+  type="text" // Prevent spinner controls
+  fullWidth
+  variant="outlined"
+  value={formData.contact_no}
+  onChange={(e) => {
+    const value = e.target.value;
+    if (/^\d*$/.test(value) && value.length <= 10) { // Allow only numeric input with max length 10
+      handleChange(e);
+    }
+  }}
+  error={!!formErrors.phoneNumber}
+  helperText={formErrors.phoneNumber}
+/>
+
 
             {/* Course Selection */}
             <FormControl fullWidth variant="outlined">
@@ -304,12 +321,12 @@ const FormCode: React.FC = () => {
                 }}
               >
                 <MenuItem value="">-- Select a Course --</MenuItem>
-                <MenuItem value="Beginner_Phone_Repair">Beginner Phone Repair</MenuItem>
-                <MenuItem value="Advanced_Motherboard_Repair">Advanced Motherboard Repair</MenuItem>
-                <MenuItem value="Expert_Motherboard_Repair">Expert Motherboard Repair </MenuItem>
-                <MenuItem value="Master_Motherboard_Repair">Master Motherboard Repair </MenuItem>
-                <MenuItem value="Professional_Phone_Screen">Professional Phone Screen</MenuItem>
-                <MenuItem value="Broken_Ripped_Pads_Repair_Jumbers">Broken/ Ripped Pads Repair Jumbers</MenuItem>
+                <MenuItem value="Beginner_Phone_Repair">Beginner Phone Repair Course ( $1249)</MenuItem>
+                <MenuItem value="Advanced_Motherboard_Repair">Advanced Motherboard Repair – Micro Soldering (Level 1) ($2200)</MenuItem>
+                <MenuItem value="Expert_Motherboard_Repair">Expert Motherboard Repair – Micro Soldering (Level 2) ($2800) </MenuItem>
+                <MenuItem value="Master_Motherboard_Repair">Master Motherboard Repair – Micro Soldering (Level 3) ($5500)</MenuItem>
+                <MenuItem value="Professional_Phone_Screen">Professional Phone Screen Refurbishing Course ($5500)</MenuItem>
+                {/* <MenuItem value="Broken_Ripped_Pads_Repair_Jumbers">Broken/ Ripped Pads Repair Jumbers</MenuItem> */}
               </Select>
 
               {formErrors.course_name && (

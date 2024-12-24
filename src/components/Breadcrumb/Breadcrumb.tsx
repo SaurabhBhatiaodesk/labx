@@ -12,6 +12,8 @@ interface BreadcrumbProps {
   AdminImage: string;
   link?: any;
   buttonname?: string;
+  scrollId?:any;
+  scrollOffSet?:any;
 }
 
 function Breadcrumb({
@@ -21,6 +23,8 @@ function Breadcrumb({
   AdminImage,
   link,
   buttonname, // Destructure the link prop
+  scrollId,
+  scrollOffSet
 }: BreadcrumbProps) {
   const [isBrowser, setIsBrowser] = useState(false);
 
@@ -34,15 +38,16 @@ function Breadcrumb({
 
     // Set the target ID based on the current route
     let targetId: any;
-    if (currentRoute === "/mail-in-repair") {
-      targetId = "stapergk";
-    } else if (currentRoute === "/contact-us") {
-      targetId = "contactId";
-    } else if (currentRoute === "/training") {
-      targetId = "Kickstart";
+    if (currentRoute === link) {
+      targetId = scrollId;
     }
+    //  else if (currentRoute === "/contact-us") {
+    //   targetId = "contactId";
+    // } else if (currentRoute === "/training") {
+    //   targetId = "Kickstart";
+    // }
     const target = document.getElementById(targetId);
-    const offset = 12 * 5; // 3rem in pixels (assuming 1rem = 16px)
+    const offset = scrollOffSet; // 3rem in pixels (assuming 1rem = 16px)
 
     if (target) {
       const targetPosition =
