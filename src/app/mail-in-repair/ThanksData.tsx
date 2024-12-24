@@ -40,7 +40,7 @@ const ThanksData: React.FC<ThanksDataProps> = ({ steps, HeadingData }) => { // D
             )}
             {step.subcontent && <p className="text-base mb-2">{step.subcontent}</p>}
             {step.link && step.buttonad && (
-              <Link href={step.link}>
+              <Link href={step.link} target="_blank">
                 <MainButton MainButton={step.buttonad} />
               </Link>
             )}
