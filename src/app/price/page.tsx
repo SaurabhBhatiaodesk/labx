@@ -1,6 +1,6 @@
 "use client";
 import React from 'react'
-import Price from './Price'
+
 import Contact from './contact'
 const page = () => {
   return (
@@ -9,7 +9,7 @@ const page = () => {
   <div>
 
 
-          <Price/>
+       
           <Contact />
           
   </div>

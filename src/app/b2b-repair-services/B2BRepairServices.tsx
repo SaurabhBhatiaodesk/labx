@@ -10,6 +10,7 @@ import processor from "../../../public/Images/icons/processor.svg";
 import lighting from "../../../public/Images/icons/lighting.svg";
 import phonerepair from "../../../public/Images/icons/phonerepair.svg";
 import laptop from "../../../public/Images/icons/laptop.svg";
+import OurClient from "@/components/HomeCpmponents/OurClients/OurClient";
 import {
   TextField,
   Button,
@@ -195,7 +196,6 @@ const B2BRepairServices: React.FC = () => {
       alt: "B2B Services",
       title: "Supply Uncommon Parts",
       description: `We have a wide range of uncommon parts in our inventory that aren’t listed on our website. Feel free to ask if we have what you need on our shelves!`,
- 
 
       hoverBackground:
         "linear-gradient(74deg, rgba(207, 35, 98, 0.655), rgb(0, 0, 0))",
@@ -214,77 +214,6 @@ const B2BRepairServices: React.FC = () => {
           buttonname="Apply for B2B Account"
         />
 
-        {/* <section>
-        <div className="container">
-          <div className='py-2 lg:py-3'>
-            <MainHeading Heading="B2B Service For Repair Shop, Retailers, & Bulk Device Suppliers" />
-            <MainTitle Title="From repair shops to retailers to bulk device suppliers, LabX caters to the specific needs of B2B phone repairs. Our specialized services are designed to help you maintain efficiency and product quality. We handle complex repairs, including motherboard repair, precision soldering, and logic board restoration, ensuring that your business delivers reliable, top-quality service every time." />
-          </div>
-        </div>
-      </section> */}
-
-        {/* <section>
-        <div className="container">
-          <div className="p-4">
-            <div className="flex flex-col gap-4 bg-black text-white">
-              <div className="grid grid-cols-2 gap-4 form-label">
-                <TextField label="Business Name" name="business_name" fullWidth variant="outlined" />
-                <TextField label="Your Email" name="email" fullWidth variant="outlined" value={email} onChange={handleValidation} error={isInvalid} helperText={isInvalid ? "Please enter a valid email" : ""} />
-                <TextField label="Your Phone Number" name="phone" fullWidth variant="outlined" />
-                <TextField label="Select Your Course" name="course" fullWidth variant="outlined" />
-              </div>
-
-              <TextareaAutosize className="border-[1.5px]"
-                minRows={4}
-                placeholder="Enter your message here"
-                style={{
-                  width: "100%",
-                  padding: "10px",
-                  marginTop: "10px",
-                  backgroundColor: "black",
-                  color: "white",
-                  fontSize: "17px",
-                  borderRadius: "8px",
-                  borderColor: "white",
-                }}
-              />
-
-              <div className="pt-4">
-               <MainButton MainButton="submit"
-/>              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-        {/* <section>
-        <div className="container">
-          <div className='py-2 lg:py-[30px]'>
-            <MainHeading Heading="B2b Repair" />
-            <MainTitle Title="When your phone is damaged, sometimes only the front glass needs to be replaced as long as the screen and touch function working properly." />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[10px] p-[8px] lg:p-5 lg:gap-5 bg-black text-white">
-              {repairData.map((section, index) => (
-                <div key={index}>
-                  <h2 className="text-lg font-bold mb-4">{section.title}</h2>
-                  <div className="space-y-2">
-                    {section.items.map((item, itemIndex) => (
-                      <div key={itemIndex} className="w-full lg:h-36 h-[6rem] lg:h:min-h-[9rem] min-h-[5rem] p-2 lg-py-[10px] rounded-lg flex items-center gap-[10px]">
-                        <div className={`w-16 h-16 flex items-center justify-center rounded-md ${item.color} group`}>
-                          <Image width={40} src={item.icon} alt="icon" className="" />
-                        </div>
-                        <div>
-                          <p className="text-[16px] leading-[20px] text-white m-0">{item.text}</p>
-                          <p className="text-sm text-white ">{item.price}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section> */}
         <section>
           <div className="container">
             <div className="text-center py-8  space-y-4">
@@ -304,12 +233,9 @@ const B2BRepairServices: React.FC = () => {
           </div>
         </section>
 
-        {/* Why Partner with LabX for Your B2B Repair Needs? */}
-
         <section>
           <div className="container lg:py-5 py-4">
             <MainHeading Heading="Why Partner with LabX for Your B2B Repair Needs?" />
-            {/* <MainTitle Title="At LabX, we provide a seamless, transparent data recovery experience designed to keep you informed and stress-free throughout the entire process. Our commitment to communication and quality ensures you receive timely updates and support every step of the way." /> */}
 
             <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
               <div>
@@ -384,7 +310,6 @@ const B2BRepairServices: React.FC = () => {
         <section>
           <div className="container lg:py-5 py-4">
             <MainHeading Heading="Key Features of Our B2B Phone Repair Services" />
-            {/* <MainTitle Title="At LabX, we provide a seamless, transparent data recovery experience designed to keep you informed and stress-free throughout the entire process. Our commitment to communication and quality ensures you receive timely updates and support every step of the way." /> */}
 
             <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
               <div>
@@ -500,21 +425,6 @@ const B2BRepairServices: React.FC = () => {
                     </h3>
                     <p>{section.description}</p>
 
-                    {/* {section.param1 && (
-                      <span className="text-[16px] text-left flex items-start gap-[4px]">
-                        <Image className=" w-[24px]" src={pointer} alt="" /> {section.param1}
-                      </span>
-                    )}
-                    {section.param2 && (
-                      <span className="text-[16px] text-left flex items-start gap-[4px]">
-                      <Image className=" w-[24px]" src={pointer} alt="" /> {section.param2}
-                    </span>
-                    )}
-                    {section.param3 && (
-                      <span className="text-[16px] text-left flex items-start gap-[4px]">
-                      <Image className=" w-[24px]" src={pointer} alt="" /> {section.param3}
-                    </span>
-                    )} */}
                   </div>
                 ))}
               </div>
@@ -522,6 +432,7 @@ const B2BRepairServices: React.FC = () => {
           </div>
         </section>
 
+        <OurClient />
         <YouTubeHome />
         <GoogleReviews />
       </div>
