@@ -70,6 +70,19 @@ const SecondTraningTab: React.FC = () => {
       link: "/training",
       image: tabimage,
     },
+    {
+      id: 2 ,
+      label: "Broken/ Ripped Pads Repair Jumbers",
+      content: "",
+      contentf2title: "",
+      contentf2:
+        "Learn to restore damaged or ripped motherboard tracks using precise jumper techniques.",
+      contentf3title: "",
+     
+      button: "Get Course",
+      link: "/training",
+      image: tabimage,
+    },
   ];
 
   const getGradientColor = (id: number) => {
