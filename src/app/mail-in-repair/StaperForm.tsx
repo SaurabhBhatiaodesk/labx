@@ -2,7 +2,7 @@
 import "./mail-in-repair.css";
 import Lottie from "lottie-react";
 import lottiearrow from "../../../public/Images/jsonfile/scrolling.json";
-import correct from "../../../public/Images/jsonfile/lottieflow-fill.json"
+import correct from "../../../public/Images/jsonfile/lottieflow-fill.json";
 // import { Input, Textarea } from "@nextui-org/react";
 import React, { useState, useRef, useEffect } from "react";
 import SignatureCanvas from "react-signature-canvas";
@@ -15,14 +15,16 @@ import StaperForm4 from "../../../public/Images/StaperForm4.png";
 import Textarea from "@mui/joy/Textarea";
 import { TextField } from "@mui/material";
 import Image from "next/image";
-import { Select, SelectItem } from "@nextui-org/react";
+import { MenuItem, Select, SelectItem } from "@nextui-org/react";
+// Example library for pattern drawing
+import Modal from "@mui/material/Modal"; // For modal implementation
 import "./mail-in-repair.css";
-
 import Link from "next/link";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-
 import { IoIosArrowRoundForward } from "react-icons/io";
+import PatternLock from "react-pattern-lock";
+
 
 type Errors = {
   businessName?: string;
@@ -62,6 +64,7 @@ type DeviceDetails = {
   brand: string;
   model: string;
   imeiOrSerialNo: string;
+  passwordType: string; // New field
   devicePassword: string;
 };
 
@@ -99,6 +102,11 @@ const StaperForm: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [errors, setErrors] = useState<Errors>({});
   const [isLoading, setIsLoading] = useState(false); // State for loader
+  const [pinModalOpen, setPinModalOpen] = useState(false); // Modal state for PIN
+  const [passwordType, setPasswordType] = useState("PIN"); // Track password type (PIN or Pattern)
+  const [patternModalOpen, setPatternModalOpen] = useState(false); // Modal state for pattern
+  const [patternValue, setPatternValue] = useState(""); // Pattern-drawn value
+  const [pinValue, setPinValue] = useState(""); // Temp storage for PIN
   const [personalDetails, setPersonalDetails] = useState({
     businessName: "",
     fullName: "",
@@ -106,10 +114,12 @@ const StaperForm: React.FC = () => {
     emailAddress: "",
     returnShippingAddress: "",
   });
-  const [deviceDetails, setDeviceDetails] = useState({
+  const [deviceDetails, setDeviceDetails] = useState<DeviceDetails>({
     deviceType: "",
     brand: "",
+    model: "",
     imeiOrSerialNo: "",
+    passwordType: "", // Default to an empty string
     devicePassword: "",
   });
   const [repairDetails, setRepairDetails] = useState({
@@ -128,6 +138,117 @@ const StaperForm: React.FC = () => {
   });
 
   const [pricingAgreement, setPricingAgreement] = useState(false);
+
+  console.log("deviceDetailssss", deviceDetails);
+
+  class PasswordPattern extends React.Component<{
+    onFinish: (path: string) => void;
+  }> {
+    state = {
+      path: [],
+      isLoading: false,
+      error: false,
+      success: false,
+      disabled: false,
+      size: 3,
+    };
+
+    errorTimeout = 0;
+
+    componentDidMount() {
+      window.addEventListener("keydown", ({ which }) => {
+        if (which === 38) {
+          this.setState({
+            size: this.state.size >= 10 ? 10 : this.state.size + 1,
+          });
+        } else if (which === 40) {
+          this.setState({
+            size: this.state.size > 3 ? this.state.size - 1 : 3,
+          });
+        }
+      });
+    }
+
+    onReset = () => {
+      this.setState({
+        path: [],
+        success: false,
+        error: false,
+        disabled: false,
+      });
+    };
+
+    onChange = (path: any) => {
+      this.setState({ path: [...path] });
+    };
+
+    onFinish = () => {
+      const { onFinish } = this.props; // Access the onFinish callback from props
+      const patternPath = this.state.path.join("-");
+      console.log("patternPathhhhhh", patternPath);
+      this.setState({ isLoading: true });
+
+      // Simulate an API call or validation
+      setTimeout(() => {
+        this.setState({ isLoading: false, success: true, disabled: true });
+        onFinish(patternPath); // Pass the detected pattern back to the parent
+      }, 1000);
+    };
+
+    render() {
+      const { size, path, disabled, success, error, isLoading } = this.state;
+      return (
+        <React.Fragment>
+          <div className="center">
+            <PatternLock
+              size={size}
+              onChange={this.onChange}
+              path={path}
+              error={error}
+              onFinish={this.onFinish}
+              connectorThickness={5}
+              disabled={disabled || isLoading}
+              success={success}
+            />
+          </div>
+          <div className="output">
+            Select the top 3 points starting from the left
+          </div>
+          <div className="output">Output : {this.state.path.join(", ")}</div>
+          {success && (
+            <button
+              style={{ margin: "0 auto", display: "block" }}
+              onClick={this.onReset}
+            >
+              Click here to reset
+            </button>
+          )}
+          <div className="output">
+            Press the up/down arrow keys to increase/decrease the size of the
+            input
+          </div>
+        </React.Fragment>
+      );
+    }
+  }
+
+  // Function to handle password type change
+  // const handlePasswordTypeChange = (
+  //   e: React.ChangeEvent<HTMLSelectElement>
+  // ) => {
+  //   const selectedType = e.target.value;
+  //   setPasswordType(selectedType);
+
+  //   if (selectedType === "Pattern") {
+  //     setPatternModalOpen(true); // Open modal when "Pattern" is selected
+  //   }
+  // };
+
+  const handlePatternComplete = (pattern: number[]) => {
+    const numericPattern = pattern.join(""); // Convert pattern to a numeric string
+    setPatternValue(numericPattern);
+    setPatternModalOpen(false); // Close modal
+  };
 
   useEffect(() => {
     // Check if there's saved signature in localStorage
@@ -192,7 +313,9 @@ const StaperForm: React.FC = () => {
     setDeviceDetails({
       deviceType: deviceDetails.deviceType || "",
       brand: deviceDetails.brand || "",
+      model: deviceDetails.model || "",
       imeiOrSerialNo: deviceDetails.imeiOrSerialNo || "",
+      passwordType: deviceDetails.passwordType || "PIN", // Default to "PIN"
       devicePassword: deviceDetails.devicePassword || "",
     });
     setRepairDetails({
@@ -215,8 +338,6 @@ const StaperForm: React.FC = () => {
       signature: shippingDetails.signature || "", // Assume this is captured
     });
 
-
-
     setPricingAgreement(false);
   }, []);
 
@@ -233,7 +354,9 @@ const StaperForm: React.FC = () => {
     setDeviceDetails({
       deviceType: deviceDetails.deviceType || "",
       brand: deviceDetails.brand || "",
+      model: deviceDetails.model || "",
       imeiOrSerialNo: deviceDetails.imeiOrSerialNo || "",
+      passwordType: deviceDetails.passwordType || "PIN", // Default to "PIN"
       devicePassword: deviceDetails.devicePassword || "",
     });
     setRepairDetails({
@@ -331,11 +454,22 @@ const StaperForm: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // const handleNextStep = () => {
-  //   if (validateStep()) {
-  //     setActiveStep((prev) => prev + 1);
-  //   }
-  // };
+  const handlePasswordTypeChange = (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const selectedType = e.target.value;
+    setDeviceDetails((prevDetails) => ({
+      ...prevDetails,
+      passwordType: selectedType,
+      devicePassword: "", // Clear previous password
+    }));
+
+    if (selectedType === "PIN") {
+      setPinModalOpen(true);
+    } else if (selectedType === "Pattern") {
+      setPatternModalOpen(true);
+    }
+  };
 
   const handleNextStep = () => {
     if (validateStep()) {
@@ -365,7 +499,7 @@ const StaperForm: React.FC = () => {
       }, 100);
     }
   };
-
+console.log('deviceDetailsss',deviceDetails)
   const handleSubmit = async () => {
     setIsLoading(true);
     const payload = {
@@ -375,9 +509,10 @@ const StaperForm: React.FC = () => {
       shippingDetails,
       pricingAgreement,
     };
+
     try {
       const response = await axios.post(
-        "https://labxbackend.labxrepair.com.au/api/repair_info",
+        "http://localhost:7000/api/repair_info",
         payload,
         {
           headers: {
@@ -454,26 +589,26 @@ const StaperForm: React.FC = () => {
   return (
     <>
       {isLoading && (
-       <div
-       style={{
-         position: "fixed",
-         top: 0,
-         left: 0,
-         width: "100%",
-         height: "100%",
-         backgroundColor: "rgba(0, 0, 0, 0.5)",
-         zIndex: 9999,
-         display: "flex",
-         justifyContent: "center",
-         alignItems: "center",
-       }}
-     >
-    <Lottie
-    animationData={lottiearrow}
-    style={{ width: 50, height: 50 }}
-    className="lottie-icon"
-   />
-     </div>
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            zIndex: 9999,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Lottie
+            animationData={lottiearrow}
+            style={{ width: 50, height: 50 }}
+            className="lottie-icon"
+          />
+        </div>
       )}
 
       <section className="steper-form-section-os">
@@ -484,7 +619,6 @@ const StaperForm: React.FC = () => {
               style={{ boxShadow: "10px 15px 0px 3px #EDE574" }}
             >
               <span className="text-[16px]">
-
                 Please Note: Our current turnaround time for regular service is
                 3-4 weeks. Expedited service is 1-9 days. It is the customer’s
                 responsibility to reach out for a quote ahead of time, if one is
@@ -496,7 +630,11 @@ const StaperForm: React.FC = () => {
             <MainHeading Heading="LabX Mail-In Repair Submission Form" />
           </div>
 
-          <div ref={formContainerRef} className="max-w-5xl mx-auto lg:p-4 " id="stapergk">
+          <div
+            ref={formContainerRef}
+            className="max-w-5xl mx-auto lg:p-4 "
+            id="stapergk"
+          >
             <div className="grid grid-cols-4 mb-8  relative gaurav-line">
               {[
                 "Personal Details",
@@ -739,22 +877,115 @@ const StaperForm: React.FC = () => {
                                 }
                               />
                             </div>
-
-                            {/* Device Password (Optional) */}
-                            <div>
-                              <TextField
-                                type="text"
-                                label="Device Password(Must be correct)"
-                                name="device_password"
+                            {/* Device Password Section */}
+                            <div className="w-full ">
+                              <Select
+                              className="bg-blackgk"
+                                label="Select Your Course *"
+                                name="course_name"
+                                value={deviceDetails.passwordType}
+                                onChange={handlePasswordTypeChange}
                                 fullWidth
-                                value={deviceDetails?.devicePassword}
-                                onChange={(e) =>
-                                  setDeviceDetails({
-                                    ...deviceDetails,
-                                    devicePassword: e?.target?.value,
-                                  })
-                                }
-                              />
+                              >
+                                <MenuItem key="PIN" value="PIN">
+                                  PIN
+                                </MenuItem>
+                                <MenuItem key="Pattern" value="Pattern">
+                                  Pattern
+                                </MenuItem>
+                              </Select>
+
+                              {/* PIN Input Field */}
+                              <Modal
+                                open={pinModalOpen}
+                                onClose={() => setPinModalOpen(false)}
+                                className="flex items-center justify-center"
+                              >
+                                <div
+                                  className="bg-white p-5 rounded-lg"
+                                  style={{
+                                    width: "40%",
+                                  }}
+                                >
+                                  <h2 className="text-center mb-4">
+                                    Enter Device PIN
+                                  </h2>
+                                  <TextField
+                                    type="password"
+                                    label="PIN"
+                                    value={pinValue}
+                                    fullWidth
+                                    onChange={(e) =>
+                                      setPinValue(e.target.value)
+                                    }
+                                  />
+                                  <div className="flex justify-end mt-4">
+                                    <button
+                                      onClick={() => setPinModalOpen(false)}
+                                      className="btn bg-gray-500 text-white px-4 py-2 rounded mr-2"
+                                    >
+                                      Cancel
+                                    </button>
+                                    <button
+                                      onClick={() => {
+                                        setDeviceDetails((prevDetails) => ({
+                                          ...prevDetails,
+                                          devicePassword: pinValue, // Set the PIN as the password
+                                        }));
+                                        setPinModalOpen(false);
+                                      }}
+                                      className="btn bg-green-500 text-white px-4 py-2 rounded"
+                                    >
+                                      Save PIN
+                                    </button>
+                                  </div>
+                                </div>
+                              </Modal>
+
+                              {/* Pattern Input Modal */}
+
+
+
+                              <Modal
+                                open={patternModalOpen}
+                                onClose={() => setPatternModalOpen(false)}
+                                className="flex items-center justify-center p-[15px]"
+                              >
+                                <div
+                                  className="bg-green-500 p-5 rounded-lg md:w-[40%] h-[100%]  overflow-auto max-h"
+                                  // style={{
+                                  //   width: "40%",
+                                  //   height: "40%",
+                                  // }}
+                                 >
+                                  <h2 className="text-center mb-4 text-white">
+                                    Draw Your Pattern
+                                  </h2>
+                                  <PasswordPattern
+                                    onFinish={(patternPath: string) => {
+                                      console.log(
+                                        "Pattern Completed:",
+                                        patternPath
+                                      );
+                                      setDeviceDetails((prevDetails) => ({
+                                        ...prevDetails,
+                                        passwordType: "Pattern",
+                                        devicePassword: patternPath,
+                                      }));
+                                      setPatternModalOpen(false);
+                                    }}
+                                  />
+                                  <div className="flex justify-end mt-4">
+                                    <button
+                                      onClick={() => setPatternModalOpen(false)}
+                                      className="btn bg-red-500 text-white px-4 py-2 rounded"
+                                    >
+                                      Cancel
+                                    </button>
+                                  </div>
+                                </div>
+                              </Modal>
+
                             </div>
                           </div>
                         </div>
@@ -832,7 +1063,7 @@ const StaperForm: React.FC = () => {
                           <p className="text-base leading-5 mb-2">
                             Any Previous Repair Attempts?*
                           </p>
-                          <Select 
+                          <Select
                             defaultSelectedKeys={
                               repairDetails.previousRepairAttempts != "Yes"
                                 ? ["No"]
@@ -957,10 +1188,7 @@ const StaperForm: React.FC = () => {
                       <div className="py-4">
                         <div className="flex justify-between mt-4">
                           {activeStep > 0 && (
-                            <button
-                              onClick={handlePrevStep}
-                              className="btn"
-                            >
+                            <button onClick={handlePrevStep} className="btn">
                               Previous
                             </button>
                           )}
@@ -1212,10 +1440,10 @@ const StaperForm: React.FC = () => {
                         </div>
 
                         {errors.signature && (
-                            <p className="text-[red] text-sm mb-0">
-                              {errors.signature}
-                            </p>
-                          )}
+                          <p className="text-[red] text-sm mb-0">
+                            {errors.signature}
+                          </p>
+                        )}
 
                         {/* {shippingDetails.signature === "" && (
                           <p className="text-[red] text-sm mb-0">
@@ -1227,10 +1455,7 @@ const StaperForm: React.FC = () => {
                     <div className="py-4">
                       <div className="flex justify-between mt-4">
                         {activeStep > 0 && (
-                          <button
-                            className="btn"
-                            onClick={handlePrevStep}
-                          >
+                          <button className="btn" onClick={handlePrevStep}>
                             Previous
                           </button>
                         )}
@@ -1317,10 +1542,7 @@ const StaperForm: React.FC = () => {
                     )}
 
                     <div className="flex justify-between mt-4">
-                      <button
-                        className="btn "
-                        onClick={handlePrevStep}
-                      >
+                      <button className="btn " onClick={handlePrevStep}>
                         Previous
                       </button>
                       <button
