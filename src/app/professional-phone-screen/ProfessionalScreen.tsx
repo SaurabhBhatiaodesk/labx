@@ -11,6 +11,7 @@ import ProfessionalReviews from "@/components/GoogleReviews/ProfessionalReviews"
 import React from "react";
 import FormCode from "@/components/Form/FormCode";
 import MainHeading from "@/components/ManinHeading/MainHeading";
+import ProfessionalThreeTab from "./ProfessionalThreeTab";
 
 
 
@@ -106,6 +107,7 @@ const ProfessionalScreen = () => {
       />
       <TraningProfessionalBanner />
       < ProfessionalSecondTab/>
+      <ProfessionalThreeTab/>
       <TraningCourseInstructors />
       <ProfessionalInstructorSecond />
       <ProfessionalChooseLab />

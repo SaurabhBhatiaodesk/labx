@@ -58,90 +58,36 @@ const TraningTabBignersecond: React.FC = () => {
     },
     {
       id: 1,
-      label: "Laser Technology for Back Glass Repairs",
+      label: "Polarizer Replacement",
       content: "",
       contentf2title: "",
       contentf2:
-        "Get trained in using laser technology to remove back glass safely without damaging internal components, for modern phones with glass backs.",
+        "With this screen refurbishing course, learn how to replace polarizers on LCD and OLED screens, an essential step for maintaining display clarity in cases of damage.",
       contentf3title: "",
       contentf3:
-        "",
+        " ",
       contentf4title: "",
-      contentf4:
-        "",
-      contentf5title: "",
-      contentf5:
-        "",
+    
+     
       button: "Get Course",
       link: "/training",
       image: tabimage,
     },
     {
       id: 2,
-      label: "Cleaning and Quality Control",
+      label: "Vacuum Laminating and Bubble Removal",
       content: "",
-      contentf2title: "",
+      contentf2title: " ",
       contentf2:
-        "Discover the best methods for cleaning and testing refurbished LCD and OLED screens, ensuring they meet high-quality standards before reassembly.",
-      contentf3title: "",
+        "Understand how to use vacuum laminating and bubble removal techniques to eliminate air bubbles from the lamination process, ensuring a factory-quality finish for LCD and OLED screens.",
+      contentf3title: " ",
       contentf3:
-        "",
-      contentf4title: "",
-      contentf4:
-        "",
-      contentf5title: "",
-      contentf5:
-        "",
-      contentf6title: "",
-      contentf6:
-        "",
+        " ",
+     
       button: "Get Course",
       link: "/training",
       image: tabimage,
     },
-    {
-      id: 3,
-      label: "Reassembly and Testing",
-      content: "",
-      contentf2title: "",
-      contentf2:
-        "After completing the refurbishing process, learn how to reassemble devices and thoroughly test LCD and OLED screens for touch sensitivity, brightness, and functionality.",
-      contentf3title: "",
-      contentf3:
-        "",
-      contentf4title: "",
-      contentf4:
-        "",
-      contentf5title: "",
-      contentf5:
-        "",
-      contentf6title: "",
-      contentf6:
-        "",
-      button: "Get Course",
-      link: "/training",
-      image: tabimage,
-    },
-    // {
-    //   id: 4,
-    //   label: "Data Recovery",
-    //   content: "LabX Professional Data Recovery:",
-    //   contentf2title: "Data from Dead ",
-    //   contentf2:
-    //     " We can do data recovery from damaged phones that won’t turn on due to hardware damage, shock, or water exposure",
-    //   contentf3title: "Physically Damaged Devices ",
-    //   contentf3:
-    //     " Whether your phone has been dropped, crushed, or exposed to liquids, we can often retrieve your valuable files.",
-    //   contentf4title: "Corrupt Operating Systems ",
-    //   contentf4:
-    //     " We handle cases of OS corruption, which often makes a device unbootable, and recover data like contacts, texts, photos, and videos.",
-    //   contentf5title: "Failed or Broken Logic Boards",
-    //   contentf5:
-    //     " Our team of mobile technicians specializes in recovering data from devices with broken or failed logic boards, using advanced techniques.",
-    //   button: "Get Course",
-    //   link: "/coming-soon",
-    //   image: tabimage,
-    // },
   ];
 
   const getGradientColor = (id: number) => {

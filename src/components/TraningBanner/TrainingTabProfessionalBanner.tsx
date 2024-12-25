@@ -93,38 +93,7 @@ const TraningTabBigner: React.FC = () => {
       link: "/training",
       image: tabimage,
     },
-    {
-      id: 3,
-      label: "Polarizer Replacement",
-      content: "",
-      contentf2title: "",
-      contentf2:
-        "With this screen refurbishing course, learn how to replace polarizers on LCD and OLED screens, an essential step for maintaining display clarity in cases of damage.",
-      contentf3title: "",
-      contentf3:
-        " ",
-      contentf4title: "",
-    
-     
-      button: "Get Course",
-      link: "/training",
-      image: tabimage,
-    },
-    {
-      id: 4,
-      label: "Vacuum Laminating and Bubble Removal",
-      content: "",
-      contentf2title: " ",
-      contentf2:
-        "Understand how to use vacuum laminating and bubble removal techniques to eliminate air bubbles from the lamination process, ensuring a factory-quality finish for LCD and OLED screens.",
-      contentf3title: " ",
-      contentf3:
-        " ",
-     
-      button: "Get Course",
-      link: "/training",
-      image: tabimage,
-    },
+
   ];
 
   const getGradientColor = (id: number) => {

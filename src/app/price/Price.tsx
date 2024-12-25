@@ -1,405 +1,4 @@
-// "use client";
-// import React, { useState } from 'react';
-// import './price.css'
-// import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
-// import Iphone from '../../../public/Images/about/iphone.svg'
-// import Oppo from '../../../public/Images/about/oppo.svg'
-// import Samsung from '../../../public/Images/about/Samsung.svg'
-// import Nokia from '../../../public/Images/about/nokia.svg'
-// import Image from 'next/image';
-// import MainHeading from '@/components/ManinHeading/MainHeading';
-// import { text } from 'stream/consumers';
-// const Price = () => {
 
-//     const tabs = [
-//         {
-//           id: 1,
-//           label: "IPHONE",
-//         text:'iPhone',
-//           content: (
-
-//             <table className="table min-w-full table-auto">
-
-//               <thead>
-//                 <tr>
-//                   <th className="border-bottom px-4 py-2 text-left">Phone Model</th>
-//                   <th className="border-bottom px-4 py-2 text-center">Refurb price ($AUD)</th>
-//                   <th className="border-bottom px-4 py-2 text-center">Buy Back ( Grade A )</th>
-//                   <th className="border-bottom px-4 py-2 text-center">Buy Back ( Grade B )</th>
-
-//                 </tr>
-//               </thead>
-//               <tbody>
-//                 <tr>
-//                   <td className="border-bottom px-4 py-2">iPhone 15 Pro Max</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$200</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$200</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$70 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 15 Pro</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$200</td>
-//                   <td className="border-bottom px-4 py-2  text-center">$140</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$60 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 15 Plus</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$120</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$70</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$25 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 15</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$120</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$55</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$25 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 14 Pro Max</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$170</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$180</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$60 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 14 Pro</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$120</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$160</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$50 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 14 Plus</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$90</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$60</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$35 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 14</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$90</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$60</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$25 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 13 Pro Max</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$140</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$130</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$45 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 13 Pro</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$120</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$110</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$35 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 13</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$55</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$50</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$20 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 13 Mini</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$55</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$50</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$20 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 12 Pro Max</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$70</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$70</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$20 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 12 Pro</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$50</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$35</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$15 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 12</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$50</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$35</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$15 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 12 Mini</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$50</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$45</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$20 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 11 Pro Max</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$50</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$35</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$15 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 11 Pro</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$40</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$30</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$15 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone 11 </td>
-//                   <td className="border-bottom px-4 py-2 text-center">X</td>
-//                   <td className="border-bottom px-4 py-2 text-center">X</td>
-//                   <td className="border-bottom px-4 py-2 text-center">X </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone XS Max</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$40</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$40</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$20 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone XS</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$35</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$20</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$10 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone X</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$35</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$20</td>
-//                   <td className="border-bottom px-4 py-2 text-center">$10 </td>
-
-//                 </tr>
-//                 <tr>
-//                 <td className="border-bottom px-4 py-2">iPhone XR</td>
-//                   <td className="border-bottom px-4 py-2 text-center">X</td>
-//                   <td className="border-bottom px-4 py-2 text-center">X</td>
-//                   <td className="border-bottom px-4 py-2 text-center">X </td>
-
-//                 </tr>
-//                 {/* Add more rows here if needed */}
-//               </tbody>
-//             </table>
-//           )
-//         },
-//         {
-//           id: 2,
-//           label: "iPad",
-//           text:'iPad',
-//           content: (
-//               <table className="table min-w-full table-auto">
-//               <thead>
-//                 <tr> 
-//                   <th className="border-bottom px-4 py-2 text-left">Device Modal</th>
-//                   <th className="border-bottom px-4 py-2 text-center">Grade A</th>
-//                   <th className="border-bottom px-4 py-2 text-center">Grade B</th>
-//                   <th className="border-bottom px-4 py-2 text-center">Grade C</th>
-
-//                 </tr>
-//               </thead>
-//               <tbody>
-//                 <tr>
-//                   <td className="border-bottom px-4 py-2 text-left">Data 1</td>
-//                   <td className="border-bottom px-4 py-2 text-center ">Data 2</td>
-//                   <td className="border-bottom px-4 py-2 text-center">Data 3</td>
-//                   <td className="border-bottom px-4 py-2 text-center">Data 4</td>
-
-//                 </tr>
-//                 {/* Add more rows here if needed */}
-//               </tbody>
-//             </table>
-//           )
-//         },
-//         {
-//           id: 3,
-//           label: "Samsung Phone",
-//           text:'Samsung Phone',
-//           content: (
-//               <table className="table min-w-full table-auto">
-//               <thead>
-//                 <tr>
-//                   <th className="border-bottom px-4 py-2 text-left">Device Modal</th>
-//                   <th className="border-bottom px-4 py-2">Grade A</th>
-//                   <th className="border-bottom px-4 py-2">Grade B</th>
-//                   <th className="border-bottom px-4 py-2">Grade C</th>
-
-//                 </tr>
-//               </thead>
-//               <tbody>
-//                 <tr>
-//                   <td className="border-bottom px-4 py-2">Data 1</td>
-//                   <td className="border-bottom px-4 py-2 text-center">Data 2</td>
-//                   <td className="border-bottom px-4 py-2 text-center">Data 3</td>
-//                   <td className="border-bottom px-4 py-2 text-center">Data 4</td>
-
-//                 </tr>
-//                 {/* Add more rows here if needed */}
-//               </tbody>
-//             </table>
-//           )
-//         },
-//         {
-//           id: 4,
-//           label: "Samsung Tablet",
-//           text:'Samsung Tablet',
-//           content: (
-//               <table className="table min-w-full table-auto">
-//               <thead>
-//                 <tr>
-//                   <th className="border-bottom px-4 py-2 text-left">Device Modal</th>
-//                   <th className="border-bottom px-4 py-2">Grade A</th>
-//                   <th className="border-bottom px-4 py-2">Grade B</th>
-//                   <th className="border-bottom px-4 py-2">Grade C</th>
-
-//                 </tr>
-//               </thead>
-//               <tbody>
-//                 <tr>
-//                   <td className="border-bottom px-4 py-2">Data 1</td>
-//                   <td className="border-bottom px-4 py-2 text-center">Data 2</td>
-//                   <td className="border-bottom px-4 py-2 text-center">Data 3</td>
-//                   <td className="border-bottom px-4 py-2 text-center">Data 4</td>
-
-//                 </tr>
-//               </tbody>
-//             </table>
-//           )
-//         },
-//         {
-//           id: 5,
-//           label: "iWatch ",
-//           text:'iWatch ',
-//           content: (
-//               <table className="table min-w-full table-auto">
-//               <thead>
-//                 <tr>
-//                   <th className="border-bottom px-4 py-2 text-left">Device Modal</th>
-//                   <th className="border-bottom px-4 py-2">Grade A</th>
-//                   <th className="border-bottom px-4 py-2">Grade B</th>
-//                   <th className="border-bottom px-4 py-2">Grade C</th>
-
-//                 </tr>
-//               </thead>
-//               <tbody>
-//                 <tr>
-//                   <td className="border-bottom px-4 py-2">Data 1</td>
-//                   <td className="border-bottom px-4 py-2 text-center">Data 2</td>
-//                   <td className="border-bottom px-4 py-2 text-center">Data 3</td>
-//                   <td className="border-bottom px-4 py-2 text-center">Data 4</td>
-
-//                 </tr>
-//               </tbody>
-//             </table>
-//           )
-//         },
-//         {
-//           id: 6,
-//           label: "Oppo",
-//           text:'Oppo',
-//           content: (
-//               <table className="table min-w-full table-auto">
-//               <thead>
-//                 <tr>
-//                   <th className="border-bottom px-4 py-2 text-left">Device Modal</th>
-//                   <th className="border-bottom px-4 py-2">Grade A</th>
-//                   <th className="border-bottom px-4 py-2">Grade B</th>
-//                   <th className="border-bottom px-4 py-2">Grade C</th>
-
-//                 </tr>
-//               </thead>
-//               <tbody>
-//                 <tr>
-//                   <td className="border-bottom px-4 py-2">Data 1</td>
-//                   <td className="border-bottom px-4 py-2 text-center">Data 2</td>
-//                   <td className="border-bottom px-4 py-2 text-center">Data 3</td>
-//                   <td className="border-bottom px-4 py-2 text-center">Data 4</td>
-
-//                 </tr>
-//               </tbody>
-//             </table>
-//           )
-//         },
-//         {
-//           id: 6,
-//           label: "Goggle",
-//           text:'Goggle',
-//           content: (
-//               <table className="table min-w-full table-auto">
-//               <thead>
-//                 <tr>
-//                   <th className="border-bottom px-4 py-2 text-left">Device Modal</th>
-//                   <th className="border-bottom px-4 py-2">Grade A</th>
-//                   <th className="border-bottom px-4 py-2">Grade B</th>
-//                   <th className="border-bottom px-4 py-2">Grade C</th>
-
-//                 </tr>
-//               </thead>
-//               <tbody>
-//                 <tr>
-//                   <td className="border-bottom px-4 py-2">Data 1</td>
-//                   <td className="border-bottom px-4 py-2 text-center">Data 2</td>
-//                   <td className="border-bottom px-4 py-2 text-center">Data 3</td>
-//                   <td className="border-bottom px-4 py-2 text-center">Data 4</td>
-
-//                 </tr>
-//               </tbody>
-//             </table>
-//           )
-//         },
-
-//       ];
-
-//       const [activeTab, setActiveTab] = useState(tabs[0].id);
-
-//   return (
-//      <>
-
-
-//         <section className="pt-8">
-//         <div className="max-container p-4">
-
-//       <div className="flex flex-wrap justify-center   space-x-2 mb-4">
-//         {tabs.map((tab) => (
-//           <button
-//             key={tab.id}
-//             className={`px-3 py-2 rounded-full text-sm font-medium transition-colors mb-3 ${
-//               activeTab === tab.id
-//                 ? "bg-[#EDE574] text-black"
-//                 : "bg-gray-200 text-gray-800 hover:bg-gray-300 hover:text-black"
-//             }`}
-//             onClick={() => setActiveTab(tab.id)}
-//           >
-//           <span>{tab.text}</span>
-//           </button>
-//         ))}
-//       </div>
-//       <div className=" rounded-md p-4">
-//         <div className='flex justify-end'><h4 className='text-primary lg:text-lg text-sm  p-[8px] w-fit'>
-//         Last update on :17/12/24
-//           </h4></div>
-//         {tabs.find((tab) => tab.id === activeTab)?.content}
-//       </div>
-//     </div>
-//         </section>
-//      </>
-//   );
-// };
-
-// export default Price;
 
 
 
@@ -689,31 +288,31 @@ const Pricing: React.FC = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border-bottom px-4 py-2">Air 2 9.7" (2014)</td>
+                    <td className="border-bottom px-4 py-2">Air 2 9.7&quot; (2014)</td>
                     <td className="border-bottom px-4 py-2 text-center">$80</td>
                     <td className="border-bottom px-4 py-2 text-center">$30</td>
                     <td className="border-bottom px-4 py-2 text-center">$15</td>
                   </tr>
                   <tr>
-                    <td className="border-bottom px-4 py-2">Air 3 10.5" (2019)</td>
+                    <td className="border-bottom px-4 py-2">Air 3 10.5&quot; (2019)</td>
                     <td className="border-bottom px-4 py-2 text-center">$80</td>
                     <td className="border-bottom px-4 py-2 text-center">$40</td>
                     <td className="border-bottom px-4 py-2 text-center">$15</td>
                   </tr>
                   <tr>
-                    <td className="border-bottom px-4 py-2">Air 4 11" (2020)</td>
+                    <td className="border-bottom px-4 py-2">Air 4 11&quot; (2020)</td>
                     <td className="border-bottom px-4 py-2 text-center">$90</td>
                     <td className="border-bottom px-4 py-2 text-center">$50</td>
                     <td className="border-bottom px-4 py-2 text-center">$20</td>
                   </tr>
                   <tr>
-                    <td className="border-bottom px-4 py-2">Air 5 11" (2022)</td>
+                    <td className="border-bottom px-4 py-2">Air 5 11&quot; (2022)</td>
                     <td className="border-bottom px-4 py-2 text-center">$90</td>
                     <td className="border-bottom px-4 py-2 text-center">$50</td>
                     <td className="border-bottom px-4 py-2 text-center">$25</td>
                   </tr>
                   <tr>
-                    <td className="border-bottom px-4 py-2">Air 6 11" (2024)</td>
+                    <td className="border-bottom px-4 py-2">Air 6 11&quot; (2024)</td>
                     <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
                     <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
                     <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
@@ -739,13 +338,13 @@ const Pricing: React.FC = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td className="border-bottom px-4 py-2">Pro 9.7" (2016)</td>
+                  <td className="border-bottom px-4 py-2">Pro 9.7&quot; (2016)</td>
                   <td className="border-bottom px-4 py-2 text-center">$80</td>
                   <td className="border-bottom px-4 py-2 text-center">$20</td>
                   <td className="border-bottom px-4 py-2 text-center">$10</td>
                 </tr>
                 <tr>
-                  <td className="border-bottom px-4 py-2">Pro 10.5" (2017)</td>
+                  <td className="border-bottom px-4 py-2">Pro 10.5&quot; (2017)</td>
                   <td className="border-bottom px-4 py-2 text-center">$90</td>
                   <td className="border-bottom px-4 py-2 text-center">$40</td>
                   <td className="border-bottom px-4 py-2 text-center">$20</td>
@@ -837,6 +436,41 @@ const Pricing: React.FC = () => {
             </table>
           ),
         },
+        {
+          title: "iPad Mini Series",
+          content: (
+            <table className="table min-w-full table-auto">
+              <thead>
+                <tr>
+                  <th className="border-bottom px-4 py-2 text-left">Device Model</th>
+                  <th className="border-bottom px-4 py-2 text-center">Refurb price ($AUD)</th>
+                  <th className="border-bottom px-4 py-2 text-center">Buy Back (Grade A)</th>
+                  <th className="border-bottom px-4 py-2 text-center">Buy Back (Grade B)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border-bottom px-4 py-2">Mini 4</td>
+                  <td className="border-bottom px-4 py-2 text-center">$80</td>
+                  <td className="border-bottom px-4 py-2 text-center">$30</td>
+                  <td className="border-bottom px-4 py-2 text-center">$15</td>
+                </tr>
+                <tr>
+                  <td className="border-bottom px-4 py-2">Mini 5</td>
+                  <td className="border-bottom px-4 py-2 text-center">$80</td>
+                  <td className="border-bottom px-4 py-2 text-center">$30</td>
+                  <td className="border-bottom px-4 py-2 text-center">$15</td>
+                </tr>
+                <tr>
+                  <td className="border-bottom px-4 py-2">Mini 6</td>
+                  <td className="border-bottom px-4 py-2 text-center">$220</td>
+                  <td className="border-bottom px-4 py-2 text-center">$60</td>
+                  <td className="border-bottom px-4 py-2 text-center">$25</td>
+                </tr>
+              </tbody>
+            </table>
+          ),
+        },
       ],
     },
     {
@@ -860,7 +494,7 @@ const Pricing: React.FC = () => {
                 <thead>
                   <tr>
                     <th className="border-bottom px-4 py-2 text-left"> </th>
-                    <th className="border-bottom px-4 py-2 text-center addontext">With Existing Customer's Old Frame (Bazel) Or No Frame</th>
+                    <th className="border-bottom px-4 py-2 text-center addontext">With Existing Customer&apos;s Old Frame (Bazel) Or No Frame</th>
                     <th className="border-bottom px-4 py-2 text-center addontext">With Brand New Frame (Bazel)</th>
                     <th className="border-bottom px-4 py-2 text-center"></th>
                     <th className="border-bottom px-4 py-2 text-center"></th>
@@ -910,7 +544,7 @@ const Pricing: React.FC = () => {
           ),
         },
         {
-          title: "S Ultra Series",
+          title: "Note Series",
           content: (
             <>
               <table className="table min-w-full table-auto">
@@ -926,64 +560,660 @@ const Pricing: React.FC = () => {
                 <thead>
                   <tr>
                     <th className="border-bottom px-4 py-2 text-left"> </th>
-                    <th className="border-bottom px-4 py-2 text-center addontext">With Existing Customer's Old Frame (Bazel) Or No Frame</th>
+                    <th className="border-bottom px-4 py-2 text-center addontext">With Existing Customer&apos;s Old Frame (Bazel) Or No Frame</th>
                     <th className="border-bottom px-4 py-2 text-center addontext">With Brand New Frame (Bazel)</th>
                     <th className="border-bottom px-4 py-2 text-center"></th>
                     <th className="border-bottom px-4 py-2 text-center"></th>
                   </tr>
                 </thead>
                 <tbody>
-        <tr>
-          <td className="border-bottom px-4 py-2">Note 20 Ultra</td>
-          <td className="border-bottom px-4 py-2 text-center">$120</td>
-          <td className="border-bottom px-4 py-2 text-center">$170</td>
-          <td className="border-bottom px-4 py-2 text-center">$70</td>
-          <td className="border-bottom px-4 py-2 text-center">$20</td>
-        </tr>
-        <tr>
-          <td className="border-bottom px-4 py-2">Note 20</td>
-          <td className="border-bottom px-4 py-2 text-center">$100</td>
-          <td className="border-bottom px-4 py-2 text-center">$150</td>
-          <td className="border-bottom px-4 py-2 text-center">$30</td>
-          <td className="border-bottom px-4 py-2 text-center">$10</td>
-        </tr>
-        <tr>
-          <td className="border-bottom px-4 py-2">Note 10 Plus</td>
-          <td className="border-bottom px-4 py-2 text-center">$120</td>
-          <td className="border-bottom px-4 py-2 text-center">$170</td>
-          <td className="border-bottom px-4 py-2 text-center">$70</td>
-          <td className="border-bottom px-4 py-2 text-center">$20</td>
-        </tr>
-        <tr>
-          <td className="border-bottom px-4 py-2">Note 10</td>
-          <td className="border-bottom px-4 py-2 text-center">$100</td>
-          <td className="border-bottom px-4 py-2 text-center">$150</td>
-          <td className="border-bottom px-4 py-2 text-center">$50</td>
-          <td className="border-bottom px-4 py-2 text-center">$20</td>
-        </tr>
-        <tr>
-          <td className="border-bottom px-4 py-2">Note 9</td>
-          <td className="border-bottom px-4 py-2 text-center">$100</td>
-          <td className="border-bottom px-4 py-2 text-center">$150</td>
-          <td className="border-bottom px-4 py-2 text-center">$40</td>
-          <td className="border-bottom px-4 py-2 text-center">$20</td>
-        </tr>
-        <tr>
-          <td className="border-bottom px-4 py-2">Note 8</td>
-          <td className="border-bottom px-4 py-2 text-center">$100</td>
-          <td className="border-bottom px-4 py-2 text-center">$150</td>
-          <td className="border-bottom px-4 py-2 text-center">$40</td>
-          <td className="border-bottom px-4 py-2 text-center">$20</td>
-        </tr>
-      </tbody>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">Note 20 Ultra</td>
+                    <td className="border-bottom px-4 py-2 text-center">$120</td>
+                    <td className="border-bottom px-4 py-2 text-center">$170</td>
+                    <td className="border-bottom px-4 py-2 text-center">$70</td>
+                    <td className="border-bottom px-4 py-2 text-center">$20</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">Note 20</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$30</td>
+                    <td className="border-bottom px-4 py-2 text-center">$10</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">Note 10 Plus</td>
+                    <td className="border-bottom px-4 py-2 text-center">$120</td>
+                    <td className="border-bottom px-4 py-2 text-center">$170</td>
+                    <td className="border-bottom px-4 py-2 text-center">$70</td>
+                    <td className="border-bottom px-4 py-2 text-center">$20</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">Note 10</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$50</td>
+                    <td className="border-bottom px-4 py-2 text-center">$20</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">Note 9</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$40</td>
+                    <td className="border-bottom px-4 py-2 text-center">$20</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">Note 8</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$40</td>
+                    <td className="border-bottom px-4 py-2 text-center">$20</td>
+                  </tr>
+                </tbody>
+              </table>
+            </>
+          ),
+        },
+        {
+          title: "S Series",
+          content: (
+            <>
+              <table className="table min-w-full table-auto">
+                <thead>
+                  <tr>
+                    <th className="border-bottom px-4 py-2 text-left">Device Model</th>
+                    <th className="border-bottom px-4 py-2 text-center">Refurb price (Old Frame or No Frame)</th>
+                    <th className="border-bottom px-4 py-2 text-center">Refurb price (New Frame)</th>
+                    <th className="border-bottom px-4 py-2 text-center">Buy Back ( Grade A )</th>
+                    <th className="border-bottom px-4 py-2 text-center">Buy Back ( Grade B )</th>
+                  </tr>
+                </thead>
+                <thead>
+                  <tr>
+                    <th className="border-bottom px-4 py-2 text-left"> </th>
+                    <th className="border-bottom px-4 py-2 text-center addontext">With Existing Customer &apos;s Old Frame (Bazel) Or No Frame</th>
+                    <th className="border-bottom px-4 py-2 text-center addontext">With Brand New Frame (Bazel)</th>
+                    <th className="border-bottom px-4 py-2 text-center"></th>
+                    <th className="border-bottom px-4 py-2 text-center"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S24 Plus</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$50</td>
+                    <td className="border-bottom px-4 py-2 text-center">$20</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S23 Plus</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$50</td>
+                    <td className="border-bottom px-4 py-2 text-center">$20</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S22 Plus</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$50</td>
+                    <td className="border-bottom px-4 py-2 text-center">$20</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S21 Plus</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$40</td>
+                    <td className="border-bottom px-4 py-2 text-center">$15</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S20 Plus</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$30</td>
+                    <td className="border-bottom px-4 py-2 text-center">$15</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S10 Plus</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$30</td>
+                    <td className="border-bottom px-4 py-2 text-center">$10</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S9 Plus</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$20</td>
+                    <td className="border-bottom px-4 py-2 text-center">$10</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S8 Plus</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$20</td>
+                    <td className="border-bottom px-4 py-2 text-center">$10</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S24</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$50</td>
+                    <td className="border-bottom px-4 py-2 text-center">$20</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S23</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$50</td>
+                    <td className="border-bottom px-4 py-2 text-center">$20</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S22</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$50</td>
+                    <td className="border-bottom px-4 py-2 text-center">$20</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S21</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$40</td>
+                    <td className="border-bottom px-4 py-2 text-center">$20</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S20</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$30</td>
+                    <td className="border-bottom px-4 py-2 text-center">$15</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S10 5G</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$30</td>
+                    <td className="border-bottom px-4 py-2 text-center">$15</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S10</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$30</td>
+                    <td className="border-bottom px-4 py-2 text-center">$15</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S9</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$20</td>
+                    <td className="border-bottom px-4 py-2 text-center">$10</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S8</td>
+                    <td className="border-bottom px-4 py-2 text-center">$100</td>
+                    <td className="border-bottom px-4 py-2 text-center">$150</td>
+                    <td className="border-bottom px-4 py-2 text-center">$20</td>
+                    <td className="border-bottom px-4 py-2 text-center">$10</td>
+                  </tr>
+                </tbody>
+              </table>
+            </>
+          ),
+        },
+
+        {
+          title: "Fold Series",
+          content: (
+            <>
+              <table className="table min-w-full table-auto">
+                <thead>
+                  <tr>
+                    <th className="border-bottom px-4 py-2 text-left">Phone Model</th>
+                    <th className="border-bottom px-4 py-2">Refurb price ($AUD)</th>
+                    <th className="border-bottom px-4 py-2">Buy Back ( Grade A )</th>
+                    <th className="border-bottom px-4 py-2">Buy Back ( Grade B )</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">Fold 6 (Outer)</td>
+                    <td className="border-bottom px-4 py-2 text-center">$90</td>
+                    <td className="border-bottom px-4 py-2 text-center">$40</td>
+                    <td className="border-bottom px-4 py-2 text-center">$15</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">Fold 5 (Outer)</td>
+                    <td className="border-bottom px-4 py-2 text-center">$80</td>
+                    <td className="border-bottom px-4 py-2 text-center">$30</td>
+                    <td className="border-bottom px-4 py-2 text-center">$15</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">Fold 4 (Outer)</td>
+                    <td className="border-bottom px-4 py-2 text-center">$70</td>
+                    <td className="border-bottom px-4 py-2 text-center">$35</td>
+                    <td className="border-bottom px-4 py-2 text-center">$15</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">Fold 3 (Outer)</td>
+                    <td className="border-bottom px-4 py-2 text-center">$90</td>
+                    <td className="border-bottom px-4 py-2 text-center">$40</td>
+                    <td className="border-bottom px-4 py-2 text-center">$15</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">Fold 2 (Outer)</td>
+                    <td className="border-bottom px-4 py-2 text-center">$70</td>
+                    <td className="border-bottom px-4 py-2 text-center">$20</td>
+                    <td className="border-bottom px-4 py-2 text-center">$10</td>
+                  </tr>
+                </tbody>
+              </table>
+            </>
+          ),
+        },
+        {
+          title: "Fold Series",
+          content: (
+            <>
+              <table className="table min-w-full table-auto">
+                <thead>
+                  <tr>
+                    <th className="border-bottom px-4 py-2 text-left">Phone Model</th>
+                    <th className="border-bottom px-4 py-2">Refurb price ($AUD)</th>
+                    <th className="border-bottom px-4 py-2">Buy Back ( Grade A )</th>
+                    <th className="border-bottom px-4 py-2">Buy Back ( Grade B )</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">Outer Screen Refurb</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">Hinge Replacement</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">
+                      Inner Flex Replacement (Which Goes from One Side to Another)
+                    </td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  </tr>
+                </tbody>
+              </table>
+            </>
+          ),
+        },
+        {
+          title: "Flip Series",
+          content: (
+            <>
+              <table className="table min-w-full table-auto">
+                <thead>
+                  <tr>
+                    <th className="border-bottom px-4 py-2 text-left">Phone Model</th>
+                    <th className="border-bottom px-4 py-2">Refurb price ($AUD)</th>
+                    <th className="border-bottom px-4 py-2">Buy Back ( Grade A )</th>
+                    <th className="border-bottom px-4 py-2">Buy Back ( Grade B )</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">Outer Screen Refurb</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">Hinge Replacement</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">
+                      Inner Flex Replacement (Which Goes from One Side to Another)
+                    </td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  </tr>
+                </tbody>
+              </table>
+            </>
+          ),
+        },
+      ],
+    },
+
+    // i pad data
+    {
+      id: 3,
+      category: "Samsung Tablet",
+      accordionData: [
+        {
+          title: "S9 Series",
+          content: (
+            <>
+              <table className="table min-w-full table-auto">
+                <thead>
+                  <tr>
+                    <th className="border-bottom px-4 py-2 text-left">Device Model</th>
+                    <th className="border-bottom px-4 py-2 text-center">Refurb price ($AUD)</th>
+                    <th className="border-bottom px-4 py-2 text-center">Buy Back (Grade A)</th>
+                    <th className="border-bottom px-4 py-2 text-center">Buy Back (Grade B)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S9 Ultra (X910 / X916)</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S9 Plus (X810 / X816)</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S9 (X710 / X716)</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S9 FE (X510 / X516)</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S9 FE Plus (X610 / X616)</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  </tr>
+                </tbody>
               </table>
 
 
             </>
           ),
         },
+        {
+          title: "S8 Series",
+          content: (
+            <>
+              <table className="table min-w-full table-auto">
+                <thead>
+                  <tr>
+                    <th className="border-bottom px-4 py-2 text-left">Device Model</th>
+                    <th className="border-bottom px-4 py-2 text-center">Refurb price ($AUD)</th>
+                    <th className="border-bottom px-4 py-2 text-center">Buy Back (Grade A)</th>
+                    <th className="border-bottom px-4 py-2 text-center">Buy Back (Grade B)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S8 Ultra (X900 / X906)</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S8 Plus (X800 / X806)</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  </tr>
+                  <tr>
+                    <td className="border-bottom px-4 py-2">S8 (X700 / X706)</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                    <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  </tr>
+                </tbody>
+              </table>
+
+
+            </>
+          ),
+
+        },
+        {
+          title: "S7 Series",
+          content: (
+            <table className="table min-w-full table-auto">
+              <thead>
+                <tr>
+                  <th className="border-bottom px-4 py-2 text-left">Device Model</th>
+                  <th className="border-bottom px-4 py-2 text-center">Refurb price ($AUD)</th>
+                  <th className="border-bottom px-4 py-2 text-center">Buy Back (Grade A)</th>
+                  <th className="border-bottom px-4 py-2 text-center">Buy Back (Grade B)</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border-bottom px-4 py-2">S7 Plus (T970 / T975)</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+
+                </tr>
+                <tr>
+                  <td className="border-bottom px-4 py-2">S7 (T870 / T875)</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+
+                </tr>
+                <tr>
+                  <td className="border-bottom px-4 py-2">S7 FE (T730 / T726)</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+
+                </tr>
+              </tbody>
+            </table>
+          ),
+        },
+        {
+          title: "S6 Series",
+          content: (
+            <table className="table min-w-full table-auto">
+              <thead>
+                <tr>
+                  <th className="border-bottom px-4 py-2 text-left">Device Model</th>
+                  <th className="border-bottom px-4 py-2 text-center">Refurb price ($AUD)</th>
+                  <th className="border-bottom px-4 py-2 text-center">Buy Back (Grade A)</th>
+                  <th className="border-bottom px-4 py-2 text-center">Buy Back (Grade B)</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border-bottom px-4 py-2">S6 (T860 / T865)</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+
+                </tr>
+                <tr>
+                  <td className="border-bottom px-4 py-2">S6 Lite (P610 / P615 / P613 / P619)</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+
+                </tr>
+              </tbody>
+            </table>
+          ),
+        },
+        {
+          title: "A Series",
+          content: (
+            <table className="table min-w-full table-auto">
+              <thead>
+                <tr>
+                  <th className="border-bottom px-4 py-2 text-left">Device Model</th>
+                  <th className="border-bottom px-4 py-2 text-center">Refurb price ($AUD)</th>
+                  <th className="border-bottom px-4 py-2 text-center">Buy Back (Grade A)</th>
+                  <th className="border-bottom px-4 py-2 text-center">Buy Back (Grade B)</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border-bottom px-4 py-2">A7 (T500 / T505)</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+
+                </tr>
+                <tr>
+                  <td className="border-bottom px-4 py-2">A 10.1 (T510 / T515)</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+
+                </tr>
+                <tr>
+                  <td className="border-bottom px-4 py-2">A8.0 (T290 / T295)</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+
+                </tr>
+                <tr>
+                  <td className="border-bottom px-4 py-2">A9 Plus (X210 / X216)</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+                  <td className="border-bottom px-4 py-2 text-center">Contact Us</td>
+
+                </tr>
+              </tbody>
+            </table>
+          ),
+        },
+
+
+
+
       ],
-    }
+    },
+    // add new category here
+    {
+      id: 3,
+      category: "iWatch ",
+      accordionData: [
+        {
+          title: "iWatch ",
+          content: (
+            <>
+              <table className="table min-w-full table-auto">
+                <thead>
+                  <tr>
+                    <th className="border-bottom px-4 py-2 text-left">PRC Solutions</th>
+                    <th className="border-bottom px-4 py-2 text-center">{"Address: 122 Queen St, St Marys NSW 2760"}</th>
+                    <th className="border-bottom px-4 py-2 text-center">{"Contact Person : Bharat - 0406060607"}</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colSpan={3} className="border-bottom px-4 py-2">{"We're capable of refurbishing any phone screen, as long as we can source the top glass and OCA for the model. Got a unique or uncommon screen? Reach out to us! We’ll collaborate with you to breathe new life into that broken screen, ready for a second chance on a different phone."}</td>
+                  </tr>
+
+
+
+
+                </tbody>
+              </table>
+            </>
+          ),
+        },
+      ],
+    },
+    {
+      id: 4,
+      category: "Oppo ",
+      accordionData: [
+        {
+          title: "Oppo ",
+          content: (
+            <>
+              <table className="table min-w-full table-auto">
+                <thead>
+                  <tr>
+                    <th className="border-bottom px-4 py-2 text-left">PRC Solutions</th>
+                    <th className="border-bottom px-4 py-2 text-center">{"Address: 122 Queen St, St Marys NSW 2760"}</th>
+                    <th className="border-bottom px-4 py-2 text-center">{"Contact Person : Bharat - 0406060607"}</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colSpan={3} className="border-bottom px-4 py-2">{"We're capable of refurbishing any phone screen, as long as we can source the top glass and OCA for the model. Got a unique or uncommon screen? Reach out to us! We’ll collaborate with you to breathe new life into that broken screen, ready for a second chance on a different phone."}</td>
+                  </tr>
+
+
+
+
+                </tbody>
+              </table>
+            </>
+          ),
+        },
+      ],
+    },
+    {
+      id: 5,
+      category: "Goggle ",
+      accordionData: [
+        {
+          title: "Goggle ",
+          content: (
+            <>
+              <table className="table min-w-full table-auto">
+                <thead>
+                  <tr>
+                    <th className="border-bottom px-4 py-2 text-left">PRC Solutions</th>
+                    <th className="border-bottom px-4 py-2 text-center">{"Address: 122 Queen St, St Marys NSW 2760"}</th>
+                    <th className="border-bottom px-4 py-2 text-center">{"Contact Person : Bharat - 0406060607"}</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colSpan={3} className="border-bottom px-4 py-2">{"We're capable of refurbishing any phone screen, as long as we can source the top glass and OCA for the model. Got a unique or uncommon screen? Reach out to us! We’ll collaborate with you to breathe new life into that broken screen, ready for a second chance on a different phone."}</td>
+                  </tr>
+
+
+
+
+                </tbody>
+              </table>
+            </>
+          ),
+        },
+      ],
+    },
+
+
   ];
 
   // Handle tab switching
@@ -1013,7 +1243,7 @@ const Pricing: React.FC = () => {
 
   return (
     <div>
-      <section className="py-5 xl:py-10 hidden lg:block">
+      <section className="py-5 xl:py-10 ">
         <div className="max-container">
           <div className="my-4">
             <MainHeading Heading={heading} />
@@ -1053,7 +1283,7 @@ const Pricing: React.FC = () => {
                   )}
                 </button>
                 {activeCategoryIndex === index && (
-                  <div className="py-4 pt-0 text-white">{item.content}</div>
+                  <div className="py-4 pt-0 text-white overflow-auto">{item.content}</div>
                 )}
               </div>
             ))}

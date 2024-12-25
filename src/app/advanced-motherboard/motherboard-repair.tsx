@@ -82,7 +82,7 @@ const BeginnerCourse = () => {
         Courseformate1="Video Tutorials"
         Courseformate2="   1 Week Duration"
         Courseformate3="   Experienced Instructors"
-        Courseformate4="  Free Toolkit"
+        Courseformate4=" "
          border="#56c1c1"
      
       />

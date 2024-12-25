@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import checkmark from "../../../public/Images/icons/checkmark.svg";
@@ -5,6 +6,7 @@ import moniter from "../../../public/Images/icons/monitor.svg";
 import arrowright from  "../../../public/Images/icons/arrowright.svg";
 import clockbig from  "../../../public/Images/icons/clockbig.svg"
 import Line from "../../../public/Images/about/leap.svg";
+import { usePathname } from "next/navigation";
 
 interface TraningWillLearn {
   border?: string; // Optional border color
@@ -39,6 +41,8 @@ function TraningWillLearn({
   Courseformate3,
   Courseformate4,
 }: TraningWillLearn) {
+  const pathName = usePathname();
+  
   return (
     <>
       <div className="container py-4 lg:py-[30px] space-y-2 lg:space-y-4">
@@ -96,12 +100,16 @@ function TraningWillLearn({
                   <li className="text-sm lg:text-base">{Courseformate3}</li>
                 </div>
 
-                <div className="flex gap-1">
+            
+                {
+                  pathName === '/beginner-phone-repair-course' && 
+                  <div className="flex gap-1">
                   <Image src={arrowright} alt="" />
                   <li className="text-sm lg:text-base animate-zoomInOut "  style={{ color: `${color}` }}>
                     {Courseformate4}
                   </li>
                 </div>
+                }
               </ul>
             </div>
           </div>
