@@ -510,7 +510,7 @@ const Footer = () => {
               <div className="">
                 <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center ">
                   Copyright © LabX Repair {new Date().getFullYear()} - All
-                  rights reserved
+                  rights reserved.
                 </p>
               </div>
               <div className="sm:text-center">

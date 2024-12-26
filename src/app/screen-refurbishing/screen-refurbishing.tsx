@@ -213,7 +213,7 @@ const Page = () => {
         <div className="container pt-8 mt-5">
           <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
             <div>
-              <Image src={Glass} alt="" />
+              <Image className="w-full 2xl:h-[550px] xl:h-[400px] object-contain" src={Glass} alt="" />
             </div>
             <div className="glass__description">
               <h2>Why Refurbish Instead of Screen Replacement?</h2>

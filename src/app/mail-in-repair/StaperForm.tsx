@@ -454,31 +454,31 @@ const StaperForm: React.FC = () => {
   return (
     <>
       {isLoading && (
-       <div
-       style={{
-         position: "fixed",
-         top: 0,
-         left: 0,
-         width: "100%",
-         height: "100%",
-         backgroundColor: "rgba(0, 0, 0, 0.5)",
-         zIndex: 9999,
-         display: "flex",
-         justifyContent: "center",
-         alignItems: "center",
-       }}
-     >
-    <Lottie
-    animationData={lottiearrow}
-    style={{ width: 50, height: 50 }}
-    className="lottie-icon"
-   />
-     </div>
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            zIndex: 9999,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Lottie
+            animationData={lottiearrow}
+            style={{ width: 50, height: 50 }}
+            className="lottie-icon"
+          />
+        </div>
       )}
 
       <section className="steper-form-section-os">
         <div className="container gaurav-bg-trans ">
-      
+
           <div className="py-3 xl:py-6 2xl:py-6">
             <MainHeading Heading="LabX Mail-In Repair Submission Form" />
           </div>
@@ -496,13 +496,12 @@ const StaperForm: React.FC = () => {
                   className="flex items-center flex-col  relative z-10"
                 >
                   <div
-                    className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px] bg-black  ${
-                      activeStep === index
+                    className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px] bg-black  ${activeStep === index
                         ? "bg-yellow-500"
                         : activeStep > index
-                        ? "bg-black"
-                        : " relative z-10"
-                    }`}
+                          ? "bg-black"
+                          : " relative z-10"
+                      }`}
                   >
                     {activeStep > index ? (
                       <Lottie
@@ -515,11 +514,10 @@ const StaperForm: React.FC = () => {
                     )}
                   </div>
                   <p
-                    className={`font-medium lg:text-lg text-[12px] leading-[14px] text-center m-0  ${
-                      activeStep === index
+                    className={`font-medium lg:text-lg text-[12px] leading-[14px] text-center m-0  ${activeStep === index
                         ? "font-medium lg:text-lg text-[12px] leading-[14px]  text-center m-0 "
                         : ""
-                    }`}
+                      }`}
                   >
                     {step}
                   </p>
@@ -606,24 +604,24 @@ const StaperForm: React.FC = () => {
                               inputProps={{ maxLength: 10 }} // Additional safeguard to restrict input length
                             /> */}
 
-<TextField
-  required
-  label="Contact Number"
-  name="contact_number"
-  type="tel" // Change from "number" to "tel"
-  fullWidth
-  value={personalDetails.contactNo}
-  onChange={(e) => {
-    // Allow only up to 10 digits
-    if (/^\d{0,10}$/.test(e.target.value)) {
-      setPersonalDetails({
-        ...personalDetails,
-        contactNo: e.target.value,
-      });
-    }
-  }}
-  inputProps={{ maxLength: 10 }} // Additional safeguard to restrict input length
-/>
+                            <TextField
+                              required
+                              label="Contact Number"
+                              name="contact_number"
+                              type="tel" // Change from "number" to "tel"
+                              fullWidth
+                              value={personalDetails.contactNo}
+                              onChange={(e) => {
+                                // Allow only up to 10 digits
+                                if (/^\d{0,10}$/.test(e.target.value)) {
+                                  setPersonalDetails({
+                                    ...personalDetails,
+                                    contactNo: e.target.value,
+                                  });
+                                }
+                              }}
+                              inputProps={{ maxLength: 10 }} // Additional safeguard to restrict input length
+                            />
 
                             {errors.contactNo && (
                               <p className="text-[red] text-sm mb-0">
@@ -646,9 +644,8 @@ const StaperForm: React.FC = () => {
                                   emailAddress: e.target.value,
                                 })
                               }
-                              className={`w-full bg-black text-white border-white ${
-                                isInvalid ? "border-red-500" : ""
-                              }`}
+                              className={`w-full bg-black text-white border-white ${isInvalid ? "border-red-500" : ""
+                                }`}
                               type="email"
                             />
                             {errors.emailAddress && (
@@ -705,7 +702,7 @@ const StaperForm: React.FC = () => {
                                     deviceType: e.target.value,
                                   })
                                 }
-                                // className="bg-black text-white border border-gray-400 rounded-lg w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                              // className="bg-black text-white border border-gray-400 rounded-lg w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
                               />
                             </div>
 
@@ -838,7 +835,7 @@ const StaperForm: React.FC = () => {
                           <p className="text-base leading-5 mb-2">
                             Any Previous Repair Attempts?*
                           </p>
-                          <Select 
+                          <Select
                             defaultSelectedKeys={
                               repairDetails.previousRepairAttempts != "Yes"
                                 ? ["No"]
@@ -1015,7 +1012,7 @@ const StaperForm: React.FC = () => {
                         <Select
                           defaultSelectedKeys={
                             shippingDetails.requirePickupLabel ==
-                            "Yes,Please arrange pickup from my location"
+                              "Yes,Please arrange pickup from my location"
                               ? ["Yes,Please arrange pickup from my location"]
                               : ["No,I will send the device myself"]
                           }
@@ -1047,20 +1044,20 @@ const StaperForm: React.FC = () => {
 
                         {shippingDetails.requirePickupLabel ==
                           "Yes,Please arrange pickup from my location" && (
-                          <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
-                            A one-way shipping fee of $15-$20 will be added to
-                            your invoice, regardless of whether the device is
-                            repaired or not. Connote label will be sent to your
-                            email.
-                          </p>
-                        )}
+                            <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                              A one-way shipping fee of $15-$20 will be added to
+                              your invoice, regardless of whether the device is
+                              repaired or not. Connote label will be sent to your
+                              email.
+                            </p>
+                          )}
 
                         {shippingDetails.requirePickupLabel ===
                           "No,I will send the device myself" && (
-                          <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
-                            No, I will send the device myself.
-                          </p>
-                        )}
+                            <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                              No, I will send the device myself.
+                            </p>
+                          )}
                       </div>
 
                       {/* Require Return Label */}
@@ -1071,7 +1068,7 @@ const StaperForm: React.FC = () => {
                         <Select
                           defaultSelectedKeys={
                             shippingDetails.requireReturnLabel ==
-                            "Please ship the device back to me"
+                              "Please ship the device back to me"
                               ? ["Please ship the device back to me"]
                               : ["I will arrange pickup myself"]
                           }
@@ -1097,11 +1094,11 @@ const StaperForm: React.FC = () => {
 
                         {shippingDetails.requireReturnLabel ===
                           "Please ship the device back to me" && (
-                          <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
-                            Additional shipping fee of $15-$20 will be added to
-                            your invoice.
-                          </p>
-                        )}
+                            <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                              Additional shipping fee of $15-$20 will be added to
+                              your invoice.
+                            </p>
+                          )}
                       </div>
 
                       {/* Terms and Conditions */}
@@ -1218,10 +1215,10 @@ const StaperForm: React.FC = () => {
                         </div>
 
                         {errors.signature && (
-                            <p className="text-[red] text-sm mb-0">
-                              {errors.signature}
-                            </p>
-                          )}
+                          <p className="text-[red] text-sm mb-0">
+                            {errors.signature}
+                          </p>
+                        )}
 
                         {/* {shippingDetails.signature === "" && (
                           <p className="text-[red] text-sm mb-0">
@@ -1252,9 +1249,8 @@ const StaperForm: React.FC = () => {
                           <button
                             onClick={handleSubmit}
                             disabled={isLoading} // Disable button while loading
-                            className={`btn flex items-center gap-2 ${
-                              isLoading ? "opacity-50 cursor-not-allowed" : ""
-                            }`}
+                            className={`btn flex items-center gap-2 ${isLoading ? "opacity-50 cursor-not-allowed" : ""
+                              }`}
                           >
                             {isLoading ? (
                               <span className="loader" /> // You can use a loader component or spinner
@@ -1332,11 +1328,10 @@ const StaperForm: React.FC = () => {
                       <button
                         onClick={handleSubmit}
                         disabled={!pricingAgreement || isLoading} // Disable when loading
-                        className={`btn ${
-                          !pricingAgreement || isLoading
+                        className={`btn ${!pricingAgreement || isLoading
                             ? "opacity-50 cursor-not-allowed"
                             : ""
-                        }`}
+                          }`}
                       >
                         {isLoading ? "Processing..." : "Submit"}
                       </button>
