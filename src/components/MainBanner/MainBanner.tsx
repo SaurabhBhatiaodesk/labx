@@ -113,7 +113,7 @@ export default function MainBanner() {
                 </div>
                 <div className="w-full">
                   <Image
-                    className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
+                    className="w-full 2xl:h-[550px] xl:h-[400px] object-contain"
                     src={mainb1}
                     alt="Banner"
                   />
@@ -144,7 +144,7 @@ export default function MainBanner() {
                 </div>
                 <div className="w-full">
                   <Image
-                    className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
+                    className="w-full 2xl:h-[550px] xl:h-[400px] object-contain"
                     src={mainb3}
                     alt="Training and Repairs"
                   />
@@ -171,7 +171,7 @@ export default function MainBanner() {
                 </div>
                 <div className="w-full">
                   <Image
-                    className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
+                    className="w-full 2xl:h-[550px] xl:h-[400px] object-contain"
                     src={mainb2}
                     alt="Quick Repairs"
                   />
@@ -199,7 +199,7 @@ export default function MainBanner() {
                 </div>
                 <div className="w-full">
                   <Image
-                    className="w-full 2xl:h-[550px] xl:h-[450px] object-contain"
+                    className="w-full 2xl:h-[550px] xl:h-[400px] object-contain"
                     src={mainb4}
                     alt="Fix Your Device"
                   />

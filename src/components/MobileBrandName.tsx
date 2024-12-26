@@ -11,13 +11,13 @@ const MobileBrandName = () => {
           <MainTitle
             Title="We refurbish screens for a wide range of devices, including"
           />
-          <div className="grid xl:grid-cols-7 lg:grid-cols-3 grid-cols-1 gap-2 lg:py-5 py-3 items-center">
-            {["iPhone", "iPad", "Samsung Phone", "Samsung Tablet", "Google", "Oppo", "and More"].map((brand, index) => (
+          <div className="flex justify-center gap-2 flex-wrap">
+            {["iPhone", "iPad", "Samsung Phone", "Samsung Tablet", "Google", "Oppo", ].map((brand, index) => (
               <div
                 key={index}
-                className="px-4 py-2 border rounded-full shadow-lg text-center lg:text-sm text-xs tracking-wide transition duration-300 ease-in-out hover:bg-primary  hover:shadow-xl hover:border-tertiary hover:border-[2px]"
+                className="px-4 py-2 border rounded-full shadow-lg text-center lg:text-sm text-xs tracking-wide transition duration-300 ease-in-out  hover:shadow-xl  hover:border-[1px] "
               >
-                <p className=" text-tertiary m-0 text-[13px] hover:text-secondary ">{brand}</p>
+                <p className=" text-tertiary m-0 text-[13px]  ">{brand}</p>
               </div>
             ))}
           </div>

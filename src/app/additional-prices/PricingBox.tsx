@@ -5,7 +5,6 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 
 import Repairs from "../../../public/Images/icons/Vector.svg";
-
 import Transparency from "../../../public/Images/icons/Transparency.svg";
 import Recovery from "../../../public/Images/icons/Recovery.svg";
 import B2BServices from "../../../public/Images/icons/B2B Services.svg";

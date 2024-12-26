@@ -7,6 +7,32 @@
   color: black !important;
 }
 
+.bg-blackgk button {
+  background: black;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.bg-blackgk button:hover {
+  background: black;
+  border: 1px solid;
+  border-radius: 5px;
+}
+/* .react-pattern-lock__pattern-wrapper {
+  height: 300px !important;
+  width: 50% !important;
+  margin: 0 auto;
+} */
+
+.react-pattern-lock__point-wrapper{
+  width: 100% !important;
+  /* height: 300px !important; */
+  /* flex: unset !important; */
+}
+
+.react-pattern-lock__pattern-wrapper{
+  /* height: unset !important; */
+  /* height: 300px !important; */
+} 
 a label[data-slot="label ,trigger"] {
   color: #ffffff;
 }
