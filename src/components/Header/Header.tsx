@@ -203,7 +203,7 @@ export default function App() {
                               Mail In Repair
                             </Link>
                     </li>
-                    <li className="flex justify-center flex-col border-b-[1px] border-primary w-fit">
+                    <li className="flex justify-center flex-col border-[1px] border-primary w-fit rounded-md">
                       <Link
                         className=""
                         href="/coming-soon"
