@@ -6,6 +6,7 @@ export const metadata = {
   description:
     "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
  
+    
   openGraph: {
     title: "Welcome to LabX - Your Trusted Tech Solutions",
     description:
