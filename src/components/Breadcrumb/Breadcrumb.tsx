@@ -46,6 +46,7 @@ function Breadcrumb({
     // } else if (currentRoute === "/training") {
     //   targetId = "Kickstart";
     // }
+    if (typeof document !== "undefined") {
     const target = document.getElementById(targetId);
     const offset = scrollOffSet; // 3rem in pixels (assuming 1rem = 16px)
 
@@ -59,6 +60,7 @@ function Breadcrumb({
         behavior: "smooth",
       });
     }
+  }
   };
 
   return (

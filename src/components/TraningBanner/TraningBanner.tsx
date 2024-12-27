@@ -61,7 +61,7 @@ function TraningBanner({
     }
 
 
-
+    if (typeof document !== "undefined") {
     const target = document.getElementById(targetId);
     const offset = 12 * 5; // 3rem in pixels (assuming 1rem = 16px)
 
@@ -75,6 +75,7 @@ function TraningBanner({
         behavior: "smooth",
       });
     }
+  }
   };
   return (
     <>
