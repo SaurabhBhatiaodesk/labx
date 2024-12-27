@@ -1,3 +1,93 @@
+/* Container for the pattern lock */
+/* .pattern-lock-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  border-radius: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  position: relative;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  background-color: #d3d3d3;
+  border: 2px solid #00ffff;
+  border-radius: 50%;
+  transition: transform 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+
+.cell.selected {
+  background-color: #00ffff;
+  transform: scale(1.2);
+}
+
+.canvas-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-save {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.btn-save:hover {
+  background-color: #45a049;
+}
+
+.btn-reset {
+  background-color: #f44336;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.btn-reset:hover {
+  background-color: #e53935;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+} */
+
+
+
+
+/* =========================== */
+
+
 .data-\[hover\=true\]\:transition-colors[data-hover="true"] {
   transition-property: color, background-color, border-color,
     text-decoration-color, fill, stroke;
@@ -32,7 +122,7 @@
 .react-pattern-lock__pattern-wrapper{
   /* height: unset !important; */
   /* height: 300px !important; */
-} 
+}
 a label[data-slot="label ,trigger"] {
   color: #ffffff;
 }
