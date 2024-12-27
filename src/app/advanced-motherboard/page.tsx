@@ -1,5 +1,8 @@
+"use client"
+import dynamic from "next/dynamic";
 import React from 'react'
-import MotherboardRepair from './motherboard-repair'
+// import MotherboardRepair from './motherboard-repair'
+const MotherboardRepair = dynamic(() => import('./motherboard-repair'), { ssr: false });
 export const metadata = {
   title: "LabX Repair Mobile Phone Services - Expert Repair & Training",
   description: "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
@@ -29,7 +32,7 @@ export const metadata = {
 
 const page = () => {
 
-  
+
   return (
    <>
 <div>

@@ -1,12 +1,15 @@
+"use client"
 import React from "react";
-import MailRepair from "./MailRepair";
+import dynamic from "next/dynamic";
+const MailRepair = dynamic(() => import('./MailRepair'), { ssr: false });
+// import MailRepair from "./MailRepair";
 
 export const metadata = {
   title: "LabX Repair Mobile Phone Services - Expert Repair & Training",
   description:
     "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
- 
-    
+
+
   openGraph: {
     title: "Welcome to LabX - Your Trusted Tech Solutions",
     description:
