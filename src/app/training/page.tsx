@@ -1,6 +1,9 @@
+import dynamic from "next/dynamic";
 import React from "react";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
-import CourseHighlights from "./CourseHighlights/CourseHighlights";
+// const MyComponent = dynamic(() => import('./MyComponent'), { ssr: false });
+// import CourseHighlights from "./CourseHighlights/CourseHighlights";
+const CourseHighlights = dynamic(() => import('./CourseHighlights/CourseHighlights'), { ssr: false });
 import Form from "@/components/Form/Form";
 import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
 export const metadata = {
