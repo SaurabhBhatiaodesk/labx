@@ -35,7 +35,7 @@ function TraningBanner({
 }: TraningBanner) {
 
     const [isBrowser, setIsBrowser] = useState(false);
-  
+
     // Check if we're in the browser
     useEffect(() => {
       setIsBrowser(true);
@@ -59,7 +59,9 @@ function TraningBanner({
     } else if (currentRoute === "/broken-ripped-pads-repair-jumbers") {
       targetId = "broken-ripped-pads-repair-jumbers-id";
     }
-    
+
+
+
     const target = document.getElementById(targetId);
     const offset = 12 * 5; // 3rem in pixels (assuming 1rem = 16px)
 
