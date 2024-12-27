@@ -5,6 +5,7 @@
     background-repeat: no-repeat;
 }
 
+
 .User_img img{
     width: 100%;
 }
@@ -52,12 +53,12 @@ img.pb-3.m-auto, .about_line{
 .grid.xl\:grid-cols-2.lg\:grid-cols-3.grid-cols-1.gap-8.lg\:py-5.py-3.items-center, .max-container p, .overlap__description h3 {
     text-align: center;
 }
-.overlap__description { 
-    width: 100%; 
+.overlap__description {
+    width: 100%;
     padding-top: 18% !important;
     padding: 35px 15px;
 }
-.overlap__section_labX.relative img { 
+.overlap__section_labX.relative img {
     width: 100%;
 }
 .overlap__section_labX.relative {
