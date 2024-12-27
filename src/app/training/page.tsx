@@ -4,7 +4,9 @@ import React from "react";
 const Breadcrumb = dynamic(() => import('../../components/Breadcrumb/Breadcrumb'), { ssr: false });
 // import CourseHighlights from "./CourseHighlights/CourseHighlights";
 const CourseHighlights = dynamic(() => import('./CourseHighlights/CourseHighlights'), { ssr: false });
-import Form from "@/components/Form/Form";
+// import Form from "@/components/Form/Form";
+const Form = dynamic(() => import('../../components/Form/Form'), { ssr: false });
+
 // import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
 const GoogleReviews = dynamic(() => import('../../components/GoogleReviews/GoogleReviews'), { ssr: false });
 
