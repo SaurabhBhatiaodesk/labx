@@ -1,5 +1,8 @@
+import dynamic from "next/dynamic";
 import React from "react";
-import DataRecovery from "./DataRecovery";
+const DataRecovery = dynamic(() => import('./DataRecovery'), { ssr: false });
+
+// import DataRecovery from "./DataRecovery";
 import "./data.css";
 
 const page = () => {

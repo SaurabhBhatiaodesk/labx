@@ -38,7 +38,7 @@ const Marquee = () => {
               messages.map((message, messageIndex) => (
                 <span
                   key={`${repetitionIndex}-${messageIndex}`}
-                  className="px-[10px] py-[5px] border-[1px] rounded-full bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c9894] marquee-item lg:text-[12px] text-[10px] tracking-[1.5px] relative top-6"
+                  className="px-[10px] py-[5px] border-[1px] rounded-full bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c9894] marquee-item lg:text-[14px] text-[12px] tracking-[1.5px] relative top-6"
                 >
                   {message}
                 </span>

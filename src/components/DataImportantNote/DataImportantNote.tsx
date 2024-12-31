@@ -20,18 +20,18 @@ const DataImportantNote = () => {
               prevent successful recovery:
             </p>
             <div className="  ">
-              <div className="flex gap-[5px] text-secondary items-center">
-                <span><LuDot /></span>
-                <p className="text-secondary m-0">Completely destroyed or corrupted storage chips (eMMC/UFS).</p>
-              </div>
-              <div className="flex gap-[5px] text-secondary items-center">
-                <span><LuDot /></span>
-                <p className="text-secondary m-0">Data that has already been permanently deleted and overwritten.</p>
-              </div>
-              <div className="flex gap-[5px] text-secondary items-center">
-                <span><LuDot /></span>
-                <p className="text-secondary m-0">Devices that are physically beyond repair to enable temporary access.</p>
-              </div>
+            <div className="flex gap-[5px] text-secondary items-center">
+              <span><LuDot  /></span>
+              <p className="text-secondary m-0">Completely destroyed or corrupted storage chips (eMMC/UFS).</p>
+            </div>
+            <div className="flex gap-[5px] text-secondary items-center">
+              <span><LuDot  /></span>
+              <p className="text-secondary m-0">Data that has already been permanently deleted and overwritten.</p>
+            </div>
+            <div className="flex gap-[5px] text-secondary items-center">
+              <span><LuDot  /></span>
+              <p className="text-secondary m-0">Devices that are physically beyond repair to enable temporary access.</p>
+            </div>
             </div>
           </div>
 
@@ -41,11 +41,11 @@ const DataImportantNote = () => {
               Important Notes
             </h2>
             <div className="flex gap-[5px] text-secondary items-start">
-              <span><LuDot color="white" /></span>
+              <span><LuDot  color="white" /></span>
               <p className="text-primery m-0">Customers must provide the correct device password to access recovered data. If the password is incorrect or unavailable, LabX will not be able to verify the recovered files.</p>
             </div>
             <div className="flex gap-[5px] text-secondary items-start">
-              <span><LuDot color="white" /></span>
+              <span><LuDot  color="white" /></span>
               <p className="text-primery m-0">In cases where the device cannot be repaired for long-term functionality, we may power it temporarily to retrieve data, but no further repairs will be performed.</p>
             </div>
           </div>
@@ -56,41 +56,41 @@ const DataImportantNote = () => {
               Common Scenarios We Handle
             </h2>
             <div className="flex items-start gap-3">
-              <Image src={pointer} alt="pointer" width={30} />
+            <Image src={pointer} alt="pointer" width={30} />
 
-              <div className="">
-                <span className="text-lg pb-[2px] text-[#EDE574] font-semibold">
+                <div className="">
+                  <span className="text-lg pb-[2px] text-[#EDE574] font-semibold">
                   Water Damage:
-                </span>
-                <p>
+                  </span>
+                  <p>
                   Quick recovery from devices exposed to liquid spills or submersion.
-                </p>
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <Image src={pointer} alt="pointer" width={30} />
+              <div className="flex items-start gap-3">
+                <Image src={pointer} alt="pointer" width={30} />
 
-              <div className="">
-                <span className="text-lg pb-[2px] text-[#EDE574] font-semibold">
-                  Impact Damage:
-                </span>
-                <p>
+                <div className="">
+                  <span className="text-lg pb-[2px] text-[#EDE574] font-semibold">
+                  Impact Damage: 
+                  </span>
+                  <p>
                   Devices dropped or damaged due to external force.
-                </p>
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="flex items-start gap-3">
+              <div className="flex items-start gap-3">
               <Image src={pointer} alt="pointer" width={30} />
 
-              <div className="">
-                <span className="text-lg pb-[2px] text-[#EDE574] font-semibold">
+                <div className="">
+                  <span className="text-lg pb-[2px] text-[#EDE574] font-semibold">
                   Failed Software Updates:
-                </span>
-                <p>
+                  </span>
+                  <p>
                   Data recovery from bricked devices after failed updates.
-                </p>
+                  </p>
+                </div>
               </div>
-            </div>
           </div>
 
           {/* Pricing and Terms */}
@@ -99,31 +99,16 @@ const DataImportantNote = () => {
               Pricing and Terms
             </h2>
             <div className="flex gap-[5px] text-secondary items-start">
-              <span><LuDot color="black" /></span>
+              <span><LuDot  color="black" /></span>
               <p className="text-secondary m-0">In cases where the device cannot be repaired for long-term functionality, we may power it temporarily to retrieve data, but no further repairs will be performed.</p>
             </div>
             <div className="flex gap-[5px] text-secondary items-start">
-              <span><LuDot color="black" /></span>
+              <span><LuDot  color="black" /></span>
               <p className="text-secondary m-0">If the data recovery is successful, the remaining balance for the service must be cleared before delivery.</p>
             </div>
             <div className="flex gap-[5px] text-secondary items-start">
-              <span><LuDot color="black" /></span>
-              <p className="text-secondary m-0">
-                Customers are encouraged to review our&nbsp; <Link className="font-semibold hover:underline" href="/faq" >  FAQ,</Link>
-                <Link
-                  className="font-semibold hover:underline"
-                  href="/Terms_and_Conditions"
-                >Terms and Conditions,
-                </Link>
-                and
-                <Link
-                  className="font-semibold hover:underline"
-                  href="/Shipping_Policy"
-                >
-                  Shipping Policy for more details.
-                </Link>
-              </p>
-
+              <span><LuDot  color="black" /></span>
+              <p className="text-secondary m-0">Customers are encouraged to review our <Link className="font-semibold" href="/faq"> FAQ, </Link><Link className="font-semibold" href="/Terms_and_Conditions">Terms and Conditions, </Link> and  <Link className="font-semibold" href="/Shipping_Policy">Shipping Policy for more details. </Link> </p>
             </div>
           </div>
         </div>

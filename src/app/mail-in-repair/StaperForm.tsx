@@ -23,7 +23,8 @@ import Link from "next/link";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import PatternLock from "react-pattern-lock";
+import { ReactCanvasPatternLock } from "react-canvas-pattern-lock";
+// import PatternLock from "react-pattern-lock";
 
 type Errors = {
   businessName?: string;
@@ -80,6 +81,10 @@ type ShippingDetails = {
   signature: string;
 };
 
+interface CustomPatternLockProps {
+  onFinish: (pattern: string) => void;
+}
+
 type HandleSubmitParams = {
   personalDetails: PersonalDetails;
   deviceDetails: DeviceDetails;
@@ -87,6 +92,137 @@ type HandleSubmitParams = {
   shippingDetails: ShippingDetails;
   pricingAgreement: boolean;
 };
+
+// const PatternLock = () => {
+//   const handlePatternComplete = (code: number[], nodes: any) => {
+//     console.log("Pattern code (numbers):", code);
+//     console.log("Pattern nodes:", nodes);
+//     alert(`Pattern: ${code.join("-")}`); // Display the pattern as a string
+//   };
+
+//   return (
+//     <div
+//       style={{
+//         width: "320px",
+//         height: "320px",
+//         backgroundColor: "#000", // Background color for the pattern container
+//         borderRadius: "10px", // Rounded corners
+//         display: "flex",
+//         justifyContent: "center",
+//         alignItems: "center",
+//         margin: "0 auto", // Center align the pattern lock
+//       }}
+//     >
+//       <ReactCanvasPatternLock
+//         width={300} // Width of the pattern grid
+//         height={300} // Height of the pattern grid
+//         rows={3} // Number of rows
+//         cols={3} // Number of columns
+//         onComplete={handlePatternComplete} // Callback for when the pattern is completed
+//       />
+//     </div>
+//   );
+// };
+
+// const CustomPatternLock: React.FC<CustomPatternLockProps> = ({ onFinish }) => {
+//   const [path, setPath] = useState<number[]>([]);
+//   const [error, setError] = useState(false);
+//   const [size] = useState(3);
+//   const canvasRef = useRef<HTMLCanvasElement>(null);
+//   const containerRef = useRef<HTMLDivElement>(null);
+
+//   const handleCellClick = (index: number, cellRect: DOMRect) => {
+//     if (!path.includes(index)) {
+//       setPath([...path, index]);
+//       drawPath(cellRect);
+//     }
+//   };
+
+//   const handleFinish = () => {
+//     if (path.length > 0) {
+//       const pattern = path.join("-");
+//       onFinish(pattern);
+//       setError(false);
+//     } else {
+//       setError(true);
+//     }
+//   };
+
+//   const handleReset = () => {
+//     setPath([]);
+//     setError(false);
+//     const canvas = canvasRef.current;
+//     if (canvas) {
+//       const ctx = canvas.getContext("2d");
+//       if (ctx) ctx.clearRect(0, 0, canvas.width, canvas.height);
+//     }
+//   };
+
+//   const drawPath = (cellRect: DOMRect) => {
+//     const canvas = canvasRef.current;
+//     const ctx = canvas?.getContext("2d");
+
+//     if (ctx && containerRef.current) {
+//       const { left, top } = containerRef.current.getBoundingClientRect();
+//       const centerX = cellRect.left + cellRect.width / 2 - left;
+//       const centerY = cellRect.top + cellRect.height / 2 - top;
+
+//       if (path.length > 0) {
+//         const lastIndex = path[path.length - 1];
+//         const lastCell = containerRef.current.children[lastIndex];
+//         if (lastCell) {
+//           const lastRect = (lastCell as HTMLElement).getBoundingClientRect();
+//           const lastCenterX = lastRect.left + lastRect.width / 2 - left;
+//           const lastCenterY = lastRect.top + lastRect.height / 2 - top;
+
+//           ctx.beginPath();
+//           ctx.moveTo(lastCenterX, lastCenterY);
+//           ctx.lineTo(centerX, centerY);
+//           ctx.strokeStyle = "#00ffff";
+//           ctx.lineWidth = 5;
+//           ctx.stroke();
+//           ctx.closePath();
+//         }
+//       }
+//     }
+//   };
+
+//   return (
+//     <div className="pattern-lock-container">
+//       <div
+//         className="grid"
+//         ref={containerRef}
+//         style={{
+//           gridTemplateColumns: `repeat(${size}, 1fr)`,
+//           gridTemplateRows: `repeat(${size}, 1fr)`,
+//         }}
+//       >
+//         {Array.from({ length: size * size }, (_, index) => (
+//           <div
+//             key={index}
+//             className={`cell ${path.includes(index) ? "selected" : ""}`}
+//             onClick={(e) =>
+//               handleCellClick(
+//                 index,
+//                 (e.target as HTMLElement).getBoundingClientRect()
+//               )
+//             }
+//           ></div>
+//         ))}
+//       </div>
+//       <canvas ref={canvasRef} className="canvas-overlay"></canvas>
+//       <div className="controls">
+//         <button onClick={handleFinish} className="btn-save">
+//           Save Pattern
+//         </button>
+//         <button onClick={handleReset} className="btn-reset">
+//           Reset Pattern
+//         </button>
+//       </div>
+//       {error && <p className="error-message">Please draw a valid pattern.</p>}
+//     </div>
+//   );
+// };
 
 const StaperForm: React.FC = () => {
   const formContainerRef = useRef<HTMLDivElement>(null);
@@ -213,7 +349,7 @@ const StaperForm: React.FC = () => {
       return (
         <React.Fragment>
           <div className="center">
-            <PatternLock
+            {/*  <PatternLock
               size={size}
               onChange={this.onChange}
               path={path}
@@ -222,7 +358,7 @@ const StaperForm: React.FC = () => {
               connectorThickness={5}
               disabled={disabled || isLoading}
               success={success}
-            />
+            /> */}
           </div>
           {/* <div className="output">
             Select the top 3 points starting from the left
@@ -626,7 +762,6 @@ const StaperForm: React.FC = () => {
 
       <section className="steper-form-section-os">
         <div className="container gaurav-bg-trans ">
-
           <div className="py-3 xl:py-6 2xl:py-6">
             <MainHeading Heading="LabX Mail-In Repair Submission Form" />
           </div>
@@ -648,12 +783,13 @@ const StaperForm: React.FC = () => {
                   className="flex items-center flex-col  relative z-10"
                 >
                   <div
-                    className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px] bg-black  ${activeStep === index
+                    className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px] bg-black  ${
+                      activeStep === index
                         ? "bg-yellow-500"
                         : activeStep > index
-                          ? "bg-black"
-                          : " relative z-10"
-                      }`}
+                        ? "bg-black"
+                        : " relative z-10"
+                    }`}
                   >
                     {activeStep > index ? (
                       <Lottie
@@ -666,10 +802,11 @@ const StaperForm: React.FC = () => {
                     )}
                   </div>
                   <p
-                    className={`font-medium lg:text-lg text-[12px] leading-[14px] text-center m-0  ${activeStep === index
+                    className={`font-medium lg:text-lg text-[12px] leading-[14px] text-center m-0  ${
+                      activeStep === index
                         ? "font-medium lg:text-lg text-[12px] leading-[14px]  text-center m-0 "
                         : ""
-                      }`}
+                    }`}
                   >
                     {step}
                   </p>
@@ -737,8 +874,6 @@ const StaperForm: React.FC = () => {
 
                           {/* Contact Number (Required) */}
                           <div>
-
-
                             {/* <TextField
                               required
                               label="Contact Number"
@@ -798,8 +933,9 @@ const StaperForm: React.FC = () => {
                                   emailAddress: e.target.value,
                                 })
                               }
-                              className={`w-full bg-black text-white border-white ${isInvalid ? "border-red-500" : ""
-                                }`}
+                              className={`w-full bg-black text-white border-white ${
+                                isInvalid ? "border-red-500" : ""
+                              }`}
                               type="email"
                             />
                             {errors.emailAddress && (
@@ -856,7 +992,7 @@ const StaperForm: React.FC = () => {
                                     deviceType: e.target.value,
                                   })
                                 }
-                              // className="bg-black text-white border border-gray-400 rounded-lg w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                                // className="bg-black text-white border border-gray-400 rounded-lg w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
                               />
                             </div>
 
@@ -959,37 +1095,41 @@ const StaperForm: React.FC = () => {
                                 }}
                                 className="flex items-center justify-center"
                               >
-                                <div className="bg-black p-5 rounded-lg  lg:w-[30%] w-[90%] px-3 border-[1px] border-[#81818175]" >
-                                  <h2 className="text-center text-2xl mb-2 text-white">Enter Device PIN</h2>
+                                <div className="bg-black p-5 rounded-lg  lg:w-[30%] w-[90%] px-3 border-[1px] border-[#81818175]">
+                                  <h2 className="text-center text-2xl mb-2 text-white">
+                                    Enter Device PIN
+                                  </h2>
                                   <TextField
-  type="password"
-  label="PIN"
-  value={pinValue}
-  fullWidth
-  onChange={(e) => setPinValue(e.target.value)}
-  sx={{
-    '& .MuiFormLabel-root': {
-      color: 'white', // Label color red
-    },
-    '& .MuiFormLabel-root.Mui-focused': {
-      color: 'white', // Label color red when focused
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'white', // Border color white
-      },
-      '&:hover fieldset': {
-        borderColor: 'gray', // Border color gray on hover
-      },
-      '&.Mui-focused fieldset': {
-        borderColor: 'white', // Border color white when focused
-      },
-    },
-    '& .MuiInputBase-input': {
-      color: 'white', // Input text color white
-    },
-  }}
-/>
+                                    type="password"
+                                    label="PIN"
+                                    value={pinValue}
+                                    fullWidth
+                                    onChange={(e) =>
+                                      setPinValue(e.target.value)
+                                    }
+                                    sx={{
+                                      "& .MuiFormLabel-root": {
+                                        color: "white", // Label color red
+                                      },
+                                      "& .MuiFormLabel-root.Mui-focused": {
+                                        color: "white", // Label color red when focused
+                                      },
+                                      "& .MuiOutlinedInput-root": {
+                                        "& fieldset": {
+                                          borderColor: "white", // Border color white
+                                        },
+                                        "&:hover fieldset": {
+                                          borderColor: "gray", // Border color gray on hover
+                                        },
+                                        "&.Mui-focused fieldset": {
+                                          borderColor: "white", // Border color white when focused
+                                        },
+                                      },
+                                      "& .MuiInputBase-input": {
+                                        color: "white", // Input text color white
+                                      },
+                                    }}
+                                  />
                                   <div className="flex justify-end mt-4">
                                     <button
                                       onClick={() => setPinModalOpen(false)}
@@ -1013,7 +1153,7 @@ const StaperForm: React.FC = () => {
                                 </div>
                               </Modal>
 
-                              <Modal
+                              {/* <Modal
                                 open={patternModalOpen}
                                 onClose={() => {
                                   if (!deviceDetails.devicePassword) {
@@ -1051,8 +1191,68 @@ const StaperForm: React.FC = () => {
                                     </button>
                                   </div>
                                 </div>
-                              </Modal>
+                              </Modal> */}
 
+                              <Modal
+                                open={patternModalOpen}
+                                onClose={() => {
+                                  if (!deviceDetails.devicePassword) {
+                                    setDeviceDetails((prevDetails) => ({
+                                      ...prevDetails,
+                                      passwordType: "None",
+                                      devicePassword: "",
+                                    }));
+                                  }
+                                  setPatternModalOpen(false);
+                                }}
+                                className="flex items-center justify-center p-[15px]"
+                              >
+                                <div className="bg-black p-5 rounded-lg lg:w-[30%] w-full overflow-auto max-h py-3 border-[1px] border-[#81818175]">
+                                  <h2 className="text-center text-2xl mb-2 text-white">
+                                    Draw Your Pattern
+                                  </h2>
+                                  <div
+                                    style={{
+                                      width: "320px",
+                                      height: "320px",
+                                      backgroundColor: "#000",
+                                      borderRadius: "10px",
+                                      display: "flex",
+                                      justifyContent: "center",
+                                      alignItems: "center",
+                                      margin: "0 auto",
+                                    }}
+                                  >
+                                    <ReactCanvasPatternLock
+                                      width={300} // Width of the pattern grid
+                                      height={300} // Height of the pattern grid
+                                      rows={3} // Number of rows
+                                      cols={3} // Number of columns
+
+                                      onComplete={(
+                                        code: number[],
+                                        nodes: any
+                                      ) => {
+                                        const pattern = code.join("-"); // Convert the pattern to a string
+                                        setDeviceDetails((prevDetails) => ({
+                                          ...prevDetails,
+                                          passwordType: "Pattern",
+                                          devicePassword: pattern, // Save the pattern
+                                        }));
+                                        setPatternModalOpen(false); // Close the modal
+                                      }}
+                                    />
+                                  </div>
+                                  <div className="flex justify-end mt-4">
+                                    <button
+                                      onClick={() => setPatternModalOpen(false)}
+                                      className="btn bg-red-500 text-white px-4 py-2 rounded"
+                                    >
+                                      Cancel
+                                    </button>
+                                  </div>
+                                </div>
+                              </Modal>
                             </div>
                           </div>
                         </div>
@@ -1304,7 +1504,7 @@ const StaperForm: React.FC = () => {
                         <Select
                           defaultSelectedKeys={
                             shippingDetails.requirePickupLabel ==
-                              "Yes,Please arrange pickup from my location"
+                            "Yes,Please arrange pickup from my location"
                               ? ["Yes,Please arrange pickup from my location"]
                               : ["No,I will send the device myself"]
                           }
@@ -1336,20 +1536,20 @@ const StaperForm: React.FC = () => {
 
                         {shippingDetails.requirePickupLabel ==
                           "Yes,Please arrange pickup from my location" && (
-                            <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
-                              A one-way shipping fee of $15-$20 will be added to
-                              your invoice, regardless of whether the device is
-                              repaired or not. Connote label will be sent to your
-                              email.
-                            </p>
-                          )}
+                          <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                            A one-way shipping fee of $15-$20 will be added to
+                            your invoice, regardless of whether the device is
+                            repaired or not. Connote label will be sent to your
+                            email.
+                          </p>
+                        )}
 
                         {shippingDetails.requirePickupLabel ===
                           "No,I will send the device myself" && (
-                            <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
-                              No, I will send the device myself.
-                            </p>
-                          )}
+                          <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                            No, I will send the device myself.
+                          </p>
+                        )}
                       </div>
 
                       {/* Require Return Label */}
@@ -1360,7 +1560,7 @@ const StaperForm: React.FC = () => {
                         <Select
                           defaultSelectedKeys={
                             shippingDetails.requireReturnLabel ==
-                              "Please ship the device back to me"
+                            "Please ship the device back to me"
                               ? ["Please ship the device back to me"]
                               : ["I will arrange pickup myself"]
                           }
@@ -1386,11 +1586,11 @@ const StaperForm: React.FC = () => {
 
                         {shippingDetails.requireReturnLabel ===
                           "Please ship the device back to me" && (
-                            <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
-                              Additional shipping fee of $15-$20 will be added to
-                              your invoice.
-                            </p>
-                          )}
+                          <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                            Additional shipping fee of $15-$20 will be added to
+                            your invoice.
+                          </p>
+                        )}
                       </div>
 
                       {/* Terms and Conditions */}
@@ -1538,8 +1738,9 @@ const StaperForm: React.FC = () => {
                           <button
                             onClick={handleSubmit}
                             disabled={isLoading} // Disable button while loading
-                            className={`btn flex items-center gap-2 ${isLoading ? "opacity-50 cursor-not-allowed" : ""
-                              }`}
+                            className={`btn flex items-center gap-2 ${
+                              isLoading ? "opacity-50 cursor-not-allowed" : ""
+                            }`}
                           >
                             {isLoading ? (
                               <span className="loader" /> // You can use a loader component or spinner
@@ -1614,10 +1815,11 @@ const StaperForm: React.FC = () => {
                       <button
                         onClick={handleSubmit}
                         disabled={!pricingAgreement || isLoading} // Disable when loading
-                        className={`btn ${!pricingAgreement || isLoading
+                        className={`btn ${
+                          !pricingAgreement || isLoading
                             ? "opacity-50 cursor-not-allowed"
                             : ""
-                          }`}
+                        }`}
                       >
                         {isLoading ? "Processing..." : "Submit"}
                       </button>

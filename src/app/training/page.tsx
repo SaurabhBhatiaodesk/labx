@@ -1,8 +1,15 @@
+import dynamic from "next/dynamic";
 import React from "react";
-import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
-import CourseHighlights from "./CourseHighlights/CourseHighlights";
-import Form from "@/components/Form/Form";
-import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
+// import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
+const Breadcrumb = dynamic(() => import('../../components/Breadcrumb/Breadcrumb'), { ssr: false });
+// import CourseHighlights from "./CourseHighlights/CourseHighlights";
+const CourseHighlights = dynamic(() => import('./CourseHighlights/CourseHighlights'), { ssr: false });
+// import Form from "@/components/Form/Form";
+const Form = dynamic(() => import('../../components/Form/Form'), { ssr: false });
+
+// import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
+const GoogleReviews = dynamic(() => import('../../components/GoogleReviews/GoogleReviews'), { ssr: false });
+
 export const metadata = {
   title: "LabX Repair Mobile Phone Services - Expert Repair & Training",
   description:

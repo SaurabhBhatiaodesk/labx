@@ -233,13 +233,14 @@ export default function App() {
                         </svg>
                       </button>
                       <ul className="dropdown-menu absolute hidden text-white pt-1">
-                        {listData.map((item) => {
+                        {listData.map((item, index) => {
                           return (
-                            <li
+                            <li key={index}
+                            
                               className="block px-4 py-2 hover:bg-gray-800  hover:text-yellow-200 cursor-pointer"
                               onClick={() => PricetoggleMenu(item.id)}
                             >
-                              <span className=" text-[16px]">
+                              <span className=" text-[16px]" >
                                 {item.btnName}
                               </span>
                             </li>
