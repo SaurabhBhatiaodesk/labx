@@ -3,13 +3,15 @@ import MainTitle from "@/components/MainTitle/MainTitle";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Repairsforcracked from "../../././../public/Images/icons/Repairsforcracked.svg";
-import timer from "../../././../public/Images/icons/timer.svg";
-import pricing from "../../././../public/Images/icons/pricing.svg";
-// import Repairs from "../../../../public/Images/icons/Vector.svg";
-// import Transparency from "../../../../public/Images/icons/Transparency.svg";
-// import Recovery from "../../../../public/Images/icons/Recovery.svg";
-// import B2BServices from "../../../../public/Images/icons/B2B Services.svg";
+import Recoverphotos from "../../././../public/Images/icons/Recoverphotos.svg";
+
+import recoverfirsr from "../../././../public/Images/icons/recoverfirsr.svg";
+import Specializedrecovery from "../../././../public/Images/icons/Specializedrecovery.svg";
+import Transparentpricing from "../../././../public/Images/icons/Transparentpricing.svg";
+import repairforconnectdamage from "../../././../public/Images/icons/repairforconnectdamage.svg";
+import completetherepair from "../../././../public/Images/icons/completetherepair.svg";
+
+import Competitiveandupfrontpricing from "../../././../public/Images/icons/Competitiveandupfrontpricing.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { setPriceCat } from "../redux/slice";
@@ -124,19 +126,21 @@ const DataBox: React.FC = () => {
                   <div className="grid lg:grid-cols-3 grid-cols-1 py-5">
                     <div className="flex flex-col justify-center items-center">
                       <Image
-                        src={Repairsforcracked}
+                        src={recoverfirsr}
                         alt="Repairs for cracked"
+                        className="w-[44px] h-[50px]"
                       />
                       <p className="lg:w-[70%] m-auto text-center">
                         Recover photos, videos, contacts, and more.
                       </p>
                     </div>
                     <div className="flex flex-col justify-center items-center">
-                      <Image
-                        className="w-[44px] h-[75px]"
-                        src={timer}
-                        alt="Repairs for cracked"
-                      />
+                    <Image
+                      className="w-[44px] h-[50px]"
+                      src={Competitiveandupfrontpricing}
+                      alt="Repairs for cracked"
+                        
+                    />
                       <p className="lg:w-[70%] m-auto text-center">
                         Specialized recovery for water-damaged, dead, or
                         physically damaged devices.
@@ -145,7 +149,7 @@ const DataBox: React.FC = () => {
                     <div className="flex flex-col justify-center items-center">
                       <Image
                         className="w-[44px] h-[50px]"
-                        src={pricing}
+                        src={Transparentpricing}
                         alt="Repairs for cracked"
                       />
                       <p className="lg:w-[70%] m-auto text-center">
@@ -183,7 +187,11 @@ const DataBox: React.FC = () => {
 
                 <div className="grid lg:grid-cols-3 grid-cols-1 py-5">
                   <div className="flex flex-col justify-center items-center">
-                    <Image src={Repairsforcracked} alt="Repairs for cracked" />
+                  <Image
+                        src={Recoverphotos}
+                        alt="Repairs for cracked"
+                        className="w-[44px] h-[50px]"
+                      />
                     <p className="lg:w-[70%] m-auto text-center">
                       {" "}
                       Repairs for cracked screens, battery replacements, and
@@ -191,11 +199,11 @@ const DataBox: React.FC = () => {
                     </p>
                   </div>
                   <div className="flex flex-col justify-center items-center">
-                    <Image
-                      className="w-[44px] h-[75px]"
-                      src={timer}
-                      alt="Repairs for cracked"
-                    />
+                  <Image
+                        className="w-[44px] h-[75px]"
+                        src={Specializedrecovery}
+                        alt="Repairs for cracked"
+                      />
                     <p className="lg:w-[70%] m-auto text-center">
                       {" "}
                       Fast turnaround time for common repairs
@@ -204,8 +212,9 @@ const DataBox: React.FC = () => {
                   <div className="flex flex-col justify-center items-center">
                     <Image
                       className="w-[44px] h-[50px]"
-                      src={pricing}
+                      src={Competitiveandupfrontpricing}
                       alt="Repairs for cracked"
+                        
                     />
                     <p className="lg:w-[70%] m-auto text-center">
                       Competitive and upfront pricing.
@@ -231,7 +240,7 @@ const DataBox: React.FC = () => {
 
                 <div className="grid lg:grid-cols-2 grid-cols-1 py-5">
                   <div className="flex flex-col justify-center items-center">
-                    <Image src={Repairsforcracked} alt="Repairs for cracked" />
+                    <Image   className="w-[44px] h-[50px]" src={repairforconnectdamage} alt="Repairs for cracked" />
                     <p className="lg:w-[70%] m-auto text-center">
                       Repairs for connector damage, bent connectors, fitting
                       issues, installation problems, torn flex cables, ripped
@@ -241,7 +250,7 @@ const DataBox: React.FC = () => {
                   <div className="flex flex-col justify-center items-center">
                     <Image
                       className="w-[44px] h-[75px]"
-                      src={timer}
+                      src={completetherepair}
                       alt="Repairs for cracked"
                     />
                     <p className="lg:w-[70%] m-auto text-center">
@@ -252,7 +261,7 @@ const DataBox: React.FC = () => {
                   </div>
                 </div>
 
-                <p>
+                <p className="text-center">
                   We ensure transparency and accuracy in pricing based on the
                   specific condition and requirements of your device.
                 </p>
