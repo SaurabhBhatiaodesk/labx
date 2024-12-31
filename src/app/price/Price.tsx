@@ -48,20 +48,23 @@ const Pricing: React.FC = () => {
     0
   );
   const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
-  console.log("activeTabIndex", activeTabIndex);
 
   const [selectedCategory, setSelectedCategory] = useState<string>("iPhone");
 
   const priceData: PriceData[] = [
     {
       id: 0,
-      title: "Screen Refurbishment Pricing - ( Buy Back )",
+      title: "Buy Back Price List",
       description:
-        "Explore the pricing details for our professional device repair services.",
+        "Check the pricing for all our complex mobile phone repair services, including B2B solutions and training courses. Visit our Price List page for detailed cost information and tailored quotes based on the specific repair or course you need.",
       mobileCategory: [
         { mobile: "iPhone" },
-        { mobile: "androidPro" },
-        { mobile: "androidLite" },
+        { mobile: "iPad" },
+        { mobile: "SamsungPhones" },
+        { mobile: "SamsungTablets" },
+        { mobile: "iWatch " },
+        { mobile: "Oppo" },
+        { mobile: "Google" },
       ],
       categories: {
         iPhone: [
@@ -211,8 +214,14 @@ const Pricing: React.FC = () => {
                     columns: [
                       { header: "Device Model", key: "deviceModel" },
                       { header: "Refurb price ($AUD)", key: "repairCost" },
-                      { header: "Buy Back ( Grade A ) ", key: "replacementGradeA" },
-                      { header: "Buy Back ( Grade B )", key: "replacementGradeB" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
                     ],
                     rows: [
                       {
@@ -250,8 +259,14 @@ const Pricing: React.FC = () => {
                     columns: [
                       { header: "Device Model", key: "deviceModel" },
                       { header: "Refurb price ($AUD)", key: "repairCost" },
-                      { header: "Buy Back ( Grade A ) ", key: "replacementGradeA" },
-                      { header: "Buy Back ( Grade B )", key: "replacementGradeB" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
                     ],
                     rows: [
                       {
@@ -277,45 +292,46 @@ const Pricing: React.FC = () => {
                   },
                 },
               },
-              //new add 
-
-           
-            ],
-          },
-        ],
-        androidPro: [
-          {
-            id: 1,
-            category: "Android Pro",
-            accordionData: [
               {
-                title: "Google Pixel Series",
+                title: "iPhone X Series",
                 content: {
                   table: {
                     columns: [
                       { header: "Device Model", key: "deviceModel" },
-                      { header: "Repair Cost ($)", key: "repairCost" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
                       {
-                        header: "Replacement (Grade A)",
+                        header: "Buy Back ( Grade A ) ",
                         key: "replacementGradeA",
                       },
                       {
-                        header: "Replacement (Grade B)",
+                        header: "Buy Back ( Grade B )",
                         key: "replacementGradeB",
                       },
                     ],
                     rows: [
                       {
-                        deviceModel: "Pixel 7 Pro",
-                        repairCost: "$400",
-                        replacementGradeA: "$350",
-                        replacementGradeB: "$300",
+                        deviceModel: "iPhone XS Max",
+                        repairCost: "$40",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$20",
                       },
                       {
-                        deviceModel: "Pixel 7",
-                        repairCost: "$350",
-                        replacementGradeA: "$300",
-                        replacementGradeB: "$250",
+                        deviceModel: "iPhone XS",
+                        repairCost: "$35",
+                        replacementGradeA: "$20",
+                        replacementGradeB: "$10",
+                      },
+                      {
+                        deviceModel: "iPhone X",
+                        repairCost: "$35",
+                        replacementGradeA: "$20",
+                        replacementGradeB: "$10",
+                      },
+                      {
+                        deviceModel: "iPhone XR",
+                        repairCost: "X",
+                        replacementGradeA: "X",
+                        replacementGradeB: "X",
                       },
                     ],
                   },
@@ -324,39 +340,1216 @@ const Pricing: React.FC = () => {
             ],
           },
         ],
-        androidLite: [
+        // second tab
+        iPad: [
           {
-            id: 2,
-            category: "Android Pro",
+            id: 1,
+            category: "iPad",
             accordionData: [
               {
-                title: "Google Pixel Series",
+                title: "iPad Air Series",
                 content: {
                   table: {
                     columns: [
                       { header: "Device Model", key: "deviceModel" },
-                      { header: "Repair Cost ($)", key: "repairCost" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
                       {
-                        header: "Replacement (Grade A)",
+                        header: "Buy Back ( Grade A ) ",
                         key: "replacementGradeA",
                       },
                       {
-                        header: "Replacement (Grade B)",
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: 'Air 2 9.7" (2014)',
+                        repairCost: "$80",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: 'Air 3 10.5" (2019)',
+                        repairCost: "$80",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: 'Air 4 11" (2020)',
+                        repairCost: "$90",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: 'Air 5 11" (2022)',
+                        repairCost: "$90",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$25",
+                      },
+                      {
+                        deviceModel: 'Air 6 11" (2024)',
+                        repairCost: "Contact Us",
+                        replacementGradeA: "Contact Us",
+                        replacementGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPad Pro Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: 'Pro 9.7" (2016)',
+                        repairCost: "$80",
+                        replacementGradeA: "$20",
+                        replacementGradeB: "$10",
+                      },
+                      {
+                        deviceModel: 'Pro 10.5" (2017)',
+                        repairCost: "$90",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 1st (2018)",
+                        repairCost: "$120",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 2nd (2020)",
+                        repairCost: "$120",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 3rd (2021)",
+                        repairCost: "$140",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 4th (2022)",
+                        repairCost: "$140",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 13 (2024)",
+                        repairCost: "Contact Us",
+                        replacementGradeA: "Contact Us",
+                        replacementGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPad Pro 12.9",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pro 12.9 1st (2015)",
+                        repairCost: "$150",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 2nd (2017)",
+                        repairCost: "$200",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$30",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 3rd (2018)",
+                        repairCost: "$150",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 4th (2020)",
+                        repairCost: "$150",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 5th (2021)",
+                        repairCost: "$180",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$25",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 6th (2022)",
+                        repairCost: "Contact Us",
+                        replacementGradeA: "Contact Us",
+                        replacementGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPad Mini Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Mini 4",
+                        repairCost: "$80",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "Mini 5",
+                        repairCost: "$80",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "Mini 6",
+                        repairCost: "$220",
+                        replacementGradeA: "$60",
+                        replacementGradeB: "$25",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+
+        // third tab
+        SamsungPhones: [
+          {
+            id: 2,
+            category: "SamsungPhones",
+            accordionData: [
+              {
+                title: "S Ultra Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      {
+                        header: "Refurb price (Old Frame or No Frame)",
+                        key: "refurbPriceOldFrame",
+                      },
+                      {
+                        header: "Refurb price (New Frame)",
+                        key: "refurbPriceNewFrame",
+                      },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S24 Ultra",
+                        refurbPriceOldFrame: "$150",
+                        refurbPriceNewFrame: "$200",
+                        buyBackGradeA: "$110",
+                        buyBackGradeB: "$40",
+                      },
+                      {
+                        phoneModel: "S23 Ultra",
+                        refurbPriceOldFrame: "$150",
+                        refurbPriceNewFrame: "$200",
+                        buyBackGradeA: "$110",
+                        buyBackGradeB: "$40",
+                      },
+                      {
+                        phoneModel: "S22 Ultra",
+                        refurbPriceOldFrame: "$130",
+                        refurbPriceNewFrame: "$180",
+                        buyBackGradeA: "$110",
+                        buyBackGradeB: "$35",
+                      },
+                      {
+                        phoneModel: "S21 Ultra",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$80",
+                        buyBackGradeB: "$30",
+                      },
+                      {
+                        phoneModel: "S20 Ultra",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$70",
+                        buyBackGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              //
+              {
+                title: "Note Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      {
+                        header: "Refurb price (Old Frame or No Frame)",
+                        key: "refurbPriceOldFrame",
+                      },
+                      {
+                        header: "Refurb price (New Frame)",
+                        key: "refurbPriceNewFrame",
+                      },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Note 20 Ultra",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$70",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 20",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "Note 10 Plus",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$70",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 10",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 9",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 8",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "S Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      {
+                        header: "Refurb price (Old Frame or No Frame)",
+                        key: "refurbPriceOldFrame",
+                      },
+                      {
+                        header: "Refurb price (New Frame)",
+                        key: "refurbPriceNewFrame",
+                      },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S24 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S23 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S22 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S21 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S20 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S10 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "S9 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "S8 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "S24",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S23",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S22",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S21",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S20",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S10 5G",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "S10",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "S9",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "S8",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Fold Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Fold 6 (Outer)",
+                        refurbPrice: "$90",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 5 (Outer)",
+                        refurbPrice: "$80",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 4 (Outer)",
+                        refurbPrice: "$70",
+                        buyBackGradeA: "$35",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 3 (Outer)",
+                        refurbPrice: "$90",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 2 (Outer)",
+                        refurbPrice: "$70",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              {
+                title: "Fold Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Outer Screen Refurb",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "Hinge Replacement",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel:
+                          "Inner Flex Replacement (Which Goes from One Side to Another)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Flip Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Outer Screen Refurb",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "Hinge Replacement",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel:
+                          "Inner Flex Replacement (Which Goes from One Side to Another)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+
+        // fourth tab
+        SamsungTablets: [
+          {
+            id: 2,
+            category: "SamsungTablets",
+            accordionData: [
+              {
+                title: "S8 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S8 Ultra (X900 / X906)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S8 Plus (X800 / X806)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S8 (X700 / X706)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "S7 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S7 Plus (T970 / T975)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S7 (T870 / T875)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S7 FE (T730 / T726)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              {
+                title: "S6 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S6 (T860 / T865)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S6 Lite (P610 / P615 / P613 / P619)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "A Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "A7 (T500 / T505)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "A 10.1 (T510 / T515)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "A8.0 (T290 / T295)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "A9 Plus (X210 / X216)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              //
+            ],
+          },
+        ],
+
+        // fifth tab
+        iWatch: [
+          {
+            id: 2,
+            category: "iWatch",
+            accordionData: [
+              {
+                title: "iWatch Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Watch Model", key: "watchModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        watchModel: "Series 8",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 7",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 6",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 5",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 4",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 3",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              //
+            ],
+          },
+        ],
+        Oppo: [
+          {
+            id: 1,
+            category: "Oppo",
+            accordionData: [
+              {
+                title: "Oppo Find Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Find X5 Pro",
+                        repairCost: "$200",
+                        replacementGradeA: "$150",
+                        replacementGradeB: "$100",
+                      },
+                      {
+                        deviceModel: "Find X5",
+                        repairCost: "$180",
+                        replacementGradeA: "$140",
+                        replacementGradeB: "$90",
+                      },
+                      {
+                        deviceModel: "Find X3 Pro",
+                        repairCost: "$160",
+                        replacementGradeA: "$130",
+                        replacementGradeB: "$80",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo Reno Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Reno 8 Pro",
+                        repairCost: "$160",
+                        replacementGradeA: "$120",
+                        replacementGradeB: "$80",
+                      },
+                      {
+                        deviceModel: "Reno 8",
+                        repairCost: "$140",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$70",
+                      },
+                      {
+                        deviceModel: "Reno 7",
+                        repairCost: "$120",
+                        replacementGradeA: "$100",
+                        replacementGradeB: "$60",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo A Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "A96",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "A76",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
+                      },
+                      {
+                        deviceModel: "A54",
+                        repairCost: "$90",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$40",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo K Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "K10",
+                        repairCost: "$130",
+                        replacementGradeA: "$100",
+                        replacementGradeB: "$70",
+                      },
+                      {
+                        deviceModel: "K9 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "K7x",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo F Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "F21 Pro",
+                        repairCost: "$140",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$80",
+                      },
+                      {
+                        deviceModel: "F19 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "F17",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo N Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "N1",
+                        repairCost: "$80",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$30",
+                      },
+                      {
+                        deviceModel: "N3",
+                        repairCost: "$100",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$40",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+
+        Google: [
+          {
+            id: 1,
+            category: "Google",
+            accordionData: [
+              {
+                title: "Google Pixel 7 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
                         key: "replacementGradeB",
                       },
                     ],
                     rows: [
                       {
                         deviceModel: "Pixel 7 Pro",
-                        repairCost: "$400",
-                        replacementGradeA: "$350",
-                        replacementGradeB: "$300",
+                        repairCost: "$220",
+                        replacementGradeA: "$180",
+                        replacementGradeB: "$150",
                       },
                       {
                         deviceModel: "Pixel 7",
-                        repairCost: "$350",
-                        replacementGradeA: "$300",
-                        replacementGradeB: "$250",
+                        repairCost: "$180",
+                        replacementGradeA: "$150",
+                        replacementGradeB: "$120",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 6 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 6 Pro",
+                        repairCost: "$200",
+                        replacementGradeA: "$160",
+                        replacementGradeB: "$130",
+                      },
+                      {
+                        deviceModel: "Pixel 6",
+                        repairCost: "$170",
+                        replacementGradeA: "$140",
+                        replacementGradeB: "$110",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 5 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 5",
+                        repairCost: "$150",
+                        replacementGradeA: "$120",
+                        replacementGradeB: "$90",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 4 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 4 XL",
+                        repairCost: "$140",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$80",
+                      },
+                      {
+                        deviceModel: "Pixel 4",
+                        repairCost: "$130",
+                        replacementGradeA: "$100",
+                        replacementGradeB: "$70",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 3 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 3 XL",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "Pixel 3",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
                       },
                     ],
                   },
@@ -369,48 +1562,284 @@ const Pricing: React.FC = () => {
     },
     {
       id: 1,
-      title: "Device Maintenance Price List",
+      title: "Screen Refurbishment Pricing - ( Buy Back )",
       description:
-        "Check our affordable maintenance services for a variety of devices.",
+        "For fast screen refurbishment, you have two options: you can choose our service to replace the glass only, or you can sell your old broken screens to us, as we offer competitive buyback prices.",
       mobileCategory: [
-        { mobile: "android" },
-        { mobile: "androidPro" },
-        { mobile: "androidLite" },
+        { mobile: "iPhone" },
+        { mobile: "iPad" },
+        { mobile: "SamsungPhones" },
+        { mobile: "SamsungTablets" },
+        { mobile: "iWatch " },
+        { mobile: "Oppo" },
+        { mobile: "Google" },
       ],
       categories: {
-        android: [
+        iPhone: [
           {
             id: 0,
-            category: "Tablet",
+            category: "iPhone",
             accordionData: [
               {
-                title: "iPad Series",
+                title: "iPhone 15 Series",
                 content: {
                   table: {
                     columns: [
                       { header: "Device Model", key: "deviceModel" },
-                      { header: "Repair Cost ($)", key: "repairCost" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
                       {
-                        header: "Screen Replacement",
-                        key: "screenReplacement",
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
                       },
                       {
-                        header: "Battery Replacement",
-                        key: "batteryReplacement",
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
                       },
                     ],
                     rows: [
                       {
-                        deviceModel: "iPad Pro 12.9",
-                        repairCost: "$500",
-                        screenReplacement: "$450",
-                        batteryReplacement: "$400",
+                        deviceModel: "iPhone 15 Pro Max",
+                        repairCost: "$200",
+                        replacementGradeA: "$200",
+                        replacementGradeB: "$70",
                       },
                       {
-                        deviceModel: "iPad Air 10.9",
-                        repairCost: "$400",
-                        screenReplacement: "$350",
-                        batteryReplacement: "$300",
+                        deviceModel: "iPhone 15 Pro",
+                        repairCost: "$200",
+                        replacementGradeA: "$140",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "iPhone 15 Plus",
+                        repairCost: "$120",
+                        replacementGradeA: "$60",
+                        replacementGradeB: "$25",
+                      },
+                      {
+                        deviceModel: "iPhone 15",
+                        repairCost: "$120",
+                        replacementGradeA: "$55",
+                        replacementGradeB: "$25",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone 14 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 14 Pro Max",
+                        repairCost: "$170",
+                        replacementGradeA: "$180",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "iPhone 14 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$160",
+                        replacementGradeB: "$50",
+                      },
+                      {
+                        deviceModel: "iPhone 14 Plus",
+                        repairCost: "$90",
+                        replacementGradeA: "$60",
+                        replacementGradeB: "$35",
+                      },
+                      {
+                        deviceModel: "iPhone 14",
+                        repairCost: "$90",
+                        replacementGradeA: "$60",
+                        replacementGradeB: "$25",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone 13 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 13 Pro Max",
+                        repairCost: "$140",
+                        replacementGradeA: "$130",
+                        replacementGradeB: "$45",
+                      },
+                      {
+                        deviceModel: "iPhone 13 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$35",
+                      },
+                      {
+                        deviceModel: "iPhone 13",
+                        repairCost: "$55",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "iPhone 13 Mini",
+                        repairCost: "$55",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone 12 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 12 Pro Max",
+                        repairCost: "$70",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "iPhone 12 Pro",
+                        repairCost: "$50",
+                        replacementGradeA: "$35",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPhone 12",
+                        repairCost: "$50",
+                        replacementGradeA: "$35",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPhone 12 Mini",
+                        repairCost: "$50",
+                        replacementGradeA: "$45",
+                        replacementGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone 11 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 11 Pro Max",
+                        repairCost: "$50",
+                        replacementGradeA: "$35",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPhone 11 Pro",
+                        repairCost: "$40",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+
+                      {
+                        deviceModel: "iPhone 11",
+                        repairCost: "X",
+                        replacementGradeA: "X",
+                        replacementGradeB: "X",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone X Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone XS Max",
+                        repairCost: "$40",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "iPhone XS",
+                        repairCost: "$35",
+                        replacementGradeA: "$20",
+                        replacementGradeB: "$10",
+                      },
+                      {
+                        deviceModel: "iPhone X",
+                        repairCost: "$35",
+                        replacementGradeA: "$20",
+                        replacementGradeB: "$10",
+                      },
+                      {
+                        deviceModel: "iPhone XR",
+                        repairCost: "X",
+                        replacementGradeA: "X",
+                        replacementGradeB: "X",
                       },
                     ],
                   },
@@ -419,39 +1848,1216 @@ const Pricing: React.FC = () => {
             ],
           },
         ],
-        androidPro: [
+        // second tab
+        iPad: [
           {
             id: 1,
-            category: "Tablet Pro",
+            category: "iPad",
             accordionData: [
               {
-                title: "Samsung Tab Series",
+                title: "iPad Air Series",
                 content: {
                   table: {
                     columns: [
                       { header: "Device Model", key: "deviceModel" },
-                      { header: "Repair Cost ($)", key: "repairCost" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
                       {
-                        header: "Screen Replacement",
-                        key: "screenReplacement",
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
                       },
                       {
-                        header: "Battery Replacement",
-                        key: "batteryReplacement",
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
                       },
                     ],
                     rows: [
                       {
-                        deviceModel: "Galaxy Tab S8 Ultra",
-                        repairCost: "$450",
-                        screenReplacement: "$400",
-                        batteryReplacement: "$350",
+                        deviceModel: 'Air 2 9.7" (2014)',
+                        repairCost: "$80",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
                       },
                       {
-                        deviceModel: "Galaxy Tab S8",
-                        repairCost: "$350",
-                        screenReplacement: "$300",
-                        batteryReplacement: "$250",
+                        deviceModel: 'Air 3 10.5" (2019)',
+                        repairCost: "$80",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: 'Air 4 11" (2020)',
+                        repairCost: "$90",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: 'Air 5 11" (2022)',
+                        repairCost: "$90",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$25",
+                      },
+                      {
+                        deviceModel: 'Air 6 11" (2024)',
+                        repairCost: "Contact Us",
+                        replacementGradeA: "Contact Us",
+                        replacementGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPad Pro Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: 'Pro 9.7" (2016)',
+                        repairCost: "$80",
+                        replacementGradeA: "$20",
+                        replacementGradeB: "$10",
+                      },
+                      {
+                        deviceModel: 'Pro 10.5" (2017)',
+                        repairCost: "$90",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 1st (2018)",
+                        repairCost: "$120",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 2nd (2020)",
+                        repairCost: "$120",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 3rd (2021)",
+                        repairCost: "$140",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 4th (2022)",
+                        repairCost: "$140",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 13 (2024)",
+                        repairCost: "Contact Us",
+                        replacementGradeA: "Contact Us",
+                        replacementGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPad Pro 12.9",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pro 12.9 1st (2015)",
+                        repairCost: "$150",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 2nd (2017)",
+                        repairCost: "$200",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$30",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 3rd (2018)",
+                        repairCost: "$150",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 4th (2020)",
+                        repairCost: "$150",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 5th (2021)",
+                        repairCost: "$180",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$25",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 6th (2022)",
+                        repairCost: "Contact Us",
+                        replacementGradeA: "Contact Us",
+                        replacementGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPad Mini Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Mini 4",
+                        repairCost: "$80",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "Mini 5",
+                        repairCost: "$80",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "Mini 6",
+                        repairCost: "$220",
+                        replacementGradeA: "$60",
+                        replacementGradeB: "$25",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+
+        // third tab
+        SamsungPhones: [
+          {
+            id: 2,
+            category: "SamsungPhones",
+            accordionData: [
+              {
+                title: "S Ultra Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      {
+                        header: "Refurb price (Old Frame or No Frame)",
+                        key: "refurbPriceOldFrame",
+                      },
+                      {
+                        header: "Refurb price (New Frame)",
+                        key: "refurbPriceNewFrame",
+                      },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S24 Ultra",
+                        refurbPriceOldFrame: "$150",
+                        refurbPriceNewFrame: "$200",
+                        buyBackGradeA: "$110",
+                        buyBackGradeB: "$40",
+                      },
+                      {
+                        phoneModel: "S23 Ultra",
+                        refurbPriceOldFrame: "$150",
+                        refurbPriceNewFrame: "$200",
+                        buyBackGradeA: "$110",
+                        buyBackGradeB: "$40",
+                      },
+                      {
+                        phoneModel: "S22 Ultra",
+                        refurbPriceOldFrame: "$130",
+                        refurbPriceNewFrame: "$180",
+                        buyBackGradeA: "$110",
+                        buyBackGradeB: "$35",
+                      },
+                      {
+                        phoneModel: "S21 Ultra",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$80",
+                        buyBackGradeB: "$30",
+                      },
+                      {
+                        phoneModel: "S20 Ultra",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$70",
+                        buyBackGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              //
+              {
+                title: "Note Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      {
+                        header: "Refurb price (Old Frame or No Frame)",
+                        key: "refurbPriceOldFrame",
+                      },
+                      {
+                        header: "Refurb price (New Frame)",
+                        key: "refurbPriceNewFrame",
+                      },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Note 20 Ultra",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$70",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 20",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "Note 10 Plus",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$70",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 10",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 9",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 8",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "S Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      {
+                        header: "Refurb price (Old Frame or No Frame)",
+                        key: "refurbPriceOldFrame",
+                      },
+                      {
+                        header: "Refurb price (New Frame)",
+                        key: "refurbPriceNewFrame",
+                      },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S24 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S23 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S22 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S21 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S20 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S10 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "S9 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "S8 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "S24",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S23",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S22",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S21",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S20",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S10 5G",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "S10",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "S9",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "S8",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Fold Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Fold 6 (Outer)",
+                        refurbPrice: "$90",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 5 (Outer)",
+                        refurbPrice: "$80",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 4 (Outer)",
+                        refurbPrice: "$70",
+                        buyBackGradeA: "$35",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 3 (Outer)",
+                        refurbPrice: "$90",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 2 (Outer)",
+                        refurbPrice: "$70",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              {
+                title: "Fold Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Outer Screen Refurb",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "Hinge Replacement",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel:
+                          "Inner Flex Replacement (Which Goes from One Side to Another)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Flip Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Outer Screen Refurb",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "Hinge Replacement",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel:
+                          "Inner Flex Replacement (Which Goes from One Side to Another)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+
+        // fourth tab
+        SamsungTablets: [
+          {
+            id: 2,
+            category: "SamsungTablets",
+            accordionData: [
+              {
+                title: "S8 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S8 Ultra (X900 / X906)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S8 Plus (X800 / X806)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S8 (X700 / X706)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "S7 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S7 Plus (T970 / T975)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S7 (T870 / T875)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S7 FE (T730 / T726)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              {
+                title: "S6 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S6 (T860 / T865)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S6 Lite (P610 / P615 / P613 / P619)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "A Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "A7 (T500 / T505)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "A 10.1 (T510 / T515)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "A8.0 (T290 / T295)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "A9 Plus (X210 / X216)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              //
+            ],
+          },
+        ],
+
+        // fifth tab
+        iWatch: [
+          {
+            id: 2,
+            category: "iWatch",
+            accordionData: [
+              {
+                title: "iWatch Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Watch Model", key: "watchModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        watchModel: "Series 8",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 7",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 6",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 5",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 4",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 3",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              //
+            ],
+          },
+        ],
+        Oppo: [
+          {
+            id: 1,
+            category: "Oppo",
+            accordionData: [
+              {
+                title: "Oppo Find Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Find X5 Pro",
+                        repairCost: "$200",
+                        replacementGradeA: "$150",
+                        replacementGradeB: "$100",
+                      },
+                      {
+                        deviceModel: "Find X5",
+                        repairCost: "$180",
+                        replacementGradeA: "$140",
+                        replacementGradeB: "$90",
+                      },
+                      {
+                        deviceModel: "Find X3 Pro",
+                        repairCost: "$160",
+                        replacementGradeA: "$130",
+                        replacementGradeB: "$80",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo Reno Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Reno 8 Pro",
+                        repairCost: "$160",
+                        replacementGradeA: "$120",
+                        replacementGradeB: "$80",
+                      },
+                      {
+                        deviceModel: "Reno 8",
+                        repairCost: "$140",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$70",
+                      },
+                      {
+                        deviceModel: "Reno 7",
+                        repairCost: "$120",
+                        replacementGradeA: "$100",
+                        replacementGradeB: "$60",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo A Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "A96",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "A76",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
+                      },
+                      {
+                        deviceModel: "A54",
+                        repairCost: "$90",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$40",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo K Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "K10",
+                        repairCost: "$130",
+                        replacementGradeA: "$100",
+                        replacementGradeB: "$70",
+                      },
+                      {
+                        deviceModel: "K9 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "K7x",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo F Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "F21 Pro",
+                        repairCost: "$140",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$80",
+                      },
+                      {
+                        deviceModel: "F19 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "F17",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo N Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "N1",
+                        repairCost: "$80",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$30",
+                      },
+                      {
+                        deviceModel: "N3",
+                        repairCost: "$100",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$40",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+
+        Google: [
+          {
+            id: 1,
+            category: "Google",
+            accordionData: [
+              {
+                title: "Google Pixel 7 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 7 Pro",
+                        repairCost: "$220",
+                        replacementGradeA: "$180",
+                        replacementGradeB: "$150",
+                      },
+                      {
+                        deviceModel: "Pixel 7",
+                        repairCost: "$180",
+                        replacementGradeA: "$150",
+                        replacementGradeB: "$120",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 6 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 6 Pro",
+                        repairCost: "$200",
+                        replacementGradeA: "$160",
+                        replacementGradeB: "$130",
+                      },
+                      {
+                        deviceModel: "Pixel 6",
+                        repairCost: "$170",
+                        replacementGradeA: "$140",
+                        replacementGradeB: "$110",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 5 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 5",
+                        repairCost: "$150",
+                        replacementGradeA: "$120",
+                        replacementGradeB: "$90",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 4 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 4 XL",
+                        repairCost: "$140",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$80",
+                      },
+                      {
+                        deviceModel: "Pixel 4",
+                        repairCost: "$130",
+                        replacementGradeA: "$100",
+                        replacementGradeB: "$70",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 3 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 3 XL",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "Pixel 3",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
                       },
                     ],
                   },
@@ -464,48 +3070,284 @@ const Pricing: React.FC = () => {
     },
     {
       id: 2,
-      title: "Device Maintenance Price List",
+      title: "Data Recovery / Dead Device Pricing",
       description:
-        "Check our affordable maintenance services for a variety of devices.",
+        "Explore the pricing details for our professional device repair services.",
       mobileCategory: [
-        { mobile: "android" },
-        { mobile: "androidPro" },
-        { mobile: "androidLite" },
+        { mobile: "iPhone" },
+        { mobile: "iPad" },
+        { mobile: "SamsungPhones" },
+        { mobile: "SamsungTablets" },
+        { mobile: "iWatch " },
+        { mobile: "Oppo" },
+        { mobile: "Google" },
       ],
       categories: {
-        android: [
+        iPhone: [
           {
             id: 0,
-            category: "Tablet",
+            category: "iPhone",
             accordionData: [
               {
-                title: "iPad Series",
+                title: "iPhone 15 Series",
                 content: {
                   table: {
                     columns: [
                       { header: "Device Model", key: "deviceModel" },
-                      { header: "Repair Cost ($)", key: "repairCost" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
                       {
-                        header: "Screen Replacement",
-                        key: "screenReplacement",
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
                       },
                       {
-                        header: "Battery Replacement",
-                        key: "batteryReplacement",
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
                       },
                     ],
                     rows: [
                       {
-                        deviceModel: "iPad Pro 12.9",
-                        repairCost: "$500",
-                        screenReplacement: "$450",
-                        batteryReplacement: "$400",
+                        deviceModel: "iPhone 15 Pro Max",
+                        repairCost: "$200",
+                        replacementGradeA: "$200",
+                        replacementGradeB: "$70",
                       },
                       {
-                        deviceModel: "iPad Air 10.9",
-                        repairCost: "$400",
-                        screenReplacement: "$350",
-                        batteryReplacement: "$300",
+                        deviceModel: "iPhone 15 Pro",
+                        repairCost: "$200",
+                        replacementGradeA: "$140",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "iPhone 15 Plus",
+                        repairCost: "$120",
+                        replacementGradeA: "$60",
+                        replacementGradeB: "$25",
+                      },
+                      {
+                        deviceModel: "iPhone 15",
+                        repairCost: "$120",
+                        replacementGradeA: "$55",
+                        replacementGradeB: "$25",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone 14 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 14 Pro Max",
+                        repairCost: "$170",
+                        replacementGradeA: "$180",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "iPhone 14 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$160",
+                        replacementGradeB: "$50",
+                      },
+                      {
+                        deviceModel: "iPhone 14 Plus",
+                        repairCost: "$90",
+                        replacementGradeA: "$60",
+                        replacementGradeB: "$35",
+                      },
+                      {
+                        deviceModel: "iPhone 14",
+                        repairCost: "$90",
+                        replacementGradeA: "$60",
+                        replacementGradeB: "$25",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone 13 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 13 Pro Max",
+                        repairCost: "$140",
+                        replacementGradeA: "$130",
+                        replacementGradeB: "$45",
+                      },
+                      {
+                        deviceModel: "iPhone 13 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$35",
+                      },
+                      {
+                        deviceModel: "iPhone 13",
+                        repairCost: "$55",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "iPhone 13 Mini",
+                        repairCost: "$55",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone 12 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 12 Pro Max",
+                        repairCost: "$70",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "iPhone 12 Pro",
+                        repairCost: "$50",
+                        replacementGradeA: "$35",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPhone 12",
+                        repairCost: "$50",
+                        replacementGradeA: "$35",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPhone 12 Mini",
+                        repairCost: "$50",
+                        replacementGradeA: "$45",
+                        replacementGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone 11 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 11 Pro Max",
+                        repairCost: "$50",
+                        replacementGradeA: "$35",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPhone 11 Pro",
+                        repairCost: "$40",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+
+                      {
+                        deviceModel: "iPhone 11",
+                        repairCost: "X",
+                        replacementGradeA: "X",
+                        replacementGradeB: "X",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone X Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone XS Max",
+                        repairCost: "$40",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "iPhone XS",
+                        repairCost: "$35",
+                        replacementGradeA: "$20",
+                        replacementGradeB: "$10",
+                      },
+                      {
+                        deviceModel: "iPhone X",
+                        repairCost: "$35",
+                        replacementGradeA: "$20",
+                        replacementGradeB: "$10",
+                      },
+                      {
+                        deviceModel: "iPhone XR",
+                        repairCost: "X",
+                        replacementGradeA: "X",
+                        replacementGradeB: "X",
                       },
                     ],
                   },
@@ -514,39 +3356,1216 @@ const Pricing: React.FC = () => {
             ],
           },
         ],
-        androidPro: [
+        // second tab
+        iPad: [
           {
             id: 1,
-            category: "Tablet Pro",
+            category: "iPad",
             accordionData: [
               {
-                title: "Samsung Tab Series",
+                title: "iPad Air Series",
                 content: {
                   table: {
                     columns: [
                       { header: "Device Model", key: "deviceModel" },
-                      { header: "Repair Cost ($)", key: "repairCost" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
                       {
-                        header: "Screen Replacement",
-                        key: "screenReplacement",
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
                       },
                       {
-                        header: "Battery Replacement",
-                        key: "batteryReplacement",
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
                       },
                     ],
                     rows: [
                       {
-                        deviceModel: "Galaxy Tab S8 Ultra",
-                        repairCost: "$450",
-                        screenReplacement: "$400",
-                        batteryReplacement: "$350",
+                        deviceModel: 'Air 2 9.7" (2014)',
+                        repairCost: "$80",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
                       },
                       {
-                        deviceModel: "Galaxy Tab S8",
-                        repairCost: "$350",
-                        screenReplacement: "$300",
-                        batteryReplacement: "$250",
+                        deviceModel: 'Air 3 10.5" (2019)',
+                        repairCost: "$80",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: 'Air 4 11" (2020)',
+                        repairCost: "$90",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: 'Air 5 11" (2022)',
+                        repairCost: "$90",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$25",
+                      },
+                      {
+                        deviceModel: 'Air 6 11" (2024)',
+                        repairCost: "Contact Us",
+                        replacementGradeA: "Contact Us",
+                        replacementGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPad Pro Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: 'Pro 9.7" (2016)',
+                        repairCost: "$80",
+                        replacementGradeA: "$20",
+                        replacementGradeB: "$10",
+                      },
+                      {
+                        deviceModel: 'Pro 10.5" (2017)',
+                        repairCost: "$90",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 1st (2018)",
+                        repairCost: "$120",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 2nd (2020)",
+                        repairCost: "$120",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 3rd (2021)",
+                        repairCost: "$140",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 4th (2022)",
+                        repairCost: "$140",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 13 (2024)",
+                        repairCost: "Contact Us",
+                        replacementGradeA: "Contact Us",
+                        replacementGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPad Pro 12.9",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pro 12.9 1st (2015)",
+                        repairCost: "$150",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 2nd (2017)",
+                        repairCost: "$200",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$30",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 3rd (2018)",
+                        repairCost: "$150",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 4th (2020)",
+                        repairCost: "$150",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 5th (2021)",
+                        repairCost: "$180",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$25",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 6th (2022)",
+                        repairCost: "Contact Us",
+                        replacementGradeA: "Contact Us",
+                        replacementGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPad Mini Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Mini 4",
+                        repairCost: "$80",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "Mini 5",
+                        repairCost: "$80",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "Mini 6",
+                        repairCost: "$220",
+                        replacementGradeA: "$60",
+                        replacementGradeB: "$25",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+
+        // third tab
+        SamsungPhones: [
+          {
+            id: 2,
+            category: "SamsungPhones",
+            accordionData: [
+              {
+                title: "S Ultra Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      {
+                        header: "Refurb price (Old Frame or No Frame)",
+                        key: "refurbPriceOldFrame",
+                      },
+                      {
+                        header: "Refurb price (New Frame)",
+                        key: "refurbPriceNewFrame",
+                      },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S24 Ultra",
+                        refurbPriceOldFrame: "$150",
+                        refurbPriceNewFrame: "$200",
+                        buyBackGradeA: "$110",
+                        buyBackGradeB: "$40",
+                      },
+                      {
+                        phoneModel: "S23 Ultra",
+                        refurbPriceOldFrame: "$150",
+                        refurbPriceNewFrame: "$200",
+                        buyBackGradeA: "$110",
+                        buyBackGradeB: "$40",
+                      },
+                      {
+                        phoneModel: "S22 Ultra",
+                        refurbPriceOldFrame: "$130",
+                        refurbPriceNewFrame: "$180",
+                        buyBackGradeA: "$110",
+                        buyBackGradeB: "$35",
+                      },
+                      {
+                        phoneModel: "S21 Ultra",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$80",
+                        buyBackGradeB: "$30",
+                      },
+                      {
+                        phoneModel: "S20 Ultra",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$70",
+                        buyBackGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              //
+              {
+                title: "Note Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      {
+                        header: "Refurb price (Old Frame or No Frame)",
+                        key: "refurbPriceOldFrame",
+                      },
+                      {
+                        header: "Refurb price (New Frame)",
+                        key: "refurbPriceNewFrame",
+                      },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Note 20 Ultra",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$70",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 20",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "Note 10 Plus",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$70",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 10",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 9",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 8",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "S Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      {
+                        header: "Refurb price (Old Frame or No Frame)",
+                        key: "refurbPriceOldFrame",
+                      },
+                      {
+                        header: "Refurb price (New Frame)",
+                        key: "refurbPriceNewFrame",
+                      },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S24 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S23 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S22 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S21 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S20 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S10 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "S9 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "S8 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "S24",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S23",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S22",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S21",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S20",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S10 5G",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "S10",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "S9",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "S8",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Fold Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Fold 6 (Outer)",
+                        refurbPrice: "$90",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 5 (Outer)",
+                        refurbPrice: "$80",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 4 (Outer)",
+                        refurbPrice: "$70",
+                        buyBackGradeA: "$35",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 3 (Outer)",
+                        refurbPrice: "$90",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 2 (Outer)",
+                        refurbPrice: "$70",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              {
+                title: "Fold Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Outer Screen Refurb",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "Hinge Replacement",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel:
+                          "Inner Flex Replacement (Which Goes from One Side to Another)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Flip Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Outer Screen Refurb",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "Hinge Replacement",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel:
+                          "Inner Flex Replacement (Which Goes from One Side to Another)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+
+        // fourth tab
+        SamsungTablets: [
+          {
+            id: 2,
+            category: "SamsungTablets",
+            accordionData: [
+              {
+                title: "S8 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S8 Ultra (X900 / X906)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S8 Plus (X800 / X806)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S8 (X700 / X706)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "S7 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S7 Plus (T970 / T975)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S7 (T870 / T875)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S7 FE (T730 / T726)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              {
+                title: "S6 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S6 (T860 / T865)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S6 Lite (P610 / P615 / P613 / P619)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "A Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "A7 (T500 / T505)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "A 10.1 (T510 / T515)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "A8.0 (T290 / T295)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "A9 Plus (X210 / X216)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              //
+            ],
+          },
+        ],
+
+        // fifth tab
+        iWatch: [
+          {
+            id: 2,
+            category: "iWatch",
+            accordionData: [
+              {
+                title: "iWatch Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Watch Model", key: "watchModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        watchModel: "Series 8",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 7",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 6",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 5",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 4",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 3",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              //
+            ],
+          },
+        ],
+        Oppo: [
+          {
+            id: 1,
+            category: "Oppo",
+            accordionData: [
+              {
+                title: "Oppo Find Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Find X5 Pro",
+                        repairCost: "$200",
+                        replacementGradeA: "$150",
+                        replacementGradeB: "$100",
+                      },
+                      {
+                        deviceModel: "Find X5",
+                        repairCost: "$180",
+                        replacementGradeA: "$140",
+                        replacementGradeB: "$90",
+                      },
+                      {
+                        deviceModel: "Find X3 Pro",
+                        repairCost: "$160",
+                        replacementGradeA: "$130",
+                        replacementGradeB: "$80",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo Reno Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Reno 8 Pro",
+                        repairCost: "$160",
+                        replacementGradeA: "$120",
+                        replacementGradeB: "$80",
+                      },
+                      {
+                        deviceModel: "Reno 8",
+                        repairCost: "$140",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$70",
+                      },
+                      {
+                        deviceModel: "Reno 7",
+                        repairCost: "$120",
+                        replacementGradeA: "$100",
+                        replacementGradeB: "$60",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo A Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "A96",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "A76",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
+                      },
+                      {
+                        deviceModel: "A54",
+                        repairCost: "$90",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$40",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo K Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "K10",
+                        repairCost: "$130",
+                        replacementGradeA: "$100",
+                        replacementGradeB: "$70",
+                      },
+                      {
+                        deviceModel: "K9 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "K7x",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo F Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "F21 Pro",
+                        repairCost: "$140",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$80",
+                      },
+                      {
+                        deviceModel: "F19 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "F17",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo N Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "N1",
+                        repairCost: "$80",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$30",
+                      },
+                      {
+                        deviceModel: "N3",
+                        repairCost: "$100",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$40",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+
+        Google: [
+          {
+            id: 1,
+            category: "Google",
+            accordionData: [
+              {
+                title: "Google Pixel 7 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 7 Pro",
+                        repairCost: "$220",
+                        replacementGradeA: "$180",
+                        replacementGradeB: "$150",
+                      },
+                      {
+                        deviceModel: "Pixel 7",
+                        repairCost: "$180",
+                        replacementGradeA: "$150",
+                        replacementGradeB: "$120",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 6 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 6 Pro",
+                        repairCost: "$200",
+                        replacementGradeA: "$160",
+                        replacementGradeB: "$130",
+                      },
+                      {
+                        deviceModel: "Pixel 6",
+                        repairCost: "$170",
+                        replacementGradeA: "$140",
+                        replacementGradeB: "$110",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 5 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 5",
+                        repairCost: "$150",
+                        replacementGradeA: "$120",
+                        replacementGradeB: "$90",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 4 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 4 XL",
+                        repairCost: "$140",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$80",
+                      },
+                      {
+                        deviceModel: "Pixel 4",
+                        repairCost: "$130",
+                        replacementGradeA: "$100",
+                        replacementGradeB: "$70",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 3 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 3 XL",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "Pixel 3",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
                       },
                     ],
                   },
@@ -558,111 +4577,3032 @@ const Pricing: React.FC = () => {
       },
     },
     {
-        id: 3,
-        title: "Device Maintenance Price List",
-        description:
-          "Check our affordable maintenance services for a variety of devices.",
-        mobileCategory: [
-          { mobile: "android" },
-          { mobile: "androidPro" },
-          { mobile: "androidLite" },
+      id: 3,
+      title: "General Repair Pricing",
+      description:
+        "Our general repair pricing includes common services such as screen replacements, charging port repairs, and other standard issues typically offered by most repair shops. ",
+      mobileCategory: [
+        { mobile: "iPhone" },
+        { mobile: "iPad" },
+        { mobile: "SamsungPhones" },
+        { mobile: "SamsungTablets" },
+        { mobile: "iWatch " },
+        { mobile: "Oppo" },
+        { mobile: "Google" },
+      ],
+      categories: {
+        iPhone: [
+          {
+            id: 0,
+            category: "iPhone",
+            accordionData: [
+              {
+                title: "iPhone 15 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 15 Pro Max",
+                        repairCost: "$200",
+                        replacementGradeA: "$200",
+                        replacementGradeB: "$70",
+                      },
+                      {
+                        deviceModel: "iPhone 15 Pro",
+                        repairCost: "$200",
+                        replacementGradeA: "$140",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "iPhone 15 Plus",
+                        repairCost: "$120",
+                        replacementGradeA: "$60",
+                        replacementGradeB: "$25",
+                      },
+                      {
+                        deviceModel: "iPhone 15",
+                        repairCost: "$120",
+                        replacementGradeA: "$55",
+                        replacementGradeB: "$25",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone 14 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 14 Pro Max",
+                        repairCost: "$170",
+                        replacementGradeA: "$180",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "iPhone 14 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$160",
+                        replacementGradeB: "$50",
+                      },
+                      {
+                        deviceModel: "iPhone 14 Plus",
+                        repairCost: "$90",
+                        replacementGradeA: "$60",
+                        replacementGradeB: "$35",
+                      },
+                      {
+                        deviceModel: "iPhone 14",
+                        repairCost: "$90",
+                        replacementGradeA: "$60",
+                        replacementGradeB: "$25",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone 13 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 13 Pro Max",
+                        repairCost: "$140",
+                        replacementGradeA: "$130",
+                        replacementGradeB: "$45",
+                      },
+                      {
+                        deviceModel: "iPhone 13 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$35",
+                      },
+                      {
+                        deviceModel: "iPhone 13",
+                        repairCost: "$55",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "iPhone 13 Mini",
+                        repairCost: "$55",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone 12 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 12 Pro Max",
+                        repairCost: "$70",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "iPhone 12 Pro",
+                        repairCost: "$50",
+                        replacementGradeA: "$35",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPhone 12",
+                        repairCost: "$50",
+                        replacementGradeA: "$35",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPhone 12 Mini",
+                        repairCost: "$50",
+                        replacementGradeA: "$45",
+                        replacementGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone 11 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 11 Pro Max",
+                        repairCost: "$50",
+                        replacementGradeA: "$35",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPhone 11 Pro",
+                        repairCost: "$40",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+
+                      {
+                        deviceModel: "iPhone 11",
+                        repairCost: "X",
+                        replacementGradeA: "X",
+                        replacementGradeB: "X",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone X Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone XS Max",
+                        repairCost: "$40",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "iPhone XS",
+                        repairCost: "$35",
+                        replacementGradeA: "$20",
+                        replacementGradeB: "$10",
+                      },
+                      {
+                        deviceModel: "iPhone X",
+                        repairCost: "$35",
+                        replacementGradeA: "$20",
+                        replacementGradeB: "$10",
+                      },
+                      {
+                        deviceModel: "iPhone XR",
+                        repairCost: "X",
+                        replacementGradeA: "X",
+                        replacementGradeB: "X",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
         ],
-        categories: {
-          android: [
-            {
-              id: 0,
-              category: "Tablet",
-              accordionData: [
-                {
-                  title: "iPad Series",
-                  content: {
-                    table: {
-                      columns: [
-                        { header: "Device Model", key: "deviceModel" },
-                        { header: "Repair Cost ($)", key: "repairCost" },
-                        {
-                          header: "Screen Replacement",
-                          key: "screenReplacement",
-                        },
-                        {
-                          header: "Battery Replacement",
-                          key: "batteryReplacement",
-                        },
-                      ],
-                      rows: [
-                        {
-                          deviceModel: "iPad Pro 12.9",
-                          repairCost: "$500",
-                          screenReplacement: "$450",
-                          batteryReplacement: "$400",
-                        },
-                        {
-                          deviceModel: "iPad Air 10.9",
-                          repairCost: "$400",
-                          screenReplacement: "$350",
-                          batteryReplacement: "$300",
-                        },
-                      ],
-                    },
+        // second tab
+        iPad: [
+          {
+            id: 1,
+            category: "iPad",
+            accordionData: [
+              {
+                title: "iPad Air Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: 'Air 2 9.7" (2014)',
+                        repairCost: "$80",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: 'Air 3 10.5" (2019)',
+                        repairCost: "$80",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: 'Air 4 11" (2020)',
+                        repairCost: "$90",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: 'Air 5 11" (2022)',
+                        repairCost: "$90",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$25",
+                      },
+                      {
+                        deviceModel: 'Air 6 11" (2024)',
+                        repairCost: "Contact Us",
+                        replacementGradeA: "Contact Us",
+                        replacementGradeB: "Contact Us",
+                      },
+                    ],
                   },
                 },
-              ],
-            },
-          ],
-          androidPro: [
-            {
-              id: 1,
-              category: "Tablet Pro",
-              accordionData: [
-                {
-                  title: "Samsung Tab Series",
-                  content: {
-                    table: {
-                      columns: [
-                        { header: "Device Model", key: "deviceModel" },
-                        { header: "Repair Cost ($)", key: "repairCost" },
-                        {
-                          header: "Screen Replacement",
-                          key: "screenReplacement",
-                        },
-                        {
-                          header: "Battery Replacement",
-                          key: "batteryReplacement",
-                        },
-                      ],
-                      rows: [
-                        {
-                          deviceModel: "Galaxy Tab S8 Ultra",
-                          repairCost: "$450",
-                          screenReplacement: "$400",
-                          batteryReplacement: "$350",
-                        },
-                        {
-                          deviceModel: "Galaxy Tab S8",
-                          repairCost: "$350",
-                          screenReplacement: "$300",
-                          batteryReplacement: "$250",
-                        },
-                      ],
-                    },
+              },
+              {
+                title: "iPad Pro Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: 'Pro 9.7" (2016)',
+                        repairCost: "$80",
+                        replacementGradeA: "$20",
+                        replacementGradeB: "$10",
+                      },
+                      {
+                        deviceModel: 'Pro 10.5" (2017)',
+                        repairCost: "$90",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 1st (2018)",
+                        repairCost: "$120",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 2nd (2020)",
+                        repairCost: "$120",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 3rd (2021)",
+                        repairCost: "$140",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 4th (2022)",
+                        repairCost: "$140",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 13 (2024)",
+                        repairCost: "Contact Us",
+                        replacementGradeA: "Contact Us",
+                        replacementGradeB: "Contact Us",
+                      },
+                    ],
                   },
                 },
-              ],
-            },
-          ],
-        },
+              },
+              {
+                title: "iPad Pro 12.9",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pro 12.9 1st (2015)",
+                        repairCost: "$150",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 2nd (2017)",
+                        repairCost: "$200",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$30",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 3rd (2018)",
+                        repairCost: "$150",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 4th (2020)",
+                        repairCost: "$150",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 5th (2021)",
+                        repairCost: "$180",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$25",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 6th (2022)",
+                        repairCost: "Contact Us",
+                        replacementGradeA: "Contact Us",
+                        replacementGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPad Mini Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Mini 4",
+                        repairCost: "$80",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "Mini 5",
+                        repairCost: "$80",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "Mini 6",
+                        repairCost: "$220",
+                        replacementGradeA: "$60",
+                        replacementGradeB: "$25",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+
+        // third tab
+        SamsungPhones: [
+          {
+            id: 2,
+            category: "SamsungPhones",
+            accordionData: [
+              {
+                title: "S Ultra Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      {
+                        header: "Refurb price (Old Frame or No Frame)",
+                        key: "refurbPriceOldFrame",
+                      },
+                      {
+                        header: "Refurb price (New Frame)",
+                        key: "refurbPriceNewFrame",
+                      },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S24 Ultra",
+                        refurbPriceOldFrame: "$150",
+                        refurbPriceNewFrame: "$200",
+                        buyBackGradeA: "$110",
+                        buyBackGradeB: "$40",
+                      },
+                      {
+                        phoneModel: "S23 Ultra",
+                        refurbPriceOldFrame: "$150",
+                        refurbPriceNewFrame: "$200",
+                        buyBackGradeA: "$110",
+                        buyBackGradeB: "$40",
+                      },
+                      {
+                        phoneModel: "S22 Ultra",
+                        refurbPriceOldFrame: "$130",
+                        refurbPriceNewFrame: "$180",
+                        buyBackGradeA: "$110",
+                        buyBackGradeB: "$35",
+                      },
+                      {
+                        phoneModel: "S21 Ultra",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$80",
+                        buyBackGradeB: "$30",
+                      },
+                      {
+                        phoneModel: "S20 Ultra",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$70",
+                        buyBackGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              //
+              {
+                title: "Note Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      {
+                        header: "Refurb price (Old Frame or No Frame)",
+                        key: "refurbPriceOldFrame",
+                      },
+                      {
+                        header: "Refurb price (New Frame)",
+                        key: "refurbPriceNewFrame",
+                      },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Note 20 Ultra",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$70",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 20",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "Note 10 Plus",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$70",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 10",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 9",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 8",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "S Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      {
+                        header: "Refurb price (Old Frame or No Frame)",
+                        key: "refurbPriceOldFrame",
+                      },
+                      {
+                        header: "Refurb price (New Frame)",
+                        key: "refurbPriceNewFrame",
+                      },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S24 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S23 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S22 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S21 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S20 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S10 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "S9 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "S8 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "S24",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S23",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S22",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S21",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S20",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S10 5G",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "S10",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "S9",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "S8",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Fold Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Fold 6 (Outer)",
+                        refurbPrice: "$90",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 5 (Outer)",
+                        refurbPrice: "$80",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 4 (Outer)",
+                        refurbPrice: "$70",
+                        buyBackGradeA: "$35",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 3 (Outer)",
+                        refurbPrice: "$90",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 2 (Outer)",
+                        refurbPrice: "$70",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              {
+                title: "Fold Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Outer Screen Refurb",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "Hinge Replacement",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel:
+                          "Inner Flex Replacement (Which Goes from One Side to Another)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Flip Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Outer Screen Refurb",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "Hinge Replacement",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel:
+                          "Inner Flex Replacement (Which Goes from One Side to Another)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+
+        // fourth tab
+        SamsungTablets: [
+          {
+            id: 2,
+            category: "SamsungTablets",
+            accordionData: [
+              {
+                title: "S8 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S8 Ultra (X900 / X906)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S8 Plus (X800 / X806)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S8 (X700 / X706)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "S7 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S7 Plus (T970 / T975)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S7 (T870 / T875)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S7 FE (T730 / T726)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              {
+                title: "S6 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S6 (T860 / T865)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S6 Lite (P610 / P615 / P613 / P619)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "A Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "A7 (T500 / T505)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "A 10.1 (T510 / T515)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "A8.0 (T290 / T295)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "A9 Plus (X210 / X216)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              //
+            ],
+          },
+        ],
+
+        // fifth tab
+        iWatch: [
+          {
+            id: 2,
+            category: "iWatch",
+            accordionData: [
+              {
+                title: "iWatch Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Watch Model", key: "watchModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        watchModel: "Series 8",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 7",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 6",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 5",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 4",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 3",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              //
+            ],
+          },
+        ],
+        Oppo: [
+          {
+            id: 1,
+            category: "Oppo",
+            accordionData: [
+              {
+                title: "Oppo Find Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Find X5 Pro",
+                        repairCost: "$200",
+                        replacementGradeA: "$150",
+                        replacementGradeB: "$100",
+                      },
+                      {
+                        deviceModel: "Find X5",
+                        repairCost: "$180",
+                        replacementGradeA: "$140",
+                        replacementGradeB: "$90",
+                      },
+                      {
+                        deviceModel: "Find X3 Pro",
+                        repairCost: "$160",
+                        replacementGradeA: "$130",
+                        replacementGradeB: "$80",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo Reno Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Reno 8 Pro",
+                        repairCost: "$160",
+                        replacementGradeA: "$120",
+                        replacementGradeB: "$80",
+                      },
+                      {
+                        deviceModel: "Reno 8",
+                        repairCost: "$140",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$70",
+                      },
+                      {
+                        deviceModel: "Reno 7",
+                        repairCost: "$120",
+                        replacementGradeA: "$100",
+                        replacementGradeB: "$60",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo A Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "A96",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "A76",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
+                      },
+                      {
+                        deviceModel: "A54",
+                        repairCost: "$90",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$40",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo K Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "K10",
+                        repairCost: "$130",
+                        replacementGradeA: "$100",
+                        replacementGradeB: "$70",
+                      },
+                      {
+                        deviceModel: "K9 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "K7x",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo F Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "F21 Pro",
+                        repairCost: "$140",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$80",
+                      },
+                      {
+                        deviceModel: "F19 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "F17",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo N Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "N1",
+                        repairCost: "$80",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$30",
+                      },
+                      {
+                        deviceModel: "N3",
+                        repairCost: "$100",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$40",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+
+        Google: [
+          {
+            id: 1,
+            category: "Google",
+            accordionData: [
+              {
+                title: "Google Pixel 7 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 7 Pro",
+                        repairCost: "$220",
+                        replacementGradeA: "$180",
+                        replacementGradeB: "$150",
+                      },
+                      {
+                        deviceModel: "Pixel 7",
+                        repairCost: "$180",
+                        replacementGradeA: "$150",
+                        replacementGradeB: "$120",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 6 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 6 Pro",
+                        repairCost: "$200",
+                        replacementGradeA: "$160",
+                        replacementGradeB: "$130",
+                      },
+                      {
+                        deviceModel: "Pixel 6",
+                        repairCost: "$170",
+                        replacementGradeA: "$140",
+                        replacementGradeB: "$110",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 5 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 5",
+                        repairCost: "$150",
+                        replacementGradeA: "$120",
+                        replacementGradeB: "$90",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 4 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 4 XL",
+                        repairCost: "$140",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$80",
+                      },
+                      {
+                        deviceModel: "Pixel 4",
+                        repairCost: "$130",
+                        replacementGradeA: "$100",
+                        replacementGradeB: "$70",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 3 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 3 XL",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "Pixel 3",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
       },
+    },
+    {
+      id: 4,
+      title: "DIY/Technician Damage Pricing (Dead Phone Revival)",
+      description:
+        "This service is specifically for devices damaged during DIY or technician attempts.",
+      mobileCategory: [
+        { mobile: "iPhone" },
+        { mobile: "iPad" },
+        { mobile: "SamsungPhones" },
+        { mobile: "SamsungTablets" },
+        { mobile: "iWatch " },
+        { mobile: "Oppo" },
+        { mobile: "Google" },
+      ],
+      categories: {
+        iPhone: [
+          {
+            id: 0,
+            category: "iPhone",
+            accordionData: [
+              {
+                title: "iPhone 15 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 15 Pro Max",
+                        repairCost: "$200",
+                        replacementGradeA: "$200",
+                        replacementGradeB: "$70",
+                      },
+                      {
+                        deviceModel: "iPhone 15 Pro",
+                        repairCost: "$200",
+                        replacementGradeA: "$140",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "iPhone 15 Plus",
+                        repairCost: "$120",
+                        replacementGradeA: "$60",
+                        replacementGradeB: "$25",
+                      },
+                      {
+                        deviceModel: "iPhone 15",
+                        repairCost: "$120",
+                        replacementGradeA: "$55",
+                        replacementGradeB: "$25",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone 14 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 14 Pro Max",
+                        repairCost: "$170",
+                        replacementGradeA: "$180",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "iPhone 14 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$160",
+                        replacementGradeB: "$50",
+                      },
+                      {
+                        deviceModel: "iPhone 14 Plus",
+                        repairCost: "$90",
+                        replacementGradeA: "$60",
+                        replacementGradeB: "$35",
+                      },
+                      {
+                        deviceModel: "iPhone 14",
+                        repairCost: "$90",
+                        replacementGradeA: "$60",
+                        replacementGradeB: "$25",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone 13 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 13 Pro Max",
+                        repairCost: "$140",
+                        replacementGradeA: "$130",
+                        replacementGradeB: "$45",
+                      },
+                      {
+                        deviceModel: "iPhone 13 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$35",
+                      },
+                      {
+                        deviceModel: "iPhone 13",
+                        repairCost: "$55",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "iPhone 13 Mini",
+                        repairCost: "$55",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone 12 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 12 Pro Max",
+                        repairCost: "$70",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "iPhone 12 Pro",
+                        repairCost: "$50",
+                        replacementGradeA: "$35",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPhone 12",
+                        repairCost: "$50",
+                        replacementGradeA: "$35",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPhone 12 Mini",
+                        repairCost: "$50",
+                        replacementGradeA: "$45",
+                        replacementGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone 11 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone 11 Pro Max",
+                        repairCost: "$50",
+                        replacementGradeA: "$35",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPhone 11 Pro",
+                        repairCost: "$40",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+
+                      {
+                        deviceModel: "iPhone 11",
+                        repairCost: "X",
+                        replacementGradeA: "X",
+                        replacementGradeB: "X",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPhone X Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "iPhone XS Max",
+                        repairCost: "$40",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "iPhone XS",
+                        repairCost: "$35",
+                        replacementGradeA: "$20",
+                        replacementGradeB: "$10",
+                      },
+                      {
+                        deviceModel: "iPhone X",
+                        repairCost: "$35",
+                        replacementGradeA: "$20",
+                        replacementGradeB: "$10",
+                      },
+                      {
+                        deviceModel: "iPhone XR",
+                        repairCost: "X",
+                        replacementGradeA: "X",
+                        replacementGradeB: "X",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+        // second tab
+        iPad: [
+          {
+            id: 1,
+            category: "iPad",
+            accordionData: [
+              {
+                title: "iPad Air Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: 'Air 2 9.7" (2014)',
+                        repairCost: "$80",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: 'Air 3 10.5" (2019)',
+                        repairCost: "$80",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: 'Air 4 11" (2020)',
+                        repairCost: "$90",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: 'Air 5 11" (2022)',
+                        repairCost: "$90",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$25",
+                      },
+                      {
+                        deviceModel: 'Air 6 11" (2024)',
+                        repairCost: "Contact Us",
+                        replacementGradeA: "Contact Us",
+                        replacementGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPad Pro Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: 'Pro 9.7" (2016)',
+                        repairCost: "$80",
+                        replacementGradeA: "$20",
+                        replacementGradeB: "$10",
+                      },
+                      {
+                        deviceModel: 'Pro 10.5" (2017)',
+                        repairCost: "$90",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 1st (2018)",
+                        repairCost: "$120",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 2nd (2020)",
+                        repairCost: "$120",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 3rd (2021)",
+                        repairCost: "$140",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 11 4th (2022)",
+                        repairCost: "$140",
+                        replacementGradeA: "$40",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "iPad Pro 13 (2024)",
+                        repairCost: "Contact Us",
+                        replacementGradeA: "Contact Us",
+                        replacementGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPad Pro 12.9",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pro 12.9 1st (2015)",
+                        repairCost: "$150",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 2nd (2017)",
+                        repairCost: "$200",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$30",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 3rd (2018)",
+                        repairCost: "$150",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 4th (2020)",
+                        repairCost: "$150",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$20",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 5th (2021)",
+                        repairCost: "$180",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$25",
+                      },
+                      {
+                        deviceModel: "Pro 12.9 6th (2022)",
+                        repairCost: "Contact Us",
+                        replacementGradeA: "Contact Us",
+                        replacementGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "iPad Mini Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A ) ",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Mini 4",
+                        repairCost: "$80",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "Mini 5",
+                        repairCost: "$80",
+                        replacementGradeA: "$30",
+                        replacementGradeB: "$15",
+                      },
+                      {
+                        deviceModel: "Mini 6",
+                        repairCost: "$220",
+                        replacementGradeA: "$60",
+                        replacementGradeB: "$25",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+
+        // third tab
+        SamsungPhones: [
+          {
+            id: 2,
+            category: "SamsungPhones",
+            accordionData: [
+              {
+                title: "S Ultra Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      {
+                        header: "Refurb price (Old Frame or No Frame)",
+                        key: "refurbPriceOldFrame",
+                      },
+                      {
+                        header: "Refurb price (New Frame)",
+                        key: "refurbPriceNewFrame",
+                      },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S24 Ultra",
+                        refurbPriceOldFrame: "$150",
+                        refurbPriceNewFrame: "$200",
+                        buyBackGradeA: "$110",
+                        buyBackGradeB: "$40",
+                      },
+                      {
+                        phoneModel: "S23 Ultra",
+                        refurbPriceOldFrame: "$150",
+                        refurbPriceNewFrame: "$200",
+                        buyBackGradeA: "$110",
+                        buyBackGradeB: "$40",
+                      },
+                      {
+                        phoneModel: "S22 Ultra",
+                        refurbPriceOldFrame: "$130",
+                        refurbPriceNewFrame: "$180",
+                        buyBackGradeA: "$110",
+                        buyBackGradeB: "$35",
+                      },
+                      {
+                        phoneModel: "S21 Ultra",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$80",
+                        buyBackGradeB: "$30",
+                      },
+                      {
+                        phoneModel: "S20 Ultra",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$70",
+                        buyBackGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              //
+              {
+                title: "Note Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      {
+                        header: "Refurb price (Old Frame or No Frame)",
+                        key: "refurbPriceOldFrame",
+                      },
+                      {
+                        header: "Refurb price (New Frame)",
+                        key: "refurbPriceNewFrame",
+                      },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Note 20 Ultra",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$70",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 20",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "Note 10 Plus",
+                        refurbPriceOldFrame: "$120",
+                        refurbPriceNewFrame: "$170",
+                        buyBackGradeA: "$70",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 10",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 9",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "Note 8",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "S Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      {
+                        header: "Refurb price (Old Frame or No Frame)",
+                        key: "refurbPriceOldFrame",
+                      },
+                      {
+                        header: "Refurb price (New Frame)",
+                        key: "refurbPriceNewFrame",
+                      },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S24 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S23 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S22 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S21 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S20 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S10 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "S9 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "S8 Plus",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "S24",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S23",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S22",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S21",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$50",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S20",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$20",
+                      },
+                      {
+                        phoneModel: "S10 5G",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "S10",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "S9",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                      {
+                        phoneModel: "S8",
+                        refurbPriceOldFrame: "$100",
+                        refurbPriceNewFrame: "$150",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Fold Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Fold 6 (Outer)",
+                        refurbPrice: "$90",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 5 (Outer)",
+                        refurbPrice: "$80",
+                        buyBackGradeA: "$30",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 4 (Outer)",
+                        refurbPrice: "$70",
+                        buyBackGradeA: "$35",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 3 (Outer)",
+                        refurbPrice: "$90",
+                        buyBackGradeA: "$40",
+                        buyBackGradeB: "$15",
+                      },
+                      {
+                        phoneModel: "Fold 2 (Outer)",
+                        refurbPrice: "$70",
+                        buyBackGradeA: "$20",
+                        buyBackGradeB: "$10",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              {
+                title: "Fold Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Outer Screen Refurb",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "Hinge Replacement",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel:
+                          "Inner Flex Replacement (Which Goes from One Side to Another)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Flip Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "Outer Screen Refurb",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "Hinge Replacement",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel:
+                          "Inner Flex Replacement (Which Goes from One Side to Another)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+
+        // fourth tab
+        SamsungTablets: [
+          {
+            id: 2,
+            category: "SamsungTablets",
+            accordionData: [
+              {
+                title: "S8 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S8 Ultra (X900 / X906)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S8 Plus (X800 / X806)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S8 (X700 / X706)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "S7 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S7 Plus (T970 / T975)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S7 (T870 / T875)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S7 FE (T730 / T726)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              {
+                title: "S6 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "S6 (T860 / T865)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "S6 Lite (P610 / P615 / P613 / P619)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "A Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Phone Model", key: "phoneModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        phoneModel: "A7 (T500 / T505)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "A 10.1 (T510 / T515)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "A8.0 (T290 / T295)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        phoneModel: "A9 Plus (X210 / X216)",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              //
+            ],
+          },
+        ],
+
+        // fifth tab
+        iWatch: [
+          {
+            id: 2,
+            category: "iWatch",
+            accordionData: [
+              {
+                title: "iWatch Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Watch Model", key: "watchModel" },
+                      { header: "Refurb price ($AUD)", key: "refurbPrice" },
+                      { header: "Buy Back (Grade A)", key: "buyBackGradeA" },
+                      { header: "Buy Back (Grade B)", key: "buyBackGradeB" },
+                    ],
+                    rows: [
+                      {
+                        watchModel: "Series 8",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 7",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 6",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 5",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 4",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                      {
+                        watchModel: "Series 3",
+                        refurbPrice: "Contact Us",
+                        buyBackGradeA: "Contact Us",
+                        buyBackGradeB: "Contact Us",
+                      },
+                    ],
+                  },
+                },
+              },
+
+              //
+            ],
+          },
+        ],
+        Oppo: [
+          {
+            id: 1,
+            category: "Oppo",
+            accordionData: [
+              {
+                title: "Oppo Find Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Find X5 Pro",
+                        repairCost: "$200",
+                        replacementGradeA: "$150",
+                        replacementGradeB: "$100",
+                      },
+                      {
+                        deviceModel: "Find X5",
+                        repairCost: "$180",
+                        replacementGradeA: "$140",
+                        replacementGradeB: "$90",
+                      },
+                      {
+                        deviceModel: "Find X3 Pro",
+                        repairCost: "$160",
+                        replacementGradeA: "$130",
+                        replacementGradeB: "$80",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo Reno Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Reno 8 Pro",
+                        repairCost: "$160",
+                        replacementGradeA: "$120",
+                        replacementGradeB: "$80",
+                      },
+                      {
+                        deviceModel: "Reno 8",
+                        repairCost: "$140",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$70",
+                      },
+                      {
+                        deviceModel: "Reno 7",
+                        repairCost: "$120",
+                        replacementGradeA: "$100",
+                        replacementGradeB: "$60",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo A Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "A96",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "A76",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
+                      },
+                      {
+                        deviceModel: "A54",
+                        repairCost: "$90",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$40",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo K Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "K10",
+                        repairCost: "$130",
+                        replacementGradeA: "$100",
+                        replacementGradeB: "$70",
+                      },
+                      {
+                        deviceModel: "K9 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "K7x",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo F Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "F21 Pro",
+                        repairCost: "$140",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$80",
+                      },
+                      {
+                        deviceModel: "F19 Pro",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "F17",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Oppo N Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back ( Grade A )",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back ( Grade B )",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "N1",
+                        repairCost: "$80",
+                        replacementGradeA: "$50",
+                        replacementGradeB: "$30",
+                      },
+                      {
+                        deviceModel: "N3",
+                        repairCost: "$100",
+                        replacementGradeA: "$70",
+                        replacementGradeB: "$40",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+
+        Google: [
+          {
+            id: 1,
+            category: "Google",
+            accordionData: [
+              {
+                title: "Google Pixel 7 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 7 Pro",
+                        repairCost: "$220",
+                        replacementGradeA: "$180",
+                        replacementGradeB: "$150",
+                      },
+                      {
+                        deviceModel: "Pixel 7",
+                        repairCost: "$180",
+                        replacementGradeA: "$150",
+                        replacementGradeB: "$120",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 6 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 6 Pro",
+                        repairCost: "$200",
+                        replacementGradeA: "$160",
+                        replacementGradeB: "$130",
+                      },
+                      {
+                        deviceModel: "Pixel 6",
+                        repairCost: "$170",
+                        replacementGradeA: "$140",
+                        replacementGradeB: "$110",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 5 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 5",
+                        repairCost: "$150",
+                        replacementGradeA: "$120",
+                        replacementGradeB: "$90",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 4 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 4 XL",
+                        repairCost: "$140",
+                        replacementGradeA: "$110",
+                        replacementGradeB: "$80",
+                      },
+                      {
+                        deviceModel: "Pixel 4",
+                        repairCost: "$130",
+                        replacementGradeA: "$100",
+                        replacementGradeB: "$70",
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                title: "Google Pixel 3 Series",
+                content: {
+                  table: {
+                    columns: [
+                      { header: "Device Model", key: "deviceModel" },
+                      { header: "Refurb price ($AUD)", key: "repairCost" },
+                      {
+                        header: "Buy Back (Grade A)",
+                        key: "replacementGradeA",
+                      },
+                      {
+                        header: "Buy Back (Grade B)",
+                        key: "replacementGradeB",
+                      },
+                    ],
+                    rows: [
+                      {
+                        deviceModel: "Pixel 3 XL",
+                        repairCost: "$120",
+                        replacementGradeA: "$90",
+                        replacementGradeB: "$60",
+                      },
+                      {
+                        deviceModel: "Pixel 3",
+                        repairCost: "$100",
+                        replacementGradeA: "$80",
+                        replacementGradeB: "$50",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+      },
+    },
   ];
-
-
-
-
 
   const [selectedPriceData, setSelectedPriceData] = useState(priceData[0]);
   const mobileCategory = [
     { mobile: "iPhone" },
-    { mobile: "androidPro" },
-    { mobile: "androidLite" },
+    { mobile: "iPad" },
+    { mobile: "SamsungPhones" },
+    { mobile: "SamsungTablets" },
+    { mobile: "iWatch" },
+    { mobile: "Oppo" },
+    { mobile: "Google" },
   ];
 
   const priceCat = useSelector((state: RootState) => state.users.priceCat);

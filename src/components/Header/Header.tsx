@@ -39,19 +39,23 @@ export default function App() {
   const listData = [  
     {
       id: 0,
-      btnName: "Screen Refurbishment Pricing ",
+      btnName: "Price List",
     },
     {
       id: 1,
-      btnName: "Data Recovery / Dead Device Pricing",
+      btnName: "Screen Buy-Back Pricing ",
     },
     {
       id: 2,
-      btnName: "General Repair Pricing",
+      btnName: "Data Recovery Pricing",
     },
     {
       id: 3,
-      btnName: "DIY/Technician Damage Pricing (Dead Phone Revival)",
+      btnName: "General Repair Pricing",
+    },
+    {
+      id: 4,
+      btnName: "DIY/Techcnian Damage Pricing",
     },
   ];
   return (

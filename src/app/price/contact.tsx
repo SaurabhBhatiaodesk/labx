@@ -10,6 +10,9 @@ import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import TableData from "./Table";
+import DataBox from "./DataBox";
+
 
 const Page = () => {
   const priceCat = useSelector((state: RootState) => state.users.priceCat);
@@ -22,22 +25,29 @@ const Page = () => {
     },
     {
       id: 1,
-      title: "LabX Repair - Price List",
+      title: "Screen Refurbishment Pricing - ( Buy Back )",
       description:
-        "At LabX Repair, we provide a comprehensive range of repair including Data Recovery, Technician Damage Repair, DIY Damage Repair, Screen refurbishment services and General Spare Part Replacment. Below are the four main categories of pricing for our offerings:",
+        "For fast screen refurbishment, you have two options: you can choose our service to replace the glass only, or you can sell your old broken screens to us, as we offer competitive buyback prices.",
     },
     {
       id: 2,
-      title: " Buy Back Price List",
+      title: "Data Recovery / Dead Device Pricing",
       description:
-        "Check the pricing for all our complex mobile phone repair services, including B2B solutions and training courses. Visit our Price List page for detailed cost information and tailored quotes based on the specific repair or course you need.",
+        "We offer professional data recovery services to retrieve essential information from non-functional devices. Any devices that are dead or have no power will be classified as data recovery cases.",
     },
     {
       id: 3,
-      title: "Buy Back Price List",
+      title: " General Repair Pricing",
       description:
-        "Check the pricing for all our complex mobile phone repair services, including B2B solutions and training courses. Visit our Price List page for detailed cost information and tailored quotes based on the specific repair or course you need.",
+        "Our general repair pricing includes common services such as screen replacements, charging port repairs, and other standard issues typically offered by most repair shops. ",
     },
+    {
+      id: 4,
+      title: "DIY/Technician Damage Pricing (Dead Phone Revival)",
+      description:
+        "This service is specifically for devices damaged during DIY or technician attempts.",
+    },
+ 
   ];
   const [selectedPriceData, setSelectedPriceData] = useState(priceData[0]);
   useEffect(() => {
@@ -71,7 +81,11 @@ const Page = () => {
           </div>
         </div>
       </section>
+      <section>
+ <DataBox/>
+      </section>
       <Price />
+      <TableData/>
       <div className="container_small bg-black pt-8 pb-6">
         <h2 className="text-center">Contact Information</h2>
         <ContactForm />
