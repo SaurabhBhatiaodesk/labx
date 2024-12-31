@@ -1,65 +1,23 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarMenuToggle,
-  NavbarMenuItem,
-  NavbarMenu,
-  NavbarContent,
-  NavbarItem,
-} from "@nextui-org/react";
-import rktaxilog from "../../../public/Images/Brand logos/Frame.svg";
-
+import React, { useState } from "react";
+import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 import { RxCross2 } from "react-icons/rx";
-
 import "./Header.css";
 import Link from "next/link";
 import Image from "next/image";
-
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { TbMenu2 } from "react-icons/tb";
-
 import { IoIosCart } from "react-icons/io";
 import Marquee from "../Marquee/Marquee";
 import { SlSocialFacebook } from "react-icons/sl";
-
+import { useDispatch } from 'react-redux';
+import { setPriceCat } from "@/app/redux/slice";
+import { useRouter } from "next/navigation";
 export default function App() {
+  const dispatch = useDispatch();
+  const Router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  // const dropdownRef = useRef<HTMLDivElement>(null);
-  // const menuRef = useRef<HTMLDivElement>(null); // Reference for the entire menu
-
-  // const menuItems = [
-  //   {
-  //     label: "Services",
-  //     path: "/coming-soon",
-  //     dropdown: true,
-  //     subItems: [
-  //       // { label: "Mail-In-Repair", path: "/mail-in-repair" },
-  //       { label: "Training", path: "/training" },
-  //       { label: "B2B Repair", path: "b2b-repair-services" },
-  //       { label: "Screen Refurbishment", path: "/coming-soon" },
-  //       { label: "Data Recovery", path: "/coming-soon" },
-  //       { label: "Parts Store", path: "/coming-soon" },
-  //       { label: "Repair Forum", path: "/coming-soon" },
-  //       { label: "Repair Solutions", path: "/coming-soon" },
-  //     ],
-  //   },
-  //   { label: "Parts Store", path: "/coming-soon" },
-  //   { label: "Parts Store", path: "/coming-soon" },
-  //   { label: "Training", path: "/training" },
-  //   { label: "Screen Refurbishment", path: "/coming-soon" },
-  //   { label: "About us", path: "/about-us" },
-  //   { label: "What We Do", path: "/what-we-do" },
-  //   { label: "Contact Us", path: "/contact-us" },
-  //   { label: "Price List", path: "/price" },
-  // ];
-
-
-
-  // Prevent closing dropdown when clicking inside the menu (except on links)
   const handleLinkClick = (e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent the dropdown from toggling when a link is clicked
   };
@@ -74,9 +32,31 @@ export default function App() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const PricetoggleMenu = (data: number) => {
+    dispatch(setPriceCat(data)); 
+    Router.push("/price");
+  };
+  const listData = [  
+    {
+      id: 0,
+      btnName: "Screen Refurbishment Pricing ",
+    },
+    {
+      id: 1,
+      btnName: "Data Recovery / Dead Device Pricing",
+    },
+    {
+      id: 2,
+      btnName: "General Repair Pricing",
+    },
+    {
+      id: 3,
+      btnName: "DIY/Technician Damage Pricing (Dead Phone Revival)",
+    },
+  ];
   return (
     <>
-    <Marquee/>
+      <Marquee />
       <div className="w-full header header-component">
         <Navbar
           className="text-white bg-black"
@@ -92,10 +72,17 @@ export default function App() {
             {/* <NavbarMenuToggle
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             /> */}
-            {!isMenuOpen ?
-            <button className=" w-[50px] text-[12px] font-medium font-poppins flex flex-col items-center rounded-lg p-[4px] text-primary"> <TbMenu2 fontSize={24} height={19} /> <span className="leading-3">  Menu</span></button>
-            :
-            <button className="w-[50px] flex justify-center"><RxCross2 /></button>}
+            {!isMenuOpen ? (
+              <button className=" w-[50px] text-[12px] font-medium font-poppins flex flex-col items-center rounded-lg p-[4px] text-primary">
+                {" "}
+                <TbMenu2 fontSize={24} height={19} />{" "}
+                <span className="leading-3"> Menu</span>
+              </button>
+            ) : (
+              <button className="w-[50px] flex justify-center">
+                <RxCross2 />
+              </button>
+            )}
           </NavbarContent>
           <div className="w-full">
             <div className="navbar text-pastelBlue items-center justify-between">
@@ -104,7 +91,9 @@ export default function App() {
                   <NavbarBrand>
                     <Link href="/">
                       <Image
-                        src={rktaxilog}
+                        src="https://labxbackend.s3.us-east-2.amazonaws.com/Clip+path+group.webp"
+                        width={200}
+                        height={200}
                         alt="Brand Logo"
                         className="logo_LabX"
                       />
@@ -122,14 +111,13 @@ export default function App() {
                     className="showmobile hover:scale-110 transition-transform duration-200"
                     href="tel:+61455777077"
                   >
-                <IoIosCart fontSize={26} />
+                    <IoIosCart fontSize={26} />
                   </Link>
                 </div>
 
                 <div
-                  className={`${
-                    isMenuOpen ? "block" : "hidden"
-                  } lg:flex  flex-grow justify-center`}
+                  className={`${isMenuOpen ? "block" : "hidden"
+                    } lg:flex  flex-grow justify-center`}
                   id="nav-content"
                 >
                   <ul className="menu menu-horizontal px-1 flex">
@@ -195,17 +183,18 @@ export default function App() {
                         </ul>
                       </div>
                     </li>
-                    
 
                     {/* header */}
                     <li>
-                    <Link href="/mail-in-repair" onClick={toggleMenu}>
-                              Mail In Repair
-                            </Link>
+                      <Link href="/mail-in-repair" onClick={toggleMenu}>
+                        Mail In Repair
+                      </Link>
                     </li>
-                    <li className="flex justify-center flex-col border-[1px] rounded-md border-primary w-fit hover:text-yellow-200
+                    <li
+                      className="flex justify-center flex-col border-[1px] rounded-md border-primary w-fit hover:text-yellow-200
                     hover:border-yellow-200
-                    ">
+                    "
+                    >
                       <Link
                         className=""
                         href="/coming-soon"
@@ -214,7 +203,7 @@ export default function App() {
                         Parts Store
                       </Link>
                     </li>
-                    <li>
+                    <li >
                       <Link
                         className="hover:text-yellow-200"
                         href="/training"
@@ -232,7 +221,33 @@ export default function App() {
                         Screen Refurbishment
                       </Link>
                     </li>
-                    <li>
+                    <div className="dropdown inline-block relative">
+                      <button className="btn__menu inline-flex items-center hover:text-yellow-200">
+                        <span className="mr-1">Price list</span>
+                        <svg
+                          className="fill-current h-4 w-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                        </svg>
+                      </button>
+                      <ul className="dropdown-menu absolute hidden text-white pt-1">
+                        {listData.map((item) => {
+                          return (
+                            <li
+                              className="block px-4 py-2 hover:bg-gray-800  hover:text-yellow-200 cursor-pointer"
+                              onClick={() => PricetoggleMenu(item.id)}
+                            >
+                              <span className=" text-[16px]">
+                                {item.btnName}
+                              </span>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                    {/* <li>
                       <Link
                         className="hover:text-yellow-200"
                         href="/price"
@@ -240,7 +255,7 @@ export default function App() {
                       >
                         Price List
                       </Link>
-                    </li>
+                    </li> */}
                     <li>
                       <Link
                         className="hover:text-yellow-200"
@@ -263,34 +278,34 @@ export default function App() {
                           </svg>
                         </button>
                         <ul className="dropdown-menu absolute hidden text-white pt-1">
-                          <li className="block px-4 py-2 hover:bg-gray-800">
+                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 cursor-pointer">
                             <Link
-                              className="hover:text-yellow-200"
+                              className=""
                               href="/about-us"
                               onClick={toggleMenu}
                             >
-                            Meet Bharat
+                              Meet Bharat
                             </Link>
                           </li>
-                          <li className="block px-4 py-2 hover:bg-gray-800">
+                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 cursor-pointer">
                             <Link
-                              className="hover:text-yellow-200"
+                              className=""
                               href="/what-we-do"
                               onClick={toggleMenu}
                             >
                               What We Do
                             </Link>
                           </li>
-                          <li className="block px-4 py-2 hover:bg-gray-800">
+                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 cursor-pointer">
                             <Link
-                              className="hover:text-yellow-200"
+                              className=""
                               href="/faq"
                               onClick={toggleMenu}
                             >
                               FAQ{" "}
                             </Link>
                           </li>
-                          <li className="block px-4 py-2 hover:bg-gray-800">
+                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 cursor-pointer">
                             <Link
                               className="hover:text-yellow-200"
                               href="/blogs"
@@ -341,20 +356,22 @@ export default function App() {
                         />
                       </Link>
                       <Link
-                      href="https://www.tiktok.com/@labxrepair"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaTiktok 
-                        className="hover:scale-110 transition-transform duration-200"
-                        fontSize={30}
-                      />
-                    </Link>
+                        href="https://www.tiktok.com/@labxrepair"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaTiktok
+                          className="hover:scale-110 transition-transform duration-200"
+                          fontSize={30}
+                        />
+                      </Link>
                     </div>
                   </div>
                 </div>
                 <Link href="/mail-in-repair">
-                  <button className="btn hidden lg:block uppercase">Start Repair </button>
+                  <button className="btn hidden lg:block uppercase">
+                    Start Repair{" "}
+                  </button>
                 </Link>
               </div>
             </div>
@@ -362,329 +379,5 @@ export default function App() {
         </Navbar>
       </div>
     </>
-    // <div classNameName="header-component">
-    //   <Navbar classNameName="text-white bg-black" isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
-    //     <NavbarContent classNameName="lg:hidden">
-    //       <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
-    //     </NavbarContent>
-
-    //     <NavbarContent classNameName="flex justify-center items-center">
-    //       <NavbarBrand>
-    //         <Link  href="/">
-    //           <Image src={rktaxilog} alt="Brand Logo" />
-    //         </Link>
-    //       </NavbarBrand>
-    //     </NavbarContent>
-
-    //     <div classNameName="hidden lg:flex flex-grow justify-center">
-    //       <div classNameName="flex gap-[20px] xl:gap-[30px]" ref={menuRef}>
-    //         {menuItems.map((item) => (
-    //           <NavbarItem key={item.label}>
-    //             {item.dropdown ? (
-    //               <div classNameName="relative" ref={dropdownRef}>
-    //                 <button onClick={handleServicesDropdownToggle} classNameName="flex items-center tracking-[1.5px] font-medium group">
-    //                   {item.label}
-    //                   <span classNameName={`ml-2 transform transition-transform ${isServicesDropdownOpen ? "rotate-0" : "rotate-180"}`}>
-    //                     <RiArrowDropUpLine />
-    //                   </span>
-    //                 </button>
-    //                 {isServicesDropdownOpen && (
-    //                   <div classNameName="absolute left-0 mt-2 p-2 bg-black text-white rounded shadow-lg">
-    //                     {item.subItems.map((subItem) => (
-    //                       <Link
-    //                         key={subItem.label}
-    //                         href={subItem.path || "#"}
-    //                         onClick={(e) => {
-    //                           handleLinkClick(e); // Prevent closing dropdown when clicking a link
-    //                           handleMenuItemClick(); // Close the menu
-    //                         }}
-    //                         classNameName="block px-4 py-2 hover:bg-gray-800"
-    //                       >
-    //                         {subItem.label}
-    //                       </Link>
-    //                     ))}
-    //                   </div>
-    //                 )}
-    //               </div>
-    //             ) : item.path ? (
-    //               <Link  classNameName="relative tracking-[1.5px] font-medium group" href={item.path} onClick={(e) => { handleMenuItemClick(); handleLinkClick(e); }}>
-    //                 {item.label}
-    //                 <span classNameName="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-    //               </Link>
-    //             ) : (
-    //               <span classNameName="tracking-[1.5px] font-medium">{item.label}</span>
-    //             )}
-    //           </NavbarItem>
-    //         ))}
-    //       </div>
-    //     </div>
-
-    //     <NavbarContent justify="end">
-    //       <Link  href="/coming-soon">
-    //         <button classNameName="btn hidden lg:block">GET STARTED</button>
-    //       </Link>
-    //     </NavbarContent>
-
-    //     <NavbarMenu classNameName="bg-black text-white lg:hidden">
-    //       {menuItems.map((item, index) => (
-    //         <NavbarMenuItem key={`${item.label}-${index}`}>
-    //           {item.dropdown ? (
-    //             <div>
-    //               <button onClick={handleServicesDropdownToggle} classNameName="flex justify-between w-full px-4 py-2">
-    //                 {item.label}
-    //                 <span classNameName={`ml-2 transform transition-transform ${isServicesDropdownOpen ? "rotate-180" : "rotate-0"}`}>
-    //                   <RiArrowDropUpLine />
-    //                 </span>
-    //               </button>
-
-    //               {isServicesDropdownOpen && (
-    //                 <div classNameName="pl-4">
-    //                   {item.subItems.map((subItem) => (
-    //                     <Link
-    //                       key={subItem.label}
-    //                       href={subItem.path || "#"}
-    //                       onClick={(e) => {
-    //                         handleLinkClick(e); // Prevent closing dropdown when clicking a link
-    //                         handleMenuItemClick(); // Close the menu
-    //                       }}
-    //                       classNameName="block px-0 py-2 hover:bg-gray-800"
-    //                     >
-    //                       {subItem.label}
-    //                     </Link>
-    //                   ))}
-    //                 </div>
-    //               )}
-    //             </div>
-    //           ) : item.path ? (
-    //             <Link  classNameName="w-full" href={item.path} onClick={handleMenuItemClick}>
-    //               {item.label}
-    //             </Link>
-    //           ) : (
-    //             <span classNameName="w-full block px-4 py-2">{item.label}</span>
-    //           )}
-    //         </NavbarMenuItem>
-    //       ))}
-    //     </NavbarMenu>
-    //   </Navbar>
-    // </div>
   );
 }
-
-// "use client";
-// import React, { useState, useEffect, useRef } from "react";
-// import {
-//   Navbar,
-//   NavbarBrand,
-//   NavbarMenuToggle,
-//   NavbarMenuItem,
-//   NavbarMenu,
-//   NavbarContent,
-//   NavbarItem,
-// } from "@nextui-org/react";
-// import rktaxilog from "../../../public/Images/Brand logos/Frame.svg";
-// import "./Header.css";
-// import Link from "next/link";
-// import Image from "next/image";
-// import { RiArrowDropUpLine } from "react-icons/ri";
-
-// export default function App() {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const [isServicesDropdownOpenMobile, setIsServicesDropdownOpenMobile] =
-//     useState(false); // For mobile dropdown state
-//   const [isServicesDropdownOpenDesktop, setIsServicesDropdownOpenDesktop] =
-//     useState(false); // For desktop dropdown state
-//   const dropdownRef = useRef<HTMLDivElement>(null);
-
-//   const menuItems = [
-//     {
-//       label: "Services",
-//       path: "/coming-soon",
-//       dropdown: true,
-//       subItems: [
-//         { label: "Mail-In-Repair", path: "/mail-in-repair" },
-//         { label: "Training", path: "/training" },
-//         { label: "B2B Repair", path: "b2b-repair-services" },
-//         { label: "Screen Refurbishment", path: "/coming-soon" },
-//         { label: "Data Recovery", path: "/coming-soon" },
-//         { label: "Parts Store", path: "/coming-soon" },
-//         { label: "Repair Forum", path: "/coming-soon" },
-//         { label: "Repair Solutions", path: "/coming-soon" },
-//       ],
-//     },
-//     { label: "Parts Store", path: "/coming-soon" },
-//     { label: "Training", path: "/training" },
-//     { label: "Screen Refurbishment", path: "/coming-soon" },
-//     {
-//       label: "About us",
-//       path: "/about-us",
-//       dropdown: true,
-//       subItems: [{ label: "What We Do", path: "/what-we-do" }],
-//     },
-//     { label: "Contact Us", path: "/coming-soon" },
-//     { label: "Price List", path: "/coming-soon" },
-//   ];
-
-//   useEffect(() => {
-//     console.log("isServicesDropdownOpenMobile ::", isServicesDropdownOpenMobile)
-//   }, [isServicesDropdownOpenMobile])
-
-//   // Function to toggle the "Services" dropdown only for mobile
-//   const handleServicesDropdownToggleMobile = (e: React.MouseEvent) => {
-//     e.stopPropagation(); // Stop the click event from propagating to parent elements
-//     setIsServicesDropdownOpenMobile((prev) => !prev); // Toggle Services dropdown state for mobile
-//   };
-
-//   // Function to toggle the "Services" dropdown only for desktop
-//   const handleServicesDropdownToggleDesktop = (e: React.MouseEvent) => {
-//     e.stopPropagation(); // Stop the click event from propagating to parent elements
-//     setIsServicesDropdownOpenDesktop((prev) => !prev); // Toggle Services dropdown state for desktop
-//   };
-
-//   useEffect(() => {
-//     const handleClickOutside = (event: any) => {
-//       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-//         setIsServicesDropdownOpenMobile(false); // Close mobile dropdown if clicked outside
-//         setIsServicesDropdownOpenDesktop(false); // Close desktop dropdown if clicked outside
-//       }
-//     };
-
-//     document.addEventListener("mousedown", handleClickOutside);
-//     return () => {
-//       document.removeEventListener("mousedown", handleClickOutside);
-//     };
-//   }, []);
-
-//   return (
-//     <div classNameName="header-component">
-//       <Navbar
-//         classNameName="text-white bg-black"
-//         isBordered
-//         isMenuOpen={isMenuOpen}
-//         onMenuOpenChange={setIsMenuOpen}
-//       >
-//         {/ Mobile Menu Toggle /}
-//         <NavbarContent classNameName="lg:hidden">
-//           <NavbarMenuToggle
-//             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-//           />
-//         </NavbarContent>
-
-//         {/ Brand Logo /}
-//         <NavbarContent classNameName="flex justify-center items-center">
-//           <NavbarBrand>
-//             <Link  href="/">
-//               <Image src={rktaxilog} alt="Brand Logo" />
-//             </Link>
-//           </NavbarBrand>
-//         </NavbarContent>
-
-//         {/ Desktop Menu /}
-//         <div classNameName="hidden lg:flex flex-grow justify-center">
-//           <div classNameName="flex gap-[20px] xl:gap-[30px]">
-//             {menuItems.map((item) => (
-//               <NavbarItem key={item.label}>
-//                 {item.dropdown ? (
-//                   <div classNameName="relative" ref={dropdownRef}>
-//                     <button
-//                       onClick={handleServicesDropdownToggleDesktop}
-//                       classNameName="flex items-center tracking-[1.5px] font-medium group"
-//                     >
-//                       {item.label}
-//                       <span
-//                         classNameName={`ml-2 transform transition-transform ${
-//                           isServicesDropdownOpenDesktop
-//                             ? "rotate-0"
-//                             : "rotate-180"
-//                         }`}
-//                       >
-//                         <RiArrowDropUpLine />
-//                       </span>
-//                     </button>
-//                     {isServicesDropdownOpenDesktop && (
-//                       <div classNameName="absolute left-0 mt-2 p-2 bg-black text-white rounded shadow-lg">
-//                         {item.subItems.map((subItem) => (
-//                           <Link
-//                             key={subItem.label}
-//                             href={subItem.path || "#"}
-//                             classNameName="block px-4 py-2 hover:bg-gray-800"
-//                           >
-//                             {subItem.label}
-//                           </Link>
-//                         ))}
-//                       </div>
-//                     )}
-//                   </div>
-//                 ) : item.path ? (
-//                   <Link
-//                     classNameName="relative tracking-[1.5px] font-medium group"
-//                     href={item.path}
-//                   >
-//                     {item.label}
-//                     <span classNameName="absolute bottom-[-5px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
-//                   </Link>
-//                 ) : (
-//                   <span classNameName="tracking-[1.5px] font-medium">
-//                     {item.label}
-//                   </span>
-//                 )}
-//               </NavbarItem>
-//             ))}
-//           </div>
-//         </div>
-
-//         {/ Right Side Content /}
-//         <NavbarContent justify="end">
-//           <Link  href="/coming-soon">
-//             <button classNameName="btn hidden lg:block">GET STARTED</button>
-//           </Link>
-//         </NavbarContent>
-
-//         {/ Mobile Menu /}
-//         <NavbarMenu classNameName="bg-black text-white lg:hidden">
-//           {menuItems.map((item, index) => (
-//             <NavbarMenuItem key={`${item.label}-${index}`}>
-//               {item.dropdown ? (
-//                 <div>
-//                   <button
-//                     onClick={handleServicesDropdownToggleMobile}
-//                     classNameName="flex justify-between w-full px-4 py-2"
-//                   >
-//                     {item.label}
-//                     <span
-//                       classNameName={`ml-2 transform transition-transform ${
-//                         isServicesDropdownOpenMobile ? "rotate-180" : "rotate-0"
-//                       }`}
-//                     >
-//                       <RiArrowDropUpLine />
-//                     </span>
-//                   </button>
-
-//                   {/ This part will conditionally render the dropdown /}
-//                   {isServicesDropdownOpenMobile && (
-//                     <div classNameName="pl-4">
-//                       {item.subItems.map((subItem) => (
-//                         <Link
-//                           key={subItem.label}
-//                           href={subItem.path || "#"}
-//                           classNameName="block px-4 py-2 hover:bg-gray-800"
-//                         >
-//                           {subItem.label}
-//                         </Link>
-//                       ))}
-//                     </div>
-//                   )}
-//                 </div>
-//               ) : item.path ? (
-//                 <Link  classNameName="w-full" href={item.path}>
-//                   {item.label}
-//                 </Link>
-//               ) : (
-//                 <span classNameName="w-full block px-4 py-2">{item.label}</span>
-//               )}
-//             </NavbarMenuItem>
-//           ))}
-//         </NavbarMenu>
-//       </Navbar>
-//     </div>
-//   );
-// }

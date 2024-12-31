@@ -2,11 +2,13 @@
 import "./MainBanner.css";
 import Image from "next/image";
 import MainButton from "../MainButton/MainButton";
-import bannerimage from "../../../public/Images/Home/bannerimage-top.png";
+
 import mainb1 from "../../../public/Images/Home/banner3.svg";
-import mainb4 from "../../../public/Images/Home/mainb4.png";
-import mainb3 from "../../../public/Images/Home/mainb3.png";
 import mainb2 from "../../../public/Images/Home/mainb2.png";
+import mainb3 from "../../../public/Images/Home/mainb3.png";
+import mainb4 from "../../../public/Images/Home/mainb4.png";
+
+
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -30,6 +32,10 @@ export default function MainBanner() {
     AOS.refresh();
   }, []);
 
+
+
+
+
   const Paginationback = ["#FF0000", "#FF9966", "#6DD5ED", "#A044FF"];
   const backgroundImages = [mainf1, mainf2, mainf3, mainf4];
 
@@ -40,9 +46,12 @@ export default function MainBanner() {
 
   return (
     <>
-      <section
+      {/* <section
         className="background-banner"
-        data-aos="fade-in" // Apply AOS animation
+        data-aos="fade-in"  */}
+        <section
+        className="background-banner"
+        // data-aos="fade-in" 
         style={{
           backgroundImage: `url(${backgroundImage.src})`,
           backgroundSize: "cover",
@@ -114,7 +123,9 @@ export default function MainBanner() {
                 <div className="w-full">
                   <Image
                     className="w-full 2xl:h-[550px] xl:h-[400px] object-contain"
-                    src={mainb1}
+                    src="https://labxbackend.s3.us-east-2.amazonaws.com/Group+1707480694.webp"
+                    width={500}
+                    height={500}
                     alt="Banner"
                   />
                 </div>
@@ -145,7 +156,9 @@ export default function MainBanner() {
                 <div className="w-full">
                   <Image
                     className="w-full 2xl:h-[550px] xl:h-[400px] object-contain"
-                    src={mainb3}
+                    src="https://labxbackend.s3.us-east-2.amazonaws.com/Group+1707480639.webp"
+                    width={500}
+                    height={500}
                     alt="Training and Repairs"
                   />
                 </div>
@@ -172,7 +185,10 @@ export default function MainBanner() {
                 <div className="w-full">
                   <Image
                     className="w-full 2xl:h-[550px] xl:h-[400px] object-contain"
-                    src={mainb2}
+                    src="https://labxbackend.s3.us-east-2.amazonaws.com/Group+1707480640.webp"
+                    width={500}
+                    height={500}
+
                     alt="Quick Repairs"
                   />
                 </div>
@@ -200,7 +216,10 @@ export default function MainBanner() {
                 <div className="w-full">
                   <Image
                     className="w-full 2xl:h-[550px] xl:h-[400px] object-contain"
-                    src={mainb4}
+                    src="https://labxbackend.s3.us-east-2.amazonaws.com/Group+1707480638.webp"
+                    width={500}
+                    height={500}
+
                     alt="Fix Your Device"
                   />
                 </div>

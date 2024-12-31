@@ -2,13 +2,14 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import labx from "../../../public/Images/Brand logos/Frame.svg";
-import { SlCallOut, SlSocialFacebook } from "react-icons/sl";
+
+import {  SlSocialFacebook } from "react-icons/sl";
 import { FaInstagram, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import Link from "next/link";
-import { IoCallOutline, IoHomeOutline } from "react-icons/io5";
-import { IoLocationOutline } from "react-icons/io5";
+import { IoCallOutline } from "react-icons/io5";
+
 import { CiMail } from "react-icons/ci";
 import MobileFooterMenue from "./MobileFooterMenue";
 import sendicon from "../../../public/Images/icons/send.svg";
@@ -106,7 +107,7 @@ const Footer = () => {
               <div className="">
                 <div>
                   <Link href="/">
-                    <Image className="mb-4" src={labx} alt=" lab-x" />
+                    <Image width={200} height={200}  className="mb-4" src="https://labxbackend.s3.us-east-2.amazonaws.com/Clip+path+group.webp" alt=" lab-x" />
                   </Link>
                   <p className="font-[300] font-poppins">
                     LabX is a professional and skilful phone repair service
@@ -429,7 +430,9 @@ const Footer = () => {
                 <Link href="/">
                   <Image
                     className="mb-4 flex justify-center "
-                    src={labx}
+                    src="https://labxbackend.s3.us-east-2.amazonaws.com/Clip+path+group.webp"
+                    width={200}
+                    height={200}
                     alt=" lab-x"
                   />
                 </Link>
