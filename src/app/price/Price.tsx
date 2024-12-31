@@ -266,6 +266,7 @@ const Pricing: React.FC = () => {
                         replacementGradeA: "$30",
                         replacementGradeB: "$15",
                       },
+                      
                       {
                         deviceModel: "iPhone 11",
                         repairCost: "X",
