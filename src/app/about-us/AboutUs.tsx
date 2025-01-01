@@ -183,9 +183,10 @@ const AboutUs = () => {
 
       {/* our value */}
 
+
       <section className="py-4 lg-py-[20px] pt-8 mt-5" >
         <div className="max-container text-center">
-          <h2> From Market Stall to a Full-Fledged Shop </h2>
+          <h2 className="mt-5"> From Market Stall to a Full-Fledged Shop </h2>
           <Image  height="100" width="700"src={Leap.src} alt="" className="pb-3 pl-3 m-auto about_line" />
           <p>By 2013, as my business at Parklea Markets thrived, I realized it was time to upgrade. I replaced my modest table and chair setup with a proper counter, creating a more professional and welcoming space. Over time, I expanded from a single stall to a double stall, complete with a roof, fans, seating, and improved displays. Eventually, I moved to a better location within the market, equipping the shop with a full fit-out, LED lighting, and a polished appearance. My shop became one of the standout businesses in the market, known for its professional look and high-quality service. </p>
           <div >

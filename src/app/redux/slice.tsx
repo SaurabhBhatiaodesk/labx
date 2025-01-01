@@ -1,4 +1,4 @@
-"use client"; // No need for this in slices typically
+"use client"; // Optional for certain frameworks like Next.js
 
 import { createSlice, PayloadAction, nanoid } from '@reduxjs/toolkit';
 
@@ -9,26 +9,30 @@ type User = {
 
 interface UsersState {
   users: User[];
+  priceCat: number | null; // Add priceCat to the state
 }
 
 const initialState: UsersState = {
   users: [],
+  priceCat: null, // Initialize with null or a default value
 };
 
 const userSlice = createSlice({
-  name: 'AddUserSlice',
+  name: 'userSlice',
   initialState,
   reducers: {
     addUser: (state, action: PayloadAction<{ name: string }>) => {
-      console.log("Received action:", action); // Log the action
       const data: User = {
         id: nanoid(),
         name: action.payload.name,
       };
       state.users.push(data);
     },
+    setPriceCat: (state, action: PayloadAction<number>) => {
+      state.priceCat = action.payload; // Update priceCat in the state
+    },
   },
 });
 
-export const { addUser } = userSlice.actions;
+export const { addUser, setPriceCat } = userSlice.actions;
 export default userSlice.reducer;

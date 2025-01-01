@@ -82,7 +82,7 @@ export default function Productswiper({}) {
 
   return (
     <div className="bg-[#0b0b0b]">
-      <div className="containers">
+      <div className="container">
         <div className="py-5 xl:p-6">
           <MainHeading Heading="Our Google Reviews" />
           <MainTitle Title="" />
@@ -153,7 +153,8 @@ export default function Productswiper({}) {
                         overflow: "hidden",
                       }}
                     >
-                      {review.param}
+                     {`${review.param.split(" ").slice(0, 50).join(" ")}${review.param.split(" ").length > 50 ? "" : ""
+                        }`}
                     </p>
                   </div>
                 </SwiperSlide>
