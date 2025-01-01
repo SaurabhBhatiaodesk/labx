@@ -95,7 +95,7 @@ const reviews = [
   // Add more review objects as needed
 ];
 
-export default function Productswiper({}) {
+export default function Productswiper({ }) {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
@@ -108,7 +108,7 @@ export default function Productswiper({}) {
             <Swiper
               onSwiper={(swiper) => (swiperRef.current = swiper)}
               className="arrow-top-right w-[100%] py-4"
-              modules={[Autoplay, Navigation]}
+              // modules={[Autoplay, Navigation]}
               spaceBetween={20}
               loop={true}
               autoplay={{ delay: 3000 }}
@@ -141,7 +141,7 @@ export default function Productswiper({}) {
                           alt={`${review.name}'s profile`}
                         />
                         <div>
-                          <h5 className="font-semibold">{review.name}</h5>
+                          <h5 className="font-semibold text-lg">{review.name}</h5>
                           <p className="text-gray-500 text-sm mb-2 ">
                             {review.date}
                           </p>
@@ -171,7 +171,8 @@ export default function Productswiper({}) {
                         overflow: "hidden",
                       }}
                     >
-                      {review.param}
+                      {`${review.param.split(" ").slice(0, 50).join(" ")}${review.param.split(" ").length > 50 ? "" : ""
+                        }`}
                     </p>
                   </div>
                 </SwiperSlide>

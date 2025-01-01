@@ -200,7 +200,7 @@ const DataBox: React.FC = () => {
                   </div>
                   <div className="flex flex-col justify-center items-center">
                   <Image
-                        className="w-[44px] h-[75px]"
+                        className="w-[44px] h-[50px]"
                         src={Specializedrecovery}
                         alt="Repairs for cracked"
                       />

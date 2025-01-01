@@ -19,13 +19,14 @@ const page = () => {
           scrollId = "contactId"
           scrollOffSet = {24 * 5}
         />
-        <div>
+       
+        </div>
           <ContactUsForm />
           <FixLabx/>
           <YouTubeHome />
           <GoogleReviews />
-        </div>
-      </div>
+     
+    
     </>
   );
 };
