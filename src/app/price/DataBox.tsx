@@ -261,6 +261,7 @@ const DataBox: React.FC = () => {
                   </div>
                 </div>
 
+
                 <p className="text-center">
                   We ensure transparency and accuracy in pricing based on the
                   specific condition and requirements of your device.
