@@ -183,6 +183,7 @@ const AboutUs = () => {
 
       {/* our value */}
 
+
       <section className="py-4 lg-py-[20px] pt-8 mt-5" >
         <div className="max-container text-center">
           <h2 className="mt-5"> From Market Stall to a Full-Fledged Shop </h2>
