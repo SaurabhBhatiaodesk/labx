@@ -105,8 +105,10 @@ const DataRecovery = () => {
 
           <div className="">
             <Image
-              src={datarecovery221}
-              alt=""
+              src="https://labxbackend.s3.us-east-2.amazonaws.com/cloud-computing-technology-internet-binary-code-cloud-service-cloud-storage-concept+(2).webp"
+              width={500}
+              height={500}
+              alt="computing-technology"
               className="h-[300px] lg:h-auto object-cover rounded-[30px]"
             />
           </div>

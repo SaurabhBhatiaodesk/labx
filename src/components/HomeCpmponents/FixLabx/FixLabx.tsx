@@ -3,24 +3,29 @@ import Image from "next/image";
 import owoner from "../../../../public/Images/Home/lab-x-owner.svg";
 import MainButton from "@/components/MainButton/MainButton";
 import "./FixLabx.css";
-import bharatmobile from "../../../../public/Images/Home/bharat 1.svg";
+// import bharatmobile from "../../../../public/Images/Home/bharat 1.svg";
+const bharat = "https://labxbackend.s3.us-east-2.amazonaws.com/Vector+(3).webp";
 
 const FixLabx = () => {
   return (
     // <div>FixLabx LabX Mobile Tech</div>
 
     <>
-      <div className="bg-[url('/Images/Home/LabXMobileTech1.png')]  gk bg-no-repeat bg-cover bg-fixed bg-center	">
+      <div className="bg-[url('https://labxbackend.s3.us-east-2.amazonaws.com/LabXMobileTech1+1.webp')]  gk bg-no-repeat bg-cover bg-fixed bg-center	">
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_4fr] xl:grid-cols-[2fr_4fr_2fr] items-center pxs-0 md:px-[30px]  ">
           <div className="owener-image">
             <Image
               className="h-[22rem] lg:h-[100%] xl:h-[100%] 2xl:h-[100%] 3xl:h-[100%] w-full lg:block hidden"
-              src={owoner}
+              src={bharat}
+              width={500}
+              height={500}
               alt=""
             />
             <Image
-              className="h-[19rem] lg:h-[100%] xl:h-[26rem] 2xl:h-[30rem] 3xl:h-[32rem] w-full lg:hidden block"
-              src={bharatmobile}
+              className="h-[19rem] lg:h-[100%] xl:h-[26rem] 2xl:h-[30rem] 3xl:h-[32rem] w-full lg:hidden block object-contain "
+              src={bharat}
+              width={400}
+              height={300}
               alt=""
             />
           </div>
