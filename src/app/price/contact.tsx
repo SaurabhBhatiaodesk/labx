@@ -21,7 +21,7 @@ const Page = () => {
       id: 0,
       title: "Buy Back Price List",
       description:
-        "Check the pricing for all our complex mobile phone repair services, including B2B solutions and training courses. Visit our Price List page for detailed cost information and tailored quotes based on the specific repair or course you need.",
+        "Check below the buyback pricing of our four services. You can also view the buyback price for specific mobile phone models.",
     },
     {
       id: 1,
