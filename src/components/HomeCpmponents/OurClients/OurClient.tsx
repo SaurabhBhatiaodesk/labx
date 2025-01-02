@@ -10,11 +10,7 @@ import "swiper/css/autoplay";
 import "./OurClient.css";
 // import { TiStarFullOutline } from "react-icons/ti";
 // import { MdArrowOutward } from "react-icons/md";
-import Link from "next/link";
-import logo1 from "../../../../public/Images/Home/gadag.svg";
-import logo2 from "../../../../public/Images/Home/logo4slider.svg";
-import logo3 from "../../../../public/Images/Home/teckcity.svg";
-import logo4 from "../../../../public/Images/Home/empire.svg";
+
 
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper as SwiperType } from "swiper";
@@ -69,76 +65,98 @@ export default function Productswiper({}) {
               }}
             >
               <SwiperSlide>
-             
-                  <div className="relative  client-slider  my-5 ">
-                    <Image
-                      className="w-full transition-transform duration-300 ease-in-out hover:scale-110"
-                      src={logo1}
-                      alt="Toyota Fortuner"
-                    />
-                  </div>
-             
+                <div className="relative  client-slider  my-5 ">
+                  <Image
+                    className="w-full transition-transform duration-300 ease-in-out hover:scale-110"
+                    src="https://labxbackend.s3.us-east-2.amazonaws.com/teckcity.95c3c2b8.svg"
+                    width={500}
+                    height={500}
+                    alt="Toyota Fortuner"
+                  />
+                </div>
               </SwiperSlide>
               <SwiperSlide>
-               
-                  <div className="relative  client-slider  my-5">
-                    <Image className="w-full transition-transform duration-300 ease-in-out hover:scale-110" src={logo2} alt="Honda Civic" />
-                  </div>
-             
+                <div className="relative  client-slider  my-5">
+                  <Image
+                    className="w-full transition-transform duration-300 ease-in-out hover:scale-110"
+                    src="https://labxbackend.s3.us-east-2.amazonaws.com/Vector+(4).webp"
+                    width={500}
+                    height={500}
+                    alt="Honda Civic"
+                  />
+                </div>
               </SwiperSlide>
               <SwiperSlide>
-             
-                  <div className="relative  client-slider  my-5">
-                    <Image className="w-full transition-transform duration-300 ease-in-out hover:scale-110" src={logo3} alt="BMW X5" />
-                  </div>
-              
+                <div className="relative  client-slider  my-5">
+                  <Image
+                    className="w-full transition-transform duration-300 ease-in-out hover:scale-110"
+                    src="https://labxbackend.s3.us-east-2.amazonaws.com/empire.1743f008+(1)+1.webp"
+                    width={500}
+                    height={500}
+                    alt="BMW X5"
+                  />
+                </div>
               </SwiperSlide>
               <SwiperSlide>
-               
-                  <div className="relative  client-slider  my-5">
-                    <Image className="w-full transition-transform duration-300 ease-in-out hover:scale-110" src={logo4} alt="Mercedes Benz" />
-                  </div>
-              
+                <div className="relative  client-slider  my-5">
+                  <Image
+                    className="w-full transition-transform duration-300 ease-in-out hover:scale-110"
+                    src="https://labxbackend.s3.us-east-2.amazonaws.com/Group+1707480703+(1).webp"
+                    width={500}
+                    height={500}
+                    alt="Mercedes Benz"
+                  />
+                </div>
               </SwiperSlide>
               <SwiperSlide>
-               
-                  <div className="relative  client-slider  my-5">
-                    <Image className="w-full transition-transform duration-300 ease-in-out hover:scale-110" src={logo1} alt="Mercedes Benz" />
-                  </div>
+                <div className="relative  client-slider  my-5 ">
+                  <Image
+                    className="w-full transition-transform duration-300 ease-in-out hover:scale-110"
+                    src="https://labxbackend.s3.us-east-2.amazonaws.com/teckcity.95c3c2b8.svg"
+                    width={500}
+                    height={500}
+                    alt="Toyota Fortuner"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="relative  client-slider  my-5">
+                  <Image
+                    className="w-full transition-transform duration-300 ease-in-out hover:scale-110"
+                    src="https://labxbackend.s3.us-east-2.amazonaws.com/Vector+(4).webp"
+                    width={500}
+                    height={500}
+                    alt="Honda Civic"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="relative  client-slider  my-5">
+                  <Image
+                    className="w-full transition-transform duration-300 ease-in-out hover:scale-110"
+                    src="https://labxbackend.s3.us-east-2.amazonaws.com/empire.1743f008+(1)+1.webp"
+                    width={500}
+                    height={500}
+                    alt="BMW X5"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="relative  client-slider  my-5">
+                  <Image
+                    className="w-full transition-transform duration-300 ease-in-out hover:scale-110"
+                    src="https://labxbackend.s3.us-east-2.amazonaws.com/Group+1707480703+(1).webp"
+                    width={500}
+                    height={500}
+                    alt="Mercedes Benz"
+                  />
+                </div>
+              </SwiperSlide>
             
-              </SwiperSlide>
-              <SwiperSlide>
-               
-                  <div className="relative  client-slider  my-5">
-                  <Image 
-  className="w-full transition-transform duration-300 ease-in-out hover:scale-110" 
-  src={logo2} 
-  alt="BMW X5" 
-/>
-                  </div>
-              
-              </SwiperSlide>
-              <SwiperSlide>
-                
-                  <div className="relative client-slider  my-5">
-                    <Image className="w-full transition-transform duration-300 ease-in-out hover:scale-110" src={logo3} alt="Mercedes Benz" />
-                  </div>
-              
-              </SwiperSlide>
+          
             </Swiper>
           </div>
-          {/* <div className="custom-navigation">
-          <button onClick={handlePrev} className="prev-button bg-gray-300 p-4 rounded-full">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M15 18L9 12L15 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-          <button onClick={handleNext} className="next-button bg-gray-300 p-4 rounded-full ml-2">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-        </div> */}
+      
         </div>
       </div>
     </div>
@@ -146,16 +164,7 @@ export default function Productswiper({}) {
 }
 
 {
-  /* <div className="custom-navigation">
-          <button onClick={handlePrev} className="prev-button bg-gray-300 p-4 rounded-full">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M15 18L9 12L15 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-          <button onClick={handleNext} className="next-button bg-gray-300 p-4 rounded-full ml-2">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-        </div> */
+
 }
+
+

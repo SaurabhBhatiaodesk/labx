@@ -95,8 +95,10 @@ export default function Accordion() {
             <div className="flex justify-center">
               <Image
                 className="lg:h-auto h-[300px] object-contain"
-                src={faqimages}
+                src="https://labxbackend.s3.us-east-2.amazonaws.com/faqimages+1+(1).webp"
                 alt="Mobile repair"
+                width={500}
+                height={500}
               />
             </div>
           </div>

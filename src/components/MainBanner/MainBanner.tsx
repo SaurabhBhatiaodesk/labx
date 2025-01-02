@@ -3,38 +3,30 @@ import "./MainBanner.css";
 import Image from "next/image";
 import MainButton from "../MainButton/MainButton";
 
-import mainb1 from "../../../public/Images/Home/banner3.svg";
-import mainb2 from "../../../public/Images/Home/mainb2.png";
-import mainb3 from "../../../public/Images/Home/mainb3.png";
-import mainb4 from "../../../public/Images/Home/mainb4.png";
 
 
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import AOS from "aos";
+// import AOS from "aos";
 import "aos/dist/aos.css";
 import { Pagination } from "swiper/modules";
 import Link from "next/link";
 import { Autoplay, Navigation } from "swiper/modules";
-import mainf1 from "../../../public/Images/BannerImages/mainf1.png";
-import mainf2 from "../../../public/Images/BannerImages/mainf3.png";
-import mainf3 from "../../../public/Images/BannerImages/mainf2.png";
-import mainf4 from "../../../public/Images/BannerImages/mainf4.png";
+import mainf1 from "../../../public/Images/BannerImages/bone.webp";
+import mainf2 from "../../../public/Images/BannerImages/bthree.webp";
+import mainf3 from "../../../public/Images/BannerImages/btwo.webp";
+import mainf4 from "../../../public/Images/BannerImages/bfour.webp";
 
 export default function MainBanner() {
   const [backgroundImage, setBackgroundImage] = useState(mainf1); // State to track background image
   const [isPaused, setIsPaused] = useState(false); // State to control autoplay pause
 
-  useEffect(() => {
-    AOS.init({ duration: 1000 }); 
-    AOS.refresh();
-  }, []);
-
-
-
-
+  // useEffect(() => {
+  //   AOS.init({ duration: 1000 });
+  //   AOS.refresh();
+  // }, []);
 
   const Paginationback = ["#FF0000", "#FF9966", "#6DD5ED", "#A044FF"];
   const backgroundImages = [mainf1, mainf2, mainf3, mainf4];
@@ -49,9 +41,9 @@ export default function MainBanner() {
       {/* <section
         className="background-banner"
         data-aos="fade-in"  */}
-        <section
+      <section
         className="background-banner"
-        // data-aos="fade-in" 
+        // data-aos="fade-in"
         style={{
           backgroundImage: `url(${backgroundImage.src})`,
           backgroundSize: "cover",
@@ -136,14 +128,16 @@ export default function MainBanner() {
               <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-start xl:py-5">
                 <div>
                   <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
-                  Learn to Repair Mobile Phones Through 
+                    Learn to Repair Mobile Phones Through
                     <span className="text-[#6DD5ED]">
                       {" "}
                       – Our Training Programs
                     </span>
                   </h1>
                   <p>
-                   {"Join LabX’s mobile phone repair courses and develop your skills from beginner to pro level. Master everything from basic repairs to solving complex issues, and make a real impact by helping others with their mobile repair needs!"}
+                    {
+                      "Join LabX’s mobile phone repair courses and develop your skills from beginner to pro level. Master everything from basic repairs to solving complex issues, and make a real impact by helping others with their mobile repair needs!"
+                    }
                   </p>
                   <div className="my-4 xl:my-10">
                     <MainButton
@@ -169,7 +163,7 @@ export default function MainBanner() {
               <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-start xl:py-5">
                 <div>
                   <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
-                  Professional Mobile Phone Screen Refurbishing
+                    Professional Mobile Phone Screen Refurbishing
                     <span className="text-[#FF9966]">
                       {" "}
                       – Service for Your Devices
@@ -179,7 +173,11 @@ export default function MainBanner() {
                     {` Restore your phone’s display to like-new condition with our expert screen refurbishing service. Get high-quality, cost-effective repairs that bring your screen back to life, saving you money and extending your device's lifespan!`}
                   </p>
                   <div className="my-4 xl:my-10">
-                    <MainButton MainButton="Start Repair" link="/screen-refurbishing"  color="bg-[#FF9966]" />
+                    <MainButton
+                      MainButton="Start Repair"
+                      link="/screen-refurbishing"
+                      color="bg-[#FF9966]"
+                    />
                   </div>
                 </div>
                 <div className="w-full">
@@ -188,7 +186,6 @@ export default function MainBanner() {
                     src="https://labxbackend.s3.us-east-2.amazonaws.com/Group+1707480640.webp"
                     width={500}
                     height={500}
-
                     alt="Quick Repairs"
                   />
                 </div>
@@ -199,18 +196,21 @@ export default function MainBanner() {
               <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-start xl:py-5">
                 <div>
                   <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
-                  Get Back Your Lost Data with Our Expert
+                    Get Back Your Lost Data with Our Expert
                     <span className="text-[#A044FF]">
                       {" "}
                       – Mobile Phone Recovery Service
-
                     </span>
                   </h1>
                   <p>
                     {`Recover lost or corrupted data with our expert data recovery service. Whether it’s from a damaged phone, hard drive, or storage device, we use advanced techniques to retrieve your important files, ensuring your data is safe and accessible again!`}
                   </p>
                   <div className="my-4 xl:my-10">
-                    <MainButton MainButton="Data Recovery" link="/data-recovery" color="bg-[#A044FF]" />
+                    <MainButton
+                      MainButton="Data Recovery"
+                      link="/data-recovery"
+                      color="bg-[#A044FF]"
+                    />
                   </div>
                 </div>
                 <div className="w-full">
@@ -219,7 +219,6 @@ export default function MainBanner() {
                     src="https://labxbackend.s3.us-east-2.amazonaws.com/Group+1707480638.webp"
                     width={500}
                     height={500}
-
                     alt="Fix Your Device"
                   />
                 </div>
