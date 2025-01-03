@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, memo } from "react";
 import MainTitle from "@/components/MainTitle/MainTitle";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,16 +11,19 @@ import "swiper/css/navigation";
 // Define props for LazyYouTube
 interface LazyYouTubeProps {
   videoId: string;
-  thumbnail: string;
 }
 
 // Lazy loading YouTube video component
-const LazyYouTube: React.FC<LazyYouTubeProps> = ({ videoId, thumbnail }) => {
+export const LazyYouTube: React.FC<LazyYouTubeProps> = memo(({ videoId }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const handleLoadVideo = () => {
-    setIsLoaded(true);
+    if (!isLoaded) {
+      setIsLoaded(true);
+    }
   };
+
+  const thumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
   return (
     <div className="youtube-1" style={{ position: "relative" }}>
@@ -51,7 +54,6 @@ const LazyYouTube: React.FC<LazyYouTubeProps> = ({ videoId, thumbnail }) => {
           }}
           onClick={handleLoadVideo}
         >
-          {/* YouTube Play Icon */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 68 48"
@@ -69,11 +71,8 @@ const LazyYouTube: React.FC<LazyYouTubeProps> = ({ videoId, thumbnail }) => {
               d="M66.52,7.2A8.34,8.34,0,0,0,60,1.67C53.7,0,34,0,34,0S14.3,0,8,1.67A8.34,8.34,0,0,0,1.48,7.2,87.94,87.94,0,0,0,0,24a87.94,87.94,0,0,0,1.48,16.8A8.41,8.41,0,0,0,8,46.33C14.3,48,34,48,34,48s19.7,0,26-1.67a8.41,8.41,0,0,0,6.55-6.53A87.94,87.94,0,0,0,68,24,87.94,87.94,0,0,0,66.52,7.2ZM27,34.4V13.6L45,24Z"
               fill="#ff0000"
               className="cursor-pointer"
-             
             />
           </svg>
-
-          {/* Background overlay for play button */}
           <div
             style={{
               position: "absolute",
@@ -89,7 +88,10 @@ const LazyYouTube: React.FC<LazyYouTubeProps> = ({ videoId, thumbnail }) => {
       )}
     </div>
   );
-};
+});
+
+LazyYouTube.displayName = "LazyYouTube";
+
 
 const YouTubeHome: React.FC = () => {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -130,22 +132,13 @@ const YouTubeHome: React.FC = () => {
             }}
           >
             <SwiperSlide>
-              <LazyYouTube
-                videoId="I5t-cizP1hg"
-                thumbnail="https://img.youtube.com/vi/I5t-cizP1hg/hqdefault.jpg"
-              />
+              <LazyYouTube videoId="I5t-cizP1hg" />
             </SwiperSlide>
             <SwiperSlide>
-              <LazyYouTube
-                videoId="g51-l5-h8Cc"
-                thumbnail="https://img.youtube.com/vi/g51-l5-h8Cc/hqdefault.jpg"
-              />
+              <LazyYouTube videoId="g51-l5-h8Cc" />
             </SwiperSlide>
             <SwiperSlide>
-              <LazyYouTube
-                videoId="Fq8geFUeZkM"
-                thumbnail="https://img.youtube.com/vi/Fq8geFUeZkM/hqdefault.jpg"
-              />
+              <LazyYouTube videoId="Fq8geFUeZkM" />
             </SwiperSlide>
           </Swiper>
 

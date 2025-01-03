@@ -23,7 +23,7 @@ import { Swiper as SwiperType } from "swiper";
 const reviews = [
   {
     name: "Hamza Javaid",
-    date: "September 12, 2023",
+    date: "September 28, 2023",
     profileImage: hname,
     logoImage: Googletest,
     rating: 5,
@@ -41,7 +41,7 @@ const reviews = [
   },
   {
     name: "Sahil Sardana",
-    date: "September 12, 2023",
+    date: "September 22, 2023",
     profileImage: Sname,
     logoImage: Googletest,
     rating: 5,
@@ -50,7 +50,7 @@ const reviews = [
   },
   {
     name: "Liam Brown",
-    date: "October 5, 2023",
+    date: "October 15, 2023",
     profileImage: jname,
     logoImage: Googletest,
     rating: 5,
@@ -142,7 +142,7 @@ export default function Productswiper({ }) {
                         />
                         <div>
                           <h5 className="font-semibold text-lg">{review.name}</h5>
-                          <p className="text-gray-500 text-sm mb-2 ">
+                          <p className="text-[#b2b2b2] text-sm mb-2 ">
                             {review.date}
                           </p>
                         </div>

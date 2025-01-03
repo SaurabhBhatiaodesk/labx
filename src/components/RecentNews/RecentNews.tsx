@@ -118,9 +118,9 @@ const RecentNews: React.FC = () => {
                         )}
                       </div>
                       <div className="mt-4">
-                        <h4 className="font-bold text-lg text-[#EDE574]">
+                        <h2 className="font-bold text-lg text-[#EDE574]">
                           {blog.heading}
-                        </h4>
+                        </h2>
                         <p className="text-base mt-2 text-white">
                           {stripHtmlTags(blog.content).length > 160
                             ? `${stripHtmlTags(blog.content).slice(0, 160)}...`

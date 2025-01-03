@@ -2,8 +2,8 @@
 import React from "react";
 
 const Marquee = () => {
-  const messages = ["We Don’t Provide Walk-In Service"]; 
-  const repetitions = 100; 
+  const messages = ["We Don’t Provide Walk-In Service"];
+  const repetitions = 100;
 
   return (
     <>
@@ -18,17 +18,20 @@ const Marquee = () => {
         }
 
         .animate-marquee {
-           animation: marquee 800s linear infinite; /* Slower animation with 60s duration */
+          animation: marquee 800s linear infinite;
           display: flex;
         }
 
         .marquee-item {
           animation: pulse 32s infinite;
-          transition: all 0.3s ease-in-out;
+          transition: all 2s ease-in-out;
+          background-color: #333; /* Darker background for better contrast */
+          color: #fff; /* White text for accessibility */
+          border-color: #fff; /* White border for clarity */
         }
 
         .marquee-item:hover {
-          box-shadow: 0 0 25px 10px rgba(255, 223, 101, 0.8);
+          box-shadow: 0 0 25px 10px rgba(255, 255, 255, 0.8); /* Accessible glow */
         }
       `}</style>
       <section className="w-full relative h-[50px] bg-black overflow-hidden">
@@ -38,7 +41,7 @@ const Marquee = () => {
               messages.map((message, messageIndex) => (
                 <span
                   key={`${repetitionIndex}-${messageIndex}`}
-                  className="px-[10px] py-[5px] border-[1px] rounded-full bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c9894] marquee-item lg:text-[14px] text-[12px] tracking-[1.5px] relative top-6"
+                  className="px-[10px] py-[5px] border-[1px] rounded-full shadow-[5px_4px_28px_1px_rgba(0,0,0,0.2)] marquee-item lg:text-[14px] text-[12px] tracking-[1.5px] relative top-6"
                 >
                   {message}
                 </span>

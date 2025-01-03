@@ -32,7 +32,7 @@ const reviews = [
   },
   {
     name: "Mason Clarke",
-    date: "September 12, 2023",
+    date: "September 20, 2023",
     profileImage: rname,
     logoImage: Googletest,
     rating: 5,
@@ -41,7 +41,7 @@ const reviews = [
   },
   {
     name: "Mia S.",
-    date: "September 12, 2023",
+    date: "September 29, 2023",
     profileImage: Sname,
     logoImage: Googletest,
     rating: 5,
@@ -124,7 +124,7 @@ export default function Productswiper({}) {
                         />
                         <div>
                           <h5 className="font-semibold">{review.name}</h5>
-                          <p className="text-gray-500 text-sm mb-2 ">
+                          <p className="text-[#b2b2b2] text-sm mb-2 ">
                             {review.date}
                           </p>
                         </div>

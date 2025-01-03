@@ -124,7 +124,7 @@ export default function Productswiper({}) {
                         />
                         <div>
                           <h5 className="font-semibold">{review.name}</h5>
-                          <p className="text-gray-500 text-sm mb-2 ">
+                          <p className="text-[#b2b2b2] text-sm mb-2 ">
                             {review.date}
                           </p>
                         </div>

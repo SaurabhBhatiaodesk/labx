@@ -14,6 +14,7 @@ import { SlSocialFacebook } from "react-icons/sl";
 import { useDispatch } from 'react-redux';
 import { setPriceCat } from "@/app/redux/slice";
 import { useRouter } from "next/navigation";
+import { MdKeyboardArrowDown } from "react-icons/md";
 export default function App() {
   const dispatch = useDispatch();
   const Router = useRouter();
@@ -33,10 +34,10 @@ export default function App() {
   };
 
   const PricetoggleMenu = (data: number) => {
-    dispatch(setPriceCat(data)); 
+    dispatch(setPriceCat(data));
     Router.push("/price");
   };
-  const listData = [  
+  const listData = [
     {
       id: 0,
       btnName: "Price List",
@@ -129,13 +130,7 @@ export default function App() {
                       <div className="dropdowns services_drop inline-block relative">
                         <button className="btn__menu inline-flex items-center hover:text-yellow-200">
                           <span className="mr-1">Services</span>
-                          <svg
-                            className="fill-current h-4 w-4"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                          >
-                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
-                          </svg>
+                          <MdKeyboardArrowDown />
                         </button>
                         <ul className="dropdown-menus absolute hidden text-white pt-1">
                           {/* <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
@@ -240,7 +235,7 @@ export default function App() {
                         {listData.map((item, index) => {
                           return (
                             <li key={index}
-                            
+
                               className="block px-4 py-2 hover:bg-gray-800  hover:text-yellow-200 cursor-pointer"
                               onClick={() => PricetoggleMenu(item.id)}
                             >
@@ -374,7 +369,7 @@ export default function App() {
                   </div>
                 </div>
                 <Link href="/mail-in-repair">
-                  <button className="btn hidden lg:block uppercase">
+                  <button className="btn hidden lg:block uppercase" area-label=" Start the repair process for your device">
                     Start Repair{" "}
                   </button>
                 </Link>
