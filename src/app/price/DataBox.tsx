@@ -106,9 +106,11 @@ const DataBox: React.FC = () => {
                   {section.title}
                 </h3>
                 <p>{section.description}</p>
-                <button className="btn">
+                <div className="w-[50%] m-auto"> 
+                <button className="btn capitalize" onClick={() => PricetoggleMenu(section.id)}>
                   {section.button}
                 </button>
+                </div>
               </div>
             ))}
           </div>
