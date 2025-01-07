@@ -21,6 +21,7 @@ export const metadata = {
       "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
     url: "/", // Replace with your actual page URL
     type: "website",
+    
     images: [
       {
         url: "", // Replace with your image URL
