@@ -12,14 +12,16 @@ import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import TableData from "./Table";
 import DataBox from "./DataBox";
-
+import { button } from "@nextui-org/react";
 
 const Page = () => {
   const priceCat = useSelector((state: RootState) => state.users.priceCat);
+  console.log("priceCat",priceCat);
+  
   const priceData = [
     {
       id: 0,
-      title: "Buy Back Price List",
+      title: "Price List",
       description:
         "Check below the buyback pricing of our four services. You can also view the buyback price for specific mobile phone models.",
     },
@@ -28,6 +30,7 @@ const Page = () => {
       title: "Screen Refurbishment Pricing - ( Buy Back )",
       description:
         "For fast screen refurbishment, you have two options: you can choose our service to replace the glass only, or you can sell your old broken screens to us, as we offer competitive buyback prices.",
+     
     },
     {
       id: 2,
@@ -47,7 +50,6 @@ const Page = () => {
       description:
         "This service is specifically for devices damaged during DIY or technician attempts.",
     },
- 
   ];
   const [selectedPriceData, setSelectedPriceData] = useState(priceData[0]);
   useEffect(() => {
@@ -64,7 +66,7 @@ const Page = () => {
           pageName={selectedPriceData.title}
           pageDescription={selectedPriceData.description}
           backgroundImage="/Images/BannerImages/price.png"
-          AdminImage="/Images/money.png"
+          AdminImage="/Images/dollars.webp"
           link=""
           buttonname=""
         />
@@ -82,10 +84,14 @@ const Page = () => {
         </div>
       </section>
       <section>
- <DataBox/>
+        <DataBox />
       </section>
+      {(priceCat !== null && priceCat !== 0) && (
+      <>
       <Price />
-      <TableData/>
+      <TableData />
+      </>
+      )}
       <div className="container_small bg-black pt-8 pb-6">
         <h2 className="text-center">Contact Information</h2>
         <ContactForm />

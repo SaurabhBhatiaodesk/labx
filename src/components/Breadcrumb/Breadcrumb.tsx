@@ -83,7 +83,7 @@ function Breadcrumb({
                     </Link>
                   </li>
                   <li>
-                    <p className="text-body-color flex items-center gap-[10px] lg:text-base font-medium mb-0 text-sm ">
+                    <p className="text-body-color flex items-center lg:gap-[10px] gap-[3px] lg:text-base font-medium mb-0 text-sm ">
                       <span className="text-body-color dark:text-dark-6">
                         /
                       </span>

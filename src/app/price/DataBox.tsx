@@ -30,39 +30,40 @@ const DataBox: React.FC = () => {
   const sectionData = [
     {
       id: 1,
-      //   image: Repairs,
-      //   alt: "Repairs",
+
       title: `Screen Buy-Back Pricing`,
       description: `For fast screen refurbishment, you have two options: you can choose our service to replace the glass only, or you can sell your old broken screens to us, as we offer competitive buyback prices.`,
-      hoverBackground:
+      activecolor:
         "linear-gradient(74deg, rgb(86, 193, 193), rgb(0, 0, 0))",
+        button: "See price list",
     },
     {
       id: 2,
-      //   image: Transparency,
-      //   alt: "Transparency",
+
       title: "Data Recovery Pricing",
       description: `We offer professional data recovery services to retrieve essential information from non-functional devices. Any devices that are dead or have no power will be classified as data recovery cases.`,
-      hoverBackground:
+      activecolor:
         "linear-gradient(74deg, rgba(243, 85, 32, 0.753), rgb(0, 0, 0))",
+        button: "See price list",
     },
     {
       id: 3,
-      //   image: Recovery,
-      //   alt: "Recovery",
+  
       title: "General Repair Pricing",
       description: `Our general repair pricing includes common services such as screen replacements, charging port repairs, and other standard issues typically offered by most repair shops. `,
-      hoverBackground:
+      activecolor:
         "linear-gradient(74deg, rgba(213, 253, 51, 0.63), rgb(0, 0, 0))",
+        button: "See price list",
+        
     },
     {
       id: 4,
-      //   image: B2BServices,
-      //   alt: "B2B Services",
+   
       title: "DIY/Techcnian Damage Pricing",
       description: `We repair devices damaged during DIY or technician attempts, addressing connector issues, fitting errors, and torn flex cables. Trust us for reliable service to restore your device.`,
-      hoverBackground:
+      activecolor:
         "linear-gradient(74deg, rgba(207, 35, 98, 0.655), rgb(0, 0, 0))",
+        button: "See price list",
     },
   ];
   useEffect(() => {
@@ -77,31 +78,37 @@ const DataBox: React.FC = () => {
   return (
     <div>
       <div className="container" data-aos="fade-up">
-        {/* <MainHeading Heading="We Do, What Others Don't" />
-        <MainTitle Title="At LabX, we tackle complex mobile phone repair challenges that others can’t, delivering reliable solutions and unmatched expertise." /> */}
-
+      
         <div className="lg:pb-8 py-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 justify-center text-center gap-4">
-            {sectionData.map((section, index) => (
+          {sectionData.map((section, index) => (
               <div
                 key={index}
-                style={{ background: "transparent" }} // Default background
-                className="p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456] cursor-pointer"
+                style={{
+                  background:
+                    pricingId === section.id
+                      ? section.activecolor
+                      : "transparent",
+                }}
+                className={`p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456] cursor-pointer ${
+                  pricingId === section.id ? "text-white" : "text-black"
+                }`}
                 onMouseEnter={(e) =>
-                  (e.currentTarget.style.background = section.hoverBackground)
+                  (e.currentTarget.style.background = section.activecolor)
                 }
                 onMouseLeave={(e) =>
+                  pricingId !== section.id &&
                   (e.currentTarget.style.background = "transparent")
                 }
                 onClick={() => PricetoggleMenu(section.id)}
               >
-                <div className="flex justify-center">
-                  {/* <Image className="pb-2 w-[60px]" src={section.image} alt={section.alt} /> */}
-                </div>
-                <h3 className="text-[#EDE574] xl:text-xl  m-auto">
+                <h3 className="text-[#EDE574] xl:text-xl m-auto">
                   {section.title}
                 </h3>
                 <p>{section.description}</p>
+                <button className="btn">
+                  {section.button}
+                </button>
               </div>
             ))}
           </div>
@@ -112,16 +119,9 @@ const DataBox: React.FC = () => {
               <section className="datarecovery">
                 <div className="KeyFeaturesDataRecovery">
                   <div>
-                    <MainHeading Heading="   Key Features" />
+                    <MainHeading Heading="Key Features" />
                   </div>
-                  {/* <span
-                    className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px] text-center"
-                    style={{
-                      transform: "rotate(-5deg)",
-                    }}
-                  >
-                    Key Features
-                  </span> */}
+                 
 
                   <div className="grid lg:grid-cols-3 grid-cols-1 py-5">
                     <div className="flex flex-col justify-center items-center">
@@ -172,19 +172,7 @@ const DataBox: React.FC = () => {
             )}
             {(priceCat === 3 || pricingId === 3) && (
               <div className="KeyFeatures GeneralRepair">
-                {/* <span></span> */}
-                <div>
                 <MainHeading Heading="   Key Features" />
-                </div>
-                {/* <span
-                  className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px] text-center"
-                  style={{
-                    transform: "rotate(-5deg)",
-                  }}
-                >
-                  Key Features
-                </span> */}
-
                 <div className="grid lg:grid-cols-3 grid-cols-1 py-5">
                   <div className="flex flex-col justify-center items-center">
                   <Image
@@ -229,15 +217,6 @@ const DataBox: React.FC = () => {
                 <MainHeading Heading="   Key Features" />
                   <MainTitle Title="This service is specifically for devices damaged during DIY or technician attempts." />
                 </div>
-                {/* <span
-                  className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px] text-center"
-                  style={{
-                    transform: "rotate(-5deg)",
-                  }}
-                >
-                  Key Features
-                </span> */}
-
                 <div className="grid lg:grid-cols-2 grid-cols-1 py-5">
                   <div className="flex flex-col justify-center items-center">
                     <Image   className="w-[44px] h-[50px]" src={repairforconnectdamage} alt="Repairs for cracked" />
