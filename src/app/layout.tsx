@@ -40,11 +40,6 @@
 //   );
 // }
 
-
-
-
-
-
 import "../Styles/globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
@@ -74,14 +69,24 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={`${space_Grotesk.variable} ${poppins.variable} font-gordita`}>
-      <Providers>
-        <ConditionalWrapper>
-          {children}
-        </ConditionalWrapper>
+      <body
+        className={`${space_Grotesk.variable} ${poppins.variable} font-gordita`}
+      >
+        <Providers>
+          <ConditionalWrapper>{children}</ConditionalWrapper>
         </Providers>
+        {/* <!-- Google tag (gtag.js) --> */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-DTTCXDCDPS"
+        ></script>
+        <script>
+          {` window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-DTTCXDCDPS');`}
+        </script>
       </body>
     </html>
   );
 }
-
