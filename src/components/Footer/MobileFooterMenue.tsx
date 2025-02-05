@@ -177,7 +177,7 @@ const MobileFooterMenue = () => {
             </li>
 
             <li className="mb-2">
-              <Link href="/terms-and-conditions">Terms and Conditions</Link>
+              <Link href="/Terms-and-conditions">Terms and Conditions</Link>
             </li>
           </ul>
         </div>
