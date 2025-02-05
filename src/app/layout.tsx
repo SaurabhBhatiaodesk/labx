@@ -46,6 +46,7 @@ import Footer from "@/components/Footer/Footer";
 import { Space_Grotesk, Poppins } from "next/font/google";
 import ConditionalWrapper from "@/components/ConditionalWrapper"; // New client-side wrapper component
 import { Providers } from "./redux/providers";
+import Script from "next/script";
 
 const space_Grotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -75,18 +76,25 @@ export default function RootLayout({
         <Providers>
           <ConditionalWrapper>{children}</ConditionalWrapper>
         </Providers>
-        
+
         {/* <!-- Google tag (gtag.js) --> */}
-        <script
-          async
+        <Script
+          strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-DTTCXDCDPS"
-        ></script>
-        <script>
-          {` window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-DTTCXDCDPS');`}
-        </script>
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-DTTCXDCDPS');
+            `,
+          }}
+        />
+       
       </body>
     </html>
   );
