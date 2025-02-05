@@ -68,6 +68,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+      <meta name="google-site-verification" content="daUSUNFfgNz6HBE7DkYP6jsrgiCz3DDWT0mP696YPBA" />
+      {/* code_221 */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body
@@ -80,7 +82,7 @@ export default function RootLayout({
         {/* <!-- Google tag (gtag.js) --> */}
         <Script
           strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-DTTCXDCDPS"
+          src="https://www.googletagmanager.com/gtag/js?id=G-6GPFSRTXQE"
         />
         <Script
           id="google-analytics"
@@ -90,7 +92,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-DTTCXDCDPS');
+            gtag('config', 'G-6GPFSRTXQE');
             `,
           }}
         />
