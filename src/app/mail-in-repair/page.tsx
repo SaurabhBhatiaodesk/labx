@@ -32,6 +32,9 @@ export const metadata = {
       "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
+  alternates: {
+    canonical: "https://labxrepair.com.au/mail-in-repair",
+  },                                                                  
 };
 
 const page = () => {
