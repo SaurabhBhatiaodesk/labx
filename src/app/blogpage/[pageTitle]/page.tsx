@@ -53,6 +53,7 @@ async function fetchBlogData(pageTitle: string | undefined): Promise<BlogData> {
     redirect: "follow" as RequestRedirect,
   };
 
+  
   try {
     const res = await fetch(
       `https://labxbackend.labxrepair.com.au/api/admin/getPageBypageTitle/${encodeURIComponent(pageTitle)}`,
