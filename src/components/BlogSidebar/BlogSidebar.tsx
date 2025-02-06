@@ -8,6 +8,7 @@ import Instagram from "../../../public/Images/blog/instagram.svg";
 import Twitter from "../../../public/Images/blog/twitter.svg";
 interface BlogData {
   _id: string;
+  pageTitle:string;
   heading: string;
   featuredImage: string[];
   createdAt: string;
@@ -87,7 +88,7 @@ export default function BlogSidebar() {
       <ul>
         {blogs.map((blog) => (
           <li
-            onClick={() => sendId(blog._id)}
+            onClick={() => sendId(blog.pageTitle)}
             key={blog._id} style={{zIndex:'444', position:'relative'}}
             className="flex items-start mb-4  shadow-sm rounded-lg p-2 hover:shadow-md gap-4 cursor-pointer"
           >

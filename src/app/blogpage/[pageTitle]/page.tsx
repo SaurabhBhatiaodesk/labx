@@ -19,33 +19,78 @@ interface BlogData {
   updatedAt: string;
 }
 // Fetch Blog Data by ID
-async function fetchBlogData(blogId: string): Promise<BlogData> {
-  const res = await fetch(
-    `https://labxbackend.labxrepair.com.au/api/admin/blog/${blogId}`,
-    {
-      cache: "no-store",
-    }
-  );
+// async function fetchBlogData(pageTitle: string): Promise<BlogData> {
+//   console.log(pageTitle,"pageTitlepageTitlepageTitlekkkk")
+//   // const res = await fetch(
+//   //   `https://labxbackend.labxrepair.com.au/api/admin/getPageBypageTitle/${pageTitle}`,
+//   //   {
+//   //     cache: "no-store",
+//   //   }
+//   // );
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch blog data");
+  
+
+//   console.log("resresres",res)
+
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch blog data");
+//   }
+
+//   const data = await res.json();
+//   return data;
+// }
+
+
+async function fetchBlogData(pageTitle: string | undefined): Promise<BlogData> {
+  if (!pageTitle) {
+    throw new Error("Page title is undefined");
   }
 
-  const data = await res.json();
-  return data;
+  console.log(pageTitle, "Fetching blog data...");
+
+  const requestOptions: RequestInit = {
+    method: "GET",
+    redirect: "follow" as RequestRedirect,
+  };
+
+  try {
+    const res = await fetch(
+      `https://labxbackend.labxrepair.com.au/api/admin/getPageBypageTitle/${encodeURIComponent(pageTitle)}`,
+      requestOptions
+    );
+
+    console.log("API Response:", res);
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch blog data. Status: ${res.status}`);
+    }
+
+    // **Read and log the response body**
+    const data = await res.json();
+    // console.log("Fetched Blog Data:", data);
+
+    return data;
+  } catch (error) {
+    console.error("Error fetching blog data:", error);
+    throw error;
+  }
 }
+
+
 
 // Generate Metadata for the Blog
 export async function generateMetadata({
   params,
 }: {
-  params: { id: string };
+  params: { pageTitle: string };
 }): Promise<Metadata> {
   try {
-    const blog = await fetchBlogData(params.id);
+    const blog = await fetchBlogData(params.pageTitle);
+    
+    console.log("blog fetcedddddddddddddkkkkk",blog)
 
     return {
-      title: blog.pageTitle,
+      title: blog.heading,
       description: `${blog?.metaDescription} Keywords: ${blog.pageKeywords}`,
       keywords: blog.pageKeywords,
     };
@@ -61,10 +106,10 @@ export async function generateMetadata({
 export default async function BlogDetails({
   params,
 }: {
-  params: { id: string };
+  params: { pageTitle: string };
 }) {
   try {
-    const blog = await fetchBlogData(params.id);
+    const blog = await fetchBlogData(params.pageTitle);
 
     return (
       <div className="blog-details-os">

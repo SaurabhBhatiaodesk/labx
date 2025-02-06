@@ -11,6 +11,7 @@ import Link from "next/link";
 interface Blog {
   _id: string;
   heading: string;
+  pageTitle: string;
   featuredImage: string[]; // Assuming the 'featuredImage' is an array of URLs
 }
 
@@ -32,6 +33,7 @@ const Blogs: React.FC = () => {
         const response = await axios.get(
           `https://labxbackend.labxrepair.com.au/api/admin/blogs?page=${currentPage}&limit=${limit}`
         );
+        console.log('response?.data?.blogresponse?.data?.blog',response?.data?.blog)
 
         setBlogs(response?.data?.blogs || []); // Set blogs
         setPagination(response?.data?.pagination || null); // Set pagination data
@@ -48,6 +50,9 @@ const Blogs: React.FC = () => {
     setCurrentPage(page); // Update the current page
   };
 
+
+  // console.log("blogs[0].pageTitleee",blogs)
+
   return (
     <>
       <div className="main-blog-list">
@@ -58,7 +63,7 @@ const Blogs: React.FC = () => {
                 blog.featuredImage && blog.featuredImage.length > 0
                   ? blog.featuredImage[0]
                   : BlogImage;
-
+    //  console.log("blog.pageTitleblog.pageTitleeeeee",blog?.pageTitle)
               return (
                 <div
                   key={blog._id}
@@ -75,25 +80,33 @@ const Blogs: React.FC = () => {
                   </Link>
                   <h1 className="mb-4 mt-4 text-tertiary">{blog.heading || "Blog Title"}</h1>
                   <div className="learnmore">
-                    <MainButton
+                    {/* <MainButton
                       MainButton="View Details"
                       link={`/blogpage/${blog._id}`}
+                    /> */}
+
+                    <MainButton
+                      MainButton="View Details"
+                      link={`/blogpage/${blog?.pageTitle}`}
                     />
+
+
+
                   </div>
                 </div>
               );
             })
           ) : (
             <div className="flex justify-center items-center">
-            <p className="text-lg text-gray-500 flex items-center">
-              Loading blogs
-              <span className="ml-2 flex space-x-1">
-                <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce"></span>
-                <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce delay-200"></span>
-                <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce delay-400"></span>
-              </span>
-            </p>
-          </div>
+              <p className="text-lg text-gray-500 flex items-center">
+                Loading blogs
+                <span className="ml-2 flex space-x-1">
+                  <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce"></span>
+                  <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce delay-200"></span>
+                  <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce delay-400"></span>
+                </span>
+              </p>
+            </div>
           )}
         </div>
       </div>
@@ -105,11 +118,10 @@ const Blogs: React.FC = () => {
             <button
               key={index + 1}
               onClick={() => handlePageChange(index + 1)}
-              className={`mx-1 px-3 py-1 border rounded ${
-                currentPage === index + 1
+              className={`mx-1 px-3 py-1 border rounded ${currentPage === index + 1
                   ? "bg-blue-500 text-white"
                   : "bg-gray-200 text-black"
-              }`}
+                }`}
             >
               {index + 1}
             </button>

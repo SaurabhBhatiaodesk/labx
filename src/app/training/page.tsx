@@ -1,13 +1,13 @@
 import dynamic from "next/dynamic";
 import React from "react";
-// import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
+
 const Breadcrumb = dynamic(() => import('../../components/Breadcrumb/Breadcrumb'), { ssr: false });
-// import CourseHighlights from "./CourseHighlights/CourseHighlights";
+
 const CourseHighlights = dynamic(() => import('./CourseHighlights/CourseHighlights'), { ssr: false });
-// import Form from "@/components/Form/Form";
+
 const Form = dynamic(() => import('../../components/Form/Form'), { ssr: false });
 
-// import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
+
 const GoogleReviews = dynamic(() => import('../../components/GoogleReviews/GoogleReviews'), { ssr: false });
 
 export const metadata = {
@@ -19,12 +19,12 @@ export const metadata = {
     title: "Welcome to LabX - Your Trusted Tech Solutions",
     description:
       "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
-    url: "/", // Replace with your actual page URL
+    url: "/",
     type: "website",
-    
+
     images: [
       {
-        url: "", // Replace with your image URL
+        url: "",
         width: 1200,
         height: 630,
         alt: "LabX Tech Solutions Banner",
@@ -36,7 +36,7 @@ export const metadata = {
     title: "Welcome to LabX - Your Trusted Tech Solutions",
     description:
       "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
-    images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
+    images: ["https://example.com/path-to-your-image.jpg"],
   },
   alternates: {
     canonical: "https://labxrepair.com.au/training",
@@ -53,8 +53,8 @@ const Training = () => {
           AdminImage="/Images/adminimage.png"
           link="/training"
           buttonname="Join Course"
-          scrollId = "Kickstart"
-          scrollOffSet = {34 * 5}
+          scrollId="Kickstart"
+          scrollOffSet={34 * 5}
         />
         <CourseHighlights />
         <Form />
