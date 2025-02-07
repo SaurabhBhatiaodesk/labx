@@ -31,6 +31,7 @@ export const metadata = {
     canonical: "https://labxrepair.com.au/blogs",
   },
 };
+
 const page = () => {
   return (
     <>
