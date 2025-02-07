@@ -33,7 +33,7 @@ const Blogs: React.FC = () => {
         const response = await axios.get(
           `https://labxbackend.labxrepair.com.au/api/admin/blogs?page=${currentPage}&limit=${limit}`
         );
-        console.log('response?.data?.blogresponse?.data?.blog',response?.data?.blog)
+        console.log('response?.data?.blogresponse?.data?.blog', response?.data?.blog)
 
         setBlogs(response?.data?.blogs || []); // Set blogs
         setPagination(response?.data?.pagination || null); // Set pagination data
@@ -63,22 +63,24 @@ const Blogs: React.FC = () => {
                 blog.featuredImage && blog.featuredImage.length > 0
                   ? blog.featuredImage[0]
                   : BlogImage;
-    //  console.log("blog.pageTitleblog.pageTitleeeeee",blog?.pageTitle)
+              //  console.log("blog.pageTitleblog.pageTitleeeeee",blog?.pageTitle)
               return (
                 <div
                   key={blog._id}
                   className="blog-article p-4 rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]"
                 >
-                  <Link href={`/blogpage/${blog._id}`}>
+                  <Link href={`/blogpage/${blog.pageTitle}`}>
                     <Image
                       src={featuredImage}
                       alt={blog.heading || "Blog Image"}
                       width={500}
                       height={300}
-                      className="rounded-md"
+                      className="rounded-[20px] h-[250px] object-cover"
                     />
                   </Link>
-                  <h1 className="mb-4 mt-4 text-tertiary">{blog.heading || "Blog Title"}</h1>
+                  <h1 className="mb-4 mt-4 text-tertiary">
+                    {(blog.heading || "Blog Title").slice(0, 40)}...
+                  </h1>
                   <div className="learnmore">
                     {/* <MainButton
                       MainButton="View Details"
@@ -119,8 +121,8 @@ const Blogs: React.FC = () => {
               key={index + 1}
               onClick={() => handlePageChange(index + 1)}
               className={`mx-1 px-3 py-1 border rounded ${currentPage === index + 1
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-200 text-black"
+                ? "bg-[#EDE574] text-black"
+                : "bg-gray-200 text-black"
                 }`}
             >
               {index + 1}

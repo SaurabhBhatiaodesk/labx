@@ -61,8 +61,8 @@ const RecentNews: React.FC = () => {
     fetchBlogs();
   }, []);
 
-  const sendId = (id: string) => {
-    router.push(`/blogpage/${id}`);
+  const sendId = (pageTitle: string) => {
+    router.push(`/blogpage/${pageTitle}`);
   };
 
   const handlePrev = () => {
@@ -102,8 +102,8 @@ const RecentNews: React.FC = () => {
                 {blogs.map((blog) => (
                   <SwiperSlide key={blog._id}>
                     <div
-                      onClick={() => sendId(blog._id)}
-                      className="blogs-row-col-os"
+                      onClick={() => sendId(blog.pageTitle)}
+                      className="blogs-row-col-os cursor-pointer"
                       data-aos="zoom-in"
                     >
                       <div>
@@ -119,7 +119,7 @@ const RecentNews: React.FC = () => {
                       </div>
                       <div className="mt-4">
                         <h2 className="font-bold text-lg text-[#EDE574]">
-                          {blog.heading}
+                          {blog.heading .slice(0, 40)}...
                         </h2>
                         <p className="text-base mt-2 text-white">
                           {stripHtmlTags(blog.content).length > 160

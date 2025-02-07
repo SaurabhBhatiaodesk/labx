@@ -47,6 +47,7 @@ import { Space_Grotesk, Poppins } from "next/font/google";
 import ConditionalWrapper from "@/components/ConditionalWrapper"; // New client-side wrapper component
 import { Providers } from "./redux/providers";
 import Script from "next/script";
+import Canonical from "./Canonical";
 
 const space_Grotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -71,6 +72,7 @@ export default function RootLayout({
       <meta name="google-site-verification" content="daUSUNFfgNz6HBE7DkYP6jsrgiCz3DDWT0mP696YPBA" />
       {/* code_221 */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Canonical/>
       </head>
       <body
         className={`${space_Grotesk.variable} ${poppins.variable} font-gordita`}
