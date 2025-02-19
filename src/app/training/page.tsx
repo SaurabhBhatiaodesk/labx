@@ -1,24 +1,37 @@
 import dynamic from "next/dynamic";
 import React from "react";
 
-const Breadcrumb = dynamic(() => import('../../components/Breadcrumb/Breadcrumb'), { ssr: false });
+const Breadcrumb = dynamic(
+  () => import("../../components/Breadcrumb/Breadcrumb"),
+  { ssr: false }
+);
 
-const CourseHighlights = dynamic(() => import('./CourseHighlights/CourseHighlights'), { ssr: false });
+const CourseHighlights = dynamic(
+  () => import("./CourseHighlights/CourseHighlights"),
+  { ssr: false }
+);
 
-const Form = dynamic(() => import('../../components/Form/Form'), { ssr: false });
+const Form = dynamic(() => import("../../components/Form/Form"), {
+  ssr: false,
+});
 
-
-const GoogleReviews = dynamic(() => import('../../components/GoogleReviews/GoogleReviews'), { ssr: false });
+const GoogleReviews = dynamic(
+  () => import("../../components/GoogleReviews/GoogleReviews"),
+  { ssr: false }
+);
 
 export const metadata = {
-  title: "LabX Repair Mobile Phone Services - Expert Repair & Training",
+  title: "Best Mobile Repair Training - Phone Repair Course | Labx Repair",
   description:
-    "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
-  keywords: ["LabX", "tech solutions", "data recovery", "client reviews", "tech services"],
+    "Labx Repair provides the best mobile repair training with phone repair course. Learn hands-on skills from experts, get certified, & start your career with confidence.",
+  keywords: [
+    "Mobile Repair Training",
+    "Phone Repair Course",
+  ],
   openGraph: {
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
+    title: "Best Mobile Repair Training - Phone Repair Course | Labx Repair",
     description:
-      "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Labx Repair provides the best mobile repair training with phone repair course. Learn hands-on skills from experts, get certified, & start your career with confidence.",
     url: "/",
     type: "website",
 
@@ -33,9 +46,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
+    title: "Best Mobile Repair Training - Phone Repair Course | Labx Repair",
     description:
-      "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Labx Repair provides the best mobile repair training with phone repair course. Learn hands-on skills from experts, get certified, & start your career with confidence.",
     images: ["https://example.com/path-to-your-image.jpg"],
   },
   alternates: {

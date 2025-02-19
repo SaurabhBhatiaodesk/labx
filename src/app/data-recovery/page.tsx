@@ -6,15 +6,15 @@ const DataRecovery = dynamic(() => import('./DataRecovery'), { ssr: false });
 import "./data.css";
 
 export const metadata = {
-  title: "LabX Repair Mobile Phone Services - Expert Repair & Training",
+  title: "Data Recovery Services - Mobile Data Recovery | Labx Repair",
   description:
-    "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
-  keywords: ["LabX", "tech solutions", "data recovery", "client reviews", "tech services"],
+    "LabX Repair provides expert data recovery services, specializing in mobile data recovery. Restore lost files, photos, & important data safely & efficiently. Help now!",
+  keywords: ["Data Recovery Services", "Mobile Data Recovery"],
   openGraph: {
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
+    title: "Data Recovery Services - Mobile Data Recovery | Labx Repair",
     description:
-      "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
-    url: "/", // Replace with your actual page URL
+      "LabX Repair provides expert data recovery services, specializing in mobile data recovery. Restore lost files, photos, & important data safely & efficiently. Help now!",
+    url: "", // Replace with your actual page URL
     type: "website",
     images: [
       {
@@ -27,9 +27,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
+    title: "Data Recovery Services - Mobile Data Recovery | Labx Repair",
     description:
-      "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "LabX Repair provides expert data recovery services, specializing in mobile data recovery. Restore lost files, photos, & important data safely & efficiently. Help now!",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {

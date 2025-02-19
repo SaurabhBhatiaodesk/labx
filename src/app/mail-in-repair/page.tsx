@@ -5,16 +5,19 @@ const MailRepair = dynamic(() => import('./MailRepair'), { ssr: false });
 // import MailRepair from "./MailRepair";
 
 export const metadata = {
-  title: "LabX Repair Mobile Phone Services - Expert Repair & Training",
+  title: "Mail in Phone Repair Service in Australia | Phone Repair School",
   description:
-    "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    "Labx Repair provides a trusted mail-in phone repair service in Australia. Get fast, expert repairs for your device with quality service. Ship yours phone today!",
+    keywords: ["mail in repair service", "Phone Repair Service"],
+
+    
 
 
   openGraph: {
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
+    title: "Mail in Phone Repair Service in Australia | Phone Repair School",
     description:
-      "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
-    url: "/", // Replace with your actual page URL
+      "Labx Repair provides a trusted mail-in phone repair service in Australia. Get fast, expert repairs for your device with quality service. Ship yours phone today!",
+    url: "Images/aboutadmin.png", // Replace with your actual page URL
     type: "website",
     images: [
       {
@@ -25,12 +28,13 @@ export const metadata = {
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
+    title: "Mail in Phone Repair Service in Australia | Phone Repair School",
     description:
-      "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
-    images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
+      "Labx Repair provides a trusted mail-in phone repair service in Australia. Get fast, expert repairs for your device with quality service. Ship yours phone today!",
+    images: "Images/aboutadmin.png", // Replace with your image URL
   },
   alternates: {
     canonical: "https://labxrepair.com.au/mail-in-repair",

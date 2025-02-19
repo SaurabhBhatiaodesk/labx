@@ -2,14 +2,14 @@ import React from 'react'
 import B2BRepairServices from './B2BRepairServices'
 
 export const metadata = {
-  title: "LabX Repair Mobile Phone Services - Expert Repair & Training",
+  title: "B2B Phone Repair Service - Bulk Device Repair | Labx Repair",
   description:
-    "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
-  keywords: ["LabX", "tech solutions", "data recovery", "client reviews", "tech services"],
+    "Labx Repair offers expert B2B phone repair service and bulk device repair for businesses. Get fast, reliable maintenance & quality repairs for all your devices today!",
+  keywords: ["B2B Phone Repair Service", "Bulk Device Repair"],
   openGraph: {
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
+    title: "B2B Phone Repair Service - Bulk Device Repair | Labx Repair",
     description:
-      "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Labx Repair offers expert B2B phone repair service and bulk device repair for businesses. Get fast, reliable maintenance & quality repairs for all your devices today!",
     url: "/", // Replace with your actual page URL
     type: "website",
     images: [
@@ -23,9 +23,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
+    title: "B2B Phone Repair Service - Bulk Device Repair | Labx Repair",
     description:
-      "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Labx Repair offers expert B2B phone repair service and bulk device repair for businesses. Get fast, reliable maintenance & quality repairs for all your devices today!",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {

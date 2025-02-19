@@ -1,14 +1,19 @@
-
-import React from 'react'
-import Screen from './screen-refurbishing' 
+import React from "react";
+import Screen from "./screen-refurbishing";
 
 export const metadata = {
-  title: "LabX Repair Mobile Phone Services - Expert Repair & Training",
-  description: "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
-  keywords: ["LabX", "tech solutions", "data recovery", "client reviews", "tech services"],
+  title: "Screen Refurbishing Service - Mobile Screen Repair | Labx Repair",
+  description:
+    "Labx Repair offers professional screen refurbishing service & mobile screen repair. Restore cracked or damaged screens with expert care. Get your screen fixed today!",
+  keywords: [
+    "Screen Refurbishing Service",
+    "Mobile Screen Repair ",
+
+  ],
   openGraph: {
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
-    description: "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    title: "Screen Refurbishing Service - Mobile Screen Repair | Labx Repair",
+    description:
+      "Labx Repair offers professional screen refurbishing service & mobile screen repair. Restore cracked or damaged screens with expert care. Get your screen fixed today!",
     url: "/", // Replace with your actual page URL
     type: "website",
     images: [
@@ -22,28 +27,24 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
-    description: "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    title: "Screen Refurbishing Service - Mobile Screen Repair | Labx Repair",
+    description:
+      "Labx Repair offers professional screen refurbishing service & mobile screen repair. Restore cracked or damaged screens with expert care. Get your screen fixed today!",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {
     canonical: "https://labxrepair.com.au/screen-refurbishing",
   },
-
 };
 
 const page = () => {
-  
   return (
-  <>
-  
-  <div>
+    <>
+      <div>
+        <Screen />
+      </div>
+    </>
+  );
+};
 
-
-          <Screen/> 
-  </div>
-  </>
-  )
-}
-
-export default page
+export default page;
