@@ -44,7 +44,9 @@ console.log('page',page);
 
     return {
       title: page.seoPageTitle,
-      description: `${page.pageDescription} Keywords: ${page.pageKeywords}`, // Add keywords to the description
+      description: page.pageDescription,
+      keywords: page.pageKeywords,
+      // Add keywords to the description
     };
   } catch (error) {
     return {
