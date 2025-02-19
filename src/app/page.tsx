@@ -14,8 +14,8 @@ import RecentNews from "@/components/RecentNews/RecentNews";
 import Storeproduct from "@/components/Storeproduct/Storeproduct";
 import React from "react";
 export const metadata = {
-  title: "LabX Repair Mobile Phone Services - Expert Repair & Training",
-  description: "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+  title: "Best Mobile Phone Repair Courses, Services & Training | Labx Repair",
+  description: "Labx Repair provides the best mobile phone repair courses, services & training, offering expert guidance and practical experience for a successful career. Join now!",
   keywords: ["LabX", "tech solutions", "data recovery", "client reviews", "tech services"],
   openGraph: {
     title: "Welcome to LabX - Your Trusted Tech Solutions",

@@ -5,12 +5,12 @@ import AboutUs from "./AboutUs";
 
 
 export const metadata = {
-  title: "LabX Repair Mobile Phone Services - Expert Repair & Training",
-  description: "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+  title: "About Us - Phone Repair Courses | Mobile Phone Repair Training",
+  description: "About Labx Repair, We provide top-tier phone repair courses and mobile phone repair training. Learn phone screen repair and other essential skills with us today! refurbishment and motherboard solutions.",
   keywords: ["LabX", "tech solutions", "data recovery", "client reviews", "tech services"],
   openGraph: {
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
-    description: "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    title: "About Us - Phone Repair Courses | Mobile Phone Repair Training",
+    description: "About Labx Repair, We provide top-tier phone repair courses and mobile phone repair training. Learn phone screen repair and other essential skills with us today! refurbishment and motherboard solutions.",
     url: "/", 
     type: "website",
     images: [
@@ -24,8 +24,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
-    description: "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    title: "About Us - Phone Repair Courses | Mobile Phone Repair Training",
+    description: "About Labx Repair, We provide top-tier phone repair courses and mobile phone repair training. Learn phone screen repair and other essential skills with us today! refurbishment and motherboard solutions.",
     images: ["https://example.com/path-to-your-image.jpg"],
   },
   alternates: {

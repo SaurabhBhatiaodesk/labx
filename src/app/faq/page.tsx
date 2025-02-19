@@ -1,12 +1,12 @@
 import React from 'react'
 import FaqPageCall from './FaqPageCall'
 export const metadata = {
-  title: "LabX Repair Mobile Phone Services - Expert Repair & Training",
-  description: "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+  title: "Frequently Asked Questions - Phone Repair Training | Labx Repair",
+  description: "Get answers to your questions about phone repair training. Learn about our mobile phone repair courses and phone screen repair services. Contact us for more info!",
   keywords: ["LabX", "tech solutions", "data recovery", "client reviews", "tech services"],
   openGraph: {
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
-    description: "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    title: "Frequently Asked Questions - Phone Repair Training | Labx Repair",
+    description: "Get answers to your questions about phone repair training. Learn about our mobile phone repair courses and phone screen repair services. Contact us for more info!",
     url: "/", // Replace with your actual page URL
     type: "website",
     images: [
@@ -20,8 +20,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
-    description: "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    title: "Frequently Asked Questions - Phone Repair Training | Labx Repair",
+    description: "Get answers to your questions about phone repair training. Learn about our mobile phone repair courses and phone screen repair services. Contact us for more info!",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {
