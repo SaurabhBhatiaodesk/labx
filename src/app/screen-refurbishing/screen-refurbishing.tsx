@@ -58,7 +58,7 @@ const Page = () => {
             height="100"
             width="800"
             src={Line.src}
-            alt=""
+            alt=" labx repair "
             className="pb-3 m-auto"
           />
           <p>
@@ -74,7 +74,7 @@ const Page = () => {
           <div className="container pt-5 mt-5">
             <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
               <div>
-                <Image src={Glass} alt="" />
+                <Image src={Glass} alt=" labx repair " />
               </div>
               <div className="glass__description">
                 <h2>Benefits of Working with LabXRepair</h2>
@@ -82,7 +82,7 @@ const Page = () => {
                   height="500"
                   width="500"
                   src={Line.src}
-                  alt=""
+                  alt=" labx repair "
                   className="pb-3"
                 />
                 <div className="list__glass">
@@ -128,7 +128,7 @@ const Page = () => {
 
                   {/* <p className="flex items-center gap-2">
                   <span>
-                    <Image src={Icon} alt="" />
+                    <Image src={Icon} alt=" labx repair " />
                   </span>
                   All buttons and sensors work properly.
                 </p> */}
@@ -149,7 +149,7 @@ const Page = () => {
               height="100"
               width="1000"
               src={Line.src}
-              alt=""
+              alt=" labx repair "
               className="pb-3 m-auto"
             />
 
@@ -163,7 +163,7 @@ const Page = () => {
                 <Image
                   className="w-[80px]"
                   src={ExpertB2BDisplayRefurbishing}
-                  alt=""
+                  alt=" labx repair "
                 />
                 <h3>Expert B2B Display Refurbishing</h3>
                 <p>
@@ -176,7 +176,7 @@ const Page = () => {
                 <Image
                   className="w-[80px]"
                   src={StateoftheArtTechnology}
-                  alt=""
+                  alt=" labx repair "
                 />
                 <h3>State-of-the-Art Technology</h3>
                 <p>
@@ -188,7 +188,7 @@ const Page = () => {
                 <Image
                   className="w-[80px]"
                   src={FairandTransparentGrading}
-                  alt=""
+                  alt=" labx repair "
                 />
                 <h3>Fair and Transparent Grading</h3>
                 <p>
@@ -198,7 +198,7 @@ const Page = () => {
                 </p>
               </div>
               <div className="front__box">
-                <Image className="w-[80px]" src={FastTurnaroundTime} alt="" />
+                <Image className="w-[80px]" src={FastTurnaroundTime} alt=" labx repair " />
                 <h3>Fast Turnaround Time</h3>
                 <p>
                   We understand the urgency of business needs, which is why we
@@ -213,7 +213,7 @@ const Page = () => {
         <div className="container pt-8 mt-5">
           <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
             <div>
-              <Image src={Glass} alt="" />
+              <Image src={Glass} alt=" labx repair " />
             </div>
             <div className="glass__description">
               <h2>Why Refurbish Instead of Screen Replacement?</h2>
@@ -221,7 +221,7 @@ const Page = () => {
                 height="500"
                 width="500"
                 src={Line.src}
-                alt=""
+                alt=" labx repair "
                 className="pb-3"
               />
 
@@ -232,37 +232,37 @@ const Page = () => {
               <div className="list__glass">
                 <p className="flex items-center gap-2">
                   <span>
-                    <Image src={Icon} alt="" />
+                    <Image src={Icon} alt=" labx repair " />
                   </span>
                   Retain original brightness, clarity, and color accuracy
                 </p>
                 <p className="flex items-center gap-2">
                   <span>
-                    <Image src={Icon} alt="" />
+                    <Image src={Icon} alt=" labx repair " />
                   </span>
                   Refurbishment is more affordable than full replacement
                 </p>
                 <p className="flex items-center gap-2">
                   <span>
-                    <Image src={Icon} alt="" />
+                    <Image src={Icon} alt=" labx repair " />
                   </span>
                   Get your phone back faster than replacement
                 </p>
                 <p className="flex items-center gap-2">
                   <span>
-                    <Image src={Icon} alt="" />
+                    <Image src={Icon} alt=" labx repair " />
                   </span>
                   Reduces electronic waste for a sustainable choice
                 </p>
                 <p className="flex items-center gap-2">
                   <span>
-                    <Image src={Icon} alt="" />
+                    <Image src={Icon} alt=" labx repair " />
                   </span>
                   Ideal for scratches or small cracks without replacement
                 </p>
                 {/* <p className="flex items-center gap-2">
                   <span>
-                    <Image src={Icon} alt="" />
+                    <Image src={Icon} alt=" labx repair " />
                   </span>
                   All buttons and sensors work properly.
                 </p> */}
@@ -277,13 +277,13 @@ const Page = () => {
               height="500"
               width="600"
               src={Line.src}
-              alt=""
+              alt=" labx repair "
               className="pb-3 m-auto"
             />
 
             <div className="grid xl:grid-cols-3  lg:grid-cols-3 grid-cols-1  pt-8 mt-5 relative gap-5">
               <div className=" flex flex-col text-center justify-center items-center ">
-                <Image src={Screen} alt="" />
+                <Image src={Screen} alt=" labx repair " />
                 <h4 className="2xl:text-2xl lg:text-xl text-lg  text-tertiary">Assessment</h4>
                 <p className="lg:w-[75%] 2xl:w-[50%] w-full">
                   {
@@ -292,7 +292,7 @@ const Page = () => {
                 </p>
               </div>
               <div className=" flex flex-col text-center justify-center items-center ">
-                <Image src={Small} alt="" />
+                <Image src={Small} alt=" labx repair " />
                 <h4 className="2xl:text-2xl lg:text-xl text-lg  text-tertiary">Lamination and Separation</h4>
                 <p className="lg:w-[75%] 2xl:w-[50%] w-full">
                   {
@@ -301,7 +301,7 @@ const Page = () => {
                 </p>
               </div>
               <div className=" flex flex-col text-center justify-center items-center ">
-                <Image src={Saprate} alt="" />
+                <Image src={Saprate} alt=" labx repair " />
                 <h4 className="2xl:text-2xl lg:text-xl text-lg  text-tertiary">Cleaning and Polishing</h4>
                 <p className="lg:w-[75%] 2xl:w-[50%] w-full">
                   {
@@ -314,7 +314,7 @@ const Page = () => {
 
             <div className="grid__processs_section process__section pt-8 mt-5 relative gap-5 grid xl:grid-cols-[2fr_1fr_2fr]  lg:grid-cols-2 grid-cols-1">
             <div className=" flex flex-col text-center justify-center items-center ">
-                <Image src={Test} alt="" />
+                <Image src={Test} alt=" labx repair " />
                 <h4 className="2xl:text-2xl lg:text-xl text-lg  text-tertiary" >Final Testing</h4>
                 <p className="lg:w-[75%] 2xl:w-[50%] w-full">
                   {
@@ -325,7 +325,7 @@ const Page = () => {
               <div className="hidden lg:block"></div>
             
               <div className=" flex flex-col text-center justify-center items-center ">
-                <Image src={OCA} alt="" />
+                <Image src={OCA} alt=" labx repair " />
                 <h4 className="2xl:text-2xl lg:text-xl text-lg  text-tertiary">Glass Replacement</h4>
                 <p className="lg:w-[75%] 2xl:w-[50%] w-full">
                   {
@@ -351,7 +351,7 @@ const Page = () => {
                   height="100"
                   width="1000"
                   src={Line.src}
-                  alt=""
+                  alt=" labx repair "
                   className="pb-3"
                 />
 
@@ -370,7 +370,7 @@ const Page = () => {
                 </Link>
               </div>
               <div className="text-center m-auto">
-                <Image className="h-[300px] lg:h-auto object-contain " src={Machine} alt="" />
+                <Image className="h-[300px] lg:h-auto object-contain " src={Machine} alt=" labx repair " />
               </div>
             </div>
           </div>
@@ -379,7 +379,7 @@ const Page = () => {
         <section className="container ">
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-4  lg:p-8 p-4 items-center">
             <div>
-              <Image src={EcoFriendlyPractices} alt=""></Image>
+              <Image src={EcoFriendlyPractices} alt=" labx repair "></Image>
             </div>
             <div>
               <h2>Eco-Friendly Practices</h2>
@@ -387,7 +387,7 @@ const Page = () => {
                 height="500"
                 width="500"
                 src={Line.src}
-                alt=""
+                alt=" labx repair "
                 className="pb-3"
               />
               <p>

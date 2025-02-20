@@ -29,7 +29,7 @@ const page = () => {
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
           <div>
             <h2>Our Phone Repair Solutions</h2>
-            <Image  height="300" width="600"src={Line.src} alt="" className="pb-3" />
+            <Image  height="300" width="600"src={Line.src} alt=" labx repair " className="pb-3" />
 
             <p>Are you in search of a reliable B2B repair service provider? Look no further than LabX With years of experience and thousands of satisfied clients,  LabX is the go-to destination for all your B2B phone repair needs. </p>
             
@@ -51,7 +51,7 @@ const page = () => {
 
             <div> 
               <h2>We Offer Appointments</h2>
-              <Image  height="300" width="400"src={Line.src} alt="" className="pb-3" />
+              <Image  height="300" width="400"src={Line.src} alt=" labx repair " className="pb-3" />
 
               <p>We are local and offer appointment scheduling, but due to limited hours, please contact us at 585.397.4174 via phone or text to schedule a time with us!</p>
               <p>We are local and offer appointment scheduling, but due to limited hours, please contact us at 585.397.4174 via phone or text to schedule a time with us!</p>

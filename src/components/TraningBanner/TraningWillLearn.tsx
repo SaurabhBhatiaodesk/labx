@@ -51,26 +51,26 @@ function TraningWillLearn({
           height="300"
           width="500"
           src={Line}
-          alt=""
+          alt=" labx repair "
           className="pb-3 m-auto"
         />
         <div className="grid xl:grid-cols-[6fr_2fr] lg:grid-cols-2 gap-4">
           <div>
             <div>
               <div className="flex gap-2 items-start">
-                <Image src={checkmark} alt="" />
+                <Image src={checkmark} alt=" labx repair " />
                 <p>
                   <strong className="text-[22px] text-[#EDE574]">{paramtitle1} :</strong> {param1}
                 </p>
               </div>
               <div className="flex gap-2 items-start">
-                <Image src={checkmark} alt="" />
+                <Image src={checkmark} alt=" labx repair " />
                 <p>
                   <strong className="text-[22px] text-[#EDE574]">{paramtitle2} :</strong> {param2}
                 </p>
               </div>
               <div className="flex gap-2 items-start">
-                <Image src={checkmark} alt="" />
+                <Image src={checkmark} alt=" labx repair " />
                 <p>
                   <strong className="text-[22px] text-[#EDE574]">{paramtitle3} :</strong> {param3}
                 </p>
@@ -82,21 +82,21 @@ function TraningWillLearn({
               className="p-3 rounded-[15px] items-center"
               style={{ border: `2px solid ${border}` }} // Apply dynamic border here
             >
-              <Image src={moniter} alt="" />
+              <Image src={moniter} alt=" labx repair " />
               <h3 className="mb-1">{Course}</h3>
               <ul className="space-y-3">
                 <div className="flex gap-1">
-                  <Image src={arrowright} alt="" />
+                  <Image src={arrowright} alt=" labx repair " />
                   <li className="text-sm lg:text-base">{Courseformate1}</li>
                 </div>
 
                 <div className="flex gap-1">
-                  <Image src={arrowright} alt="" />
+                  <Image src={arrowright} alt=" labx repair " />
                   <li className="text-sm lg:text-base">{Courseformate2}</li>
                 </div>
 
                 <div className="flex gap-1">
-                  <Image src={arrowright} alt="" />
+                  <Image src={arrowright} alt=" labx repair " />
                   <li className="text-sm lg:text-base">{Courseformate3}</li>
                 </div>
 
@@ -104,7 +104,7 @@ function TraningWillLearn({
                 {
                   pathName === '/beginner-phone-repair-course' && 
                   <div className="flex gap-1">
-                  <Image src={arrowright} alt="" />
+                  <Image src={arrowright} alt=" labx repair " />
                   <li className="text-sm lg:text-base animate-zoomInOut "  style={{ color: `${color}` }}>
                     {Courseformate4}
                   </li>

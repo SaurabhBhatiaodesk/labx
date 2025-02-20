@@ -108,12 +108,12 @@ export default async function PageDetail({
                   height="300"
                   width="400"
                   src={Line.src}
-                  alt=""
+                  alt=" labx repair "
                   className="pb-3 m-auto"
                 />
               </h1>
                {page.images.map((image: string, index: number) => (
-                <Image key={image}  src={image} alt="" width='100' height='100' className='dynamic__img' />
+                <Image key={image}  src={image} alt=" labx repair " width='100' height='100' className='dynamic__img' />
           ))}
             </div>
           </div>

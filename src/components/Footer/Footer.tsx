@@ -529,13 +529,13 @@ const Footer = () => {
               <div className="grid grid-cols-5 justify-between gap-2 footer-app py-3 fixed bottom-0 w-full left-0 right-0 bg-black border-t-1 border-[#4a4a4a77] ">
                 <Link href="/">
                   <div className="flex flex-col items-center">
-                    <Image className="w-[24px]" src={homefooter} alt="" />
+                    <Image className="w-[24px]" src={homefooter} alt=" labx repair " />
                     <span className="text-[12px] tracking-[1.5px] ">Home</span>
                   </div>
                 </Link>
                 <Link href="/training">
                   <div className="flex flex-col items-center">
-                    <Image className="w-[27px]" src={traning} alt="" />
+                    <Image className="w-[27px]" src={traning} alt=" labx repair " />
                     <span className="text-[12px] tracking-[1.5px] ">
                       Training
                     </span>

@@ -15,7 +15,7 @@ const DataStarted = () => {
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-10  lg:p-4 p-1 items-center">
           <div>
             {" "}
-            <Image src={HowtoGetStarted} className=" h-auto object-cover rounded-[20px] " alt=""></Image>
+            <Image src={HowtoGetStarted} className=" h-auto object-cover rounded-[20px] " alt=" labx repair "></Image>
           </div>
           <div>
             <div className="flex-col flex">

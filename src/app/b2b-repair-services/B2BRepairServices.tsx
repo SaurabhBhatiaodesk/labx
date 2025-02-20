@@ -239,7 +239,7 @@ const B2BRepairServices: React.FC = () => {
 
             <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
               <div>
-                <Image src={B2BRepairNeeds} alt="" />
+                <Image src={B2BRepairNeeds} alt=" labx repair " />
               </div>
               <div>
                 <div className="flex-col gap-2  flex">
@@ -387,7 +387,7 @@ const B2BRepairServices: React.FC = () => {
                 </div>
               </div>
               <div>
-                <Image src={RepairServices} alt="" />
+                <Image src={RepairServices} alt=" labx repair " />
               </div>
             </div>
           </div>

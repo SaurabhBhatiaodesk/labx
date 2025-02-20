@@ -131,7 +131,7 @@ const CourseHighlights = () => {
               height="500"
               width="500"
               src={Line}
-              alt=""
+              alt=" labx repair "
               className="pb-3 "
             /> */}
                 <div className="flex gap-4 text-yellow-400">
@@ -208,7 +208,7 @@ const CourseHighlights = () => {
               height="500"
               width="500"
               src={Line}
-              alt=""
+              alt=" labx repair "
               className="pb-3 "
             /> */}
                 <div className="flex gap-4 text-yellow-400">
