@@ -78,9 +78,9 @@ const Blogs: React.FC = () => {
                       className="rounded-[20px] h-[250px] object-cover"
                     />
                   </Link>
-                  <h1 className="mb-4 mt-4 text-tertiary">
+                  <h3 className="mb-4 mt-4 text-tertiary">
                     {(blog.heading || "Blog Title").slice(0, 40)}...
-                  </h1>
+                  </h3>
                   <div className="learnmore">
                     {/* <MainButton
                       MainButton="View Details"
