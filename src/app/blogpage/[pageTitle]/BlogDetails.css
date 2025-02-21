@@ -101,11 +101,13 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .custom-content-styling
   .custom-content-styling h2 span,
   .custom-content-styling h3 span,
   .custom-content-styling h4 strong 
   .custom-content-styling p strong {
     font-size: 1.5rem !important; /* Adjust font size on smaller screens */
+    color: white !important;
   }
 
   .custom-content-styling p {
