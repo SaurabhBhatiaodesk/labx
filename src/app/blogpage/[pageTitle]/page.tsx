@@ -151,11 +151,12 @@ export default async function BlogDetails({
             <h2 className="text-3xl font-bold my-[10px] mt-5 text-tertiary">{blog.heading}</h2>
 
             <div className="mb-4">
-              <div
-                className="mt-2 text-white"
-                dangerouslySetInnerHTML={{ __html: blog.content }}
-              ></div>
-            </div>
+  <div
+    className="mt-2 text-white custom-content-styling"
+    dangerouslySetInnerHTML={{ __html: blog.content }}
+  ></div>
+</div>
+
           </div>
 
           {/* Sidebar with Paginated Blogs */}

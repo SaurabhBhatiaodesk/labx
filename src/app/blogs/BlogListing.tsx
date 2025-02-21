@@ -25,7 +25,7 @@ const Blogs: React.FC = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [pagination, setPagination] = useState<Pagination | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [limit] = useState(3); // Limit per page
+  const [limit] = useState(24); // Limit per page
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -33,7 +33,10 @@ const Blogs: React.FC = () => {
         const response = await axios.get(
           `https://labxbackend.labxrepair.com.au/api/admin/blogs?page=${currentPage}&limit=${limit}`
         );
-        console.log('response?.data?.blogresponse?.data?.blog', response?.data?.blog)
+        console.log(
+          "response?.data?.blogresponse?.data?.blog",
+          response?.data?.blog
+        );
 
         setBlogs(response?.data?.blogs || []); // Set blogs
         setPagination(response?.data?.pagination || null); // Set pagination data
@@ -50,15 +53,14 @@ const Blogs: React.FC = () => {
     setCurrentPage(page); // Update the current page
   };
 
-
   // console.log("blogs[0].pageTitleee",blogs)
 
   return (
     <>
       <div className="main-blog-list">
-        <div className="container grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 md:grid-cols-2 justify-center text-center gap-4 mb-2">
-          {blogs.length > 0 ? (
-            blogs.map((blog) => {
+        {blogs.length > 0 ? (
+          <div className="container grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 md:grid-cols-2 justify-center text-center gap-4 mb-2">
+            {blogs.map((blog) => {
               const featuredImage =
                 blog.featuredImage && blog.featuredImage.length > 0
                   ? blog.featuredImage[0]
@@ -91,26 +93,23 @@ const Blogs: React.FC = () => {
                       MainButton="View Details"
                       link={`/blogpage/${blog?.pageTitle}`}
                     />
-
-
-
                   </div>
                 </div>
               );
-            })
-          ) : (
-            <div className="flex justify-center items-center">
-              <p className="text-lg text-gray-500 flex items-center">
-                Loading blogs
-                <span className="ml-2 flex space-x-1">
-                  <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce"></span>
-                  <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce delay-200"></span>
-                  <span className="w-2 h-2 bg-gray-500 rounded-full animate-bounce delay-400"></span>
-                </span>
-              </p>
-            </div>
-          )}
-        </div>
+            })}
+          </div>
+        ) : (
+          <div className="flex justify-center items-center h-[50vh] ">
+            <p className="text-lg text-tertiary flex items-center">
+              Loading blogs
+              <span className="ml-2 flex space-x-1">
+                <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce"></span>
+                <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce delay-200"></span>
+                <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce delay-400"></span>
+              </span>
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Pagination Controls */}
@@ -120,10 +119,11 @@ const Blogs: React.FC = () => {
             <button
               key={index + 1}
               onClick={() => handlePageChange(index + 1)}
-              className={`mx-1 px-3 py-1 border rounded ${currentPage === index + 1
-                ? "bg-[#EDE574] text-black"
-                : "bg-gray-200 text-black"
-                }`}
+              className={`mx-1 px-3 py-1 border rounded ${
+                currentPage === index + 1
+                  ? "bg-[#EDE574] text-black"
+                  : "bg-gray-200 text-black"
+              }`}
             >
               {index + 1}
             </button>

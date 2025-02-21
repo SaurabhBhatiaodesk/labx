@@ -40,7 +40,7 @@ export default function BlogSidebar() {
   const [blogs, setBlogs] = useState<BlogData[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const blogsPerPage = 5;
+  const blogsPerPage = 20;
   const router = useRouter();
 
   useEffect(() => {
@@ -90,7 +90,8 @@ export default function BlogSidebar() {
           <li
             onClick={() => sendId(blog.pageTitle)}
             key={blog._id} style={{zIndex:'444', position:'relative'}}
-            className="flex items-start mb-4  shadow-sm rounded-lg p-2 hover:shadow-md gap-4 cursor-pointer"
+            className="flex items-start mb-4 shadow-sm rounded-lg p-2 hover:shadow-md gap-4 cursor-pointer border border-tertiary hover:scale-105 transition-transform duration-200 ease-in-out"
+
           >
             {blog.featuredImage.length > 0 && (
               <Image

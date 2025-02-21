@@ -1,6 +1,6 @@
-.blog-details-os h3, .blog-details-os p {
+/* .blog-details-os h3, .blog-details-os p {
     color: #ffffff;
-}
+} */
 .main__section h1 {
     font-size: 30px;
     font-weight: 600;
@@ -45,4 +45,91 @@
     .blog-details-os .w-full.lg\:w-3\/4.pr-6 {
     padding: 0 !important;
 }
+}
+
+
+/* Custom CSS to handle inline styles from dangerouslySetInnerHTML */
+.custom-content-styling h2 span, 
+.custom-content-styling h3 span, 
+.custom-content-styling h4 strong 
+.custom-content-styling p strong {
+  background-color: transparent !important; /* Remove any background-color */
+  color: inherit !important; /* Ensure text color is inherited */
+  font-size: 30px; /* Set the font size for all three */
+  color: #cccccc !important; /* Set the color for text */
+}
+
+/* Paragraph Styling */
+.custom-content-styling p {
+  font-size: 1.125rem; /* Adjust font size for paragraph */
+  line-height: 1.6; /* Increase line height for readability */
+  color: #cccccc; /* Light text color */
+  margin-bottom: 10px; /* Add space between paragraphs */
+}
+
+.custom-content-styling li strong {
+    color: #ded8d8 !important;
+}
+
+.custom-content-styling li span {
+    font-size: 1.125rem; /* Adjust font size for paragraph */
+    line-height: 1.6; /* Increase line height for readability */
+    color: #cccccc !important; /* Light text color */
+    margin-bottom: 10px; /* Add space between paragraphs */
+}
+
+/* Link Styling */
+.custom-content-styling a {
+  color: #1e90ff;
+  text-decoration: underline;
+}
+
+.custom-content-styling a:hover {
+  color: #ff4500;
+}
+
+/* Remove extra space from <br> tags */
+.custom-content-styling br {
+  line-height: 0 !important; /* Remove line height */
+  margin: 0 !important; /* Remove margin */
+}
+
+/* Hide empty paragraphs */
+.custom-content-styling p:empty {
+  display: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .custom-content-styling h2 span,
+  .custom-content-styling h3 span,
+  .custom-content-styling h4 strong 
+  .custom-content-styling p strong {
+    font-size: 1.5rem !important; /* Adjust font size on smaller screens */
+  }
+
+  .custom-content-styling p {
+    font-size: 1rem; /* Adjust font size for paragraphs on mobile */
+  }
+
+  .custom-content-styling h3 span {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-content-styling h2 span,
+  .custom-content-styling h3 span,
+  .custom-content-styling h4 strong 
+  .custom-content-styling p strong {
+    font-size: 1.2rem; /* Smaller font size on extra small screens */
+  }
+
+  .custom-content-styling p {
+    font-size: 0.9rem; /* Further adjust font size for smaller screens */
+  }
+
+  .custom-content-styling h3 span {
+    font-size: 1.2rem;
+  }
 }
