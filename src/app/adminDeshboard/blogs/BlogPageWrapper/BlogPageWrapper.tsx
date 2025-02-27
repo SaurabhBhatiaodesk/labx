@@ -77,13 +77,18 @@ const BlogPageWrapper: React.FC = () => {
 
   const modules = {
     toolbar: [
-      [{ header: "1" }, { header: "2" }, { font: [] }],
-      [{ list: "ordered" }, { list: "bullet" }],
-      ["bold", "italic", "underline"],
-      ["link", "blockquote"],
+      [{ 'header': '1' }, { 'header': '2' }, { 'header': '3' }],
+      [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+      ['bold', 'italic', 'underline'],
+      ['link', 'blockquote'],
       [{ align: [] }],
+      [{ 'color': [] }], 
     ],
   };
+
+  
+
+  
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -195,7 +200,7 @@ console.log('blogDataaaa',blogData)
   return (
     <div
       className="BlogPageWrapper-os container mx-auto my-10 p-6 bg-white shadow-lg rounded-lg"
-      style={{ backgroundColor: "skyBlue" }}
+      style={{ backgroundColor: "white" }}
     >
       <Head>
         <title>
@@ -224,8 +229,9 @@ console.log('blogDataaaa',blogData)
           onChange={handleEditorChange}
           modules={modules}
           theme="snow"
-          className="border rounded-lg"
+          className="border rounded-lg text-white"
           style={{ height: "300px", marginBottom: "20px" }}
+          
         />
         {errors.content && <p className="text-red-500">{errors.content}</p>}
         <TextField

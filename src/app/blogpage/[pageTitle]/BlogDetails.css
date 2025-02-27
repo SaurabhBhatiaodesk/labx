@@ -48,23 +48,28 @@
 }
 
 
-/* Custom CSS to handle inline styles from dangerouslySetInnerHTML */
+
 .custom-content-styling h2 span, 
-.custom-content-styling h3 span, 
+.custom-content-styling h2 , 
+.custom-content-styling h4 , 
+
 .custom-content-styling h4 strong 
 .custom-content-styling p strong {
-  background-color: transparent !important; /* Remove any background-color */
-  color: inherit !important; /* Ensure text color is inherited */
-  font-size: 30px; /* Set the font size for all three */
-  color: #cccccc !important; /* Set the color for text */
+  background-color: transparent !important; 
+  color: inherit !important; 
+  font-size: 30px; 
+  color: #cccccc !important; 
+}
+.custom-content-styling h3 span{
+  font-size: 25px;
+  color: #cccccc !important;
 }
 
-/* Paragraph Styling */
 .custom-content-styling p {
-  font-size: 1.125rem; /* Adjust font size for paragraph */
-  line-height: 1.6; /* Increase line height for readability */
-  color: #cccccc; /* Light text color */
-  margin-bottom: 10px; /* Add space between paragraphs */
+  font-size: 1.125rem; 
+  line-height: 1.6; 
+  color: #cccccc; 
+  margin-bottom: 10px;
 }
 
 .custom-content-styling li strong {
@@ -72,13 +77,13 @@
 }
 
 .custom-content-styling li span {
-    font-size: 1.125rem; /* Adjust font size for paragraph */
-    line-height: 1.6; /* Increase line height for readability */
-    color: #cccccc !important; /* Light text color */
-    margin-bottom: 10px; /* Add space between paragraphs */
+    font-size: 1.125rem; 
+    line-height: 1.6; 
+    color: #cccccc !important; 
+    margin-bottom: 10px; 
 }
 
-/* Link Styling */
+
 .custom-content-styling a {
   color: #1e90ff;
   text-decoration: underline;
@@ -88,50 +93,70 @@
   color: #ff4500;
 }
 
-/* Remove extra space from <br> tags */
+
 .custom-content-styling br {
-  line-height: 0 !important; /* Remove line height */
-  margin: 0 !important; /* Remove margin */
+  line-height: 0 !important; 
+  margin: 0 !important;
 }
 
-/* Hide empty paragraphs */
+
 .custom-content-styling p:empty {
   display: none !important;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .custom-content-styling
   .custom-content-styling h2 span,
-  .custom-content-styling h3 span,
+ 
   .custom-content-styling h4 strong 
   .custom-content-styling p strong {
-    font-size: 1.5rem !important; /* Adjust font size on smaller screens */
+    font-size: 1.5rem !important;
     color: white !important;
   }
-
+  .custom-content-styling h3 span{
+    font-size: 22px;
+    color: white !important;
+  }
   .custom-content-styling p {
-    font-size: 1rem; /* Adjust font size for paragraphs on mobile */
+    font-size: 1rem; 
   }
 
   .custom-content-styling h3 span {
-    font-size: 1.25rem;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 480px) {
   .custom-content-styling h2 span,
-  .custom-content-styling h3 span,
+
   .custom-content-styling h4 strong 
   .custom-content-styling p strong {
-    font-size: 1.2rem; /* Smaller font size on extra small screens */
+    font-size: 1.2rem;
+  }
+
+  .custom-content-styling h3 span{
+    font-size: 22px;
+    color: white !important;
   }
 
   .custom-content-styling p {
-    font-size: 0.9rem; /* Further adjust font size for smaller screens */
+    font-size: 0.9rem;
   }
 
   .custom-content-styling h3 span {
-    font-size: 1.2rem;
+    font-size: 18px;
+line-height: 28px;
   }
+}
+
+.ql-editor ol, .ql-editor ul {
+  padding-left: 1.5em;
+  color: black !important;
+}
+
+
+.ql-editor ol, .ql-editor ul {
+  padding-left: 1.5em;
+  color: black !important;
 }

@@ -22,6 +22,13 @@
     font-size: 16px;
     line-height: 20px;
 }
-.BlogPageWrapper-os h2, .BlogPageWrapper-os p {
+.BlogPageWrapper-os h2, .BlogPageWrapper-os p , h3 span , ul li span strong {
     color: #000;
+}
+.BlogPageWrapper-os{
+    color: black;
+}
+.ql-editor ol li:not(.ql-direction-rtl), .ql-editor ul li:not(.ql-direction-rtl) {
+    padding-left: 1.5em;
+    color: black !important;
 }
