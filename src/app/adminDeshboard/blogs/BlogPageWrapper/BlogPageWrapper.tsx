@@ -200,7 +200,7 @@ console.log('blogDataaaa',blogData)
   return (
     <div
       className="BlogPageWrapper-os container mx-auto my-10 p-6 bg-white shadow-lg rounded-lg"
-      style={{ backgroundColor: "white" }}
+      style={{ backgroundColor: "skyblue" }}
     >
       <Head>
         <title>
