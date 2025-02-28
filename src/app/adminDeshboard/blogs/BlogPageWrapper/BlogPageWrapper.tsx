@@ -75,17 +75,27 @@ const BlogPageWrapper: React.FC = () => {
     }
   }, [blogId]);
 
+  // const modules = {
+  //   toolbar: [
+  //     [{ 'header': '1' }, { 'header': '2' }, { 'header': '3' }],
+  //     [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+  //     ['bold', 'italic', 'underline'],
+  //     ['link', 'blockquote'],
+  //     [{ align: [] }],
+  //     [{ 'color': [] }], 
+  //   ],
+  // };
+
   const modules = {
     toolbar: [
-      [{ 'header': '1' }, { 'header': '2' }, { 'header': '3' }],
-      [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+      [{ list: 'ordered' }, { list: 'bullet' }],
       ['bold', 'italic', 'underline'],
       ['link', 'blockquote'],
       [{ align: [] }],
-      [{ 'color': [] }], 
+      [{ color: [] }]
     ],
   };
-
   
 
   

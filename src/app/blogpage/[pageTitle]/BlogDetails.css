@@ -48,116 +48,207 @@
 }
 
 
-
-.custom-content-styling h2 span, 
-.custom-content-styling h2 , 
-.custom-content-styling h4 , 
-
-.custom-content-styling h4 strong 
-.custom-content-styling p strong {
-  background-color: transparent !important; 
-  color: inherit !important; 
-  font-size: 30px; 
-  color: #cccccc !important; 
+.ql-editor ol, .ql-editor ul {
+  padding-left: 1.5em;
+  color: black !important;
 }
-.custom-content-styling h3 span{
-  font-size: 25px;
+
+
+
+.ql-editor ol, .ql-editor ul {
+  padding-left: 1.5em;
+  color: black !important;
+}
+
+
+
+
+
+
+
+
+/* ============================================
+   Base Styles (Desktop & General Styles)
+============================================ */
+
+/* Headings - General */
+.custom-content-styling h2,
+.custom-content-styling h2 span {
+    background-color: transparent !important;
+    color: #cccccc !important;
+    font-size: 30px;
+}
+
+.custom-content-styling h3 span {
+    font-size: 25px;
+    color: #cccccc !important;
+}
+
+.custom-content-styling h4 {
+    font-size: 20px;
+    color: #cccccc;
+    margin-bottom: 10px;
+}
+
+.custom-content-styling h4 strong {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* New - h5 and h6 */
+.custom-content-styling h5 {
+    font-size: 18px;
+    color: #cccccc !important;
+    margin-bottom: 8px;
+}
+.custom-content-styling h5 strong {
+  font-size: 18px;
   color: #cccccc !important;
+  margin-bottom: 8px;
 }
 
+.custom-content-styling h6 {
+    font-size: 16px;
+    color: #cccccc !important;
+    margin-bottom: 8px;
+}
+
+/* Paragraphs */
 .custom-content-styling p {
-  font-size: 1.125rem; 
-  line-height: 1.6; 
-  color: #cccccc; 
-  margin-bottom: 10px;
+    font-size: 18px; 
+    line-height: 1.6; 
+    color: #cccccc; 
+    margin-bottom: 10px;
 }
 
+/* List Items */
 .custom-content-styling li strong {
-    color: #ded8d8 !important;
+  color: #cccccc !important;
+  font-size: 18px;
 }
 
 .custom-content-styling li span {
-    font-size: 1.125rem; 
-    line-height: 1.6; 
-    color: #cccccc !important; 
-    margin-bottom: 10px; 
+    font-size: 18px;
+    line-height: 1.6;
+    color: #cccccc !important;
+    margin-bottom: 10px;
 }
 
-
+/* Links */
 .custom-content-styling a {
-  color: #1e90ff;
-  text-decoration: underline;
+    color: #1e90ff;
+    text-decoration: underline;
 }
 
 .custom-content-styling a:hover {
-  color: #ff4500;
+    color: #ff4500;
 }
 
-
+/* Line Breaks */
 .custom-content-styling br {
-  line-height: 0 !important; 
-  margin: 0 !important;
+    line-height: 0 !important;
+    margin: 0 !important;
 }
 
-
+/* Empty Paragraph Removal */
 .custom-content-styling p:empty {
-  display: none !important;
+    display: none !important;
 }
 
+/* ============================================
+   Tablet View - max-width: 768px
+============================================ */
 
 @media (max-width: 768px) {
-  .custom-content-styling
-  .custom-content-styling h2 span,
- 
-  .custom-content-styling h4 strong 
-  .custom-content-styling p strong {
-    font-size: 1.5rem !important;
-    color: white !important;
-  }
-  .custom-content-styling h3 span{
-    font-size: 22px;
-    color: white !important;
-  }
-  .custom-content-styling p {
-    font-size: 1rem; 
-  }
+    /* Headings (h4-h6) */
+    .custom-content-styling h4 {
+        font-size: 18px;
+    }
+    .custom-content-styling li strong {
+      color: #cccccc !important;
+      font-size: 16px;
+    }
+    .custom-content-styling h4 strong {
+        font-size: 19px;
+    }
 
-  .custom-content-styling h3 span {
-    font-size: 18px;
-  }
+    .custom-content-styling h5 {
+        font-size: 16px;
+    }
+
+    .custom-content-styling h6 {
+        font-size: 14px;
+    }
+
+    /* h2, h3, strong in paragraphs */
+    .custom-content-styling h2 span,
+    .custom-content-styling h4 strong,
+    .custom-content-styling p strong {
+        font-size: 24px !important;
+        color: #cccccc !important;
+    }
+
+    .custom-content-styling h3 span {
+        font-size: 22px;
+        color: #cccccc !important;
+    }
+
+    /* Paragraph */
+    .custom-content-styling p {
+        font-size: 16px;
+    }
+
+    /* Special h3 span */
+    .custom-content-styling h3 span {
+        font-size: 18px;
+    }
 }
+
+/* ============================================
+   Mobile View - max-width: 480px
+============================================ */
 
 @media (max-width: 480px) {
-  .custom-content-styling h2 span,
+    /* Headings (h4-h6) */
+    .custom-content-styling h4 {
+        font-size: 16px;
+    }
 
-  .custom-content-styling h4 strong 
-  .custom-content-styling p strong {
-    font-size: 1.2rem;
+    .custom-content-styling h4 strong {
+        font-size: 17px;
+    }
+
+    .custom-content-styling h5 {
+        font-size: 14px;
+    }   .custom-content-styling h5 strong {
+      font-size: 14px;
   }
 
-  .custom-content-styling h3 span{
-    font-size: 22px;
-    color: white !important;
-  }
+    .custom-content-styling h6 {
+        font-size: 12px;
+    }
 
-  .custom-content-styling p {
-    font-size: 0.9rem;
-  }
+    /* h2, h3, strong in paragraphs */
+    .custom-content-styling h2 span,
+    .custom-content-styling p strong {
+        font-size: 20px;
+    }
 
-  .custom-content-styling h3 span {
-    font-size: 18px;
-line-height: 28px;
-  }
+    .custom-content-styling h3 span {
+        font-size: 20px;
+        color: #cccccc !important;
+    }
+
+    /* Paragraph */
+    .custom-content-styling p {
+        font-size: 14px;
+    }
+
+    /* Special h3 span */
+    .custom-content-styling h3 span {
+        font-size: 16px;
+        line-height: 24px;
+    }
 }
 
-.ql-editor ol, .ql-editor ul {
-  padding-left: 1.5em;
-  color: black !important;
-}
-
-
-
-.ql-editor ol, .ql-editor ul {
-  padding-left: 1.5em;
-  color: black !important;
-}
