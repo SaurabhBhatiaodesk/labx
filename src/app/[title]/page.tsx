@@ -40,7 +40,7 @@ export async function generateMetadata({
   try {
     const data = await fetchPageData(params.title);
     const page = data.data;
-console.log('page',page);
+    console.log('page', page);
 
     return {
       title: page.seoPageTitle,
@@ -112,9 +112,9 @@ export default async function PageDetail({
                   className="pb-3 m-auto"
                 />
               </h1>
-               {page.images.map((image: string, index: number) => (
-                <Image key={image}  src={image} alt=" labx repair " width='100' height='100' className='dynamic__img' />
-          ))}
+              {page.images.map((image: string, index: number) => (
+                <Image key={image} src={image} alt=" labx repair " width='100' height='100' className='dynamic__img' />
+              ))}
             </div>
           </div>
         </section>
