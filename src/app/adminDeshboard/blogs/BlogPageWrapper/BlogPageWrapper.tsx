@@ -202,6 +202,7 @@ console.log('blogDataaaa',blogData)
       className="BlogPageWrapper-os container mx-auto my-10 p-6 bg-white shadow-lg rounded-lg"
       style={{ backgroundColor: "skyblue" }}
     >
+      
       <Head>
         <title>
           {isEditMode ? `Edit: ${blogData.heading}` : "Create New Blog"}
