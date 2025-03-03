@@ -40,7 +40,7 @@ jobs:
         key: ${{ secrets.SERVER_SSH_KEY_LIVE }}
         script: |
           cd /home/ec2-user/labx/
-          # Check if the process is running, restart if it is, or start if it is not running
+          # Check if the process exists
           if pm2 list | grep -q "my-nextjs-app"; then
             pm2 restart my-nextjs-app
           else
