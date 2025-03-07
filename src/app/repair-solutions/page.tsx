@@ -4,12 +4,12 @@ import RepairSolutions from "./repair-solutions";
 import "./repair.css";
 
 export const metadata = {
-  title: "Mobile Repair Solutions - Expert Phone & Device Repair | Labx Repair",
+  title: "Mobile Phone Repair Solutions - Expert Phone & Device Repair ",
   description:
     "LabX Repair offers professional mobile repair solutions with expert phone and device repair services. Get fast, reliable fixes for all mobile issues. Contact us today!",
   keywords: ["Mobile Repair Solutions", "Expert Device Repair"],
   openGraph: {
-    title: "Mobile Repair Solutions - Expert Phone & Device Repair | Labx Repair",
+    title: "Mobile Phone Repair Solutions - Expert Phone & Device Repair ",
     description:
       "LabX Repair offers professional mobile repair solutions with expert phone and device repair services. Get fast, reliable fixes for all mobile issues. Contact us today!",
     url: "", // Replace with your actual page URL
@@ -25,7 +25,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mobile Repair Solutions - Expert Phone & Device Repair | Labx Repair",
+    title: "Mobile Phone Repair Solutions - Expert Phone & Device Repair ",
     description:
       "LabX Repair offers professional mobile repair solutions with expert phone and device repair services. Get fast, reliable fixes for all mobile issues. Contact us today!",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL

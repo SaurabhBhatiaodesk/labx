@@ -5,7 +5,7 @@ const MailRepair = dynamic(() => import('./MailRepair'), { ssr: false });
 // import MailRepair from "./MailRepair";
 
 export const metadata = {
-  title: "Mail in Phone Repair Service in Australia | Phone Repair School",
+  title: "Mail in Mobile Phone Repair Service in Australia | Labx Repair",
   description:
     "Labx Repair provides a trusted mail-in phone repair service in Australia. Get fast, expert repairs for your device with quality service. Ship yours phone today!",
     keywords: ["mail in repair service", "Phone Repair Service"],
@@ -14,7 +14,7 @@ export const metadata = {
 
 
   openGraph: {
-    title: "Mail in Phone Repair Service in Australia | Phone Repair School",
+    title: "Mail in Mobile Phone Repair Service in Australia | Labx Repair",
     description:
       "Labx Repair provides a trusted mail-in phone repair service in Australia. Get fast, expert repairs for your device with quality service. Ship yours phone today!",
     url: "Images/aboutadmin.png", // Replace with your actual page URL
@@ -31,7 +31,7 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Mail in Phone Repair Service in Australia | Phone Repair School",
+    title: "Mail in Mobile Phone Repair Service in Australia | Labx Repair",
     description:
       "Labx Repair provides a trusted mail-in phone repair service in Australia. Get fast, expert repairs for your device with quality service. Ship yours phone today!",
     images: "Images/aboutadmin.png", // Replace with your image URL
