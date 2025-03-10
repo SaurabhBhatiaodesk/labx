@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import AOS from "aos";
@@ -65,14 +65,6 @@ const RecentNews: React.FC = () => {
     router.push(`/blogpage/${pageTitle}`);
   };
 
-  const handlePrev = () => {
-    swiperRef.current?.slidePrev();
-  };
-
-  const handleNext = () => {
-    swiperRef.current?.slideNext();
-  };
-
   return (
     <div className="RecentNews-os">
       <div className="container">
@@ -91,6 +83,7 @@ const RecentNews: React.FC = () => {
               modules={[Autoplay, Navigation]}
               loop={true}
               autoplay={{ delay: 3000 }}
+              // navigation={true}
               onSwiper={(swiper) => (swiperRef.current = swiper)}
               breakpoints={{
                 640: { slidesPerView: 1, spaceBetween: 10 },
@@ -99,103 +92,48 @@ const RecentNews: React.FC = () => {
               }}
               className="blogs-swiper"
             >
-                {blogs.map((blog) => (
-                  <SwiperSlide key={blog._id}>
-                    <div
-                      onClick={() => sendId(blog.pageTitle)}
-                      className="blogs-row-col-os cursor-pointer"
-                      data-aos="zoom-in"
-                    >
-                      <div>
-                        {blog.featuredImage.length > 0 && (
-                          <Image
-                            src={blog.featuredImage[0]}
-                            alt={blog.heading}
-                            width={500}
-                            height={350}
-                            className="rounded-md object-cover blog-image-home"
-                          />
-                        )}
-                      </div>
-                      <div className="mt-4">
-                        <h2 className="font-bold text-lg text-[#EDE574]">
-                          {blog.heading .slice(0, 40)}...
-                        </h2>
-                        <p className="text-base mt-2 text-white">
-                          {stripHtmlTags(blog.content).length > 160
-                            ? `${stripHtmlTags(blog.content).slice(0, 160)}...`
-                            : stripHtmlTags(blog.content)}
-                        </p>
-                        <div className="flex justify-between items-center mt-4">
-                          <button
-                            onClick={() => sendId(blog.pageTitle)}
-                            className="capitalize text-[16px] text-[#EDE574]"
-                          >
-                            Read More
-                          </button>
-                          <span className="capitalize text-[16px] tracking-[1px] text-white">
-                            20 Oct, 2024
-                          </span>
-                        </div>
+              {blogs.map((blog) => (
+                <SwiperSlide key={blog._id}>
+                  <div
+                    onClick={() => sendId(blog.pageTitle)}
+                    className="blogs-row-col-os cursor-pointer"
+                    data-aos="zoom-in"
+                  >
+                    <div>
+                      {blog.featuredImage.length > 0 && (
+                        <Image
+                          src={blog.featuredImage[0]}
+                          alt={blog.heading}
+                          width={500}
+                          height={350}
+                          className="rounded-md object-cover blog-image-home"
+                        />
+                      )}
+                    </div>
+                    <div className="mt-4">
+                      <h2 className="font-bold text-lg text-[#EDE574]">
+                        {blog.heading.slice(0, 40)}...
+                      </h2>
+                      <p className="text-base mt-2 text-white">
+                        {stripHtmlTags(blog.content).length > 160
+                          ? `${stripHtmlTags(blog.content).slice(0, 160)}...`
+                          : stripHtmlTags(blog.content)}
+                      </p>
+                      <div className="flex justify-end items-center mt-4">
+                        <button
+                          onClick={() => sendId(blog.pageTitle)}
+                          className="capitalize text-[16px] text-[#EDE574]"
+                        >
+                          Read More
+                        </button>
                       </div>
                     </div>
-                  </SwiperSlide>
-                ))}
-                <div
-                  className="custom-nav"
-                  style={{
-                    position: "absolute",
-                    top: "62%",
-                    zIndex: 5,
-                    width: "100%",
-                    left: 0,
-                    right: 0,
-                  }}
-                >
-                  <div className="resentblogs flex justify-between relative lg:top-[-35px] top-[-65px]">
-                    <button
-                      onClick={handlePrev}
-                      className="prev-button bg-gray-300 p-[4px] rounded-full"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <path
-                          d="M15 18L9 12L15 6"
-                          stroke="black"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </button>
-                    <button
-                      onClick={handleNext}
-                      className="next-button bg-gray-300 p-[4px] rounded-full ml-2"
-                    >
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M9 18L15 12L9 6"
-                          stroke="black"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </button>
+                    
                   </div>
-                </div>
-              </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            
             ) : (
               <p className="text-center text-gray-500 italic">
                 No blogs available.
