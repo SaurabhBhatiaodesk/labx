@@ -10,7 +10,7 @@ function BeginnerPhoneRepairCourseSale() {
   const [personsMentored, setPersonsMentored] = useState(0);
   const [workshopsAttended, setWorkshopsAttended] = useState(0);
   const [coachingCertificates, setCoachingCertificates] = useState(0);
-
+ 
   // State for countdown timer
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
