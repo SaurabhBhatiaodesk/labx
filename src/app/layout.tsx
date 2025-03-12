@@ -69,10 +69,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <meta name="google-site-verification" content="daUSUNFfgNz6HBE7DkYP6jsrgiCz3DDWT0mP696YPBA" />
-      {/* code_221 */}
+        <meta
+          name="google-site-verification"
+          content="daUSUNFfgNz6HBE7DkYP6jsrgiCz3DDWT0mP696YPBA"
+        />
+        {/* code_221 */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Canonical/>
+        <Canonical />
       </head>
       <body
         className={`${space_Grotesk.variable} ${poppins.variable} font-gordita`}
@@ -98,7 +101,17 @@ export default function RootLayout({
             `,
           }}
         />
-       
+        {/* Google Tag Manager (GTM) */}
+        <Script
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TGGL6B3L');`,
+          }}
+        />
       </body>
     </html>
   );
