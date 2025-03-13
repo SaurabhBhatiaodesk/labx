@@ -241,6 +241,7 @@ const FormCode: React.FC = () => {
           message={toast.message}
           type={toast.type}
           onHide={handleToastHide}
+          notiClass=""
           
         />
       )}

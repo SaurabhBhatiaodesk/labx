@@ -379,6 +379,7 @@ const Footer = () => {
                           message={toast.message}
                           type={toast.type}
                           onHide={handleToastHide}
+                          notiClass=""
                         />
                       )}
 

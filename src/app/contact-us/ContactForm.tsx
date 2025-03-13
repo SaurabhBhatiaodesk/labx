@@ -269,6 +269,7 @@ const ContactForm: React.FC = () => {
           message={toast.message}
           type={toast.type}
           onHide={handleToastHide}
+          notiClass="googleadd"
         />
       )}
       <div className="p-2 lg:p-10 steper-form-section-os bg-black " id="contactId">
