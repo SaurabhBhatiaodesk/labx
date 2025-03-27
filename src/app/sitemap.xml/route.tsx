@@ -41,19 +41,11 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
   // Fetch blog posts dynamically and use the `_id` field
   try {
     const blogResponse = await fetch(blogApi);
-    console.log("blogResponse",blogResponse);
-    
     const { blogs } = await blogResponse.json();
-console.log("SDfdsfsdf",blogs.length)
     if (Array.isArray(blogs)) {
       blogs.forEach((blog: any) => {
-        console.log("blogsdasd",blog);
-        
         if (blog.pageTitle) {
-            console.log("asdad",blog.pageTitle);
-            
           fetchedUrls.add(`${websiteUrl}blogs/${blog.pageTitle.replace(/\s+/g, '-').toLowerCase()}`);
-          console.log("jknknsd",fetchedUrls.add(`${websiteUrl}blogs/${blog.pageTitle.replace(/\s+/g, '-').toLowerCase()}`))
         }
       });
     }
