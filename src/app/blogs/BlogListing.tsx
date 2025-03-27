@@ -71,7 +71,7 @@ const Blogs: React.FC = () => {
                   key={blog._id}
                   className="blog-article p-4 rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]"
                 >
-                  <Link href={`/blogpage/${blog.pageTitle}`}>
+                  <Link href={`/blogs/${blog.pageTitle}`}>
                     <Image
                       src={featuredImage}
                       alt={blog.heading || "Blog Image"}
@@ -86,12 +86,12 @@ const Blogs: React.FC = () => {
                   <div className="learnmore">
                     {/* <MainButton
                       MainButton="View Details"
-                      link={`/blogpage/${blog._id}`}
+                      link={`/blogs/${blog._id}`}
                     /> */}
 
                     <MainButton
                       MainButton="View Details"
-                      link={`/blogpage/${blog?.pageTitle}`}
+                      link={`/blogs/${blog?.pageTitle}`}
                     />
                   </div>
                 </div>

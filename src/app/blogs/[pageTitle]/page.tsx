@@ -5,7 +5,6 @@ import BlogSidebar from "../../../components/BlogSidebar/BlogSidebar";
 import FixLabx from "../../../components/HomeCpmponents/FixLabx/FixLabx";
 import Image from "next/image";
 import "./BlogDetails.css";
-import Banner from '../../../../public/Images/blog/banner.svg'
 interface BlogData {
   _id: string;
   heading: string;
@@ -28,8 +27,6 @@ interface BlogData {
 //   //   }
 //   // );
 
-  
-
 //   console.log("resresres",res)
 
 //   if (!res.ok) {
@@ -40,27 +37,22 @@ interface BlogData {
 //   return data;
 // }
 
-
 async function fetchBlogData(pageTitle: string | undefined): Promise<BlogData> {
   if (!pageTitle) {
     throw new Error("Page title is undefined");
   }
-
-  console.log(pageTitle, "Fetching blog data...");
-
   const requestOptions: RequestInit = {
     method: "GET",
     redirect: "follow" as RequestRedirect,
   };
 
-  
   try {
     const res = await fetch(
-      `https://labxbackend.labxrepair.com.au/api/admin/getPageBypageTitle/${encodeURIComponent(pageTitle)}`,
+      `https://labxbackend.labxrepair.com.au/api/admin/getPageBypageTitle/${encodeURIComponent(
+        pageTitle
+      )}`,
       requestOptions
     );
-
-    console.log("API Response:", res);
 
     if (!res.ok) {
       throw new Error(`Failed to fetch blog data. Status: ${res.status}`);
@@ -69,15 +61,12 @@ async function fetchBlogData(pageTitle: string | undefined): Promise<BlogData> {
     // **Read and log the response body**
     const data = await res.json();
     // console.log("Fetched Blog Data:", data);
-
     return data;
   } catch (error) {
     console.error("Error fetching blog data:", error);
     throw error;
   }
 }
-
-
 
 // Generate Metadata for the Blog
 export async function generateMetadata({
@@ -87,9 +76,6 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   try {
     const blog = await fetchBlogData(params.pageTitle);
-    
-    console.log("blog fetcedddddddddddddkkkkk",blog)
-
     return {
       title: blog.heading,
       description: `${blog?.metaDescription} Keywords: ${blog.pageKeywords}`,
@@ -115,11 +101,16 @@ export default async function BlogDetails({
     return (
       <div className="blog-details-os">
         <div className="container">
-         <div className="main__section text-center">
+          <div className="main__section text-center">
             <h1>Our Blogs</h1>
-            <p>This course is designed and based on the highest industry standards and over 14 years of industry experience.  It includes everything that anyone needs to be one of the best technicians or a successful business owner.</p>
+            <p>
+              This course is designed and based on the highest industry
+              standards and over 14 years of industry experience. It includes
+              everything that anyone needs to be one of the best technicians or
+              a successful business owner.
+            </p>
           </div>
-          </div>
+        </div>
         <div className="container mx-auto my-10 p-6 bg-black shadow-lg rounded-lg flex flex-col lg:flex-row mb-right">
           {/* Main Blog Content */}
           <div className="w-full lg:w-3/4 mb-6 lg:mb-0">
@@ -148,15 +139,16 @@ export default async function BlogDetails({
               "No Image"
             )}
 
-            <h2 className="text-3xl font-bold my-[10px] mt-5 text-tertiary">{blog.heading}</h2>
+            <h2 className="text-3xl font-bold my-[10px] mt-5 text-tertiary">
+              {blog.heading}
+            </h2>
 
             <div className="mb-4">
-  <div
-    className="mt-2 text-white custom-content-styling"
-    dangerouslySetInnerHTML={{ __html: blog.content }}
-  ></div>
-</div>
-
+              <div
+                className="mt-2 text-white custom-content-styling"
+                dangerouslySetInnerHTML={{ __html: blog.content }}
+              ></div>
+            </div>
           </div>
 
           {/* Sidebar with Paginated Blogs */}
@@ -164,7 +156,7 @@ export default async function BlogDetails({
             <BlogSidebar />
           </div>
         </div>
-            <FixLabx />
+        <FixLabx />
         {/* <img src={Banner.src} className="banner_img" /> */}
       </div>
     );
