@@ -1,5 +1,4 @@
-
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import {
   TextField,
@@ -82,23 +81,20 @@ const BlogPageWrapper: React.FC = () => {
   //     ['bold', 'italic', 'underline'],
   //     ['link', 'blockquote'],
   //     [{ align: [] }],
-  //     [{ 'color': [] }], 
+  //     [{ 'color': [] }],
   //   ],
   // };
 
   const modules = {
     toolbar: [
       [{ header: [1, 2, 3, 4, 5, 6, false] }],
-      [{ list: 'ordered' }, { list: 'bullet' }],
-      ['bold', 'italic', 'underline'],
-      ['link', 'blockquote'],
+      [{ list: "ordered" }, { list: "bullet" }],
+      ["bold", "italic", "underline"],
+      ["link", "blockquote"],
       [{ align: [] }],
-      [{ color: [] }]
+      [{ color: [] }],
     ],
   };
-  
-
-  
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -206,13 +202,12 @@ const BlogPageWrapper: React.FC = () => {
     }
   };
 
-console.log('blogDataaaa',blogData)
+  console.log("blogDataaaa", blogData);
   return (
     <div
       className="BlogPageWrapper-os container mx-auto my-10 p-6 bg-white shadow-lg rounded-lg"
       style={{ backgroundColor: "skyblue" }}
     >
-      
       <Head>
         <title>
           {isEditMode ? `Edit: ${blogData.heading}` : "Create New Blog"}
@@ -242,7 +237,6 @@ console.log('blogDataaaa',blogData)
           theme="snow"
           className="border rounded-lg text-white"
           style={{ height: "300px", marginBottom: "20px" }}
-          
         />
         {errors.content && <p className="text-red-500">{errors.content}</p>}
         <TextField
@@ -291,40 +285,45 @@ console.log('blogDataaaa',blogData)
           accept="image/*"
           onChange={handleImageChange}
         />
-      {blogData?.featuredImages?.length > 0 && (
-  <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
-  {blogData?.featuredImages?.map((image, index) => {
-  console.log("Image at index", index, image); // This will log the image object (either a string URL or File)
-  return (
-    <div key={index} style={{ position: "relative", display: "inline-block" }}>
-      {/* Handle existing image URLs */}
-      <Image
-        src={typeof image === "string" ? image : URL.createObjectURL(image)} // This handles both URLs and Files
-        alt={`Featured Image ${index + 1}`}
-        width={150}
-        height={150}
-        style={{ borderRadius: "8px" }}
-        objectFit="cover"
-      />
-      <IconButton
-        onClick={() => handleRemoveImage(index)}
-        style={{
-          position: "absolute",
-          top: 0,
-          right: 0,
-          backgroundColor: "white",
-          borderRadius: "50%",
-        }}
-      >
-        <FiX color="red" />
-      </IconButton>
-    </div>
-  );
-})}
-
-  </div>
-)}
-
+        {blogData?.featuredImages?.length > 0 && (
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+            {blogData?.featuredImages?.map((image, index) => {
+              console.log("Image at index", index, image); // This will log the image object (either a string URL or File)
+              return (
+                <div
+                  key={index}
+                  style={{ position: "relative", display: "inline-block" }}
+                >
+                  {/* Handle existing image URLs */}
+                  <Image
+                    src={
+                      typeof image === "string"
+                        ? image
+                        : URL.createObjectURL(image)
+                    } // This handles both URLs and Files
+                    alt={`Featured Image ${index + 1}`}
+                    width={150}
+                    height={150}
+                    style={{ borderRadius: "8px" }}
+                    objectFit="cover"
+                  />
+                  <IconButton
+                    onClick={() => handleRemoveImage(index)}
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      right: 0,
+                      backgroundColor: "white",
+                      borderRadius: "50%",
+                    }}
+                  >
+                    <FiX color="red" />
+                  </IconButton>
+                </div>
+              );
+            })}
+          </div>
+        )}
 
         <Button type="submit" variant="contained" color="primary" fullWidth>
           {isEditMode ? "Update Blog" : "Create Blog"}

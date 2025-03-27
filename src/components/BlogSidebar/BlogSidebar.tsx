@@ -61,7 +61,7 @@ export default function BlogSidebar() {
     setCurrentPage(page);
   };
   const sendId = (id: string) => {
-    router.push(`/blogpage/${id}`);
+    router.push(`/blogs/${id}`);
   };
   const currentUrl = window.location.href; 
   return (

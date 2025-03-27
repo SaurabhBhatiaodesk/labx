@@ -62,7 +62,7 @@ const RecentNews: React.FC = () => {
   }, []);
 
   const sendId = (pageTitle: string) => {
-    router.push(`/blogpage/${pageTitle}`);
+    router.push(`/blogs/${pageTitle}`);
   };
 
   return (
