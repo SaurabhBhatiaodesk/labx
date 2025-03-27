@@ -40,8 +40,17 @@ export default function BlogSidebar() {
   const [blogs, setBlogs] = useState<BlogData[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [currentUrl, setCurrentUrl] = useState<string>("");
   const blogsPerPage = 20;
   const router = useRouter();
+
+  useEffect(() => {
+    fetchBlogs(currentPage, blogsPerPage);
+    // Set the current URL only on the client side
+    if (typeof window !== "undefined") {
+      setCurrentUrl(window.location.href); // Access window only on the client side
+    }
+  }, [currentPage]);
 
   useEffect(() => {
     fetchBlogs(currentPage, blogsPerPage);
@@ -63,7 +72,6 @@ export default function BlogSidebar() {
   const sendId = (id: string) => {
     router.push(`/blogs/${id}`);
   };
-  const currentUrl = window.location.href; 
   return (
     <div>
       <div className="social_section">
@@ -101,6 +109,7 @@ export default function BlogSidebar() {
                 width={100}
                 height={100}
                 style={{ border: "2px solid #EDE574" }}
+                layout="responsive"
               />
             )}
             <div>
