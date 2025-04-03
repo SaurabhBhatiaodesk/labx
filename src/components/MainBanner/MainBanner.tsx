@@ -23,10 +23,7 @@ export default function MainBanner() {
   const [backgroundImage, setBackgroundImage] = useState(mainf1); // State to track background image
   const [isPaused, setIsPaused] = useState(false); // State to control autoplay pause
 
-  // useEffect(() => {
-  //   AOS.init({ duration: 1000 });
-  //   AOS.refresh();
-  // }, []);
+
 
   const Paginationback = ["#FF0000", "#FF9966", "#6DD5ED", "#A044FF"];
   const backgroundImages = [mainf1, mainf2, mainf3, mainf4];
@@ -38,12 +35,9 @@ export default function MainBanner() {
 
   return (
     <>
-      {/* <section
-        className="background-banner"
-        data-aos="fade-in"  */}
+    
       <section
         className="background-banner"
-        // data-aos="fade-in"
         style={{
           backgroundImage: `url(${backgroundImage.src})`,
           backgroundSize: "cover",
