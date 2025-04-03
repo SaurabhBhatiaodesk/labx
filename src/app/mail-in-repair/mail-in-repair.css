@@ -278,7 +278,7 @@ input[type="submit"]:hover {
 .gaurav-line:after {
   position: absolute;
   content: "";
-  width: 79%;
+  width: 50%;
   height: 2px;
   background: var(--tertiary-color);
   top: 37%;
@@ -291,7 +291,7 @@ input[type="submit"]:hover {
   .gaurav-line:after {
     position: absolute;
     content: "";
-    width: 79%;
+    width: 50%;
     height: 2px;
     background: var(--tertiary-color);
     top: 30% !important;
