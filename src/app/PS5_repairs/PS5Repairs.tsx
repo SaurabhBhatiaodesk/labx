@@ -13,6 +13,7 @@ const PS5Repairs = () => {
   return (
     <div>
 
+
    <PS5Banner/>
  <div className='bg-[#0b0b0b] md:py-10 py-8'>
  <div className=' container'>
