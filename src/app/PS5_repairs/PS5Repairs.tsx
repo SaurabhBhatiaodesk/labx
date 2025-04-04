@@ -18,7 +18,7 @@ const PS5Repairs = () => {
  <div className='bg-[#0b0b0b] md:py-10 py-8'>
  <div className=' container'>
    <MainHeading Heading="PS5 Repairs Sydney" />
-   <MainTitle Title="There is nothing more frustrating than when you're looking forward to a good sesh on your PS5 with your mates and you run into issues.. We have legit seen it all. From bad connections and overheating to power loss and USB f**k ups. Get yourself back in the game today and give us a holla!" />
+   <MainTitle Title={`There is nothing more frustrating than when you're looking forward to a good sesh on your PS5 with your mates and you run into issues.. We have legit seen it all. From bad connections and overheating to power loss and USB f**k ups. Get yourself back in the game today and give us a holla! `}/>
    </div>
  </div>
  <StaperForm/>
