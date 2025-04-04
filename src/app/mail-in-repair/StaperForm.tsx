@@ -400,14 +400,17 @@ const StaperForm: React.FC = () => {
   };
 
   useEffect(() => {
-    // Check if there's saved signature in localStorage
+    // Check if there's saved signature in localStorage gauravb code  window 
+    if (typeof window !== "undefined") {
     const savedSignature = localStorage.getItem("signatureData");
+    
     if (savedSignature) {
       setShippingDetails((prevState) => ({
         ...prevState,
         signature: savedSignature,
       }));
     }
+  }
   }, []);
 
   const saveSignature = () => {
