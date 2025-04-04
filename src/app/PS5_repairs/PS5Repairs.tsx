@@ -7,8 +7,10 @@ import PS5ExpertRepair from "./PS5ExpertRepair";
 import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
 import Accordion from "@/components/AskusQuestion/AskusQuestion";
 import PS5Sydney from "./PS5Sydney";
-import StaperForm from "../mail-in-repair/StaperForm";
-
+import dynamic from "next/dynamic";
+const StaperForm = dynamic(() => import('../mail-in-repair/StaperForm'), {
+  ssr: false,
+});
 const PS5Repairs = () => {
   return (
     <div>

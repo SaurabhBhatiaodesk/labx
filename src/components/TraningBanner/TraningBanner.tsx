@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import trending from "../../../public/Images/icons/trending-up.svg";
@@ -17,7 +17,7 @@ interface TraningBanner {
   courseHour: any;
   Duration: any;
   Price: any;
-  buttonname:any;
+  buttonname: any;
 }
 
 function TraningBanner({
@@ -31,15 +31,14 @@ function TraningBanner({
   courseHour,
   Duration,
   Price,
-  buttonname
+  buttonname,
 }: TraningBanner) {
+  const [isBrowser, setIsBrowser] = useState(false);
 
-    const [isBrowser, setIsBrowser] = useState(false);
-
-    // Check if we're in the browser
-    useEffect(() => {
-      setIsBrowser(true);
-    }, []);
+  // Check if we're in the browser
+  useEffect(() => {
+    setIsBrowser(true);
+  }, []);
 
   const handleScrollToTarget = () => {
     const currentRoute = window.location.pathname;
@@ -60,22 +59,21 @@ function TraningBanner({
       targetId = "broken-ripped-pads-repair-jumbers-id";
     }
 
+    if (typeof window !== "undefined") {
+      const target = document.getElementById(targetId);
+      const offset = 12 * 5; // 3rem in pixels (assuming 1rem = 16px)
 
-    if (typeof document !== "undefined") {
-    const target = document.getElementById(targetId);
-    const offset = 12 * 5; // 3rem in pixels (assuming 1rem = 16px)
+      if (target) {
+        const targetPosition =
+          target.getBoundingClientRect().top + window.pageYOffset;
+        const scrollToPosition = targetPosition - offset;
 
-    if (target) {
-      const targetPosition =
-        target.getBoundingClientRect().top + window.pageYOffset;
-      const scrollToPosition = targetPosition - offset;
-
-      window.scrollTo({
-        top: scrollToPosition,
-        behavior: "smooth",
-      });
+        window.scrollTo({
+          top: scrollToPosition,
+          behavior: "smooth",
+        });
+      }
     }
-  }
   };
   return (
     <>
@@ -127,7 +125,7 @@ function TraningBanner({
                 {/* <button className="btn" onClick={handleScrollToTarget}>
                   JOIN THIS COURSE
                 </button> */}
-                 {isBrowser && window.location.pathname === link ? (
+                {isBrowser && window.location.pathname === link ? (
                   <button className="btn" onClick={handleScrollToTarget}>
                     {buttonname}
                   </button>

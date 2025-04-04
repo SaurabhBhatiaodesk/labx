@@ -12,8 +12,8 @@ interface BreadcrumbProps {
   AdminImage: string;
   link?: any;
   buttonname?: string;
-  scrollId?:any;
-  scrollOffSet?:any;
+  scrollId?: any;
+  scrollOffSet?: any;
 }
 
 function Breadcrumb({
@@ -24,7 +24,7 @@ function Breadcrumb({
   link,
   buttonname, // Destructure the link prop
   scrollId,
-  scrollOffSet
+  scrollOffSet,
 }: BreadcrumbProps) {
   const [isBrowser, setIsBrowser] = useState(false);
 
@@ -46,21 +46,21 @@ function Breadcrumb({
     // } else if (currentRoute === "/training") {
     //   targetId = "Kickstart";
     // }
-    if (typeof document !== "undefined") {
-    const target = document.getElementById(targetId);
-    const offset = scrollOffSet; // 3rem in pixels (assuming 1rem = 16px)
+    if (typeof window !== "undefined") {
+      const target = document.getElementById(targetId);
+      const offset = scrollOffSet; // 3rem in pixels (assuming 1rem = 16px)
 
-    if (target) {
-      const targetPosition =
-        target.getBoundingClientRect().top + window.pageYOffset;
-      const scrollToPosition = targetPosition - offset;
+      if (target) {
+        const targetPosition =
+          target.getBoundingClientRect().top + window.pageYOffset;
+        const scrollToPosition = targetPosition - offset;
 
-      window.scrollTo({
-        top: scrollToPosition,
-        behavior: "smooth",
-      });
+        window.scrollTo({
+          top: scrollToPosition,
+          behavior: "smooth",
+        });
+      }
     }
-  }
   };
 
   return (

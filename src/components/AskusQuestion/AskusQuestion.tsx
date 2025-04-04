@@ -7,12 +7,12 @@ import Image from "next/image";
 import ps5game from "../../../public/Images/ps5game.webp";
 import MainHeading from "../ManinHeading/MainHeading";
 
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation";
 
 export default function Accordion() {
   const [active, setActive] = useState<number | null>(null);
 
-const pathnav = usePathname()
+  const pathnav = usePathname();
 
   // Sample data for the accordion content
   const accordionData = [
@@ -96,23 +96,23 @@ const pathnav = usePathname()
           </div>
           <div className="seconf-grid">
             <div className="flex justify-center">
-            {pathnav === "/PS5_repairs" ? (
-              <Image
-    className="lg:h-auto h-[300px] object-contain"
-    src={ps5game}
-    alt="Mobile repair"
-    width={500}
-    height={500}
-  />
-) : (
-  <Image
-    className="lg:h-auto h-[300px] object-contain"
-    src="https://labxbackend.s3.us-east-2.amazonaws.com/faqimages+1+(1).webp"
-    alt="Mobile repair"
-    width={500}
-    height={500}
-  />
-)}
+              {pathnav === "/PS5_repairs" ? (
+                <Image
+                  className="lg:h-auto h-[300px] object-contain"
+                  src={ps5game}
+                  alt="Mobile repair"
+                  width={500}
+                  height={500}
+                />
+              ) : (
+                <Image
+                  className="lg:h-auto h-[300px] object-contain"
+                  src="https://labxbackend.s3.us-east-2.amazonaws.com/faqimages+1+(1).webp"
+                  alt="Mobile repair"
+                  width={500}
+                  height={500}
+                />
+              )}
             </div>
           </div>
         </div>
