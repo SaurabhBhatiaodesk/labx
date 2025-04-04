@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
@@ -12,9 +11,6 @@ import arrow2 from "../../../public/Images/icons/arrow1-2.svg";
 import arrow3 from "../../../public/Images/icons/arrow1-3.svg";
 import arrow4 from "../../../public/Images/icons/arrow1-4.svg";
 import arrow5 from "../../../public/Images/icons/arrow1-5.svg";
-
-
-
 
 import DeliveryTousMobile from "@/components/HomeCpmponents/DeliveryTo-us/DeliveryTousMobile";
 
@@ -47,7 +43,8 @@ const PS5RepairsSydney: React.FC = () => {
       content: "",
 
       // contentf2title: "Expert B2B Screen Refurbishing",
-      contentf2: "No display on your TV or flickering images? No need to abort, just fix your port. Our expert technicians specialize in HDMI port repairs, ensuring seamless connectivity and crystal-clear visuals. We use high-quality parts and advanced repair techniques to restore your PS5 to peak performance. With quick turnaround times, affordable pricing, and guaranteed satisfaction, we make sure your gaming experience stays uninterrupted. Whether it’s a loose connection, bent pins, or a damaged port, we’ve got you covered. Don’t let technical issues hold you back—bring your PS5 to us and get back to gaming with confidence!",
+      contentf2:
+        "No display on your TV or flickering images? No need to abort, just fix your port. Our expert technicians specialize in HDMI port repairs, ensuring seamless connectivity and crystal-clear visuals. We use high-quality parts and advanced repair techniques to restore your PS5 to peak performance. With quick turnaround times, affordable pricing, and guaranteed satisfaction, we make sure your gaming experience stays uninterrupted. Whether it’s a loose connection, bent pins, or a damaged port, we’ve got you covered. Don’t let technical issues hold you back—bring your PS5 to us and get back to gaming with confidence!",
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
       //   "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -59,7 +56,8 @@ const PS5RepairsSydney: React.FC = () => {
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image:
+        "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
       // image: screenreplace,
     },
     {
@@ -67,7 +65,8 @@ const PS5RepairsSydney: React.FC = () => {
       label: "PS5 Crash Repair",
       content: "",
       // contentf2title: "Expert B2B Screen Refurbishing",
-      contentf2: "No display on your TV or flickering images? No need to abort, just fix your port. Our expert technicians specialize in HDMI port repairs, ensuring seamless connectivity and crystal-clear visuals. We use high-quality parts and advanced repair techniques to restore your PS5 to peak performance. With quick turnaround times, affordable pricing, and guaranteed satisfaction, we make sure your gaming experience stays uninterrupted. Whether it’s a loose connection, bent pins, or a damaged port, we’ve got you covered. Don’t let technical issues hold you back—bring your PS5 to us and get back to gaming with confidence!",
+      contentf2:
+        "No display on your TV or flickering images? No need to abort, just fix your port. Our expert technicians specialize in HDMI port repairs, ensuring seamless connectivity and crystal-clear visuals. We use high-quality parts and advanced repair techniques to restore your PS5 to peak performance. With quick turnaround times, affordable pricing, and guaranteed satisfaction, we make sure your gaming experience stays uninterrupted. Whether it’s a loose connection, bent pins, or a damaged port, we’ve got you covered. Don’t let technical issues hold you back—bring your PS5 to us and get back to gaming with confidence!",
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
       //   "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -79,7 +78,8 @@ const PS5RepairsSydney: React.FC = () => {
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image:
+        "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
       // image: screenreplace,
     },
     {
@@ -87,7 +87,8 @@ const PS5RepairsSydney: React.FC = () => {
       label: "PS5 Port Repair",
       content: "",
       // contentf2title: "Expert B2B Screen Refurbishing",
-      contentf2: "No display on your TV or flickering images? No need to abort, just fix your port. Our expert technicians specialize in HDMI port repairs, ensuring seamless connectivity and crystal-clear visuals. We use high-quality parts and advanced repair techniques to restore your PS5 to peak performance. With quick turnaround times, affordable pricing, and guaranteed satisfaction, we make sure your gaming experience stays uninterrupted. Whether it’s a loose connection, bent pins, or a damaged port, we’ve got you covered. Don’t let technical issues hold you back—bring your PS5 to us and get back to gaming with confidence!",
+      contentf2:
+        "No display on your TV or flickering images? No need to abort, just fix your port. Our expert technicians specialize in HDMI port repairs, ensuring seamless connectivity and crystal-clear visuals. We use high-quality parts and advanced repair techniques to restore your PS5 to peak performance. With quick turnaround times, affordable pricing, and guaranteed satisfaction, we make sure your gaming experience stays uninterrupted. Whether it’s a loose connection, bent pins, or a damaged port, we’ve got you covered. Don’t let technical issues hold you back—bring your PS5 to us and get back to gaming with confidence!",
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
       //   "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -99,7 +100,8 @@ const PS5RepairsSydney: React.FC = () => {
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image:
+        "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
       // image: screenreplace,
     },
     {
@@ -107,7 +109,8 @@ const PS5RepairsSydney: React.FC = () => {
       label: "PS5 Overheating",
       content: "",
       // contentf2title: "Expert B2B Screen Refurbishing",
-      contentf2: "No display on your TV or flickering images? No need to abort, just fix your port. Our expert technicians specialize in HDMI port repairs, ensuring seamless connectivity and crystal-clear visuals. We use high-quality parts and advanced repair techniques to restore your PS5 to peak performance. With quick turnaround times, affordable pricing, and guaranteed satisfaction, we make sure your gaming experience stays uninterrupted. Whether it’s a loose connection, bent pins, or a damaged port, we’ve got you covered. Don’t let technical issues hold you back—bring your PS5 to us and get back to gaming with confidence!",
+      contentf2:
+        "No display on your TV or flickering images? No need to abort, just fix your port. Our expert technicians specialize in HDMI port repairs, ensuring seamless connectivity and crystal-clear visuals. We use high-quality parts and advanced repair techniques to restore your PS5 to peak performance. With quick turnaround times, affordable pricing, and guaranteed satisfaction, we make sure your gaming experience stays uninterrupted. Whether it’s a loose connection, bent pins, or a damaged port, we’ve got you covered. Don’t let technical issues hold you back—bring your PS5 to us and get back to gaming with confidence!",
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
       //   "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -119,7 +122,8 @@ const PS5RepairsSydney: React.FC = () => {
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image:
+        "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
       // image: screenreplace,
     },
     {
@@ -127,7 +131,8 @@ const PS5RepairsSydney: React.FC = () => {
       label: "Ps5 Disk Stuck",
       content: "",
       // contentf2title: "Expert B2B Screen Refurbishing",
-      contentf2: "No display on your TV or flickering images? No need to abort, just fix your port. Our expert technicians specialize in HDMI port repairs, ensuring seamless connectivity and crystal-clear visuals. We use high-quality parts and advanced repair techniques to restore your PS5 to peak performance. With quick turnaround times, affordable pricing, and guaranteed satisfaction, we make sure your gaming experience stays uninterrupted. Whether it’s a loose connection, bent pins, or a damaged port, we’ve got you covered. Don’t let technical issues hold you back—bring your PS5 to us and get back to gaming with confidence!",
+      contentf2:
+        "No display on your TV or flickering images? No need to abort, just fix your port. Our expert technicians specialize in HDMI port repairs, ensuring seamless connectivity and crystal-clear visuals. We use high-quality parts and advanced repair techniques to restore your PS5 to peak performance. With quick turnaround times, affordable pricing, and guaranteed satisfaction, we make sure your gaming experience stays uninterrupted. Whether it’s a loose connection, bent pins, or a damaged port, we’ve got you covered. Don’t let technical issues hold you back—bring your PS5 to us and get back to gaming with confidence!",
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
       //   "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -139,7 +144,8 @@ const PS5RepairsSydney: React.FC = () => {
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image:
+        "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
       // image: screenreplace,
     },
     {
@@ -147,7 +153,8 @@ const PS5RepairsSydney: React.FC = () => {
       label: "PS5 Powerless",
       content: "",
       // contentf2title: "Expert B2B Screen Refurbishing",
-      contentf2: "No display on your TV or flickering images? No need to abort, just fix your port. Our expert technicians specialize in HDMI port repairs, ensuring seamless connectivity and crystal-clear visuals. We use high-quality parts and advanced repair techniques to restore your PS5 to peak performance. With quick turnaround times, affordable pricing, and guaranteed satisfaction, we make sure your gaming experience stays uninterrupted. Whether it’s a loose connection, bent pins, or a damaged port, we’ve got you covered. Don’t let technical issues hold you back—bring your PS5 to us and get back to gaming with confidence!",
+      contentf2:
+        "No display on your TV or flickering images? No need to abort, just fix your port. Our expert technicians specialize in HDMI port repairs, ensuring seamless connectivity and crystal-clear visuals. We use high-quality parts and advanced repair techniques to restore your PS5 to peak performance. With quick turnaround times, affordable pricing, and guaranteed satisfaction, we make sure your gaming experience stays uninterrupted. Whether it’s a loose connection, bent pins, or a damaged port, we’ve got you covered. Don’t let technical issues hold you back—bring your PS5 to us and get back to gaming with confidence!",
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
       //   "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -159,7 +166,8 @@ const PS5RepairsSydney: React.FC = () => {
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image:
+        "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
       // image: screenreplace,
     },
     {
@@ -167,7 +175,8 @@ const PS5RepairsSydney: React.FC = () => {
       label: "PS5 Port Repair",
       content: "",
       // contentf2title: "Expert B2B Screen Refurbishing",
-      contentf2: "No display on your TV or flickering images? No need to abort, just fix your port. Our expert technicians specialize in HDMI port repairs, ensuring seamless connectivity and crystal-clear visuals. We use high-quality parts and advanced repair techniques to restore your PS5 to peak performance. With quick turnaround times, affordable pricing, and guaranteed satisfaction, we make sure your gaming experience stays uninterrupted. Whether it’s a loose connection, bent pins, or a damaged port, we’ve got you covered. Don’t let technical issues hold you back—bring your PS5 to us and get back to gaming with confidence!",
+      contentf2:
+        "No display on your TV or flickering images? No need to abort, just fix your port. Our expert technicians specialize in HDMI port repairs, ensuring seamless connectivity and crystal-clear visuals. We use high-quality parts and advanced repair techniques to restore your PS5 to peak performance. With quick turnaround times, affordable pricing, and guaranteed satisfaction, we make sure your gaming experience stays uninterrupted. Whether it’s a loose connection, bent pins, or a damaged port, we’ve got you covered. Don’t let technical issues hold you back—bring your PS5 to us and get back to gaming with confidence!",
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
       //   "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -179,7 +188,8 @@ const PS5RepairsSydney: React.FC = () => {
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image:
+        "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
       // image: screenreplace,
     },
     {
@@ -187,7 +197,8 @@ const PS5RepairsSydney: React.FC = () => {
       label: "PS5 Boot Power Repair",
       content: "",
       // contentf2title: "Expert B2B Screen Refurbishing",
-      contentf2: "No display on your TV or flickering images? No need to abort, just fix your port. Our expert technicians specialize in HDMI port repairs, ensuring seamless connectivity and crystal-clear visuals. We use high-quality parts and advanced repair techniques to restore your PS5 to peak performance. With quick turnaround times, affordable pricing, and guaranteed satisfaction, we make sure your gaming experience stays uninterrupted. Whether it’s a loose connection, bent pins, or a damaged port, we’ve got you covered. Don’t let technical issues hold you back—bring your PS5 to us and get back to gaming with confidence!",
+      contentf2:
+        "No display on your TV or flickering images? No need to abort, just fix your port. Our expert technicians specialize in HDMI port repairs, ensuring seamless connectivity and crystal-clear visuals. We use high-quality parts and advanced repair techniques to restore your PS5 to peak performance. With quick turnaround times, affordable pricing, and guaranteed satisfaction, we make sure your gaming experience stays uninterrupted. Whether it’s a loose connection, bent pins, or a damaged port, we’ve got you covered. Don’t let technical issues hold you back—bring your PS5 to us and get back to gaming with confidence!",
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
       //   "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -199,7 +210,8 @@ const PS5RepairsSydney: React.FC = () => {
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image:
+        "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
       // image: screenreplace,
     },
   ];
@@ -226,7 +238,6 @@ const PS5RepairsSydney: React.FC = () => {
         return "linear-gradient(74deg, #13abd1a5, #000000)";
       default:
         return "linear-gradient(74deg, #56c1c1, #000000)";
-
     }
   };
 
@@ -412,10 +423,11 @@ const PS5RepairsSydney: React.FC = () => {
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
-                  className={`p-3 text-white rounded-[50px] border-[1.5px] text-base tracking-[1.2px] ${activeTab === tab.id
-                    ? "active-tab"
-                    : "bg-opacity-50 hover:bg-opacity-75"
-                    }`}
+                  className={`p-3 text-white rounded-[50px] border-[1.5px] text-base tracking-[1.2px] ${
+                    activeTab === tab.id
+                      ? "active-tab"
+                      : "bg-opacity-50 hover:bg-opacity-75"
+                  }`}
                   onClick={() => setActiveTab(tab.id)}
                   data-selected={tab.id.toString()}
                   role="tab"
@@ -463,7 +475,6 @@ const PS5RepairsSydney: React.FC = () => {
                 .filter((item) => item.content)
                 .map((item, index) => (
                   <div className="flex items-start gap-4" key={index}>
-
                     <div>
                       <p className="">
                         <span
@@ -477,9 +488,6 @@ const PS5RepairsSydney: React.FC = () => {
                     </div>
                   </div>
                 ))}
-
-
-
 
               {tabs[activeTab].button && tabs[activeTab].link && (
                 <Link
@@ -496,12 +504,11 @@ const PS5RepairsSydney: React.FC = () => {
                 </Link>
               )}
             </div>
-
           </div>
         </div>
 
         <section className="lg:hidden block">
-        <DeliveryTousMobile itoms={itoms} />
+          <DeliveryTousMobile itoms={itoms} />
         </section>
       </div>
     </section>

@@ -9,15 +9,13 @@ import SignatureCanvas from "react-signature-canvas";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import StaperForm1 from "../../../public/Images/StaperForm1.png";
-import secondmail from "../../../public/Images/second mail.png";
 import StaperForm3 from "../../../public/Images/StaperForm3.png";
-import StaperForm4 from "../../../public/Images/StaperForm4.png";
+
 import Textarea from "@mui/joy/Textarea";
 import { FormControlLabel, Radio, TextField } from "@mui/material";
 import Image from "next/image";
 import { MenuItem, Select, SelectItem } from "@nextui-org/react";
 // Example library for pattern drawing
-import Modal from "@mui/material/Modal"; // For modal implementation
 import "./mail-in-repair.css";
 import Link from "next/link";
 import axios from "axios";
