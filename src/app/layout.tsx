@@ -48,6 +48,7 @@ import ConditionalWrapper from "@/components/ConditionalWrapper"; // New client-
 import { Providers } from "./redux/providers";
 import Script from "next/script";
 import Canonical from "./Canonical";
+import Image from "next/image";
 
 const space_Grotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -136,7 +137,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         <noscript>
-          <img
+          <Image
+          alt="facebook"
             height="1"
             width="1"
             style={{ display: "none" }}

@@ -30,7 +30,7 @@ export default function PS5Banner() {
     <>
     
       <section
-        className="background-banner bg-[url()] h-[70vh]"
+        className="background-banner  h-[70vh]"
         style={{
           backgroundImage: `url(${PSBanner.src})`,
           backgroundSize: "cover",

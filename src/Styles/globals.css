@@ -108,7 +108,7 @@ body {
   overflow: hidden;
 }
 .F1-btn-color {
-  background-image: var(--F1-btn-color);
+
   color: var(--secondary-color, #000);
   font-weight: 500;
   border-radius: 8px;
