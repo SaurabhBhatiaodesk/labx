@@ -156,7 +156,7 @@ export default function App() {
                               href="/PS5_repairs"
                               onClick={toggleMenu}
                             >
-                             PS5 repairs
+                             PS5 Repairs
                             </Link>
                           </li>
                           <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">

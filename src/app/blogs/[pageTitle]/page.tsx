@@ -17,25 +17,6 @@ interface BlogData {
   createdAt: string;
   updatedAt: string;
 }
-// Fetch Blog Data by ID
-// async function fetchBlogData(pageTitle: string): Promise<BlogData> {
-//   console.log(pageTitle,"pageTitlepageTitlepageTitlekkkk")
-//   // const res = await fetch(
-//   //   `https://labxbackend.labxrepair.com.au/api/admin/getPageBypageTitle/${pageTitle}`,
-//   //   {
-//   //     cache: "no-store",
-//   //   }
-//   // );
-
-//   console.log("resresres",res)
-
-//   if (!res.ok) {
-//     throw new Error("Failed to fetch blog data");
-//   }
-
-//   const data = await res.json();
-//   return data;
-// }
 
 async function fetchBlogData(pageTitle: string | undefined): Promise<BlogData> {
   if (!pageTitle) {
