@@ -17,8 +17,8 @@ const PS5Repairs = () => {
    <PS5Banner/>
  <div className='bg-[#0b0b0b] md:py-10 py-8'>
  <div className=' container'>
-   <MainHeading Heading="PS5 Repairs Sydney" />
-   <MainTitle Title={`There is nothing more frustrating than when you're looking forward to a good sesh on your PS5 with your mates and you run into issues.. We have legit seen it all. From bad connections and overheating to power loss and USB f**k ups. Get yourself back in the game today and give us a holla! `}/>
+   <MainHeading Heading="How Mail-In PS5 Repair Works?" />
+   <MainTitle Title={`Simply package your PS5 securely and ship it to us. Once we receive your console, our expert technicians will diagnose the issue and carry out the necessary repairs using high-quality parts. After a thorough quality check, we’ll quickly ship your fully functional PS5 back to you so you can resume gaming without delay. `}/>
    </div>
  </div>
  <StaperForm/>

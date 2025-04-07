@@ -66,7 +66,7 @@ export default function PS5Banner() {
                     REPAIRS  
                   </h1>
                   <p>
-                    {`LabXrepair, powered by Bharat, is a mobile phone repair business that will provide various services and training through a dynamic and responsive website and mobile app. The project will be divided into phases, starting with a basic live launch and expanding over time to include full functionalities.`}
+                    {`Is your PlayStation 5 experiencing issues? Whether it's overheating, crashing, or hardware failure, we’ve got you covered with professional PS5 repair services. Our skilled technicians specialize in diagnosing and fixing all PS5 problems, ensuring you get back to your gaming without delays.`}
                   </p>
                   <div className="my-4 xl:my-10">
                     <MainButton

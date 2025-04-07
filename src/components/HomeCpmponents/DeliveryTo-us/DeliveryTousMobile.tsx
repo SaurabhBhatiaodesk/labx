@@ -5,8 +5,8 @@ import Link from "next/link";
 
 interface itoms {
   id: number;
-  label: string;
-  content: string;
+  label?: string;
+  content?: string;
   contentf2?: string;
   contentf3?: string;
   contentf4?: string;
