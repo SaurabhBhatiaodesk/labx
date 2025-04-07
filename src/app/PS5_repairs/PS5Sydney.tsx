@@ -16,8 +16,9 @@ const PS5Sydney: React.FC = () => {
   const datatable: tableps[] = [{
     id: 1,
     imageItom: PS5Sydneyfirst,
-    MainheadingItom: ` PS5 Sydney`,
-    shortHeading: `We pride ourselves on our exceptional customer service and satisfaction. Consoles are our specialty, and we offer a variety of repair options to ensure your gaming experience isn't interrupted for long. Our expert technicians handle all types of repairs, and we offer fast, efficient services.`,
+    MainheadingItom: `Trusted By Gamers`,
+    shortHeading: `With years of experience in console repairs, we’ve earned a reputation for reliability and expertise. Gamers trust us to restore their PS5s to peak performance, ensuring smooth and uninterrupted gameplay. Our skilled technicians handle every repair with precision, giving you confidence that your console is in safe hands. We make gaming hassle-free!
+`,
     contactusLink: "/contact-us",
     contactusName: "CONTACT US →"
 
@@ -25,8 +26,9 @@ const PS5Sydney: React.FC = () => {
   {
     id: 2,
     imageItom: PS5Sydneysecond,
-    MainheadingItom: ` PS5 Sydney`,
-    shortHeading: `We pride ourselves on our exceptional customer service and satisfaction. Consoles are our specialty, and we offer a variety of repair options to ensure your gaming experience isn't interrupted for long. Our expert technicians handle all types of repairs, and we offer fast, efficient services.`,
+    MainheadingItom: `Guaranteed Satisfaction`,
+    shortHeading: `We take pride in delivering high-quality PS5 repairs with a focus on customer satisfaction. Whether it’s overheating, software issues, or hardware malfunctions, our experts diagnose and fix problems efficiently. With our fast turnaround time and warranty-backed service, you can get back to gaming without worries. Your PS5 deserves the best care, and we deliver it!
+`,
     contactusLink: "/",
     contactusName: "CONTACT US →"
 
@@ -53,10 +55,7 @@ const PS5Sydney: React.FC = () => {
               />
             </div>
             <p className="text-white">
-              {`We pride ourselves on our exceptional customer service and satisfaction. Consoles are our
-              specialty, and we offer a variety of repair options to ensure your gaming experience isn't
-              interrupted for long. Our expert technicians handle all types of repairs, and we offer
-              fast, efficient services.`}
+             {itom.shortHeading}
             </p>
             <Link href={itom.contactusLink} className=" md:text-md text-[16px] rounded-lg md:px-4 px-2 py-2 border-2 border-gray-100 text-gray-100 hover:bg-gray-900 hover:text-black hover:bg-white duration-300 w-fit">
               {itom.contactusName}

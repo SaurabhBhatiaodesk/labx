@@ -45,7 +45,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 interface MainHeadingProps {
-  Heading: string;
+  Heading?: string;
   color?: string; // Optional color prop
   animation?: string; // Optional animation prop
 }

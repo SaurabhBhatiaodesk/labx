@@ -12,23 +12,22 @@ interface ExpertRepairItem {
 const PS5ExpertRepair = () => {
   const ExpertRepair: ExpertRepairItem[] = [
     {
-      title: "PS5 REPAIRS SYDNEY",
-      dataitom:
-        "Has your PS5 flatlined? Power loss is so frustrating and usually happens at the worst possible time. No need to give up and start grieving your console, we can get it back to life! We can fix thermal sensors, replace faulty power cords or give a more stable power line to stop your PS5 losing power. Don’t chuck things at your TV in frustration, chuck us an email and get it sorted today.",
+      title: `Expert PS5 Repair at LabX Repair`,
+      dataitom:`Get expert PS5 repair at LabX Repair for fast, reliable fixes. From HDMI port issues to power failures, our skilled technicians ensure your PlayStation 5 is restored to peak performance quickly!`,
       contactlink: "/contact-us",
       contactname: "Contact Us",
     },
     {
-      title: "PS5 DISK STUCK",
+      title:` Reliable PS5 Repair Solutions in Sydne`,
       dataitom:
-        "Has your PS5 flatlined? Power loss is so frustrating and usually happens at the worst possible time. No need to give up and start grieving your console, we can get it back to life! We can fix thermal sensors, replace faulty power cords or give a more stable power line to stop your PS5 losing power. Don’t chuck things at your TV in frustration, chuck us an email and get it sorted today.",
+        `Is your PS5 acting up and disrupting your gaming sessions? Whether it’s power issues, overheating, or connectivity problems, we offer expert PlayStation 5 repair services in Sydney. Our skilled technicians quickly diagnose and fix issues to restore your console’s performance. Don’t let gaming downtime get in your way—contact us today for fast and efficient PS5 repair service!`,
       contactlink: "/contact-us",
       contactname: "Contact Us",
     },
     {
-      title: "PS5 DISK STUCK",
+      title: `Fast Turnaround PS5 Repair `,
       dataitom:
-        "Has your PS5 flatlined? Power loss is so frustrating and usually happens at the worst possible time. No need to give up and start grieving your console, we can get it back to life! We can fix thermal sensors, replace faulty power cords or give a more stable power line to stop your PS5 losing power. Don’t chuck things at your TV in frustration, chuck us an email and get it sorted today.",
+      `We understand how frustrating it is to have a broken PlayStation 5 sitting idle. That’s why we offer quick and efficient PS5 repair services with a fast turnaround time. Our skilled technicians diagnose and fix issues swiftly, ensuring minimal downtime. Don’t wait weeks for a repair—get your console fixed fast and back in action!` ,
       contactlink: "/contact-us",
       contactname: "Contact Us",
     },

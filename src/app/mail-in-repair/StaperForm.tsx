@@ -1021,12 +1021,12 @@ const StaperForm: React.FC = () => {
                                 <MenuItem key="PIN" value="PIN">
                                   PIN
                                 </MenuItem>
-                                {(pathname === "/mail-in-repair" ||
-                                  pathname === "/data-recovery") && (
+                                {pathname === "/mail-in-repair" ||
+                                pathname === "/data-recovery" ? (
                                   <MenuItem key="Pattern" value="Pattern">
                                     Pattern
                                   </MenuItem>
-                                )}
+                                ) : null}
                               </Select>
                               <div className="mt-2">
                                 {deviceDetails.passwordType !== "None" &&
