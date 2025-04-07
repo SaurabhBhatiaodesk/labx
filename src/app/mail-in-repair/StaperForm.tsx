@@ -12,14 +12,14 @@ import StaperForm1 from "../../../public/Images/StaperForm1.png";
 import StaperForm3 from "../../../public/Images/StaperForm3.png";
 
 import Textarea from "@mui/joy/Textarea";
-import { FormControlLabel, Radio, TextField } from "@mui/material";
+import { FormControlLabel, Modal, Radio, TextField } from "@mui/material";
 import Image from "next/image";
 import { MenuItem, Select, SelectItem } from "@nextui-org/react";
 // Example library for pattern drawing
 import "./mail-in-repair.css";
 import Link from "next/link";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { ReactCanvasPatternLock } from "react-canvas-pattern-lock";
 // import PatternLock from "react-pattern-lock";
@@ -225,6 +225,7 @@ type HandleSubmitParams = {
 const StaperForm: React.FC = () => {
   const formContainerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const pathname = usePathname();
   const sigPad = useRef<SignatureCanvas>(null);
   const selectOptions = [
     { key: "Yes", label: "Yes" },
@@ -255,7 +256,6 @@ const StaperForm: React.FC = () => {
     passwordType: "None", // Default to an empty string
     devicePassword: "",
   });
-  console.log("deviceDetails", deviceDetails);
 
   const [repairDetails, setRepairDetails] = useState({
     issueDescription: "",
@@ -398,15 +398,15 @@ const StaperForm: React.FC = () => {
   };
 
   useEffect(() => {
-    // Check if there's saved signature in localStorage gauravb code  window 
+    // Check if there's saved signature in localStorage gauravb code  window
     if (typeof window !== "undefined") {
-    const savedSignature = localStorage.getItem("signatureData");
-    if (savedSignature) {
-      setShippingDetails((prevState) => ({
-        ...prevState,
-        signature: savedSignature,
-      }));
-  }
+      const savedSignature = localStorage.getItem("signatureData");
+      if (savedSignature) {
+        setShippingDetails((prevState) => ({
+          ...prevState,
+          signature: savedSignature,
+        }));
+      }
     }
   }, []);
 
@@ -647,6 +647,13 @@ const StaperForm: React.FC = () => {
         repairDetails,
         shippingDetails,
         pricingAgreement,
+        type: `${
+          pathname === "/mail-in-repair"
+            ? "mail-in"
+            : pathname === "/data-recovery"
+            ? "data-recovery"
+            : "ps5"
+        }`,
       };
 
       try {
@@ -670,9 +677,19 @@ const StaperForm: React.FC = () => {
             const cleanOrderReferenceId = orderReferenceId.startsWith("#")
               ? orderReferenceId.slice(1)
               : orderReferenceId;
-            router.push(
-              `/mail-in-repair/thank-you?id=${cleanOrderReferenceId}`
-            );
+            {
+              pathname === "/mail-in-repair"
+                ? router.push(
+                    `/mail-in-repair/thank-you?id=${cleanOrderReferenceId}`
+                  )
+                : pathname === "/data-recovery"
+                ? router.push(
+                    `/data-recovery/thank-you?id=${cleanOrderReferenceId}`
+                  )
+                : router.push(
+                    `/PS5_repairs/thank-you?id=${cleanOrderReferenceId}`
+                  );
+            }
           }
         } else {
           alert("Failed to submit the form. Please try again.");
@@ -765,12 +782,7 @@ const StaperForm: React.FC = () => {
             id="stapergk"
           >
             <div className="grid grid-cols-2 mb-8  relative gaurav-line">
-              {[
-                "Personal Details",
-                "Repair Details",
-              
-               
-              ].map((step, index) => (
+              {["Personal Details", "Repair Details"].map((step, index) => (
                 <div
                   key={index}
                   className="flex items-center flex-col  relative z-10"
@@ -843,7 +855,6 @@ const StaperForm: React.FC = () => {
                             />
                           </div>
 
-                        
                           <div>
                             <TextField
                               required
@@ -865,19 +876,15 @@ const StaperForm: React.FC = () => {
                             )}
                           </div>
 
-                     
                           <div>
-                          
-
                             <TextField
                               required
                               label="Contact Number"
                               name="contact_number"
-                              type="tel" 
+                              type="tel"
                               fullWidth
                               value={personalDetails.contactNo}
                               onChange={(e) => {
-                               
                                 if (/^\d{0,10}$/.test(e.target.value)) {
                                   setPersonalDetails({
                                     ...personalDetails,
@@ -885,7 +892,7 @@ const StaperForm: React.FC = () => {
                                   });
                                 }
                               }}
-                              inputProps={{ maxLength: 10 }} 
+                              inputProps={{ maxLength: 10 }}
                             />
 
                             {errors.contactNo && (
@@ -895,7 +902,6 @@ const StaperForm: React.FC = () => {
                             )}
                           </div>
 
-                       
                           <div>
                             <TextField
                               required
@@ -921,69 +927,67 @@ const StaperForm: React.FC = () => {
                             )}
                           </div>
                         </div>
-                    
-                        {/* <div>
+
+                        <div>
                           <h4 className="lg:text-lg text-sm pb-[10px]">
                             Device Details
                           </h4>
                           <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 form-label">
-                          
-                            <div className="w-full">
-                              <TextField
-                                type="text"
-                                label="Enter Device Type(eg:Mobile Phone/Tablet/laptop) "
-                                name="deviceType"
-                                fullWidth
-                                value={deviceDetails.deviceType}
-                                onChange={(
-                                  e: React.ChangeEvent<HTMLInputElement>
-                                ) =>
-                                  setDeviceDetails({
-                                    ...deviceDetails,
-                                    deviceType: e.target.value,
-                                  })
-                                }
-                              
-                              />
-                            </div>
-
-                          
-                            <div className="w-full">
-                              <TextField
-                                id="brandModel"
-                                type="text"
-                                label="Enter Brand/Model (e.g:Apple-iPhone 13 Pro)"
-                                name="brandModel"
-                                fullWidth
-                                value={deviceDetails.brand}
-                                onChange={(
-                                  e: React.ChangeEvent<HTMLInputElement>
-                                ) =>
-                                  setDeviceDetails({
-                                    ...deviceDetails,
-                                    brand: e.target.value,
-                                  })
-                                }
-                              />
-                            </div>
-
-                          
-                            <div>
-                              <TextField
-                                type="text"
-                                label="IMEI/Serial No.(If known)"
-                                name="imei_serial_no"
-                                fullWidth
-                                value={deviceDetails.imeiOrSerialNo}
-                                onChange={(e) =>
-                                  setDeviceDetails({
-                                    ...deviceDetails,
-                                    imeiOrSerialNo: e.target.value,
-                                  })
-                                }
-                              />
-                            </div>
-                            
+                            {(pathname === "/mail-in-repair" ||
+                              pathname === "/data-recovery") && (
+                              <>
+                                <div className="w-full">
+                                  <TextField
+                                    type="text"
+                                    label="Enter Device Type(eg:Mobile Phone/Tablet/laptop) "
+                                    name="deviceType"
+                                    fullWidth
+                                    value={deviceDetails.deviceType}
+                                    onChange={(
+                                      e: React.ChangeEvent<HTMLInputElement>
+                                    ) =>
+                                      setDeviceDetails({
+                                        ...deviceDetails,
+                                        deviceType: e.target.value,
+                                      })
+                                    }
+                                  />
+                                </div>
+                                <div className="w-full">
+                                  <TextField
+                                    id="brandModel"
+                                    type="text"
+                                    label="Enter Brand/Model (e.g:Apple-iPhone 13 Pro)"
+                                    name="brandModel"
+                                    fullWidth
+                                    value={deviceDetails.brand}
+                                    onChange={(
+                                      e: React.ChangeEvent<HTMLInputElement>
+                                    ) =>
+                                      setDeviceDetails({
+                                        ...deviceDetails,
+                                        brand: e.target.value,
+                                      })
+                                    }
+                                  />
+                                </div>
+                                <div>
+                                  <TextField
+                                    type="text"
+                                    label="IMEI/Serial No.(If known)"
+                                    name="imei_serial_no"
+                                    fullWidth
+                                    value={deviceDetails.imeiOrSerialNo}
+                                    onChange={(e) =>
+                                      setDeviceDetails({
+                                        ...deviceDetails,
+                                        imeiOrSerialNo: e.target.value,
+                                      })
+                                    }
+                                  />
+                                </div>
+                              </>
+                            )}
                             <div className="w-full ">
                               <Select
                                 defaultSelectedKeys={
@@ -1000,7 +1004,7 @@ const StaperForm: React.FC = () => {
                                   setDeviceDetails((prevDetails) => ({
                                     ...prevDetails,
                                     passwordType: selectedType,
-                                    devicePassword: "", 
+                                    devicePassword: "",
                                   }));
 
                                   if (selectedType === "PIN") {
@@ -1017,9 +1021,12 @@ const StaperForm: React.FC = () => {
                                 <MenuItem key="PIN" value="PIN">
                                   PIN
                                 </MenuItem>
-                                <MenuItem key="Pattern" value="Pattern">
-                                  Pattern
-                                </MenuItem>
+                                {(pathname === "/mail-in-repair" ||
+                                  pathname === "/data-recovery") && (
+                                  <MenuItem key="Pattern" value="Pattern">
+                                    Pattern
+                                  </MenuItem>
+                                )}
                               </Select>
                               <div className="mt-2">
                                 {deviceDetails.passwordType !== "None" &&
@@ -1030,19 +1037,18 @@ const StaperForm: React.FC = () => {
                                     </p>
                                   )}
                               </div>
-                           
+
                               <Modal
                                 open={pinModalOpen}
                                 onClose={() => {
                                   if (!pinValue) {
-                                  
                                     setDeviceDetails((prevDetails) => ({
                                       ...prevDetails,
                                       passwordType: "None",
                                       devicePassword: "",
                                     }));
                                   }
-                                  setPinModalOpen(false); 
+                                  setPinModalOpen(false);
                                 }}
                                 className="flex items-center justify-center"
                               >
@@ -1063,21 +1069,21 @@ const StaperForm: React.FC = () => {
                                         color: "white",
                                       },
                                       "& .MuiFormLabel-root.Mui-focused": {
-                                        color: "white", 
+                                        color: "white",
                                       },
                                       "& .MuiOutlinedInput-root": {
                                         "& fieldset": {
-                                          borderColor: "white", 
+                                          borderColor: "white",
                                         },
                                         "&:hover fieldset": {
-                                          borderColor: "gray", 
+                                          borderColor: "gray",
                                         },
                                         "&.Mui-focused fieldset": {
-                                          borderColor: "white", 
+                                          borderColor: "white",
                                         },
                                       },
                                       "& .MuiInputBase-input": {
-                                        color: "white", 
+                                        color: "white",
                                       },
                                     }}
                                   />
@@ -1092,7 +1098,7 @@ const StaperForm: React.FC = () => {
                                       onClick={() => {
                                         setDeviceDetails((prevDetails) => ({
                                           ...prevDetails,
-                                          devicePassword: pinValue, 
+                                          devicePassword: pinValue,
                                         }));
                                         setPinModalOpen(false);
                                       }}
@@ -1103,8 +1109,6 @@ const StaperForm: React.FC = () => {
                                   </div>
                                 </div>
                               </Modal>
-
-                        
 
                               <Modal
                                 open={patternModalOpen}
@@ -1137,10 +1141,10 @@ const StaperForm: React.FC = () => {
                                     }}
                                   >
                                     <ReactCanvasPatternLock
-                                      width={300} 
-                                      height={300} 
-                                      rows={3} 
-                                      cols={3} 
+                                      width={300}
+                                      height={300}
+                                      rows={3}
+                                      cols={3}
                                       onComplete={(
                                         code: number[],
                                         nodes: any
@@ -1149,9 +1153,9 @@ const StaperForm: React.FC = () => {
                                         setDeviceDetails((prevDetails) => ({
                                           ...prevDetails,
                                           passwordType: "Pattern",
-                                          devicePassword: pattern, 
+                                          devicePassword: pattern,
                                         }));
-                                        setPatternModalOpen(false); 
+                                        setPatternModalOpen(false);
                                       }}
                                     />
                                   </div>
@@ -1167,9 +1171,7 @@ const StaperForm: React.FC = () => {
                               </Modal>
                             </div>
                           </div>
-
-                          
-                        </div> */}
+                        </div>
                       </div>
                       <div className=" ">
                         <div>
@@ -1195,160 +1197,162 @@ const StaperForm: React.FC = () => {
                                   </p>
                                 )}
                               </div>
-<div className="grid md:grid-cols-2 gap-3 ">
-                              {/* Previous Repair Attempts */}
-                              <div>
-                                <p className="text-base leading-5 mb-2">
-                                  Any Previous Repair Attempts?*
-                                </p>
-
-                                {/* Radio buttons for Yes or No */}
-                                <div className="flex gap-4">
-                                  <FormControlLabel
-                                    control={
-                                      <Radio
-                                        sx={{
-                                          color: "#ede574", // Custom color for the radio button
-                                          "&.Mui-checked": {
-                                            color: "#ede574", // Color when radio is checked
-                                          },
-                                        }}
-                                        checked={
-                                          repairDetails.previousRepairAttempts ===
-                                          "Yes"
-                                        }
-                                        onChange={() =>
-                                          setRepairDetails({
-                                            ...repairDetails,
-                                            previousRepairAttempts: "Yes",
-                                          })
-                                        }
-                                      />
-                                    }
-                                    label="Yes" // This is the label that will be shown next to the radio button
-                                  />
-                                  <FormControlLabel
-                                    control={
-                                      <Radio
-                                        sx={{
-                                          color: "#ede574", // Custom color for the radio button
-                                          "&.Mui-checked": {
-                                            color: "#ede574", // Color when radio is checked
-                                          },
-                                        }}
-                                        checked={
-                                          repairDetails.previousRepairAttempts ===
-                                          "No"
-                                        }
-                                        onChange={() =>
-                                          setRepairDetails({
-                                            ...repairDetails,
-                                            previousRepairAttempts: "No",
-                                          })
-                                        }
-                                      />
-                                    }
-                                    label="No" // This is the label that will be shown next to the radio button
-                                  />
-                                </div>
-
-                                {repairDetails.previousRepairAttempts ===
-                                  "Yes" && (
-                                  <div className="steper-textarea-os mt-2">
-                                    <p className="text-yellow-500 text-sm mt-2 italic">
-                                      A $66 service fee will be required to
-                                      release the device, regardless of whether
-                                      it is fixed or not.
-                                    </p>
-                                    <Textarea
-                                      placeholder="Little explanation about previous attempts"
-                                      minRows={5}
-                                      value={
-                                        repairDetails.previousRepairAttemptsComments
-                                      }
-                                      onChange={(e) =>
-                                        setRepairDetails({
-                                          ...repairDetails,
-                                          previousRepairAttemptsComments:
-                                            e.target.value,
-                                        })
-                                      }
-                                      required
-                                    />
-                                    {errors.previousRepairAttemptsComments && (
-                                      <p className="text-[red] text-sm mb-0">
-                                        {errors.previousRepairAttemptsComments}
-                                      </p>
-                                    )}
-                                  </div>
-                                )}
-                              </div>
-
-                              {/* Jump the Queue */}
-                              <div>
-                                <p className="text-base leading-5 mb-2">
-                                  Do you require Priority Repair Service?*
-                                </p>
-
-                                {/* Radio buttons for Yes or No */}
-                                <div className="flex gap-4">
-                                  <FormControlLabel
-                                    control={
-                                      <Radio
-                                        sx={{
-                                          color: "#ede574", // Custom color for the radio button
-                                          "&.Mui-checked": {
-                                            color: "#ede574", // Color when radio is checked
-                                          },
-                                        }}
-                                        checked={
-                                          repairDetails.jumpQueueForFasterService ===
-                                          "Yes"
-                                        }
-                                        onChange={() =>
-                                          setRepairDetails({
-                                            ...repairDetails,
-                                            jumpQueueForFasterService: "Yes",
-                                          })
-                                        }
-                                      />
-                                    }
-                                    label="Yes" // This is the label that will be shown next to the radio button
-                                  />
-                                  <FormControlLabel
-                                    control={
-                                      <Radio
-                                        sx={{
-                                          color: "#ede574", // Custom color for the radio button
-                                          "&.Mui-checked": {
-                                            color: "#ede574", // Color when radio is checked
-                                          },
-                                        }}
-                                        checked={
-                                          repairDetails.jumpQueueForFasterService ===
-                                          "No"
-                                        }
-                                        onChange={() =>
-                                          setRepairDetails({
-                                            ...repairDetails,
-                                            jumpQueueForFasterService: "No",
-                                          })
-                                        }
-                                      />
-                                    }
-                                    label="No" // This is the label that will be shown next to the radio button
-                                  />
-                                </div>
-
-                                {/* Displaying fee message when "Yes" is selected */}
-                                {repairDetails.jumpQueueForFasterService ===
-                                  "Yes" && (
-                                  <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
-                                    A minimum fee of $100 (or higher) will be
-                                    charged for priority service.
+                              <div className="grid md:grid-cols-2 gap-3 ">
+                                {/* Previous Repair Attempts */}
+                                <div>
+                                  <p className="text-base leading-5 mb-2">
+                                    Any Previous Repair Attempts?*
                                   </p>
-                                )}
-                              </div>
+
+                                  {/* Radio buttons for Yes or No */}
+                                  <div className="flex gap-4">
+                                    <FormControlLabel
+                                      control={
+                                        <Radio
+                                          sx={{
+                                            color: "#ede574", // Custom color for the radio button
+                                            "&.Mui-checked": {
+                                              color: "#ede574", // Color when radio is checked
+                                            },
+                                          }}
+                                          checked={
+                                            repairDetails.previousRepairAttempts ===
+                                            "Yes"
+                                          }
+                                          onChange={() =>
+                                            setRepairDetails({
+                                              ...repairDetails,
+                                              previousRepairAttempts: "Yes",
+                                            })
+                                          }
+                                        />
+                                      }
+                                      label="Yes" // This is the label that will be shown next to the radio button
+                                    />
+                                    <FormControlLabel
+                                      control={
+                                        <Radio
+                                          sx={{
+                                            color: "#ede574", // Custom color for the radio button
+                                            "&.Mui-checked": {
+                                              color: "#ede574", // Color when radio is checked
+                                            },
+                                          }}
+                                          checked={
+                                            repairDetails.previousRepairAttempts ===
+                                            "No"
+                                          }
+                                          onChange={() =>
+                                            setRepairDetails({
+                                              ...repairDetails,
+                                              previousRepairAttempts: "No",
+                                            })
+                                          }
+                                        />
+                                      }
+                                      label="No" // This is the label that will be shown next to the radio button
+                                    />
+                                  </div>
+
+                                  {repairDetails.previousRepairAttempts ===
+                                    "Yes" && (
+                                    <div className="steper-textarea-os mt-2">
+                                      <p className="text-yellow-500 text-sm mt-2 italic">
+                                        A $66 service fee will be required to
+                                        release the device, regardless of
+                                        whether it is fixed or not.
+                                      </p>
+                                      <Textarea
+                                        placeholder="Little explanation about previous attempts"
+                                        minRows={5}
+                                        value={
+                                          repairDetails.previousRepairAttemptsComments
+                                        }
+                                        onChange={(e) =>
+                                          setRepairDetails({
+                                            ...repairDetails,
+                                            previousRepairAttemptsComments:
+                                              e.target.value,
+                                          })
+                                        }
+                                        required
+                                      />
+                                      {errors.previousRepairAttemptsComments && (
+                                        <p className="text-[red] text-sm mb-0">
+                                          {
+                                            errors.previousRepairAttemptsComments
+                                          }
+                                        </p>
+                                      )}
+                                    </div>
+                                  )}
+                                </div>
+
+                                {/* Jump the Queue */}
+                                <div>
+                                  <p className="text-base leading-5 mb-2">
+                                    Do you require Priority Repair Service?*
+                                  </p>
+
+                                  {/* Radio buttons for Yes or No */}
+                                  <div className="flex gap-4">
+                                    <FormControlLabel
+                                      control={
+                                        <Radio
+                                          sx={{
+                                            color: "#ede574", // Custom color for the radio button
+                                            "&.Mui-checked": {
+                                              color: "#ede574", // Color when radio is checked
+                                            },
+                                          }}
+                                          checked={
+                                            repairDetails.jumpQueueForFasterService ===
+                                            "Yes"
+                                          }
+                                          onChange={() =>
+                                            setRepairDetails({
+                                              ...repairDetails,
+                                              jumpQueueForFasterService: "Yes",
+                                            })
+                                          }
+                                        />
+                                      }
+                                      label="Yes" // This is the label that will be shown next to the radio button
+                                    />
+                                    <FormControlLabel
+                                      control={
+                                        <Radio
+                                          sx={{
+                                            color: "#ede574", // Custom color for the radio button
+                                            "&.Mui-checked": {
+                                              color: "#ede574", // Color when radio is checked
+                                            },
+                                          }}
+                                          checked={
+                                            repairDetails.jumpQueueForFasterService ===
+                                            "No"
+                                          }
+                                          onChange={() =>
+                                            setRepairDetails({
+                                              ...repairDetails,
+                                              jumpQueueForFasterService: "No",
+                                            })
+                                          }
+                                        />
+                                      }
+                                      label="No" // This is the label that will be shown next to the radio button
+                                    />
+                                  </div>
+
+                                  {/* Displaying fee message when "Yes" is selected */}
+                                  {repairDetails.jumpQueueForFasterService ===
+                                    "Yes" && (
+                                    <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                                      A minimum fee of $100 (or higher) will be
+                                      charged for priority service.
+                                    </p>
+                                  )}
+                                </div>
                               </div>
 
                               {/* Additional Comments (Optional) */}
