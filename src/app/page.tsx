@@ -42,12 +42,47 @@ export const metadata = {
   },
 
 };
-
+const accordionData = [
+  {
+    title: "What types of devices do you repair?",
+    content:
+      "We repair a wide range of mobile devices, including iPhones, Android phones, tablets, and MacBooks. We specialize in logic board repairs, microsoldering, and screen refurbishments.",
+  },
+  {
+    title: "What types of repairs do you specialize in?",
+    content:
+      "Our expertise includes screen replacement, motherboard repairs, data recovery, and micro soldering. We also handle complex repairs like Face ID issues, and water damage recovery.",
+  },
+  {
+    title: "Do you offer any warranties on your repairs?",
+    content:
+      "Yes, all repairs come with a 1 Year warranty on parts and workmanship. This ensures that if the same issue reoccurs, we will repair it free of charge, provided no further damage has occurred to the device.",
+  },
+  {
+    title: "What is the warranty on liquid-damaged devices?",
+    content:
+      "We do not recommend repairing liquid-damaged devices and suggest only data recovery services. If the customer insists on repair, we do not provide any warranty, including for the replaced parts.",
+  },
+  {
+    title: "Will all functions work on my dead device after repair?",
+    content:
+      "No guarantees can be made. The initial quote covers the visible issue, e.g., turning on a dead device. Since devices have numerous functions, issues like a non-working camera or mic will require a separate quote unless the fault is minor, in which case we’ll address it during the repair. Major issues will need re-quoting.",
+  },
+  {
+    title: "Do you offer repair services for all phone brands?",
+    content:
+      "Yes, we provide repair services for a wide range of phone brands, including Apple, Samsung, Xiaomi, and more. Our technicians are experienced in handling various devices and models.",
+  },
+  {
+    title: "How long does a typical phone repair take?",
+    content:
+      "Most phone repairs are completed within a few hours, depending on the complexity of the issue. We strive to return your device in working condition as quickly as possible.",
+  },
+];
 const page = () => {
   return (
     <div>
       <MainBanner />
-    
       <DeliveryTous/>
       <Storeproduct/>
       <DataRecovery/>
@@ -57,7 +92,8 @@ const page = () => {
       <RecentNews/>
       <YouTubeHome/>
       <OurClient />
-      <AskusQuestion />
+      <AskusQuestion accordionData={accordionData}  
+      faq="General FAQs"/>
      
     
      

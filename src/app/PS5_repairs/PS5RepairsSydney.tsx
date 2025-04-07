@@ -1,9 +1,15 @@
-
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import MainHeading from "@/components/ManinHeading/MainHeading";
-import MainTitle from "@/components/MainTitle/MainTitle";
+import PS5HDMIPortRepair from "../../../public/Images/PS5 HDMI Port Repair.webp";
+import PS5PowerIssues from "../../../public/Images/PS5 Power Issues.webp";
+import OverheatingFanNoise from "../../../public/Images/Overheating & Fan Noise.webp";
+import PS5SSDStorageIssues from "../../../public/Images/PS5 SSD & Storage Issues.webp";
+import BlueLightofDeath from "../../../public/Images/Blue Light of Death.webp";
+import ControllerRepairs from "../../../public/Images/Controller Repairs.webp";
+import DiscDriveRepairs from "../../../public/Images/Disc Drive Repairs.webp";
+import PS5ConnectivityIssues from "../../../public/Images/PS5 Connectivity Issues.webp";
 import "./PS5.css";
 
 import Link from "next/link";
@@ -12,9 +18,6 @@ import arrow2 from "../../../public/Images/icons/arrow1-2.svg";
 import arrow3 from "../../../public/Images/icons/arrow1-3.svg";
 import arrow4 from "../../../public/Images/icons/arrow1-4.svg";
 import arrow5 from "../../../public/Images/icons/arrow1-5.svg";
-
-
-
 
 import DeliveryTousMobile from "@/components/HomeCpmponents/DeliveryTo-us/DeliveryTousMobile";
 
@@ -47,7 +50,8 @@ const PS5RepairsSydney: React.FC = () => {
       content: "",
 
       // contentf2title: "Expert B2B Screen Refurbishing",
-      contentf2: "If your PlayStation 5 is experiencing video issues, a loose HDMI connection, or no display output, you may need an HDMI port repair. Our PS5 repair service replaces damaged HDMI ports with high-quality components, ensuring a stable connection and crystal-clear visuals. Get back to seamless gaming with our reliable PlayStation repair solutions.",
+      contentf2:
+        "If your PlayStation 5 is experiencing video issues, a loose HDMI connection, or no display output, you may need an HDMI port repair. Our PS5 repair service replaces damaged HDMI ports with high-quality components, ensuring a stable connection and crystal-clear visuals. Get back to seamless gaming with our reliable PlayStation repair solutions.",
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
       //   "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -59,7 +63,7 @@ const PS5RepairsSydney: React.FC = () => {
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image: PS5HDMIPortRepair,
       // image: screenreplace,
     },
     {
@@ -67,7 +71,8 @@ const PS5RepairsSydney: React.FC = () => {
       label: "PS5 Power Issues",
       content: "",
       // contentf2title: "Expert B2B Screen Refurbishing",
-      contentf2: "Power failures, sudden shutdowns, or a completely unresponsive PlayStation 5 can disrupt your gaming. Our PS5 repair service diagnoses faulty power supplies, motherboard issues, and charging problems. Whether your console won’t turn on or keeps shutting off unexpectedly, our expert PlayStation repair will restore full functionality, ensuring you enjoy uninterrupted gaming sessions.",
+      contentf2:
+        "Power failures, sudden shutdowns, or a completely unresponsive PlayStation 5 can disrupt your gaming. Our PS5 repair service diagnoses faulty power supplies, motherboard issues, and charging problems. Whether your console won’t turn on or keeps shutting off unexpectedly, our expert PlayStation repair will restore full functionality, ensuring you enjoy uninterrupted gaming sessions.",
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
       //   "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -79,7 +84,7 @@ const PS5RepairsSydney: React.FC = () => {
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image: PS5PowerIssues,
       // image: screenreplace,
     },
     {
@@ -99,7 +104,7 @@ const PS5RepairsSydney: React.FC = () => {
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image: OverheatingFanNoise,
       // image: screenreplace,
     },
     {
@@ -107,7 +112,7 @@ const PS5RepairsSydney: React.FC = () => {
       label: "PS5 SSD & Storage Issues",
       content: "",
       // contentf2title: "Expert B2B Screen Refurbishing",
-      contentf2:`Slow loading times, frequent crashes, or storage errors can indicate SSD problems. Our PS5 repair service offers SSD replacements and upgrades, boosting your console’s speed and storage capacity. Whether you need to fix corrupted storage or install a larger SSD, our PlayStation 5 repair ensures better gaming performance with faster load times and smoother gameplay.`,
+      contentf2: `Slow loading times, frequent crashes, or storage errors can indicate SSD problems. Our PS5 repair service offers SSD replacements and upgrades, boosting your console’s speed and storage capacity. Whether you need to fix corrupted storage or install a larger SSD, our PlayStation 5 repair ensures better gaming performance with faster load times and smoother gameplay.`,
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
       //   "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -119,7 +124,7 @@ const PS5RepairsSydney: React.FC = () => {
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image: PS5SSDStorageIssues,
       // image: screenreplace,
     },
     {
@@ -139,7 +144,7 @@ const PS5RepairsSydney: React.FC = () => {
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image: BlueLightofDeath,
       // image: screenreplace,
     },
     {
@@ -159,7 +164,7 @@ const PS5RepairsSydney: React.FC = () => {
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image: ControllerRepairs,
       // image: screenreplace,
     },
     {
@@ -180,7 +185,7 @@ const PS5RepairsSydney: React.FC = () => {
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image: DiscDriveRepairs,
       // image: screenreplace,
     },
     {
@@ -201,7 +206,7 @@ const PS5RepairsSydney: React.FC = () => {
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image: PS5ConnectivityIssues,
       // image: screenreplace,
     },
   ];
@@ -228,7 +233,6 @@ const PS5RepairsSydney: React.FC = () => {
         return "linear-gradient(74deg, #13abd1a5, #000000)";
       default:
         return "linear-gradient(74deg, #56c1c1, #000000)";
-
     }
   };
 
@@ -259,8 +263,7 @@ const PS5RepairsSydney: React.FC = () => {
       id: 0,
       label: "PS5 HDMI port repair",
       // content: "LabX Professional Screen Refurbishment Services:",
-      contentf2:
-        `If your PlayStation 5 is experiencing video issues, a loose HDMI connection, or no display output, you may need an HDMI port repair. Our PS5 repair service replaces damaged HDMI ports with high-quality components, ensuring a stable connection and crystal-clear visuals. Get back to seamless gaming with our reliable PlayStation repair solutions.
+      contentf2: `If your PlayStation 5 is experiencing video issues, a loose HDMI connection, or no display output, you may need an HDMI port repair. Our PS5 repair service replaces damaged HDMI ports with high-quality components, ensuring a stable connection and crystal-clear visuals. Get back to seamless gaming with our reliable PlayStation repair solutions.
 `,
       // contentf3:
       //   "State-of-the-Art Technology: We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -277,8 +280,7 @@ const PS5RepairsSydney: React.FC = () => {
       id: 1,
       label: "PS5 Power Issues",
       // content: "LabX Professional Phone Repair Courses:",
-      contentf2:
-        `Power failures, sudden shutdowns, or a completely unresponsive PlayStation 5 can disrupt your gaming. Our PS5 repair service diagnoses faulty power supplies, motherboard issues, and charging problems. Whether your console won’t turn on or keeps shutting off unexpectedly, our expert PlayStation repair will restore full functionality, ensuring you enjoy uninterrupted gaming sessions.`,
+      contentf2: `Power failures, sudden shutdowns, or a completely unresponsive PlayStation 5 can disrupt your gaming. Our PS5 repair service diagnoses faulty power supplies, motherboard issues, and charging problems. Whether your console won’t turn on or keeps shutting off unexpectedly, our expert PlayStation repair will restore full functionality, ensuring you enjoy uninterrupted gaming sessions.`,
       // contentf3:
       //   "Advanced Training: In our advanced course, you will master complex repairs like motherboard and microsoldering training. Enhance your skill set to tackle challenging issues with precision and professionalism.",
       // contentf4:
@@ -294,8 +296,7 @@ const PS5RepairsSydney: React.FC = () => {
       id: 2,
       label: "Overheating & Fan Noise",
       // content: "LabX Professional Mail In Repair:",
-      contentf2:
-        `An overheating PS5 with loud fan noises can lead to performance drops and long-term damage. Our PlayStation 5 repair service includes deep cleaning, thermal paste replacement, and cooling fan fixes to prevent overheating. By optimizing airflow and cooling efficiency, we keep your PlayStation repair experience hassle-free, ensuring your console runs smoothly for extended gaming sessions.
+      contentf2: `An overheating PS5 with loud fan noises can lead to performance drops and long-term damage. Our PlayStation 5 repair service includes deep cleaning, thermal paste replacement, and cooling fan fixes to prevent overheating. By optimizing airflow and cooling efficiency, we keep your PlayStation repair experience hassle-free, ensuring your console runs smoothly for extended gaming sessions.
 `,
       // contentf3:
       //   "Start Your Repair: Click Start Repair to provide details about your device and its issues. You’ll receive a quote and mailing instructions within 24 hours.",
@@ -314,8 +315,7 @@ const PS5RepairsSydney: React.FC = () => {
       id: 3,
       label: "PS5 SSD & Storage Issues",
       // content: "LabX Professional B2B Phone Repair:",
-      contentf2:
-        `Slow loading times, frequent crashes, or storage errors can indicate SSD problems. Our PS5 repair service offers SSD replacements and upgrades, boosting your console’s speed and storage capacity. Whether you need to fix corrupted storage or install a larger SSD, our PlayStation 5 repair ensures better gaming performance with faster load times and smoother gameplay.
+      contentf2: `Slow loading times, frequent crashes, or storage errors can indicate SSD problems. Our PS5 repair service offers SSD replacements and upgrades, boosting your console’s speed and storage capacity. Whether you need to fix corrupted storage or install a larger SSD, our PlayStation 5 repair ensures better gaming performance with faster load times and smoother gameplay.
 `,
       // contentf3:
       //   "Bulk Repair Solutions: Our infrastructure is designed to handle bulk repair orders efficiently, ensuring quick turnaround times without compromising on quality. Whether you need screen refurbishments or complex repairs for multiple devices, we can scale our services to match your volume.",
@@ -334,8 +334,7 @@ const PS5RepairsSydney: React.FC = () => {
       id: 4,
       label: "Blue Light of Death (BLOD) Fix",
       // content: "LabX Professional Data Recovery:",
-      contentf2:
-        `If your PS5 won’t turn on and flashes a blue light, it’s likely experiencing the Blue Light of Death (BLOD). Our PlayStation repair service specializes in fixing motherboard, power, and software-related issues causing BLOD. We diagnose the problem, repair faulty components, and restore your PlayStation 5 to full functionality for a hassle-free gaming experience.`,
+      contentf2: `If your PS5 won’t turn on and flashes a blue light, it’s likely experiencing the Blue Light of Death (BLOD). Our PlayStation repair service specializes in fixing motherboard, power, and software-related issues causing BLOD. We diagnose the problem, repair faulty components, and restore your PlayStation 5 to full functionality for a hassle-free gaming experience.`,
       // contentf3:
       //   "Physically Damaged Devices: Whether your phone has been dropped, crushed, or exposed to liquids, we can often retrieve your valuable files.",
       // contentf4:
@@ -350,9 +349,8 @@ const PS5RepairsSydney: React.FC = () => {
     {
       id: 5,
       label: "Controller Repairs",
-      content: "LabX Professional Data Recovery:",
-      contentf2:
-        `Drifting joysticks, unresponsive buttons, or charging problems can make gaming frustrating. Our PS5 repair service includes PlayStation 5 repair for DualSense controllers, fixing analog stick drift, faulty triggers, and battery issues. We replace damaged components to restore precision and responsiveness, ensuring a seamless gaming experience without controller-related interruptions.
+      // content: "LabX Professional Data Recovery:",
+      contentf2: `Drifting joysticks, unresponsive buttons, or charging problems can make gaming frustrating. Our PS5 repair service includes PlayStation 5 repair for DualSense controllers, fixing analog stick drift, faulty triggers, and battery issues. We replace damaged components to restore precision and responsiveness, ensuring a seamless gaming experience without controller-related interruptions.
 `,
       // contentf3:
       //   "Physically Damaged Devices: Whether your phone has been dropped, crushed, or exposed to liquids, we can often retrieve your valuable files.",
@@ -369,8 +367,7 @@ const PS5RepairsSydney: React.FC = () => {
       id: 6,
       label: "Disc Drive Repairs",
       // content: "LabX Professional Data Recovery:",
-      contentf2:
-        `Is your PS5 not reading discs or struggling to eject them? A malfunctioning disc drive can limit your gaming library. Our PS5 repair service fixes faulty laser readers, ejector mechanisms, and disc recognition errors. With our PlayStation 5 repair expertise, we ensure your console can read game discs smoothly, allowing you to enjoy your collection worry-free.
+      contentf2: `Is your PS5 not reading discs or struggling to eject them? A malfunctioning disc drive can limit your gaming library. Our PS5 repair service fixes faulty laser readers, ejector mechanisms, and disc recognition errors. With our PlayStation 5 repair expertise, we ensure your console can read game discs smoothly, allowing you to enjoy your collection worry-free.
 `,
       // contentf3:
       //   "Physically Damaged Devices: Whether your phone has been dropped, crushed, or exposed to liquids, we can often retrieve your valuable files.",
@@ -387,8 +384,7 @@ const PS5RepairsSydney: React.FC = () => {
       id: 7,
       label: "PS5 Connectivity Issues",
       // content: "LabX Professional Data Recovery:",
-      contentf2:
-`If your PS5 won’t connect to Wi-Fi, has frequent disconnections, or slow internet speeds, it could be a network hardware issue. Our PS5 repair service troubleshoots and repairs Wi-Fi modules, network adapters, and software settings. With our PlayStation repair expertise, we ensure a strong and stable internet connection for smooth online gaming and streaming.
+      contentf2: `If your PS5 won’t connect to Wi-Fi, has frequent disconnections, or slow internet speeds, it could be a network hardware issue. Our PS5 repair service troubleshoots and repairs Wi-Fi modules, network adapters, and software settings. With our PlayStation repair expertise, we ensure a strong and stable internet connection for smooth online gaming and streaming.
 `,
       // contentf3:
       //   "Physically Damaged Devices: Whether your phone has been dropped, crushed, or exposed to liquids, we can often retrieve your valuable files.",
@@ -412,7 +408,10 @@ const PS5RepairsSydney: React.FC = () => {
       }}
     >
       <div className="container bgchange">
-      <div className="py-3">  <MainHeading Heading="Common PS5 Console Issues We Expertly Fix" /></div>
+        <div className="py-3">
+          {" "}
+          <MainHeading Heading="Common PS5 Console Issues We Expertly Fix" />
+        </div>
         {/* <MainTitle Title="Take a quick look at our range of mobile phone repair services tailored to meet all your needs, from expert repairs and training programs to quality parts and data recovery — everything under one roof!" /> */}
         <div className="lg:block hidden">
           <div className="grid xl:grid-cols-[2fr_5fr] lg:grid-cols-[3fr_6fr] gap-4">
@@ -420,10 +419,11 @@ const PS5RepairsSydney: React.FC = () => {
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
-                  className={`p-3 text-white rounded-[50px] border-[1.5px] text-base tracking-[1.2px] ${activeTab === tab.id
-                    ? "active-tab"
-                    : "bg-opacity-50 hover:bg-opacity-75"
-                    }`}
+                  className={`p-3 text-white rounded-[50px] border-[1.5px] text-base tracking-[1.2px] ${
+                    activeTab === tab.id
+                      ? "active-tab"
+                      : "bg-opacity-50 hover:bg-opacity-75"
+                  }`}
                   onClick={() => setActiveTab(tab.id)}
                   data-selected={tab.id.toString()}
                   role="tab"
@@ -440,9 +440,10 @@ const PS5RepairsSydney: React.FC = () => {
                 <Image
                   src={tabs[activeTab].image}
                   alt={tabs[activeTab].label}
-                  width={500}
-                  height={500}
-                  className="w-[100%] h-[300px] object-cover rounded-lg"
+                  width={1600} // higher resolution
+                  height={900}
+                  className="w-full h-[400px] object-cover rounded-lg"
+                  quality={100}
                 />
               </div>
               <h3 className="mb-2">{tabs[activeTab].content}</h3>
@@ -471,7 +472,6 @@ const PS5RepairsSydney: React.FC = () => {
                 .filter((item) => item.content)
                 .map((item, index) => (
                   <div className="flex items-start gap-4" key={index}>
-
                     <div>
                       <p className="">
                         <span
@@ -485,9 +485,6 @@ const PS5RepairsSydney: React.FC = () => {
                     </div>
                   </div>
                 ))}
-
-
-
 
               {tabs[activeTab].button && tabs[activeTab].link && (
                 <Link
@@ -504,12 +501,11 @@ const PS5RepairsSydney: React.FC = () => {
                 </Link>
               )}
             </div>
-
           </div>
         </div>
 
         <section className="lg:hidden block">
-        <DeliveryTousMobile itoms={itoms} />
+          <DeliveryTousMobile itoms={itoms} />
         </section>
       </div>
     </section>
