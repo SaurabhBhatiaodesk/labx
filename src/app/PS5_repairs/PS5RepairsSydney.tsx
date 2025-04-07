@@ -5,10 +5,11 @@ import MainHeading from "@/components/ManinHeading/MainHeading";
 import PS5HDMIPortRepair from "../../../public/Images/PS5 HDMI Port Repair.webp";
 import PS5PowerIssues from "../../../public/Images/PS5 Power Issues.webp";
 import OverheatingFanNoise from "../../../public/Images/Overheating & Fan Noise.webp";
-import PS5SSDStorageIssues from "../../../public/Images/PS5 SSD & Storage Issues.webp";
+import OverheatingandCooling from "../../../public/Images/Overheating and Cooling.webp";
 import BlueLightofDeath from "../../../public/Images/Blue Light of Death.webp";
-import ControllerRepairs from "../../../public/Images/Controller Repairs.webp";
 import DiscDriveRepairs from "../../../public/Images/Disc Drive Repairs.webp";
+import SystemSoftwareErrors from "../../../public/Images/System Software Errors.webp";
+import GreenScreenDisplayIssues from "../../../public/Images/Green Screen Display Issues.webp";
 import PS5ConnectivityIssues from "../../../public/Images/PS5 Connectivity Issues.webp";
 import "./PS5.css";
 
@@ -51,7 +52,7 @@ const PS5RepairsSydney: React.FC = () => {
 
       // contentf2title: "Expert B2B Screen Refurbishing",
       contentf2:
-        "If your PlayStation 5 is experiencing video issues, a loose HDMI connection, or no display output, you may need an HDMI port repair. Our PS5 repair service replaces damaged HDMI ports with high-quality components, ensuring a stable connection and crystal-clear visuals. Get back to seamless gaming with our reliable PlayStation repair solutions.",
+        "A damaged HDMI port can prevent your PS5 from displaying anything on the screen, leaving you with a blank output or distorted visuals. Our PlayStation 5 repair service specializes in HDMI port replacement using precision tools and high-quality connectors. We ensure a reliable, long-lasting fix so you can enjoy crystal-clear graphics and uninterrupted gaming once again.",
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
       //   "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -61,18 +62,18 @@ const PS5RepairsSydney: React.FC = () => {
       // contentf5title: "Fast Turnaround Phone Repair",
       // contentf5:
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
-      button: "READ MORE",
-      link: "/screen-refurbishing",
+      button: "Request a Quote",
+      link: "/contact-us",
       image: PS5HDMIPortRepair,
       // image: screenreplace,
     },
     {
       id: 1,
-      label: "No Power Dead",
+      label: "No Power / Dead Console",
       content: "",
       // contentf2title: "Expert B2B Screen Refurbishing",
       contentf2:
-        "Power failures, sudden shutdowns, or a completely unresponsive PlayStation 5 can disrupt your gaming. Our PS5 repair service diagnoses faulty power supplies, motherboard issues, and charging problems. Whether your console won’t turn on or keeps shutting off unexpectedly, our expert PlayStation repair will restore full functionality, ensuring you enjoy uninterrupted gaming sessions.",
+        "If your PS5 is completely unresponsive and shows no signs of power, it may be due to a faulty power supply, motherboard issue, or internal short circuit. Our PS5 repair service performs advanced diagnostics and hardware replacement to bring your dead console back to life. Trust our experts to revive your system with a safe and effective repair process.",
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
       //   "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -82,8 +83,8 @@ const PS5RepairsSydney: React.FC = () => {
       // contentf5title: "Fast Turnaround Phone Repair",
       // contentf5:
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
-      button: "READ MORE",
-      link: "/screen-refurbishing",
+      button: "Request a Quote",
+      link: "/contact-us",
       image: PS5PowerIssues,
       // image: screenreplace,
     },
@@ -92,7 +93,7 @@ const PS5RepairsSydney: React.FC = () => {
       label: "BLOD - Blue Light Of Death",
       content: "",
       // contentf2title: "Expert B2B Screen Refurbishing",
-      contentf2: `An overheating PS5 with loud fan noises can lead to performance drops and long-term damage. Our PlayStation 5 repair service includes deep cleaning, thermal paste replacement, and cooling fan fixes to prevent overheating. By optimizing airflow and cooling efficiency, we keep your PlayStation repair experience hassle-free, ensuring your console runs smoothly for extended gaming sessions.`,
+      contentf2: `The Blue Light of Death (BLOD) is a serious issue that causes your PS5 to blink blue and not boot up properly. Our experienced technicians specialize in repairing BLOD-related hardware and software failures. Whether it's a motherboard repair or power circuitry issue, our PlayStation 5 repair service restores your console’s functionality with professional precision.`,
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
       //   "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -102,8 +103,8 @@ const PS5RepairsSydney: React.FC = () => {
       // contentf5title: "Fast Turnaround Phone Repair",
       // contentf5:
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
-      button: "READ MORE",
-      link: "/screen-refurbishing",
+      button: "Request a Quote",
+      link: "/contact-us",
       image: OverheatingFanNoise,
       // image: screenreplace,
     },
@@ -112,7 +113,7 @@ const PS5RepairsSydney: React.FC = () => {
       label: "Overheating and Cooling System Malfunctions",
       content: "",
       // contentf2title: "Expert B2B Screen Refurbishing",
-      contentf2: `Slow loading times, frequent crashes, or storage errors can indicate SSD problems. Our PS5 repair service offers SSD replacements and upgrades, boosting your console’s speed and storage capacity. Whether you need to fix corrupted storage or install a larger SSD, our PlayStation 5 repair ensures better gaming performance with faster load times and smoother gameplay.`,
+      contentf2: `If your PS5 is shutting down unexpectedly or the fan is excessively loud, your cooling system may be failing. Our repair service includes deep internal cleaning, thermal paste application, and fan replacements. We optimize your console’s thermal performance, preventing long-term damage and ensuring quiet, stable gameplay even during intense gaming sessions.`,
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
       //   "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -122,9 +123,9 @@ const PS5RepairsSydney: React.FC = () => {
       // contentf5title: "Fast Turnaround Phone Repair",
       // contentf5:
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
-      button: "READ MORE",
-      link: "/screen-refurbishing",
-      image: PS5SSDStorageIssues,
+      button: "Request a Quote",
+      link: "/contact-us",
+      image: OverheatingandCooling,
       // image: screenreplace,
     },
     {
@@ -132,7 +133,7 @@ const PS5RepairsSydney: React.FC = () => {
       label: "Wi-Fi Connectivity Issues",
       content: "",
       // contentf2title: "Expert B2B Screen Refurbishing",
-      contentf2: `If your PS5 won’t turn on and flashes a blue light, it’s likely experiencing the Blue Light of Death (BLOD). Our PlayStation repair service specializes in fixing motherboard, power, and software-related issues causing BLOD. We diagnose the problem, repair faulty components, and restore your PlayStation 5 to full functionality for a hassle-free gaming experience.`,
+      contentf2: `Struggling with Wi-Fi drops or a PS5 that won’t connect to the internet? It could be due to a faulty wireless module, antenna, or software bug. Our PlayStation repair service thoroughly checks and fixes network hardware to restore a strong, stable connection. We ensure fast online gaming, seamless downloads, and smooth streaming experiences.`,
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
       //   "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -142,8 +143,8 @@ const PS5RepairsSydney: React.FC = () => {
       // contentf5title: "Fast Turnaround Phone Repair",
       // contentf5:
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
-      button: "READ MORE",
-      link: "/screen-refurbishing",
+      button: "Request a Quote",
+      link: "/contact-us",
       image: BlueLightofDeath,
       // image: screenreplace,
     },
@@ -152,7 +153,7 @@ const PS5RepairsSydney: React.FC = () => {
       label: "Disc Drive Problems",
       content: "",
       // contentf2title: "Expert B2B Screen Refurbishing",
-      contentf2: `Drifting joysticks, unresponsive buttons, or charging problems can make gaming frustrating. Our PS5 repair service includes PlayStation 5 repair for DualSense controllers, fixing analog stick drift, faulty triggers, and battery issues. We replace damaged components to restore precision and responsiveness, ensuring a seamless gaming experience without controller-related interruptions.`,
+      contentf2: `If your PS5 isn’t reading discs, struggles to eject them, or makes unusual noises, the disc drive may be malfunctioning. Our repair service tackles issues like faulty laser lenses, jammed ejectors, and disc detection failures. We restore full functionality to your console’s drive, so you can enjoy physical game titles without frustration.`,
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
       //   "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -162,9 +163,9 @@ const PS5RepairsSydney: React.FC = () => {
       // contentf5title: "Fast Turnaround Phone Repair",
       // contentf5:
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
-      button: "READ MORE",
-      link: "/screen-refurbishing",
-      image: ControllerRepairs,
+      button: "Request a Quote",
+      link: "/contact-us",
+      image: DiscDriveRepairs,
       // image: screenreplace,
     },
     {
@@ -172,7 +173,7 @@ const PS5RepairsSydney: React.FC = () => {
       label: "System Software Errors",
       content: "",
       // contentf2title: "Expert B2B Screen Refurbishing",
-      contentf2: `Is your PS5 not reading discs or struggling to eject them? A malfunctioning disc drive can limit your gaming library. Our PS5 repair service fixes faulty laser readers, ejector mechanisms, and disc recognition errors. With our PlayStation 5 repair expertise, we ensure your console can read game discs smoothly, allowing you to enjoy your collection worry-free.
+      contentf2: `Frequent crashes, update failures, or boot-loop issues can stem from corrupted system software. Our PlayStation 5 repair service resolves these problems with safe firmware restoration and system resets. We fix software errors without risking your saved data (when possible), ensuring your console performs smoothly with every startup and session.
 `,
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
@@ -183,9 +184,9 @@ const PS5RepairsSydney: React.FC = () => {
       // contentf5title: "Fast Turnaround Phone Repair",
       // contentf5:
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
-      button: "READ MORE",
-      link: "/screen-refurbishing",
-      image: DiscDriveRepairs,
+      button: "Request a Quote",
+      link: "/contact-us",
+      image: SystemSoftwareErrors,
       // image: screenreplace,
     },
     {
@@ -193,7 +194,7 @@ const PS5RepairsSydney: React.FC = () => {
       label: "Green Screen Display Issues",
       content: "",
       // contentf2title: "Expert B2B Screen Refurbishing",
-      contentf2: `If your PS5 won’t connect to Wi-Fi, has frequent disconnections, or slow internet speeds, it could be a network hardware issue. Our PS5 repair service troubleshoots and repairs Wi-Fi modules, network adapters, and software settings. With our PlayStation repair expertise, we ensure a strong and stable internet connection for smooth online gaming and streaming.
+      contentf2: `A green screen on your PS5 can point to HDMI signal problems, GPU failure, or firmware glitches. Our expert repair service diagnoses the exact cause and fixes underlying hardware or software issues. We restore normal video output, ensuring that your display is vibrant and your games look as they should.
 `,
       // contentf3title: "State-of-the-Art Technology",
       // contentf3:
@@ -204,9 +205,9 @@ const PS5RepairsSydney: React.FC = () => {
       // contentf5title: "Fast Turnaround Phone Repair",
       // contentf5:
       //   "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
-      button: "READ MORE",
-      link: "/screen-refurbishing",
-      image: PS5ConnectivityIssues,
+      button: "Request a Quote",
+      link: "/contact-us",
+      image: GreenScreenDisplayIssues,
       // image: screenreplace,
     },
   ];
@@ -263,7 +264,7 @@ const PS5RepairsSydney: React.FC = () => {
       id: 0,
       label: "HDMI Port Damage",
       // content: "LabX Professional Screen Refurbishment Services:",
-      contentf2: `If your PlayStation 5 is experiencing video issues, a loose HDMI connection, or no display output, you may need an HDMI port repair. Our PS5 repair service replaces damaged HDMI ports with high-quality components, ensuring a stable connection and crystal-clear visuals. Get back to seamless gaming with our reliable PlayStation repair solutions.
+      contentf2: `A damaged HDMI port can prevent your PS5 from displaying anything on the screen, leaving you with a blank output or distorted visuals. Our PlayStation 5 repair service specializes in HDMI port replacement using precision tools and high-quality connectors. We ensure a reliable, long-lasting fix so you can enjoy crystal-clear graphics and uninterrupted gaming once again.
 `,
       // contentf3:
       //   "State-of-the-Art Technology: We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -271,23 +272,23 @@ const PS5RepairsSydney: React.FC = () => {
       //   "Fair and Transparent Grading: We provide a clear and honest grading system. If a screen is rejected or downgraded to a B grade, we will provide a detailed explanation along with photos as proof.",
       // contentf5:
       //   "Fast Turnaround Phone Repair: We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
-      button: "Read More",
-      link2: "/screen-refurbishing",
+      button: "Request a Quote",
+      link2: "/contact-us",
       image: arrow1,
       buttonColor: "linear-gradient(74deg, #43C6AC, #000000)",
     },
     {
       id: 1,
-      label: "No Power Dead",
+      label: "No Power / Dead Console",
       // content: "LabX Professional Phone Repair Courses:",
-      contentf2: `Power failures, sudden shutdowns, or a completely unresponsive PlayStation 5 can disrupt your gaming. Our PS5 repair service diagnoses faulty power supplies, motherboard issues, and charging problems. Whether your console won’t turn on or keeps shutting off unexpectedly, our expert PlayStation repair will restore full functionality, ensuring you enjoy uninterrupted gaming sessions.`,
+      contentf2: `If your PS5 is completely unresponsive and shows no signs of power, it may be due to a faulty power supply, motherboard issue, or internal short circuit. Our PS5 repair service performs advanced diagnostics and hardware replacement to bring your dead console back to life. Trust our experts to revive your system with a safe and effective repair process.`,
       // contentf3:
       //   "Advanced Training: In our advanced course, you will master complex repairs like motherboard and microsoldering training. Enhance your skill set to tackle challenging issues with precision and professionalism.",
       // contentf4:
       //   "Software Training: This course focuses on essential software repairs, including phone flashing, unlocking, and other software fixes. Learn how to troubleshoot and resolve software-related problems effectively.",
       // contentf5:
       //   "Screen Refurbishing Training: Learn how to restore damaged screens to their original quality. Master the techniques needed to refurbish screens for a variety of devices.",
-      button: "Read More",
+      button: "Request a Quote",
       link2: "/repair-solutions",
       image: arrow2,
       buttonColor: "linear-gradient(74deg, #FF9966, #000000)",
@@ -296,7 +297,7 @@ const PS5RepairsSydney: React.FC = () => {
       id: 2,
       label: "BLOD - Blue Light Of Death",
       // content: "LabX Professional Mail In Repair:",
-      contentf2: `An overheating PS5 with loud fan noises can lead to performance drops and long-term damage. Our PlayStation 5 repair service includes deep cleaning, thermal paste replacement, and cooling fan fixes to prevent overheating. By optimizing airflow and cooling efficiency, we keep your PlayStation repair experience hassle-free, ensuring your console runs smoothly for extended gaming sessions.
+      contentf2: `The Blue Light of Death (BLOD) is a serious issue that causes your PS5 to blink blue and not boot up properly. Our experienced technicians specialize in repairing BLOD-related hardware and software failures. Whether it's a motherboard repair or power circuitry issue, our PlayStation 5 repair service restores your console’s functionality with professional precision.
 `,
       // contentf3:
       //   "Start Your Repair: Click Start Repair to provide details about your device and its issues. You’ll receive a quote and mailing instructions within 24 hours.",
@@ -306,7 +307,7 @@ const PS5RepairsSydney: React.FC = () => {
       //   "Send Your Device: Once approved, follow the provided mailing instructions to ship your device to us securely.",
       // contentf6:
       //   "Device Intake and Repair: Upon receipt, we’ll confirm via email and place your device in the repair queue, notifying you of any updates during the process.",
-      button: "Read More",
+      button: "Request a Quote",
       link2: "/mail-in-repair",
       image: arrow3,
       buttonColor: "linear-gradient(74deg, #FFE000, #000000)",
@@ -315,7 +316,7 @@ const PS5RepairsSydney: React.FC = () => {
       id: 3,
       label: "Overheating and Cooling System Malfunctions",
       // content: "LabX Professional B2B Phone Repair:",
-      contentf2: `Slow loading times, frequent crashes, or storage errors can indicate SSD problems. Our PS5 repair service offers SSD replacements and upgrades, boosting your console’s speed and storage capacity. Whether you need to fix corrupted storage or install a larger SSD, our PlayStation 5 repair ensures better gaming performance with faster load times and smoother gameplay.
+      contentf2: `If your PS5 is shutting down unexpectedly or the fan is excessively loud, your cooling system may be failing. Our repair service includes deep internal cleaning, thermal paste application, and fan replacements. We optimize your console’s thermal performance, preventing long-term damage and ensuring quiet, stable gameplay even during intense gaming sessions.
 `,
       // contentf3:
       //   "Bulk Repair Solutions: Our infrastructure is designed to handle bulk repair orders efficiently, ensuring quick turnaround times without compromising on quality. Whether you need screen refurbishments or complex repairs for multiple devices, we can scale our services to match your volume.",
@@ -325,7 +326,7 @@ const PS5RepairsSydney: React.FC = () => {
       //   "Repair Tracking and Updates: Stay informed with our comprehensive mobile phone repair tracking system. We provide automated updates at each stage, ensuring you always know the status of your devices throughout the mobile phone repair process.",
       // contentf6:
       //   "Easy B2B Account Setup: Setting up a B2B account is straightforward. Complete the Apply for Business Account form on our website, and your account will be activated within moments, providing you with fast turnaround time for exclusive B2B phone repair services.",
-      button: "Read More",
+      button: "Request a Quote",
       link2: "/b2b-repair-services",
       image: arrow4,
       buttonColor: "linear-gradient(74deg, #A044FF, #000000)",
@@ -334,14 +335,14 @@ const PS5RepairsSydney: React.FC = () => {
       id: 4,
       label: "Wi-Fi Connectivity Issues",
       // content: "LabX Professional Data Recovery:",
-      contentf2: `If your PS5 won’t turn on and flashes a blue light, it’s likely experiencing the Blue Light of Death (BLOD). Our PlayStation repair service specializes in fixing motherboard, power, and software-related issues causing BLOD. We diagnose the problem, repair faulty components, and restore your PlayStation 5 to full functionality for a hassle-free gaming experience.`,
+      contentf2: `Struggling with Wi-Fi drops or a PS5 that won’t connect to the internet? It could be due to a faulty wireless module, antenna, or software bug. Our PlayStation repair service thoroughly checks and fixes network hardware to restore a strong, stable connection. We ensure fast online gaming, seamless downloads, and smooth streaming experiences.`,
       // contentf3:
       //   "Physically Damaged Devices: Whether your phone has been dropped, crushed, or exposed to liquids, we can often retrieve your valuable files.",
       // contentf4:
       //   "Corrupt Operating Systems: We handle cases of OS corruption, which often makes a device unbootable, and recover data like contacts, texts, photos, and videos.",
       // contentf5:
       //   "Failed or Broken Logic Boards: Our team of mobile technicians specializes in recovering data from devices with broken or failed logic boards, using advanced techniques.",
-      button: "Read More",
+      button: "Request a Quote",
       link2: "/data-recovery",
       image: arrow5,
       buttonColor: "linear-gradient(74deg, #2052e8a5, #000000)",
@@ -350,7 +351,7 @@ const PS5RepairsSydney: React.FC = () => {
       id: 5,
       label: "Disc Drive Problems",
       // content: "LabX Professional Data Recovery:",
-      contentf2: `Drifting joysticks, unresponsive buttons, or charging problems can make gaming frustrating. Our PS5 repair service includes PlayStation 5 repair for DualSense controllers, fixing analog stick drift, faulty triggers, and battery issues. We replace damaged components to restore precision and responsiveness, ensuring a seamless gaming experience without controller-related interruptions.
+      contentf2: `If your PS5 isn’t reading discs, struggles to eject them, or makes unusual noises, the disc drive may be malfunctioning. Our repair service tackles issues like faulty laser lenses, jammed ejectors, and disc detection failures. We restore full functionality to your console’s drive, so you can enjoy physical game titles without frustration.
 `,
       // contentf3:
       //   "Physically Damaged Devices: Whether your phone has been dropped, crushed, or exposed to liquids, we can often retrieve your valuable files.",
@@ -358,7 +359,7 @@ const PS5RepairsSydney: React.FC = () => {
       //   "Corrupt Operating Systems: We handle cases of OS corruption, which often makes a device unbootable, and recover data like contacts, texts, photos, and videos.",
       // contentf5:
       //   "Failed or Broken Logic Boards: Our team of mobile technicians specializes in recovering data from devices with broken or failed logic boards, using advanced techniques.",
-      button: "Read More",
+      button: "Request a Quote",
       link2: "/data-recovery",
       image: arrow5,
       buttonColor: "linear-gradient(74deg, #2052e8a5, #000000)",
@@ -367,7 +368,7 @@ const PS5RepairsSydney: React.FC = () => {
       id: 6,
       label: "System Software Errors",
       // content: "LabX Professional Data Recovery:",
-      contentf2: `Is your PS5 not reading discs or struggling to eject them? A malfunctioning disc drive can limit your gaming library. Our PS5 repair service fixes faulty laser readers, ejector mechanisms, and disc recognition errors. With our PlayStation 5 repair expertise, we ensure your console can read game discs smoothly, allowing you to enjoy your collection worry-free.
+      contentf2: `Frequent crashes, update failures, or boot-loop issues can stem from corrupted system software. Our PlayStation 5 repair service resolves these problems with safe firmware restoration and system resets. We fix software errors without risking your saved data (when possible), ensuring your console performs smoothly with every startup and session.
 `,
       // contentf3:
       //   "Physically Damaged Devices: Whether your phone has been dropped, crushed, or exposed to liquids, we can often retrieve your valuable files.",
@@ -375,7 +376,7 @@ const PS5RepairsSydney: React.FC = () => {
       //   "Corrupt Operating Systems: We handle cases of OS corruption, which often makes a device unbootable, and recover data like contacts, texts, photos, and videos.",
       // contentf5:
       //   "Failed or Broken Logic Boards: Our team of mobile technicians specializes in recovering data from devices with broken or failed logic boards, using advanced techniques.",
-      button: "Read More",
+      button: "Request a Quote",
       link2: "/data-recovery",
       image: arrow5,
       buttonColor: "linear-gradient(74deg, #2052e8a5, #000000)",
@@ -384,7 +385,7 @@ const PS5RepairsSydney: React.FC = () => {
       id: 7,
       label: "Green Screen Display Issues",
       // content: "LabX Professional Data Recovery:",
-      contentf2: `If your PS5 won’t connect to Wi-Fi, has frequent disconnections, or slow internet speeds, it could be a network hardware issue. Our PS5 repair service troubleshoots and repairs Wi-Fi modules, network adapters, and software settings. With our PlayStation repair expertise, we ensure a strong and stable internet connection for smooth online gaming and streaming.
+      contentf2: `A green screen on your PS5 can point to HDMI signal problems, GPU failure, or firmware glitches. Our expert repair service diagnoses the exact cause and fixes underlying hardware or software issues. We restore normal video output, ensuring that your display is vibrant and your games look as they should.
 `,
       // contentf3:
       //   "Physically Damaged Devices: Whether your phone has been dropped, crushed, or exposed to liquids, we can often retrieve your valuable files.",
@@ -392,7 +393,7 @@ const PS5RepairsSydney: React.FC = () => {
       //   "Corrupt Operating Systems: We handle cases of OS corruption, which often makes a device unbootable, and recover data like contacts, texts, photos, and videos.",
       // contentf5:
       //   "Failed or Broken Logic Boards: Our team of mobile technicians specializes in recovering data from devices with broken or failed logic boards, using advanced techniques.",
-      button: "Read More",
+      button: "Request a Quote",
       link2: "/data-recovery",
       image: arrow5,
       buttonColor: "linear-gradient(74deg, #31e820a5, #000000)",
@@ -495,7 +496,7 @@ const PS5RepairsSydney: React.FC = () => {
                     background: getGradientColor(activeTab),
                     borderColor: getGradientColor(activeTab),
                   }}
-                  aria-label={`Read more about ${tabs[activeTab].label}`}
+                  aria-label={`Request a Quote about ${tabs[activeTab].label}`}
                 >
                   {tabs[activeTab].button}
                 </Link>

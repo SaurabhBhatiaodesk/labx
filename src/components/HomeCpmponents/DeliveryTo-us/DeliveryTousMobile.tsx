@@ -40,7 +40,13 @@ const DeliveryTousMobile: React.FC<DeliveryTousMobileProps> = ({ itoms }) => {
               background: activeIndex === item.id ? item.buttonColor : undefined,
             }}
           >
-            <span className="text-[17px] tracking-[1.5px] text-white">{item.label}</span>
+<span
+  className={`${
+    item.label && item.label.length > 30 ? "text-[15px]" : "text-[17px]"
+  } tracking-[1.5px] text-white ppppp`}
+>
+  {item.label}
+</span>
             <MdKeyboardArrowDown
               className={`transition-transform duration-300 text-white ${activeIndex === item.id ? "rotate-180" : ""}`}
             />

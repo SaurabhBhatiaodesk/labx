@@ -12,39 +12,40 @@ import StaperForm from "../mail-in-repair/StaperForm";
 const PS5Repairs = () => {
   const accordionData = [
     {
-      title: "What types of devices do you repair?",
+      title: "How long does a PS5 repair service take?",
       content:
-        "We repair a wide range of mobile devices, including iPhones, Android phones, tablets, and MacBooks. We specialize in logic board repairs, microsoldering, and screen refurbishments.",
+       ` Most PlayStation 5 repair services are completed within 24-48 hours, depending on the issue. We prioritize fast turnaround times to get you gaming again.`,
     },
     {
-      title: "What types of repairs do you specialize in?",
+      title: `What types of PlayStation repair services do you offer?`,
       content:
-        "Our expertise includes screen replacement, motherboard repairs, data recovery, and micro soldering. We also handle complex repairs like Face ID issues, and water damage recovery.",
+        `We provide PS5 repair services, including HDMI port fixes, power issues, overheating, SSD upgrades, and disc drive repairs, ensuring optimal console performance.`,
     },
     {
-      title: "Do you offer any warranties on your repairs?",
+      title: `Do you offer a warranty on PlayStation 5 repair?`,
       content:
-        "Yes, all repairs come with a 1 Year warranty on parts and workmanship. This ensures that if the same issue reoccurs, we will repair it free of charge, provided no further damage has occurred to the device.",
+        `Yes! We provide a warranty on all PlayStation repair services, covering parts and labor, giving you peace of mind after your console is repaired.`,
     },
     {
-      title: "What is the warranty on liquid-damaged devices?",
+      title: `Can you fix the Blue Light of Death on my PS5?`,
       content:
-        "We do not recommend repairing liquid-damaged devices and suggest only data recovery services. If the customer insists on repair, we do not provide any warranty, including for the replaced parts.",
+        `Absolutely! Our expert technicians specialize in PlayStation 5 repair, including fixing the Blue Light of Death (BLOD) to restore your console’s functionality.
+`,
     },
     {
-      title: "Will all functions work on my dead device after repair?",
+      title: `What if my PS5 can’t be repaired?`,
       content:
-        "No guarantees can be made. The initial quote covers the visible issue, e.g., turning on a dead device. Since devices have numerous functions, issues like a non-working camera or mic will require a separate quote unless the fault is minor, in which case we’ll address it during the repair. Major issues will need re-quoting.",
+       `If your PS5 repair service isn’t possible, we offer alternative solutions, including replacement options, and you won’t be charged if we can’t fix it.`,
     },
     {
-      title: "Do you offer repair services for all phone brands?",
+      title: `Do you use genuine parts for PlayStation repair?`,
       content:
-        "Yes, we provide repair services for a wide range of phone brands, including Apple, Samsung, Xiaomi, and more. Our technicians are experienced in handling various devices and models.",
+       `Yes, we use high-quality, genuine parts for all PlayStation 5 repair services to ensure durability, longevity, and the best gaming experience.`,
     },
     {
-      title: "How long does a typical phone repair take?",
+      title: `Where can I get my PS5 repaired?`,
       content:
-        "Most phone repairs are completed within a few hours, depending on the complexity of the issue. We strive to return your device in working condition as quickly as possible.",
+       `You can visit our repair center for professional PS5 repair service or opt for a mail-in PlayStation repair to fix your console hassle-free.`,
     },
   ];
   return (
