@@ -687,7 +687,7 @@ const StaperForm: React.FC = () => {
                     `/data-recovery/thank-you?id=${cleanOrderReferenceId}`
                   )
                 : router.push(
-                    `/PS5_repairs/thank-you?id=${cleanOrderReferenceId}`
+                    `/ps5-repair/thank-you?id=${cleanOrderReferenceId}`
                   );
             }
           }
@@ -773,7 +773,15 @@ const StaperForm: React.FC = () => {
       <section className="steper-form-section-os">
         <div className="container gaurav-bg-trans ">
           <div className="py-3 xl:py-6 2xl:py-6">
-            <MainHeading Heading="LabX Mail-In Repair Submission Form" />
+            <MainHeading
+              Heading={`${
+                pathname === "/mail-in-repair"
+                  ? "LabX Mail-In Repair Submission Form"
+                  : pathname === "/data-recovery"
+                  ? "LabX data-recovery Submission Form"
+                  : "LabX ps5 Repair Submission Form"
+              }`}
+            />
           </div>
 
           <div
@@ -868,6 +876,13 @@ const StaperForm: React.FC = () => {
                                   fullName: e.target.value,
                                 })
                               }
+                              onBlur={() => {
+                                // Clear the error when the field loses focus
+                                setErrors((prevErrors) => ({
+                                  ...prevErrors,
+                                  fullName: "",
+                                }));
+                              }}
                             />
                             {errors.fullName && (
                               <p className="text-[red] text-sm mb-0">
@@ -893,6 +908,15 @@ const StaperForm: React.FC = () => {
                                 }
                               }}
                               inputProps={{ maxLength: 10 }}
+                              onBlur={() => {
+                                // Clear the error when the field loses focus
+                                if (personalDetails.contactNo.length === 10) {
+                                  setErrors((prevErrors) => ({
+                                    ...prevErrors,
+                                    contactNo: "",
+                                  }));
+                                }
+                              }}
                             />
 
                             {errors.contactNo && (
@@ -919,6 +943,13 @@ const StaperForm: React.FC = () => {
                                 isInvalid ? "border-red-500" : ""
                               }`}
                               type="email"
+                              onBlur={() => {
+                                // Clear the error when the field loses focus
+                                setErrors((prevErrors) => ({
+                                  ...prevErrors,
+                                  emailAddress: "",
+                                }));
+                              }}
                             />
                             {errors.emailAddress && (
                               <p className="text-[red] text-sm mb-0">
@@ -929,9 +960,11 @@ const StaperForm: React.FC = () => {
                         </div>
 
                         <div>
-                          <h4 className="lg:text-lg text-sm pb-[10px]">
-                            Device Details
-                          </h4>
+                          {pathname !== "/ps5-repair" && (
+                            <h4 className="lg:text-lg text-sm pb-[10px]">
+                              Device Details
+                            </h4>
+                          )}
                           <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 form-label">
                             {(pathname === "/mail-in-repair" ||
                               pathname === "/data-recovery") && (
@@ -1190,6 +1223,13 @@ const StaperForm: React.FC = () => {
                                     })
                                   }
                                   required
+                                  onBlur={() => {
+                                    // Clear the error when the field loses focus
+                                    setErrors((prevErrors) => ({
+                                      ...prevErrors,
+                                      issueDescription: "",
+                                    }));
+                                  }}
                                 />
                                 {errors.issueDescription && (
                                   <p className="text-[red] text-sm mb-0">

@@ -69,7 +69,7 @@ export default function AskusQuestion({ accordionData,faq }: AskusQuestionProps)
           </div>
           <div className="seconf-grid">
             <div className="flex justify-center">
-              {pathnav === "/PS5_repairs" ? (
+              {pathnav === "/ps5-repair" ? (
                 <Image
                   className="lg:h-auto h-[300px] object-contain"
                   src={ps5game}

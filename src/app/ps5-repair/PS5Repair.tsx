@@ -11,7 +11,7 @@ import dynamic from "next/dynamic";
 const StaperForm = dynamic(() => import('../mail-in-repair/StaperForm'), {
   ssr: false,
 });
-const PS5Repairs = () => {
+const PS5Repair = () => {
   const accordionData = [
     {
       title: "How long does a PS5 repair service take?",
@@ -73,4 +73,4 @@ const PS5Repairs = () => {
   );
 };
 
-export default PS5Repairs;
+export default PS5Repair;

@@ -1,10 +1,10 @@
 import React from 'react'
-import PS5Repairs from './PS5Repairs'
+import PS5Repair from './PS5Repair'
 
 const page = () => {
   return (
   <>
-  <PS5Repairs/>
+  <PS5Repair/>
   </>
   )
 }

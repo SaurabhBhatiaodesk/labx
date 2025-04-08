@@ -153,10 +153,10 @@ export default function App() {
                           </li>
                           <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
                             <Link
-                              href="/PS5_repairs"
+                              href="/ps5-repair"
                               onClick={toggleMenu}
                             >
-                             PS5 Repairs
+                             PS5 Repair
                             </Link>
                           </li>
                           <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
