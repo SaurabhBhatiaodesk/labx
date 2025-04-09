@@ -264,6 +264,7 @@ const StaperForm: React.FC = () => {
     jumpQueueForFasterService: "No",
     additionalComments: "",
   });
+console.log("repairDetails",repairDetails);
 
   const [shippingDetails, setShippingDetails] = useState({
     requireReturnLabel: "I will arrange pickup myself",
@@ -749,25 +750,30 @@ const StaperForm: React.FC = () => {
     <>
       {isLoading && (
         <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          zIndex: 9999,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div
           style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            zIndex: 9999,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            width: "50px",
+            height: "50px",
+            border: "5px solid #f3f3f3",
+            borderTop: "5px solid #3498db",
+            borderRadius: "50%",
+            animation: "spin 1s linear infinite",
           }}
-        >
-          <Lottie
-            animationData={lottiearrow}
-            style={{ width: 50, height: 50 }}
-            className="lottie-icon"
-          />
-        </div>
+        ></div>
+      </div>
       )}
 
       <section className="steper-form-section-os">
@@ -1256,7 +1262,7 @@ const StaperForm: React.FC = () => {
                                             },
                                           }}
                                           checked={
-                                            repairDetails.previousRepairAttempts ===
+                                            repairDetails?.previousRepairAttempts ==
                                             "Yes"
                                           }
                                           onChange={() =>
@@ -1279,7 +1285,7 @@ const StaperForm: React.FC = () => {
                                             },
                                           }}
                                           checked={
-                                            repairDetails?.previousRepairAttempts ===
+                                            repairDetails?.previousRepairAttempts ==
                                             "No"
                                           }
                                           onChange={() =>
@@ -1346,7 +1352,7 @@ const StaperForm: React.FC = () => {
                                             },
                                           }}
                                           checked={
-                                            repairDetails.jumpQueueForFasterService ===
+                                            repairDetails?.jumpQueueForFasterService ==
                                             "Yes"
                                           }
                                           onChange={() =>
@@ -1369,7 +1375,7 @@ const StaperForm: React.FC = () => {
                                             },
                                           }}
                                           checked={
-                                            repairDetails?.jumpQueueForFasterService ===
+                                            repairDetails?.jumpQueueForFasterService ==
                                             "No"
                                           }
                                           onChange={() =>
