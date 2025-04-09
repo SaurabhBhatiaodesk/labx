@@ -21,6 +21,7 @@ import arrow4 from "../../../public/Images/icons/arrow1-4.svg";
 import arrow5 from "../../../public/Images/icons/arrow1-5.svg";
 
 import DeliveryTousMobile from "@/components/HomeCpmponents/DeliveryTo-us/DeliveryTousMobile";
+import { usePathname } from "next/navigation";
 
 interface Tab {
   id: number;
@@ -43,7 +44,7 @@ interface Tab {
 
 const PS5RepairsSydney: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
-
+  const pathname = usePathname();
   const tabs: Tab[] = [
     {
       id: 0,
@@ -399,6 +400,14 @@ const PS5RepairsSydney: React.FC = () => {
       buttonColor: "linear-gradient(74deg, #31e820a5, #000000)",
     },
   ];
+
+  const handleFocus = () => {
+    const element = document.getElementById("staperformid");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       className="py-4 lg:py-[30px]"
@@ -420,7 +429,7 @@ const PS5RepairsSydney: React.FC = () => {
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
-                  className={`p-3 text-white rounded-[50px] border-[1.5px] text-base tracking-[1.2px] ${
+                  className={`p-3 text-white rounded-[10px] border-[1.5px] font-semibold text-base tracking-[1.2px] ${
                     activeTab === tab.id
                       ? "active-tab"
                       : "bg-opacity-50 hover:bg-opacity-75"
@@ -486,20 +495,34 @@ const PS5RepairsSydney: React.FC = () => {
                     </div>
                   </div>
                 ))}
-
-              {tabs[activeTab].button && tabs[activeTab].link && (
-                <Link
-                  href={tabs[activeTab].link}
-                  passHref
+              {pathname === "/ps5-repair" ? (
+                <button
                   className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
                   style={{
                     background: getGradientColor(activeTab),
                     borderColor: getGradientColor(activeTab),
                   }}
-                  aria-label={`Request a Quote about ${tabs[activeTab].label}`}
+                  onClick={handleFocus}
                 >
-                  {tabs[activeTab].button}
-                </Link>
+                  Request a Quote
+                </button>
+              ) : (
+                <>
+                  {tabs[activeTab].button && tabs[activeTab].link && (
+                    <Link
+                      href={tabs[activeTab].link}
+                      passHref
+                      className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
+                      style={{
+                        background: getGradientColor(activeTab),
+                        borderColor: getGradientColor(activeTab),
+                      }}
+                      aria-label={`Request a Quote about ${tabs[activeTab].label}`}
+                    >
+                      {tabs[activeTab].button}
+                    </Link>
+                  )}
+                </>
               )}
             </div>
           </div>

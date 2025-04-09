@@ -779,7 +779,7 @@ const StaperForm: React.FC = () => {
                   ? "LabX Mail-In Repair Submission Form"
                   : pathname === "/data-recovery"
                   ? "LabX data-recovery Submission Form"
-                  : "LabX ps5 Repair Submission Form"
+                  : "LabX PS5 Repair Submission Form"
               }`}
             />
           </div>

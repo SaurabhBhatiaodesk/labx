@@ -17,7 +17,7 @@ export default function PS5Banner() {
   return (
     <>
       <section
-        className="background-banner  h-[70vh]"
+        className="background-banner  h-[50vh]"
         style={{
           backgroundImage: `url(${PSBanner.src})`,
           backgroundSize: "cover",
@@ -46,10 +46,18 @@ export default function PS5Banner() {
                 REPAIRS
               </h1>
               <p>
-                {`Is your PlayStation 5 experiencing issues? Whether it's overheating, crashing, or hardware failure, we’ve got you covered with professional PS5 repair services. Our skilled technicians specialize in diagnosing and fixing all PS5 problems, ensuring you get back to your gaming without delays.`}
+                Is your PlayStation 5 experiencing issues? Whether it&apos;s
+                <span className="font-medium text-[#EDE574] underline">
+                  {" "}
+                  overheating, crashing, or hardware failure,
+                </span>
+                we&apos;ve got you covered with professional PS5 repair
+                services. Our skilled technicians specialize in diagnosing and
+                fixing all PS5 problems, ensuring you get back to your gaming
+                without delays.
               </p>
               <div className="my-4 xl:my-10">
-                <MainButton MainButton="Request a Quote" link="/contact-us" />
+                <MainButton MainButton="View Pricing" link="/price" />
               </div>
             </div>
             <div className="w-full"></div>

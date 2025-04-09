@@ -1,5 +1,3 @@
-
-
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
@@ -55,7 +53,8 @@ const VerticalTabs: React.FC = () => {
         "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image:
+        "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
       // image: screenreplace,
     },
     {
@@ -76,7 +75,8 @@ const VerticalTabs: React.FC = () => {
         "Learn how to restore damaged screens to their original quality. Master the techniques needed to refurbish screens for a variety of devices.",
       button: "READ MORE",
       link: "/training",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/Phonerepaircourses+(1)+1.webp",
+      image:
+        "https://labxbackend.s3.us-east-2.amazonaws.com/Phonerepaircourses+(1)+1.webp",
       // image: Phone_Repair_Courses,
     },
     {
@@ -100,7 +100,8 @@ const VerticalTabs: React.FC = () => {
         "Upon receipt, we’ll confirm via email and place your device in the repair queue, notifying you of any updates during the process.",
       button: "READ MORE",
       link: "/mail-in-repair",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/Mailinrepair+(1)+1.webp",
+      image:
+        "https://labxbackend.s3.us-east-2.amazonaws.com/Mailinrepair+(1)+1.webp",
       // image: MailinRepair,
     },
     {
@@ -124,7 +125,8 @@ const VerticalTabs: React.FC = () => {
         "Setting up a B2B account is straightforward. Complete the Apply for Business Account form on our website, and your account will be activated within moments, providing you with fast turnaround time for exclusive B2B phone repair services.",
       button: "READ MORE",
       link: "/b2b-repair-services",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/repairsoloutaion.ef76c6d9+1.webp",
+      image:
+        "https://labxbackend.s3.us-east-2.amazonaws.com/repairsoloutaion.ef76c6d9+1.webp",
       // image: B2B_Phone_Repair,
     },
     {
@@ -145,7 +147,8 @@ const VerticalTabs: React.FC = () => {
         "Our team of mobile technicians specializes in recovering data from devices with broken or failed logic boards, using advanced techniques.",
       button: "READ MORE",
       link: "/data-recovery",
-      image: "https://labxbackend.s3.us-east-2.amazonaws.com/Datarecovery+(1)+1.webp",
+      image:
+        "https://labxbackend.s3.us-east-2.amazonaws.com/Datarecovery+(1)+1.webp",
       // image: datarecovery,
     },
   ];
@@ -278,8 +281,6 @@ const VerticalTabs: React.FC = () => {
     },
   ];
 
-
-
   return (
     <section
       className="py-4 lg:py-[30px]"
@@ -298,10 +299,11 @@ const VerticalTabs: React.FC = () => {
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
-                  className={`p-3 text-white rounded-[50px] border-[1.5px] text-base tracking-[1.2px] ${activeTab === tab.id
+                  className={`p-3 text-white rounded-[50px] border-[1.5px] text-base tracking-[1.2px] ${
+                    activeTab === tab.id
                       ? "active-tab"
                       : "bg-opacity-50 hover:bg-opacity-75"
-                    }`}
+                  }`}
                   onClick={() => setActiveTab(tab.id)}
                   data-selected={tab.id.toString()}
                   role="tab"
@@ -375,7 +377,6 @@ const VerticalTabs: React.FC = () => {
                 </Link>
               )} */}
 
-
               {tabs[activeTab].button && tabs[activeTab].link && (
                 <Link
                   href={tabs[activeTab].link}
@@ -403,7 +404,7 @@ const VerticalTabs: React.FC = () => {
         </div>
 
         <section className="lg:hidden block">
-        <DeliveryTousMobile itoms={itoms} />
+          <DeliveryTousMobile itoms={itoms} />
         </section>
       </div>
     </section>
