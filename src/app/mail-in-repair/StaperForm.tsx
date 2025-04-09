@@ -1241,7 +1241,7 @@ const StaperForm: React.FC = () => {
                                 {/* Previous Repair Attempts */}
                                 <div>
                                   <p className="text-base leading-5 mb-2">
-                                    Any Previous Repair Attempts?*
+                                    Any Previous Repair Attempts?
                                   </p>
 
                                   {/* Radio buttons for Yes or No */}
@@ -1279,7 +1279,7 @@ const StaperForm: React.FC = () => {
                                             },
                                           }}
                                           checked={
-                                            repairDetails.previousRepairAttempts ===
+                                            repairDetails?.previousRepairAttempts ===
                                             "No"
                                           }
                                           onChange={() =>
@@ -1331,7 +1331,7 @@ const StaperForm: React.FC = () => {
                                 {/* Jump the Queue */}
                                 <div>
                                   <p className="text-base leading-5 mb-2">
-                                    Do you require Priority Repair Service?*
+                                    Do you require Priority Repair Service?
                                   </p>
 
                                   {/* Radio buttons for Yes or No */}
@@ -1369,7 +1369,7 @@ const StaperForm: React.FC = () => {
                                             },
                                           }}
                                           checked={
-                                            repairDetails.jumpQueueForFasterService ===
+                                            repairDetails?.jumpQueueForFasterService ===
                                             "No"
                                           }
                                           onChange={() =>
