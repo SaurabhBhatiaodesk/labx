@@ -28,8 +28,7 @@
   left: -32px;
   background-position: 40% 50%;
 }
-.blogs-slider-row-os .slick-prev {
-}
+
 .blogs-slider-row-os .slick-next {
   right: -32px;
   background-image: url("../../assets/arrow-right1.svg");

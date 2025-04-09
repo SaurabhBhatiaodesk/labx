@@ -16,7 +16,7 @@
 }
 
 .mySwipergk .swiper-pagination-bullet-active {
-  background-image: var(--F1-btn-color);
+  background-color: var(--F1-btn-color);
 }
 @media only screen and (max-width: 600px) {
   .mySwipergk .swiper-pagination {

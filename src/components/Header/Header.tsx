@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 import { RxCross2 } from "react-icons/rx";
@@ -11,10 +12,11 @@ import { TbMenu2 } from "react-icons/tb";
 import { IoIosCart } from "react-icons/io";
 import Marquee from "../Marquee/Marquee";
 import { SlSocialFacebook } from "react-icons/sl";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import { setPriceCat } from "@/app/redux/slice";
 import { useRouter } from "next/navigation";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import commingsoon from "../../../public/Images/coming-soon.svg";
 export default function App() {
   const dispatch = useDispatch();
   const Router = useRouter();
@@ -121,11 +123,12 @@ export default function App() {
                 </div>
 
                 <div
-                  className={`${isMenuOpen ? "block" : "hidden"
-                    } lg:flex  flex-grow justify-center`}
+                  className={`${
+                    isMenuOpen ? "block" : "hidden"
+                  } lg:flex  flex-grow justify-center items-center`}
                   id="nav-content"
                 >
-                  <ul className="menu menu-horizontal px-1 flex">
+                  <ul className="menu menu-horizontal px-1 flex items-center">
                     <li>
                       <div className="dropdowns services_drop inline-block relative">
                         <button className="btn__menu inline-flex items-center hover:text-yellow-200">
@@ -152,6 +155,11 @@ export default function App() {
                             </Link>
                           </li>
                           <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
+                            <Link href="/ps5-repair" onClick={toggleMenu}>
+                              PS5 Repair
+                            </Link>
+                          </li>
+                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
                             <Link
                               href="/screen-refurbishing"
                               onClick={toggleMenu}
@@ -164,20 +172,41 @@ export default function App() {
                               Data Recovery{" "}
                             </Link>
                           </li>
-                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
-                            <Link href="/coming-soon" onClick={toggleMenu}>
-                              Parts Store{" "}
-                            </Link>
+                          <li className=" px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 flex items-center justify-between cursor-pointer">
+                            <span className="text-[16px]">Parts Store </span>
+                            <span className="text-white">
+                              <Image
+                                src={commingsoon}
+                                width={40}
+                                height={30}
+                                alt=""
+                              />
+                            </span>
                           </li>
-                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
-                            <Link href="/coming-soon" onClick={toggleMenu}>
-                              Repair Forum{" "}
-                            </Link>
+                          <li className=" px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 flex items-center justify-between cursor-pointer">
+                            <span className="text-[16px]">Repair Form </span>
+                            <span className="text-white">
+                              <Image
+                                src={commingsoon}
+                                width={40}
+                                height={30}
+                                alt=""
+                              />
+                            </span>
                           </li>
-                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
-                            <Link href="/coming-soon" onClick={toggleMenu}>
+                          <li className=" px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 flex items-center justify-between cursor-pointer">
+                            <span className="text-[16px]">
                               Repair Solutions{" "}
-                            </Link>
+                            </span>
+
+                            <span className="text-white">
+                              <Image
+                                src={commingsoon}
+                                width={40}
+                                height={30}
+                                alt=""
+                              />
+                            </span>
                           </li>
                         </ul>
                       </div>
@@ -190,19 +219,16 @@ export default function App() {
                       </Link>
                     </li>
                     <li
-                      className="flex justify-center flex-col border-[1px] rounded-md border-primary w-fit hover:text-yellow-200
-                    hover:border-yellow-200
+                      className="flex justify-center items-center gap-1 border-[1px] rounded-md border-primary w-fit hover:text-yellow-200 
+                    hover:border-yellow-200 p-1
                     "
                     >
-                      <Link
-                        className=""
-                        href="/coming-soon"
-                        onClick={toggleMenu}
-                      >
-                        Parts Store
-                      </Link>
+                      <span className="text-[16px]">Parts Store</span>
+                      <span className="text-white">
+                             <Image src={commingsoon} width={30} height={30}  alt=""/>
+                              </span>
                     </li>
-                    <li >
+                    <li>
                       <Link
                         className="hover:text-yellow-200"
                         href="/training"
@@ -234,12 +260,12 @@ export default function App() {
                       <ul className="dropdown-menu absolute hidden text-white pt-1">
                         {listData.map((item, index) => {
                           return (
-                            <li key={index}
-
+                            <li
+                              key={index}
                               className="block px-4 py-2 hover:bg-gray-800  hover:text-yellow-200 cursor-pointer"
                               onClick={() => PricetoggleMenu(item.id)}
                             >
-                              <span className=" text-[16px]" >
+                              <span className=" text-[16px]">
                                 {item.btnName}
                               </span>
                             </li>
@@ -297,11 +323,7 @@ export default function App() {
                             </Link>
                           </li>
                           <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 cursor-pointer">
-                            <Link
-                              className=""
-                              href="/faq"
-                              onClick={toggleMenu}
-                            >
+                            <Link className="" href="/faq" onClick={toggleMenu}>
                               FAQ{" "}
                             </Link>
                           </li>
@@ -369,7 +391,10 @@ export default function App() {
                   </div>
                 </div>
                 <Link href="/mail-in-repair">
-                  <button className="btn hidden lg:block uppercase" area-label=" Start the repair process for your device">
+                  <button
+                    className="btn hidden lg:block uppercase"
+                    area-label=" Start the repair process for your device"
+                  >
                     Start Repair{" "}
                   </button>
                 </Link>

@@ -48,6 +48,7 @@ import ConditionalWrapper from "@/components/ConditionalWrapper"; // New client-
 import { Providers } from "./redux/providers";
 import Script from "next/script";
 import Canonical from "./Canonical";
+import Image from "next/image";
 
 const space_Grotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -108,10 +109,10 @@ export default function RootLayout({
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TGGL6B3L');`,
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-TGGL6B3L');`,
           }}
         />
 
@@ -136,7 +137,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         <noscript>
-          <img
+          <Image
+            alt="facebook"
             height="1"
             width="1"
             style={{ display: "none" }}

@@ -90,7 +90,7 @@ const WhatWeDo = () => {
             <Link href='/coming-soon'>    
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
               <Image src={Shop8} alt=" labx repair " />
-              <h1 className="mb-4 mt-4 custom-absolute">Repair Forum</h1>
+              <h1 className="mb-4 mt-4 custom-absolute">Repair Form</h1>
             </div>
             </Link>
 

@@ -208,26 +208,31 @@ const FormCode: React.FC = () => {
     <div className="container">
       <div className=" steper-form-section-os " id="Kickstart">
         {isLoading && (
-          <div
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-              zIndex: 9999,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Lottie
-              animationData={lottiearrow}
-              style={{ width: 50, height: 50 }}
-              className="lottie-icon"
-            />
-          </div>
+         <div
+         style={{
+           position: "fixed",
+           top: 0,
+           left: 0,
+           width: "100%",
+           height: "100%",
+           backgroundColor: "rgba(0, 0, 0, 0.5)",
+           zIndex: 9999,
+           display: "flex",
+           justifyContent: "center",
+           alignItems: "center",
+         }}
+       >
+         <div
+           style={{
+             width: "50px",
+             height: "50px",
+             border: "5px solid #f3f3f3",
+             borderTop: "5px solid #3498db",
+             borderRadius: "50%",
+             animation: "spin 1s linear infinite",
+           }}
+         ></div>
+       </div>
         )}
 
         {toast && (

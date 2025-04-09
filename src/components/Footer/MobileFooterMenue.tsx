@@ -4,7 +4,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import sendicon from "../../../public/Images/icons/send.svg";
 import Link from "next/link";
 import ToastNotification from "../../components/ToastNotification/ToastNotification";
-
+import commingsoon from "../../../public/Images/coming-soon.svg";
 const MobileFooterMenue = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [email, setEmail] = useState("");
@@ -91,7 +91,6 @@ const MobileFooterMenue = () => {
 
   return (
     <div className="max-w-lg mx-auto p-[12px] mt-4 ">
-
       {/* Our Services Section */}
       <div className="mb-4">
         <div
@@ -126,11 +125,25 @@ const MobileFooterMenue = () => {
             <li className="mb-2">
               <Link href="data-recovery">Data Recovery</Link>
             </li>
-            <li className="mb-2">Parts Store</li>
-            <li className="mb-2">Repair Forum</li>
-            <li className="mb-2">
-              <Link href="/repair-solutions">Repair Solutions</Link>{" "}
-            </li>
+            <div className="flex items-center gap-2">
+              <li className="mb-2">Parts Store</li>
+              <span className="text-white">
+                <Image src={commingsoon} width={40} height={30} alt="" />
+              </span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <li className="mb-2">Repair Form</li>
+              <span className="text-white">
+                <Image src={commingsoon} width={40} height={30} alt="" />
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <li className="mb-2">Repair Solutions</li>
+              <span className="text-white">
+                <Image src={commingsoon} width={40} height={30} alt="" />
+              </span>
+            </div>
           </ul>
         </div>
       </div>
@@ -238,10 +251,11 @@ const MobileFooterMenue = () => {
           </ul>
         </div>
       </div>
-<div>
-  <h3 className="text-center lg:text-xl text-lg mb-3">We DO NOT provide Walk-In Service
-  </h3>
-</div>
+      <div>
+        <h3 className="text-center lg:text-xl text-lg mb-3">
+          We DO NOT provide Walk-In Service
+        </h3>
+      </div>
       <div className="emailsection relative">
         <h3 className="text-center">Newsletter </h3>
         <div className="relative max-w-full">
@@ -263,26 +277,23 @@ const MobileFooterMenue = () => {
           >
             <Image className="gl" src={sendicon} alt="Send icon" />
           </button>
-         
         </div>
         {error && <p className="text-[red] text-sm mt-2">{error}</p>}{" "}
-          {loading && (
-           
-            // <p className="xl:text-[30px] lg:text-26px text-30px font-poppins text-blue-500">
-            //   Processing...
-            // </p>
-              <div className="flex justify-center items-center">
-              <p className="text-sm text-tertiary flex items-center">
+        {loading && (
+          // <p className="xl:text-[30px] lg:text-26px text-30px font-poppins text-blue-500">
+          //   Processing...
+          // </p>
+          <div className="flex justify-center items-center">
+            <p className="text-sm text-tertiary flex items-center">
               Processing
-                <span className="ml-2 flex space-x-1">
-                  <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce"></span>
-                  <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce delay-200"></span>
-                  <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce delay-400"></span>
-                </span>
-              </p>
-            </div>
-          
-          )}
+              <span className="ml-2 flex space-x-1">
+                <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce"></span>
+                <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce delay-200"></span>
+                <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce delay-400"></span>
+              </span>
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

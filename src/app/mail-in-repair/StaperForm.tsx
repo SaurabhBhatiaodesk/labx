@@ -9,19 +9,17 @@ import SignatureCanvas from "react-signature-canvas";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import StaperForm1 from "../../../public/Images/StaperForm1.png";
-import secondmail from "../../../public/Images/second mail.png";
 import StaperForm3 from "../../../public/Images/StaperForm3.png";
-import StaperForm4 from "../../../public/Images/StaperForm4.png";
+
 import Textarea from "@mui/joy/Textarea";
-import { TextField } from "@mui/material";
+import { FormControlLabel, Modal, Radio, TextField } from "@mui/material";
 import Image from "next/image";
 import { MenuItem, Select, SelectItem } from "@nextui-org/react";
 // Example library for pattern drawing
-import Modal from "@mui/material/Modal"; // For modal implementation
 import "./mail-in-repair.css";
 import Link from "next/link";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { ReactCanvasPatternLock } from "react-canvas-pattern-lock";
 // import PatternLock from "react-pattern-lock";
@@ -227,6 +225,7 @@ type HandleSubmitParams = {
 const StaperForm: React.FC = () => {
   const formContainerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const pathname = usePathname();
   const sigPad = useRef<SignatureCanvas>(null);
   const selectOptions = [
     { key: "Yes", label: "Yes" },
@@ -257,6 +256,7 @@ const StaperForm: React.FC = () => {
     passwordType: "None", // Default to an empty string
     devicePassword: "",
   });
+
   const [repairDetails, setRepairDetails] = useState({
     issueDescription: "",
     previousRepairAttempts: "No",
@@ -264,6 +264,7 @@ const StaperForm: React.FC = () => {
     jumpQueueForFasterService: "No",
     additionalComments: "",
   });
+console.log("repairDetails",repairDetails);
 
   const [shippingDetails, setShippingDetails] = useState({
     requireReturnLabel: "I will arrange pickup myself",
@@ -273,8 +274,6 @@ const StaperForm: React.FC = () => {
   });
 
   const [pricingAgreement, setPricingAgreement] = useState(false);
-
-  console.log("deviceDetailssss", deviceDetails);
 
   class PasswordPattern extends React.Component<{
     onFinish: (path: string) => void;
@@ -400,13 +399,15 @@ const StaperForm: React.FC = () => {
   };
 
   useEffect(() => {
-    // Check if there's saved signature in localStorage
-    const savedSignature = localStorage.getItem("signatureData");
-    if (savedSignature) {
-      setShippingDetails((prevState) => ({
-        ...prevState,
-        signature: savedSignature,
-      }));
+    // Check if there's saved signature in localStorage gauravb code  window
+    if (typeof window !== "undefined") {
+      const savedSignature = localStorage.getItem("signatureData");
+      if (savedSignature) {
+        setShippingDetails((prevState) => ({
+          ...prevState,
+          signature: savedSignature,
+        }));
+      }
     }
   }, []);
 
@@ -544,12 +545,6 @@ const StaperForm: React.FC = () => {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(personalDetails?.emailAddress))
         newErrors.emailAddress = "Invalid email format";
 
-      if (!personalDetails?.returnShippingAddress.trim())
-        newErrors.returnShippingAddress = "Return shipping address is required";
-    }
-    if (activeStep === 1) {
-      // Validate Repair Details (Step 1)
-
       if (!repairDetails.issueDescription.trim())
         newErrors.issueDescription = "Description is required";
       if (repairDetails.previousRepairAttempts === undefined)
@@ -567,11 +562,9 @@ const StaperForm: React.FC = () => {
       if (repairDetails.jumpQueueForFasterService === undefined)
         newErrors.jumpQueueForFasterService =
           "Please indicate if you want to jump the queue";
-
-      // If Previous Repair Attempts is "Yes", the additional comments field is required
     }
 
-    if (activeStep === 2) {
+    if (activeStep === 1) {
       // Check for return label details
       // if (
       //   shippingDetails.requireReturnLabel === "Yes" &&
@@ -585,16 +578,14 @@ const StaperForm: React.FC = () => {
       //   !shippingDetails.pickupLabelDetails.trim()
       // )
       //   newErrors.requirePickupLabel = "Pickup label details are required";
-
+      if (!personalDetails?.returnShippingAddress.trim())
+        newErrors.returnShippingAddress = "Return shipping address is required";
       if (!shippingDetails.termsAndConditions)
         newErrors.termsAndConditions =
           "Accepting terms and conditions is required";
 
       if (!shippingDetails.signature.trim())
         newErrors.signature = "Signature is required";
-    }
-
-    if (activeStep === 3) {
       if (!pricingAgreement)
         newErrors.pricingAgreement = "You must agree to the pricing agreement";
     }
@@ -648,61 +639,72 @@ const StaperForm: React.FC = () => {
       }, 100);
     }
   };
-  console.log("deviceDetailsss", deviceDetails);
   const handleSubmit = async () => {
-    setIsLoading(true);
-    const payload = {
-      personalDetails,
-      deviceDetails,
-      repairDetails,
-      shippingDetails,
-      pricingAgreement,
-    };
+    if (validateStep()) {
+      setIsLoading(true);
+      const payload = {
+        personalDetails,
+        deviceDetails,
+        repairDetails,
+        shippingDetails,
+        pricingAgreement,
+        type: `${
+          pathname === "/mail-in-repair"
+            ? "mail-in"
+            : pathname === "/data-recovery"
+            ? "data-recovery"
+            : "ps5"
+        }`,
+      };
 
-    try {
-      const response = await axios.post(
-        "https://labxbackend.labxrepair.com.au/api/repair_info",
-        payload,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
+      try {
+        const response = await axios.post(
+          "https://labxbackend.labxrepair.com.au/api/repair_info",
+          payload,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        if (response.status === 200 || response.status == 201) {
+          const { orderReferenceId } = response.data.data; // Assuming the orderReferenceId is returned in the response data
+
+          if (typeof window !== "undefined") {
+            localStorage.removeItem("formData");
+
+            // Pass orderReferenceId as query parameter in the URL
+            // router.push(`/mail-in-repair/thank-you?id=${orderReferenceId}`);
+            const cleanOrderReferenceId = orderReferenceId.startsWith("#")
+              ? orderReferenceId.slice(1)
+              : orderReferenceId;
+            {
+              pathname === "/mail-in-repair"
+                ? router.push(
+                    `/mail-in-repair/thank-you?id=${cleanOrderReferenceId}`
+                  )
+                : pathname === "/data-recovery"
+                ? router.push(
+                    `/data-recovery/thank-you?id=${cleanOrderReferenceId}`
+                  )
+                : router.push(
+                    `/ps5-repair/thank-you?id=${cleanOrderReferenceId}`
+                  );
+            }
+          }
+        } else {
+          alert("Failed to submit the form. Please try again.");
         }
-      );
-      if (response.status === 200 || response.status == 201) {
-        const { orderReferenceId } = response.data.data; // Assuming the orderReferenceId is returned in the response data
-
-        if (typeof window !== "undefined") {
-          localStorage.removeItem("formData");
-
-          // Pass orderReferenceId as query parameter in the URL
-          // router.push(`/mail-in-repair/thank-you?id=${orderReferenceId}`);
-          const cleanOrderReferenceId = orderReferenceId.startsWith("#")
-            ? orderReferenceId.slice(1)
-            : orderReferenceId;
-          router.push(`/mail-in-repair/thank-you?id=${cleanOrderReferenceId}`);
-        }
-      } else {
-        alert("Failed to submit the form. Please try again.");
+      } catch (error) {
+        console.error("Error submitting the form:", error);
+        alert("An error occurred while submitting the form.");
+      } finally {
+        setIsLoading(false); // Hide loader after processing
       }
-    } catch (error) {
-      console.error("Error submitting the form:", error);
-      alert("An error occurred while submitting the form.");
-    } finally {
-      setIsLoading(false); // Hide loader after processing
     }
   };
 
-  useEffect(() => {
-    // You can use `localStorage` or the `useEffect` hook to persist form values
-    const storedData = JSON.parse(localStorage.getItem("formData") || "{}");
-    if (storedData) {
-      setShippingDetails(storedData.shippingDetails || {});
-      setRepairDetails(storedData.repairDetails || {});
-      setPersonalDetails(storedData.personalDetails || {});
-      setDeviceDetails(storedData.deviceDetails || {});
-    }
-  }, []);
+
 
   useEffect(() => {
     // When 'requireReturnLabel' is set to 'No', clear returnLabelDetails
@@ -735,35 +737,60 @@ const StaperForm: React.FC = () => {
     shippingDetails.requirePickupLabel, // Watch for changes in requirePickupLabel
   ]);
 
+  useEffect(() => {
+    // You can use `localStorage` or the `useEffect` hook to persist form values
+    if (typeof window !== "undefined") {
+    const storedData = JSON.parse(localStorage.getItem("formData") || "{}");
+    if (storedData) {
+      setShippingDetails(storedData.shippingDetails || {});
+      setRepairDetails(storedData.repairDetails || {});
+      setPersonalDetails(storedData.personalDetails || {});
+      setDeviceDetails(storedData.deviceDetails || {});
+    }
+  }
+  }, []);
   return (
     <>
       {isLoading && (
         <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          zIndex: 9999,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div
           style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            zIndex: 9999,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            width: "50px",
+            height: "50px",
+            border: "5px solid #f3f3f3",
+            borderTop: "5px solid #3498db",
+            borderRadius: "50%",
+            animation: "spin 1s linear infinite",
           }}
-        >
-          <Lottie
-            animationData={lottiearrow}
-            style={{ width: 50, height: 50 }}
-            className="lottie-icon"
-          />
-        </div>
+        ></div>
+      </div>
       )}
 
       <section className="steper-form-section-os">
         <div className="container gaurav-bg-trans ">
           <div className="py-3 xl:py-6 2xl:py-6">
-            <MainHeading Heading="LabX Mail-In Repair Submission Form" />
+            <MainHeading
+              Heading={`${
+                pathname === "/mail-in-repair"
+                  ? "LabX Mail-In Repair Submission Form"
+                  : pathname === "/data-recovery"
+                  ? "LabX data-recovery Submission Form"
+                  : "LabX PS5 Repair Submission Form"
+              }`}
+            />
           </div>
 
           <div
@@ -771,13 +798,8 @@ const StaperForm: React.FC = () => {
             className="max-w-5xl mx-auto lg:p-4 "
             id="stapergk"
           >
-            <div className="grid grid-cols-4 mb-8  relative gaurav-line">
-              {[
-                "Personal Details",
-                "Repair Details",
-                "Shipping Details",
-                "Terms & Pricing Agreement",
-              ].map((step, index) => (
+            <div className="grid grid-cols-2 mb-8  relative gaurav-line">
+              {["Personal Details", "Repair Details"].map((step, index) => (
                 <div
                   key={index}
                   className="flex items-center flex-col  relative z-10"
@@ -850,7 +872,6 @@ const StaperForm: React.FC = () => {
                             />
                           </div>
 
-                          {/* Full Name (Required) */}
                           <div>
                             <TextField
                               required
@@ -864,6 +885,13 @@ const StaperForm: React.FC = () => {
                                   fullName: e.target.value,
                                 })
                               }
+                              onBlur={() => {
+                                // Clear the error when the field loses focus
+                                setErrors((prevErrors) => ({
+                                  ...prevErrors,
+                                  fullName: "",
+                                }));
+                              }}
                             />
                             {errors.fullName && (
                               <p className="text-[red] text-sm mb-0">
@@ -872,36 +900,15 @@ const StaperForm: React.FC = () => {
                             )}
                           </div>
 
-                          {/* Contact Number (Required) */}
                           <div>
-                            {/* <TextField
-                              required
-                              label="Contact Number"
-                              name="contact_number"
-                              type="number"
-                              fullWidth
-                              value={personalDetails.contactNo}
-                              onChange={(e) => {
-                                // Allow only up to 10 digits
-                                if (e.target.value.length <= 10) {
-                                  setPersonalDetails({
-                                    ...personalDetails,
-                                    contactNo: e.target.value,
-                                  });
-                                }
-                              }}
-                              inputProps={{ maxLength: 10 }} // Additional safeguard to restrict input length
-                            /> */}
-
                             <TextField
                               required
                               label="Contact Number"
                               name="contact_number"
-                              type="tel" // Change from "number" to "tel"
+                              type="tel"
                               fullWidth
                               value={personalDetails.contactNo}
                               onChange={(e) => {
-                                // Allow only up to 10 digits
                                 if (/^\d{0,10}$/.test(e.target.value)) {
                                   setPersonalDetails({
                                     ...personalDetails,
@@ -909,7 +916,16 @@ const StaperForm: React.FC = () => {
                                   });
                                 }
                               }}
-                              inputProps={{ maxLength: 10 }} // Additional safeguard to restrict input length
+                              inputProps={{ maxLength: 10 }}
+                              onBlur={() => {
+                                // Clear the error when the field loses focus
+                                if (personalDetails.contactNo.length === 10) {
+                                  setErrors((prevErrors) => ({
+                                    ...prevErrors,
+                                    contactNo: "",
+                                  }));
+                                }
+                              }}
                             />
 
                             {errors.contactNo && (
@@ -919,7 +935,6 @@ const StaperForm: React.FC = () => {
                             )}
                           </div>
 
-                          {/* Email Address (Required) */}
                           <div>
                             <TextField
                               required
@@ -937,6 +952,13 @@ const StaperForm: React.FC = () => {
                                 isInvalid ? "border-red-500" : ""
                               }`}
                               type="email"
+                              onBlur={() => {
+                                // Clear the error when the field loses focus
+                                setErrors((prevErrors) => ({
+                                  ...prevErrors,
+                                  emailAddress: "",
+                                }));
+                              }}
                             />
                             {errors.emailAddress && (
                               <p className="text-[red] text-sm mb-0">
@@ -946,93 +968,68 @@ const StaperForm: React.FC = () => {
                           </div>
                         </div>
 
-                        {/* Shipping Address (Required) */}
-                        <div className="w-full">
-                          <TextField
-                            required
-                            label="Return Shipping Address"
-                            name="return_shipping_address"
-                            fullWidth
-                            value={personalDetails.returnShippingAddress}
-                            onChange={(
-                              e: React.ChangeEvent<HTMLInputElement>
-                            ) =>
-                              setPersonalDetails({
-                                ...personalDetails,
-                                returnShippingAddress: e.target.value,
-                              })
-                            }
-                          />
-                          {errors.returnShippingAddress && (
-                            <p className="text-[red] text-sm mb-0 w-full">
-                              {errors.returnShippingAddress}
-                            </p>
-                          )}
-                        </div>
-
-                        {/* Device Details Section */}
                         <div>
-                          <h4 className="lg:text-lg text-sm pb-[10px]">
-                            Device Details
-                          </h4>
+                          {pathname !== "/ps5-repair" && (
+                            <h4 className="lg:text-lg text-sm pb-[10px]">
+                              Device Details
+                            </h4>
+                          )}
                           <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 form-label">
-                            {/* Device Type (Optional) */}
-                            <div className="w-full">
-                              <TextField
-                                type="text"
-                                label="Enter Device Type(eg:Mobile Phone/Tablet/laptop) "
-                                name="deviceType"
-                                fullWidth
-                                value={deviceDetails.deviceType}
-                                onChange={(
-                                  e: React.ChangeEvent<HTMLInputElement>
-                                ) =>
-                                  setDeviceDetails({
-                                    ...deviceDetails,
-                                    deviceType: e.target.value,
-                                  })
-                                }
-                                // className="bg-black text-white border border-gray-400 rounded-lg w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                              />
-                            </div>
-
-                            {/* Brand/Model (Optional) */}
-                            <div className="w-full">
-                              <TextField
-                                id="brandModel"
-                                type="text"
-                                label="Enter Brand/Model (e.g:Apple-iPhone 13 Pro)"
-                                name="brandModel"
-                                fullWidth
-                                value={deviceDetails.brand}
-                                onChange={(
-                                  e: React.ChangeEvent<HTMLInputElement>
-                                ) =>
-                                  setDeviceDetails({
-                                    ...deviceDetails,
-                                    brand: e.target.value,
-                                  })
-                                }
-                              />
-                            </div>
-
-                            {/* IMEI/Serial No. (Optional) */}
-                            <div>
-                              <TextField
-                                type="text"
-                                label="IMEI/Serial No.(If known)"
-                                name="imei_serial_no"
-                                fullWidth
-                                value={deviceDetails.imeiOrSerialNo}
-                                onChange={(e) =>
-                                  setDeviceDetails({
-                                    ...deviceDetails,
-                                    imeiOrSerialNo: e.target.value,
-                                  })
-                                }
-                              />
-                            </div>
-                            {/* Device Password Section */}
+                            {(pathname === "/mail-in-repair" ||
+                              pathname === "/data-recovery") && (
+                              <>
+                                <div className="w-full">
+                                  <TextField
+                                    type="text"
+                                    label="Enter Device Type(eg:Mobile Phone/Tablet/laptop) "
+                                    name="deviceType"
+                                    fullWidth
+                                    value={deviceDetails.deviceType}
+                                    onChange={(
+                                      e: React.ChangeEvent<HTMLInputElement>
+                                    ) =>
+                                      setDeviceDetails({
+                                        ...deviceDetails,
+                                        deviceType: e.target.value,
+                                      })
+                                    }
+                                  />
+                                </div>
+                                <div className="w-full">
+                                  <TextField
+                                    id="brandModel"
+                                    type="text"
+                                    label="Enter Brand/Model (e.g:Apple-iPhone 13 Pro)"
+                                    name="brandModel"
+                                    fullWidth
+                                    value={deviceDetails.brand}
+                                    onChange={(
+                                      e: React.ChangeEvent<HTMLInputElement>
+                                    ) =>
+                                      setDeviceDetails({
+                                        ...deviceDetails,
+                                        brand: e.target.value,
+                                      })
+                                    }
+                                  />
+                                </div>
+                                <div>
+                                  <TextField
+                                    type="text"
+                                    label="IMEI/Serial No.(If known)"
+                                    name="imei_serial_no"
+                                    fullWidth
+                                    value={deviceDetails.imeiOrSerialNo}
+                                    onChange={(e) =>
+                                      setDeviceDetails({
+                                        ...deviceDetails,
+                                        imeiOrSerialNo: e.target.value,
+                                      })
+                                    }
+                                  />
+                                </div>
+                              </>
+                            )}
                             <div className="w-full ">
                               <Select
                                 defaultSelectedKeys={
@@ -1049,7 +1046,7 @@ const StaperForm: React.FC = () => {
                                   setDeviceDetails((prevDetails) => ({
                                     ...prevDetails,
                                     passwordType: selectedType,
-                                    devicePassword: "", // Clear any previously set password
+                                    devicePassword: "",
                                   }));
 
                                   if (selectedType === "PIN") {
@@ -1066,9 +1063,12 @@ const StaperForm: React.FC = () => {
                                 <MenuItem key="PIN" value="PIN">
                                   PIN
                                 </MenuItem>
-                                <MenuItem key="Pattern" value="Pattern">
-                                  Pattern
-                                </MenuItem>
+                                {pathname === "/mail-in-repair" ||
+                                pathname === "/data-recovery" ? (
+                                  <MenuItem key="Pattern" value="Pattern">
+                                    Pattern
+                                  </MenuItem>
+                                ) : null}
                               </Select>
                               <div className="mt-2">
                                 {deviceDetails.passwordType !== "None" &&
@@ -1079,19 +1079,18 @@ const StaperForm: React.FC = () => {
                                     </p>
                                   )}
                               </div>
-                              {/* PIN Input Field */}
+
                               <Modal
                                 open={pinModalOpen}
                                 onClose={() => {
                                   if (!pinValue) {
-                                    // Reset the passwordType to "None" if no PIN value is provided
                                     setDeviceDetails((prevDetails) => ({
                                       ...prevDetails,
                                       passwordType: "None",
                                       devicePassword: "",
                                     }));
                                   }
-                                  setPinModalOpen(false); // Close the modal
+                                  setPinModalOpen(false);
                                 }}
                                 className="flex items-center justify-center"
                               >
@@ -1109,24 +1108,24 @@ const StaperForm: React.FC = () => {
                                     }
                                     sx={{
                                       "& .MuiFormLabel-root": {
-                                        color: "white", // Label color red
+                                        color: "white",
                                       },
                                       "& .MuiFormLabel-root.Mui-focused": {
-                                        color: "white", // Label color red when focused
+                                        color: "white",
                                       },
                                       "& .MuiOutlinedInput-root": {
                                         "& fieldset": {
-                                          borderColor: "white", // Border color white
+                                          borderColor: "white",
                                         },
                                         "&:hover fieldset": {
-                                          borderColor: "gray", // Border color gray on hover
+                                          borderColor: "gray",
                                         },
                                         "&.Mui-focused fieldset": {
-                                          borderColor: "white", // Border color white when focused
+                                          borderColor: "white",
                                         },
                                       },
                                       "& .MuiInputBase-input": {
-                                        color: "white", // Input text color white
+                                        color: "white",
                                       },
                                     }}
                                   />
@@ -1141,7 +1140,7 @@ const StaperForm: React.FC = () => {
                                       onClick={() => {
                                         setDeviceDetails((prevDetails) => ({
                                           ...prevDetails,
-                                          devicePassword: pinValue, // Set the PIN as the password
+                                          devicePassword: pinValue,
                                         }));
                                         setPinModalOpen(false);
                                       }}
@@ -1152,46 +1151,6 @@ const StaperForm: React.FC = () => {
                                   </div>
                                 </div>
                               </Modal>
-
-                              {/* <Modal
-                                open={patternModalOpen}
-                                onClose={() => {
-                                  if (!deviceDetails.devicePassword) {
-                                    // Reset the passwordType to "None" if no pattern is provided
-                                    setDeviceDetails((prevDetails) => ({
-                                      ...prevDetails,
-                                      passwordType: "None",
-                                      devicePassword: "",
-                                    }));
-                                  }
-                                  setPatternModalOpen(false); // Close the modal
-                                }}
-                                className="flex items-center justify-center p-[15px]"
-                              >
-                                <div
-                                  className="bg-black p-5 rounded-lg lg:w-[20%]  w-full   overflow-auto max-h py-3 border-[1px] border-[#81818175]"
-                                >
-                                  <h2 className="text-center text-2xl mb-2 text-white">Draw Your Pattern</h2>
-                                  <PasswordPattern
-                                    onFinish={(patternPath: string) => {
-                                      setDeviceDetails((prevDetails) => ({
-                                        ...prevDetails,
-                                        passwordType: "Pattern",
-                                        devicePassword: patternPath,
-                                      }));
-                                      setPatternModalOpen(false);
-                                    }}
-                                  />
-                                  <div className="flex justify-end mt-4">
-                                    <button
-                                      onClick={() => setPatternModalOpen(false)}
-                                      className="btn bg-red-500 text-white px-4 py-2 rounded"
-                                    >
-                                      Cancel
-                                    </button>
-                                  </div>
-                                </div>
-                              </Modal> */}
 
                               <Modal
                                 open={patternModalOpen}
@@ -1224,22 +1183,21 @@ const StaperForm: React.FC = () => {
                                     }}
                                   >
                                     <ReactCanvasPatternLock
-                                      width={300} // Width of the pattern grid
-                                      height={300} // Height of the pattern grid
-                                      rows={3} // Number of rows
-                                      cols={3} // Number of columns
-
+                                      width={300}
+                                      height={300}
+                                      rows={3}
+                                      cols={3}
                                       onComplete={(
                                         code: number[],
                                         nodes: any
                                       ) => {
-                                        const pattern = code.join("-"); // Convert the pattern to a string
+                                        const pattern = code.join("-");
                                         setDeviceDetails((prevDetails) => ({
                                           ...prevDetails,
                                           passwordType: "Pattern",
-                                          devicePassword: pattern, // Save the pattern
+                                          devicePassword: pattern,
                                         }));
-                                        setPatternModalOpen(false); // Close the modal
+                                        setPatternModalOpen(false);
                                       }}
                                     />
                                   </div>
@@ -1253,6 +1211,216 @@ const StaperForm: React.FC = () => {
                                   </div>
                                 </div>
                               </Modal>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className=" ">
+                        <div>
+                          <div className="">
+                            <div className="flex flex-col gap-4 bg-black text-white">
+                              {/* Description of Issue */}
+                              <div className="steper-textarea-os mt-4 ">
+                                <Textarea
+                                  placeholder="Please provide a detailed information of the damage(The more information you include, the better chances of successfully repairing the device).*"
+                                  minRows={5}
+                                  value={repairDetails.issueDescription}
+                                  onChange={(e) =>
+                                    setRepairDetails({
+                                      ...repairDetails,
+                                      issueDescription: e.target.value,
+                                    })
+                                  }
+                                  required
+                                  onBlur={() => {
+                                    // Clear the error when the field loses focus
+                                    setErrors((prevErrors) => ({
+                                      ...prevErrors,
+                                      issueDescription: "",
+                                    }));
+                                  }}
+                                />
+                                {errors.issueDescription && (
+                                  <p className="text-[red] text-sm mb-0">
+                                    {errors.issueDescription}
+                                  </p>
+                                )}
+                              </div>
+                              <div className="grid md:grid-cols-2 gap-3 ">
+                                {/* Previous Repair Attempts */}
+                                <div>
+                                  <p className="text-base leading-5 mb-2">
+                                    Any Previous Repair Attempts?
+                                  </p>
+
+                                  {/* Radio buttons for Yes or No */}
+                                  <div className="flex gap-4">
+                                    <FormControlLabel
+                                      control={
+                                        <Radio
+                                          sx={{
+                                            color: "#ede574", // Custom color for the radio button
+                                            "&.Mui-checked": {
+                                              color: "#ede574", // Color when radio is checked
+                                            },
+                                          }}
+                                          checked={
+                                            repairDetails?.previousRepairAttempts ===
+                                            "Yes"
+                                          }
+                                          onChange={() =>
+                                            setRepairDetails({
+                                              ...repairDetails,
+                                              previousRepairAttempts: "Yes",
+                                            })
+                                          }
+                                        />
+                                      }
+                                      label="Yes" // This is the label that will be shown next to the radio button
+                                    />
+                                    <FormControlLabel
+                                      control={
+                                        <Radio
+                                          sx={{
+                                            color: "#ede574", // Custom color for the radio button
+                                            "&.Mui-checked": {
+                                              color: "#ede574", // Color when radio is checked
+                                            },
+                                          }}
+                                          checked={
+                                            repairDetails?.previousRepairAttempts ===
+                                            "No"
+                                          }
+                                          onChange={() =>
+                                            setRepairDetails({
+                                              ...repairDetails,
+                                              previousRepairAttempts: "No",
+                                            })
+                                          }
+                                        />
+                                      }
+                                      label="No" // This is the label that will be shown next to the radio button
+                                    />
+                                  </div>
+
+                                  {repairDetails.previousRepairAttempts ===
+                                    "Yes" && (
+                                    <div className="steper-textarea-os mt-2">
+                                      <p className="text-yellow-500 text-sm mt-2 italic">
+                                        A $66 service fee will be required to
+                                        release the device, regardless of
+                                        whether it is fixed or not.
+                                      </p>
+                                      <Textarea
+                                        placeholder="Little explanation about previous attempts"
+                                        minRows={5}
+                                        value={
+                                          repairDetails.previousRepairAttemptsComments
+                                        }
+                                        onChange={(e) =>
+                                          setRepairDetails({
+                                            ...repairDetails,
+                                            previousRepairAttemptsComments:
+                                              e.target.value,
+                                          })
+                                        }
+                                        required
+                                      />
+                                      {errors.previousRepairAttemptsComments && (
+                                        <p className="text-[red] text-sm mb-0">
+                                          {
+                                            errors.previousRepairAttemptsComments
+                                          }
+                                        </p>
+                                      )}
+                                    </div>
+                                  )}
+                                </div>
+
+                                {/* Jump the Queue */}
+                                <div>
+                                  <p className="text-base leading-5 mb-2">
+                                    Do you require Priority Repair Service?
+                                  </p>
+
+                                  {/* Radio buttons for Yes or No */}
+                                  <div className="flex gap-4">
+                                    <FormControlLabel
+                                      control={
+                                        <Radio
+                                          sx={{
+                                            color: "#ede574", // Custom color for the radio button
+                                            "&.Mui-checked": {
+                                              color: "#ede574", // Color when radio is checked
+                                            },
+                                          }}
+                                          checked={
+                                            repairDetails?.jumpQueueForFasterService ===
+                                            "Yes"
+                                          }
+                                          onChange={() =>
+                                            setRepairDetails({
+                                              ...repairDetails,
+                                              jumpQueueForFasterService: "Yes",
+                                            })
+                                          }
+                                        />
+                                      }
+                                      label="Yes" // This is the label that will be shown next to the radio button
+                                    />
+                                    <FormControlLabel
+                                      control={
+                                        <Radio
+                                          sx={{
+                                            color: "#ede574", // Custom color for the radio button
+                                            "&.Mui-checked": {
+                                              color: "#ede574", // Color when radio is checked
+                                            },
+                                          }}
+                                          checked={
+                                            repairDetails?.jumpQueueForFasterService ===
+                                            "No"
+                                          }
+                                          onChange={() =>
+                                            setRepairDetails({
+                                              ...repairDetails,
+                                              jumpQueueForFasterService: "No",
+                                            })
+                                          }
+                                        />
+                                      }
+                                      label="No" // This is the label that will be shown next to the radio button
+                                    />
+                                  </div>
+
+                                  {/* Displaying fee message when "Yes" is selected */}
+                                  {repairDetails.jumpQueueForFasterService ===
+                                    "Yes" && (
+                                    <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                                      A minimum fee of $100 (or higher) will be
+                                      charged for priority service.
+                                    </p>
+                                  )}
+                                </div>
+                              </div>
+
+                              {/* Additional Comments (Optional) */}
+                              <div className="steper-textarea-os">
+                                <p className=" text-base leading-5 mb-2">
+                                  Additional Comments
+                                </p>
+                                <Textarea
+                                  placeholder="Any other comments or notes"
+                                  minRows={5}
+                                  value={repairDetails.additionalComments || ""}
+                                  onChange={(e) =>
+                                    setRepairDetails({
+                                      ...repairDetails,
+                                      additionalComments: e.target.value,
+                                    })
+                                  }
+                                />
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1290,198 +1458,6 @@ const StaperForm: React.FC = () => {
             )}
 
             {activeStep === 1 && (
-              <>
-                <div className=" sdev_bghide grid md:grid-cols-2 gap-[20px] py-2 lg:py-8 border-y-[1px] border-[#81818175]">
-                  <div className="hidden md:block">
-                    <div className="relative w-full h-full block pb-[61%]">
-                      <Image
-                        src={secondmail}
-                        alt="Step Form Image"
-                        className="absolute top-0 left-0 right-0 bottom-0 w-full h-full object-cover rounded-[10px]"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="">
-                      <div className="flex flex-col gap-4 bg-black text-white">
-                        {/* Description of Issue */}
-                        <div className="steper-textarea-os ">
-                          <Textarea
-                            placeholder="Please provide a detailed information of the damage(The more information you include, the better chances of successfully repairing the device).*"
-                            minRows={5}
-                            value={repairDetails.issueDescription}
-                            onChange={(e) =>
-                              setRepairDetails({
-                                ...repairDetails,
-                                issueDescription: e.target.value,
-                              })
-                            }
-                            required
-                          />
-                          {errors.issueDescription && (
-                            <p className="text-[red] text-sm mb-0">
-                              {errors.issueDescription}
-                            </p>
-                          )}
-                        </div>
-
-                        {/* Previous Repair Attempts */}
-                        <div>
-                          <p className="text-base leading-5 mb-2">
-                            Any Previous Repair Attempts?*
-                          </p>
-                          <Select
-                            defaultSelectedKeys={
-                              repairDetails.previousRepairAttempts != "Yes"
-                                ? ["No"]
-                                : ["Yes"]
-                            }
-                            className="bg-black text-white gauav "
-                            value={
-                              repairDetails?.previousRepairAttempts != "Yes"
-                                ? "No"
-                                : "Yes"
-                            }
-                            onChange={(
-                              e: React.ChangeEvent<HTMLSelectElement>
-                            ) =>
-                              setRepairDetails({
-                                ...repairDetails,
-                                previousRepairAttempts: e.target.value,
-                              })
-                            }
-                          >
-                            {selectOptions.map((animal) => {
-                              return (
-                                <SelectItem key={animal.key}>
-                                  {animal.label}
-                                </SelectItem>
-                              );
-                            })}
-                          </Select>
-
-                          {repairDetails?.previousRepairAttempts == "Yes" && (
-                            <div className="steper-textarea-os mt-2">
-                              <p className="text-yellow-500 text-sm mt-2 italic">
-                                A $66 service fee will be required to release
-                                the device, regardless of whether it is fixed or
-                                not.
-                              </p>
-                              <Textarea
-                                placeholder="Little explanation about previous attempts"
-                                minRows={5}
-                                value={
-                                  repairDetails.previousRepairAttemptsComments
-                                }
-                                onChange={(e) =>
-                                  setRepairDetails({
-                                    ...repairDetails,
-                                    previousRepairAttemptsComments:
-                                      e.target.value,
-                                  })
-                                }
-                                required
-                              />
-                              {errors.previousRepairAttemptsComments && (
-                                <p className="text-[red] text-sm mb-0">
-                                  {errors.previousRepairAttemptsComments}
-                                </p>
-                              )}
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Jump the Queue */}
-                        <div>
-                          <p className=" text-base leading-5 mb-2">
-                            Do you require Priority Repair Service?*
-                          </p>
-                          <Select
-                            className="bg-black text-white gauav"
-                            defaultSelectedKeys={
-                              repairDetails.jumpQueueForFasterService != "Yes"
-                                ? ["No"]
-                                : ["Yes"]
-                            }
-                            value={
-                              repairDetails.jumpQueueForFasterService != "Yes"
-                                ? "No"
-                                : "Yes"
-                            }
-                            onChange={(
-                              e: React.ChangeEvent<HTMLSelectElement>
-                            ) =>
-                              setRepairDetails({
-                                ...repairDetails,
-                                jumpQueueForFasterService: e.target.value,
-                              })
-                            }
-                          >
-                            {selectOptions.map((animal) => {
-                              return (
-                                <SelectItem key={animal.key}>
-                                  {animal.label}
-                                </SelectItem>
-                              );
-                            })}
-                          </Select>
-
-                          {repairDetails.jumpQueueForFasterService == "Yes" && (
-                            <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
-                              A minimum fee of $100 (or higher) will be charged
-                              for priority service.
-                            </p>
-                          )}
-                        </div>
-
-                        {/* Additional Comments (Optional) */}
-                        <div className="steper-textarea-os">
-                          <p className=" text-base leading-5 mb-2">
-                            Additional Comments
-                          </p>
-                          <Textarea
-                            placeholder="Any other comments or notes"
-                            minRows={5}
-                            value={repairDetails.additionalComments || ""}
-                            onChange={(e) =>
-                              setRepairDetails({
-                                ...repairDetails,
-                                additionalComments: e.target.value,
-                              })
-                            }
-                          />
-                        </div>
-                      </div>
-                      <div className="py-4">
-                        <div className="flex justify-between mt-4">
-                          {activeStep > 0 && (
-                            <button onClick={handlePrevStep} className="btn">
-                              Previous
-                            </button>
-                          )}
-                          {activeStep < 3 ? (
-                            <button
-                              onClick={handleNextStep}
-                              className="btn  flex items-center gap-2"
-                            >
-                              Next
-                              <IoIosArrowRoundForward />
-                            </button>
-                          ) : (
-                            <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
-                              <IoCheckmarkDoneOutline className="mr-2" />
-                              Complete
-                            </button>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </>
-            )}
-
-            {activeStep === 2 && (
               <>
                 <div className="grid md:grid-cols-2 gap-[20px] py-2 lg:py-8 border-y-[1px] border-[#81818175]">
                   <div className="hidden md:block">
@@ -1551,7 +1527,27 @@ const StaperForm: React.FC = () => {
                           </p>
                         )}
                       </div>
-
+                      {/* Shipping Address (Required) */}
+                      <div className="w-full">
+                        <TextField
+                          required
+                          label="Return Shipping Address"
+                          name="return_shipping_address"
+                          fullWidth
+                          value={personalDetails.returnShippingAddress}
+                          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                            setPersonalDetails({
+                              ...personalDetails,
+                              returnShippingAddress: e.target.value,
+                            })
+                          }
+                        />
+                        {errors.returnShippingAddress && (
+                          <p className="text-[red] text-sm mb-0 w-full">
+                            {errors.returnShippingAddress}
+                          </p>
+                        )}
+                      </div>
                       {/* Require Return Label */}
                       <div className="steper-textarea-os space-y-4">
                         <p className="text-base leading-5 mb-2">
@@ -1718,111 +1714,61 @@ const StaperForm: React.FC = () => {
                           </p>
                         )} */}
                       </div>
-                    </div>
-                    <div className="py-4">
-                      <div className="flex justify-between mt-4">
-                        {activeStep > 0 && (
-                          <button className="btn" onClick={handlePrevStep}>
-                            Previous
-                          </button>
-                        )}
-                        {activeStep < 3 ? (
-                          <button
-                            onClick={handleNextStep}
-                            className="btn flex items-center gap-2"
-                          >
-                            Next
-                            <IoIosArrowRoundForward />
-                          </button>
-                        ) : (
-                          <button
-                            onClick={handleSubmit}
-                            disabled={isLoading} // Disable button while loading
-                            className={`btn flex items-center gap-2 ${
-                              isLoading ? "opacity-50 cursor-not-allowed" : ""
-                            }`}
-                          >
-                            {isLoading ? (
-                              <span className="loader" /> // You can use a loader component or spinner
-                            ) : (
-                              <>
-                                {isLoading ? "Submitting..." : "Submit"}
-                                <IoIosArrowRoundForward />
-                              </>
-                            )}
-                          </button>
+                      <div className="p-2 lg:p-2 bg-black text-white rounded-md">
+                        <h2 className="text-3xl font-bold mb-4">
+                          Pricing Agreement*
+                        </h2>
+                        <div className="flex items-start gap-4 text-yellow-400">
+                          <input
+                            type="checkbox"
+                            className="check__boxs"
+                            checked={pricingAgreement == true ? true : false}
+                            onChange={() => {
+                              setPricingAgreement(!pricingAgreement);
+                              setErrors((prevErrors) => ({
+                                ...prevErrors,
+                                pricingAgreement: !pricingAgreement
+                                  ? ""
+                                  : "You must agree to the pricing agreement",
+                              }));
+                            }}
+                          />
+
+                          <p className="">
+                            By submitting this form, I agree to proceed with
+                            repairs or data recovery based on the prices
+                            displayed on the LabX website. LabX will not provide
+                            a separate quote if the repair can be completed
+                            within the listed prices. If costs exceed the
+                            displayed prices, LabX will contact me before
+                            proceeding. I am pre-approving repairs or services
+                            at the prices shown on the website. If a price is
+                            not listed on the website, LabX will provide a
+                            separate quotation before proceeding.
+                          </p>
+                        </div>
+                        {errors.pricingAgreement && (
+                          <p className="text-[red] text-sm mb-0">
+                            {errors.pricingAgreement}
+                          </p>
                         )}
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </>
-            )}
-
-            {activeStep === 3 && (
-              <>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center border-y-[1px] border-[#81818175]">
-                  <div className="relative w-full h-[300px] md:h-[550px]">
-                    <Image
-                      className="object-cover rounded-[30px]"
-                      src={StaperForm4}
-                      alt="Course Image"
-                      fill
-                    />
-                  </div>
-                  <div className="p-2 lg:p-2 bg-black text-white rounded-md">
-                    <h2 className="text-3xl font-bold mb-4">
-                      Pricing Agreement*
-                    </h2>
-                    <div className="flex items-start gap-4 text-yellow-400">
-                      <input
-                        type="checkbox"
-                        className="check__boxs"
-                        checked={pricingAgreement == true ? true : false}
-                        onChange={() => {
-                          setPricingAgreement(!pricingAgreement);
-                          setErrors((prevErrors) => ({
-                            ...prevErrors,
-                            pricingAgreement: !pricingAgreement
-                              ? ""
-                              : "You must agree to the pricing agreement",
-                          }));
-                        }}
-                      />
-
-                      <p className="">
-                        By submitting this form, I agree to proceed with repairs
-                        or data recovery based on the prices displayed on the
-                        LabX website. LabX will not provide a separate quote if
-                        the repair can be completed within the listed prices. If
-                        costs exceed the displayed prices, LabX will contact me
-                        before proceeding. I am pre-approving repairs or
-                        services at the prices shown on the website. If a price
-                        is not listed on the website, LabX will provide a
-                        separate quotation before proceeding.
-                      </p>
-                    </div>
-                    {errors.pricingAgreement && (
-                      <p className="text-[red] text-sm mb-0">
-                        {errors.pricingAgreement}
-                      </p>
-                    )}
-
-                    <div className="flex justify-between mt-4">
-                      <button className="btn " onClick={handlePrevStep}>
-                        Previous
-                      </button>
-                      <button
-                        onClick={handleSubmit}
-                        disabled={!pricingAgreement || isLoading} // Disable when loading
-                        className={`btn ${
-                          !pricingAgreement || isLoading
-                            ? "opacity-50 cursor-not-allowed"
-                            : ""
-                        }`}
-                      >
-                        {isLoading ? "Processing..." : "Submit"}
-                      </button>
+                      <div className="flex justify-between mt-4">
+                        <button className="btn " onClick={handlePrevStep}>
+                          Previous
+                        </button>
+                        <button
+                          onClick={handleSubmit}
+                          disabled={!pricingAgreement || isLoading} // Disable when loading
+                          className={`btn ${
+                            !pricingAgreement || isLoading
+                              ? "opacity-50 cursor-not-allowed"
+                              : ""
+                          }`}
+                        >
+                          {isLoading ? "Processing..." : "Submit"}
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

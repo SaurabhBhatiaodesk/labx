@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import labx from "../../../public/Images/Brand logos/Frame.svg";
-
-import {  SlSocialFacebook } from "react-icons/sl";
+import commingsoon from "../../../public/Images/coming-soon.svg";
+import { SlSocialFacebook } from "react-icons/sl";
 import { FaInstagram, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
@@ -107,7 +107,13 @@ const Footer = () => {
               <div className="">
                 <div>
                   <Link href="/">
-                    <Image width={200} height={200}  className="mb-4" src="https://labxbackend.s3.us-east-2.amazonaws.com/Clip+path+group.webp" alt=" lab-x" />
+                    <Image
+                      width={200}
+                      height={200}
+                      className="mb-4"
+                      src="https://labxbackend.s3.us-east-2.amazonaws.com/Clip+path+group.webp"
+                      alt=" lab-x"
+                    />
                   </Link>
                   <p className="font-[300] font-poppins">
                     LabX is a professional and skilful phone repair service
@@ -201,6 +207,14 @@ const Footer = () => {
                         </Link>
                       </div>
                       <div>
+                        <Link href="/ps5-repair">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200">
+                            PS5 Repair
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
+                        </Link>
+                      </div>
+                      <div>
                         <Link href="/screen-refurbishing">
                           <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200">
                             Screen Refurbishment
@@ -217,28 +231,52 @@ const Footer = () => {
                         </Link>
                       </div>
                       <div>
-                        <Link href="/coming-soon">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200">
+                        <span>
+                          <li className="relative inline-flex  items-center gap-2 xl:p-1 group font-poppins font-[300] hover:text-yellow-200 cursor-pointer">
                             Parts Store
+                            <span className="text-white">
+                              <Image
+                                src={commingsoon}
+                                width={40}
+                                height={30}
+                                alt=""
+                              />
+                            </span>
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
-                        </Link>
+                        </span>
                       </div>
                       <div>
-                        <Link href="/coming-soon">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200">
-                            Repair Forum
+                        <span>
+                          <li className="relative inline-flex  items-center gap-2 xl:p-1 group font-poppins font-[300] hover:text-yellow-200 cursor-pointer">
+                            Repair Form
+                            <span className="text-white">
+                              <Image
+                                src={commingsoon}
+                                width={40}
+                                height={30}
+                                alt=""
+                              />
+                            </span>
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
-                        </Link>
+                        </span>
                       </div>
                       <div>
-                        <Link href="/repair-solutions">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200">
+                        <span>
+                          <li className="relative inline-flex  items-center gap-2 xl:p-1 group font-poppins font-[300] hover:text-yellow-200 cursor-pointer">
                             Repair Solutions
+                            <span className="text-white">
+                              <Image
+                                src={commingsoon}
+                                width={40}
+                                height={30}
+                                alt=""
+                              />
+                            </span>
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
-                        </Link>
+                        </span>
                       </div>
                     </ul>
                   </div>
@@ -489,14 +527,13 @@ const Footer = () => {
                 </Link>
               </div>
               <div className="Abn number flex  items-center justify-center  mt-2">
-                    <span>
-                      <TiArrowForward fontSize={30} />
-                    </span>
-                    <span className="lg:text-lg text-sm ">
-                      ABN No :-{" "}
-                      <span className="text-tertiary ">31646271829</span>
-                    </span>
-                  </div>
+                <span>
+                  <TiArrowForward fontSize={30} />
+                </span>
+                <span className="lg:text-lg text-sm ">
+                  ABN No :- <span className="text-tertiary ">31646271829</span>
+                </span>
+              </div>
 
               <MobileFooterMenue />
             </div>
@@ -530,13 +567,21 @@ const Footer = () => {
               <div className="grid grid-cols-5 justify-between gap-2 footer-app py-3 fixed bottom-0 w-full left-0 right-0 bg-black border-t-1 border-[#4a4a4a77] ">
                 <Link href="/">
                   <div className="flex flex-col items-center">
-                    <Image className="w-[24px]" src={homefooter} alt=" labx repair " />
+                    <Image
+                      className="w-[24px]"
+                      src={homefooter}
+                      alt=" labx repair "
+                    />
                     <span className="text-[12px] tracking-[1.5px] ">Home</span>
                   </div>
                 </Link>
                 <Link href="/training">
                   <div className="flex flex-col items-center">
-                    <Image className="w-[27px]" src={traning} alt=" labx repair " />
+                    <Image
+                      className="w-[27px]"
+                      src={traning}
+                      alt=" labx repair "
+                    />
                     <span className="text-[12px] tracking-[1.5px] ">
                       Training
                     </span>
