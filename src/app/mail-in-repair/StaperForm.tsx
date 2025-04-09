@@ -704,16 +704,7 @@ console.log("repairDetails",repairDetails);
     }
   };
 
-  useEffect(() => {
-    // You can use `localStorage` or the `useEffect` hook to persist form values
-    const storedData = JSON.parse(localStorage.getItem("formData") || "{}");
-    if (storedData) {
-      setShippingDetails(storedData.shippingDetails || {});
-      setRepairDetails(storedData.repairDetails || {});
-      setPersonalDetails(storedData.personalDetails || {});
-      setDeviceDetails(storedData.deviceDetails || {});
-    }
-  }, []);
+
 
   useEffect(() => {
     // When 'requireReturnLabel' is set to 'No', clear returnLabelDetails
@@ -746,6 +737,18 @@ console.log("repairDetails",repairDetails);
     shippingDetails.requirePickupLabel, // Watch for changes in requirePickupLabel
   ]);
 
+  useEffect(() => {
+    // You can use `localStorage` or the `useEffect` hook to persist form values
+    if (typeof window !== "undefined") {
+    const storedData = JSON.parse(localStorage.getItem("formData") || "{}");
+    if (storedData) {
+      setShippingDetails(storedData.shippingDetails || {});
+      setRepairDetails(storedData.repairDetails || {});
+      setPersonalDetails(storedData.personalDetails || {});
+      setDeviceDetails(storedData.deviceDetails || {});
+    }
+  }
+  }, []);
   return (
     <>
       {isLoading && (
@@ -1262,7 +1265,7 @@ console.log("repairDetails",repairDetails);
                                             },
                                           }}
                                           checked={
-                                            repairDetails?.previousRepairAttempts ==
+                                            repairDetails?.previousRepairAttempts ===
                                             "Yes"
                                           }
                                           onChange={() =>
@@ -1285,7 +1288,7 @@ console.log("repairDetails",repairDetails);
                                             },
                                           }}
                                           checked={
-                                            repairDetails?.previousRepairAttempts ==
+                                            repairDetails?.previousRepairAttempts ===
                                             "No"
                                           }
                                           onChange={() =>
@@ -1352,7 +1355,7 @@ console.log("repairDetails",repairDetails);
                                             },
                                           }}
                                           checked={
-                                            repairDetails?.jumpQueueForFasterService ==
+                                            repairDetails?.jumpQueueForFasterService ===
                                             "Yes"
                                           }
                                           onChange={() =>
@@ -1375,7 +1378,7 @@ console.log("repairDetails",repairDetails);
                                             },
                                           }}
                                           checked={
-                                            repairDetails?.jumpQueueForFasterService ==
+                                            repairDetails?.jumpQueueForFasterService ===
                                             "No"
                                           }
                                           onChange={() =>
