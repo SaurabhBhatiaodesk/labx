@@ -208,8 +208,6 @@ const handleChange = (
     }
   };
 
-
-  console.log("formDataaaa", formData);
   return (
     <>
       <section

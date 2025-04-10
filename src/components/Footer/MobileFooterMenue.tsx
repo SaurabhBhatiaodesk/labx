@@ -94,7 +94,7 @@ const MobileFooterMenue = () => {
       {/* Our Services Section */}
       <div className="mb-4">
         <div
-          className="flex justify-between items-center p-[12px] rounded-[50px] cursor-pointer border-[1px]"
+          className="flex justify-between items-center p-[12px] rounded-[10px] cursor-pointer border-[1px]"
           onClick={() => handleToggle(0)}
         >
           <span className="text-[17px] tracking-[1.5px]">Our Services</span>
@@ -151,7 +151,7 @@ const MobileFooterMenue = () => {
       {/* Second Section */}
       <div className="mb-4">
         <div
-          className="flex justify-between items-center  p-[12px] rounded-[50px] cursor-pointer border-[1px]"
+          className="flex justify-between items-center  p-[12px] rounded-[10px] cursor-pointer border-[1px]"
           onClick={() => handleToggle(1)}
         >
           <span className="text-[17px] tracking-[1.5px]">Quick links</span>
@@ -199,7 +199,7 @@ const MobileFooterMenue = () => {
       {/* Contact Info Section */}
       <div className="mb-4">
         <div
-          className="flex justify-between items-center  p-[12px] rounded-[50px] cursor-pointer border-[1px]"
+          className="flex justify-between items-center  p-[12px] rounded-[10px] cursor-pointer border-[1px]"
           onClick={() => handleToggle(2)}
         >
           <span className="text-[17px] tracking-[1.5px]">Contact Info</span>

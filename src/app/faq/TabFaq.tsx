@@ -203,7 +203,7 @@ const TabFaq = () => {
       {faqData.map((categoryData, categoryIndex) => (
         <div key={categoryIndex} className="mb-4">
           <div
-            className="flex justify-between items-center p-[12px] rounded-[50px] cursor-pointer border-[1px]"
+            className="flex justify-between items-center p-[12px] rounded-[10px] cursor-pointer border-[1px]"
             onClick={() => handleToggle(categoryIndex)}
             style={{
               background: getGradientColor(categoryIndex), // Set gradient color for active category

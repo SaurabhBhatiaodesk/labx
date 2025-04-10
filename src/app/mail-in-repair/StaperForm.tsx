@@ -264,7 +264,6 @@ const StaperForm: React.FC = () => {
     jumpQueueForFasterService: "No",
     additionalComments: "",
   });
-console.log("repairDetails",repairDetails);
 
   const [shippingDetails, setShippingDetails] = useState({
     requireReturnLabel: "I will arrange pickup myself",
@@ -704,8 +703,6 @@ console.log("repairDetails",repairDetails);
     }
   };
 
-
-
   useEffect(() => {
     // When 'requireReturnLabel' is set to 'No', clear returnLabelDetails
     if (shippingDetails.requireReturnLabel === "No") {
@@ -740,43 +737,43 @@ console.log("repairDetails",repairDetails);
   useEffect(() => {
     // You can use `localStorage` or the `useEffect` hook to persist form values
     if (typeof window !== "undefined") {
-    const storedData = JSON.parse(localStorage.getItem("formData") || "{}");
-    if (storedData) {
-      setShippingDetails(storedData.shippingDetails || {});
-      setRepairDetails(storedData.repairDetails || {});
-      setPersonalDetails(storedData.personalDetails || {});
-      setDeviceDetails(storedData.deviceDetails || {});
+      const storedData = JSON.parse(localStorage.getItem("formData") || "{}");
+      if (storedData) {
+        setShippingDetails(storedData.shippingDetails || {});
+        setRepairDetails(storedData.repairDetails || {});
+        setPersonalDetails(storedData.personalDetails || {});
+        setDeviceDetails(storedData.deviceDetails || {});
+      }
     }
-  }
   }, []);
   return (
     <>
       {isLoading && (
         <div
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
-          zIndex: 9999,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <div
           style={{
-            width: "50px",
-            height: "50px",
-            border: "5px solid #f3f3f3",
-            borderTop: "5px solid #3498db",
-            borderRadius: "50%",
-            animation: "spin 1s linear infinite",
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            zIndex: 9999,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
-        ></div>
-      </div>
+        >
+          <div
+            style={{
+              width: "50px",
+              height: "50px",
+              border: "5px solid #f3f3f3",
+              borderTop: "5px solid #3498db",
+              borderRadius: "50%",
+              animation: "spin 1s linear infinite",
+            }}
+          ></div>
+        </div>
       )}
 
       <section className="steper-form-section-os">
@@ -879,14 +876,11 @@ console.log("repairDetails",repairDetails);
                               name="full_name"
                               fullWidth
                               value={personalDetails.fullName}
-                              onChange={(e) =>
+                              onChange={(e) => {
                                 setPersonalDetails({
                                   ...personalDetails,
                                   fullName: e.target.value,
-                                })
-                              }
-                              onBlur={() => {
-                                // Clear the error when the field loses focus
+                                });
                                 setErrors((prevErrors) => ({
                                   ...prevErrors,
                                   fullName: "",
@@ -915,17 +909,14 @@ console.log("repairDetails",repairDetails);
                                     contactNo: e.target.value,
                                   });
                                 }
-                              }}
-                              inputProps={{ maxLength: 10 }}
-                              onBlur={() => {
-                                // Clear the error when the field loses focus
-                                if (personalDetails.contactNo.length === 10) {
+                                if (e.target.value.length === 10) {
                                   setErrors((prevErrors) => ({
                                     ...prevErrors,
                                     contactNo: "",
                                   }));
                                 }
                               }}
+                              inputProps={{ maxLength: 10 }}
                             />
 
                             {errors.contactNo && (
@@ -942,23 +933,20 @@ console.log("repairDetails",repairDetails);
                               name="email"
                               fullWidth
                               value={personalDetails.emailAddress}
-                              onChange={(e) =>
+                              onChange={(e) => {
                                 setPersonalDetails({
                                   ...personalDetails,
                                   emailAddress: e.target.value,
-                                })
-                              }
-                              className={`w-full bg-black text-white border-white ${
-                                isInvalid ? "border-red-500" : ""
-                              }`}
-                              type="email"
-                              onBlur={() => {
-                                // Clear the error when the field loses focus
+                                });
                                 setErrors((prevErrors) => ({
                                   ...prevErrors,
                                   emailAddress: "",
                                 }));
                               }}
+                              className={`w-full bg-black text-white border-white ${
+                                isInvalid ? "border-red-500" : ""
+                              }`}
+                              type="email"
                             />
                             {errors.emailAddress && (
                               <p className="text-[red] text-sm mb-0">
@@ -1131,7 +1119,9 @@ console.log("repairDetails",repairDetails);
                                   />
                                   <div className="flex justify-end mt-4">
                                     <button
-                                      onClick={() => setPinModalOpen(false)}
+                                      onClick={() => {
+                                        setPinModalOpen(false);
+                                      }}
                                       className="btn bg-gray-500 text-white px-4 py-2 rounded mr-2"
                                     >
                                       Cancel
@@ -1225,20 +1215,17 @@ console.log("repairDetails",repairDetails);
                                   placeholder="Please provide a detailed information of the damage(The more information you include, the better chances of successfully repairing the device).*"
                                   minRows={5}
                                   value={repairDetails.issueDescription}
-                                  onChange={(e) =>
+                                  onChange={(e) => {
                                     setRepairDetails({
                                       ...repairDetails,
                                       issueDescription: e.target.value,
-                                    })
-                                  }
-                                  required
-                                  onBlur={() => {
-                                    // Clear the error when the field loses focus
+                                    });
                                     setErrors((prevErrors) => ({
                                       ...prevErrors,
                                       issueDescription: "",
                                     }));
                                   }}
+                                  required
                                 />
                                 {errors.issueDescription && (
                                   <p className="text-[red] text-sm mb-0">
@@ -1485,10 +1472,7 @@ console.log("repairDetails",repairDetails);
                               : ["No,I will send the device myself"]
                           }
                           className="bg-black text-white gauav"
-                          value={
-                            shippingDetails.requireReturnLabel ||
-                            "No,I will send the device myself"
-                          }
+                          value={shippingDetails.requireReturnLabel}
                           onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                             setShippingDetails({
                               ...shippingDetails,
