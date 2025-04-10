@@ -41,7 +41,7 @@ const DeliveryTousMobile: React.FC<DeliveryTousMobileProps> = ({ itoms }) => {
       {itoms.map((item) => (
         <div key={item.id} className="mb-4">
           <div
-            className="flex justify-between items-center p-[12px] rounded-[50px] cursor-pointer border-[1px]"
+            className="flex justify-between items-center p-[12px] rounded-[10px] cursor-pointer border-[1px]"
             onClick={() => handleToggle(item.id)}
             style={{
               background:

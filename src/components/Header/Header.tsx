@@ -21,14 +21,9 @@ export default function App() {
   const dispatch = useDispatch();
   const Router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const handleLinkClick = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevent the dropdown from toggling when a link is clicked
-  };
-
-  // Close the menu when an item is clicked (link)
-  const handleMenuItemClick = () => {
-    setIsMenuOpen(false); // Close the menu when an item (link) is clicked
-  };
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isPriceDropdownOpen, setIsPriceDropdownOpen] = useState(false);
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
 
   // Toggle function to change menu state
   const toggleMenu = () => {
@@ -61,6 +56,18 @@ export default function App() {
       btnName: "DIY/Techcnian Damage Pricing",
     },
   ];
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const togglePriceDropdown = () => {
+    setIsPriceDropdownOpen(!isPriceDropdownOpen);
+  };
+
+  const toggleAboutDropdown = () => {
+    setIsAboutDropdownOpen(!isAboutDropdownOpen);
+  };
   return (
     <>
       <Marquee />
@@ -131,84 +138,89 @@ export default function App() {
                   <ul className="menu menu-horizontal px-1 flex items-center">
                     <li>
                       <div className="dropdowns services_drop inline-block relative">
-                        <button className="btn__menu inline-flex items-center hover:text-yellow-200">
+                        <button
+                          className="btn__menu inline-flex items-center hover:text-yellow-200"
+                          onClick={toggleDropdown}
+                        >
                           <span className="mr-1">Services</span>
                           <MdKeyboardArrowDown />
                         </button>
-                        <ul className="dropdown-menus absolute hidden text-white pt-1">
-                          {/* <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
+                        {isDropdownOpen && (
+                          <ul className="dropdown-menus absolute hidden text-white pt-1">
+                            {/* <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
                             <Link href="/mail-in-repair" onClick={toggleMenu}>
                               Mail In Repair
                             </Link>
                           </li> */}
-                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
-                            <Link href="/training" onClick={toggleMenu}>
-                              Training{" "}
-                            </Link>
-                          </li>
-                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
-                            <Link
-                              href="/b2b-repair-services"
-                              onClick={toggleMenu}
-                            >
-                              B2B Repair{" "}
-                            </Link>
-                          </li>
-                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
-                            <Link href="/ps5-repair" onClick={toggleMenu}>
-                              PS5 Repair
-                            </Link>
-                          </li>
-                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
-                            <Link
-                              href="/screen-refurbishing"
-                              onClick={toggleMenu}
-                            >
-                              Screen Refurbishment{" "}
-                            </Link>
-                          </li>
-                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
-                            <Link href="/data-recovery" onClick={toggleMenu}>
-                              Data Recovery{" "}
-                            </Link>
-                          </li>
-                          <li className=" px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 flex items-center justify-between cursor-pointer">
-                            <span className="text-[16px]">Parts Store </span>
-                            <span className="text-white">
-                              <Image
-                                src={commingsoon}
-                                width={40}
-                                height={30}
-                                alt=""
-                              />
-                            </span>
-                          </li>
-                          <li className=" px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 flex items-center justify-between cursor-pointer">
-                            <span className="text-[16px]">Repair Form </span>
-                            <span className="text-white">
-                              <Image
-                                src={commingsoon}
-                                width={40}
-                                height={30}
-                                alt=""
-                              />
-                            </span>
-                          </li>
-                          <li className=" px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 flex items-center justify-between cursor-pointer">
-                            <span className="text-[16px]">
-                              Repair Solutions{" "}
-                            </span>
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
+                              <Link href="/training" onClick={toggleMenu}>
+                                Training{" "}
+                              </Link>
+                            </li>
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
+                              <Link
+                                href="/b2b-repair-services"
+                                onClick={toggleMenu}
+                              >
+                                B2B Repair{" "}
+                              </Link>
+                            </li>
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
+                              <Link href="/ps5-repair" onClick={toggleMenu}>
+                                PS5 Repair
+                              </Link>
+                            </li>
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
+                              <Link
+                                href="/screen-refurbishing"
+                                onClick={toggleMenu}
+                              >
+                                Screen Refurbishment{" "}
+                              </Link>
+                            </li>
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
+                              <Link href="/data-recovery" onClick={toggleMenu}>
+                                Data Recovery{" "}
+                              </Link>
+                            </li>
+                            <li className=" px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 flex items-center justify-between cursor-pointer">
+                              <span className="text-[16px]">Parts Store </span>
+                              <span className="text-white">
+                                <Image
+                                  src={commingsoon}
+                                  width={40}
+                                  height={30}
+                                  alt=""
+                                />
+                              </span>
+                            </li>
+                            <li className=" px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 flex items-center justify-between cursor-pointer">
+                              <span className="text-[16px]">Repair Form </span>
+                              <span className="text-white">
+                                <Image
+                                  src={commingsoon}
+                                  width={40}
+                                  height={30}
+                                  alt=""
+                                />
+                              </span>
+                            </li>
+                            <li className=" px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 flex items-center justify-between cursor-pointer">
+                              <span className="text-[16px]">
+                                Repair Solutions{" "}
+                              </span>
 
-                            <span className="text-white">
-                              <Image
-                                src={commingsoon}
-                                width={40}
-                                height={30}
-                                alt=""
-                              />
-                            </span>
-                          </li>
-                        </ul>
+                              <span className="text-white">
+                                <Image
+                                  src={commingsoon}
+                                  width={40}
+                                  height={30}
+                                  alt=""
+                                />
+                              </span>
+                            </li>
+                          </ul>
+                        )}
                       </div>
                     </li>
 
@@ -225,8 +237,13 @@ export default function App() {
                     >
                       <span className="text-[16px]">Parts Store</span>
                       <span className="text-white">
-                             <Image src={commingsoon} width={30} height={30}  alt=""/>
-                              </span>
+                        <Image
+                          src={commingsoon}
+                          width={30}
+                          height={30}
+                          alt=""
+                        />
+                      </span>
                     </li>
                     <li>
                       <Link
@@ -247,7 +264,10 @@ export default function App() {
                       </Link>
                     </li>
                     <div className="dropdown inline-block relative">
-                      <button className="btn__menu inline-flex items-center hover:text-yellow-200">
+                      <button
+                        className="btn__menu inline-flex items-center hover:text-yellow-200"
+                        onClick={togglePriceDropdown}
+                      >
                         <span className="mr-1">Price list</span>
                         <svg
                           className="fill-current h-4 w-4"
@@ -257,21 +277,23 @@ export default function App() {
                           <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
                         </svg>
                       </button>
-                      <ul className="dropdown-menu absolute hidden text-white pt-1">
-                        {listData.map((item, index) => {
-                          return (
-                            <li
-                              key={index}
-                              className="block px-4 py-2 hover:bg-gray-800  hover:text-yellow-200 cursor-pointer"
-                              onClick={() => PricetoggleMenu(item.id)}
-                            >
-                              <span className=" text-[16px]">
-                                {item.btnName}
-                              </span>
-                            </li>
-                          );
-                        })}
-                      </ul>
+                      {isPriceDropdownOpen && (
+                        <ul className="dropdown-menu absolute hidden text-white pt-1">
+                          {listData.map((item, index) => {
+                            return (
+                              <li
+                                key={index}
+                                className="block px-4 py-2 hover:bg-gray-800  hover:text-yellow-200 cursor-pointer"
+                                onClick={() => PricetoggleMenu(item.id)}
+                              >
+                                <span className=" text-[16px]">
+                                  {item.btnName}
+                                </span>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      )}
                     </div>
                     {/* <li>
                       <Link
@@ -293,7 +315,10 @@ export default function App() {
                     </li>
                     <li>
                       <div className="dropdown inline-block relative">
-                        <button className="btn__menu inline-flex items-center hover:text-yellow-200">
+                        <button
+                          className="btn__menu inline-flex items-center hover:text-yellow-200"
+                          onClick={toggleAboutDropdown}
+                        >
                           <span className="mr-1">About us</span>
                           <svg
                             className="fill-current h-4 w-4"
@@ -303,40 +328,46 @@ export default function App() {
                             <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
                           </svg>
                         </button>
-                        <ul className="dropdown-menu absolute hidden text-white pt-1">
-                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 cursor-pointer">
-                            <Link
-                              className=""
-                              href="/about-us"
-                              onClick={toggleMenu}
-                            >
-                              Meet Bharat
-                            </Link>
-                          </li>
-                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 cursor-pointer">
-                            <Link
-                              className=""
-                              href="/what-we-do"
-                              onClick={toggleMenu}
-                            >
-                              What We Do
-                            </Link>
-                          </li>
-                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 cursor-pointer">
-                            <Link className="" href="/faq" onClick={toggleMenu}>
-                              FAQ{" "}
-                            </Link>
-                          </li>
-                          <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 cursor-pointer">
-                            <Link
-                              className="hover:text-yellow-200"
-                              href="/blogs"
-                              onClick={toggleMenu}
-                            >
-                              Blogs{" "}
-                            </Link>
-                          </li>
-                        </ul>
+                        {isAboutDropdownOpen && (
+                          <ul className="dropdown-menu absolute hidden text-white pt-1">
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 cursor-pointer">
+                              <Link
+                                className=""
+                                href="/about-us"
+                                onClick={toggleMenu}
+                              >
+                                Meet Bharat
+                              </Link>
+                            </li>
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 cursor-pointer">
+                              <Link
+                                className=""
+                                href="/what-we-do"
+                                onClick={toggleMenu}
+                              >
+                                What We Do
+                              </Link>
+                            </li>
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 cursor-pointer">
+                              <Link
+                                className=""
+                                href="/faq"
+                                onClick={toggleMenu}
+                              >
+                                FAQ{" "}
+                              </Link>
+                            </li>
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 cursor-pointer">
+                              <Link
+                                className="hover:text-yellow-200"
+                                href="/blogs"
+                                onClick={toggleMenu}
+                              >
+                                Blogs{" "}
+                              </Link>
+                            </li>
+                          </ul>
+                        )}
                       </div>
                     </li>
                   </ul>
