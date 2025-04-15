@@ -866,6 +866,18 @@ const StaperForm: React.FC = () => {
                                   businessName: e.target.value,
                                 })
                               }
+                              InputLabelProps={{
+                                shrink: true, // ⬅️ Keeps the label on top
+                              }}
+                              sx={{
+                                // This targets the label in ALL states
+                                "& label.MuiInputLabel-root": {
+                                  color: "gray",
+                                },
+                                "& label.Mui-focused": {
+                                  color: "gray",
+                                },
+                              }}
                             />
                           </div>
 
@@ -885,6 +897,18 @@ const StaperForm: React.FC = () => {
                                   ...prevErrors,
                                   fullName: "",
                                 }));
+                              }}
+                              InputLabelProps={{
+                                shrink: true, // ⬅️ Keeps the label on top
+                              }}
+                              sx={{
+                                // This targets the label in ALL states
+                                "& label.MuiInputLabel-root": {
+                                  color: "gray",
+                                },
+                                "& label.Mui-focused": {
+                                  color: "gray",
+                                },
                               }}
                             />
                             {errors.fullName && (
@@ -916,6 +940,18 @@ const StaperForm: React.FC = () => {
                                   }));
                                 }
                               }}
+                              InputLabelProps={{
+                                shrink: true, // ⬅️ Keeps the label on top
+                              }}
+                              sx={{
+                                // This targets the label in ALL states
+                                "& label.MuiInputLabel-root": {
+                                  color: "gray",
+                                },
+                                "& label.Mui-focused": {
+                                  color: "gray",
+                                },
+                              }}
                               inputProps={{ maxLength: 10 }}
                             />
 
@@ -942,6 +978,18 @@ const StaperForm: React.FC = () => {
                                   ...prevErrors,
                                   emailAddress: "",
                                 }));
+                              }}
+                              InputLabelProps={{
+                                shrink: true, // ⬅️ Keeps the label on top
+                              }}
+                              sx={{
+                                // This targets the label in ALL states
+                                "& label.MuiInputLabel-root": {
+                                  color: "gray",
+                                },
+                                "& label.Mui-focused": {
+                                  color: "gray",
+                                },
                               }}
                               className={`w-full bg-black text-white border-white ${
                                 isInvalid ? "border-red-500" : ""
@@ -981,6 +1029,18 @@ const StaperForm: React.FC = () => {
                                         deviceType: e.target.value,
                                       })
                                     }
+                                    InputLabelProps={{
+                                      shrink: true, // ⬅️ Keeps the label on top
+                                    }}
+                                    sx={{
+                                      // This targets the label in ALL states
+                                      "& label.MuiInputLabel-root": {
+                                        color: "gray",
+                                      },
+                                      "& label.Mui-focused": {
+                                        color: "gray",
+                                      },
+                                    }}
                                   />
                                 </div>
                                 <div className="w-full">
@@ -999,6 +1059,18 @@ const StaperForm: React.FC = () => {
                                         brand: e.target.value,
                                       })
                                     }
+                                    InputLabelProps={{
+                                      shrink: true, // ⬅️ Keeps the label on top
+                                    }}
+                                    sx={{
+                                      // This targets the label in ALL states
+                                      "& label.MuiInputLabel-root": {
+                                        color: "gray",
+                                      },
+                                      "& label.Mui-focused": {
+                                        color: "gray",
+                                      },
+                                    }}
                                   />
                                 </div>
                                 <div>
@@ -1014,6 +1086,18 @@ const StaperForm: React.FC = () => {
                                         imeiOrSerialNo: e.target.value,
                                       })
                                     }
+                                    InputLabelProps={{
+                                      shrink: true, // ⬅️ Keeps the label on top
+                                    }}
+                                    sx={{
+                                      // This targets the label in ALL states
+                                      "& label.MuiInputLabel-root": {
+                                        color: "gray",
+                                      },
+                                      "& label.Mui-focused": {
+                                        color: "gray",
+                                      },
+                                    }}
                                   />
                                 </div>
                               </>
@@ -1226,6 +1310,12 @@ const StaperForm: React.FC = () => {
                                     }));
                                   }}
                                   required
+                                  sx={{
+                                    "& textarea::placeholder": {
+                                      color: "gray",
+                                      opacity: 1,
+                                    },
+                                  }}
                                 />
                                 {errors.issueDescription && (
                                   <p className="text-[red] text-sm mb-0">
@@ -1406,6 +1496,12 @@ const StaperForm: React.FC = () => {
                                       additionalComments: e.target.value,
                                     })
                                   }
+                                  sx={{
+                                    "& textarea::placeholder": {
+                                      color: "gray",
+                                      opacity: 1,
+                                    },
+                                  }}
                                 />
                               </div>
                             </div>
@@ -1525,6 +1621,18 @@ const StaperForm: React.FC = () => {
                               returnShippingAddress: e.target.value,
                             })
                           }
+                          InputLabelProps={{
+                            shrink: true, // forces the label to stay on top
+                          }}
+                          sx={{
+                            // This targets the label in ALL states
+                            '& label.MuiInputLabel-root': {
+                              color: 'gray',
+                            },
+                            '& label.Mui-focused': {
+                              color: 'gray',
+                            },
+                          }}
                         />
                         {errors.returnShippingAddress && (
                           <p className="text-[red] text-sm mb-0 w-full">

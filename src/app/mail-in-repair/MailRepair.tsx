@@ -62,7 +62,7 @@ const MailRepair = () => {
        
         <HowWorks />
         <StaperForm />
-        <PleaseNote/>
+        {/* <PleaseNote/> */}
         <ThanksData steps={stepsData} HeadingData="What Will Happen Next"/>
         <FeeSolutions />
         <GoogleReviews />
