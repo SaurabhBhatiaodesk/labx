@@ -1178,12 +1178,15 @@ const StaperForm: React.FC = () => {
                                     onChange={(e) =>
                                       setPinValue(e.target.value)
                                     }
+                                    InputLabelProps={{
+                                      shrink: true, // ⬅️ Keeps the label on top
+                                    }}
                                     sx={{
                                       "& .MuiFormLabel-root": {
-                                        color: "white",
+                                        color: "gray",
                                       },
                                       "& .MuiFormLabel-root.Mui-focused": {
-                                        color: "white",
+                                        color: "gray",
                                       },
                                       "& .MuiOutlinedInput-root": {
                                         "& fieldset": {
@@ -1402,6 +1405,12 @@ const StaperForm: React.FC = () => {
                                           })
                                         }
                                         required
+                                        sx={{
+                                          "& textarea::placeholder": {
+                                            color: "gray",
+                                            opacity: 1,
+                                          },
+                                        }}
                                       />
                                       {errors.previousRepairAttemptsComments && (
                                         <p className="text-[red] text-sm mb-0">
