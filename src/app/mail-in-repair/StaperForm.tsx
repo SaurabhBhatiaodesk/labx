@@ -680,14 +680,14 @@ const StaperForm: React.FC = () => {
             {
               pathname === "/mail-in-repair"
                 ? router.push(
-                    `/mail-in-repair/thank-you?id=${cleanOrderReferenceId}`
+                    `/mail-in-repair/thank-you`
                   )
                 : pathname === "/data-recovery"
                 ? router.push(
-                    `/data-recovery/thank-you?id=${cleanOrderReferenceId}`
+                    `/data-recovery/thank-you`
                   )
                 : router.push(
-                    `/ps5-repair/thank-you?id=${cleanOrderReferenceId}`
+                    `/ps5-repair/thank-you`
                   );
             }
           }
