@@ -680,14 +680,14 @@ const StaperForm: React.FC = () => {
             {
               pathname === "/mail-in-repair"
                 ? router.push(
-                    `/mail-in-repair/thank-you?id=${cleanOrderReferenceId}`
+                    `/mail-in-repair/thank-you`
                   )
                 : pathname === "/data-recovery"
                 ? router.push(
-                    `/data-recovery/thank-you?id=${cleanOrderReferenceId}`
+                    `/data-recovery/thank-you`
                   )
                 : router.push(
-                    `/ps5-repair/thank-you?id=${cleanOrderReferenceId}`
+                    `/ps5-repair/thank-you`
                   );
             }
           }
@@ -1178,12 +1178,15 @@ const StaperForm: React.FC = () => {
                                     onChange={(e) =>
                                       setPinValue(e.target.value)
                                     }
+                                    InputLabelProps={{
+                                      shrink: true, // ⬅️ Keeps the label on top
+                                    }}
                                     sx={{
                                       "& .MuiFormLabel-root": {
-                                        color: "white",
+                                        color: "gray",
                                       },
                                       "& .MuiFormLabel-root.Mui-focused": {
-                                        color: "white",
+                                        color: "gray",
                                       },
                                       "& .MuiOutlinedInput-root": {
                                         "& fieldset": {
@@ -1402,6 +1405,12 @@ const StaperForm: React.FC = () => {
                                           })
                                         }
                                         required
+                                        sx={{
+                                          "& textarea::placeholder": {
+                                            color: "gray",
+                                            opacity: 1,
+                                          },
+                                        }}
                                       />
                                       {errors.previousRepairAttemptsComments && (
                                         <p className="text-[red] text-sm mb-0">
