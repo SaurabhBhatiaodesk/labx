@@ -161,8 +161,8 @@ export default function RootLayout({
             `,
           }}
         />
-         <Script id="snap-pixel" strategy="afterInteractive">
-        {`
+        <Script id="snap-pixel" strategy="afterInteractive">
+          {`
           (function(e,t,n){
             if(e.snaptr) return;
             var a=e.snaptr=function(){
@@ -180,27 +180,20 @@ export default function RootLayout({
           snaptr('init', 'cb889d03-2e36-47e3-93ef-d7b3ece4f952', {});
           snaptr('track', 'PAGE_VIEW');
         `}
-      </Script>
-      <Script
-          id="gtag_report_conversion"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              function gtag_report_conversion(url) {
-                var callback = function () {
-                  if (typeof(url) != 'undefined') {
-                    window.location = url;
-                  }
-                };
-                gtag('event', 'conversion', {
-                  'send_to': 'AW-16874061920/mR6jCKzNgr0aEOCAl-4-',
-                  'event_callback': callback
-                });
-                return false;
+        </Script>
+        <Script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=AW-16874061920"
+          />
+          <Script>
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag() {
+                dataLayer.push(arguments);
               }
-            `,
-          }}
-        />
+              gtag("js", new Date());
+            `}
+          </Script>
       </body>
     </html>
   );
