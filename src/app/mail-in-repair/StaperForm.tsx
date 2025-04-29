@@ -655,7 +655,7 @@ const StaperForm: React.FC = () => {
             : "ps5"
         }`,
       };
-
+  
       try {
         const response = await axios.post(
           "https://labxbackend.labxrepair.com.au/api/repair_info",
@@ -666,30 +666,35 @@ const StaperForm: React.FC = () => {
             },
           }
         );
-        if (response.status === 200 || response.status == 201) {
+        
+        if (response.status === 200 || response.status === 201) {
           const { orderReferenceId } = response.data.data; // Assuming the orderReferenceId is returned in the response data
-
+  
           if (typeof window !== "undefined") {
             localStorage.removeItem("formData");
-
+  
             // Pass orderReferenceId as query parameter in the URL
-            // router.push(`/mail-in-repair/thank-you?id=${orderReferenceId}`);
             const cleanOrderReferenceId = orderReferenceId.startsWith("#")
               ? orderReferenceId.slice(1)
               : orderReferenceId;
-            {
-              pathname === "/mail-in-repair"
-                ? router.push(
-                    `/mail-in-repair/thank-you`
-                  )
-                : pathname === "/data-recovery"
-                ? router.push(
-                    `/data-recovery/thank-you`
-                  )
-                : router.push(
-                    `/ps5-repair/thank-you`
-                  );
-            }
+            
+            // Handle Google Ads conversion tracking
+            const callback = function () {
+              // Navigate after conversion
+              if (typeof window !== "undefined") {
+                pathname === "/mail-in-repair"
+                  ? router.push(`/mail-in-repair/thank-you`)
+                  : pathname === "/data-recovery"
+                  ? router.push(`/data-recovery/thank-you`)
+                  : router.push(`/ps5-repair/thank-you`);
+              }
+            };
+  
+            // Google Ads Conversion Tracking
+            window.gtag('event', 'conversion', {
+              'send_to': 'AW-16874061920/mR6jCKzNgr0aEOCAl-4-',
+              'event_callback': callback,
+            });
           }
         } else {
           alert("Failed to submit the form. Please try again.");
@@ -702,6 +707,7 @@ const StaperForm: React.FC = () => {
       }
     }
   };
+  
 
   useEffect(() => {
     // When 'requireReturnLabel' is set to 'No', clear returnLabelDetails
