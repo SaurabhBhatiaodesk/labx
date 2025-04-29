@@ -185,7 +185,7 @@ export default function RootLayout({
             async
             src="https://www.googletagmanager.com/gtag/js?id=AW-16874061920"
           />
-          <Script>
+          <Script id="conversion-api">
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag() {
