@@ -5,6 +5,7 @@ import BlogSidebar from "../../../components/BlogSidebar/BlogSidebar";
 import FixLabx from "../../../components/HomeCpmponents/FixLabx/FixLabx";
 import Image from "next/image";
 import "./BlogDetails.css";
+import BlogContent from "./BlogContent";
 interface BlogData {
   _id: string;
   heading: string;
@@ -125,10 +126,7 @@ export default async function BlogDetails({
             </h2>
 
             <div className="mb-4">
-              <div
-                className="mt-2 text-white custom-content-styling"
-                dangerouslySetInnerHTML={{ __html: blog.content }}
-              ></div>
+            <BlogContent content={blog.content} />
             </div>
           </div>
 
