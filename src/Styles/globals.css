@@ -244,3 +244,13 @@ p {
   background: var(--tertiary-color) !important;
   color: #000 !important;
 }
+
+@media (max-width: 767px) {
+li.MuiButtonBase-root {
+  word-break: break-word;
+  white-space: normal;
+}
+}
+
+
+

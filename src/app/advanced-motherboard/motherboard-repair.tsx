@@ -93,7 +93,7 @@ const BeginnerCourse = () => {
       <AdvancedChooseLab />
       <div className=" pt-3" id="mother-board">
         <MainHeading Heading="Advanced Motherboard Repair"/>
-          <FormCode/>
+          {/* <FormCode/> */}
           </div>
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"

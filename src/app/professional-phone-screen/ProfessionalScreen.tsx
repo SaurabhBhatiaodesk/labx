@@ -113,7 +113,7 @@ const ProfessionalScreen = () => {
       <ProfessionalChooseLab />
       <div className=" pt-3" id="professional-phone-screen-id">
         <MainHeading Heading="Professional Phone Screen Refurbishing Course"/>
-          <FormCode/>
+          {/* <FormCode/> */}
           </div>
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"

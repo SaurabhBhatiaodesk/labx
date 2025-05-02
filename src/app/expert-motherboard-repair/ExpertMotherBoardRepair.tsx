@@ -125,7 +125,7 @@ const BeginnerCourse = () => {
       <ExpertChooseLab />
       <div className=" pt-3 " id="expert-motherboard-repair-id">
         <MainHeading Heading="Expert Motherboard Repair" />
-        <FormCode />
+        {/* <FormCode /> */}
       </div>
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"
