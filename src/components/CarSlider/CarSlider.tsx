@@ -22,7 +22,7 @@ export default function Productswiper({ }) {
       swiperRef.current.slidePrev();
     }
   };
-
+ 
   const handleNext = () => {
     if (swiperRef.current) {
       swiperRef.current.slideNext();
