@@ -49,8 +49,7 @@ const TraningTabBigner: React.FC = () => {
       contentf2:
         "Familiarize yourself with the key tools and parts required for effective phone repairs. This foundational knowledge ensures you are equipped to handle various repairs confidently, covering everything from small fixes to advanced troubleshooting techniques.",
       contentf3title: "",
-      contentf3:
-        "",
+      contentf3: "",
       button: "Get Course",
       link: "/training",
       image: tabimage,
@@ -63,8 +62,7 @@ const TraningTabBigner: React.FC = () => {
       contentf2:
         "Learn step-by-step methods for replacing damaged screens on smartphones and iPads. Master techniques that ensure safe disassembly, proper alignment, and a flawless finish, restoring devices to optimal functionality and maintaining their aesthetic appeal.",
       contentf3title: "",
-      contentf3:
-        " ",
+      contentf3: " ",
       contentf4title: "",
       button: "Get Course",
       link: "/training",
@@ -78,16 +76,13 @@ const TraningTabBigner: React.FC = () => {
       contentf2:
         "Understand the intricacies of safely removing and replacing batteries in various devices. This course repairing mobile phones ensures you can efficiently handle battery-related issues, enhancing the longevity and performance of smartphones and tablets while maintaining safety standards.",
       contentf3title: "",
-      contentf3:
-        "",
+      contentf3: "",
       contentf4title: "",
-      contentf4:
-        " ",
+      contentf4: " ",
       contentf5title: "",
-      contentf5:
-        "",
+      contentf5: "",
       contentf6title: "",
-    
+
       button: "Get Course",
       link: "/training",
       image: tabimage,
@@ -100,11 +95,9 @@ const TraningTabBigner: React.FC = () => {
       contentf2:
         "Gain expertise in diagnosing and repairing faulty charging ports. Learn how to clean, replace, and test ports effectively, ensuring smooth power flow and connectivity, which are crucial for device functionality and user satisfaction.",
       contentf3title: "",
-      contentf3:
-        " ",
+      contentf3: " ",
       contentf4title: "",
-    
-     
+
       button: "Get Course",
       link: "/training",
       image: tabimage,
@@ -144,7 +137,7 @@ const TraningTabBigner: React.FC = () => {
 
         <div className="p-3 bg-white mb-6">
           <p className="text-black mb-0 font-[600]">
-          Section 1. Basic Phone Repair
+            Section 1. Basic Phone Repair
           </p>
         </div>
         <div className="">
@@ -204,16 +197,11 @@ const TraningTabBigner: React.FC = () => {
                 .filter((item) => item.content)
                 .map((item, index) => (
                   <div className="flex items-start gap-4" key={index}>
-                  
                     <div>
-                      <p>
-                        
-                        {item.content}
-                      </p>
+                      <p>{item.content}</p>
                     </div>
                   </div>
                 ))}
-
               {tabs[activeTab].button && tabs[activeTab].link && (
                 <button
                   // href={tabs[activeTab].link}
@@ -224,17 +212,12 @@ const TraningTabBigner: React.FC = () => {
                     borderColor: getGradientColor(activeTab),
                   }}
                   onClick={() => {
-                    const target = document.getElementById("beginner-phone-repair-course-id");
-                    const offset = 12 * 20; // 3rem in pixels (assuming 1rem = 16px)
-    
-                    if (target) {
-                      const targetPosition =
-                        target.getBoundingClientRect().top + window.pageYOffset;
-                      const scrollToPosition = targetPosition - offset;
-    
+                    const element = document.getElementById("business-name");
+                    if (element) {
+                      element.focus(); // Focus on the element
                       window.scrollTo({
-                        top: scrollToPosition,
-                        behavior: "smooth",
+                        top: element.offsetTop, // Scroll to the top of the element
+                        behavior: "smooth", // Smooth scroll effect
                       });
                     }
                   }}
@@ -245,16 +228,6 @@ const TraningTabBigner: React.FC = () => {
             </div>
           </div>
         </div>
-
-
-
-
-
-
-
-
-        
-
 
         <section className="lg:hidden block">
           {/* <DeliveryTousMobile /> */}
