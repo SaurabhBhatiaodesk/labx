@@ -86,6 +86,7 @@ const BeginnerCourse = () => {
            border="#EDE574"
       />
       <TraningTabBigner />
+
       <TraningTabBignersecond />
       <TraningTabBignerThird/>
       <TraningCourseInstructors />
@@ -94,7 +95,8 @@ const BeginnerCourse = () => {
       <div className=" container" id="beginner-phone-repair-course-id">
         <MainHeading Heading="Beginner Phone Repair Course"/>
         </div>
-          {/* <FormCode/> */}
+          <FormCode/>
+         
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."

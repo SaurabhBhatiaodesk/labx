@@ -134,7 +134,7 @@ const MasterMotherboardRepair = () => {
       <div className=" container" id="master-motherboard-repairi-id">
         <MainHeading Heading="Master Motherboard Repair – Micro Soldering"/>
         </div>
-          {/* <FormCode/> */}
+          <FormCode/>
          
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)

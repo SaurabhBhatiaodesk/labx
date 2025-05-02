@@ -246,6 +246,7 @@ const TraningTabBignersecond: React.FC = () => {
                     </div>
                   </div>
                 ))}
+
               {tabs[activeTab].button && tabs[activeTab].link && (
                 <button
                   // href={tabs[activeTab].link}
@@ -256,12 +257,17 @@ const TraningTabBignersecond: React.FC = () => {
                     borderColor: getGradientColor(activeTab),
                   }}
                   onClick={() => {
-                    const element = document.getElementById("business-name");
-                    if (element) {
-                      element.focus(); // Focus on the element
+                    const target = document.getElementById("beginner-phone-repair-course-id");
+                    const offset = 12 * 20; // 3rem in pixels (assuming 1rem = 16px)
+    
+                    if (target) {
+                      const targetPosition =
+                        target.getBoundingClientRect().top + window.pageYOffset;
+                      const scrollToPosition = targetPosition - offset;
+    
                       window.scrollTo({
-                        top: element.offsetTop, // Scroll to the top of the element
-                        behavior: "smooth", // Smooth scroll effect
+                        top: scrollToPosition,
+                        behavior: "smooth",
                       });
                     }
                   }}

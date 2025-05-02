@@ -11,7 +11,7 @@ const Form = () => {
     <div className="form-section">
        <MainHeading Heading='Ready to Kickstart Your Career in Mobile Repair? Enquire Now!'/>
        <div className='form'>
-        {/* <FormCode/> */}
+        <FormCode/>
        </div>
     </div>
    </div>

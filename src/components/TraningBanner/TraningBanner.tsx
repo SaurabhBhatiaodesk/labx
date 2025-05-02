@@ -5,7 +5,6 @@ import trending from "../../../public/Images/icons/trending-up.svg";
 import coursereating from "../../../public/Images/icons/coursereating.svg";
 import clock from "../../../public/Images/icons/clock.svg";
 import Link from "next/link";
-import FormCode from "../Form/FormCode";
 
 interface TraningBanner {
   pageName: string;
@@ -126,7 +125,7 @@ function TraningBanner({
                 {/* <button className="btn" onClick={handleScrollToTarget}>
                   JOIN THIS COURSE
                 </button> */}
-                {/* {isBrowser && window.location.pathname === link ? (
+                {isBrowser && window.location.pathname === link ? (
                   <button className="btn" onClick={handleScrollToTarget}>
                     {buttonname}
                   </button>
@@ -134,17 +133,16 @@ function TraningBanner({
                   <Link href={link}>
                     <button className="btn">{buttonname}</button>
                   </Link>
-                )} */}
+                )}
               </div>
             </div>
-            <div className="admin-image relative h-full">
-              {/* <Image
+            <div className="admin-image relative 2xl:h-[500px] lg:h-[350px] h-[350px]">
+              <Image
                 src={AdminImage}
                 alt="Admin Visual"
                 className="object-contain pt-3"
                 fill // Makes the image fill the parent container
-              /> */}
-              <FormCode/>
+              />
             </div>
           </div>
         </div>
