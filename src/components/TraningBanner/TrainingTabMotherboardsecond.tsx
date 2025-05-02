@@ -49,8 +49,7 @@ const TrainingTabMotherboardsecond: React.FC = () => {
       contentf2:
         "Learn to expertly solder and replace charging ports, addressing one of the most common faults in iPads and Android devices.",
       contentf3title: "",
-      contentf3:
-        "",
+      contentf3: "",
 
       button: "Get Course",
       link: "/training",
@@ -64,8 +63,7 @@ const TrainingTabMotherboardsecond: React.FC = () => {
       contentf2:
         "Learn the intricate process of reballing small ICs and NAND memory chips to restore functionality",
       contentf3title: "",
-      contentf3:
-        " ",
+      contentf3: " ",
       contentf4title: "",
       button: "Get Course",
       link: "/training",
@@ -79,45 +77,38 @@ const TrainingTabMotherboardsecond: React.FC = () => {
       contentf2:
         "Master the proper fundamentals of heating the motherboard to safely remove and install ICs using a heat gun.",
       contentf3title: "",
-      contentf3:
-        "",
+      contentf3: "",
       contentf4title: "",
-      contentf4:
-        "",
+      contentf4: "",
       contentf5title: "",
-      contentf5:
-        "",
+      contentf5: "",
       contentf6title: "",
-    
+
       button: "Get Course",
       link: "/training",
       image: tabimage,
     },
-  
+
     {
-        id: 3,
-        label: "Micro Jumper Training",
-        content: "	",
-        contentf2title: "",
-        contentf2:
-          "Learn how to perform precise jump wiring inside the motherboard and effectively repair torn flex cables",
-        contentf3title: "",
-        contentf3:
-          "After tutor introduction remove the last photo and bring text in the middle with bigger and bold fonts",
-        contentf4title: "",
-        contentf4:
-          "",
-        contentf5title: "",
-        contentf5:
-          "",
-        contentf6title: "",
-      
-        button: "Get Course",
-        link: "/training",
-        image: tabimage,
-      },
-    
-   
+      id: 3,
+      label: "Micro Jumper Training",
+      content: "	",
+      contentf2title: "",
+      contentf2:
+        "Learn how to perform precise jump wiring inside the motherboard and effectively repair torn flex cables",
+      contentf3title: "",
+      contentf3:
+        "After tutor introduction remove the last photo and bring text in the middle with bigger and bold fonts",
+      contentf4title: "",
+      contentf4: "",
+      contentf5title: "",
+      contentf5: "",
+      contentf6title: "",
+
+      button: "Get Course",
+      link: "/training",
+      image: tabimage,
+    },
   ];
 
   const getGradientColor = (id: number) => {
@@ -147,12 +138,8 @@ const TrainingTabMotherboardsecond: React.FC = () => {
       }}
     >
       <div className="container bgchange">
-        
-
         <div className="p-3 bg-white mb-6">
-          <p className="text-black mb-0 font-[600]">
-    Microsoldering Level 2 
-          </p>
+          <p className="text-black mb-0 font-[600]">Microsoldering Level 2</p>
         </div>
         <div className="">
           <div className="grid xl:grid-cols-[2fr_5fr] lg:grid-cols-[3fr_6fr] gap-4 ">
@@ -230,31 +217,36 @@ const TrainingTabMotherboardsecond: React.FC = () => {
                 ))}
 
               {tabs[activeTab].button && tabs[activeTab].link && (
-                <Link
-                  href={tabs[activeTab].link}
-                  passHref
+                <button
+                  // href={tabs[activeTab].link}
+                  // passHref
                   className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
                   style={{
                     background: getGradientColor(activeTab),
                     borderColor: getGradientColor(activeTab),
                   }}
+                  onClick={() => {
+                    const target = document.getElementById("mother-board");
+                    const offset = 12 * 20; // 3rem in pixels (assuming 1rem = 16px)
+
+                    if (target) {
+                      const targetPosition =
+                        target.getBoundingClientRect().top + window.pageYOffset;
+                      const scrollToPosition = targetPosition - offset;
+
+                      window.scrollTo({
+                        top: scrollToPosition,
+                        behavior: "smooth",
+                      });
+                    }
+                  }}
                 >
                   {tabs[activeTab].button}
-                </Link>
+                </button>
               )}
             </div>
           </div>
         </div>
-
-
-
-
-
-
-
-
-        
-
 
         <section className="lg:hidden block">
           {/* <DeliveryTousMobile /> */}

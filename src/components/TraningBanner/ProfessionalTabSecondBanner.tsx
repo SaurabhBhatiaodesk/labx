@@ -194,17 +194,32 @@ const TraningTabBignersecond: React.FC = () => {
                 ))}
 
               {tabs[activeTab].button && tabs[activeTab].link && (
-                <Link
-                  href={tabs[activeTab].link}
-                  passHref
+                <button
+                  // href={tabs[activeTab].link}
+                  // passHref
                   className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
                   style={{
                     background: getGradientColor(activeTab),
                     borderColor: getGradientColor(activeTab),
                   }}
+                  onClick={() => {
+                    const target = document.getElementById("professional-phone-screen-id");
+                    const offset = 12 * 20; // 3rem in pixels (assuming 1rem = 16px)
+    
+                    if (target) {
+                      const targetPosition =
+                        target.getBoundingClientRect().top + window.pageYOffset;
+                      const scrollToPosition = targetPosition - offset;
+    
+                      window.scrollTo({
+                        top: scrollToPosition,
+                        behavior: "smooth",
+                      });
+                    }
+                  }}
                 >
                   {tabs[activeTab].button}
-                </Link>
+                </button>
               )}
             </div>
           </div>
