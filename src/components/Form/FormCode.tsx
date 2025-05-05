@@ -208,31 +208,31 @@ const FormCode: React.FC = () => {
     <div className="container">
       <div className=" steper-form-section-os " id="Kickstart">
         {isLoading && (
-         <div
-         style={{
-           position: "fixed",
-           top: 0,
-           left: 0,
-           width: "100%",
-           height: "100%",
-           backgroundColor: "rgba(0, 0, 0, 0.5)",
-           zIndex: 9999,
-           display: "flex",
-           justifyContent: "center",
-           alignItems: "center",
-         }}
-       >
-         <div
-           style={{
-             width: "50px",
-             height: "50px",
-             border: "5px solid #f3f3f3",
-             borderTop: "5px solid #3498db",
-             borderRadius: "50%",
-             animation: "spin 1s linear infinite",
-           }}
-         ></div>
-       </div>
+          <div
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
+              zIndex: 9999,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{
+                width: "50px",
+                height: "50px",
+                border: "5px solid #f3f3f3",
+                borderTop: "5px solid #3498db",
+                borderRadius: "50%",
+                animation: "spin 1s linear infinite",
+              }}
+            ></div>
+          </div>
         )}
 
         {toast && (
@@ -248,6 +248,7 @@ const FormCode: React.FC = () => {
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 form-label">
               {/* Business Name Input */}
               <TextField
+                id="business-name"
                 label="Business Name (if any)"
                 name="business_name"
                 fullWidth
@@ -370,7 +371,7 @@ const FormCode: React.FC = () => {
           </div>
 
           {/* Submit Button */}
-          <div className="py-4">
+          <div className="py-4 text-center">
             <Button
               variant="contained"
               sx={{

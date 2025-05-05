@@ -16,6 +16,7 @@ import "./MasterMotherbord.css";
 import pointet from "../../../public/Images/icons/pointingright.svg";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 // import DeliveryTousMobile from "../HomeCpmponents/DeliveryTo-us/DeliveryTousMobile";
 
 interface Tab {
@@ -39,9 +40,8 @@ interface Tab {
 
 const MasterTabSecond: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
-
+  const pathname = usePathname();
   const tabs: Tab[] = [
-   
     {
       id: 0,
       label: "UFS Chip Repairs",
@@ -114,8 +114,6 @@ const MasterTabSecond: React.FC = () => {
       }}
     >
       <div className="container bgchange">
-
-
         <div className="p-3 bg-white mb-6">
           <p className="text-black mb-0 font-[600]">
             Master Motherboard Repair – Micro Soldering (Level 2)
@@ -196,40 +194,52 @@ const MasterTabSecond: React.FC = () => {
                 ))}
 
               {tabs[activeTab].button && tabs[activeTab].link && (
-                <button
-                  // href={tabs[activeTab].link}
-                  // passHref
-                  className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
-                  style={{
-                    background: getGradientColor(activeTab),
-                    borderColor: getGradientColor(activeTab),
-                  }}
-                  onClick={() => {
-                    const target = document.getElementById("master-motherboard-repairi-id");
-                    const offset = 12 * 20; // 3rem in pixels (assuming 1rem = 16px)
-    
-                    if (target) {
-                      const targetPosition =
-                        target.getBoundingClientRect().top + window.pageYOffset;
-                      const scrollToPosition = targetPosition - offset;
-    
-                      window.scrollTo({
-                        top: scrollToPosition,
-                        behavior: "smooth",
-                      });
-                    }
-                  }}
-                >
-                  {tabs[activeTab].button}
-                </button>
+                <>
+                  {pathname === "/beginner-phone-repair-course" ||
+                  pathname === "/advanced-motherboard" ||
+                  pathname === "/expert-motherboard-repair" ||
+                  pathname === "/master-motherboard-repair" ||
+                  pathname === "/professional-phone-screen" ? (
+                    <button
+                      className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
+                      style={{
+                        background: getGradientColor(activeTab),
+                        borderColor: getGradientColor(activeTab),
+                      }}
+                      onClick={() => {
+                        const element =
+                          document.getElementById("business-name");
+                        if (element) {
+                          element.focus(); // Focus on the element
+                          window.scrollTo({
+                            top: element.offsetTop, // Scroll to the top of the element
+                            behavior: "smooth", // Smooth scroll effect
+                          });
+                        }
+                      }}
+                    >
+                      {tabs[activeTab].button}
+                    </button>
+                  ) : (
+                    <Link
+                      href={tabs[activeTab].link}
+                      passHref
+                      className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
+                      style={{
+                        background: getGradientColor(activeTab),
+                        borderColor: getGradientColor(activeTab),
+                      }}
+                    >
+                      {tabs[activeTab].button}
+                    </Link>
+                  )}
+                </>
               )}
             </div>
           </div>
         </div>
 
-        <section className="lg:hidden block">
-        
-        </section>
+        <section className="lg:hidden block"></section>
       </div>
     </section>
   );

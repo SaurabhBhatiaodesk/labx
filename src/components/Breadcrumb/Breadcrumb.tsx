@@ -4,6 +4,8 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import MainButton from "../MainButton/MainButton";
+import FormCode from "../Form/FormCode";
+import { usePathname } from "next/navigation";
 
 interface BreadcrumbProps {
   pageName: string;
@@ -27,7 +29,7 @@ function Breadcrumb({
   scrollOffSet,
 }: BreadcrumbProps) {
   const [isBrowser, setIsBrowser] = useState(false);
-
+  const pathname = usePathname();
   // Check if we're in the browser
   useEffect(() => {
     setIsBrowser(true);
@@ -35,7 +37,9 @@ function Breadcrumb({
 
   const handleScrollToTarget = () => {
     const currentRoute = window.location.pathname;
-
+    if (currentRoute === "/training") {
+      document.getElementById("business-name")?.focus();
+    }
     // Set the target ID based on the current route
     let targetId: any;
     if (currentRoute === link) {
@@ -71,7 +75,7 @@ function Breadcrumb({
       >
         <div className="container">
           <div className="grid lg:grid-cols-[5fr_3fr] items-center pt-3">
-            <div className="w-full lg:px-4">
+            <div className="w-full lg:px-4 mb-8 lg:mb-0">
               <div className="text-center lg:text-left">
                 <ul className="flex items-center lg:justify-start justify-center gap-[10px]">
                   <li>
@@ -112,14 +116,20 @@ function Breadcrumb({
                 )}
               </div>
             </div>
-            <div className="admin-image relative 2xl:h-[500px] lg:h-[350px] h-[350px]">
-              <Image
-                src={AdminImage}
-                alt="Admin Visual"
-                className="object-contain pt-3"
-                fill
-              />
-            </div>
+            {pathname === "/training" ? (
+              <div className="admin-image relative h-full">
+                <FormCode />
+              </div>
+            ) : (
+              <div className="admin-image relative 2xl:h-[500px] lg:h-[350px] h-[350px]">
+                <Image
+                  src={AdminImage}
+                  alt="Admin Visual"
+                  className="object-contain pt-3"
+                  fill
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>

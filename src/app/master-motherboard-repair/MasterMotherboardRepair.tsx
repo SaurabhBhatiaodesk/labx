@@ -17,8 +17,10 @@ import MasterTabFirsh from "./MasterTabFirsh";
 import MasterTabSecond from "./MasterTabSecond";
 import FormCode from "@/components/Form/FormCode";
 import MainHeading from "@/components/ManinHeading/MainHeading";
+import { usePathname } from "next/navigation";
 
 const MasterMotherboardRepair = () => {
+  const pathname = usePathname();
   const accordionData = [
     {
       title: "1. What will I learn in the Master Motherboard Repair course?",
@@ -86,7 +88,7 @@ const MasterMotherboardRepair = () => {
         courseHour="25 Hours"
         Duration=" 5 Days"
         Price=" $5500"
-         buttonname="JOIN THIS COURSE"
+        buttonname="JOIN THIS COURSE"
       />
 
       <TraningWillLearn
@@ -131,11 +133,16 @@ const MasterMotherboardRepair = () => {
 
       <MasterChooseLab />
       {/* <BeginnerPhoneRepaiCourseSale /> */}
-      <div className=" container" id="master-motherboard-repairi-id">
-        <MainHeading Heading="Master Motherboard Repair – Micro Soldering"/>
+      {pathname === "/beginner-phone-repair-course" ||
+      pathname === "/advanced-motherboard" ||
+      pathname === "/expert-motherboard-repair" ||
+      pathname === "/master-motherboard-repair" ||
+      pathname === "/professional-phone-screen" ? null : (
+        <div className=" container" id="master-motherboard-repairi-id">
+          <MainHeading Heading="Master Motherboard Repair – Micro Soldering" />
+          <FormCode />
         </div>
-          <FormCode/>
-         
+      )}
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)
 "
@@ -143,7 +150,7 @@ const MasterMotherboardRepair = () => {
 "
         accordionData={accordionData}
       />
-     
+
       <MasterReviews />
     </>
   );

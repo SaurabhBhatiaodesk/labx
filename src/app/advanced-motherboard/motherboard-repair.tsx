@@ -1,18 +1,20 @@
+"use client";
 import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
-
 import MotherboardPhoneReapair from "@/components/TraningBanner/MotherboardPhoneRepair";
 import TraningBanner from "@/components/TraningBanner/TraningBanner";
 import TraningCourseInstructors from "@/components/TraningBanner/TraningCourseInstructors";
 import TrainingTabMotherboard from "@/components/TraningBanner/TrainingTabMotherboard";
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
 import MotherboardReviews from "@/components/GoogleReviews/MotherboardReviews";
-import AdvancedChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/advancedMotherboardChooseLab"
+import AdvancedChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/advancedMotherboardChooseLab";
 import React from "react";
 import TrainingTabMotherboardsecond from "@/components/TraningBanner/TrainingTabMotherboardsecond";
 import FormCode from "@/components/Form/FormCode";
 import MainHeading from "@/components/ManinHeading/MainHeading";
+import { usePathname } from "next/navigation";
 
 const BeginnerCourse = () => {
+  const pathname = usePathname();
   const accordionData = [
     {
       title: "1. Who is this course suitable for?",
@@ -83,18 +85,23 @@ const BeginnerCourse = () => {
         Courseformate2="   1 Week Duration"
         Courseformate3="   Experienced Instructors"
         Courseformate4=" "
-         border="#56c1c1"
-     
+        border="#56c1c1"
       />
       <TrainingTabMotherboard />
-      <TrainingTabMotherboardsecond/>
+      <TrainingTabMotherboardsecond />
       <TraningCourseInstructors />
       <MotherboardPhoneReapair />
       <AdvancedChooseLab />
-      <div className=" pt-3" id="mother-board">
-        <MainHeading Heading="Advanced Motherboard Repair"/>
-          <FormCode/>
-          </div>
+      {pathname === "/beginner-phone-repair-course" ||
+      pathname === "/advanced-motherboard" ||
+      pathname === "/expert-motherboard-repair" ||
+      pathname === "/master-motherboard-repair" ||
+      pathname === "/professional-phone-screen" ? null : (
+        <div className=" pt-3" id="mother-board">
+          <MainHeading Heading="Advanced Motherboard Repair" />
+          <FormCode />
+        </div>
+      )}
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."
