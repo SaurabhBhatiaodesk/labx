@@ -136,14 +136,22 @@ function TraningBanner({
                 {/* <button className="btn" onClick={handleScrollToTarget}>
                   JOIN THIS COURSE
                 </button> */}
-                {isBrowser && window.location.pathname === link ? (
-                  <button className="btn" onClick={handleScrollToTarget}>
-                    {buttonname}
-                  </button>
-                ) : (
-                  <Link href={link}>
-                    <button className="btn">{buttonname}</button>
-                  </Link>
+                {pathname === "/beginner-phone-repair-course" ||
+                pathname === "/advanced-motherboard" ||
+                pathname === "/expert-motherboard-repair" ||
+                pathname === "/master-motherboard-repair" ||
+                pathname === "/professional-phone-screen" ? null : (
+                  <>
+                    {isBrowser && window.location.pathname === link ? (
+                      <button className="btn" onClick={handleScrollToTarget}>
+                        {buttonname}
+                      </button>
+                    ) : (
+                      <Link href={link}>
+                        <button className="btn">{buttonname}</button>
+                      </Link>
+                    )}
+                  </>
                 )}
               </div>
             </div>
@@ -153,6 +161,9 @@ function TraningBanner({
             pathname === "/master-motherboard-repair" ||
             pathname === "/professional-phone-screen" ? (
               <div className="admin-image relative h-full">
+                <h3 className="text-3xl font-bold text-tertiary w-full text-center mb-1">
+                  Please Fill the Form
+                </h3>
                 <FormCode />
               </div>
             ) : (

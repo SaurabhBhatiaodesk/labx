@@ -105,19 +105,27 @@ function Breadcrumb({
               </div>
               <div className="flex lg:justify-start justify-center">
                 {/* Button is now dynamic */}
-                {isBrowser && window.location.pathname === link ? (
-                  <button className="btn" onClick={handleScrollToTarget}>
-                    {buttonname}
-                  </button>
-                ) : (
-                  <Link href={link}>
-                    <button className="btn">{buttonname}</button>
-                  </Link>
+
+                {pathname === "/training" ? null : (
+                  <>
+                    {isBrowser && window.location.pathname === link ? (
+                      <button className="btn" onClick={handleScrollToTarget}>
+                        {buttonname}
+                      </button>
+                    ) : (
+                      <Link href={link}>
+                        <button className="btn">{buttonname}</button>
+                      </Link>
+                    )}
+                  </>
                 )}
               </div>
             </div>
             {pathname === "/training" ? (
               <div className="admin-image relative h-full">
+                <h3 className="text-3xl font-bold text-tertiary w-full text-center mb-1">
+                  Please Fill the Form
+                </h3>
                 <FormCode />
               </div>
             ) : (
