@@ -17,6 +17,7 @@ import pointet from "../../../public/Images/icons/pointingright.svg";
 
 import Link from "next/link";
 import DeliveryTousMobile from "../HomeCpmponents/DeliveryTo-us/DeliveryTousMobile";
+import { usePathname } from "next/navigation";
 
 interface Tab {
   id: number;
@@ -39,7 +40,7 @@ interface Tab {
 
 const TraningTabBignersecond: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
-
+  const pathname = usePathname();
   const tabs: Tab[] = [
     {
       id: 0,
@@ -49,8 +50,7 @@ const TraningTabBignersecond: React.FC = () => {
       contentf2:
         "Master techniques to remove and replace back glass and housings on smartphones. This skill ensures seamless repairs that maintain the device’s durability and aesthetics, helping restore its original look and feel after damage.",
       contentf3title: "",
-      contentf3:
-        "",
+      contentf3: "",
 
       button: "Get Course",
       link: "/training",
@@ -64,14 +64,11 @@ const TraningTabBignersecond: React.FC = () => {
       contentf2:
         "Learn to diagnose and replace damaged camera modules and flashlights. This phone repair course teaches safe removal and installation procedures to ensure excellent image quality and reliable flashlight performance, restoring full device functionality.",
       contentf3title: "",
-      contentf3:
-        "",
+      contentf3: "",
       contentf4title: "",
-      contentf4:
-        "",
+      contentf4: "",
       contentf5title: "",
-      contentf5:
-        "",
+      contentf5: "",
       button: "Get Course",
       link: "/training",
       image: tabimage,
@@ -84,17 +81,13 @@ const TraningTabBignersecond: React.FC = () => {
       contentf2:
         "Understand how to address non-genuine part warnings related to batteries and cameras. This phone repairing course equips you to resolve these issues effectively, ensuring the device operates without intrusive warnings, improving customer satisfaction and device usability.",
       contentf3title: "",
-      contentf3:
-        "",
+      contentf3: "",
       contentf4title: "",
-      contentf4:
-        "",
+      contentf4: "",
       contentf5title: "",
-      contentf5:
-        "",
+      contentf5: "",
       contentf6title: "",
-      contentf6:
-        "",
+      contentf6: "",
       button: "Get Course",
       link: "/training",
       image: tabimage,
@@ -107,17 +100,13 @@ const TraningTabBignersecond: React.FC = () => {
       contentf2:
         "Develop skills to repair or replace malfunctioning power and volume buttons. Learn the techniques for diagnosing issues and restoring button functionality, ensuring a seamless user experience and extending the device's lifespan.",
       contentf3title: "",
-      contentf3:
-        "",
+      contentf3: "",
       contentf4title: "",
-      contentf4:
-        "",
+      contentf4: "",
       contentf5title: "",
-      contentf5:
-        "",
+      contentf5: "",
       contentf6title: "",
-      contentf6:
-        "",
+      contentf6: "",
       button: "Get Course",
       link: "/training",
       image: tabimage,
@@ -237,43 +226,53 @@ const TraningTabBignersecond: React.FC = () => {
                 .filter((item) => item.content)
                 .map((item, index) => (
                   <div className="flex items-start gap-4" key={index}>
-                  
                     <div>
-                      <p>
-                      
-                        {item.content}
-                      </p>
+                      <p>{item.content}</p>
                     </div>
                   </div>
                 ))}
 
               {tabs[activeTab].button && tabs[activeTab].link && (
-                <button
-                  // href={tabs[activeTab].link}
-                  // passHref
-                  className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
-                  style={{
-                    background: getGradientColor(activeTab),
-                    borderColor: getGradientColor(activeTab),
-                  }}
-                  onClick={() => {
-                    const target = document.getElementById("beginner-phone-repair-course-id");
-                    const offset = 12 * 20; // 3rem in pixels (assuming 1rem = 16px)
-    
-                    if (target) {
-                      const targetPosition =
-                        target.getBoundingClientRect().top + window.pageYOffset;
-                      const scrollToPosition = targetPosition - offset;
-    
-                      window.scrollTo({
-                        top: scrollToPosition,
-                        behavior: "smooth",
-                      });
-                    }
-                  }}
-                >
-                  {tabs[activeTab].button}
-                </button>
+                <>
+                  {pathname === "/beginner-phone-repair-course" ||
+                  pathname === "/advanced-motherboard" ||
+                  pathname === "/expert-motherboard-repair" ||
+                  pathname === "/master-motherboard-repair" ||
+                  pathname === "/professional-phone-screen" ? (
+                    <button
+                      className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
+                      style={{
+                        background: getGradientColor(activeTab),
+                        borderColor: getGradientColor(activeTab),
+                      }}
+                      onClick={() => {
+                        const element =
+                          document.getElementById("business-name");
+                        if (element) {
+                          element.focus(); // Focus on the element
+                          window.scrollTo({
+                            top: element.offsetTop, // Scroll to the top of the element
+                            behavior: "smooth", // Smooth scroll effect
+                          });
+                        }
+                      }}
+                    >
+                      {tabs[activeTab].button}
+                    </button>
+                  ) : (
+                    <Link
+                      href={tabs[activeTab].link}
+                      passHref
+                      className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
+                      style={{
+                        background: getGradientColor(activeTab),
+                        borderColor: getGradientColor(activeTab),
+                      }}
+                    >
+                      {tabs[activeTab].button}
+                    </Link>
+                  )}
+                </>
               )}
             </div>
           </div>

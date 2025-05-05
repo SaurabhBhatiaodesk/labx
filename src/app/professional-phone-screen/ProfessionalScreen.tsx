@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
 import TraningBanner from "@/components/TraningBanner/TraningBanner";
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
@@ -12,10 +12,10 @@ import React from "react";
 import FormCode from "@/components/Form/FormCode";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import ProfessionalThreeTab from "./ProfessionalThreeTab";
-
-
+import { usePathname } from "next/navigation";
 
 const ProfessionalScreen = () => {
+  const pathname = usePathname();
   const accordionData = [
     {
       title: "1. What is covered in a Screen Refurbishing Course?",
@@ -43,12 +43,14 @@ const ProfessionalScreen = () => {
         "No prior experience is necessary. The advanced screen refurbishing training provides step-by-step guidance, starting with basics and advancing to professional screen refurbishment techniques.",
     },
     {
-      title: "6. Will I get hands-on practice during the screen refurbishing training?",
+      title:
+        "6. Will I get hands-on practice during the screen refurbishing training?",
       content:
         "Yes, the course offers extensive hands-on training with real equipment and materials to help you master screen refurbishment skills effectively.",
     },
     {
-      title: "7. What certifications are provided after completing the screen refurbishing course?",
+      title:
+        "7. What certifications are provided after completing the screen refurbishing course?",
       content:
         "Many programs provide industry-recognized certificates, showcasing your expertise in LCD and OLED screen refurbishment and boosting your professional credibility.",
     },
@@ -71,7 +73,7 @@ const ProfessionalScreen = () => {
   };
   return (
     <>
-       <TraningBanner
+      <TraningBanner
         pageName="Professional Phone Screen Refurbishing Course"
         pageDescription="This course is designed and based on the highest industry standards and over 14 years of industry experience. It includes everything that anyone needs to be one of the best technicians or a successful business owner."
         backgroundImage="/Images/BannerImages/mailinrepair.png"
@@ -82,7 +84,7 @@ const ProfessionalScreen = () => {
         courseHour="25 Hours"
         Duration=" 5 Days"
         Price="$5500"
-         buttonname="JOIN THIS COURSE"
+        buttonname="JOIN THIS COURSE"
       />
 
       <TraningWillLearn
@@ -103,18 +105,23 @@ const ProfessionalScreen = () => {
         Courseformate3="  Experienced Instructors"
         Courseformate4="  Free Toolkit"
         border="#cf2362a7"
-      
       />
       <TraningProfessionalBanner />
-      < ProfessionalSecondTab/>
-      <ProfessionalThreeTab/>
+      <ProfessionalSecondTab />
+      <ProfessionalThreeTab />
       <TraningCourseInstructors />
       <ProfessionalInstructorSecond />
       <ProfessionalChooseLab />
-      <div className=" pt-3" id="professional-phone-screen-id">
-        <MainHeading Heading="Professional Phone Screen Refurbishing Course"/>
-          <FormCode/>
-          </div>
+      {pathname === "/beginner-phone-repair-course" ||
+      pathname === "/advanced-motherboard" ||
+      pathname === "/expert-motherboard-repair" ||
+      pathname === "/master-motherboard-repair" ||
+      pathname === "/professional-phone-screen" ? null : (
+        <div className=" pt-3" id="professional-phone-screen-id">
+          <MainHeading Heading="Professional Phone Screen Refurbishing Course" />
+          <FormCode />
+        </div>
+      )}
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."

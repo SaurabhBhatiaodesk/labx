@@ -15,8 +15,10 @@ import TrainingInstructors from "./TrainingInstructors";
 import TraningSales from "./TraningSales";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import FormCode from "@/components/Form/FormCode";
+import { usePathname } from "next/navigation";
 
 const BeginnerCourse = () => {
+  const pathname = usePathname();
   const accordionData = [
     {
       title: "1. Who is this course suitable for?",
@@ -106,7 +108,7 @@ const BeginnerCourse = () => {
         border="#d5fd33a1"
       />
       <FristTraningTab />
-      <SecondTraningTab/>
+      <SecondTraningTab />
       <TrainingInstructors {...instructorData} />
 
       <TraningSales
@@ -123,10 +125,16 @@ const BeginnerCourse = () => {
         }}
       />
       <ExpertChooseLab />
-      <div className=" pt-3 " id="expert-motherboard-repair-id">
-        <MainHeading Heading="Expert Motherboard Repair" />
-        <FormCode />
-      </div>
+      {pathname === "/beginner-phone-repair-course" ||
+      pathname === "/advanced-motherboard" ||
+      pathname === "/expert-motherboard-repair" ||
+      pathname === "/master-motherboard-repair" ||
+      pathname === "/professional-phone-screen" ? null : (
+        <div className=" pt-3 " id="expert-motherboard-repair-id">
+          <MainHeading Heading="Expert Motherboard Repair" />
+          <FormCode />
+        </div>
+      )}
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."

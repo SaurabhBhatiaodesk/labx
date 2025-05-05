@@ -1,3 +1,4 @@
+"use client"
 import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
 import BeginnerPhoneRepaiCourseSale from "@/components/TraningBanner/BeginnerPhoneRepaiCourseSale";
 import TraningBanner from "@/components/TraningBanner/TraningBanner";
@@ -11,6 +12,7 @@ import React from "react";
 import TraningTabBignerThird from "@/components/TraningBanner/TraningTabBignerThird";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import FormCode from "@/components/Form/FormCode";
+import { usePathname } from "next/navigation";
 
 const BeginnerCourse = () => {
   const accordionData = [
@@ -27,7 +29,7 @@ const BeginnerCourse = () => {
     {
       title: "What devices will I learn to repair?",
       content:
-      "You will learn to repair iPhones, iPads, and Android devices, covering a range of common issues like screen, battery, and camera replacements.",   
+        "You will learn to repair iPhones, iPads, and Android devices, covering a range of common issues like screen, battery, and camera replacements.",
     },
     {
       title: "Are the tools and materials provided?",
@@ -45,11 +47,13 @@ const BeginnerCourse = () => {
         "If you miss a class, you can arrange to attend a make-up session. We ensure flexibility to help you complete your training.",
     },
     {
-      title: "Will I be able to start my own repair business after this training?",
+      title:
+        "Will I be able to start my own repair business after this training?",
       content:
         "Absolutely! The phone repair course equips you with the skills needed to start your own mobile repair business, offering practical insights into running a successful operation.",
     },
   ];
+  const pathname = usePathname();
   return (
     <>
       <TraningBanner
@@ -63,7 +67,7 @@ const BeginnerCourse = () => {
         courseHour="25 Hours"
         Duration="5 Days"
         Price="$1249 (Includes a free toolkit for each student)"
-         buttonname="JOIN THIS COURSE"
+        buttonname="JOIN THIS COURSE"
       />
 
       <TraningWillLearn
@@ -83,20 +87,27 @@ const BeginnerCourse = () => {
         Courseformate2="  5 Days Duration"
         Courseformate3="  Experienced Instructors"
         Courseformate4="  Free Toolkit"
-           border="#EDE574"
+        border="#EDE574"
       />
       <TraningTabBigner />
 
       <TraningTabBignersecond />
-      <TraningTabBignerThird/>
+      <TraningTabBignerThird />
       <TraningCourseInstructors />
       <BeginnerPhoneRepaiCourseSale />
       <BiginnerChooseLab />
+      {pathname === "/beginner-phone-repair-course" ||
+      pathname === "/advanced-motherboard" ||
+      pathname === "/expert-motherboard-repair" ||
+      pathname === "/master-motherboard-repair" ||
+      pathname === "/professional-phone-screen" ? null : (
+        <>
       <div className=" container" id="beginner-phone-repair-course-id">
-        <MainHeading Heading="Beginner Phone Repair Course"/>
-        </div>
-          <FormCode/>
-         
+        <MainHeading Heading="Beginner Phone Repair Course" />
+      </div>
+        <FormCode />
+        </>
+      )}
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."

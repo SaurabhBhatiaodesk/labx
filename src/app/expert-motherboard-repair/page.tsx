@@ -1,17 +1,24 @@
 import dynamic from "next/dynamic";
-import React from 'react'
+import React from "react";
 // import ExpertMotherBoardRepair from './ExpertMotherBoardRepair'
-const ExpertMotherBoardRepair = dynamic(() => import('./ExpertMotherBoardRepair'), { ssr: false });
+const ExpertMotherBoardRepair = dynamic(
+  () => import("./ExpertMotherBoardRepair"),
+  { ssr: false }
+);
 
-import "./Expert.css"
-
-
+import "./Expert.css";
 
 export const metadata = {
   title: "LabX Repair Mobile Phone Services - Expert Repair & Training",
   description:
     "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
-  keywords: ["LabX", "tech solutions", "data recovery", "client reviews", "tech services"],
+  keywords: [
+    "LabX",
+    "tech solutions",
+    "data recovery",
+    "client reviews",
+    "tech services",
+  ],
   openGraph: {
     title: "Welcome to LabX - Your Trusted Tech Solutions",
     description:
@@ -39,14 +46,12 @@ export const metadata = {
   },
 };
 
-
-
 const page = () => {
   return (
     <div>
-      <ExpertMotherBoardRepair/>
+      <ExpertMotherBoardRepair />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

@@ -5,6 +5,8 @@ import trending from "../../../public/Images/icons/trending-up.svg";
 import coursereating from "../../../public/Images/icons/coursereating.svg";
 import clock from "../../../public/Images/icons/clock.svg";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import FormCode from "../Form/FormCode";
 
 interface TraningBanner {
   pageName: string;
@@ -34,7 +36,7 @@ function TraningBanner({
   buttonname,
 }: TraningBanner) {
   const [isBrowser, setIsBrowser] = useState(false);
-
+  const pathname = usePathname();
   // Check if we're in the browser
   useEffect(() => {
     setIsBrowser(true);
@@ -42,7 +44,16 @@ function TraningBanner({
 
   const handleScrollToTarget = () => {
     const currentRoute = window.location.pathname;
-
+    if (
+      currentRoute === "/training" ||
+      currentRoute === "/beginner-phone-repair-course" ||
+      currentRoute === "/advanced-motherboard" ||
+      currentRoute === "/expert-motherboard-repair" ||
+      currentRoute === "/master-motherboard-repair" ||
+      currentRoute === "/professional-phone-screen"
+    ) {
+      document.getElementById("business-name")?.focus();
+    }
     // Set the target ID based on the current route
     let targetId: any;
     if (currentRoute === "/advanced-motherboard") {
@@ -83,7 +94,7 @@ function TraningBanner({
       >
         <div className="container">
           <div className="grid lg:grid-cols-[5fr_3fr] items-center pt-3">
-            <div className="w-full lgh:px-4">
+            <div className="w-full lgh:px-4 mb-8 lg:mb-0">
               <div className="text-center lg:text-left">
                 <div className="flex gap-3 mb-2">
                   <div className="flex gap-2">
@@ -125,25 +136,46 @@ function TraningBanner({
                 {/* <button className="btn" onClick={handleScrollToTarget}>
                   JOIN THIS COURSE
                 </button> */}
-                {isBrowser && window.location.pathname === link ? (
-                  <button className="btn" onClick={handleScrollToTarget}>
-                    {buttonname}
-                  </button>
-                ) : (
-                  <Link href={link}>
-                    <button className="btn">{buttonname}</button>
-                  </Link>
+                {pathname === "/beginner-phone-repair-course" ||
+                pathname === "/advanced-motherboard" ||
+                pathname === "/expert-motherboard-repair" ||
+                pathname === "/master-motherboard-repair" ||
+                pathname === "/professional-phone-screen" ? null : (
+                  <>
+                    {isBrowser && window.location.pathname === link ? (
+                      <button className="btn" onClick={handleScrollToTarget}>
+                        {buttonname}
+                      </button>
+                    ) : (
+                      <Link href={link}>
+                        <button className="btn">{buttonname}</button>
+                      </Link>
+                    )}
+                  </>
                 )}
               </div>
             </div>
-            <div className="admin-image relative 2xl:h-[500px] lg:h-[350px] h-[350px]">
-              <Image
-                src={AdminImage}
-                alt="Admin Visual"
-                className="object-contain pt-3"
-                fill // Makes the image fill the parent container
-              />
-            </div>
+            {pathname === "/beginner-phone-repair-course" ||
+            pathname === "/advanced-motherboard" ||
+            pathname === "/expert-motherboard-repair" ||
+            pathname === "/master-motherboard-repair" ||
+            pathname === "/professional-phone-screen" ? (
+              <div className="admin-image relative h-full">
+                <h3 className="text-3xl font-bold text-tertiary w-full text-center mb-1">
+                  Please Fill the Form
+                </h3>
+                <FormCode />
+              </div>
+            ) : (
+              <div className="admin-image relative 2xl:h-[500px] lg:h-[350px] h-[350px]">
+                <Image
+                  src={AdminImage}
+                  alt="Admin Visual"
+                  className="object-contain pt-3"
+                  fill // Makes the image fill the parent container
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>
