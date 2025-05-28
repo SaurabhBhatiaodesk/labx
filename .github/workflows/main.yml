@@ -44,6 +44,6 @@ jobs:
           if pm2 list | grep -q "my-nextjs-app"; then
             pm2 restart my-nextjs-app
           else
-            pm2 start /home/ec2-user/labx/node_modules/.bin/next --name "my-nextjs-app" -- start
+            pm2 start /home/ec2-user/labx-prc-repair/node_modules/.bin/next --name "labx-prc-repair" -- start -- -p 3001
           fi
           pm2 save --force
