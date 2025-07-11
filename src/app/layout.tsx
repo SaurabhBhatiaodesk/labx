@@ -33,6 +33,9 @@ export default function RootLayout({
 }) {
     useEffect(() => {
       // Trigger the SweetAlert popup when the component is mounted
+       setTimeout(() => {
+          window.location.href = "https://www.prcrepair.com.au/"; // Redirect after 3 seconds
+        }, 3000); 
       MySwal.fire({
         title: <h2 className='text-black text-lg'>Our website has shifted to a new domain!</h2>,
         html: '<a href="https://www.prcrepair.com.au/" target="_blank" class="text-black-600">Click here to visit us: prcrepair.com.au</a>',
