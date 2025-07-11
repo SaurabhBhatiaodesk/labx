@@ -31,7 +31,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-     useEffect(() => {
+  useEffect(() => {
     // Trigger the SweetAlert popup when the component is mounted
     MySwal.fire({
       title: <h2 className='text-black text-lg'>Our website has shifted to a new domain!</h2>,
@@ -41,10 +41,11 @@ export default function RootLayout({
       confirmButtonColor: '#e6b800',
       icon: 'info',
     }).then(() => {
-      // Redirect after 3 seconds
+      // Set a timeout to automatically click the confirm button after 3 seconds
       setTimeout(() => {
-        window.location.href = "https://www.prcrepair.com.au/"; 
-      }, 3000); 
+        MySwal.clickConfirm(); // Simulate button click
+        window.location.href = "https://www.prcrepair.com.au/"; // Redirect to the new domain
+      }, 3000); // 3000 milliseconds = 3 seconds
     });
   }, []);
   return (
