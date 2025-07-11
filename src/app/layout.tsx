@@ -31,24 +31,22 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-    useEffect(() => {
-      // Trigger the SweetAlert popup when the component is mounted
-       setTimeout(() => {
-          window.location.href = "https://www.prcrepair.com.au/"; // Redirect after 3 seconds
-        }, 3000); 
-      MySwal.fire({
-        title: <h2 className='text-black text-lg'>Our website has shifted to a new domain!</h2>,
-        html: '<a href="https://www.prcrepair.com.au/" target="_blank" class="text-black-600">Click here to visit us: prcrepair.com.au</a>',
-        showCloseButton: true, // Optionally show a close button
-       confirmButtonText: "Visit our New Website",
-        confirmButtonColor:'#e6b800',
-        icon:'info', // Disable the confirm button
-      }).then(() => {
-        setTimeout(() => {
-          window.location.href = "https://www.prcrepair.com.au/"; // Redirect after 3 seconds
-        }, 3000); 
-      });
-    }, []);
+     useEffect(() => {
+    // Trigger the SweetAlert popup when the component is mounted
+    MySwal.fire({
+      title: <h2 className='text-black text-lg'>Our website has shifted to a new domain!</h2>,
+      html: '<a href="https://www.prcrepair.com.au/" target="_blank" class="text-blue-600">Click here to visit us: prcrepair.com.au</a>',
+      showCloseButton: true,
+      confirmButtonText: "Visit our New Website",
+      confirmButtonColor: '#e6b800',
+      icon: 'info',
+    }).then(() => {
+      // Redirect after 3 seconds
+      setTimeout(() => {
+        window.location.href = "https://www.prcrepair.com.au/"; 
+      }, 3000); 
+    });
+  }, []);
   return (
     <html lang="en">
       <head>
