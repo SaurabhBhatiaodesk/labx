@@ -250,3 +250,6 @@ p {
     white-space: normal;
   }
 }
+.swal2-backdrop-show{
+  background-color: #000000 !important;
+}
